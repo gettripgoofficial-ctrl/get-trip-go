@@ -1,0 +1,18 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Rome", description: "Arrive Rome. Meet Hindi-speaking tour manager. Indian welcome dinner.", meals: "Dinner" },
+  { day: 2, title: "Rome", description: "Colosseum, Roman Forum, Vatican Museums, Sistine Chapel, St. Peter's Basilica.", meals: "Breakfast, Dinner" },
+  { day: 3, title: "Rome to Venice", description: "Drive to Venice. Gondola ride, St. Mark's Square. Indian dinner.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Venice to Vienna", description: "Drive through Alps to Vienna. Schönbrunn Palace.", meals: "Breakfast, Dinner" },
+  { day: 5, title: "Vienna", description: "Hofburg Palace, Belvedere, Naschmarkt. Indian meals.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Vienna to Zurich", description: "Train to Zurich. Lake Zurich, Old Town.", meals: "Breakfast, Dinner" },
+  { day: 7, title: "Swiss Alps — Jungfrau", description: "Jungfraujoch (3,454m). Snow, Aletsch Glacier.", meals: "Breakfast, Lunch, Dinner" },
+  { day: 8, title: "Lucerne to Paris", description: "Chapel Bridge morning. Train to Paris.", meals: "Breakfast, Dinner" },
+  { day: 9, title: "Paris", description: "Eiffel Tower, Louvre, Notre Dame, Versailles. Indian dinner.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Paris to London", description: "Eurostar to London. Tower Bridge, South Bank.", meals: "Breakfast, Dinner" },
+  { day: 11, title: "London", description: "Buckingham Palace, Westminster Abbey, Big Ben, London Eye. Indian dinner.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "London to Amsterdam", description: "Coach to Amsterdam. Canal cruise.", meals: "Breakfast, Dinner" },
+  { day: 13, title: "Amsterdam", description: "Rijksmuseum, Van Gogh Museum, Anne Frank House. Indian dinner.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Amsterdam to Berlin", description: "Drive to Berlin. Brandenburg Gate, Berlin Wall.", meals: "Breakfast, Dinner" },
+  { day: 15, title: "Departure Berlin", description: "Morning sightseeing. Transfer to Berlin airport.", meals: "Breakfast" },
+  { day: 16, title: "Return Home", description: "Return flight home with wonderful memories.", meals: "" },
+]

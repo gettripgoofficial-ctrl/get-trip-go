@@ -1,0 +1,17 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Rome", description: "Arrive in Rome. Transfer to hotel. Evening at Trevi Fountain and Piazza Navona.", meals: "Dinner" },
+  { day: 2, title: "Rome", description: "Colosseum, Roman Forum, Vatican Museums, Sistine Chapel, St. Peter's Basilica.", meals: "Breakfast" },
+  { day: 3, title: "Rome to Venice", description: "Drive to Venice. Gondola ride, St. Mark's Square, Rialto Bridge.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Venice to Vienna", description: "Drive through Dolomites to Vienna. Evening Ringstrasse walk.", meals: "Breakfast" },
+  { day: 5, title: "Vienna", description: "Schönbrunn Palace, Hofburg, Belvedere Museum, Naschmarkt.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Vienna to Zurich", description: "Drive through scenic Austria to Zurich, Switzerland. Lake Zurich promenade.", meals: "Breakfast" },
+  { day: 7, title: "Swiss Alps", description: "Jungfrau Top of Europe (3,454m). Snow plateau and Aletsch Glacier views.", meals: "Breakfast, Lunch" },
+  { day: 8, title: "Lucerne to Paris", description: "Morning in Lucerne — Chapel Bridge, Lion Monument. Afternoon train to Paris.", meals: "Breakfast, Dinner" },
+  { day: 9, title: "Paris", description: "Eiffel Tower, Louvre Museum, Notre Dame, Champs-Élysées, Arc de Triomphe.", meals: "Breakfast" },
+  { day: 10, title: "Versailles & Paris", description: "Palace of Versailles morning. Afternoon free in Paris for shopping.", meals: "Breakfast, Lunch" },
+  { day: 11, title: "Paris to London via Eurostar", description: "Eurostar to London. Tower Bridge, South Bank, Borough Market.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "London", description: "Buckingham Palace, Westminster Abbey, Big Ben, London Eye, Tower of London.", meals: "Breakfast" },
+  { day: 13, title: "London to Amsterdam", description: "Coach to Amsterdam via ferry or Eurostar. Canal boat cruise.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Amsterdam", description: "Rijksmuseum, Van Gogh Museum, Anne Frank House, Vondelpark.", meals: "Breakfast" },
+  { day: 15, title: "Amsterdam to Munich — Departure", description: "Drive through Germany. Stop at Cologne Cathedral. Transfer to Munich airport.", meals: "Breakfast" },
+]

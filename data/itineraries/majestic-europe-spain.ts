@@ -1,0 +1,15 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Prague", description: "Arrive Prague. Old Town Square, Charles Bridge, Astronomical Clock.", meals: "Dinner" },
+  { day: 2, title: "Prague", description: "Prague Castle, St. Vitus Cathedral, Josefov Quarter.", meals: "Breakfast" },
+  { day: 3, title: "Prague to Munich", description: "Drive via Nuremberg to Munich. Marienplatz, Hofbräuhaus.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Munich to Vienna", description: "Neuschwanstein Castle morning. Drive to Vienna.", meals: "Breakfast, Lunch" },
+  { day: 5, title: "Vienna", description: "Schönbrunn Palace, Hofburg, Belvedere, Naschmarkt.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Vienna to Zurich", description: "Drive to Zurich. Lake Zurich, Old Town.", meals: "Breakfast" },
+  { day: 7, title: "Jungfrau", description: "Train to Jungfraujoch (3,454m). Snow plateau, glacier views.", meals: "Breakfast, Lunch" },
+  { day: 8, title: "Lucerne to Milan", description: "Chapel Bridge. Drive to Milan. Duomo Cathedral.", meals: "Breakfast, Dinner" },
+  { day: 9, title: "Milan to Rome", description: "Drive to Rome. Colosseum, Trevi Fountain.", meals: "Breakfast" },
+  { day: 10, title: "Rome", description: "Vatican Museums, Sistine Chapel, St. Peter's Basilica.", meals: "Breakfast, Dinner" },
+  { day: 11, title: "Rome to Barcelona", description: "Fly to Barcelona. La Rambla, Gothic Quarter, Barceloneta.", meals: "Breakfast" },
+  { day: 12, title: "Barcelona", description: "Sagrada Família, Park Güell, Casa Batlló.", meals: "Breakfast, Dinner" },
+  { day: 13, title: "Departure Barcelona", description: "Transfer to El Prat Airport for return flight.", meals: "Breakfast" },
+]

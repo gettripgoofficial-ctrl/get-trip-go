@@ -1,0 +1,16 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Berlin", description: "Arrive Berlin. Brandenburg Gate, Berlin Wall Memorial, East Side Gallery.", meals: "Dinner" },
+  { day: 2, title: "Berlin", description: "Reichstag, Museum Island, Checkpoint Charlie, Potsdamer Platz.", meals: "Breakfast" },
+  { day: 3, title: "Berlin to Hamburg", description: "Drive to Hamburg. Speicherstadt, Miniatur Wunderland, Fish Market, harbour cruise.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Hamburg to Copenhagen", description: "Drive north to Copenhagen via Flensburg. Nyhavn harbour, Little Mermaid.", meals: "Breakfast" },
+  { day: 5, title: "Copenhagen", description: "Tivoli Gardens, Rosenborg Castle, Stroget shopping, Christiansborg Palace.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Copenhagen to Oslo by ferry", description: "DFDS overnight ferry to Oslo. Onboard entertainment.", meals: "Breakfast, Dinner" },
+  { day: 7, title: "Oslo", description: "Viking Ship Museum, Vigeland Sculpture Park, Holmenkollen Ski Jump.", meals: "Breakfast" },
+  { day: 8, title: "Oslo Fjords & Bergen", description: "Norway in a Nutshell — scenic train and ferry through fjords to Bergen.", meals: "Breakfast, Lunch" },
+  { day: 9, title: "Bergen to Stockholm", description: "Fly to Stockholm. Gamla Stan, Royal Palace.", meals: "Breakfast" },
+  { day: 10, title: "Stockholm", description: "Vasa Museum, ABBA Museum, Djurgården island, City Hall.", meals: "Breakfast, Dinner" },
+  { day: 11, title: "Stockholm Archipelago", description: "Day cruise through Stockholm's beautiful archipelago — 30,000 islands.", meals: "Breakfast, Lunch" },
+  { day: 12, title: "Stockholm to Munich", description: "Fly to Munich. Marienplatz, Nymphenburg Palace.", meals: "Breakfast" },
+  { day: 13, title: "Munich & Neuschwanstein", description: "Neuschwanstein Castle day trip. Evening farewell dinner.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Departure Munich", description: "Transfer to Munich Franz Josef Strauss Airport.", meals: "Breakfast" },
+]

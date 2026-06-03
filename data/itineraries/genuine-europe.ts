@@ -1,0 +1,15 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Rome", description: "Arrive Rome. Trevi Fountain, Spanish Steps, Piazza Navona.", meals: "Dinner" },
+  { day: 2, title: "Rome", description: "Colosseum, Roman Forum, Vatican Museums, Sistine Chapel, St. Peter's.", meals: "Breakfast" },
+  { day: 3, title: "Rome to Florence", description: "Drive to Florence. Ponte Vecchio, Piazzale Michelangelo.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Florence", description: "Uffizi Gallery, Duomo, Baptistery, Boboli Gardens.", meals: "Breakfast" },
+  { day: 5, title: "Florence to Venice", description: "Drive to Venice. Gondola, St. Mark's Square.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Venice to Vienna", description: "Drive through Dolomites to Vienna. Schönbrunn Palace.", meals: "Breakfast" },
+  { day: 7, title: "Vienna", description: "Hofburg, Belvedere, Naschmarkt, Opera House.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Vienna to Zurich", description: "Train to Zurich. Lake Zurich, Old Town.", meals: "Breakfast" },
+  { day: 9, title: "Swiss Alps", description: "Jungfrau Top of Europe. Lucerne Chapel Bridge.", meals: "Breakfast, Lunch" },
+  { day: 10, title: "Lucerne to Paris", description: "Train to Paris. Eiffel Tower evening.", meals: "Breakfast, Dinner" },
+  { day: 11, title: "Paris", description: "Louvre, Notre Dame, Champs-Élysées, Versailles.", meals: "Breakfast" },
+  { day: 12, title: "Paris to London", description: "Eurostar to London. Tower Bridge, South Bank.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Departure London", description: "Transfer to Heathrow Airport for return flight.", meals: "Breakfast" },
+]

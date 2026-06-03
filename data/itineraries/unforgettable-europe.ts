@@ -1,0 +1,15 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Paris", description: "Arrive Paris. Seine cruise, Eiffel Tower at night.", meals: "Dinner" },
+  { day: 2, title: "Paris", description: "Eiffel Tower, Louvre, Notre Dame, Arc de Triomphe.", meals: "Breakfast" },
+  { day: 3, title: "Versailles", description: "Palace of Versailles — Hall of Mirrors, gardens.", meals: "Breakfast, Lunch" },
+  { day: 4, title: "Paris to London", description: "Eurostar to London. Tower Bridge, South Bank.", meals: "Breakfast, Dinner" },
+  { day: 5, title: "London", description: "Buckingham Palace, Westminster Abbey, London Eye.", meals: "Breakfast" },
+  { day: 6, title: "London to Amsterdam", description: "Ferry to Amsterdam. Canal cruise.", meals: "Breakfast, Dinner" },
+  { day: 7, title: "Amsterdam", description: "Rijksmuseum, Van Gogh Museum, Anne Frank House.", meals: "Breakfast" },
+  { day: 8, title: "Amsterdam to Rhine to Frankfurt", description: "Rhine Valley drive. Cologne Cathedral. Frankfurt.", meals: "Breakfast, Lunch" },
+  { day: 9, title: "Frankfurt to Berlin", description: "Drive to Berlin. Brandenburg Gate, Berlin Wall.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Berlin to Prague", description: "Dresden stop. Drive to Prague.", meals: "Breakfast" },
+  { day: 11, title: "Prague", description: "Prague Castle, Charles Bridge, Old Town Square.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Cesky Krumlov", description: "Day trip to UNESCO Cesky Krumlov. Baroque castle, riverside town.", meals: "Breakfast, Lunch" },
+  { day: 13, title: "Departure Prague", description: "Transfer to Václav Havel Airport.", meals: "Breakfast" },
+]

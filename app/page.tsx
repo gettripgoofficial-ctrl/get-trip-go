@@ -1,0 +1,27 @@
+import HeroSection from "@/components/HeroSection"
+import SecondaryServices from "@/components/SecondaryServices"
+import SpecialOffers from "@/components/SpecialOffers"
+import GroupDepartures from "@/components/GroupDepartures"
+import PopularDestinations from "@/components/PopularDestinations"
+import CustomPackages from "@/components/CustomPackages"
+import ThemeHolidays from "@/components/ThemeHolidays"
+import TrustedPartners from "@/components/TrustedPartners"
+import TravelStories from "@/components/TravelStories"
+import NewsletterSignup from "@/components/NewsletterSignup"
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gray-100">
+      <HeroSection />
+      <SecondaryServices />
+      <SpecialOffers />
+      <GroupDepartures />
+      <PopularDestinations />
+      <CustomPackages />
+      <ThemeHolidays />
+      <TrustedPartners />
+      <TravelStories />
+      <NewsletterSignup />
+    </main>
+  )
+}

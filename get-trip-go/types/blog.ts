@@ -1,0 +1,13 @@
+export interface BlogPost {
+  id: string
+  title: string
+  slug: string
+  content: string
+  excerpt: string
+  author: string
+  publishedAt: string
+  updatedAt?: string
+  tags?: string[]
+  coverImage?: string
+  published: boolean
+}

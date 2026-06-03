@@ -1,0 +1,15 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Madrid", description: "Arrive Madrid. Puerta del Sol, Plaza Mayor, Gran Vía.", meals: "Dinner" },
+  { day: 2, title: "Madrid", description: "Royal Palace, Prado Museum, Retiro Park, Flamenco show.", meals: "Breakfast" },
+  { day: 3, title: "Toledo & Segovia", description: "UNESCO Toledo — El Greco museum, cathedral, Alcázar. Segovia Roman Aqueduct.", meals: "Breakfast, Lunch" },
+  { day: 4, title: "Madrid to Barcelona", description: "AVE train to Barcelona. La Rambla, Gothic Quarter.", meals: "Breakfast, Dinner" },
+  { day: 5, title: "Barcelona", description: "Sagrada Família, Park Güell, Casa Batlló, Camp Nou.", meals: "Breakfast" },
+  { day: 6, title: "Barcelona to Nice", description: "Drive to Nice, French Riviera. Promenade des Anglais.", meals: "Breakfast, Dinner" },
+  { day: 7, title: "Monaco & Cannes", description: "Monte Carlo Casino, Monaco Palace, Cannes.", meals: "Breakfast, Lunch" },
+  { day: 8, title: "Nice to Paris", description: "TGV to Paris. Eiffel Tower evening.", meals: "Breakfast, Dinner" },
+  { day: 9, title: "Paris", description: "Louvre, Notre Dame, Champs-Élysées, Versailles.", meals: "Breakfast" },
+  { day: 10, title: "Paris to London", description: "Eurostar to London. Tower Bridge, South Bank.", meals: "Breakfast, Dinner" },
+  { day: 11, title: "London", description: "Buckingham Palace, Westminster Abbey, London Eye, British Museum.", meals: "Breakfast" },
+  { day: 12, title: "London", description: "Tower of London, Greenwich, Camden Market, free shopping.", meals: "Breakfast, Dinner" },
+  { day: 13, title: "Departure London", description: "Transfer to Heathrow Airport for return flight.", meals: "Breakfast" },
+]

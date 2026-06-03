@@ -1,0 +1,18 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Warsaw", description: "Arrive Warsaw. Old Town (UNESCO), Royal Castle, Chopin Museum.", meals: "Dinner" },
+  { day: 2, title: "Warsaw", description: "Warsaw Uprising Museum, Łazienki Park, Palace of Culture and Science.", meals: "Breakfast" },
+  { day: 3, title: "Warsaw to Krakow", description: "Drive to Krakow. Wawel Castle, Old Town Market Square, Kazimierz.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Auschwitz & Wieliczka", description: "Auschwitz-Birkenau Memorial. Wieliczka Salt Mine.", meals: "Breakfast, Lunch" },
+  { day: 5, title: "Krakow to Stockholm", description: "Fly to Stockholm. Gamla Stan, Royal Palace, Vasa Museum.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Stockholm", description: "ABBA Museum, Djurgården, City Hall, archipelago cruise.", meals: "Breakfast" },
+  { day: 7, title: "Stockholm to Copenhagen by ferry", description: "Ferry to Copenhagen. Nyhavn harbour, Little Mermaid.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Copenhagen", description: "Tivoli Gardens, Rosenborg Castle, Stroget shopping.", meals: "Breakfast" },
+  { day: 9, title: "Copenhagen to Berlin", description: "Drive via Malmö bridge. Berlin Brandenburg Gate, Berlin Wall.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Berlin to Prague", description: "Dresden stop — Frauenkirche. Drive to Prague.", meals: "Breakfast" },
+  { day: 11, title: "Prague", description: "Prague Castle, Charles Bridge, Josefov, Old Town Square.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Prague to Budapest", description: "Drive to Budapest. Parliament, Buda Castle.", meals: "Breakfast" },
+  { day: 13, title: "Budapest", description: "Fisherman's Bastion, thermal baths, Great Market Hall.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Budapest to Bratislava", description: "Drive to Bratislava. Old Town, castle.", meals: "Breakfast" },
+  { day: 15, title: "Slovakia to Prague — Departure", description: "Drive to Prague airport. Return flight.", meals: "Breakfast" },
+  { day: 16, title: "Departure", description: "Return flight home.", meals: "Breakfast" },
+]

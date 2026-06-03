@@ -1,0 +1,17 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Prague", description: "Arrive Prague. Old Town Square, Charles Bridge, Astronomical Clock.", meals: "Dinner" },
+  { day: 2, title: "Prague", description: "Prague Castle, Josefov Quarter, Wenceslas Square.", meals: "Breakfast" },
+  { day: 3, title: "Prague to Budapest", description: "Drive via Bratislava. Budapest Parliament, Chain Bridge.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Budapest", description: "Fisherman's Bastion, Matthias Church, thermal baths, Great Market Hall.", meals: "Breakfast" },
+  { day: 5, title: "Budapest to Bratislava to Krakow", description: "Drive to Krakow. Wawel Castle, Old Town Market Square.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Auschwitz & Wieliczka", description: "Auschwitz-Birkenau Memorial. Wieliczka Salt Mine UNESCO.", meals: "Breakfast, Lunch" },
+  { day: 7, title: "Krakow to Warsaw", description: "Drive to Warsaw. Old Town, Royal Castle, Chopin Museum.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Warsaw to Stockholm", description: "Fly to Stockholm. Gamla Stan, Royal Palace.", meals: "Breakfast" },
+  { day: 9, title: "Stockholm", description: "Vasa Museum, ABBA Museum, Djurgården, City Hall.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Stockholm to Copenhagen", description: "Ferry to Copenhagen. Nyhavn, Little Mermaid.", meals: "Breakfast" },
+  { day: 11, title: "Copenhagen", description: "Tivoli Gardens, Rosenborg Castle, Stroget.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Copenhagen to Berlin", description: "Drive via Malmö to Berlin. Brandenburg Gate, Berlin Wall.", meals: "Breakfast" },
+  { day: 13, title: "Berlin", description: "Reichstag, East Side Gallery, Museum Island.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Berlin to Prague — Departure", description: "Dresden stop. Transfer to Prague airport.", meals: "Breakfast" },
+  { day: 15, title: "Departure", description: "Return flight home.", meals: "Breakfast" },
+]

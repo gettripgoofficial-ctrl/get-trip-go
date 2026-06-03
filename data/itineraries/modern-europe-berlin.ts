@@ -1,0 +1,16 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Madrid", description: "Arrive Madrid. Puerta del Sol, Plaza Mayor, Gran Vía evening.", meals: "Dinner" },
+  { day: 2, title: "Madrid", description: "Royal Palace, Prado Museum, Retiro Park.", meals: "Breakfast" },
+  { day: 3, title: "Madrid to Barcelona", description: "AVE high-speed train. La Rambla, Gothic Quarter.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Barcelona", description: "Sagrada Família, Park Güell, Barceloneta Beach.", meals: "Breakfast" },
+  { day: 5, title: "Barcelona to Paris", description: "TGV to Paris. Seine cruise, Eiffel Tower.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Paris", description: "Louvre, Notre Dame, Champs-Élysées, Versailles.", meals: "Breakfast" },
+  { day: 7, title: "Paris to London", description: "Eurostar to London. Tower Bridge, South Bank.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "London", description: "Buckingham Palace, Westminster, Big Ben, London Eye.", meals: "Breakfast" },
+  { day: 9, title: "London to Amsterdam", description: "Ferry to Amsterdam. Canal cruise.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Amsterdam", description: "Rijksmuseum, Van Gogh Museum, Anne Frank House.", meals: "Breakfast" },
+  { day: 11, title: "Amsterdam to Berlin", description: "Drive to Berlin. Brandenburg Gate, Berlin Wall.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Berlin", description: "Reichstag, East Side Gallery, Museum Island.", meals: "Breakfast" },
+  { day: 13, title: "Berlin", description: "Checkpoint Charlie, Potsdamer Platz, Tiergarten. Farewell dinner.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Departure Berlin", description: "Transfer to Berlin Brandenburg Airport.", meals: "Breakfast" },
+]

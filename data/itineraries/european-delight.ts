@@ -1,0 +1,18 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Rome", description: "Arrive Rome. Transfer to hotel. Trevi Fountain, Piazza Navona evening walk.", meals: "Dinner" },
+  { day: 2, title: "Rome", description: "Colosseum, Roman Forum, Vatican Museums, Sistine Chapel.", meals: "Breakfast" },
+  { day: 3, title: "Rome to Venice", description: "Drive to Venice. Gondola, St. Mark's Square, Doge's Palace.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Venice to Vienna", description: "Drive through Dolomites to Vienna. Schönbrunn Palace.", meals: "Breakfast" },
+  { day: 5, title: "Vienna to Budapest", description: "Hofburg Palace, St. Stephen's. Drive to Budapest.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Budapest", description: "Parliament, Fisherman's Bastion, Széchenyi Baths, Great Market Hall.", meals: "Breakfast" },
+  { day: 7, title: "Budapest to Prague", description: "Drive via Bratislava to Prague. Charles Bridge at sunset.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Prague", description: "Prague Castle, Josefov, Old Town Square, Astronomical Clock.", meals: "Breakfast" },
+  { day: 9, title: "Prague to Berlin", description: "Drive to Berlin. Brandenburg Gate, Berlin Wall.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Berlin to Amsterdam", description: "Drive to Amsterdam. Canal cruise, flower market.", meals: "Breakfast" },
+  { day: 11, title: "Amsterdam", description: "Rijksmuseum, Van Gogh Museum, Anne Frank House.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Amsterdam to Brussels", description: "Drive to Brussels. Grand Place, Manneken Pis.", meals: "Breakfast" },
+  { day: 13, title: "Brussels to Paris", description: "Drive to Paris. Eiffel Tower, Seine cruise.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Paris", description: "Louvre, Notre Dame, Champs-Élysées, Arc de Triomphe.", meals: "Breakfast" },
+  { day: 15, title: "Versailles — Departure", description: "Versailles morning. Transfer to Charles de Gaulle Airport.", meals: "Breakfast" },
+  { day: 16, title: "Departure", description: "Return flight home.", meals: "Breakfast" },
+]

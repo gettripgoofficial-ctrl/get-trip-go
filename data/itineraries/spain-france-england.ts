@@ -1,0 +1,15 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Madrid", description: "Arrive Madrid. Puerta del Sol, Plaza Mayor, Gran Vía.", meals: "Dinner" },
+  { day: 2, title: "Madrid", description: "Royal Palace, Prado Museum, Retiro Park, Flamenco show.", meals: "Breakfast" },
+  { day: 3, title: "Madrid to Barcelona", description: "High-speed AVE train. La Rambla, Gothic Quarter, Barceloneta Beach.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Barcelona", description: "Sagrada Família, Park Güell, Casa Batlló, Camp Nou.", meals: "Breakfast" },
+  { day: 5, title: "Barcelona to Nice", description: "Drive along Costa Brava to Nice, French Riviera. Promenade des Anglais.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Monaco & Cannes", description: "Monte Carlo Casino, Monaco Royal Palace. Cannes Croisette.", meals: "Breakfast, Lunch" },
+  { day: 7, title: "Nice to Paris", description: "TGV train to Paris. Evening Eiffel Tower.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Paris", description: "Louvre, Notre Dame, Champs-Élysées, Versailles afternoon.", meals: "Breakfast" },
+  { day: 9, title: "Paris to London via Eurostar", description: "Eurostar to London. Tower Bridge, South Bank.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "London", description: "Buckingham Palace, Westminster Abbey, Big Ben, London Eye.", meals: "Breakfast" },
+  { day: 11, title: "London", description: "Tower of London, British Museum, Notting Hill, Covent Garden.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "London", description: "Free day for shopping — Oxford Street, Harrods, Camden Market.", meals: "Breakfast" },
+  { day: 13, title: "Departure London", description: "Transfer to Heathrow Airport for return flight.", meals: "Breakfast" },
+]

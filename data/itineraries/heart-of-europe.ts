@@ -1,0 +1,9 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Vienna", description: "Arrive in Vienna, the imperial capital of Austria. Check into hotel. Evening orientation walk along the Ringstrasse boulevard. Welcome dinner with group.", meals: "Dinner" },
+  { day: 2, title: "Vienna City Tour", description: "Full day exploring Vienna — Schönbrunn Palace and gardens, St. Stephen's Cathedral, Hofburg Imperial Palace, Naschmarkt food market. Evening at leisure.", meals: "Breakfast" },
+  { day: 3, title: "Vienna to Budapest", description: "Morning drive to Budapest, Hungary. Afternoon city tour — Fisherman's Bastion, Matthias Church, Heroes' Square. Evening Danube River cruise with dinner.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Budapest to Bratislava", description: "Morning visit to the Hungarian Parliament building. Drive to Bratislava, Slovakia's charming capital. Old Town walk, Bratislava Castle, Michael's Gate.", meals: "Breakfast" },
+  { day: 5, title: "Bratislava to Prague", description: "Drive to Prague, the Golden City. Afternoon free to explore the Old Town. Evening stroll across Charles Bridge at sunset.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Prague City Tour", description: "Full day in Prague — Prague Castle complex, St. Vitus Cathedral, Old Town Square with the famous Astronomical Clock, Josefov Jewish Quarter. Shopping at Wenceslas Square.", meals: "Breakfast" },
+  { day: 7, title: "Prague to Germany — Departure", description: "Morning drive through the picturesque Bohemian countryside to Germany. Final sightseeing stop at Nuremberg or Dresden. Transfer to airport/station for departure.", meals: "Breakfast" },
+]

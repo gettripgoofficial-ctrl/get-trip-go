@@ -1,0 +1,15 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Berlin", description: "Arrive Berlin. Brandenburg Gate, Berlin Wall Memorial, Checkpoint Charlie.", meals: "Dinner" },
+  { day: 2, title: "Berlin", description: "Reichstag, Museum Island, East Side Gallery, Alexanderplatz, Potsdamer Platz.", meals: "Breakfast" },
+  { day: 3, title: "Berlin to Dresden", description: "Drive to Dresden — Florence of Germany. Frauenkirche, Zwinger, Semper Opera.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Dresden to Prague", description: "Drive to Prague. Charles Bridge, Old Town Square, Astronomical Clock.", meals: "Breakfast" },
+  { day: 5, title: "Prague", description: "Prague Castle, St. Vitus Cathedral, Josefov Jewish Quarter.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Prague to Budapest", description: "Drive via Bratislava. Budapest — Parliament, Chain Bridge.", meals: "Breakfast" },
+  { day: 7, title: "Budapest", description: "Fisherman's Bastion, Matthias Church, Széchenyi Baths, Great Market Hall.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Budapest to Bratislava to Krakow", description: "Drive north to Krakow, Poland. Wawel Castle, Kazimierz Jewish Quarter.", meals: "Breakfast" },
+  { day: 9, title: "Krakow", description: "Auschwitz-Birkenau Memorial, Wieliczka Salt Mine, Old Town Market Square.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Krakow to Warsaw", description: "Drive to Warsaw. Old Town (UNESCO), Royal Castle, Chopin Museum.", meals: "Breakfast" },
+  { day: 11, title: "Warsaw", description: "Warsaw Uprising Museum, Łazienki Park, Palace of Culture.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Warsaw to Bratislava", description: "Drive south to Bratislava. Old Town, castle.", meals: "Breakfast" },
+  { day: 13, title: "Departure", description: "Transfer to Bratislava or Vienna airport.", meals: "Breakfast" },
+]

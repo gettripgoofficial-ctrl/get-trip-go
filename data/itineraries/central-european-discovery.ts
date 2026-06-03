@@ -1,0 +1,16 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Prague", description: "Arrive Prague. Old Town Square, Charles Bridge, Astronomical Clock.", meals: "Dinner" },
+  { day: 2, title: "Prague", description: "Prague Castle, St. Vitus Cathedral, Josefov Quarter, Wenceslas Square.", meals: "Breakfast" },
+  { day: 3, title: "Prague to Munich", description: "Drive through Bavaria. Munich — Marienplatz, Nymphenburg Palace, Hofbräuhaus.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Neuschwanstein Castle", description: "Day trip to fairy-tale Neuschwanstein Castle. Füssen village. Return to Munich.", meals: "Breakfast, Lunch" },
+  { day: 5, title: "Munich to Salzburg to Vienna", description: "Drive to Salzburg — Mozart's birthplace, Sound of Music locations. Continue to Vienna.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Vienna", description: "Schönbrunn Palace, Hofburg, Belvedere Museum, Naschmarkt.", meals: "Breakfast" },
+  { day: 7, title: "Vienna to Zurich", description: "Drive through Vorarlberg to Zurich. Lake Zurich, Old Town.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Swiss Alps — Jungfrau", description: "Train to Jungfraujoch (3,454m). Snow plateau, Aletsch Glacier.", meals: "Breakfast, Lunch" },
+  { day: 9, title: "Lucerne", description: "Chapel Bridge, Lion Monument, Lake Lucerne, Mt. Pilatus.", meals: "Breakfast" },
+  { day: 10, title: "Lucerne to Milan", description: "Drive through St. Gotthard Pass to Milan. Duomo Cathedral, Galleria.", meals: "Breakfast, Dinner" },
+  { day: 11, title: "Milan to Venice", description: "Drive to Venice. Gondola ride, St. Mark's Square, Rialto Bridge.", meals: "Breakfast" },
+  { day: 12, title: "Venice to Florence", description: "Drive to Florence. Ponte Vecchio, Piazzale Michelangelo sunset.", meals: "Breakfast, Dinner" },
+  { day: 13, title: "Florence to Rome", description: "Uffizi Gallery. Drive to Rome. Colosseum, Roman Forum.", meals: "Breakfast" },
+  { day: 14, title: "Departure Rome", description: "Vatican Museums morning. Transfer to Rome airport.", meals: "Breakfast" },
+]

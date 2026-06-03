@@ -1,0 +1,16 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Oslo", description: "Arrive Oslo. Viking Ship Museum, Vigeland Park, Karl Johans Gate.", meals: "Dinner" },
+  { day: 2, title: "Oslo Fjords", description: "Oslofjord cruise. Holmenkollen Ski Jump. Norwegian Folk Museum.", meals: "Breakfast" },
+  { day: 3, title: "Oslo to Stockholm by ferry", description: "DFDS overnight ferry to Stockholm. Onboard entertainment.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Stockholm", description: "Gamla Stan, Vasa Museum, Royal Palace, ABBA Museum.", meals: "Breakfast" },
+  { day: 5, title: "Stockholm to Copenhagen by ferry", description: "Ferry across the Baltic to Copenhagen.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Copenhagen", description: "Tivoli Gardens, Little Mermaid, Nyhavn harbour, Rosenborg Castle.", meals: "Breakfast" },
+  { day: 7, title: "Copenhagen to Berlin", description: "Drive via Malmö bridge to Berlin. Brandenburg Gate, Berlin Wall.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Berlin to Prague", description: "Dresden stop — Frauenkirche. Drive to Prague.", meals: "Breakfast" },
+  { day: 9, title: "Prague", description: "Prague Castle, Charles Bridge, Old Town Square.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Prague to Budapest", description: "Drive to Budapest. Parliament, Chain Bridge.", meals: "Breakfast" },
+  { day: 11, title: "Budapest", description: "Fisherman's Bastion, Matthias Church, thermal baths.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Budapest to Krakow", description: "Drive to Krakow. Wawel Castle, Old Town Market Square.", meals: "Breakfast" },
+  { day: 13, title: "Krakow", description: "Auschwitz Memorial, Wieliczka Salt Mine.", meals: "Breakfast, Dinner" },
+  { day: 14, title: "Departure Krakow or Warsaw", description: "Transfer to airport for return flight.", meals: "Breakfast" },
+]

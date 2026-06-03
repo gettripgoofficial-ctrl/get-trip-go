@@ -1,0 +1,18 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Prague", description: "Arrive in Prague. Evening Old Town Square walk. Charles Bridge at sunset.", meals: "Dinner" },
+  { day: 2, title: "Prague", description: "Prague Castle complex, St. Vitus Cathedral, Josefov Quarter, Wenceslas Square.", meals: "Breakfast" },
+  { day: 3, title: "Prague to Dresden to Munich", description: "Drive through Dresden — Zwinger Palace, Frauenkirche. Continue to Munich.", meals: "Breakfast, Dinner" },
+  { day: 4, title: "Munich", description: "Marienplatz, Neuschwanstein Castle day trip, Hofbräuhaus, English Garden.", meals: "Breakfast" },
+  { day: 5, title: "Munich to Innsbruck to Vienna", description: "Drive through Tyrolean Alps to Innsbruck. Golden Roof. Continue to Vienna.", meals: "Breakfast, Dinner" },
+  { day: 6, title: "Vienna", description: "Schönbrunn Palace, Hofburg, Belvedere, Naschmarkt, Opera House.", meals: "Breakfast" },
+  { day: 7, title: "Vienna to Venice", description: "Drive through scenic Alpine passes to Venice. Evening gondola ride.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Venice", description: "St. Mark's Basilica, Doge's Palace, Rialto Bridge, Murano island.", meals: "Breakfast" },
+  { day: 9, title: "Venice to Florence", description: "Drive to Florence. Ponte Vecchio, Piazzale Michelangelo sunset.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Florence", description: "Uffizi Gallery, Duomo, Baptistery, Boboli Gardens, leather markets.", meals: "Breakfast" },
+  { day: 11, title: "Florence to Budapest", description: "Fly or train to Budapest. Parliament, Fisherman's Bastion.", meals: "Breakfast, Dinner" },
+  { day: 12, title: "Budapest", description: "Matthias Church, Heroes Square, Great Market Hall, Széchenyi Baths.", meals: "Breakfast" },
+  { day: 13, title: "Budapest to Bratislava", description: "Drive to Bratislava. Old Town, castle, riverside walk.", meals: "Breakfast" },
+  { day: 14, title: "Bratislava to Slovakia countryside", description: "Bojnice Castle, Orava Castle scenic drive through Slovak highlands.", meals: "Breakfast, Dinner" },
+  { day: 15, title: "Slovakia to Prague", description: "Drive to Prague. Final evening in the Golden City.", meals: "Breakfast" },
+  { day: 16, title: "Departure Prague", description: "Morning at leisure. Transfer to Prague airport.", meals: "Breakfast" },
+]

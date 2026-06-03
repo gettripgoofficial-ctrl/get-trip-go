@@ -1,0 +1,18 @@
+export const itinerary = [
+  { day: 1, title: "Arrival Paris", description: "Arrive in Paris, the City of Light. Transfer to hotel. Evening Seine River cruise with views of the illuminated Eiffel Tower.", meals: "Dinner" },
+  { day: 2, title: "Paris City Tour", description: "Eiffel Tower summit, Louvre Museum, Notre Dame Cathedral, Arc de Triomphe, Champs-Élysées stroll.", meals: "Breakfast" },
+  { day: 3, title: "Versailles & Paris", description: "Morning at Palace of Versailles — Hall of Mirrors, Royal Gardens. Afternoon free in Paris.", meals: "Breakfast, Lunch" },
+  { day: 4, title: "Paris to Geneva", description: "Train or coach to Geneva, Switzerland. Lake Geneva promenade, Jet d'Eau fountain, Old Town walk.", meals: "Breakfast, Dinner" },
+  { day: 5, title: "Jungfrau — Top of Europe", description: "Train journey to Jungfraujoch (3,454m) — the highest railway station in Europe. Snow plateau, Aletsch Glacier views.", meals: "Breakfast, Lunch" },
+  { day: 6, title: "Lucerne", description: "Drive to Lucerne. Chapel Bridge, Lion Monument, Old Town. Optional Mt. Pilatus or Rigi cable car.", meals: "Breakfast" },
+  { day: 7, title: "Lucerne to Milan", description: "Drive through the St. Gotthard Pass into Italy. Afternoon arrival in Milan — Duomo Cathedral, Galleria Vittorio Emanuele II.", meals: "Breakfast, Dinner" },
+  { day: 8, title: "Milan to Venice", description: "Morning at leisure in Milan. Drive to Venice. Gondola ride and St. Mark's Square evening.", meals: "Breakfast" },
+  { day: 9, title: "Venice to Florence", description: "Morning Venice walk. Drive to Florence (Firenze) — Ponte Vecchio, Piazzale Michelangelo sunset view.", meals: "Breakfast, Dinner" },
+  { day: 10, title: "Florence", description: "Uffizi Gallery, Duomo (Cathedral of Santa Maria del Fiore), Baptistery, Boboli Gardens.", meals: "Breakfast" },
+  { day: 11, title: "Florence to Rome", description: "Drive to Rome. Afternoon — Colosseum, Roman Forum, Baths of Caracalla.", meals: "Breakfast" },
+  { day: 12, title: "Rome", description: "Vatican City — Vatican Museums, Sistine Chapel, St. Peter's Basilica and Square. Afternoon Trevi Fountain.", meals: "Breakfast, Dinner" },
+  { day: 13, title: "Rome to Amalfi", description: "Drive south to the stunning Amalfi Coast. Positano village, cliff-side roads, turquoise Mediterranean views.", meals: "Breakfast" },
+  { day: 14, title: "Amalfi to Naples", description: "Pompeii archaeological ruins. Transfer to Naples airport/station.", meals: "Breakfast, Lunch" },
+  { day: 15, title: "Vienna via Austria", description: "Fly or train to Vienna. Schönbrunn Palace, Ringstrasse evening walk.", meals: "Breakfast" },
+  { day: 16, title: "Departure", description: "Morning at leisure. Transfer to Vienna airport for return flight.", meals: "Breakfast" },
+]
