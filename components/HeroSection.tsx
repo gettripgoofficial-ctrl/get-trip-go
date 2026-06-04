@@ -187,15 +187,12 @@ export default function HeroSection() {
             className="bg-white shadow-2xl px-4 sm:px-6 pt-10 pb-6 rounded-2xl relative z-10"
             style={{ boxShadow: "0 25px 60px rgba(0,0,0,0.3)" }}
           >
-            <SearchBox activeTab={activeTab} />
-          </div>
-
-          {/* Travelpayouts Flight Search Widget - only shown on Flights tab */}
-          {activeTab === "Flights" && (
-            <div className="mt-6">
+            {activeTab === "Flights" ? (
               <TravelpayoutsWidget />
-            </div>
-          )}
+            ) : (
+              <SearchBox activeTab={activeTab} />
+            )}
+          </div>
 
         </div>
       </div>
