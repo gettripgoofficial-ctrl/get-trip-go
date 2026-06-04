@@ -1,9 +1,16 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function TravelpayoutsWidget() {
+  const scriptLoaded = useRef(false)
+
   useEffect(() => {
+    if (scriptLoaded.current) return
+    scriptLoaded.current = true
+
+    document.querySelectorAll('script[src*="tpscr.com"]').forEach(el => el.remove())
+
     const script = document.createElement('script')
     script.async = true
     script.type = 'module'
@@ -11,6 +18,7 @@ export default function TravelpayoutsWidget() {
     document.head.appendChild(script)
 
     return () => {
+      scriptLoaded.current = false
       if (document.head.contains(script)) {
         document.head.removeChild(script)
       }
@@ -18,11 +26,16 @@ export default function TravelpayoutsWidget() {
   }, [])
 
   return (
-    <>
-      {/* Search form renders here */}
+    <div
+      style={{
+        isolation: 'isolate',
+        contain: 'style layout',
+        width: '100%',
+        display: 'block',
+      }}
+    >
       <div id="tpwl-search" />
-      {/* Flight results render here after search */}
       <div id="tpwl-tickets" />
-    </>
+    </div>
   )
 }
