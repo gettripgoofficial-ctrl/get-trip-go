@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from "react"
 import Link from "next/link"
-import Logo from "./Logo"
 
 const quickLinks = [
   { label: "Best Deals", href: "/deals" },
@@ -116,10 +115,19 @@ export default function Footer() {
 
           {/* Col 1 — Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/get-trip-go.png" alt="Get Trip Go icon" className="w-9 h-9 object-contain rounded-xl" />
-              <Logo variant="light" height="26" />
-            </div>
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <img
+                src="/logo-icon.png"
+                alt="Get Trip Go icon"
+                className="w-10 h-10 object-contain"
+              />
+              <img
+                src="/logo-text.png"
+                alt="Get Trip Go"
+                className="h-7 object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+            </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-6 max-w-xs">
               India&apos;s trusted travel booking platform. Flights, hotels, custom holidays &amp; group tours — all at the best prices.
             </p>
@@ -194,10 +202,19 @@ export default function Footer() {
 
           {/* Brand always visible */}
           <div className="mb-6">
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/get-trip-go.png" alt="Get Trip Go icon" className="w-9 h-9 object-contain rounded-xl" />
-              <Logo variant="light" height="24" />
-            </div>
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <img
+                src="/logo-icon.png"
+                alt="Get Trip Go icon"
+                className="w-10 h-10 object-contain"
+              />
+              <img
+                src="/logo-text.png"
+                alt="Get Trip Go"
+                className="h-7 object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+            </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-5">
               India&apos;s trusted travel booking platform. Flights, hotels, custom holidays &amp; group tours — all at the best prices.
             </p>

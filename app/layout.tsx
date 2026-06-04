@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/get-trip-go.png",
-    apple: "/get-trip-go.png",
-    shortcut: "/get-trip-go.png",
+    icon: "/get-trip-go.svg",
+    apple: "/get-trip-go.svg",
+    shortcut: "/get-trip-go.svg",
   },
   alternates: {
     canonical: "https://www.gettripgo.com",

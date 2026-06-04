@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Logo from "./Logo"
 
 export default function Navbar() {
   const [currencies, setCurrencies] = useState<string[]>([])
@@ -40,15 +39,20 @@ export default function Navbar() {
       }`}
       style={{ backgroundColor: "#1A56F0" }}
     >
-      {/* Logo */}
-      <div className="flex items-center gap-2.5">
+      {/* Logo — clicks to Home */}
+      <Link href="/" className="flex items-center gap-2">
         <img
-          src="/get-trip-go.png"
+          src="/logo-icon.png"
           alt="Get Trip Go icon"
-          className="w-8 h-8 object-contain rounded-xl"
+          className="w-10 h-10 object-contain"
         />
-        <Logo variant="light" height={20} />
-      </div>
+        <img
+          src="/logo-text.png"
+          alt="Get Trip Go"
+          className="h-8 object-contain"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+      </Link>
 
       {/* Desktop nav */}
       <div className="hidden md:flex items-center gap-3">
