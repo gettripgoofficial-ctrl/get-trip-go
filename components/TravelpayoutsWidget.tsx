@@ -3,39 +3,59 @@
 import { useEffect, useRef } from 'react'
 
 export default function TravelpayoutsWidget() {
-  const scriptLoaded = useRef(false)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
-    if (scriptLoaded.current) return
-    scriptLoaded.current = true
+    const iframe = iframeRef.current
+    if (!iframe) return
 
-    document.querySelectorAll('script[src*="tpscr.com"]').forEach(el => el.remove())
+    const doc = iframe.contentDocument || iframe.contentWindow?.document
+    if (!doc) return
 
-    const script = document.createElement('script')
-    script.async = true
-    script.type = 'module'
-    script.src = 'https://tpscr.com/wl_web/main.js?wl_id=18308'
-    document.head.appendChild(script)
+    doc.open()
+    doc.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            html, body { width: 100%; background: transparent; }
+          </style>
+        </head>
+        <body>
+          <div id="tpwl-search"></div>
+          <div id="tpwl-tickets"></div>
+          <script type="module" src="https://tpscr.com/wl_web/main.js?wl_id=18308"><\/script>
+        </body>
+      </html>
+    `)
+    doc.close()
 
-    return () => {
-      scriptLoaded.current = false
-      if (document.head.contains(script)) {
-        document.head.removeChild(script)
+    // Auto-resize iframe to fit widget content
+    const resizeObserver = new ResizeObserver(() => {
+      if (iframe && doc.body) {
+        iframe.style.height = doc.body.scrollHeight + 'px'
       }
-    }
+    })
+    resizeObserver.observe(doc.body)
+
+    return () => resizeObserver.disconnect()
   }, [])
 
   return (
-    <div
+    <iframe
+      ref={iframeRef}
       style={{
-        isolation: 'isolate',
-        contain: 'style layout',
         width: '100%',
+        minHeight: '120px',
+        border: 'none',
+        background: 'transparent',
         display: 'block',
+        overflow: 'hidden',
       }}
-    >
-      <div id="tpwl-search" />
-      <div id="tpwl-tickets" />
-    </div>
+      scrolling="no"
+      title="Flight Search"
+    />
   )
 }
