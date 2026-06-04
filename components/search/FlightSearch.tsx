@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 const specialFares = [
   { label: "Regular", sub: "Regular fares" },
@@ -8,54 +8,12 @@ const specialFares = [
   { label: "Senior Citizen", sub: "Up to ₹1200 off" },
 ]
 
-const defaultCities = [
-  { from: "New Delhi", fromCode: "DEL", to: "Mumbai", toCode: "BOM", date: "" },
-  { from: "Mumbai", fromCode: "BOM", to: "", toCode: "", date: "" },
-]
-
 const MARKER = "642579"
 
-function buildAviasalesUrl({
-  tripType,
-  cities,
-  adults,
-  tripClass,
-}: {
-  tripType: string
-  cities: { fromCode: string; toCode: string; date: string }[]
-  adults: number
-  tripClass: string
-}) {
-  const classMap: Record<string, string> = {
-    Economy: "y",
-    Business: "c",
-    First: "f",
-  }
-  const cls = classMap[tripClass] || "y"
-
-  if (tripType === "One Way") {
-    const { fromCode, toCode, date } = cities[0]
-    const d = date ? date.replace(/-/g, "").slice(4) + date.replace(/-/g, "").slice(0, 4) : ""
-    return `https://www.aviasales.com/search/${fromCode}${d}${toCode}${adults}${cls}?marker=${MARKER}`
-  }
-
-  if (tripType === "Round Trip") {
-    const { fromCode, toCode, date } = cities[0]
-    const returnDate = cities[1]?.date || ""
-    const d1 = date ? date.replace(/-/g, "").slice(4) + date.replace(/-/g, "").slice(0, 4) : ""
-    const d2 = returnDate ? returnDate.replace(/-/g, "").slice(4) + returnDate.replace(/-/g, "").slice(0, 4) : ""
-    return `https://www.aviasales.com/search/${fromCode}${d1}${toCode}${d2}${fromCode}${adults}${cls}?marker=${MARKER}`
-  }
-
-  // Multi City
-  const segments = cities
-    .filter(c => c.fromCode && c.toCode && c.date)
-    .map(c => {
-      const d = c.date.replace(/-/g, "").slice(4) + c.date.replace(/-/g, "").slice(0, 4)
-      return `${c.fromCode}${d}${c.toCode}`
-    })
-    .join("")
-  return `https://www.aviasales.com/search/${segments}${adults}${cls}?marker=${MARKER}`
+function formatForUrl(dateStr: string) {
+  if (!dateStr) return ""
+  const [, month, day] = dateStr.split("-")
+  return `${day}${month}`
 }
 
 function formatDate(dateStr: string) {
@@ -69,20 +27,132 @@ function formatDate(dateStr: string) {
   }
 }
 
+function buildAviasalesUrl({
+  tripType,
+  cities,
+  adults,
+  tripClass,
+}: {
+  tripType: string
+  cities: { fromCode: string; toCode: string; date: string }[]
+  adults: number
+  tripClass: string
+}) {
+  const classMap: Record<string, string> = { Economy: "y", Business: "c", First: "f" }
+  const cls = classMap[tripClass] || "y"
+
+  if (tripType === "One Way") {
+    const { fromCode, toCode, date } = cities[0]
+    return `https://www.aviasales.com/search/${fromCode}${formatForUrl(date)}${toCode}${adults}${cls}?marker=${MARKER}`
+  }
+  if (tripType === "Round Trip") {
+    const { fromCode, toCode, date } = cities[0]
+    const returnDate = cities[1]?.date || ""
+    return `https://www.aviasales.com/search/${fromCode}${formatForUrl(date)}${toCode}${formatForUrl(returnDate)}${fromCode}${adults}${cls}?marker=${MARKER}`
+  }
+  const segments = cities
+    .filter(c => c.fromCode && c.toCode && c.date)
+    .map(c => `${c.fromCode}${formatForUrl(c.date)}${c.toCode}`)
+    .join("")
+  return `https://www.aviasales.com/search/${segments}${adults}${cls}?marker=${MARKER}`
+}
+
+type Airport = { code: string; name: string; city_name: string; country_name: string }
+
+function AirportInput({
+  label,
+  value,
+  code,
+  onChange,
+}: {
+  label: string
+  value: string
+  code: string
+  onChange: (name: string, code: string) => void
+}) {
+  const [query, setQuery] = useState(value)
+  const [results, setResults] = useState<Airport[]>([])
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => { setQuery(value) }, [value])
+
+  useEffect(() => {
+    if (query.length < 2) { setResults([]); return }
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`https://autocomplete.travelpayouts.com/places2?term=${encodeURIComponent(query)}&locale=en&types[]=airport&types[]=city`)
+        const data = await res.json()
+        setResults(data.slice(0, 6))
+        setOpen(true)
+      } catch { setResults([]) }
+    }, 300)
+    return () => clearTimeout(timer)
+  }, [query])
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener("mousedown", handler)
+    return () => document.removeEventListener("mousedown", handler)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative">
+      <p className="text-xs text-gray-500 mb-1">{label}</p>
+      <input
+        className="text-sm font-bold text-gray-800 w-full outline-none bg-transparent"
+        placeholder="City or Airport"
+        value={query}
+        onChange={e => { setQuery(e.target.value); setOpen(true) }}
+        onFocus={() => query.length >= 2 && setOpen(true)}
+      />
+      <p className="text-xs text-gray-400 mt-1 truncate">{code || "Select airport"}</p>
+      {open && results.length > 0 && (
+        <div className="absolute top-full left-0 z-50 bg-white border border-gray-200 rounded-xl shadow-xl mt-1 w-64 max-h-60 overflow-y-auto">
+          {results.map((r) => (
+            <button
+              key={r.code}
+              className="w-full text-left px-3 py-2.5 hover:bg-blue-50 transition-colors border-b border-gray-100 last:border-0"
+              onMouseDown={() => {
+                onChange(r.city_name || r.name, r.code)
+                setQuery(r.city_name || r.name)
+                setOpen(false)
+              }}
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-gray-800">{r.city_name || r.name}</p>
+                  <p className="text-xs text-gray-400 truncate max-w-[160px]">{r.name}, {r.country_name}</p>
+                </div>
+                <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded ml-2">{r.code}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+type CityRow = { from: string; fromCode: string; to: string; toCode: string; date: string }
+
 export default function FlightSearch() {
   const [tripType, setTripType] = useState("One Way")
   const [activeFare, setActiveFare] = useState("Regular")
-  const [cities, setCities] = useState(defaultCities)
   const [adults, setAdults] = useState(1)
   const [tripClass, setTripClass] = useState("Economy")
   const [departure, setDeparture] = useState("")
   const [returnDate, setReturnDate] = useState("")
-  const [fromOne, setFromOne] = useState("New Delhi")
-  const [fromOneCode, setFromOneCode] = useState("DEL")
-  const [toOne, setToOne] = useState("Mumbai")
-  const [toOneCode, setToOneCode] = useState("BOM")
+  const [from, setFrom] = useState({ name: "New Delhi", code: "DEL" })
+  const [to, setTo] = useState({ name: "Mumbai", code: "BOM" })
+  const [cities, setCities] = useState<CityRow[]>([
+    { from: "New Delhi", fromCode: "DEL", to: "Mumbai", toCode: "BOM", date: "" },
+    { from: "Mumbai", fromCode: "BOM", to: "", toCode: "", date: "" },
+  ])
 
-  const updateCity = (index: number, field: string, value: string) => {
+  const updateCity = (index: number, field: keyof CityRow, value: string) => {
     const updated = [...cities]
     updated[index] = { ...updated[index], [field]: value }
     setCities(updated)
@@ -94,17 +164,15 @@ export default function FlightSearch() {
   }
 
   const removeCity = (index: number) => {
-    if (cities.length > 2)
-      setCities(cities.filter((_, i) => i !== index))
+    if (cities.length > 2) setCities(cities.filter((_, i) => i !== index))
   }
 
   const handleSearch = () => {
     let url = ""
-
     if (tripType === "One Way") {
       url = buildAviasalesUrl({
         tripType,
-        cities: [{ fromCode: fromOneCode, toCode: toOneCode, date: departure }],
+        cities: [{ fromCode: from.code, toCode: to.code, date: departure }],
         adults,
         tripClass,
       })
@@ -112,8 +180,8 @@ export default function FlightSearch() {
       url = buildAviasalesUrl({
         tripType,
         cities: [
-          { fromCode: fromOneCode, toCode: toOneCode, date: departure },
-          { fromCode: toOneCode, toCode: fromOneCode, date: returnDate },
+          { fromCode: from.code, toCode: to.code, date: departure },
+          { fromCode: to.code, toCode: from.code, date: returnDate },
         ],
         adults,
         tripClass,
@@ -121,9 +189,28 @@ export default function FlightSearch() {
     } else {
       url = buildAviasalesUrl({ tripType, cities, adults, tripClass })
     }
-
     window.open(url, "_blank")
   }
+
+  const TravellersClass = () => (
+    <div>
+      <p className="text-xs text-gray-500 mb-1">Travellers & Class</p>
+      <div className="flex items-center gap-1">
+        <button onClick={() => setAdults(a => Math.max(1, a - 1))} className="text-gray-400 font-bold px-1">−</button>
+        <span className="text-base font-bold text-gray-800">{adults}</span>
+        <button onClick={() => setAdults(a => Math.min(9, a + 1))} className="text-gray-400 font-bold px-1">+</button>
+      </div>
+      <select
+        className="text-xs text-gray-400 mt-1 outline-none bg-transparent"
+        value={tripClass}
+        onChange={e => setTripClass(e.target.value)}
+      >
+        <option>Economy</option>
+        <option>Business</option>
+        <option>First</option>
+      </select>
+    </div>
+  )
 
   return (
     <div>
@@ -149,31 +236,25 @@ export default function FlightSearch() {
         </span>
       </div>
 
-      {/* One Way */}
-      {tripType === "One Way" && (
+      {/* One Way & Round Trip */}
+      {(tripType === "One Way" || tripType === "Round Trip") && (
         <div className="border rounded-xl overflow-hidden mb-3">
           <div className="grid grid-cols-2 sm:grid-cols-5 divide-x divide-gray-200">
             <div className="px-3 py-3">
-              <p className="text-xs text-gray-500 mb-1">From</p>
-              <input
-                className="text-sm font-bold text-gray-800 w-full outline-none"
-                placeholder="New Delhi"
-                value={fromOne}
-                onChange={e => setFromOne(e.target.value)}
-                onBlur={e => setFromOneCode(e.target.value.slice(0, 3).toUpperCase())}
+              <AirportInput
+                label="From"
+                value={from.name}
+                code={from.code}
+                onChange={(name, code) => setFrom({ name, code })}
               />
-              <p className="text-xs text-gray-400 mt-1 truncate">{fromOneCode}</p>
             </div>
             <div className="px-3 py-3">
-              <p className="text-xs text-gray-500 mb-1">To</p>
-              <input
-                className="text-sm font-bold text-gray-800 w-full outline-none"
-                placeholder="Mumbai"
-                value={toOne}
-                onChange={e => setToOne(e.target.value)}
-                onBlur={e => setToOneCode(e.target.value.slice(0, 3).toUpperCase())}
+              <AirportInput
+                label="To"
+                value={to.name}
+                code={to.code}
+                onChange={(name, code) => setTo({ name, code })}
               />
-              <p className="text-xs text-gray-400 mt-1 truncate">{toOneCode}</p>
             </div>
             <div className="hidden sm:block px-4 py-3">
               <p className="text-xs text-gray-500 mb-1">Departure</p>
@@ -186,24 +267,19 @@ export default function FlightSearch() {
             </div>
             <div className="hidden sm:block px-4 py-3">
               <p className="text-xs text-gray-500 mb-1">Return</p>
-              <p className="text-xs text-gray-400 mt-2">Tap to add return date</p>
+              {tripType === "Round Trip" ? (
+                <input
+                  type="date"
+                  className="text-sm font-bold text-gray-800 w-full outline-none"
+                  value={returnDate}
+                  onChange={e => setReturnDate(e.target.value)}
+                />
+              ) : (
+                <p className="text-xs text-gray-400 mt-2">Tap to add return date</p>
+              )}
             </div>
             <div className="hidden sm:block px-4 py-3">
-              <p className="text-xs text-gray-500 mb-1">Travellers & Class</p>
-              <div className="flex items-center gap-1">
-                <button onClick={() => setAdults(a => Math.max(1, a - 1))} className="text-gray-400 font-bold">−</button>
-                <span className="text-base font-bold text-gray-800 px-1">{adults}</span>
-                <button onClick={() => setAdults(a => Math.min(9, a + 1))} className="text-gray-400 font-bold">+</button>
-              </div>
-              <select
-                className="text-xs text-gray-400 mt-1 outline-none bg-transparent"
-                value={tripClass}
-                onChange={e => setTripClass(e.target.value)}
-              >
-                <option>Economy</option>
-                <option>Business</option>
-                <option>First</option>
-              </select>
+              <TravellersClass />
             </div>
           </div>
           <div className="grid grid-cols-2 divide-x divide-gray-200 border-t border-gray-200 sm:hidden">
@@ -218,99 +294,16 @@ export default function FlightSearch() {
             </div>
             <div className="px-3 py-3">
               <p className="text-xs text-gray-500 mb-1">Return</p>
-              <p className="text-xs text-gray-400 mt-2">Tap to add</p>
-            </div>
-          </div>
-          <div className="border-t border-gray-200 px-3 py-2.5 sm:hidden flex items-center justify-between">
-            <p className="text-xs text-gray-500">Travellers & Class</p>
-            <div className="flex items-center gap-2">
-              <p className="text-sm font-bold text-gray-800">{adults} Traveller{adults > 1 ? "s" : ""}</p>
-              <span className="text-xs text-gray-400">· {tripClass} ▾</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Round Trip */}
-      {tripType === "Round Trip" && (
-        <div className="border rounded-xl overflow-hidden mb-3">
-          <div className="grid grid-cols-2 sm:grid-cols-5 divide-x divide-gray-200">
-            <div className="px-3 py-3">
-              <p className="text-xs text-gray-500 mb-1">From</p>
-              <input
-                className="text-sm font-bold text-gray-800 w-full outline-none"
-                placeholder="New Delhi"
-                value={fromOne}
-                onChange={e => setFromOne(e.target.value)}
-                onBlur={e => setFromOneCode(e.target.value.slice(0, 3).toUpperCase())}
-              />
-              <p className="text-xs text-gray-400 mt-1 truncate">{fromOneCode}</p>
-            </div>
-            <div className="px-3 py-3">
-              <p className="text-xs text-gray-500 mb-1">To</p>
-              <input
-                className="text-sm font-bold text-gray-800 w-full outline-none"
-                placeholder="Mumbai"
-                value={toOne}
-                onChange={e => setToOne(e.target.value)}
-                onBlur={e => setToOneCode(e.target.value.slice(0, 3).toUpperCase())}
-              />
-              <p className="text-xs text-gray-400 mt-1 truncate">{toOneCode}</p>
-            </div>
-            <div className="hidden sm:block px-4 py-3">
-              <p className="text-xs text-gray-500 mb-1">Departure</p>
-              <input
-                type="date"
-                className="text-sm font-bold text-gray-800 w-full outline-none"
-                value={departure}
-                onChange={e => setDeparture(e.target.value)}
-              />
-            </div>
-            <div className="hidden sm:block px-4 py-3">
-              <p className="text-xs text-gray-500 mb-1">Return</p>
-              <input
-                type="date"
-                className="text-sm font-bold text-gray-800 w-full outline-none"
-                value={returnDate}
-                onChange={e => setReturnDate(e.target.value)}
-              />
-            </div>
-            <div className="hidden sm:block px-4 py-3">
-              <p className="text-xs text-gray-500 mb-1">Travellers & Class</p>
-              <div className="flex items-center gap-1">
-                <button onClick={() => setAdults(a => Math.max(1, a - 1))} className="text-gray-400 font-bold">−</button>
-                <span className="text-base font-bold text-gray-800 px-1">{adults}</span>
-                <button onClick={() => setAdults(a => Math.min(9, a + 1))} className="text-gray-400 font-bold">+</button>
-              </div>
-              <select
-                className="text-xs text-gray-400 mt-1 outline-none bg-transparent"
-                value={tripClass}
-                onChange={e => setTripClass(e.target.value)}
-              >
-                <option>Economy</option>
-                <option>Business</option>
-                <option>First</option>
-              </select>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 divide-x divide-gray-200 border-t border-gray-200 sm:hidden">
-            <div className="px-3 py-3">
-              <p className="text-xs text-gray-500 mb-1">Departure</p>
-              <input
-                type="date"
-                className="text-xs font-bold text-gray-800 w-full outline-none"
-                value={departure}
-                onChange={e => setDeparture(e.target.value)}
-              />
-            </div>
-            <div className="px-3 py-3">
-              <p className="text-xs text-gray-500 mb-1">Return</p>
-              <input
-                type="date"
-                className="text-xs font-bold text-gray-800 w-full outline-none"
-                value={returnDate}
-                onChange={e => setReturnDate(e.target.value)}
-              />
+              {tripType === "Round Trip" ? (
+                <input
+                  type="date"
+                  className="text-xs font-bold text-gray-800 w-full outline-none"
+                  value={returnDate}
+                  onChange={e => setReturnDate(e.target.value)}
+                />
+              ) : (
+                <p className="text-xs text-gray-400 mt-2">Tap to add</p>
+              )}
             </div>
           </div>
           <div className="border-t border-gray-200 px-3 py-2.5 sm:hidden flex items-center justify-between">
@@ -333,23 +326,25 @@ export default function FlightSearch() {
               <div key={index} className="border rounded-xl overflow-hidden">
                 <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-200">
                   <div className="px-3 py-3">
-                    <p className="text-xs text-gray-500 mb-1">From</p>
-                    <input
-                      className="text-sm font-bold text-gray-800 w-full outline-none"
-                      placeholder="Select City"
+                    <AirportInput
+                      label="From"
                       value={city.from}
-                      onChange={e => updateCity(index, "from", e.target.value)}
-                      onBlur={e => updateCity(index, "fromCode", e.target.value.slice(0, 3).toUpperCase())}
+                      code={city.fromCode}
+                      onChange={(name, code) => {
+                        updateCity(index, "from", name)
+                        updateCity(index, "fromCode", code)
+                      }}
                     />
                   </div>
                   <div className="px-3 py-3">
-                    <p className="text-xs text-gray-500 mb-1">To</p>
-                    <input
-                      className="text-sm font-bold text-gray-800 w-full outline-none"
-                      placeholder="Select City"
+                    <AirportInput
+                      label="To"
                       value={city.to}
-                      onChange={e => updateCity(index, "to", e.target.value)}
-                      onBlur={e => updateCity(index, "toCode", e.target.value.slice(0, 3).toUpperCase())}
+                      code={city.toCode}
+                      onChange={(name, code) => {
+                        updateCity(index, "to", name)
+                        updateCity(index, "toCode", code)
+                      }}
                     />
                   </div>
                   <div className="hidden sm:block px-4 py-3">
@@ -370,23 +365,7 @@ export default function FlightSearch() {
                   </div>
                   <div className="hidden sm:flex px-4 py-3 items-center justify-between">
                     {index === 0 ? (
-                      <div>
-                        <p className="text-xs text-gray-500 mb-1">Travellers & Class</p>
-                        <div className="flex items-center gap-1">
-                          <button onClick={() => setAdults(a => Math.max(1, a - 1))} className="text-gray-400 font-bold">−</button>
-                          <span className="text-base font-bold text-gray-800 px-1">{adults}</span>
-                          <button onClick={() => setAdults(a => Math.min(9, a + 1))} className="text-gray-400 font-bold">+</button>
-                        </div>
-                        <select
-                          className="text-xs text-gray-400 mt-1 outline-none bg-transparent"
-                          value={tripClass}
-                          onChange={e => setTripClass(e.target.value)}
-                        >
-                          <option>Economy</option>
-                          <option>Business</option>
-                          <option>First</option>
-                        </select>
-                      </div>
+                      <TravellersClass />
                     ) : isLast && cities.length < 5 ? (
                       <button onClick={addCity} className="text-blue-600 text-xs font-semibold">+ ADD ANOTHER CITY</button>
                     ) : <div />}

@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
 import SearchBox from "@/components/search/SearchBox"
-import TravelpayoutsWidget from "@/components/TravelpayoutsWidget"
 
 const services = ["Flights", "Hotels", "Holidays", "Activities", "Transfers", "Apartments"]
 
@@ -109,7 +108,6 @@ export default function HeroSection() {
 
   return (
     <div style={{ backgroundColor: "#1A56F0" }}>
-      {/* pb-36 on mobile gives enough room for search button above fixed bottom nav */}
       <div className="pt-4 px-4 pb-36 sm:pb-26">
 
         {/* Hero Text - desktop only */}
@@ -187,11 +185,7 @@ export default function HeroSection() {
             className="bg-white shadow-2xl px-4 sm:px-6 pt-10 pb-6 rounded-2xl relative z-10"
             style={{ boxShadow: "0 25px 60px rgba(0,0,0,0.3)" }}
           >
-            {activeTab === "Flights" ? (
-              <TravelpayoutsWidget />
-            ) : (
-              <SearchBox activeTab={activeTab} />
-            )}
+            <SearchBox activeTab={activeTab} />
           </div>
 
         </div>

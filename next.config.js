@@ -34,6 +34,7 @@ const ContentSecurityPolicy = `
     https://*.crisp.chat
     https://*.travelpayouts.com;
   img-src 'self' data: blob:
+    https://images.unsplash.com
     https://tpscr.com
     https://*.travelpayouts.com
     https://www.google-analytics.com
