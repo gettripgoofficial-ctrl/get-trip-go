@@ -6,6 +6,7 @@ export interface BlogPost {
   excerpt: string
   author: string
   publishedAt: string
+  createdAt?: string
   updatedAt?: string
   tags?: string[]
   category?: string
