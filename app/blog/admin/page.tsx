@@ -8,7 +8,8 @@ import { AdminAuthProvider } from "@/components/AdminAuthContext";
 import AdminLoginGate from "@/components/AdminLoginGate";
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
-function formatDate(iso: string) {
+function formatDate(iso: string | undefined) {
+  if (!iso) return ""
   return new Date(iso).toLocaleDateString("en-IN", {
     day: "numeric",
     month: "short",
