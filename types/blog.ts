@@ -8,6 +8,7 @@ export interface BlogPost {
   publishedAt: string
   updatedAt?: string
   tags?: string[]
+  category?: string
   coverImage?: string
   published: boolean
 }
