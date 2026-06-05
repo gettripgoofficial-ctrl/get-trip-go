@@ -9,7 +9,7 @@ const quickLinks = [
   { label: "Customized Itineraries", href: "/customized-itineraries" },
   { label: "Popular Destinations", href: "/popular-destinations" },
   { label: "Theme Holidays", href: "/theme-holidays" },
-  { label: "Travel Stories", href: "/stories" },
+  { label: "Travel Stories", href: "/blog" },
 ]
 
 const supportLinks = [

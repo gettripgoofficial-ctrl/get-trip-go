@@ -120,15 +120,14 @@ export default function CareersPage() {
     if (!email || !email.includes("@")) { setError(true); return; }
     setError(false);
     setSubmitted(true);
-    // TODO: POST email to your backend / CRM
     console.log("Career interest email:", email);
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#F8F9FF]">
 
       {/* ── Hero ── */}
-      <section className="bg-white px-6 py-24 text-center border-b border-gray-100">
+      <section className="bg-[#F8F9FF] px-6 py-24 text-center border-b border-gray-100">
         <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#2B3FDE] mb-5">
           Careers at Get Trip Go
         </p>
@@ -139,7 +138,7 @@ export default function CareersPage() {
           Great travel starts with great people. We're not actively hiring right now,
           but that's about to change.
         </p>
-        <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-5 py-2.5 text-sm text-gray-500">
+        <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 text-sm text-gray-500">
           <span className="w-2 h-2 rounded-full bg-yellow-400 shrink-0" />
           Hiring currently closed — openings coming soon
         </div>
@@ -160,7 +159,7 @@ export default function CareersPage() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {values.map((v) => (
-            <div key={v.title} className="border border-gray-100 rounded-2xl p-6 hover:border-[#2B3FDE]/30 transition-colors">
+            <div key={v.title} className="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#2B3FDE]/30 transition-colors">
               <div className="text-2xl mb-4">{v.icon}</div>
               <h3 className="text-sm font-semibold mb-1.5 text-gray-900">{v.title}</h3>
               <p className="text-xs text-gray-500 leading-relaxed">{v.desc}</p>
@@ -220,7 +219,7 @@ export default function CareersPage() {
       </section>
 
       {/* ── Email CTA ── */}
-      <section className="px-6 md:px-16 py-24">
+      <section className="bg-[#F8F9FF] px-6 md:px-16 py-24">
         <div className="max-w-xl mx-auto text-center">
           <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#2B3FDE] mb-4">
             Stay in the loop
@@ -245,7 +244,7 @@ export default function CareersPage() {
                   value={email}
                   onChange={(e) => { setEmail(e.target.value); setError(false); }}
                   placeholder="your@email.com"
-                  className={`flex-1 px-4 py-3 text-sm border rounded-xl outline-none focus:border-[#2B3FDE] focus:ring-2 focus:ring-[#2B3FDE]/10 transition-all bg-gray-50 ${
+                  className={`flex-1 px-4 py-3 text-sm border rounded-xl outline-none focus:border-[#2B3FDE] focus:ring-2 focus:ring-[#2B3FDE]/10 transition-all bg-white ${
                     error ? "border-red-400 bg-red-50" : "border-gray-200"
                   }`}
                 />

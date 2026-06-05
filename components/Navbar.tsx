@@ -1,6 +1,7 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
   const [currencies, setCurrencies] = useState<string[]>([])
@@ -9,7 +10,10 @@ export default function Navbar() {
   const [showCurrency, setShowCurrency] = useState(false)
   const [showLang, setShowLang] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [visible, setVisible] = useState(true)
+
+  const lastScrollY = useRef(0)
+  const pathname = usePathname()
 
   const languages = ["English", "Hindi", "Arabic", "French"]
   const langShort: Record<string, string> = {
@@ -27,31 +31,45 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener("scroll", handleScroll)
+    const handleScroll = () => {
+      const currentY = window.scrollY
+
+      if (currentY <= 0) {
+        // At the very top — always show
+        setVisible(true)
+      } else if (currentY > lastScrollY.current) {
+        // Scrolling down — hide
+        setVisible(false)
+        setShowMenu(false)
+        setShowCurrency(false)
+        setShowLang(false)
+      } else {
+        // Scrolling up — show
+        setVisible(true)
+      }
+
+      lastScrollY.current = currentY
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const textColor = "text-[#1A3A6B]"
+  const borderColor = "border-[#1A3A6B]/20"
+  const hoverBg = "hover:bg-[#1A3A6B]/10"
+
   return (
     <nav
-      className={`sticky top-0 z-50 px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 ${
-        scrolled ? "shadow-lg" : ""
+      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
       }`}
-      style={{ backgroundColor: "#1A56F0" }}
+      style={{ backgroundColor: "#F8F9FF" }}
     >
-      {/* Logo — clicks to Home */}
+      {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
-        <img
-          src="/logo-icon.png"
-          alt="Get Trip Go icon"
-          className="w-10 h-10 object-contain"
-        />
-        <img
-          src="/logo-text.png"
-          alt="Get Trip Go"
-          className="h-8 object-contain"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
+        <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
+        <img src="/logo-text.png" alt="Get Trip Go" className="h-8 object-contain" />
       </Link>
 
       {/* Desktop nav */}
@@ -59,26 +77,23 @@ export default function Navbar() {
         <button className="bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-red-600 transition-colors">
           Deals
         </button>
-        <Link
-          href="/blog"
-          className="text-white font-bold text-sm px-4 py-2 rounded-full border border-white/30 hover:bg-white/10 transition-colors"
-        >
+        <Link href="/blog" className={`${textColor} font-bold text-sm px-4 py-2 rounded-full border ${borderColor} ${hoverBg} transition-colors`}>
           Blog
         </Link>
-        <button className="text-white font-bold text-sm px-4 py-2 rounded-full border border-white/30 hover:bg-white/10 transition-colors">
+        <button className={`${textColor} font-bold text-sm px-4 py-2 rounded-full border ${borderColor} ${hoverBg} transition-colors`}>
           My Trip
         </button>
-        <button className="text-white font-bold text-sm px-4 py-2 rounded-full border border-white/30 hover:bg-white/10 transition-colors">
+        <button className={`${textColor} font-bold text-sm px-4 py-2 rounded-full border ${borderColor} ${hoverBg} transition-colors`}>
           Support
         </button>
 
-        <div className="w-px h-6 bg-white/30 mx-1" />
+        <div className="w-px h-6 mx-1 bg-[#1A3A6B]/20" />
 
         {/* Currency */}
         <div className="relative">
           <button
             onClick={() => { setShowCurrency(!showCurrency); setShowLang(false) }}
-            className="flex items-center gap-1 text-sm font-bold text-white border border-white/30 px-3 py-2 rounded-full hover:bg-white/10"
+            className={`flex items-center gap-1 text-sm font-bold ${textColor} border ${borderColor} px-3 py-2 rounded-full ${hoverBg} transition-colors`}
           >
             {selectedCurrency} ▾
           </button>
@@ -88,7 +103,9 @@ export default function Navbar() {
                 <button
                   key={c}
                   onClick={() => { setSelectedCurrency(c); setShowCurrency(false) }}
-                  className={`w-full text-left px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 ${selectedCurrency === c ? "text-blue-600 font-bold" : "text-gray-700"}`}
+                  className={`w-full text-left px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 ${
+                    selectedCurrency === c ? "text-blue-600 font-bold" : "text-gray-700"
+                  }`}
                 >
                   {c}
                 </button>
@@ -101,7 +118,7 @@ export default function Navbar() {
         <div className="relative">
           <button
             onClick={() => { setShowLang(!showLang); setShowCurrency(false) }}
-            className="flex items-center gap-1 text-sm font-bold text-white border border-white/30 px-3 py-2 rounded-full hover:bg-white/10"
+            className={`flex items-center gap-1 text-sm font-bold ${textColor} border ${borderColor} px-3 py-2 rounded-full ${hoverBg} transition-colors`}
           >
             {langShort[selectedLang]} ▾
           </button>
@@ -111,7 +128,9 @@ export default function Navbar() {
                 <button
                   key={lang}
                   onClick={() => { setSelectedLang(lang); setShowLang(false) }}
-                  className={`w-full text-left px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 ${selectedLang === lang ? "text-blue-600 font-bold" : "text-gray-700"}`}
+                  className={`w-full text-left px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 ${
+                    selectedLang === lang ? "text-blue-600 font-bold" : "text-gray-700"
+                  }`}
                 >
                   {lang}
                 </button>
@@ -128,7 +147,7 @@ export default function Navbar() {
         </button>
         <button
           onClick={() => setShowMenu(!showMenu)}
-          className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+          className={`${textColor} p-2 rounded-lg ${hoverBg} transition-colors`}
           aria-label="Menu"
         >
           {showMenu ? (
@@ -148,38 +167,41 @@ export default function Navbar() {
 
       {/* Mobile menu dropdown */}
       {showMenu && (
-        <div className="absolute top-full left-0 right-0 bg-[#1A56F0] border-t border-white/20 shadow-xl z-50 md:hidden">
+        <div
+          className="absolute top-full left-0 right-0 border-t border-[#1A3A6B]/10 shadow-lg z-50 md:hidden"
+          style={{ backgroundColor: "#F8F9FF" }}
+        >
           <div className="px-4 py-4 flex flex-col gap-2">
             <Link
               href="/blog"
               onClick={() => setShowMenu(false)}
-              className="text-white font-bold text-sm px-4 py-3 rounded-xl border border-white/20 hover:bg-white/10 text-left block"
+              className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/5 text-left block transition-colors"
             >
               Blog
             </Link>
-            <button className="text-white font-bold text-sm px-4 py-3 rounded-xl border border-white/20 hover:bg-white/10 text-left">
+            <button className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/5 text-left transition-colors">
               My Trip
             </button>
-            <button className="text-white font-bold text-sm px-4 py-3 rounded-xl border border-white/20 hover:bg-white/10 text-left">
+            <button className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/5 text-left transition-colors">
               Support
             </button>
-            <div className="border-t border-white/20 pt-3 flex gap-2">
+            <div className="border-t border-[#1A3A6B]/10 pt-3 flex gap-2">
               <select
                 value={selectedCurrency}
                 onChange={(e) => setSelectedCurrency(e.target.value)}
-                className="flex-1 bg-white/10 text-white text-sm font-bold px-3 py-2 rounded-xl border border-white/20"
+                className="flex-1 text-sm font-bold px-3 py-2 rounded-xl border bg-white text-[#1A3A6B] border-[#1A3A6B]/20"
               >
                 {currencies.map(c => (
-                  <option key={c} value={c} className="text-gray-800">{c}</option>
+                  <option key={c} value={c}>{c}</option>
                 ))}
               </select>
               <select
                 value={selectedLang}
                 onChange={(e) => setSelectedLang(e.target.value)}
-                className="flex-1 bg-white/10 text-white text-sm font-bold px-3 py-2 rounded-xl border border-white/20"
+                className="flex-1 text-sm font-bold px-3 py-2 rounded-xl border bg-white text-[#1A3A6B] border-[#1A3A6B]/20"
               >
                 {languages.map(l => (
-                  <option key={l} value={l} className="text-gray-800">{l}</option>
+                  <option key={l} value={l}>{l}</option>
                 ))}
               </select>
             </div>

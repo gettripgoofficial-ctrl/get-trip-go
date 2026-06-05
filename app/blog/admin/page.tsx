@@ -93,7 +93,7 @@ function BlogRow({
         </div>
         <h3 className="text-sm font-bold text-gray-900 truncate">{post.title}</h3>
         <p className="text-xs text-gray-400 mt-0.5">
-          By {post.author} · {formatDate(post.createdAt ?? post.publishedAt)}
+          By {post.author} · {formatDate(post.createdAt)}
         </p>
       </div>
 

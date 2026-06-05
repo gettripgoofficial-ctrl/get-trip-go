@@ -107,14 +107,14 @@ export default function HeroSection() {
   const deal = deals[currentDeal]
 
   return (
-    <div style={{ backgroundColor: "#1A56F0" }}>
-      <div className="pt-4 px-4 pb-36 sm:pb-26">
+    <div style={{ backgroundColor: "#F8F9FF", minHeight: "680px" }}>
+      <div className="pt-24 sm:pt-28 px-4 pb-36 sm:pb-32">
 
         {/* Hero Text - desktop only */}
-        <h2 className="hidden sm:block text-white text-4xl font-bold text-center mb-2">
+        <h2 className="hidden sm:block text-[#0a1628] text-4xl font-bold text-center mb-2">
           Travel More. Spend Less. Live More.
         </h2>
-        <p className="hidden sm:block text-blue-200 text-center text-base mb-1">
+        <p className="hidden sm:block text-gray-400 text-center text-base mb-1">
           Compare. Book. Travel. It&apos;s that simple.
         </p>
         <p className="hidden sm:block text-center text-sm font-semibold mb-10" style={{ color: "#F5A623" }}>
@@ -130,7 +130,7 @@ export default function HeroSection() {
               opacity: animating ? 0 : 1,
               transform: animating ? "translateY(6px)" : "translateY(0)",
               transition: "opacity 0.3s ease, transform 0.3s ease",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+              boxShadow: "0 8px 32px rgba(26,86,240,0.15)",
             }}
           >
             <div className="flex items-center gap-2.5 px-3 py-2">
@@ -169,10 +169,10 @@ export default function HeroSection() {
               <button
                 key={service}
                 onClick={() => setActiveTab(service)}
-                className={`flex-shrink-0 flex-1 min-w-[80px] py-2.5 sm:py-3 text-sm font-semibold rounded-2xl transition-all bg-white shadow-md ${
+                className={`flex-shrink-0 flex-1 min-w-[80px] py-2.5 sm:py-3 text-sm font-semibold rounded-2xl transition-all shadow-sm ${
                   activeTab === service
-                    ? "text-blue-600 border-2 border-blue-500"
-                    : "text-gray-600 border-2 border-transparent hover:border-blue-200"
+                    ? "bg-[#1A56F0] text-white border-2 border-[#1A56F0]"
+                    : "bg-white text-gray-600 border-2 border-gray-200 hover:border-[#1A56F0]/40 hover:text-[#1A56F0]"
                 }`}
               >
                 {service}
@@ -182,8 +182,8 @@ export default function HeroSection() {
 
           {/* Search Card */}
           <div
-            className="bg-white shadow-2xl px-4 sm:px-6 pt-10 pb-6 rounded-2xl relative z-10"
-            style={{ boxShadow: "0 25px 60px rgba(0,0,0,0.3)" }}
+            className="bg-white px-4 sm:px-6 pt-10 pb-6 rounded-2xl relative z-10"
+            style={{ boxShadow: "0 8px 40px rgba(26,86,240,0.12)" }}
           >
             <SearchBox activeTab={activeTab} />
           </div>
