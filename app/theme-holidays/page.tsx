@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, Suspense } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { themePackages, themes } from "@/data/themePackages"
@@ -44,7 +44,7 @@ const durationRanges = [
 const INITIAL_VISIBLE = 6
 const LOAD_MORE_COUNT = 6
 
-export default function ThemeHolidaysPage() {
+function ThemeHolidaysPageInner() {
   const searchParams = useSearchParams()
   const initialTheme = searchParams.get("theme")
 
@@ -388,4 +388,8 @@ export default function ThemeHolidaysPage() {
       <BottomNav />
     </div>
   )
+}
+
+export default function ThemeHolidaysPage() {
+  return <Suspense><ThemeHolidaysPageInner /></Suspense>
 }
