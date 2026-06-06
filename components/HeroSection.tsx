@@ -10,7 +10,7 @@ import {
   Car,
   Star,
 } from "lucide-react"
-import SearchBox from "./search/SearchBox"
+import SearchBox, { ServiceTab } from "./search/SearchBox"
 
 interface Tab {
   name: string
@@ -59,7 +59,7 @@ const TABS: Tab[] = [
 ]
 
 export default function HeroSection() {
-  const [activeTab, setActiveTab] = useState("Flights")
+  const [activeTab, setActiveTab] = useState<ServiceTab>("Flights")
 
   function handleTabKeyDown(e: React.KeyboardEvent, index: number) {
     if (e.key === "ArrowRight") setActiveTab(TABS[(index + 1) % TABS.length].name)
