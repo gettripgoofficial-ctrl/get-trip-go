@@ -1,78 +1,92 @@
 "use client"
-import { useState } from "react"
 
-const transferTypes = ["Airport Transfer", "Hotel Transfer", "Point to Point", "Hourly Hire"]
+import { useState } from "react"
+import { MapPin, Calendar, Clock, Users, ArrowLeftRight, ChevronDown } from "lucide-react"
+import { cn, Field, FieldRow, SearchButton } from "./SearchBox"
+
+const TRANSFER_TYPES = ["Airport Transfer", "Hotel Transfer", "Point to Point", "Hourly Hire"]
 
 export default function TransferSearch() {
-  const [pickup, setPickup] = useState("")
-  const [drop, setDrop] = useState("")
-  const [date, setDate] = useState("")
-  const [time, setTime] = useState("")
-  const [passengers, setPassengers] = useState(2)
   const [transferType, setTransferType] = useState("Airport Transfer")
+  const [pickup,       setPickup]       = useState("Indira Gandhi Airport (DEL)")
+  const [drop,         setDrop]         = useState("Hotel or destination")
+  const [date,         setDate]         = useState("22 Jun, Sun")
+  const [time,         setTime]         = useState("10:00 AM")
+  const [passengers,   setPassengers]   = useState(2)
+
+  function swap() {
+    setPickup(p => { setDrop(p); return drop })
+  }
 
   return (
     <div>
-      {/* Transfer Type */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {transferTypes.map(type => (
-          <button key={type}
+      {/* Transfer type pills */}
+      <div className="flex gap-2 mb-4 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+        {TRANSFER_TYPES.map(type => (
+          <button
+            key={type}
             onClick={() => setTransferType(type)}
-            className={`px-3 py-1.5 rounded-full border text-xs font-semibold transition-all ${
-              transferType === type ? "bg-blue-600 text-white border-blue-600" : "border-gray-200 text-gray-600 hover:border-blue-300"
-            }`}>
+            aria-pressed={transferType === type}
+            className={cn(
+              "text-[12px] font-semibold px-3.5 py-1.5 rounded-full border-[1.5px] transition-all whitespace-nowrap",
+              transferType === type
+                ? "bg-blue-50 text-[#1A56F0] border-blue-300"
+                : "bg-white text-slate-500 border-slate-200 hover:border-blue-200 hover:text-[#1A56F0]"
+            )}
+          >
             {type}
           </button>
         ))}
       </div>
 
-      <div className="border rounded-xl overflow-hidden mb-4">
-        {/* Pickup */}
-        <div className="px-4 py-3 border-b border-gray-200">
-          <p className="text-xs text-gray-500 mb-1">📍 Pickup Location</p>
-          <input className="text-sm font-bold text-gray-800 w-full outline-none"
-            placeholder="Airport, hotel or address"
-            value={pickup} onChange={e => setPickup(e.target.value)} />
-        </div>
+      {/* Fields row */}
+      <FieldRow>
+        <Field
+          icon={<MapPin size={16} />}
+          label="Pickup"
+          value={pickup}
+          className="flex-1"
+        />
 
-        {/* Drop */}
-        <div className="px-4 py-3 border-b border-gray-200">
-          <p className="text-xs text-gray-500 mb-1">🏁 Drop Location</p>
-          <input className="text-sm font-bold text-gray-800 w-full outline-none"
-            placeholder="Airport, hotel or address"
-            value={drop} onChange={e => setDrop(e.target.value)} />
-        </div>
-
-        {/* Date + Time + Passengers */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 divide-x divide-gray-200">
-          <div className="px-4 py-3">
-            <p className="text-xs text-gray-500 mb-1">📅 Date</p>
-            <input type="date" className="text-sm font-bold text-gray-800 w-full outline-none"
-              value={date} onChange={e => setDate(e.target.value)} />
-          </div>
-          <div className="px-4 py-3">
-            <p className="text-xs text-gray-500 mb-1">🕐 Time</p>
-            <input type="time" className="text-sm font-bold text-gray-800 w-full outline-none"
-              value={time} onChange={e => setTime(e.target.value)} />
-          </div>
-          <div className="px-4 py-3 col-span-2 sm:col-span-1 border-t sm:border-t-0 border-gray-200">
-            <p className="text-xs text-gray-500 mb-1">👥 Passengers</p>
-            <div className="flex items-center gap-3">
-              <button onClick={() => setPassengers(Math.max(1, passengers - 1))}
-                className="w-6 h-6 rounded-full border border-gray-300 font-bold flex items-center justify-center hover:bg-gray-50 text-sm">−</button>
-              <span className="text-sm font-bold text-gray-800">{passengers}</span>
-              <button onClick={() => setPassengers(passengers + 1)}
-                className="w-6 h-6 rounded-full border border-gray-300 font-bold flex items-center justify-center hover:bg-gray-50 text-sm">+</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex justify-center">
-        <button className="bg-blue-600 text-white text-base sm:text-lg font-bold px-16 sm:px-24 py-3 rounded-full hover:bg-blue-700 transition-all shadow-lg w-full sm:w-auto">
-          SEARCH
+        {/* Swap button */}
+        <button
+          onClick={swap}
+          aria-label="Swap pickup and drop"
+          className="flex-shrink-0 -mx-3.5 z-10 w-7 h-7 rounded-full bg-blue-50 border-2 border-white flex items-center justify-center hover:bg-blue-100 transition-all shadow-sm"
+        >
+          <ArrowLeftRight size={13} className="text-[#1A56F0]" />
         </button>
-      </div>
+
+        <Field
+          icon={<MapPin size={16} />}
+          label="Drop-off"
+          value={drop}
+          className="flex-1"
+        />
+        <Field
+          icon={<Calendar size={16} />}
+          label="Date"
+          value={date}
+          className="flex-1"
+        />
+        <Field
+          icon={<Clock size={16} />}
+          label="Time"
+          value={time}
+          className="flex-none"
+        />
+        <Field
+          icon={<Users size={16} />}
+          label="Passengers"
+          value={
+            <span className="flex items-center gap-1">
+              {passengers} Pax <ChevronDown size={12} className="text-slate-400" />
+            </span>
+          }
+          className="flex-none"
+        />
+        <SearchButton label="Search Transfers" />
+      </FieldRow>
     </div>
   )
 }

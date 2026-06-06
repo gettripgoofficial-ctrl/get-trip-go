@@ -1,8 +1,8 @@
 import HeroSection from "@/components/HeroSection"
 import SecondaryServices from "@/components/SecondaryServices"
 import SpecialOffers from "@/components/SpecialOffers"
-import GroupDepartures from "@/components/GroupDepartures"
 import PopularDestinations from "@/components/PopularDestinations"
+import GroupDepartures from "@/components/GroupDepartures"
 import CustomPackages from "@/components/CustomPackages"
 import ThemeHolidays from "@/components/ThemeHolidays"
 import TrustedPartners from "@/components/TrustedPartners"
@@ -15,8 +15,8 @@ export default function Home() {
       <HeroSection />
       <SecondaryServices />
       <SpecialOffers />
-      <GroupDepartures />
       <PopularDestinations />
+      <GroupDepartures />
       <CustomPackages />
       <ThemeHolidays />
       <TrustedPartners />

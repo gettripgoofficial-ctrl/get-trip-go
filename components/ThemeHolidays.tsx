@@ -1,15 +1,17 @@
 "use client"
 import { useRef } from "react"
+import Link from "next/link"
 
 const themes = [
   {
     id: 1,
     name: "Pilgrimage Tours",
-    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=90",
+    image: "/image/pilgrimage.jpg",
     color: "#7c3aed",
     tagBg: "#f5f3ff",
     tagBorder: "#c4b5fd",
-    tags: ["Varanasi", "South India", "Char Dham"],
+    tags: ["Varanasi", "Tirupathi ", "Mathura", "Char Dham"],
+    href: "/theme-holidays/Spiritual",
   },
   {
     id: 2,
@@ -18,16 +20,18 @@ const themes = [
     color: "#be185d",
     tagBg: "#fdf2f8",
     tagBorder: "#fbcfe8",
-    tags: ["Maldives", "Bali", "Andaman", "Goa"],
+    tags: ["Maldives", "Paris", "Switzerland", "Bali", "Andaman"],
+    href: "/theme-holidays/Honeymoon",
   },
   {
     id: 3,
-    name: "Group Tours",
-    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=90",
-    color: "#0369a1",
-    tagBg: "#f0f9ff",
-    tagBorder: "#bae6fd",
-    tags: ["Europe", "Australia", "Sri Lanka"],
+    name: "Wildlife & Safari",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=90",
+    color: "#166534",
+    tagBg: "#f0fdf4",
+    tagBorder: "#bbf7d0",
+    tags: ["Maasai Mara", "Jim Corbett", "Ranthambore"],
+    href: "/theme-holidays/Wildlife %26 Safari",
   },
   {
     id: 4,
@@ -37,6 +41,7 @@ const themes = [
     tagBg: "#fffbeb",
     tagBorder: "#fde68a",
     tags: ["Beach", "Culture", "Hills"],
+    href: "/theme-holidays/Luxury",
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ const themes = [
     tagBg: "#fffbeb",
     tagBorder: "#fde68a",
     tags: ["Himalayas", "Ladakh", "Spiti"],
+    href: "/theme-holidays/Adventure",
   },
   {
     id: 6,
@@ -55,15 +61,17 @@ const themes = [
     tagBg: "#f0f9ff",
     tagBorder: "#bae6fd",
     tags: ["Goa", "Kerala", "Andaman"],
+    href: "/theme-holidays/Beach",
   },
   {
     id: 7,
-    name: "Wildlife & Safari",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=90",
-    color: "#166534",
-    tagBg: "#f0fdf4",
-    tagBorder: "#bbf7d0",
-    tags: ["Jim Corbett", "Ranthambore"],
+    name: "Family Holidays",
+    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=90",
+    color: "#0369a1",
+    tagBg: "#f0f9ff",
+    tagBorder: "#bae6fd",
+    tags: ["Europe", "Australia", "Sri Lanka"],
+    href: "/theme-holidays/Family",
   },
   {
     id: 8,
@@ -73,6 +81,7 @@ const themes = [
     tagBg: "#f0fdf4",
     tagBorder: "#bbf7d0",
     tags: ["Shimla", "Manali", "Ooty"],
+    href: "/theme-holidays/Hill Stations",
   },
 ]
 
@@ -81,7 +90,8 @@ export default function ThemeHolidays() {
 
   const scroll = (dir: "left" | "right") => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir === "right" ? 350 : -350, behavior: "smooth" })
+      // 3 cards visible: each card ~(70% area ÷ 3) — scroll by 3 card widths
+      scrollRef.current.scrollBy({ left: dir === "right" ? 600 : -600, behavior: "smooth" })
     }
   }
 
@@ -89,11 +99,11 @@ export default function ThemeHolidays() {
     <div className="max-w-7xl mx-auto px-4 py-10">
       <div className="flex rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white min-h-[340px]">
 
-        {/* LEFT PANEL */}
+        {/* LEFT PANEL — 40% width */}
         <div
           className="flex-shrink-0 relative overflow-hidden border-r border-amber-100"
           style={{
-            width: "390px",
+            width: "40%",
             background: "linear-gradient(145deg, #fff7ed 0%, #fef3c7 50%, #fff7ed 100%)",
             display: "flex",
             flexDirection: "column",
@@ -106,7 +116,7 @@ export default function ThemeHolidays() {
           <svg
             style={{
               position: "absolute",
-              left: "-30px",
+              left: "-40px",
               top: "50%",
               transform: "translateY(-50%)",
               width: "200px",
@@ -143,7 +153,6 @@ export default function ThemeHolidays() {
             </g>
           </svg>
 
-          {/* ✅ CHANGE 1: "Curated for you" — centered */}
           <p style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
@@ -154,18 +163,15 @@ export default function ThemeHolidays() {
             Curated for you
           </p>
 
-          {/* ✅ CHANGE 2: Heading — centered, single line, smaller font to fit */}
           <h2 style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
             fontSize: "22px", fontWeight: 800,
             color: "#78350f", lineHeight: 1.2, marginBottom: "8px",
-            whiteSpace: "nowrap",
           }}>
             Explore Holidays by Theme
           </h2>
 
-          {/* ✅ CHANGE 3: New tagline */}
           <p style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
@@ -174,6 +180,19 @@ export default function ThemeHolidays() {
           }}>
             Your dream trip, just a theme away
           </p>
+
+          <Link
+            href="/theme-holidays"
+            style={{
+              position: "relative", zIndex: 10,
+              fontSize: "11px", fontWeight: 700,
+              color: "#b45309", textDecoration: "underline",
+              marginBottom: "16px",
+              letterSpacing: "0.5px",
+            }}
+          >
+            View All Themes ↗
+          </Link>
 
           <div style={{
             position: "relative", zIndex: 10,
@@ -195,7 +214,7 @@ export default function ThemeHolidays() {
           </div>
         </div>
 
-        {/* RIGHT SCROLLABLE CARDS */}
+        {/* RIGHT SCROLLABLE CARDS — 70% width, 3 cards visible */}
         <div className="flex-1 overflow-hidden px-4 py-5">
           <div
             ref={scrollRef}
@@ -203,15 +222,17 @@ export default function ThemeHolidays() {
             style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}
           >
             {themes.map(theme => (
-              <div
+              <Link
                 key={theme.id}
-                className="flex-shrink-0 w-[155px] rounded-2xl overflow-hidden border border-gray-100 bg-white cursor-pointer hover:-translate-y-1 transition-transform duration-200"
-                style={{ scrollSnapAlign: "start" }}
+                href={theme.href}
+                // 3 cards: width = (100% ÷ 3) minus gaps
+                className="flex-shrink-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 transition-transform duration-200 block"
+                style={{ scrollSnapAlign: "start", width: "calc(33.333% - 8px)" }}
               >
                 <img
                   src={theme.image}
                   alt={theme.name}
-                  className="w-full h-[140px] object-cover"
+                  className="w-full h-[170px] object-cover"
                 />
                 <div className="p-2.5">
                   <h4 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h4>
@@ -226,14 +247,14 @@ export default function ThemeHolidays() {
                       </span>
                     ))}
                   </div>
-                  <button
+                  <span
                     className="text-[11px] font-bold uppercase tracking-wide"
                     style={{ color: theme.color }}
                   >
                     View More →
-                  </button>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

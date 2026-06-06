@@ -4,7 +4,7 @@ export default function TrustedPartners() {
   const partners = [
     {
       name: "Expedia",
-      link: "https://www.expedia.com",
+      link: "https://expedia.com/affiliates/expedia-home.w6qCuSl",
       logoBg: "#FFCC00",
       tagline: "Flights, hotels & packages",
       logo: (
@@ -16,7 +16,7 @@ export default function TrustedPartners() {
     },
     {
       name: "Viator",
-      link: "https://www.viator.com",
+      link: "https://www.viator.com/?pid=P00257641&mcid=42383&medium=link&campaign=gettripgo",
       logoBg: "#37B249",
       tagline: "Tours & skip-the-line tickets",
       logo: (
@@ -25,7 +25,7 @@ export default function TrustedPartners() {
     },
     {
       name: "GetYourGuide",
-      link: "https://www.getyourguide.com",
+      link: "https://www.getyourguide.com?partner_id=9X14REW&cmp=share_to_earn",
       logoBg: "#FF5533",
       tagline: "Local experiences & guided tours",
       logo: (

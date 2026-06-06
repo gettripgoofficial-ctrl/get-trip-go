@@ -1,195 +1,180 @@
 "use client"
-import { useState, useEffect } from "react"
-import SearchBox from "@/components/search/SearchBox"
 
-const services = ["Flights", "Hotels", "Holidays", "Activities", "Transfers", "Apartments"]
+import { useState } from "react"
+import { motion } from "framer-motion"
+import {
+  Plane,
+  Hotel,
+  Palmtree,
+  Ticket,
+  Car,
+  Star,
+} from "lucide-react"
+import SearchBox from "./search/SearchBox"
 
-const deals = [
+interface Tab {
+  name: string
+  icon: React.ReactNode
+  activeColor: string   // bg color when active
+  iconBg: string        // icon circle bg when inactive
+  iconColor: string     // icon color when inactive
+}
+
+const TABS: Tab[] = [
   {
-    id: 1,
-    bg: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    tag: "NEW USER OFFER",
-    tagColor: "#e9d5ff",
-    title: "Flat ₹5,000 Off",
-    subtitle: "on your first booking",
-    code: "FIRST5000",
-    titleColor: "#fff",
-    subtitleColor: "rgba(255,255,255,0.85)",
-    ctaBg: "#FFCC00",
-    ctaColor: "#1a1a1a",
-    cta: "Claim →",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-        <path d="M20 12V22H4V12" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M22 7H2v5h20V7z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 22V7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    name: "Flights",
+    icon: <Plane size={18} />,
+    activeColor: "#1A56F0",
+    iconBg: "#EEF3FF",
+    iconColor: "#1A56F0",
   },
   {
-    id: 2,
-    bg: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    tag: "FLIGHTS · HOT DEAL",
-    tagColor: "#fce7f3",
-    title: "Mumbai → Dubai",
-    subtitle: "from ₹12,999 only",
-    code: "DUBFLY",
-    titleColor: "#fff",
-    subtitleColor: "rgba(255,255,255,0.85)",
-    ctaBg: "#fff",
-    ctaColor: "#f5576c",
-    cta: "Book →",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-        <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#fff"/>
-      </svg>
-    ),
+    name: "Hotels",
+    icon: <Hotel size={18} />,
+    activeColor: "#1A56F0",
+    iconBg: "#EDFAF3",
+    iconColor: "#16A34A",
   },
   {
-    id: 3,
-    bg: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    tag: "BANGKOK SPECIAL",
-    tagColor: "#e0f7ff",
-    title: "Bangkok Getaway",
-    subtitle: "starting ₹8,999 per person",
-    code: "BKKFLY",
-    titleColor: "#fff",
-    subtitleColor: "rgba(255,255,255,0.85)",
-    ctaBg: "#fff",
-    ctaColor: "#0891b2",
-    cta: "Explore →",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#fff"/>
-      </svg>
-    ),
+    name: "Holidays",
+    icon: <Palmtree size={18} />,
+    activeColor: "#1A56F0",
+    iconBg: "#FFF7ED",
+    iconColor: "#EA8C1E",
   },
   {
-    id: 4,
-    bg: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-    tag: "⚡ EUROPE GROUP",
-    tagColor: "#d1fae5",
-    title: "Flat ₹10,000 Off",
-    subtitle: "Europe Group Departure",
-    code: "EURGRP10K",
-    titleColor: "#fff",
-    subtitleColor: "rgba(255,255,255,0.85)",
-    ctaBg: "#fff",
-    ctaColor: "#059669",
-    cta: "View Tours →",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="2"/>
-        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#fff" strokeWidth="2"/>
-      </svg>
-    ),
+    name: "Activities",
+    icon: <Ticket size={18} />,
+    activeColor: "#1A56F0",
+    iconBg: "#F3EEFF",
+    iconColor: "#7C3AED",
+  },
+  {
+    name: "Transfers",
+    icon: <Car size={18} />,
+    activeColor: "#1A56F0",
+    iconBg: "#FFFBEB",
+    iconColor: "#D97706",
   },
 ]
 
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("Flights")
-  const [currentDeal, setCurrentDeal] = useState(0)
-  const [animating, setAnimating] = useState(false)
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setAnimating(true)
-      setTimeout(() => {
-        setCurrentDeal(prev => (prev + 1) % deals.length)
-        setAnimating(false)
-      }, 300)
-    }, 2000)
-    return () => clearInterval(timer)
-  }, [])
-
-  const deal = deals[currentDeal]
+  function handleTabKeyDown(e: React.KeyboardEvent, index: number) {
+    if (e.key === "ArrowRight") setActiveTab(TABS[(index + 1) % TABS.length].name)
+    if (e.key === "ArrowLeft")  setActiveTab(TABS[(index - 1 + TABS.length) % TABS.length].name)
+  }
 
   return (
-    <div style={{ backgroundColor: "#F8F9FF", minHeight: "680px" }}>
-      <div className="pt-24 sm:pt-28 px-4 pb-36 sm:pb-32">
+    <section
+      className="w-full bg-[#F0F4FF] pt-24 sm:pt-28 pb-16 px-4"
+      aria-label="Travel search"
+    >
+      <div className="max-w-5xl mx-auto flex flex-col items-center gap-8">
 
-        {/* Hero Text - desktop only */}
-        <h2 className="hidden sm:block text-[#0a1628] text-4xl font-bold text-center mb-2">
-          Travel More. Spend Less. Live More.
-        </h2>
-        <p className="hidden sm:block text-gray-400 text-center text-base mb-1">
-          Compare. Book. Travel. It&apos;s that simple.
-        </p>
-        <p className="hidden sm:block text-center text-sm font-semibold mb-10" style={{ color: "#F5A623" }}>
-          ⭐ Trusted by Millions.
-        </p>
-
-        {/* Mobile Deal Banner */}
-        <div className="sm:hidden mb-4">
-          <div
-            className="rounded-2xl overflow-hidden"
-            style={{
-              background: deal.bg,
-              opacity: animating ? 0 : 1,
-              transform: animating ? "translateY(6px)" : "translateY(0)",
-              transition: "opacity 0.3s ease, transform 0.3s ease",
-              boxShadow: "0 8px 32px rgba(26,86,240,0.15)",
-            }}
+        {/* Hero text */}
+        <div className="flex flex-col items-center gap-3 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-1.5 text-sm font-medium text-slate-600 shadow-sm"
           >
-            <div className="flex items-center gap-2.5 px-3 py-2">
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(255,255,255,0.2)" }}
-              >
-                <div style={{ transform: "scale(0.7)", transformOrigin: "center" }}>{deal.icon}</div>
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-[8px] font-extrabold uppercase tracking-widest leading-none mb-0.5" style={{ color: deal.tagColor }}>
-                  {deal.tag}
-                </p>
-                <p className="text-sm font-extrabold leading-tight" style={{ color: deal.titleColor }}>
-                  {deal.title}
-                </p>
-                <p className="text-[10px] leading-tight" style={{ color: deal.subtitleColor }}>
-                  {deal.subtitle} &nbsp;·&nbsp; <span className="font-bold">{deal.code}</span>
-                </p>
-              </div>
-              <button
-                className="text-[11px] font-extrabold px-2.5 py-1.5 rounded-lg flex-shrink-0 shadow-md"
-                style={{ background: deal.ctaBg, color: deal.ctaColor }}
-              >
-                {deal.cta}
-              </button>
-            </div>
-          </div>
+            <Star size={13} className="text-[#F5A623] fill-[#F5A623]" aria-hidden="true" />
+            Trusted by Thousands of Travelers
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="text-[#0A1628] text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight max-w-2xl"
+          >
+            Discover The World{" "}
+            <span className="text-[#1A56F0]">With Confidence</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.15 }}
+            className="text-slate-500 text-base sm:text-lg max-w-xl leading-relaxed"
+          >
+            Compare flights, hotels, holidays, activities and transfers in one place.
+          </motion.p>
         </div>
 
-        <div className="max-w-7xl mx-auto">
-
-          {/* Service Tabs */}
-          <div className="flex gap-2 sm:gap-3 relative z-20 mb-[-22px] overflow-x-auto scrollbar-hide pb-1">
-            {services.map(service => (
-              <button
-                key={service}
-                onClick={() => setActiveTab(service)}
-                className={`flex-shrink-0 flex-1 min-w-[80px] py-2.5 sm:py-3 text-sm font-semibold rounded-2xl transition-all shadow-sm ${
-                  activeTab === service
-                    ? "bg-[#1A56F0] text-white border-2 border-[#1A56F0]"
-                    : "bg-white text-gray-600 border-2 border-gray-200 hover:border-[#1A56F0]/40 hover:text-[#1A56F0]"
-                }`}
-              >
-                {service}
-              </button>
-            ))}
+        {/* Tabs + Search card */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.22 }}
+          className="w-full"
+        >
+          {/* Service tabs */}
+          <div
+            role="tablist"
+            aria-label="Travel services"
+            className="flex gap-2 sm:gap-3 mb-4 overflow-x-auto pb-1"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {TABS.map(({ name, icon, activeColor, iconBg, iconColor }, i) => {
+              const isActive = activeTab === name
+              return (
+                <button
+                  key={name}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`tabpanel-${name}`}
+                  tabIndex={isActive ? 0 : -1}
+                  onKeyDown={e => handleTabKeyDown(e, i)}
+                  onClick={() => setActiveTab(name)}
+                  style={
+                    isActive
+                      ? { backgroundColor: activeColor, color: "#fff" }
+                      : { backgroundColor: "#fff", color: "#0A1628" }
+                  }
+                  className={[
+                    "flex items-center gap-2.5 flex-shrink-0 pl-2 pr-4 py-2 rounded-2xl",
+                    "text-[13px] font-bold tracking-[0.01em] transition-all duration-200",
+                    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1A56F0]",
+                    "border",
+                    isActive
+                      ? "border-transparent shadow-md shadow-blue-500/20"
+                      : "border-slate-200 hover:border-blue-200 hover:shadow-sm",
+                  ].join(" ")}
+                >
+                  {/* Icon circle */}
+                  <span
+                    aria-hidden="true"
+                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={
+                      isActive
+                        ? { backgroundColor: "rgba(255,255,255,0.2)", color: "#fff" }
+                        : { backgroundColor: iconBg, color: iconColor }
+                    }
+                  >
+                    {icon}
+                  </span>
+                  {name}
+                </button>
+              )
+            })}
           </div>
 
-          {/* Search Card */}
+          {/* Search card */}
           <div
-            className="bg-white px-4 sm:px-6 pt-10 pb-6 rounded-2xl relative z-10"
-            style={{ boxShadow: "0 8px 40px rgba(26,86,240,0.12)" }}
+            id={`tabpanel-${activeTab}`}
+            role="tabpanel"
+            aria-label={`${activeTab} search`}
+            className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-[0_8px_32px_rgba(26,86,240,0.08)]"
           >
             <SearchBox activeTab={activeTab} />
           </div>
+        </motion.div>
 
-        </div>
       </div>
-    </div>
+    </section>
   )
 }

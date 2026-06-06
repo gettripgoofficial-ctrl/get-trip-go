@@ -39,7 +39,7 @@ const destinations = [
     image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=90",
   },
   {
-    name: "Rajasthan",
+    name: "Incrediable India",
     country: "India",
     price: "₹15,999",
     image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=90",

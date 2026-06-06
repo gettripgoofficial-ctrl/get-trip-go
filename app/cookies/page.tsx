@@ -156,7 +156,7 @@ export default function CookiesPage() {
         .hero { padding: 64px 24px 52px; text-align: center; background: #F8F9FF; }
         .hero-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(10,22,40,0.38); border: 1px solid rgba(10,22,40,0.1); background: #fff; padding: 5px 14px; border-radius: 100px; margin-bottom: 22px; }
         .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #0a1628; }
-        .hero h1 { font-family: 'Sora', sans-serif; font-size: clamp(36px, 6vw, 60px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: #0a1628; margin-bottom: 14px; }
+        .hero h1 { font-family: 'Sora', sans-serif; font-size: clamp(36px, 6vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: #0a1628; margin-bottom: 14px; }
         .hero-sub { font-size: 15px; color: rgba(10,22,40,0.47); max-width: 460px; margin: 0 auto 20px; line-height: 1.65; }
         .hero-meta { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
         .hero-chip { display: inline-flex; align-items: center; gap: 6px; font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; color: rgba(10,22,40,0.42); background: #fff; border: 1px solid rgba(10,22,40,0.09); padding: 5px 12px; border-radius: 100px; }

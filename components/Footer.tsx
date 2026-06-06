@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const quickLinks = [
   { label: "Best Deals", href: "/deals" },
-  { label: "Special Offers", href: "/special-offers" },
+  { label: "Special Offers", href: null }, // opens modal via event
   { label: "Group Departures", href: "/group-departures" },
   { label: "Customized Itineraries", href: "/customized-itineraries" },
   { label: "Popular Destinations", href: "/popular-destinations" },
@@ -22,16 +22,26 @@ const supportLinks = [
   { label: "Contact Us", href: "/contact" },
 ]
 
+const travelTools = [
+  { name: "Luggage Storage", href: "https://radicalstorage.tpx.lu/1Y7nD48i" },
+  { name: "Car Rental", href: "https://localrent.tpx.lu/OJUcblal" },
+  { name: "Event Tickets", href: "https://ticketnetwork.tpx.lu/Rqu1Ykpe" },
+  { name: "Tours & Activities", href: "https://klook.tpx.lu/T6hgKm7u" },
+  { name: "Travel eSIM", href: "https://yesim.tpx.lu/YtLpS5lu" },
+  { name: "Airport Transfer", href: "https://gettransfer.tpx.lu/wuqe2IDc" },
+  { name: "Holiday Rentals", href: "https://vrbo.com/affiliates/vrbo-home.veP5t0U" },
+]
+
 const partners = [
-  { name: "Expedia", link: "https://www.expedia.com", logoBg: "#FFCC00", logoColor: "#1a1a1a", letter: "↗" },
-  { name: "Viator", link: "https://www.viator.com", logoBg: "#37B249", logoColor: "#fff", letter: "V" },
-  { name: "GetYourGuide", link: "https://www.getyourguide.com", logoBg: "#FF5533", logoColor: "#fff", letter: "G" },
+  { name: "Expedia", link: "https://expedia.com/affiliates/expedia-home.w6qCuSl", logoBg: "#FFCC00", logoColor: "#1a1a1a", letter: "↗" },
+  { name: "Viator", link: "https://www.viator.com/?pid=P00257641&mcid=42383&medium=link&campaign=gettripgo", logoBg: "#37B249", logoColor: "#fff", letter: "V" },
+  { name: "GetYourGuide", link: "https://www.getyourguide.com?partner_id=9X14REW&cmp=share_to_earn", logoBg: "#FF5533", logoColor: "#fff", letter: "G" },
 ]
 
 const socials = [
   {
     name: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/gettripgo_official/",
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -42,7 +52,7 @@ const socials = [
   },
   {
     name: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/gettripgo.official",
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
@@ -51,7 +61,7 @@ const socials = [
   },
   {
     name: "Twitter / X",
-    href: "https://twitter.com",
+    href: "https://x.com/gettripgo",
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M3 4h4l14 16h-4z"/>
@@ -61,7 +71,7 @@ const socials = [
   },
   {
     name: "YouTube",
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/@GettripGo",
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58a2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
@@ -81,6 +91,36 @@ const socials = [
     ),
   },
 ]
+
+function QuickLinkItem({ link }: { link: typeof quickLinks[0] }) {
+  if (link.label === "Best Deals") {
+    return (
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent("open-deals"))}
+        className="text-sm text-gray-500 hover:text-white transition-colors text-left"
+      >
+        {link.label}
+      </button>
+    )
+  }
+  if (link.label === "Special Offers") {
+    return (
+      <button
+        onClick={() => {
+          window.dispatchEvent(new CustomEvent("open-special-offers"))
+        }}
+        className="text-sm text-gray-500 hover:text-white transition-colors text-left"
+      >
+        {link.label}
+      </button>
+    )
+  }
+  return (
+    <Link href={link.href!} className="text-sm text-gray-500 hover:text-white transition-colors">
+      {link.label}
+    </Link>
+  )
+}
 
 function AccordionSection({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
@@ -110,23 +150,14 @@ export default function Footer() {
       {/* Main content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-10 sm:pt-14 pb-4 sm:pb-10">
 
-        {/* Desktop grid */}
-        <div className="hidden lg:grid grid-cols-4 gap-0 w-full">
+        {/* Desktop grid — 5 columns */}
+        <div className="hidden lg:grid grid-cols-5 gap-0 w-full">
 
           {/* Col 1 — Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img
-                src="/logo-icon.png"
-                alt="Get Trip Go icon"
-                className="w-10 h-10 object-contain"
-              />
-              <img
-                src="/logo-text.png"
-                alt="Get Trip Go"
-                className="h-7 object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
+              <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
+              <img src="/logo-text.png" alt="Get Trip Go" className="h-7 object-contain" style={{ filter: "brightness(0) invert(1)" }} />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-6 max-w-xs">
               India&apos;s trusted travel booking platform. Flights, hotels, custom holidays &amp; group tours — all at the best prices.
@@ -147,7 +178,7 @@ export default function Footer() {
             <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors">{link.label}</Link>
+                  <QuickLinkItem link={link} />
                 </li>
               ))}
             </ul>
@@ -165,7 +196,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4 — App + Partners */}
+          {/* Col 4 — Travel Tools */}
+          <div className="ml-auto">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-5">Travel Tools</p>
+            <ul className="space-y-1">
+              {travelTools.map((tool) => (
+                <li key={tool.name}>
+                  <a href={tool.href} target="_blank" rel="noopener noreferrer"
+                    className="text-sm text-gray-500 hover:text-white transition-colors">
+                    {tool.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 5 — App + Partners */}
           <div className="ml-auto">
             <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Get the App</p>
             <div className="flex flex-col gap-1.5 mb-5">
@@ -203,17 +249,8 @@ export default function Footer() {
           {/* Brand always visible */}
           <div className="mb-6">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img
-                src="/logo-icon.png"
-                alt="Get Trip Go icon"
-                className="w-10 h-10 object-contain"
-              />
-              <img
-                src="/logo-text.png"
-                alt="Get Trip Go"
-                className="h-7 object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
+              <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
+              <img src="/logo-text.png" alt="Get Trip Go" className="h-7 object-contain" style={{ filter: "brightness(0) invert(1)" }} />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-5">
               India&apos;s trusted travel booking platform. Flights, hotels, custom holidays &amp; group tours — all at the best prices.
@@ -233,7 +270,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors">{link.label}</Link>
+                  <QuickLinkItem link={link} />
                 </li>
               ))}
             </ul>
@@ -245,6 +282,20 @@ export default function Footer() {
               {supportLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors">{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </AccordionSection>
+
+          {/* Travel Tools Accordion */}
+          <AccordionSection title="Travel Tools">
+            <ul className="space-y-2.5">
+              {travelTools.map((tool) => (
+                <li key={tool.name}>
+                  <a href={tool.href} target="_blank" rel="noopener noreferrer"
+                    className="text-sm text-gray-500 hover:text-white transition-colors">
+                    {tool.name}
+                  </a>
                 </li>
               ))}
             </ul>

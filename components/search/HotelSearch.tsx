@@ -1,68 +1,73 @@
 "use client"
+
 import { useState } from "react"
+import { MapPin, Calendar, Users, ChevronDown, Minus, Plus } from "lucide-react"
+import { cn, Field, FieldRow, SearchButton } from "./SearchBox"
+
+const HOTEL_TYPES = ["Any", "Budget", "3 Star", "4 Star", "5 Star", "Resort"]
 
 export default function HotelSearch() {
-  const [city, setCity] = useState("")
-  const [checkIn, setCheckIn] = useState("")
-  const [checkOut, setCheckOut] = useState("")
-  const [rooms, setRooms] = useState(1)
-  const [guests, setGuests] = useState(2)
+  const [hotelType, setHotelType] = useState("Any")
+  const [city,      setCity]      = useState("Mumbai")
+  const [checkIn,   setCheckIn]   = useState("15 Jun, Sun")
+  const [checkOut,  setCheckOut]  = useState("18 Jun, Wed")
+  const [rooms,     setRooms]     = useState(1)
+  const [guests,    setGuests]    = useState(2)
 
   return (
     <div>
-      <div className="border rounded-xl overflow-hidden mb-4">
-        {/* Row 1: City */}
-        <div className="px-4 py-3 border-b border-gray-200">
-          <p className="text-xs text-gray-500 mb-1">🏨 City or Hotel Name</p>
-          <input className="text-sm font-bold text-gray-800 w-full outline-none"
-            placeholder="Where are you going?"
-            value={city} onChange={e => setCity(e.target.value)} />
-        </div>
-
-        {/* Row 2: Check-in + Check-out */}
-        <div className="grid grid-cols-2 divide-x divide-gray-200 border-b border-gray-200">
-          <div className="px-4 py-3">
-            <p className="text-xs text-gray-500 mb-1">📅 Check-in</p>
-            <input type="date" className="text-sm font-bold text-gray-800 w-full outline-none"
-              value={checkIn} onChange={e => setCheckIn(e.target.value)} />
-          </div>
-          <div className="px-4 py-3">
-            <p className="text-xs text-gray-500 mb-1">📅 Check-out</p>
-            <input type="date" className="text-sm font-bold text-gray-800 w-full outline-none"
-              value={checkOut} onChange={e => setCheckOut(e.target.value)} />
-          </div>
-        </div>
-
-        {/* Row 3: Rooms + Guests */}
-        <div className="grid grid-cols-2 divide-x divide-gray-200">
-          <div className="px-4 py-3">
-            <p className="text-xs text-gray-500 mb-1">🛏 Rooms</p>
-            <div className="flex items-center gap-3">
-              <button onClick={() => setRooms(Math.max(1, rooms - 1))}
-                className="w-6 h-6 rounded-full border border-gray-300 font-bold flex items-center justify-center hover:bg-gray-50 text-sm">−</button>
-              <span className="text-sm font-bold text-gray-800">{rooms}</span>
-              <button onClick={() => setRooms(rooms + 1)}
-                className="w-6 h-6 rounded-full border border-gray-300 font-bold flex items-center justify-center hover:bg-gray-50 text-sm">+</button>
-            </div>
-          </div>
-          <div className="px-4 py-3">
-            <p className="text-xs text-gray-500 mb-1">👥 Guests</p>
-            <div className="flex items-center gap-3">
-              <button onClick={() => setGuests(Math.max(1, guests - 1))}
-                className="w-6 h-6 rounded-full border border-gray-300 font-bold flex items-center justify-center hover:bg-gray-50 text-sm">−</button>
-              <span className="text-sm font-bold text-gray-800">{guests}</span>
-              <button onClick={() => setGuests(guests + 1)}
-                className="w-6 h-6 rounded-full border border-gray-300 font-bold flex items-center justify-center hover:bg-gray-50 text-sm">+</button>
-            </div>
-          </div>
-        </div>
+      {/* Hotel type pills */}
+      <div className="flex gap-2 mb-4 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+        {HOTEL_TYPES.map(type => (
+          <button
+            key={type}
+            onClick={() => setHotelType(type)}
+            aria-pressed={hotelType === type}
+            className={cn(
+              "text-[12px] font-semibold px-3.5 py-1.5 rounded-full border-[1.5px] transition-all whitespace-nowrap",
+              hotelType === type
+                ? "bg-blue-50 text-[#1A56F0] border-blue-300"
+                : "bg-white text-slate-500 border-slate-200 hover:border-blue-200 hover:text-[#1A56F0]"
+            )}
+          >
+            {type}
+          </button>
+        ))}
       </div>
 
-      <div className="flex justify-center">
-        <button className="bg-blue-600 text-white text-base sm:text-lg font-bold px-16 sm:px-24 py-3 rounded-full hover:bg-blue-700 transition-all shadow-lg w-full sm:w-auto">
-          SEARCH
-        </button>
-      </div>
+      {/* Fields row */}
+      <FieldRow>
+        <Field
+          icon={<MapPin size={16} />}
+          label="City or Hotel"
+          value={city}
+          className="flex-1"
+        />
+        <Field
+          icon={<Calendar size={16} />}
+          label="Check-in"
+          value={checkIn}
+          className="flex-1"
+        />
+        <Field
+          icon={<Calendar size={16} />}
+          label="Check-out"
+          value={checkOut}
+          className="flex-1"
+        />
+        <Field
+          icon={<Users size={16} />}
+          label="Rooms & Guests"
+          value={
+            <span className="flex items-center gap-1">
+              {rooms} Room · {guests} Guest{guests > 1 ? "s" : ""}
+              <ChevronDown size={12} className="text-slate-400" />
+            </span>
+          }
+          className="flex-none"
+        />
+        <SearchButton label="Search Hotels" />
+      </FieldRow>
     </div>
   )
 }
