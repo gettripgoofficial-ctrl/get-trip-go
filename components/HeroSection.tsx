@@ -62,8 +62,8 @@ export default function HeroSection() {
   const [activeTab, setActiveTab] = useState<ServiceTab>("Flights")
 
   function handleTabKeyDown(e: React.KeyboardEvent, index: number) {
-    if (e.key === "ArrowRight") setActiveTab(TABS[(index + 1) % TABS.length].name)
-    if (e.key === "ArrowLeft")  setActiveTab(TABS[(index - 1 + TABS.length) % TABS.length].name)
+    if (e.key === "ArrowRight") setActiveTab(TABS[(index + 1) % TABS.length].name as ServiceTab)
+    if (e.key === "ArrowLeft")  setActiveTab(TABS[(index - 1 + TABS.length) % TABS.length].name as ServiceTab)
   }
 
   return (
