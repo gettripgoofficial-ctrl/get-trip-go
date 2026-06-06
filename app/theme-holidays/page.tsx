@@ -188,7 +188,7 @@ export default function ThemeHolidaysPage() {
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
 
       {/* Hero */}
-      <div className="relative h-64 sm:h-80 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=90"
           alt="Theme Holidays"
@@ -199,8 +199,7 @@ export default function ThemeHolidaysPage() {
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white">Explore Holidays by Theme</h1>
           <p className="text-white/80 text-sm mt-1">Find your perfect trip — honeymoon, adventure, luxury & more</p>
         </div>
-        <Link href="/" className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
-          ← Back
+        <Link href="/" className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
         </Link>
       </div>
 

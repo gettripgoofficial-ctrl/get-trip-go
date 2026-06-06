@@ -10,8 +10,8 @@ const themes = [
     color: "#7c3aed",
     tagBg: "#f5f3ff",
     tagBorder: "#c4b5fd",
-    tags: ["Varanasi", "Tirupathi ", "Mathura", "Char Dham"],
-    href: "/theme-holidays/Spiritual",
+    tags: ["Varanasi", "Tirupathi", "Mathura", "Char Dham"],
+    href: "/theme-holidays?theme=Spiritual",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const themes = [
     tagBg: "#fdf2f8",
     tagBorder: "#fbcfe8",
     tags: ["Maldives", "Paris", "Switzerland", "Bali", "Andaman"],
-    href: "/theme-holidays/Honeymoon",
+    href: "/theme-holidays?theme=Honeymoon",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const themes = [
     tagBg: "#f0fdf4",
     tagBorder: "#bbf7d0",
     tags: ["Maasai Mara", "Jim Corbett", "Ranthambore"],
-    href: "/theme-holidays/Wildlife %26 Safari",
+    href: "/theme-holidays?theme=Wildlife+%26+Safari",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const themes = [
     tagBg: "#fffbeb",
     tagBorder: "#fde68a",
     tags: ["Beach", "Culture", "Hills"],
-    href: "/theme-holidays/Luxury",
+    href: "/theme-holidays?theme=Luxury",
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const themes = [
     tagBg: "#fffbeb",
     tagBorder: "#fde68a",
     tags: ["Himalayas", "Ladakh", "Spiti"],
-    href: "/theme-holidays/Adventure",
+    href: "/theme-holidays?theme=Adventure",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const themes = [
     tagBg: "#f0f9ff",
     tagBorder: "#bae6fd",
     tags: ["Goa", "Kerala", "Andaman"],
-    href: "/theme-holidays/Beach",
+    href: "/theme-holidays?theme=Beach",
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const themes = [
     tagBg: "#f0f9ff",
     tagBorder: "#bae6fd",
     tags: ["Europe", "Australia", "Sri Lanka"],
-    href: "/theme-holidays/Family",
+    href: "/theme-holidays?theme=Family",
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ const themes = [
     tagBg: "#f0fdf4",
     tagBorder: "#bbf7d0",
     tags: ["Shimla", "Manali", "Ooty"],
-    href: "/theme-holidays/Hill Stations",
+    href: "/theme-holidays?theme=Hill+Stations",
   },
 ]
 
@@ -90,7 +90,6 @@ export default function ThemeHolidays() {
 
   const scroll = (dir: "left" | "right") => {
     if (scrollRef.current) {
-      // 3 cards visible: each card ~(70% area ÷ 3) — scroll by 3 card widths
       scrollRef.current.scrollBy({ left: dir === "right" ? 600 : -600, behavior: "smooth" })
     }
   }
@@ -99,9 +98,53 @@ export default function ThemeHolidays() {
     <div className="max-w-7xl mx-auto px-4 py-10">
       <div className="flex rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white min-h-[340px]">
 
-        {/* LEFT PANEL — 40% width */}
+        {/* LEFT — Scrollable Cards (60% width, 3 visible) */}
+        <div className="flex-1 overflow-hidden px-4 py-5">
+          <div
+            ref={scrollRef}
+            className="flex gap-3 overflow-x-auto pb-1"
+            style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}
+          >
+            {themes.map(theme => (
+              <Link
+                key={theme.id}
+                href={theme.href}
+                className="flex-shrink-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 transition-transform duration-200 block"
+                style={{ scrollSnapAlign: "start", width: "calc(33.333% - 8px)" }}
+              >
+                <img
+                  src={theme.image}
+                  alt={theme.name}
+                  className="w-full h-[170px] object-cover"
+                />
+                <div className="p-2.5">
+                  <h4 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h4>
+                  <div className="flex flex-wrap gap-1 mb-2.5">
+                    {theme.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className="text-[10px] font-medium px-2 py-0.5 rounded-full border"
+                        style={{ color: theme.color, background: theme.tagBg, borderColor: theme.tagBorder }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span
+                    className="text-[11px] font-bold uppercase tracking-wide"
+                    style={{ color: theme.color }}
+                  >
+                    VIEW MORE →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT PANEL — Text (40% width) */}
         <div
-          className="flex-shrink-0 relative overflow-hidden border-r border-amber-100"
+          className="flex-shrink-0 relative overflow-hidden border-l border-amber-100"
           style={{
             width: "40%",
             background: "linear-gradient(145deg, #fff7ed 0%, #fef3c7 50%, #fff7ed 100%)",
@@ -116,7 +159,7 @@ export default function ThemeHolidays() {
           <svg
             style={{
               position: "absolute",
-              left: "-40px",
+              right: "-40px",
               top: "50%",
               transform: "translateY(-50%)",
               width: "200px",
@@ -211,51 +254,6 @@ export default function ThemeHolidays() {
             >
               ›
             </button>
-          </div>
-        </div>
-
-        {/* RIGHT SCROLLABLE CARDS — 70% width, 3 cards visible */}
-        <div className="flex-1 overflow-hidden px-4 py-5">
-          <div
-            ref={scrollRef}
-            className="flex gap-3 overflow-x-auto pb-1"
-            style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}
-          >
-            {themes.map(theme => (
-              <Link
-                key={theme.id}
-                href={theme.href}
-                // 3 cards: width = (100% ÷ 3) minus gaps
-                className="flex-shrink-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 transition-transform duration-200 block"
-                style={{ scrollSnapAlign: "start", width: "calc(33.333% - 8px)" }}
-              >
-                <img
-                  src={theme.image}
-                  alt={theme.name}
-                  className="w-full h-[170px] object-cover"
-                />
-                <div className="p-2.5">
-                  <h4 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h4>
-                  <div className="flex flex-wrap gap-1 mb-2.5">
-                    {theme.tags.map(tag => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-full border"
-                        style={{ color: theme.color, background: theme.tagBg, borderColor: theme.tagBorder }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <span
-                    className="text-[11px] font-bold uppercase tracking-wide"
-                    style={{ color: theme.color }}
-                  >
-                    View More →
-                  </span>
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
 

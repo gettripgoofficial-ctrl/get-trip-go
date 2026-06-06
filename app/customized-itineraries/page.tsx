@@ -112,9 +112,6 @@ export default function CustomizedItinerariesPage() {
                 className="accent-blue-600"
               />
               <span className="text-sm text-gray-600">{type}</span>
-              <span className="ml-auto text-xs text-gray-400">
-                ({customPackages.filter(p => p.type === type).length})
-              </span>
             </label>
           ))}
         </div>
@@ -162,7 +159,7 @@ export default function CustomizedItinerariesPage() {
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
 
       {/* Hero */}
-      <div className="relative h-64 sm:h-80 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=90"
           alt="Customized Itineraries"
@@ -173,8 +170,7 @@ export default function CustomizedItinerariesPage() {
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white">Customized Itineraries</h1>
           <p className="text-white/80 text-sm mt-1">Handcrafted journeys — tailored just for you</p>
         </div>
-        <Link href="/" className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
-          ← Back
+        <Link href="/" className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
         </Link>
       </div>
 
@@ -230,7 +226,7 @@ export default function CustomizedItinerariesPage() {
             </div>
 
             {/* Results count */}
-            <p className="text-sm text-gray-500 mb-4">{filtered.length} packages found</p>
+            <p className="text-sm text-gray-500 mb-4"></p>
 
             {/* Cards Grid */}
             {filtered.length === 0 ? (

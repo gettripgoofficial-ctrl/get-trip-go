@@ -29,7 +29,6 @@ function NotFound() {
         href="/blog"
         className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors"
       >
-        ← Back to All Stories
       </Link>
     </div>
   );
@@ -171,7 +170,6 @@ export default function BlogPostClient() {
             href="/blog"
             className="text-sm text-orange-500 hover:text-orange-600 font-semibold transition-colors"
           >
-            ← Back to All Stories
           </Link>
         </div>
       </div>

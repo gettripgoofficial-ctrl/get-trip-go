@@ -68,7 +68,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="w-full bg-[#F0F4FF] pt-24 sm:pt-28 pb-16 px-4"
+      className="w-full bg-[#F8F9FF] pt-28 sm:pt-32 pb-28 px-4"
       aria-label="Travel search"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-8">

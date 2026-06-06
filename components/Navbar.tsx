@@ -53,32 +53,24 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // ← Listen for footer "Best Deals" click
   useEffect(() => {
     const handler = () => setDealsOpen(true)
     window.addEventListener("open-deals", handler)
     return () => window.removeEventListener("open-deals", handler)
   }, [])
 
-  const textColor = "text-[#1A3A6B]"
-  const borderColor = "border-[#1A3A6B]/20"
-  const hoverBg = "hover:bg-[#1A3A6B]/10"
-
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 bg-[#F8F9FF] shadow-sm ${
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
-        style={{ backgroundColor: "#F8F9FF" }}
       >
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
           <img src="/logo-text.png" alt="Get Trip Go" className="h-8 object-contain" />
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={() => setDealsOpen(true)}
@@ -86,26 +78,25 @@ export default function Navbar() {
           >
             Deals
           </button>
-          <Link href="/blog" className={`${textColor} font-bold text-sm px-4 py-2 rounded-full border ${borderColor} ${hoverBg} transition-colors`}>
+          <Link href="/blog" className="text-[#1A3A6B] font-bold text-sm px-4 py-2 rounded-full border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/10 transition-colors">
             Blog
           </Link>
-          <button className={`${textColor} font-bold text-sm px-4 py-2 rounded-full border ${borderColor} ${hoverBg} transition-colors`}>
+          <button className="text-[#1A3A6B] font-bold text-sm px-4 py-2 rounded-full border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/10 transition-colors">
             My Trip
           </button>
           <button
             onClick={() => setSupportOpen(true)}
-            className={`${textColor} font-bold text-sm px-4 py-2 rounded-full border ${borderColor} ${hoverBg} transition-colors`}
+            className="text-[#1A3A6B] font-bold text-sm px-4 py-2 rounded-full border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/10 transition-colors"
           >
             Support
           </button>
 
           <div className="w-px h-6 mx-1 bg-[#1A3A6B]/20" />
 
-          {/* Currency */}
           <div className="relative">
             <button
               onClick={() => { setShowCurrency(!showCurrency); setShowLang(false) }}
-              className={`flex items-center gap-1 text-sm font-bold ${textColor} border ${borderColor} px-3 py-2 rounded-full ${hoverBg} transition-colors`}
+              className="flex items-center gap-1 text-sm font-bold text-[#1A3A6B] border border-[#1A3A6B]/20 px-3 py-2 rounded-full hover:bg-[#1A3A6B]/10 transition-colors"
             >
               {selectedCurrency} ▾
             </button>
@@ -126,11 +117,10 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Language */}
           <div className="relative">
             <button
               onClick={() => { setShowLang(!showLang); setShowCurrency(false) }}
-              className={`flex items-center gap-1 text-sm font-bold ${textColor} border ${borderColor} px-3 py-2 rounded-full ${hoverBg} transition-colors`}
+              className="flex items-center gap-1 text-sm font-bold text-[#1A3A6B] border border-[#1A3A6B]/20 px-3 py-2 rounded-full hover:bg-[#1A3A6B]/10 transition-colors"
             >
               {langShort[selectedLang]} ▾
             </button>
@@ -152,7 +142,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile right — Deals + Hamburger */}
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={() => setDealsOpen(true)}
@@ -162,7 +151,7 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className={`${textColor} p-2 rounded-lg ${hoverBg} transition-colors`}
+            className="text-[#1A3A6B] p-2 rounded-lg hover:bg-[#1A3A6B]/10 transition-colors"
             aria-label="Menu"
           >
             {showMenu ? (
@@ -180,12 +169,8 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu dropdown */}
         {showMenu && (
-          <div
-            className="absolute top-full left-0 right-0 border-t border-[#1A3A6B]/10 shadow-lg z-50 md:hidden"
-            style={{ backgroundColor: "#F8F9FF" }}
-          >
+          <div className="absolute top-full left-0 right-0 border-t border-[#1A3A6B]/10 shadow-lg z-50 md:hidden bg-[#F8F9FF]">
             <div className="px-4 py-4 flex flex-col gap-2">
               <Link
                 href="/blog"
@@ -228,7 +213,6 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* Modals */}
       <SupportModal isOpen={supportOpen} onClose={() => setSupportOpen(false)} />
       <DealsModal isOpen={dealsOpen} onClose={() => setDealsOpen(false)} />
     </>

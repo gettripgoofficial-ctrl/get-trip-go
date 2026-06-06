@@ -22,7 +22,6 @@ export default function CustomPackageDetailPage() {
         <p className="text-6xl">🌍</p>
         <p className="text-xl font-bold text-gray-700">Package not found</p>
         <Link href="/customized-itineraries" className="text-blue-600 font-semibold underline">
-          ← Back to Customized Itineraries
         </Link>
       </div>
     )
@@ -43,19 +42,18 @@ export default function CustomPackageDetailPage() {
     <div className="min-h-screen bg-gray-100 pb-32 sm:pb-10">
 
       {/* Hero */}
-      <div className="relative h-72 sm:h-96 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img src={pkg.heroImage} alt={pkg.name} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
         <Link
           href="/customized-itineraries"
-          className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
+          className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
         >
-          ← Back
         </Link>
 
         {pkg.tag && (
-          <span className="absolute top-4 right-4 text-white text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: pkg.typeColor }}>
+          <span className="absolute top-16 right-4 text-white text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: pkg.typeColor }}>
             {pkg.tag}
           </span>
         )}

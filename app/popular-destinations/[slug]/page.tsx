@@ -20,7 +20,6 @@ export default function PackageDetailPage() {
         <p className="text-6xl">🌍</p>
         <p className="text-xl font-bold text-gray-700">Package not found</p>
         <Link href="/popular-destinations" className="text-blue-600 font-semibold underline">
-          ← Back to Popular Destinations
         </Link>
       </div>
     )
@@ -39,7 +38,7 @@ export default function PackageDetailPage() {
     <div className="min-h-screen bg-gray-100 pb-32 sm:pb-10">
 
       {/* Hero Image Gallery */}
-      <div className="relative h-72 sm:h-96 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
           src={pkg.images[0]}
           alt={pkg.name}
@@ -50,9 +49,8 @@ export default function PackageDetailPage() {
         {/* Back */}
         <Link
           href="/popular-destinations"
-          className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
+          className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
         >
-          ← Back
         </Link>
 
         {/* Tag */}

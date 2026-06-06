@@ -121,9 +121,6 @@ function PopularDestinationsContent() {
               }`}
             >
               {dest}
-              <span className="float-right text-xs text-gray-400">
-                ({dest === "All" ? packages.length : packages.filter(p => p.destination === dest).length})
-              </span>
             </button>
           ))}
         </div>
@@ -225,7 +222,7 @@ function PopularDestinationsContent() {
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
 
       {/* Hero */}
-      <div className="relative h-64 sm:h-80 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
           src={heroDestination?.image ?? "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=90"}
           alt={activeDestination}
@@ -236,10 +233,9 @@ function PopularDestinationsContent() {
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white">
             {activeDestination === "All" ? "All Popular Destinations" : `${activeDestination} Packages`}
           </h1>
-          <p className="text-white/80 text-sm mt-1">{filtered.length} packages found</p>
+          <p className="text-white/80 text-sm mt-1"></p>
         </div>
-        <Link href="/" className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
-          ← Back
+        <Link href="/" className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
         </Link>
       </div>
 

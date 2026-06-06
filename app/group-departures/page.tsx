@@ -135,7 +135,6 @@ export default function GroupDeparturesPage() {
                 <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: seriesColors[s] }} />
                 {s}
               </span>
-              <span className="ml-auto text-xs text-gray-400">({groupDepartures.filter(p => p.series === s).length})</span>
             </label>
           ))}
         </div>
@@ -202,38 +201,14 @@ export default function GroupDeparturesPage() {
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
 
       {/* Hero */}
-      <div className="relative h-64 sm:h-80 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=90" alt="Europe Group Departures" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 p-4 sm:p-8">
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white">Europe Group Departures</h1>
           <p className="text-white/80 text-sm mt-1">Guaranteed departures — travel with like-minded explorers</p>
         </div>
-        <Link href="/" className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">← Back</Link>
-      </div>
-
-      {/* Series Pills */}
-      <div className="bg-white border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex gap-2 overflow-x-auto py-3" style={{ scrollbarWidth: "none" }}>
-            <button
-              onClick={() => { setSeriesFilter([]); setVisibleCount(INITIAL_VISIBLE) }}
-              className={`flex-shrink-0 text-xs font-bold px-4 py-1.5 rounded-full border transition-all ${seriesFilter.length === 0 ? "bg-gray-800 text-white border-gray-800" : "border-gray-200 text-gray-600 hover:bg-gray-50"}`}
-            >
-              All ({groupDepartures.length})
-            </button>
-            {allSeries.map(s => (
-              <button
-                key={s}
-                onClick={() => { setSeriesFilter([s]); setVisibleCount(INITIAL_VISIBLE) }}
-                className={`flex-shrink-0 text-xs font-bold px-4 py-1.5 rounded-full border whitespace-nowrap transition-all ${seriesFilter.length === 1 && seriesFilter[0] === s ? "text-white border-transparent" : "border-gray-200 text-gray-600 hover:bg-gray-50"}`}
-                style={seriesFilter.length === 1 && seriesFilter[0] === s ? { backgroundColor: seriesColors[s] } : {}}
-              >
-                {s} ({groupDepartures.filter(p => p.series === s).length})
-              </button>
-            ))}
-          </div>
-        </div>
+        
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6">
@@ -283,7 +258,7 @@ export default function GroupDeparturesPage() {
               </select>
             </div>
 
-            <p className="text-sm text-gray-500 mb-4">{filtered.length} tours found</p>
+            
 
             {/* Cards */}
             {filtered.length === 0 ? (
@@ -382,13 +357,13 @@ export default function GroupDeparturesPage() {
                       onClick={() => setVisibleCount(v => v + LOAD_MORE_COUNT)}
                       className="w-full sm:w-auto px-8 py-3 bg-white border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors text-sm"
                     >
-                      Load More ({filtered.length - visibleCount} remaining)
+                      Load More
                     </button>
                     <button
                       onClick={() => setVisibleCount(filtered.length)}
                       className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors text-sm"
                     >
-                      View All {filtered.length} Tours
+                      View All Tours
                     </button>
                   </div>
                 )}
@@ -396,7 +371,7 @@ export default function GroupDeparturesPage() {
                 {/* All loaded indicator */}
                 {!hasMore && filtered.length > INITIAL_VISIBLE && (
                   <div className="mt-8 text-center">
-                    <p className="text-sm text-gray-400">✓ All {filtered.length} tours loaded</p>
+                    
                   </div>
                 )}
               </>

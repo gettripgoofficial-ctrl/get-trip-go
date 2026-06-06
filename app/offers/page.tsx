@@ -9,7 +9,7 @@ export default function OffersPage() {
     <div className="min-h-screen bg-gray-50 pb-24 lg:pb-10">
 
       {/* Hero */}
-      <div className="relative h-48 sm:h-64 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=90"
           alt="Special Offers"
@@ -18,9 +18,8 @@ export default function OffersPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <Link
           href="/"
-          className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
+          className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
         >
-          ← Back
         </Link>
         <div className="absolute bottom-0 left-0 p-4 sm:p-8">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white">Special Offers & Deals</h1>

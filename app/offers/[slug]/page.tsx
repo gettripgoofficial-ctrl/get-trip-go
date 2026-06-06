@@ -18,7 +18,6 @@ export default function OfferDetailPage() {
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-gray-100">
         <p className="text-6xl">🎫</p>
         <p className="text-xl font-bold text-gray-700">Offer not found</p>
-        <Link href="/offers" className="text-blue-600 font-semibold underline">← Back to Offers</Link>
       </div>
     )
   }
@@ -33,7 +32,7 @@ export default function OfferDetailPage() {
     <div className="min-h-screen bg-gray-100 pb-32 sm:pb-10">
 
       {/* Hero */}
-      <div className="relative h-64 sm:h-80 overflow-hidden">
+      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
           src={offer.image}
           alt={offer.title}
@@ -42,9 +41,8 @@ export default function OfferDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <Link
           href="/offers"
-          className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
+          className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
         >
-          ← Back
         </Link>
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8">
           <span

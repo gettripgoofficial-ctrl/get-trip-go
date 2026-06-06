@@ -259,7 +259,7 @@ function OfferCard({ offer, onOpen }: { offer: Offer; onOpen: () => void }) {
           {/* CTA — opens modal */}
           <button
             onClick={onOpen}
-            className="inline-flex items-center gap-1 self-start px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95"
+            className="inline-flex items-center self-start px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95"
             style={{
               backgroundColor: "rgba(255,255,255,0.95)",
               color: offer.color,
@@ -267,9 +267,6 @@ function OfferCard({ offer, onOpen }: { offer: Offer; onOpen: () => void }) {
             }}
           >
             {offer.cta}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-            </svg>
           </button>
         </div>
       </div>
