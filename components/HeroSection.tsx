@@ -129,7 +129,7 @@ export default function HeroSection() {
                   aria-controls={`tabpanel-${name}`}
                   tabIndex={isActive ? 0 : -1}
                   onKeyDown={e => handleTabKeyDown(e, i)}
-                  onClick={() => setActiveTab(name)}
+                  onClick={() => setActiveTab(name as ServiceTab)}
                   style={
                     isActive
                       ? { backgroundColor: activeColor, color: "#fff" }
