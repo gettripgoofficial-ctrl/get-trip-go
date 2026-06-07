@@ -36,7 +36,19 @@ function EnquiryModal({ tour, onClose }: { tour: Tour; onClose: () => void }) {
   const handleSubmit = async () => {
     if (!form.name || !form.email || !form.phone) return
     setLoading(true)
-    await new Promise(r => setTimeout(r, 900))
+    await fetch("/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        travelers: form.adults,
+        message: `Occupancy: ${form.occupancy} | Children: ${form.children} | Infants: ${form.infants} | ${form.specialRequests}`,
+        packageName: tour.name,
+        date: "",
+      }),
+    })
     setLoading(false)
     setSubmitted(true)
   }
