@@ -20,8 +20,9 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
   const emailSubject = encodeURIComponent(`Enquiry: ${packageName || "Travel Package"}`)
   const emailBody = encodeURIComponent(`Hi GetTripGo Team,\n\nI am interested in the following package:\n${packageName || "Travel Package"}\n\nPlease share more details and availability.\n\nThank you.`)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    await fetch("/api/enquiry", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, packageName }) })
     setSubmitted(true)
   }
 
