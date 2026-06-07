@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar"
+import BottomNav from "@/components/BottomNav"
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <BottomNav />
         </CurrencyProvider>
       </body>
     </html>

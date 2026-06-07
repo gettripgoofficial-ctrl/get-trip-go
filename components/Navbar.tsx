@@ -10,28 +10,25 @@ export default function Navbar() {
   const [selectedLang, setSelectedLang] = useState("English")
   const [showCurrency, setShowCurrency] = useState(false)
   const [showLang, setShowLang] = useState(false)
-  const [showMenu, setShowMenu] = useState(false)
   const [visible, setVisible] = useState(true)
   const [supportOpen, setSupportOpen] = useState(false)
   const [dealsOpen, setDealsOpen] = useState(false)
 
   const lastScrollY = useRef(0)
   const { currency: selectedCurrency, setCurrency: setSelectedCurrency, currencies } = useCurrency()
-  const pathname = usePathname()
 
   const languages = ["English", "Hindi", "Arabic", "French"]
   const langShort: Record<string, string> = {
     English: "EN", Hindi: "HI", Arabic: "AR", French: "FR"
   }
 
-useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY
       if (currentY <= 0) {
         setVisible(true)
       } else if (currentY > lastScrollY.current) {
         setVisible(false)
-        setShowMenu(false)
         setShowCurrency(false)
         setShowLang(false)
       } else {
@@ -51,8 +48,9 @@ useEffect(() => {
 
   return (
     <>
+      {/* Desktop only navbar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 bg-[#F8F9FF] shadow-sm ${
+        className={`hidden md:flex fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 items-center justify-between transition-all duration-300 bg-[#F8F9FF] shadow-sm ${
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -61,7 +59,7 @@ useEffect(() => {
           <img src="/logo-text.png" alt="Get Trip Go" className="h-8 object-contain" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="flex items-center gap-3">
           <button
             onClick={() => setDealsOpen(true)}
             className="bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-red-600 transition-colors"
@@ -83,6 +81,7 @@ useEffect(() => {
 
           <div className="w-px h-6 mx-1 bg-[#1A3A6B]/20" />
 
+          {/* Currency */}
           <div className="relative">
             <button
               onClick={() => { setShowCurrency(!showCurrency); setShowLang(false) }}
@@ -107,6 +106,7 @@ useEffect(() => {
             )}
           </div>
 
+          {/* Language */}
           <div className="relative">
             <button
               onClick={() => { setShowLang(!showLang); setShowCurrency(false) }}
@@ -131,76 +131,6 @@ useEffect(() => {
             )}
           </div>
         </div>
-
-        <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={() => setDealsOpen(true)}
-            className="bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-red-600"
-          >
-            Deals
-          </button>
-          <button
-            onClick={() => setShowMenu(!showMenu)}
-            className="text-[#1A3A6B] p-2 rounded-lg hover:bg-[#1A3A6B]/10 transition-colors"
-            aria-label="Menu"
-          >
-            {showMenu ? (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <line x1="18" y1="6" x2="6" y2="18"/>
-                <line x1="6" y1="6" x2="18" y2="18"/>
-              </svg>
-            ) : (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {showMenu && (
-          <div className="absolute top-full left-0 right-0 border-t border-[#1A3A6B]/10 shadow-lg z-50 md:hidden bg-[#F8F9FF]">
-            <div className="px-4 py-4 flex flex-col gap-2">
-              <Link
-                href="/blog"
-                onClick={() => setShowMenu(false)}
-                className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/5 text-left block transition-colors"
-              >
-                Blog
-              </Link>
-              <button className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/5 text-left transition-colors">
-                My Trip
-              </button>
-              <button
-                onClick={() => { setShowMenu(false); setSupportOpen(true) }}
-                className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/5 text-left transition-colors"
-              >
-                Support
-              </button>
-              <div className="border-t border-[#1A3A6B]/10 pt-3 flex gap-2">
-                <select
-                  value={selectedCurrency}
-                  onChange={(e) => setSelectedCurrency(e.target.value)}
-                  className="flex-1 text-sm font-bold px-3 py-2 rounded-xl border bg-white text-[#1A3A6B] border-[#1A3A6B]/20"
-                >
-                  {currencies.map(c => (
-                    <option key={c} value={c}>{c}</option>
-                  ))}
-                </select>
-                <select
-                  value={selectedLang}
-                  onChange={(e) => setSelectedLang(e.target.value)}
-                  className="flex-1 text-sm font-bold px-3 py-2 rounded-xl border bg-white text-[#1A3A6B] border-[#1A3A6B]/20"
-                >
-                  {languages.map(l => (
-                    <option key={l} value={l}>{l}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
 
       <SupportModal isOpen={supportOpen} onClose={() => setSupportOpen(false)} />

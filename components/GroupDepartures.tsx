@@ -138,8 +138,9 @@ export default function GroupDepartures() {
               key={dep.slug}
               className="flex-shrink-0"
               style={{
-                width: `calc(${100 / visibleCount}% - 12px)`,
+                width: `calc(${100 / visibleCount}% - ${visibleCount === 1 ? "0px" : "12px"})`,
                 scrollSnapAlign: "start",
+                flexShrink: 0,
               }}
             >
               <DepCard dep={dep} />
