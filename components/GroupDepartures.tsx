@@ -1,4 +1,5 @@
 "use client"
+import { usePrice } from "@/hooks/usePrice"
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
@@ -9,7 +10,9 @@ const HOME_PACKAGES = groupDepartures.slice(0, 12)
 const VISIBLE_DESKTOP = 4
 const VISIBLE_MOBILE = 1
 
-const DepCard = ({ dep }: { dep: typeof groupDepartures[0] }) => (
+function DepCard({ dep }: { dep: typeof groupDepartures[0] }) {
+  const { convert } = usePrice()
+  return (
   <Link
     href={`/group-departures/${dep.slug}`}
     className="relative cursor-pointer group block"
@@ -46,13 +49,14 @@ const DepCard = ({ dep }: { dep: typeof groupDepartures[0] }) => (
       <div className="flex items-center justify-between">
         <div>
           <span className="text-xs text-gray-500">From </span>
-          <span className="text-xs font-bold text-gray-800">₹{dep.priceINR.toLocaleString()}</span>
+          <span className="text-xs font-bold text-gray-800">{convert(dep.priceINR)}</span>
         </div>
         <span className="text-xs font-semibold text-blue-600">Explore</span>
       </div>
     </div>
   </Link>
-)
+  )
+}
 
 export default function GroupDepartures() {
   const [current, setCurrent] = useState(0)

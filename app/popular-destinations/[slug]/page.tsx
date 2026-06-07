@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useParams } from "next/navigation"
 import { getPackageBySlug } from "@/data/packages"
 import BottomNav from "@/components/BottomNav"
+import { usePrice } from "@/hooks/usePrice"
 
 export default function PackageDetailPage() {
   const { slug } = useParams()
@@ -32,6 +33,7 @@ export default function PackageDetailPage() {
     { id: "pricing", label: "Pricing" },
   ] as const
 
+  const { convert } = usePrice()
   const totalCost = pkg.price * travelers
 
   return (
@@ -275,28 +277,28 @@ export default function PackageDetailPage() {
                   <div className="space-y-3 mb-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Price per person</span>
-                      <span className="font-semibold text-gray-800">₹{pkg.price.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(pkg.price)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">× {travelers} traveler{travelers > 1 ? "s" : ""}</span>
-                      <span className="font-semibold text-gray-800">₹{totalCost.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(totalCost)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Taxes & Fees (GST)</span>
-                      <span className="font-semibold text-gray-800">₹{Math.round(totalCost * 0.05).toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(Math.round(totalCost * 0.05))}</span>
                     </div>
                     <hr className="border-gray-100" />
                     <div className="flex justify-between">
                       <span className="font-bold text-gray-800">Total Amount</span>
                       <span className="text-xl font-extrabold text-blue-600">
-                        ₹{Math.round(totalCost * 1.05).toLocaleString()}
+                        {convert(Math.round(totalCost * 1.05))}
                       </span>
                     </div>
                   </div>
 
                   <div className="bg-blue-50 rounded-xl p-3 text-center mb-4">
                     <p className="text-xs text-blue-600 font-semibold">
-                      No Cost EMI available at ₹{Math.round((totalCost * 1.05) / 6).toLocaleString()}/month for 6 months
+                      No Cost EMI available at {convert(Math.round((totalCost * 1.05) / 6))}/month for 6 months
                     </p>
                   </div>
                 </div>
@@ -322,12 +324,12 @@ export default function PackageDetailPage() {
             <div className="bg-white rounded-2xl shadow-sm p-5 sticky top-20">
               <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">Starting from</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl font-extrabold text-gray-900">₹{pkg.price.toLocaleString()}</span>
+                <span className="text-3xl font-extrabold text-gray-900">{convert(pkg.price)}</span>
                 <span className="text-sm text-gray-400">/person</span>
               </div>
-              <p className="text-xs text-gray-400 mb-1">Total ₹{pkg.totalPrice.toLocaleString()} for 2 persons</p>
+              <p className="text-xs text-gray-400 mb-1">Total {convert(pkg.totalPrice)} for 2 persons</p>
               <p className="text-xs text-blue-600 font-semibold mb-4">
-                No Cost EMI at ₹{pkg.emiPerMonth.toLocaleString()}/month
+                No Cost EMI at {convert(pkg.emiPerMonth)}/month
               </p>
 
               <hr className="border-gray-100 mb-4" />
@@ -364,7 +366,7 @@ export default function PackageDetailPage() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-xs text-gray-400">Starting from</p>
-            <p className="text-xl font-extrabold text-gray-900">₹{pkg.price.toLocaleString()}<span className="text-xs font-normal text-gray-400">/person</span></p>
+            <p className="text-xl font-extrabold text-gray-900">{convert(pkg.price)}<span className="text-xs font-normal text-gray-400">/person</span></p>
           </div>
           <div className="flex gap-2 flex-1 justify-end">
             <button className="border border-blue-600 text-blue-600 font-bold text-sm px-4 py-2.5 rounded-xl">

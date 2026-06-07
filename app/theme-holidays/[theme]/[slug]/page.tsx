@@ -6,6 +6,7 @@ import { useParams } from "next/navigation"
 import { getThemePackageBySlug } from "@/data/themePackages"
 import EnquiryModal from "@/components/EnquiryModal"
 import BottomNav from "@/components/BottomNav"
+import { usePrice } from "@/hooks/usePrice"
 
 const themeColors: Record<string, string> = {
   "Honeymoon": "#be185d",
@@ -30,6 +31,7 @@ const themeIcons: Record<string, string> = {
 }
 
 export default function ThemePackageDetailPage() {
+  const { convert } = usePrice()
   const { theme, slug } = useParams()
   const pkg = getThemePackageBySlug(slug as string)
 
@@ -286,21 +288,21 @@ export default function ThemePackageDetailPage() {
                   <div className="space-y-3 mb-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Price per person</span>
-                      <span className="font-semibold text-gray-800">₹{pkg.price.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(pkg.price)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">× {travelers} traveler{travelers > 1 ? "s" : ""}</span>
-                      <span className="font-semibold text-gray-800">₹{totalCost.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(totalCost)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">GST (5%)</span>
-                      <span className="font-semibold text-gray-800">₹{gst.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(gst)}</span>
                     </div>
                     <hr className="border-gray-100" />
                     <div className="flex justify-between">
                       <span className="font-bold text-gray-800">Total Amount</span>
                       <span className="text-xl font-extrabold" style={{ color: themeColor }}>
-                        ₹{grandTotal.toLocaleString()}
+                        {convert(grandTotal)}
                       </span>
                     </div>
                   </div>
@@ -330,7 +332,7 @@ export default function ThemePackageDetailPage() {
             <div className="bg-white rounded-2xl shadow-sm p-5 sticky top-20">
               <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">Starting from</p>
               <div className="flex items-baseline gap-1 mb-3">
-                <span className="text-3xl font-extrabold text-gray-900">₹{pkg.price.toLocaleString()}</span>
+                <span className="text-3xl font-extrabold text-gray-900">{convert(pkg.price)}</span>
                 <span className="text-sm text-gray-400">/person</span>
               </div>
               <div className="rounded-xl p-3 mb-4" style={{ backgroundColor: `${themeColor}10` }}>
@@ -377,7 +379,7 @@ export default function ThemePackageDetailPage() {
           <div>
             <p className="text-xs text-gray-400">Starting from</p>
             <p className="text-xl font-extrabold text-gray-900">
-              ₹{pkg.price.toLocaleString()}
+              {convert(pkg.price)}
               <span className="text-xs font-normal text-gray-400">/person</span>
             </p>
           </div>

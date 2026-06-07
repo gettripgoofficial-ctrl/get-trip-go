@@ -4,6 +4,7 @@ import { useState, useMemo } from "react"
 import Link from "next/link"
 import { groupDepartures, getAllCountries, getAllSeries } from "@/data/groupDepartures"
 import BottomNav from "@/components/BottomNav"
+import { usePrice } from "@/hooks/usePrice"
 
 const durationRanges = [
   { label: "Short (≤8 days)", min: 1, max: 8 },
@@ -32,6 +33,7 @@ const seriesColors: Record<string, string> = {
 }
 
 export default function GroupDeparturesPage() {
+  const { convert } = usePrice()
   const [searchQuery, setSearchQuery] = useState("")
   const [seriesFilter, setSeriesFilter] = useState<string[]>([])
   const [countryFilter, setCountryFilter] = useState<string[]>([])
@@ -338,7 +340,7 @@ export default function GroupDeparturesPage() {
                           <div>
                             <p className="text-xs text-gray-400">Starting from</p>
                             <div className="flex items-baseline gap-1">
-                              <span className="text-xl font-extrabold text-gray-900">₹{pkg.priceINR.toLocaleString()}</span>
+                              <span className="text-xl font-extrabold text-gray-900">{convert(pkg.priceINR)}</span>
                               <span className="text-xs text-gray-400">/person</span>
                             </div>
                             <p className="text-[10px] text-gray-400">€{pkg.priceEUR.toLocaleString()} per person</p>

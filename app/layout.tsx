@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar"
+import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import Footer from "@/components/Footer";
 
 export default function RootLayout({
@@ -11,9 +12,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ backgroundColor: "#F8F9FF" }}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <CurrencyProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </CurrencyProvider>
       </body>
     </html>
   );

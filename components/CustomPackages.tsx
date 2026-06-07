@@ -1,4 +1,5 @@
 "use client"
+import { usePrice } from "@/hooks/usePrice"
 
 import { useState } from "react"
 import Link from "next/link"
@@ -15,6 +16,7 @@ function PackageCard({
   pkg: typeof customPackages[0]
   onGetQuote: (name: string) => void
 }) {
+  const { convert } = usePrice()
   return (
     <div
       className="min-w-[calc(100vw-64px)] max-w-[calc(100vw-64px)] sm:min-w-[385px] sm:max-w-[385px] flex-shrink-0 flex bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all overflow-hidden"
@@ -49,7 +51,7 @@ function PackageCard({
         </Link>
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-bold text-blue-600">₹{pkg.price.toLocaleString()}</p>
+            <p className="text-sm font-bold text-blue-600">{convert(pkg.price)}</p>
             <p className="text-xs text-gray-400">per person</p>
           </div>
           <button

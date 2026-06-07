@@ -5,6 +5,7 @@ import Link from "next/link"
 import { customPackages } from "@/data/customPackages"
 import EnquiryModal from "@/components/EnquiryModal"
 import BottomNav from "@/components/BottomNav"
+import { usePrice } from "@/hooks/usePrice"
 
 const types = ["Family", "Couple", "Honeymoon", "Adventure", "Cultural", "Beach"]
 const durations = [
@@ -21,6 +22,7 @@ const budgetRanges = [
 ]
 
 export default function CustomizedItinerariesPage() {
+  const { convert } = usePrice()
   const [searchQuery, setSearchQuery] = useState("")
   const [typeFilter, setTypeFilter] = useState<string[]>([])
   const [durationFilter, setDurationFilter] = useState<number[]>([])
@@ -296,10 +298,10 @@ export default function CustomizedItinerariesPage() {
                       <div className="flex items-end justify-between">
                         <div>
                           <div className="flex items-baseline gap-1">
-                            <span className="text-xl font-extrabold text-gray-900">₹{pkg.price.toLocaleString()}</span>
+                            <span className="text-xl font-extrabold text-gray-900">{convert(pkg.price)}</span>
                             <span className="text-xs text-gray-400">/Person</span>
                           </div>
-                          <p className="text-[10px] text-gray-400">Total ₹{pkg.totalPrice.toLocaleString()}</p>
+                          <p className="text-[10px] text-gray-400">Total {convert(pkg.totalPrice)}</p>
                         </div>
                         <button
                           onClick={() => handleGetQuote(pkg.name)}

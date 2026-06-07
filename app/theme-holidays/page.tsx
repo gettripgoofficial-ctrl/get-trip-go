@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { themePackages, themes } from "@/data/themePackages"
 import BottomNav from "@/components/BottomNav"
+import { usePrice } from "@/hooks/usePrice"
 
 const themeColors: Record<string, string> = {
   "Honeymoon": "#be185d",
@@ -45,6 +46,7 @@ const INITIAL_VISIBLE = 6
 const LOAD_MORE_COUNT = 6
 
 function ThemeHolidaysPageInner() {
+  const { convert } = usePrice()
   const searchParams = useSearchParams()
   const initialTheme = searchParams.get("theme")
 
@@ -320,7 +322,7 @@ function ThemeHolidaysPageInner() {
                             <div>
                               <p className="text-xs text-gray-400">Starting from</p>
                               <div className="flex items-baseline gap-1">
-                                <span className="text-xl font-extrabold text-gray-900">₹{pkg.price.toLocaleString()}</span>
+                                <span className="text-xl font-extrabold text-gray-900">{convert(pkg.price)}</span>
                                 <span className="text-xs text-gray-400">/person</span>
                               </div>
                             </div>

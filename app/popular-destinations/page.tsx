@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { packages, destinations } from "@/data/packages"
 import BottomNav from "@/components/BottomNav"
+import { usePrice } from "@/hooks/usePrice"
 
 const themes = ["Adventure", "Culture", "Pilgrimage", "Honeymoon", "Wildlife"]
 const hotelStars = [3, 4, 5] as const
@@ -17,6 +18,7 @@ const budgetRanges = [
 ]
 
 function PopularDestinationsContent() {
+  const { convert } = usePrice()
   const searchParams = useSearchParams()
   const initialDestination = searchParams.get("destination") || "All"
 
@@ -373,10 +375,10 @@ function PopularDestinationsContent() {
                       <div className="flex items-end justify-between">
                         <div>
                           <div className="flex items-baseline gap-1">
-                            <span className="text-xl font-extrabold text-gray-900">₹{pkg.price.toLocaleString()}</span>
+                            <span className="text-xl font-extrabold text-gray-900">{convert(pkg.price)}</span>
                             <span className="text-xs text-gray-400">/Person</span>
                           </div>
-                          <p className="text-[10px] text-gray-400">Total ₹{pkg.totalPrice.toLocaleString()}</p>
+                          <p className="text-[10px] text-gray-400">Total {convert(pkg.totalPrice)}</p>
                         </div>
                         <span className="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-full">
                           View Details

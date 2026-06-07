@@ -3,11 +3,10 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import SupportModal from "@/components/SupportModal"
+import { useCurrency } from "@/contexts/CurrencyContext"
 import DealsModal from "@/components/DealsModal"
 
 export default function Navbar() {
-  const [currencies, setCurrencies] = useState<string[]>([])
-  const [selectedCurrency, setSelectedCurrency] = useState("INR")
   const [selectedLang, setSelectedLang] = useState("English")
   const [showCurrency, setShowCurrency] = useState(false)
   const [showLang, setShowLang] = useState(false)
@@ -17,6 +16,7 @@ export default function Navbar() {
   const [dealsOpen, setDealsOpen] = useState(false)
 
   const lastScrollY = useRef(0)
+  const { currency: selectedCurrency, setCurrency: setSelectedCurrency, currencies } = useCurrency()
   const pathname = usePathname()
 
   const languages = ["English", "Hindi", "Arabic", "French"]
@@ -24,17 +24,7 @@ export default function Navbar() {
     English: "EN", Hindi: "HI", Arabic: "AR", French: "FR"
   }
 
-  useEffect(() => {
-    fetch("/api/currency")
-      .then(res => res.json())
-      .then(data => {
-        const major = ["INR", "USD", "EUR", "AED", "GBP", "SGD", "AUD", "CAD"]
-        setCurrencies(major.filter(c => data.rates[c]))
-      })
-      .catch(() => setCurrencies(["INR", "USD", "EUR", "AED", "GBP"]))
-  }, [])
-
-  useEffect(() => {
+useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY
       if (currentY <= 0) {

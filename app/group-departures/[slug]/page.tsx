@@ -7,6 +7,7 @@ import { getGroupDepartureBySlug } from "@/data/groupDepartures"
 import { getItinerary } from "@/data/itineraries"
 import EnquiryModal from "@/components/EnquiryModal"
 import BottomNav from "@/components/BottomNav"
+import { usePrice } from "@/hooks/usePrice"
 
 const seriesColors: Record<string, string> = {
   "Go English": "#1A56F0",
@@ -17,6 +18,7 @@ const seriesColors: Record<string, string> = {
 }
 
 export default function GroupDepartureDetailPage() {
+  const { convert } = usePrice()
   const { slug } = useParams()
   const pkg = getGroupDepartureBySlug(slug as string)
   const itinerary = getItinerary(slug as string)
@@ -374,22 +376,22 @@ export default function GroupDepartureDetailPage() {
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Price per person</span>
                       <div className="text-right">
-                        <span className="font-semibold text-gray-800">₹{pkg.priceINR.toLocaleString()}</span>
+                        <span className="font-semibold text-gray-800">{convert(pkg.priceINR)}</span>
                         <span className="text-xs text-gray-400 ml-1">(€{pkg.priceEUR})</span>
                       </div>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">× {travelers} traveler{travelers > 1 ? "s" : ""}</span>
-                      <span className="font-semibold text-gray-800">₹{totalCost.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(totalCost)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">GST (5%)</span>
-                      <span className="font-semibold text-gray-800">₹{gst.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">{convert(gst)}</span>
                     </div>
                     <hr className="border-gray-100" />
                     <div className="flex justify-between">
                       <span className="font-bold text-gray-800">Total Amount</span>
-                      <span className="text-xl font-extrabold" style={{ color: seriesColor }}>₹{grandTotal.toLocaleString()}</span>
+                      <span className="text-xl font-extrabold" style={{ color: seriesColor }}>{convert(grandTotal)}</span>
                     </div>
                   </div>
                   <div className="bg-white rounded-xl border border-gray-100 p-4 mb-4">
@@ -418,7 +420,7 @@ export default function GroupDepartureDetailPage() {
             <div className="bg-white rounded-2xl shadow-sm p-5 sticky top-20">
               <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">Starting from</p>
               <div className="flex items-baseline gap-1 mb-0.5">
-                <span className="text-3xl font-extrabold text-gray-900">₹{pkg.priceINR.toLocaleString()}</span>
+                <span className="text-3xl font-extrabold text-gray-900">{convert(pkg.priceINR)}</span>
                 <span className="text-sm text-gray-400">/person</span>
               </div>
               <p className="text-xs text-gray-400 mb-1">€{pkg.priceEUR} per person</p>
@@ -449,7 +451,7 @@ export default function GroupDepartureDetailPage() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-xs text-gray-400">Starting from</p>
-            <p className="text-xl font-extrabold text-gray-900">₹{pkg.priceINR.toLocaleString()}<span className="text-xs font-normal text-gray-400">/person</span></p>
+            <p className="text-xl font-extrabold text-gray-900">{convert(pkg.priceINR)}<span className="text-xs font-normal text-gray-400">/person</span></p>
           </div>
           <div className="flex gap-2 flex-1 justify-end">
             <button onClick={() => setEnquiryOpen(true)} className="border-2 font-bold text-sm px-4 py-2.5 rounded-xl" style={{ borderColor: seriesColor, color: seriesColor }}>Quote</button>
