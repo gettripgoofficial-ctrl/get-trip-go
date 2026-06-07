@@ -22,6 +22,8 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if ((e.target as HTMLFormElement).dataset.submitting) return
+    ;(e.target as HTMLFormElement).dataset.submitting = "true"
     await fetch("/api/enquiry", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, packageName }) })
     setSubmitted(true)
   }
