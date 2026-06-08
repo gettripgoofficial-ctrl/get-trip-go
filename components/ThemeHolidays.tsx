@@ -98,7 +98,7 @@ export default function ThemeHolidays() {
     <div className="max-w-7xl mx-auto px-4 py-4">
       <div className="flex rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
 
-        {/* LEFT — Scrollable Cards (60% width, 3 visible) */}
+        {/* LEFT — Scrollable Cards */}
         <div className="flex-1 overflow-hidden px-4 py-5">
           <div
             ref={scrollRef}
@@ -142,7 +142,7 @@ export default function ThemeHolidays() {
           </div>
         </div>
 
-        {/* RIGHT PANEL — Text (40% width) */}
+        {/* RIGHT PANEL */}
         <div
           className="flex-shrink-0 relative overflow-hidden border-l border-amber-100"
           style={{
@@ -209,16 +209,11 @@ export default function ThemeHolidays() {
           <h2 style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
-            fontSize: "13px", fontWeight: 800,
-            color: "#78350f", lineHeight: 1.2, marginBottom: "4px", fontSize: "10px",
-          }}>Explore Holidays by Theme</h2>
-
-          <p style={{
-            position: "relative", zIndex: 10,
-            width: "100%", textAlign: "center",
-            fontSize: "8px", color: "#92400e",
-            lineHeight: 1.6, marginBottom: "10px",
+            fontSize: "10px", fontWeight: 800,
+            color: "#78350f", lineHeight: 1.2, marginBottom: "4px",
           }}>
+            Explore Holidays by Theme
+          </h2>
 
           <Link
             href="/theme-holidays"
@@ -226,7 +221,7 @@ export default function ThemeHolidays() {
               position: "relative", zIndex: 10,
               fontSize: "8px", fontWeight: 700,
               color: "#b45309", textDecoration: "underline",
-              marginBottom: "8px",
+              marginBottom: "10px",
               letterSpacing: "0.5px",
             }}
           >
