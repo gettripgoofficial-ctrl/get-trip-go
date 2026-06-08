@@ -95,8 +95,8 @@ export default function ThemeHolidays() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
-      <div className="flex rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white min-h-[340px]">
+    <div className="max-w-7xl mx-auto px-4 py-4">
+      <div className="flex rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
 
         {/* LEFT — Scrollable Cards (60% width, 3 visible) */}
         <div className="flex-1 overflow-hidden px-4 py-5">
@@ -109,15 +109,15 @@ export default function ThemeHolidays() {
               <Link
                 key={theme.id}
                 href={theme.href}
-                className="flex-shrink-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 transition-transform duration-200 block"
-                style={{ scrollSnapAlign: "start", width: "calc(33.333% - 8px)" }}
+                className="flex-shrink-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 transition-transform duration-200 block self-start"
+                style={{ scrollSnapAlign: "start", width: "100%" }}
               >
                 <img
                   src={theme.image}
                   alt={theme.name}
-                  className="w-full h-[170px] object-cover"
+                  className="w-full h-[200px] object-cover"
                 />
-                <div className="p-2.5">
+                <div className="p-2.5 pb-4">
                   <h4 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h4>
                   <div className="flex flex-wrap gap-1 mb-2.5">
                     {theme.tags.map(tag => (
@@ -134,7 +134,7 @@ export default function ThemeHolidays() {
                     className="text-[11px] font-bold uppercase tracking-wide"
                     style={{ color: theme.color }}
                   >
-                    VIEW MORE →
+                    VIEW MORE
                   </span>
                 </div>
               </Link>
@@ -152,7 +152,7 @@ export default function ThemeHolidays() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            padding: "28px 24px",
+            padding: "12px 12px",
           }}
         >
           {/* Mandala SVG */}
@@ -199,9 +199,9 @@ export default function ThemeHolidays() {
           <p style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
-            fontSize: "10px", fontWeight: 600,
-            letterSpacing: "2px", color: "#b45309",
-            textTransform: "uppercase", marginBottom: "6px",
+            fontSize: "8px", fontWeight: 600,
+            letterSpacing: "2px", color: "#b45309", whiteSpace: "nowrap",
+            textTransform: "uppercase", marginBottom: "4px",
           }}>
             Curated for you
           </p>
@@ -209,32 +209,28 @@ export default function ThemeHolidays() {
           <h2 style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
-            fontSize: "22px", fontWeight: 800,
-            color: "#78350f", lineHeight: 1.2, marginBottom: "8px",
-          }}>
-            Explore Holidays by Theme
-          </h2>
+            fontSize: "13px", fontWeight: 800,
+            color: "#78350f", lineHeight: 1.2, marginBottom: "4px", fontSize: "10px",
+          }}>Explore Holidays by Theme</h2>
 
           <p style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
-            fontSize: "12px", color: "#92400e",
-            lineHeight: 1.6, marginBottom: "20px",
+            fontSize: "8px", color: "#92400e",
+            lineHeight: 1.6, marginBottom: "10px",
           }}>
-            Your dream trip, just a theme away
-          </p>
 
           <Link
             href="/theme-holidays"
             style={{
               position: "relative", zIndex: 10,
-              fontSize: "11px", fontWeight: 700,
+              fontSize: "8px", fontWeight: 700,
               color: "#b45309", textDecoration: "underline",
-              marginBottom: "16px",
+              marginBottom: "8px",
               letterSpacing: "0.5px",
             }}
           >
-            View All Themes ↗
+            View All Themes
           </Link>
 
           <div style={{

@@ -2,10 +2,11 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import {
   Plane,
   Hotel,
-  Sparkles,
+  Camera,
   Car,
   Menu,
   X,
@@ -35,7 +36,7 @@ const SERVICES = [
   },
   {
     label: "Things to do",
-    icon: <Sparkles size={28} strokeWidth={2} />,
+    icon: <Camera size={28} strokeWidth={2} />,
     bg: "#EA8C1E",
     color: "#fff",
     href: "#activities",
@@ -61,8 +62,8 @@ const SECONDARY = [
 function MobileOfferCard({ offer, onOpen }: { offer: Offer; onOpen: () => void }) {
   return (
     <div
-      className="relative rounded-2xl overflow-hidden flex-shrink-0 select-none"
-      style={{ background: offer.color, width: "calc(50vw - 28px)", flexShrink: 0, minHeight: "160px" }}
+      className="relative rounded-2xl overflow-hidden flex-shrink-0 select-none min-w-[calc(50%-6px)] max-w-[calc(50%-6px)]"
+      style={{ background: offer.color, width: "calc(50vw - 10px)", flexShrink: 0, minHeight: "160px", scrollSnapAlign: "start" }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
@@ -217,6 +218,83 @@ function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => void }) {
   )
 }
 
+// ── Widget Carousel ──
+function WidgetCarousel() {
+  const [active, setActive] = useState(0)
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const touchStartX = useRef(0)
+
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = setInterval(() => {
+      setActive(prev => (prev + 1) % 2)
+    }, 6000)
+  }
+
+  useEffect(() => {
+    startTimer()
+    return () => { if (timerRef.current) clearInterval(timerRef.current) }
+  }, [])
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 40) {
+      setActive(prev => (prev + (diff > 0 ? 1 : -1) + 2) % 2)
+      startTimer()
+    }
+  }
+
+  return (
+    <div
+      className="relative overflow-hidden w-full h-full"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Slides wrapper */}
+      <div
+        className="flex h-full transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${active * 50}%)`, width: "200%" }}
+      >
+        {/* GYG Slide */}
+        <div className="h-full flex items-center justify-center" style={{ width: "50%", background: "transparent" }}>
+          <div
+            data-gyg-widget="auto"
+            data-gyg-partner-id="9X14REW"
+            style={{ width: "100%", minHeight: "140px" }}
+          />
+        </div>
+
+        {/* Viator Slide */}
+        <div className="h-full flex items-center justify-center" style={{ width: "50%", background: "transparent" }}>
+          <div
+            data-vi-partner-id="P00257641"
+            data-vi-widget-ref="W-32705c4f-dc31-4666-abdd-e1abcb0679d5"
+            data-vi-search-term="India"
+            style={{ width: "100%", minHeight: "140px" }}
+          />
+        </div>
+      </div>
+
+      {/* Provider label */}
+      <div className="absolute bottom-2 right-3 z-10">
+        <span
+          className="text-[9px] font-bold px-2 py-0.5 rounded-full"
+          style={{
+            backgroundColor: "rgba(0,0,0,0.15)",
+            color: "rgba(255,255,255,0.8)",
+          }}
+        >
+          {active === 0 ? "GetYourGuide" : "Viator"}
+        </span>
+      </div>
+    </div>
+  )
+}
+
 export default function HeroSectionMobile() {
   const [showMenu, setShowMenu] = useState(false)
   const [showCurrency, setShowCurrency] = useState(false)
@@ -254,6 +332,19 @@ export default function HeroSectionMobile() {
 
   return (
     <>
+      {/* ── GYG Script ── */}
+      <Script
+        src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+        data-gyg-partner-id="9X14REW"
+        strategy="lazyOnload"
+      />
+
+      {/* ── Viator Script ── */}
+      <Script
+        src="https://www.viator.com/orion/partner/widget.js"
+        strategy="lazyOnload"
+      />
+
       {/* ── Navbar ── */}
       <nav
         className={`md:hidden fixed top-0 left-0 right-0 z-50 bg-[#F8F9FF] shadow-sm transition-transform duration-300 ${
@@ -330,27 +421,7 @@ export default function HeroSectionMobile() {
       {/* ── Page Content ── */}
       <div className="md:hidden pt-16 bg-[#F8F9FF]">
 
-        {/* ── Hero Banner ── */}
-        <div className="mx-4 mt-4 mb-5 rounded-2xl overflow-hidden relative" style={{ height: "160px" }}>
-          <div className="absolute inset-0" style={{
-            background: "linear-gradient(135deg, #0A1628 0%, #1A56F0 50%, #0ea5e9 100%)"
-          }} />
-          <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full opacity-10" style={{ background: "#fff" }} />
-          <div className="absolute -right-4 bottom-0 w-24 h-24 rounded-full opacity-10" style={{ background: "#fff" }} />
-          <div className="absolute right-16 top-4 w-12 h-12 rounded-full opacity-10" style={{ background: "#fff" }} />
-          <div className="relative z-10 p-5 h-full flex flex-col justify-between">
-            <div>
-              <span className="text-xs font-semibold text-blue-200">✈ India's Trusted Travel Platform</span>
-              <h1 className="text-2xl font-extrabold text-white leading-tight mt-1">
-                Discover The World{" "}
-                <span className="text-yellow-300">With Confidence</span>
-              </h1>
-            </div>
-            <p className="text-sm text-blue-100">Flights, hotels, holidays & more</p>
-          </div>
-        </div>
-
-        {/* ── Service Grid 1×4 ── */}
+{/* ── Service Grid 1×4 ── */}
         <div className="px-4 pb-5">
           <div className="grid grid-cols-4 gap-3">
             {SERVICES.map(({ label, icon, bg, color, href }) => (
@@ -375,19 +446,34 @@ export default function HeroSectionMobile() {
         <div className="pb-5">
           <div className="flex items-center justify-between px-4 mb-3">
             <h2 className="text-base font-bold text-[#0A1628]">Special Offers</h2>
-            
           </div>
-          <div
-            className="flex gap-3 overflow-x-auto px-4 pb-1"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch", paddingRight: "24px" } as React.CSSProperties}
-          >
-            {offers.map(offer => (
-              <MobileOfferCard
-                key={offer.code}
-                offer={offer}
-                onOpen={() => setActiveOffer(offer)}
-              />
-            ))}
+          <div className="px-4">
+            <div
+              className="flex gap-3 overflow-x-auto pb-2"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
+            >
+              {offers.map(offer => (
+                <MobileOfferCard
+                  key={offer.code}
+                  offer={offer}
+                  onOpen={() => setActiveOffer(offer)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+
+        {/* ── Widget Carousel ── */}
+        <div
+          className="mx-4 mb-5 rounded-2xl overflow-hidden relative"
+          style={{
+            height: "180px",
+            background: "linear-gradient(135deg, #0A1628 0%, #1A56F0 50%, #0ea5e9 100%)",
+          }}
+        >
+          <div className="relative z-10 w-full h-full">
+            <WidgetCarousel />
           </div>
         </div>
 
@@ -397,8 +483,8 @@ export default function HeroSectionMobile() {
             <h2 className="text-base font-bold text-[#0A1628]">More Services</h2>
           </div>
           <div
-            className="flex gap-3 overflow-x-auto px-4 pb-1"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch", paddingRight: "24px" } as React.CSSProperties}
+            className="flex gap-3 overflow-x-auto px-4 pb-2"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch", scrollSnapType: "x mandatory" } as React.CSSProperties}
           >
             {SECONDARY.map(({ icon, label }) => (
               <button

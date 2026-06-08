@@ -12,7 +12,9 @@ const ContentSecurityPolicy = `
     https://*.sentry.io
     https://*.contentsquare.net
     https://assets.calendly.com
-    https://vercel.live;
+    https://vercel.live
+    https://widget.getyourguide.com
+    https://www.viator.com;
   script-src-elem 'self' 'unsafe-inline'
     https://tpscr.com
     https://*.travelpayouts.com
@@ -22,13 +24,18 @@ const ContentSecurityPolicy = `
     https://client.crisp.chat
     https://*.contentsquare.net
     https://assets.calendly.com
-    https://vercel.live;
+    https://vercel.live
+    https://widget.getyourguide.com
+    https://www.viator.com;
   style-src 'self' 'unsafe-inline'
     https://tpscr.com
     https://*.travelpayouts.com
     https://fonts.googleapis.com
     https://*.crisp.chat
-    https://assets.calendly.com;
+    https://assets.calendly.com
+    https://*.getyourguide.com
+    https://*.viator.com
+    https://www.viator.com;
   font-src 'self'
     https://fonts.gstatic.com
     https://*.crisp.chat
@@ -42,7 +49,10 @@ const ContentSecurityPolicy = `
     https://*.crisp.chat
     https://image.crisp.chat
     https://*.contentsquare.net
-    https://assets.calendly.com;
+    https://assets.calendly.com
+    https://*.getyourguide.com
+    https://*.viator.com
+    https://www.viator.com;
   connect-src 'self'
     https://tpscr.com
     https://*.travelpayouts.com
@@ -54,12 +64,13 @@ const ContentSecurityPolicy = `
     https://*.contentsquare.net
     https://ace-shiner-107105.upstash.io
     https://api.resend.com
-    https://assets.calendly.com;
-  frame-src 'self'
-    https://*.travelpayouts.com
-    https://calendly.com
     https://assets.calendly.com
-    https://*.crisp.chat;
+    https://*.getyourguide.com
+    https://*.viator.com
+    https://www.viator.com;
+  frame-src 'self'
+    https://widget.getyourguide.com
+    https://www.viator.com;
   worker-src 'self' blob:;
   media-src 'self' https://*.travelpayouts.com;
 `
