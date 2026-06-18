@@ -99,7 +99,7 @@ export default function ThemeHolidays() {
       <div className="flex rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
 
         {/* LEFT — Scrollable Cards */}
-        <div className="flex-1 overflow-hidden px-4 py-5">
+        <div className="flex-1 overflow-hidden px-4 pt-5 pb-0 md:pb-5 [&]:pb-0">
           <div
             ref={scrollRef}
             className="flex gap-3 overflow-x-auto pb-1"
@@ -117,7 +117,7 @@ export default function ThemeHolidays() {
                   alt={theme.name}
                   className="w-full h-[200px] object-cover"
                 />
-                <div className="p-2.5 pb-4">
+                <div className="p-2.5 pb-0 md:pb-4">
                   <h4 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h4>
                   <div className="flex flex-wrap gap-1 mb-2.5">
                     {theme.tags.map(tag => (
