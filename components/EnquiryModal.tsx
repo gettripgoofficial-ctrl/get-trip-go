@@ -15,7 +15,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
 
   if (!isOpen) return null
 
-  const phone = "+919876543210"
+  const phone = "+919667892504"
   const whatsappMessage = encodeURIComponent(`Hi! I'm interested in the package: ${packageName || "your travel package"}. Please share more details.`)
   const emailSubject = encodeURIComponent(`Enquiry: ${packageName || "Travel Package"}`)
   const emailBody = encodeURIComponent(`Hi GetTripGo Team,\n\nI am interested in the following package:\n${packageName || "Travel Package"}\n\nPlease share more details and availability.\n\nThank you.`)
@@ -119,7 +119,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                       <input
                         required
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 96678 92504"
                         value={formData.phone}
                         onChange={e => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-400"
@@ -191,7 +191,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                 </div>
                 <div className="bg-gray-50 rounded-2xl p-4">
                   <p className="text-xs text-gray-400 mb-1">Our travel helpline</p>
-                  <p className="text-2xl font-extrabold text-gray-800">+91 98765 43210</p>
+                  <p className="text-2xl font-extrabold text-gray-800">+91 96678 92504</p>
                 </div>
                 <a
                   href={`tel:${phone}`}

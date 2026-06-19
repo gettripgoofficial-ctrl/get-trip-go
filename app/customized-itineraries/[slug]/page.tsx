@@ -329,7 +329,7 @@ export default function CustomPackageDetailPage() {
                 Enquire Now
               </button>
               <p className="text-center text-xs text-gray-400 mt-3">
-                📞 <span className="font-semibold text-gray-600">+91 98765 43210</span>
+                📞 <span className="font-semibold text-gray-600">+91 96678 92504</span>
               </p>
             </div>
           </aside>

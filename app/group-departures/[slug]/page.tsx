@@ -440,7 +440,7 @@ export default function GroupDepartureDetailPage() {
               </div>
               <button onClick={() => setEnquiryOpen(true)} className="w-full text-white font-bold py-3 rounded-xl mb-3 transition-colors" style={{ backgroundColor: seriesColor }}>Book Now</button>
               <button onClick={() => setEnquiryOpen(true)} className="w-full border-2 font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm" style={{ borderColor: seriesColor, color: seriesColor }}>Get Quote</button>
-              <p className="text-center text-xs text-gray-400 mt-3">📞 <span className="font-semibold text-gray-600">+91 98765 43210</span></p>
+              <p className="text-center text-xs text-gray-400 mt-3">📞 <span className="font-semibold text-gray-600">+91 96678 92504</span></p>
             </div>
           </aside>
         </div>
