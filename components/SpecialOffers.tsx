@@ -2,16 +2,25 @@
 
 import { useEffect, useRef, useState } from "react"
 import { offers } from "@/data/offers"
+import { klookOffers } from "@/data/klook-coupons"
 
-type Offer = typeof offers[0]
+// Merge and shuffle: interleave klook offers evenly among existing offers
+const allOffers = [...offers]
+const step = Math.floor(allOffers.length / klookOffers.length)
+klookOffers.forEach((ko, i) => {
+  allOffers.splice((i + 1) * step + i, 0, { ...ko, link: (ko as any).link } as any)
+})
 
-const VISIBLE_DESKTOP = 4
+type Offer = typeof allOffers[0]
+
+const VISIBLE_DESKTOP = 6
 const VISIBLE_MOBILE = 1
 
 // ─── Offer Modal ─────────────────────────────────────────────────────────────
 
 function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => void }) {
   const [copied, setCopied] = useState(false)
+  const isKlook = offer.tag.startsWith("Klook")
 
   const handleCopy = () => {
     navigator.clipboard.writeText(offer.code)
@@ -20,25 +29,26 @@ function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => void }) {
   }
 
   const handleRedeem = () => {
+    if (isKlook) {
+      window.open((offer as any).link, "_blank")
+      return
+    }
     const msg = encodeURIComponent(
       `Hi! I'd like to redeem the offer: *${offer.title}* using promo code *${offer.code}*. Please assist me with the booking.`
     )
     window.open(`https://wa.me/919667892504?text=${msg}`, "_blank")
   }
 
-  // Close on backdrop click
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose()
   }
 
-  // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose() }
     window.addEventListener("keydown", handler)
     return () => window.removeEventListener("keydown", handler)
   }, [onClose])
 
-  // Prevent body scroll
   useEffect(() => {
     document.body.style.overflow = "hidden"
     return () => { document.body.style.overflow = "" }
@@ -82,7 +92,6 @@ function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => void }) {
             </span>
             <h2 className="text-white font-extrabold text-xl leading-tight">{offer.title}</h2>
           </div>
-          {/* Close button */}
           <button
             onClick={onClose}
             className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
@@ -97,8 +106,15 @@ function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => void }) {
 
         {/* Body */}
         <div className="p-5 flex flex-col gap-4">
-          {/* Description */}
           <p className="text-gray-600 text-sm leading-relaxed">{offer.desc}</p>
+
+          {/* Klook badge */}
+          {isKlook && (
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold"
+              style={{ backgroundColor: "#FFF3E0", color: "#FF5722" }}>
+              🎫 Powered by Klook — copy code then book on Klook
+            </div>
+          )}
 
           {/* Valid till */}
           <div
@@ -165,13 +181,13 @@ function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => void }) {
             </ul>
           </div>
 
-          {/* Redeem button */}
+          {/* CTA button */}
           <button
             onClick={handleRedeem}
             className="w-full py-3.5 rounded-xl font-bold text-white text-sm tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 flex items-center justify-center gap-2"
             style={{ backgroundColor: offer.color }}
           >
-            Redeem offer
+            {isKlook ? "Book on Klook →" : "Redeem offer"}
           </button>
         </div>
       </div>
@@ -189,87 +205,105 @@ function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => void }) {
 // ─── Offer Card ───────────────────────────────────────────────────────────────
 
 function OfferCard({ offer, onOpen }: { offer: Offer; onOpen: () => void }) {
+  const isKlook = offer.tag.startsWith("Klook")
+
   return (
-    <div
-      className="relative rounded-2xl overflow-hidden flex flex-col justify-between h-full select-none"
-      style={{ background: offer.color, minHeight: "220px" }}
-    >
-      {/* Subtle full-card bg image */}
+    <div className="relative select-none h-[220px] sm:h-[190px]">
+      {/* Coloured/clipped image card — overflow-hidden lives HERE, not on the outer wrapper,
+          so the CTA button below can poke outside the rounded card without being clipped.
+          Fixed height (matches outer wrapper) so every card in the row is identical. */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `url(${offer.image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.22,
-          mixBlendMode: "luminosity",
-        }}
-      />
-      {/* Right-side image panel */}
-      <div
-        className="absolute right-0 top-0 bottom-0 w-2/5 pointer-events-none"
-        style={{
-          backgroundImage: `url(${offer.image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,1) 100%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,1) 100%)",
-        }}
-      />
+        className="relative rounded-2xl overflow-hidden flex flex-col justify-between h-full"
+        style={{ background: offer.color }}
+      >
+        {/* Subtle full-card bg image */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `url(${offer.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.22,
+            mixBlendMode: "luminosity",
+          }}
+        />
+        {/* Right-side image panel */}
+        <div
+          className="absolute right-0 top-0 bottom-0 w-2/5 pointer-events-none"
+          style={{
+            backgroundImage: `url(${offer.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,1) 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,1) 100%)",
+          }}
+        />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full p-4 pr-[42%]" style={{ minHeight: "220px" }}>
-        <div>
-          <span
-            className="text-[11px] font-bold px-2.5 py-1 rounded-full inline-block mb-3 tracking-wide"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.22)",
-              color: "#fff",
-              backdropFilter: "blur(4px)",
-              border: "1px solid rgba(255,255,255,0.3)",
-            }}
-          >
-            {offer.tag}
-          </span>
-          <h4
-            className="font-extrabold text-white leading-tight mb-1"
-            style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", textShadow: "0 1px 8px rgba(0,0,0,0.18)" }}
-          >
-            {offer.title}
-          </h4>
-          <p className="text-white/80 text-xs leading-snug mt-1">{offer.desc}</p>
-        </div>
+        {/* Klook badge */}
+        {isKlook && (
+          <div className="absolute top-2 right-2 z-20 bg-white/90 rounded-full px-2 py-0.5 text-[10px] font-bold text-orange-600">
+            Klook
+          </div>
+        )}
 
-        <div className="mt-4 flex flex-col gap-2.5">
-          {/* Promo code pill */}
-          <div
-            className="inline-flex items-center gap-1.5 self-start px-3 py-1.5 rounded-lg text-white text-xs font-bold tracking-widest"
-            style={{
-              border: "1.5px dashed rgba(255,255,255,0.6)",
-              backgroundColor: "rgba(255,255,255,0.12)",
-              backdropFilter: "blur(4px)",
-            }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3 opacity-70">
-              <path fillRule="evenodd" d="M5.5 3A2.5 2.5 0 003 5.5v2.879a2.5 2.5 0 00.732 1.767l6.5 6.5a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536l-6.5-6.5A2.5 2.5 0 008.38 3H5.5zM6 7a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
-            </svg>
-            {offer.code}
+        {/* Content */}
+        <div className="relative z-10 flex flex-col justify-between h-full p-4 sm:p-3 pr-[42%] pb-7 sm:pb-6 overflow-hidden">
+          <div className="overflow-hidden">
+            <span
+              className="text-[11px] font-bold px-2.5 py-1 rounded-full inline-block mb-3 sm:mb-1.5 tracking-wide"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.22)",
+                color: "#fff",
+                backdropFilter: "blur(4px)",
+                border: "1px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              {offer.tag}
+            </span>
+            <h4
+              className="font-extrabold text-white leading-tight mb-1"
+              style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", textShadow: "0 1px 8px rgba(0,0,0,0.18)" }}
+            >
+              {offer.title}
+            </h4>
+            <p className="text-white/80 text-xs leading-snug mt-1">{offer.desc}</p>
           </div>
 
-          {/* CTA — opens modal */}
-          <button
-            onClick={onOpen}
-            className="inline-flex items-center self-start px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.95)",
-              color: offer.color,
-              boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
-            }}
-          >
-            {offer.cta}
-          </button>
+          <div className="mt-4 sm:mt-2.5 flex flex-col gap-2.5 sm:gap-1.5">
+            {/* Promo code pill */}
+            <div
+              className="inline-flex items-center gap-1.5 self-start px-3 py-1.5 rounded-lg text-white text-xs font-bold tracking-widest"
+              style={{
+                border: "1.5px dashed rgba(255,255,255,0.6)",
+                backgroundColor: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(4px)",
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3 opacity-70">
+                <path fillRule="evenodd" d="M5.5 3A2.5 2.5 0 003 5.5v2.879a2.5 2.5 0 00.732 1.767l6.5 6.5a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536l-6.5-6.5A2.5 2.5 0 008.38 3H5.5zM6 7a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+              </svg>
+              {offer.code}
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* CTA — straddles the bottom edge of the card, centered horizontally.
+          Lives outside the overflow-hidden card wrapper above so it isn't clipped.
+          Since every card has the same fixed height, this lands at the same line for all cards. */}
+      <button
+        onClick={onOpen}
+        className="absolute left-1/2 z-20 inline-flex items-center px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap"
+        style={{
+          bottom: "-16px",
+          transform: "translateX(-50%)",
+          backgroundColor: "rgba(255,255,255,0.97)",
+          color: offer.color,
+          boxShadow: "0 4px 14px rgba(0,0,0,0.18)",
+        }}
+      >
+        {offer.cta}
+      </button>
     </div>
   )
 }
@@ -282,7 +316,7 @@ export default function SpecialOffers() {
   const [activeOffer, setActiveOffer] = useState<Offer | null>(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const total = offers.length
+  const total = allOffers.length
   const maxIndex = total - visibleCount
 
   useEffect(() => {
@@ -305,7 +339,6 @@ export default function SpecialOffers() {
     return () => { if (timerRef.current) clearInterval(timerRef.current) }
   }, [maxIndex])
 
-  // Listen for footer "Special Offers" trigger
   useEffect(() => {
     const handler = () => {
       document.getElementById("special-offers-section")?.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -314,7 +347,6 @@ export default function SpecialOffers() {
     return () => window.removeEventListener("open-special-offers", handler)
   }, [])
 
-  // Pause auto-scroll when modal is open
   useEffect(() => {
     if (activeOffer) {
       if (timerRef.current) clearInterval(timerRef.current)
@@ -358,14 +390,14 @@ export default function SpecialOffers() {
           </div>
 
           {/* Carousel */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden pb-5">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${current * cardWidthPct}%)` }}
             >
-              {offers.map((offer) => (
+              {allOffers.map((offer, idx) => (
                 <div
-                  key={offer.code}
+                  key={`${offer.code}-${idx}`}
                   className="flex-shrink-0 px-1.5"
                   style={{ width: `${cardWidthPct}%` }}
                 >
@@ -377,7 +409,6 @@ export default function SpecialOffers() {
         </div>
       </div>
 
-      {/* Modal */}
       {activeOffer && (
         <OfferModal offer={activeOffer} onClose={() => setActiveOffer(null)} />
       )}

@@ -11,6 +11,7 @@ import {
 } from "lucide-react"
 import SearchBox from "./search/SearchBox"
 import { ServiceTab } from "./search/searchUtils"
+import HeroSidebarBanner from "@/components/klook-banners/HeroSidebarBanner"
 
 interface Tab {
   name: string
@@ -59,19 +60,15 @@ export default function HeroSection() {
 
   return (
     <section
-      className="w-full relative"
+      className="w-full relative overflow-visible"
       style={{
         height: "85vh",
         minHeight: "648px",
-        // Fallback color only shows before the very first image has
-        // painted. Once loaded, it's removed so it can't flash behind
-        // later slideshow transitions.
         backgroundColor: firstImageLoaded ? "transparent" : "#1A56F0",
       }}
       aria-label="Travel search"
     >
-      {/* First hero image — real <img> tag, loaded with top priority so
-          it appears as fast as possible on initial page load. */}
+      {/* First hero image */}
       <img
         src={BG_IMAGES[0]}
         alt=""
@@ -177,7 +174,7 @@ export default function HeroSection() {
             })}
           </div>
 
-          {/* Search card — fixed min height so card never jumps between tabs */}
+          {/* Search card */}
           <div
             id={`tabpanel-${activeTab}`}
             role="tabpanel"
@@ -193,6 +190,9 @@ export default function HeroSection() {
           </div>
         </motion.div>
       </div>
+
+      {/* Klook banner — desktop only, right side */}
+      <HeroSidebarBanner />
 
     </section>
   )
