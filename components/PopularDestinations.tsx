@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { usePrice } from "@/hooks/usePrice"
 
 const destinations = [
@@ -39,7 +40,7 @@ export default function PopularDestinations() {
               className="rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform shadow-md relative group"
               style={{ height: "220px" }}
             >
-              <img src={dest.image} alt={dest.name} className="w-full h-full object-cover brightness-90 group-hover:brightness-100 transition-all" />
+              <Image src={dest.image} alt={dest.name} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw" className="object-cover brightness-90 group-hover:brightness-100 transition-all" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-3">
                 <p className="text-white font-bold text-sm">{dest.name}</p>
@@ -59,7 +60,7 @@ export default function PopularDestinations() {
               className="min-w-[calc(50%-6px)] max-w-[calc(50%-6px)] flex-shrink-0 rounded-2xl overflow-hidden cursor-pointer shadow-md relative group"
               style={{ height: "180px" }}
             >
-              <img src={dest.image} alt={dest.name} className="w-full h-full object-cover brightness-90" />
+              <Image src={dest.image} alt={dest.name} fill sizes="50vw" className="object-cover brightness-90" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-2">
                 <p className="text-white font-bold text-xs">{dest.name}</p>
