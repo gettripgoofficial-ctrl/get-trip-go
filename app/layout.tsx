@@ -12,6 +12,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TravelAgency",
+              "name": "Get Trip Go",
+              "url": "https://gettripgo.com",
+              "logo": "https://gettripgo.com/logo.png",
+              "foundingDate": "2016",
+              "description": "Embark on your next adventure with Get Trip Go, a premier travel booking platform founded in 2016 in New Delhi. We specialise in affordable flights, hotel bookings, custom holiday packages and confirmed group tours across India and international destinations.",
+              "telephone": "+919334433557",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "First Floor, Office No.102, 52A, Vijay Block, Laxmi Nagar",
+                "addressLocality": "New Delhi",
+                "addressRegion": "Delhi",
+                "postalCode": "110092",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://www.instagram.com/gettripgo_official/",
+                "https://www.facebook.com/gettripgo.official",
+                "https://x.com/gettripgo",
+                "https://www.youtube.com/@GettripGo"
+              ]
+            })
+          }}
+        />
+      </head>
       <body style={{ backgroundColor: "#F8F9FF" }}>
         <CurrencyProvider>
           <Navbar />
