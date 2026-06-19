@@ -5,7 +5,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
 import { useState, useCallback, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 function ToolbarButton({
   onClick, active, title, children,
@@ -37,6 +37,17 @@ export interface BlogPost {
   slug: string;
 }
 
+interface SupabasePost {
+  id: string;
+  title: string;
+  category: string;
+  content: string;
+  cover_image: string;
+  author: string;
+  created_at: string;
+  slug: string;
+}
+
 interface BlogEditorProps {
   onSave?: (post: BlogPost) => void;
   initialData?: Partial<BlogPost>;
@@ -47,11 +58,9 @@ const CATEGORIES = [
   "Adventure", "Budget Travel", "Destination Guide", "Food & Culture",
 ];
 
-const toSlug = (str: string) =>
-  str.toLowerCase().trim().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-");
-
 export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const editId = searchParams.get("edit");
 
   const [title, setTitle] = useState(initialData?.title ?? "");
@@ -60,20 +69,21 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
   const [author, setAuthor] = useState(initialData?.author ?? "");
   const [saving, setSaving] = useState(false);
   const [savedMsg, setSavedMsg] = useState("");
-  const [editPost, setEditPost] = useState<BlogPost | null>(null);
+  const [editPost, setEditPost] = useState<SupabasePost | null>(null);
 
+  // Fetch post for editing
   useEffect(() => {
-    if (editId) {
-      const stored: BlogPost[] = JSON.parse(localStorage.getItem("blog_posts") ?? "[]");
-      const found = stored.find((p) => p.id === editId) ?? null;
-      if (found) {
-        setEditPost(found);
-        setTitle(found.title);
-        setCategory(found.category);
-        setCoverImage(found.coverImage);
-        setAuthor(found.author);
-      }
-    }
+    if (!editId) return;
+    fetch(`/api/blog/${editId}`)
+      .then((r) => r.json())
+      .then((post: SupabasePost) => {
+        setEditPost(post);
+        setTitle(post.title);
+        setCategory(post.category);
+        setCoverImage(post.cover_image ?? "");
+        setAuthor(post.author);
+      })
+      .catch(console.error);
   }, [editId]);
 
   const editor = useEditor({
@@ -105,27 +115,59 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
     if (!title.trim() || !editor) return;
     setSaving(true);
 
-    const post: BlogPost = {
-      id: editPost?.id ?? Date.now().toString(),
+    const payload = {
       title: title.trim(),
       category,
       content: editor.getHTML(),
-      coverImage,
+      cover_image: coverImage,
       author: author.trim() || "Admin",
-      createdAt: editPost?.createdAt ?? new Date().toISOString(),
-      slug: editPost?.slug ?? toSlug(title),
     };
 
-    const existing: BlogPost[] = JSON.parse(localStorage.getItem("blog_posts") ?? "[]");
-    const idx = existing.findIndex((p) => p.id === post.id);
-    if (idx >= 0) existing[idx] = post;
-    else existing.unshift(post);
-    localStorage.setItem("blog_posts", JSON.stringify(existing));
+    try {
+      let savedPost: SupabasePost;
 
-    onSave?.(post);
-    setSaving(false);
-    setSavedMsg(editPost ? "✓ Post updated!" : "✓ Post published!");
-    setTimeout(() => setSavedMsg(""), 3000);
+      if (editPost) {
+        // Update existing
+        const res = await fetch(`/api/blog/${editPost.id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        savedPost = await res.json();
+      } else {
+        // Create new
+        const res = await fetch("/api/blog", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        savedPost = await res.json();
+      }
+
+      // Convert to BlogPost shape for onSave callback
+      const blogPost: BlogPost = {
+        id: savedPost.id,
+        title: savedPost.title,
+        category: savedPost.category,
+        content: savedPost.content,
+        coverImage: savedPost.cover_image,
+        author: savedPost.author,
+        createdAt: savedPost.created_at,
+        slug: savedPost.slug,
+      };
+
+      onSave?.(blogPost);
+      setSavedMsg(editPost ? "✓ Post updated!" : "✓ Post published!");
+      setTimeout(() => {
+        setSavedMsg("");
+        router.push("/blog");
+      }, 1500);
+    } catch (err) {
+      console.error(err);
+      setSavedMsg("✗ Error saving post");
+    } finally {
+      setSaving(false);
+    }
   };
 
   if (!editor) return null;
@@ -177,9 +219,9 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">Cover Image URL</label>
-          <input type="url" value={coverImage} onChange={(e) => setCoverImage(e.target.value)}
-            placeholder="https://example.com/image.jpg"
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Cover Image Path</label>
+          <input type="text" value={coverImage} onChange={(e) => setCoverImage(e.target.value)}
+            placeholder="/images/blogs/my-cover.jpg"
             className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
           />
           {coverImage && (
@@ -220,7 +262,11 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
             className="bg-orange-500 hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold px-8 py-3 rounded-full transition-colors text-sm tracking-wide">
             {saving ? "Saving…" : isEditing ? "Update Story →" : "Publish Story →"}
           </button>
-          {savedMsg && <span className="text-green-600 font-medium text-sm">{savedMsg}</span>}
+          {savedMsg && (
+            <span className={`font-medium text-sm ${savedMsg.startsWith("✗") ? "text-red-500" : "text-green-600"}`}>
+              {savedMsg}
+            </span>
+          )}
         </div>
       </div>
     </div>

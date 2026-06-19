@@ -128,24 +128,47 @@ function AdminDashboard() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [deleteTarget, setDeleteTarget] = useState<BlogPost | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const stored: BlogPost[] = JSON.parse(
-      localStorage.getItem("blog_posts") ?? "[]"
-    );
-    setPosts(stored);
-    setMounted(true);
+    fetch("/api/blog")
+      .then((r) => r.json())
+      .then((data) => {
+        const mapped: BlogPost[] = data.map((p: any) => ({
+          id: p.id,
+          title: p.title,
+          category: p.category,
+          content: p.content,
+          coverImage: p.cover_image ?? "",
+          author: p.author,
+          createdAt: p.created_at,
+          slug: p.slug,
+        }));
+        setPosts(mapped);
+      })
+      .catch(console.error)
+      .finally(() => setMounted(true));
   }, []);
 
   const handleDelete = (post: BlogPost) => setDeleteTarget(post);
 
-  const confirmDelete = () => {
+  const confirmDelete = async () => {
     if (!deleteTarget) return;
-    const updated = posts.filter((p) => p.id !== deleteTarget.id);
-    setPosts(updated);
-    localStorage.setItem("blog_posts", JSON.stringify(updated));
-    setDeleteTarget(null);
+    setDeleting(true);
+    try {
+      const res = await fetch(`/api/blog/${deleteTarget.id}`, {
+        method: "DELETE",
+      });
+      if (!res.ok) throw new Error("Delete failed");
+      setPosts((prev) => prev.filter((p) => p.id !== deleteTarget.id));
+    } catch (err) {
+      console.error(err);
+      alert("Failed to delete post. Please try again.");
+    } finally {
+      setDeleting(false);
+      setDeleteTarget(null);
+    }
   };
 
   return (
