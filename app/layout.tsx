@@ -95,6 +95,9 @@ export const metadata: Metadata = {
       "Book flights, hotels, custom holidays & group tours at the best prices.",
     images: ["/og-default.jpg"],
   },
+  verification: {
+    google: "92TJAzSHn0M4P-fp00jNvAMrmgY0gQnXtt5oY7UHsUw",
+  },
   robots: {
     index: true,
     follow: true,
