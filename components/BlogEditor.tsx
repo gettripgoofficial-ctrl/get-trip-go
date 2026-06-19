@@ -4,7 +4,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 function ToolbarButton({
@@ -70,6 +70,9 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
   const [saving, setSaving] = useState(false);
   const [savedMsg, setSavedMsg] = useState("");
   const [editPost, setEditPost] = useState<SupabasePost | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Fetch post for editing
   useEffect(() => {
@@ -110,6 +113,37 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
     const url = window.prompt("Enter image URL:");
     if (url && editor) editor.chain().focus().setImage({ src: url }).run();
   }, [editor]);
+
+  const handleCoverImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setUploadError("");
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await fetch("/api/blog/upload-image", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setUploadError(data.error || "Upload failed. Please try again.");
+      } else {
+        setCoverImage(data.url);
+      }
+    } catch {
+      setUploadError("Upload failed. Check your connection and try again.");
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  };
 
   const handleSave = async () => {
     if (!title.trim() || !editor) return;
@@ -219,11 +253,36 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">Cover Image Path</label>
-          <input type="text" value={coverImage} onChange={(e) => setCoverImage(e.target.value)}
-            placeholder="/image/blogs/my-cover.jpg"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Cover Image</label>
+
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            onChange={handleCoverImageUpload}
+            className="hidden"
           />
+
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading}
+              className="shrink-0 border border-gray-300 rounded-lg px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition"
+            >
+              {uploading ? "Uploading…" : "Upload Image"}
+            </button>
+
+            <input type="text" value={coverImage} onChange={(e) => setCoverImage(e.target.value)}
+              placeholder="/image/blogs/my-cover.jpg or upload above"
+              className="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            />
+          </div>
+
+          {uploadError && (
+            <p className="mt-1.5 text-red-500 text-xs font-medium">{uploadError}</p>
+          )}
+
           {coverImage && (
             <img src={coverImage} alt="Cover preview"
               className="mt-3 w-full h-48 object-cover rounded-lg border border-gray-200" />

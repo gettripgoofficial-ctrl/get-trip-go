@@ -57,7 +57,8 @@ const ContentSecurityPolicy = `
     https://*.viator.com
     https://www.viator.com
     https://affiliate.klook.com
-    https://*.klook.com;
+    https://*.klook.com
+    https://*.supabase.co;
   connect-src 'self'
     https://tpscr.com
     https://*.travelpayouts.com
