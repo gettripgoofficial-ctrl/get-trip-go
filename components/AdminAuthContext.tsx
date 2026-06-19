@@ -1,5 +1,4 @@
 "use client";
-
 import {
   createContext,
   useContext,
@@ -8,49 +7,52 @@ import {
   ReactNode,
 } from "react";
 
-// ── Types ─────────────────────────────────────────────────────────────────────
 interface AdminAuthContextType {
   isAuthenticated: boolean;
-  login: (password: string) => boolean;
+  loading: boolean;
+  login: (password: string) => Promise<boolean>;
   logout: () => void;
 }
 
-// ── Context ───────────────────────────────────────────────────────────────────
 const AdminAuthContext = createContext<AdminAuthContextType | null>(null);
 
-// ── Provider ──────────────────────────────────────────────────────────────────
 export function AdminAuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  // Restore session from sessionStorage on mount
+  // Ask the server if the httpOnly cookie is valid (we can't read it from JS)
   useEffect(() => {
-    const session = sessionStorage.getItem("admin_auth");
-    if (session === "true") setIsAuthenticated(true);
+    fetch("/api/admin-check")
+      .then((r) => r.json())
+      .then((data) => setIsAuthenticated(!!data.authenticated))
+      .catch(() => setIsAuthenticated(false))
+      .finally(() => setLoading(false));
   }, []);
 
-  const login = (password: string): boolean => {
-    const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "travel@admin123";
-    if (password === adminPassword) {
-      setIsAuthenticated(true);
-      sessionStorage.setItem("admin_auth", "true");
-      return true;
-    }
-    return false;
+  const login = async (password: string): Promise<boolean> => {
+    const res = await fetch("/api/admin-login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+    const data = await res.json();
+    setIsAuthenticated(!!data.success);
+    return !!data.success;
   };
 
   const logout = () => {
-    setIsAuthenticated(false);
-    sessionStorage.removeItem("admin_auth");
+    fetch("/api/admin-logout", { method: "POST" }).finally(() => {
+      setIsAuthenticated(false);
+    });
   };
 
   return (
-    <AdminAuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AdminAuthContext.Provider value={{ isAuthenticated, loading, login, logout }}>
       {children}
     </AdminAuthContext.Provider>
   );
 }
 
-// ── Hook ──────────────────────────────────────────────────────────────────────
 export function useAdminAuth() {
   const ctx = useContext(AdminAuthContext);
   if (!ctx) throw new Error("useAdminAuth must be used inside AdminAuthProvider");

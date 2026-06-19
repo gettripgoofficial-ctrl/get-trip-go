@@ -221,7 +221,7 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-1">Cover Image Path</label>
           <input type="text" value={coverImage} onChange={(e) => setCoverImage(e.target.value)}
-            placeholder="/images/blogs/my-cover.jpg"
+            placeholder="/image/blogs/my-cover.jpg"
             className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
           />
           {coverImage && (
