@@ -9,7 +9,8 @@ import {
   Ticket,
   Car,
 } from "lucide-react"
-import SearchBox, { ServiceTab } from "./search/SearchBox"
+import SearchBox from "./search/SearchBox"
+import { ServiceTab } from "./search/searchUtils"
 
 interface Tab {
   name: string
