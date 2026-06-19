@@ -198,10 +198,9 @@ export default function HolidaySearch() {
         {/* WhatsApp button */}
         <button
           onClick={handleSearch}
-          className="flex-shrink-0 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-[13px] px-5 py-3 rounded-r-[13px] transition-colors whitespace-nowrap"
+          className="flex-shrink-0 flex items-center gap-2 bg-[#1A56F0] hover:bg-blue-700 text-white font-bold text-[13px] px-5 py-3 rounded-none transition-colors whitespace-nowrap"
         >
-          <MessageCircle size={16} />
-          Get Best Deals
+          Unlock Best Deals
         </button>
       </FieldRow>
 
@@ -222,10 +221,10 @@ export default function HolidaySearch() {
               <div className="flex justify-between"><span className="text-slate-500">Travelers</span><span className="font-semibold text-[#0e1f45]">{travelers} {travelers === 1 ? "Person" : "Persons"}</span></div>
               {holidayType && <div className="flex justify-between"><span className="text-slate-500">Type</span><span className="font-semibold text-[#0e1f45] capitalize">{holidayType}</span></div>}
             </div>
-            <p className="text-[12px] text-slate-500 mb-4 text-center">We'll send you the best holiday deals on WhatsApp!</p>
+            <p className="text-[12px] text-slate-500 mb-4 text-center">We'll send you the best holiday deals shortly</p>
             <button onClick={openWhatsApp}
-              className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition-colors">
-              <MessageCircle size={18} /> Chat on WhatsApp
+              className="w-full flex items-center justify-center gap-2 bg-[#1A56F0] hover:bg-blue-700 text-white font-bold py-3 rounded-none transition-colors">
+              Confirm Enquiry
             </button>
           </div>
         </div>

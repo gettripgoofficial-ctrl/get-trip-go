@@ -229,9 +229,8 @@ export default function TransferSearch() {
         {/* WhatsApp button */}
         <button
           onClick={() => setShowModal(true)}
-          className="flex-shrink-0 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-[13px] px-5 py-3 rounded-r-[13px] transition-colors whitespace-nowrap"
+          className="flex-shrink-0 flex items-center gap-2 bg-[#1A56F0] hover:bg-blue-700 text-white font-bold text-[13px] px-5 py-3 rounded-none transition-colors whitespace-nowrap"
         >
-          <MessageCircle size={16} />
           Search Transfers
         </button>
       </FieldRow>
@@ -254,10 +253,10 @@ export default function TransferSearch() {
               <div className="flex justify-between"><span className="text-slate-500">Time</span><span className="font-semibold text-[#0e1f45]">{time || "Flexible"}</span></div>
               <div className="flex justify-between"><span className="text-slate-500">Passengers</span><span className="font-semibold text-[#0e1f45]">{passengers} Pax</span></div>
             </div>
-            <p className="text-[12px] text-slate-500 mb-4 text-center">We'll arrange the best transfer for you on WhatsApp!</p>
+            <p className="text-[12px] text-slate-500 mb-4 text-center">We'll arrange the best transfer for you shortly</p>
             <button onClick={openWhatsApp}
-              className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition-colors">
-              <MessageCircle size={18} /> Chat on WhatsApp
+              className="w-full flex items-center justify-center gap-2 bg-[#1A56F0] hover:bg-blue-700 text-white font-bold py-3 rounded-none transition-colors">
+              Confirm Enquiry
             </button>
           </div>
         </div>
