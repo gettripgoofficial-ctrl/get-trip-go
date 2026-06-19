@@ -5,6 +5,8 @@ import Link from "next/link"
 import { groupDepartures, getAllCountries, getAllSeries } from "@/data/groupDepartures"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
+import FAQSection from "@/components/FAQSection"
+import { groupDeparturesFaqs } from "@/data/faqData"
 
 const durationRanges = [
   { label: "Short (≤8 days)", min: 1, max: 8 },
@@ -401,6 +403,7 @@ export default function GroupDeparturesPage() {
         </>
       )}
 
+      <FAQSection faqs={groupDeparturesFaqs} />
       <BottomNav />
     </div>
   )

@@ -6,6 +6,8 @@ import { customPackages } from "@/data/customPackages"
 import EnquiryModal from "@/components/EnquiryModal"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
+import FAQSection from "@/components/FAQSection"
+import { customizedItinerariesFaqs } from "@/data/faqData"
 
 const types = ["Family", "Couple", "Honeymoon", "Adventure", "Cultural", "Beach"]
 const durations = [
@@ -348,6 +350,7 @@ export default function CustomizedItinerariesPage() {
         packageName={selectedPackage}
       />
 
+      <FAQSection faqs={customizedItinerariesFaqs} />
       <BottomNav />
     </div>
   )

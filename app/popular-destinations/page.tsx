@@ -6,6 +6,8 @@ import { useSearchParams } from "next/navigation"
 import { packages, destinations } from "@/data/packages"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
+import FAQSection from "@/components/FAQSection"
+import { popularDestinationsFaqs } from "@/data/faqData"
 
 const themes = ["Adventure", "Culture", "Pilgrimage", "Honeymoon", "Wildlife"]
 const hotelStars = [3, 4, 5] as const
@@ -417,6 +419,7 @@ function PopularDestinationsContent() {
         </>
       )}
 
+      <FAQSection faqs={popularDestinationsFaqs} />
       <BottomNav />
     </div>
   )

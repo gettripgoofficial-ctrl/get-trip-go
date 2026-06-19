@@ -73,6 +73,16 @@ const faqs = [
   { category: "account", q: "How do I reset my password?", a: "Click 'Forgot Password' on the login page, enter your registered email, and follow the reset link sent to your inbox. Links expire in 30 minutes." },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function HelpCenterPage() {
   const [activeCat, setActiveCat] = useState("all");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -113,6 +123,10 @@ export default function HelpCenterPage() {
 
   return (
     <div style={{ backgroundColor: BG, minHeight: "100vh" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
       {/* ── HERO ── */}
       <div style={{ backgroundColor: BG }} className="py-16 sm:py-24 px-4 text-center border-b border-gray-200">

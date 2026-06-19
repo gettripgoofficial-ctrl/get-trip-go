@@ -9,6 +9,8 @@ import ThemeHolidays from "@/components/ThemeHolidays"
 import TrustedPartners from "@/components/TrustedPartners"
 import TravelStories from "@/components/TravelStories"
 import NewsletterSignup from "@/components/NewsletterSignup"
+import FAQSection from "@/components/FAQSection";
+import { homeFaqs } from "@/data/faqData";
 
 export default function Home() {
   return (
@@ -38,6 +40,7 @@ export default function Home() {
       <ThemeHolidays />
       <TrustedPartners />
       <TravelStories />
+      <FAQSection faqs={homeFaqs} />
       <NewsletterSignup />
 
     </main>
