@@ -34,6 +34,16 @@ const BG_IMAGES = [
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState<ServiceTab>("Flights")
   const [bgIndex, setBgIndex] = useState(0)
+  const [firstImageLoaded, setFirstImageLoaded] = useState(false)
+
+  // Preload all hero images on mount so later transitions never hit
+  // an un-cached image (which caused the black flash mid-slideshow).
+  useEffect(() => {
+    BG_IMAGES.forEach(src => {
+      const img = new window.Image()
+      img.src = src
+    })
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,25 +60,46 @@ export default function HeroSection() {
   return (
     <section
       className="w-full relative"
-      style={{ height: "85vh", minHeight: "648px" }}
+      style={{
+        height: "85vh",
+        minHeight: "648px",
+        // Fallback color only shows before the very first image has
+        // painted. Once loaded, it's removed so it can't flash behind
+        // later slideshow transitions.
+        backgroundColor: firstImageLoaded ? "transparent" : "#1A56F0",
+      }}
       aria-label="Travel search"
     >
-      {/* Background slideshow */}
+      {/* First hero image — real <img> tag, loaded with top priority so
+          it appears as fast as possible on initial page load. */}
+      <img
+        src={BG_IMAGES[0]}
+        alt=""
+        fetchPriority="high"
+        decoding="async"
+        onLoad={() => setFirstImageLoaded(true)}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        style={{ display: bgIndex === 0 ? "block" : "none" }}
+      />
+
+      {/* Background slideshow (for index > 0, after first paint) */}
       <AnimatePresence>
-        <motion.div
-          key={bgIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url("${BG_IMAGES[bgIndex]}")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        {bgIndex !== 0 && (
+          <motion.div
+            key={bgIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `url("${BG_IMAGES[bgIndex]}")`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+        )}
       </AnimatePresence>
 
       {/* Dark overlay */}

@@ -9,7 +9,7 @@ export interface SearchBoxProps {
 }
 // ─── Shared CTA labels ────────────────────────────────────────────────────────
 export const CTA_LABELS: Record<ServiceTab, string> = {
-  Flights:    "Get Best Flight Deals",
+  Flights:    "Unlock Best Deals",
   Hotels:     "Search Hotels",
   Holidays:   "Search Holidays",
   Activities: "Find Activities",

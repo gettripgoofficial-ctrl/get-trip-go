@@ -571,9 +571,9 @@ export default function FlightSearch() {
                   ) : isLast ? (
                     <button
                       onClick={() => setShowModal(true)}
-                      className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-[#1A56F0] hover:bg-blue-700 text-white text-[13px] font-bold transition-all shadow-[0_4px_20px_rgba(26,86,240,0.4)] hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full flex items-center justify-center gap-2 py-3 rounded-none bg-[#1A56F0] hover:bg-blue-700 text-white text-[13px] font-bold transition-all shadow-[0_4px_20px_rgba(26,86,240,0.4)] hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      {WA_SVG} Get Best Flight Deals
+                      Unlock Best Deals
                     </button>
                   ) : (
                     /* empty spacer to keep column width */
@@ -623,9 +623,9 @@ export default function FlightSearch() {
           <div className="shrink-0" style={{ width: "calc(100% / 5)" }}>
             <button
               onClick={() => setShowModal(true)}
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#1A56F0] hover:bg-blue-700 text-white text-[14px] font-bold transition-all shadow-[0_4px_20px_rgba(26,86,240,0.4)] hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-none bg-[#1A56F0] hover:bg-blue-700 text-white text-[14px] font-bold transition-all shadow-[0_4px_20px_rgba(26,86,240,0.4)] hover:scale-[1.02] active:scale-[0.98]"
             >
-              {WA_SVG} Get Best Flight Deals
+              Unlock Best Deals
             </button>
           </div>
         </div>
