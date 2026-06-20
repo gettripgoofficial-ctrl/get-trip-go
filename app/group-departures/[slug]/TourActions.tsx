@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { X, FileText, Share2, Heart, Tag, Sparkles, Check, Copy, Mail } from "lucide-react"
 import { usePrice } from "@/hooks/usePrice"
+import EnquiryModal from "@/components/EnquiryModal"
 import DepartureCalendar from "./DepartureCalendar"
 import PassengerCounter from "./PassengerCounter"
 
@@ -15,35 +16,6 @@ function WhatsAppIcon({ size = 18, color = "#25D366" }: { size?: number; color?:
   )
 }
 
-function ReserveModal({ tourName, priceText, onClose }: { tourName: string; priceText: string; onClose: () => void }) {
-  function buildMessage() {
-    return encodeURIComponent(`🌍 *New Tour Enquiry – GetTripGo*\n\n*Tour:* ${tourName}\n*Price:* ${priceText} per person\n\nPlease share availability and confirm my booking. Thank you!`)
-  }
-  function openWhatsApp() {
-    window.open(`https://wa.me/${WA_NUMBER}?text=${buildMessage()}`, "_blank")
-    onClose()
-  }
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
-      onClick={e => { if (e.target === e.currentTarget) onClose() }}>
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 relative">
-        <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X size={18} /></button>
-        <div className="w-14 h-14 rounded-full bg-orange-50 flex items-center justify-center mx-auto mb-4">
-          <span className="text-2xl">🌍</span>
-        </div>
-        <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Reserve your spot!</h2>
-        <p className="text-xs text-gray-400 text-center mb-4">Our travel expert will confirm on WhatsApp — usually within minutes.</p>
-        <div className="bg-gray-50 rounded-xl px-4 py-3 mb-4 space-y-2">
-          <div className="flex justify-between text-xs"><span className="text-gray-400">Tour</span><span className="font-semibold text-gray-800">{tourName}</span></div>
-          <div className="flex justify-between text-xs"><span className="text-gray-400">Price</span><span className="font-semibold text-gray-800">{priceText} / person</span></div>
-        </div>
-        <button onClick={openWhatsApp} className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold mb-2">Continue on WhatsApp</button>
-        <button onClick={onClose} className="w-full py-2.5 rounded-xl border border-gray-200 text-gray-500 text-xs font-medium hover:bg-gray-50">Go back</button>
-        <p className="text-[10px] text-gray-400 text-center mt-3">🔒 Shared only with our travel expert</p>
-      </div>
-    </div>
-  )
-}
 
 export default function TourActions({ tourName, priceINR, departureDates = [] }: { tourName: string; priceINR: number; departureDates?: string[] }) {
   const { convert } = usePrice()
@@ -178,7 +150,6 @@ export default function TourActions({ tourName, priceINR, departureDates = [] }:
         </button>
         <button onClick={openDirectWhatsApp}
           className="w-full flex items-center justify-center gap-2 border-2 border-green-500 text-green-600 font-bold py-3 rounded-xl hover:bg-green-50 transition-all text-sm">
-          <WhatsAppIcon size={16} color="#16a34a" />
           Hold My Seat
         </button>
       </div>
@@ -242,7 +213,7 @@ export default function TourActions({ tourName, priceINR, departureDates = [] }:
         </div>
       </button>
 
-      {showModal && <ReserveModal tourName={tourName} priceText={priceText} onClose={() => setShowModal(false)} />}
+      <EnquiryModal isOpen={showModal} onClose={() => setShowModal(false)} packageName={tourName} />
     </div>
   )
 }

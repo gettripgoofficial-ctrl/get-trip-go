@@ -251,16 +251,16 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                 </div>
                 <div className="bg-gray-50 rounded-2xl p-4">
                   <p className="text-xs text-gray-400 mb-1">Our email address</p>
-                  <p className="text-base font-bold text-gray-800">hello@gettripgo.com</p>
+                  <p className="text-base font-bold text-gray-800">contact@gettripgo.com</p>
                 </div>
                 <a
-                  href={`mailto:hello@gettripgo.com?subject=${emailSubject}&body=${emailBody}`}
+                  href={`mailto:contact@gettripgo.com?subject=${emailSubject}&body=${emailBody}`}
                   className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-colors text-sm"
                 >
                   ✉️ Open Email App
                 </a>
                 <p className="text-xs text-gray-400">
-                  Or copy our email: <span className="font-semibold text-gray-600">hello@gettripgo.com</span>
+                  Or copy our email: <span className="font-semibold text-gray-600">contact@gettripgo.com</span>
                 </p>
               </div>
             )}
