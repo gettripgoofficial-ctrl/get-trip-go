@@ -1,0 +1,1046 @@
+
+----- FILE: data/groupDepartures.ts -----
+export type GroupDeparture = {
+  slug: string
+  name: string
+  days: number
+  nights: number
+  series: "Go English" | "Special Indian" | "Central & East Europe" | "UK & France" | "Scandinavia"
+  countries: string[]
+  priceEUR: number
+  priceINR: number
+  heroImage: string
+  images: string[]
+  departureDates: string[]
+  highlights: string[]
+  inclusions: string[]
+  exclusions: string[]
+  tag?: "Best Seller" | "Popular" | "New" | "Limited Seats"
+}
+
+const EUR_TO_INR = 113
+
+export const groupDepartures: GroupDeparture[] = [
+
+  // ─── GO ENGLISH SERIES ────────────────────────────────
+
+  {
+    slug: "heart-of-europe",
+    name: "Heart of Europe",
+    days: 7, nights: 6,
+    series: "Go English",
+    countries: ["AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY"],
+    priceEUR: 876, priceINR: Math.round(876 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90", "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=90"],
+    departureDates: ["15 Jul 2026", "22 Jul 2026", "5 Aug 2026", "19 Aug 2026", "2 Sep 2026"],
+    tag: "Best Seller",
+    highlights: ["Vienna Imperial Palace", "Budapest Parliament", "Bratislava Old Town", "Prague Castle", "Rhine Valley"],
+    inclusions: ["Coach travel throughout", "6 nights hotel accommodation", "Daily breakfast", "Professional tour manager", "All transfers"],
+    exclusions: ["International flights", "Lunch and dinner", "Visa fees", "Personal expenses", "Travel insurance"],
+  },
+
+  {
+    slug: "alpine-wonders",
+    name: "Alpine Wonders",
+    days: 12, nights: 11,
+    series: "Go English",
+    countries: ["ITALY", "AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY"],
+    priceEUR: 1836, priceINR: Math.round(1836 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=90", "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&q=90"],
+    departureDates: ["10 Jul 2026", "24 Jul 2026", "7 Aug 2026", "21 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Rome Colosseum", "Venice Gondola", "Vienna Opera House", "Budapest Chain Bridge", "Prague Old Town Square"],
+    inclusions: ["Coach travel throughout", "11 nights hotel", "Daily breakfast", "Tour manager", "Entrance to major sites"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "grand-european-adventure",
+    name: "Grand European Adventure",
+    days: 16, nights: 15,
+    series: "Go English",
+    countries: ["FRANCE", "SWITZERLAND", "ITALY", "AUSTRIA"],
+    priceEUR: 2833, priceINR: Math.round(2833 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=90", "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=90"],
+    departureDates: ["3 Jul 2026", "17 Jul 2026", "31 Jul 2026", "14 Aug 2026", "28 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["Eiffel Tower Paris", "Swiss Alps Jungfrau", "Amalfi Coast", "Venice Canals", "Vienna Schönbrunn"],
+    inclusions: ["Luxury coach", "15 nights 4-star hotels", "Breakfast daily", "Tour manager", "City tours"],
+    exclusions: ["Flights", "Lunches & dinners", "Schengen visa", "Personal expenses"],
+  },
+
+  {
+    slug: "europe-complete-circle",
+    name: "Europe Complete Circle",
+    days: 16, nights: 15,
+    series: "Go English",
+    countries: ["ITALY", "AUSTRIA", "SWITZERLAND", "FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY"],
+    priceEUR: 2876, priceINR: Math.round(2876 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1520986606214-8b456906c813?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1520986606214-8b456906c813?w=800&q=90", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=90"],
+    departureDates: ["5 Jul 2026", "19 Jul 2026", "2 Aug 2026", "16 Aug 2026"],
+    highlights: ["Rome", "Venice", "Paris Eiffel Tower", "London Big Ben", "Amsterdam Canals", "Munich"],
+    inclusions: ["Coach travel", "15 nights hotel", "Breakfast daily", "Tour manager", "All transfers"],
+    exclusions: ["Flights", "Most meals", "Visa fees", "Personal expenses"],
+  },
+
+  {
+    slug: "continental-explorer",
+    name: "Continental Explorer",
+    days: 22, nights: 21,
+    series: "Go English",
+    countries: ["GERMANY", "CZECH REPUBLIC", "AUSTRIA", "SWITZERLAND", "ITALY", "SPAIN", "PORTUGAL"],
+    priceEUR: 3993, priceINR: Math.round(3993 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=90"],
+    departureDates: ["1 Jul 2026", "29 Jul 2026", "26 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Berlin", "Prague", "Vienna", "Zurich", "Rome", "Barcelona", "Lisbon"],
+    inclusions: ["Luxury coach", "21 nights hotel", "Breakfast daily", "Tour manager", "Transfers"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-capitals-express",
+    name: "European Capitals Express",
+    days: 9, nights: 8,
+    series: "Go English",
+    countries: ["AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY", "THE NETHERLANDS"],
+    priceEUR: 1217, priceINR: Math.round(1217 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&q=90"],
+    departureDates: ["12 Jul 2026", "26 Jul 2026", "9 Aug 2026", "23 Aug 2026", "6 Sep 2026"],
+    tag: "Best Seller",
+    highlights: ["Vienna", "Budapest", "Bratislava", "Prague", "Berlin", "Amsterdam"],
+    inclusions: ["Coach travel", "8 nights hotel", "Breakfast daily", "Tour manager"],
+    exclusions: ["Flights", "Meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "paris-and-capitals",
+    name: "Paris & European Capitals",
+    days: 10, nights: 9,
+    series: "Go English",
+    countries: ["FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY"],
+    priceEUR: 1712, priceINR: Math.round(1712 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=90"],
+    departureDates: ["8 Jul 2026", "22 Jul 2026", "5 Aug 2026", "19 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Eiffel Tower", "London Eye", "Amsterdam Canals", "Rhine Cruise", "Cologne Cathedral"],
+    inclusions: ["Coach + Eurostar", "9 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "romance-of-europe",
+    name: "Romance of Europe",
+    days: 19, nights: 18,
+    series: "Go English",
+    countries: ["FRANCE", "SWITZERLAND", "ITALY", "AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC"],
+    priceEUR: 3296, priceINR: Math.round(3296 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=90"],
+    departureDates: ["4 Jul 2026", "18 Jul 2026", "1 Aug 2026", "15 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["Paris", "Geneva", "Rome", "Venice", "Vienna", "Budapest", "Prague"],
+    inclusions: ["Luxury coach", "18 nights hotel", "Breakfast daily", "Tour manager", "City tours"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "swiss-french-escape",
+    name: "Swiss & French Escape",
+    days: 7, nights: 6,
+    series: "Go English",
+    countries: ["SWITZERLAND", "FRANCE"],
+    priceEUR: 1319, priceINR: Math.round(1319 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=90"],
+    departureDates: ["11 Jul 2026", "25 Jul 2026", "8 Aug 2026", "22 Aug 2026", "5 Sep 2026"],
+    highlights: ["Jungfrau Top of Europe", "Lucerne Chapel Bridge", "Paris Eiffel Tower", "Versailles Palace", "Geneva Lake"],
+    inclusions: ["Coach + train", "6 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-memories",
+    name: "European Memories",
+    days: 22, nights: 21,
+    series: "Go English",
+    countries: ["FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY", "CZECH REPUBLIC", "AUSTRIA", "SWITZERLAND", "ITALY", "SPAIN"],
+    priceEUR: 4249, priceINR: Math.round(4249 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=90"],
+    departureDates: ["1 Jul 2026", "5 Aug 2026", "2 Sep 2026"],
+    tag: "Popular",
+    highlights: ["Paris", "London", "Amsterdam", "Berlin", "Prague", "Vienna", "Zurich", "Rome", "Barcelona"],
+    inclusions: ["Luxury coach", "21 nights hotel", "Breakfast", "Tour manager", "All transfers"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "jewels-of-europe",
+    name: "Jewels of Europe",
+    days: 18, nights: 17,
+    series: "Go English",
+    countries: ["FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY", "CZECH REPUBLIC", "AUSTRIA", "SWITZERLAND", "ITALY"],
+    priceEUR: 3247, priceINR: Math.round(3247 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=90"],
+    departureDates: ["2 Jul 2026", "16 Jul 2026", "30 Jul 2026", "13 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Paris Eiffel Tower", "London Big Ben", "Amsterdam Canals", "Rhine Cruise", "Prague Castle", "Vienna Opera", "Swiss Alps", "Rome Colosseum"],
+    inclusions: ["Luxury coach", "17 nights hotel", "Breakfast daily", "Tour manager", "City tours"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-ring",
+    name: "European Ring",
+    days: 23, nights: 22,
+    series: "Go English",
+    countries: ["FRANCE", "SWITZERLAND", "ITALY", "AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY", "THE NETHERLANDS", "BELGIUM"],
+    priceEUR: 4010, priceINR: Math.round(4010 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["1 Jul 2026", "22 Jul 2026", "12 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Paris", "Zurich", "Rome", "Venice", "Vienna", "Budapest", "Prague", "Berlin", "Amsterdam", "Brussels"],
+    inclusions: ["Luxury coach", "22 nights hotel", "Breakfast daily", "Tour manager", "All transfers"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-bliss",
+    name: "European Bliss",
+    days: 20, nights: 19,
+    series: "Go English",
+    countries: ["CZECH REPUBLIC", "GERMANY", "THE NETHERLANDS", "BELGIUM", "FRANCE", "SWITZERLAND", "ITALY", "SPAIN"],
+    priceEUR: 3792, priceINR: Math.round(3792 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=90"],
+    departureDates: ["4 Jul 2026", "25 Jul 2026", "15 Aug 2026"],
+    highlights: ["Prague", "Berlin", "Amsterdam", "Brussels", "Paris", "Geneva", "Milan", "Barcelona"],
+    inclusions: ["Luxury coach", "19 nights hotel", "Breakfast daily", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-dance",
+    name: "European Dance",
+    days: 19, nights: 18,
+    series: "Go English",
+    countries: ["ITALY", "AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY", "THE NETHERLANDS", "BELGIUM", "FRANCE", "ENGLAND"],
+    priceEUR: 3233, priceINR: Math.round(3233 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&q=90"],
+    departureDates: ["6 Jul 2026", "20 Jul 2026", "3 Aug 2026", "17 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Rome", "Venice", "Vienna", "Budapest", "Prague", "Berlin", "Amsterdam", "Paris", "London"],
+    inclusions: ["Coach + Eurostar", "18 nights hotel", "Breakfast daily", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-delight",
+    name: "European Delight",
+    days: 16, nights: 15,
+    series: "Go English",
+    countries: ["ITALY", "AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY", "THE NETHERLANDS", "BELGIUM", "FRANCE"],
+    priceEUR: 2643, priceINR: Math.round(2643 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=90"],
+    departureDates: ["8 Jul 2026", "22 Jul 2026", "5 Aug 2026", "19 Aug 2026"],
+    highlights: ["Rome", "Vienna", "Budapest", "Prague", "Berlin", "Amsterdam", "Brussels", "Paris"],
+    inclusions: ["Coach", "15 nights hotel", "Breakfast daily", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-triangle-go",
+    name: "European Triangle",
+    days: 9, nights: 8,
+    series: "Go English",
+    countries: ["FRANCE", "ENGLAND", "THE NETHERLANDS", "BELGIUM"],
+    priceEUR: 1553, priceINR: Math.round(1553 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=90"],
+    departureDates: ["11 Jul 2026", "25 Jul 2026", "8 Aug 2026", "22 Aug 2026", "5 Sep 2026"],
+    highlights: ["Paris Eiffel Tower", "Versailles", "London Eye", "Amsterdam Canals", "Brussels Grand Place"],
+    inclusions: ["Coach + Eurostar", "8 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "UK & Schengen visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-journey-go",
+    name: "European Journey",
+    days: 9, nights: 8,
+    series: "Go English",
+    countries: ["ENGLAND", "THE NETHERLANDS", "GERMANY", "CZECH REPUBLIC"],
+    priceEUR: 1482, priceINR: Math.round(1482 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=90"],
+    departureDates: ["9 Jul 2026", "23 Jul 2026", "6 Aug 2026", "20 Aug 2026"],
+    highlights: ["London Tower Bridge", "Amsterdam Rijksmuseum", "Rhine Valley", "Berlin", "Prague Castle"],
+    inclusions: ["Coach + Eurostar", "8 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "UK & Schengen visa", "Personal expenses"],
+  },
+
+  {
+    slug: "beloved-europe",
+    name: "Beloved Europe",
+    days: 6, nights: 5,
+    series: "Go English",
+    countries: ["CZECH REPUBLIC", "GERMANY", "THE NETHERLANDS"],
+    priceEUR: 823, priceINR: Math.round(823 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&q=90"],
+    departureDates: ["10 Jul 2026", "17 Jul 2026", "24 Jul 2026", "31 Jul 2026", "7 Aug 2026", "14 Aug 2026", "21 Aug 2026"],
+    tag: "New",
+    highlights: ["Prague Old Town", "Dresden Frauenkirche", "Berlin Brandenburg Gate", "Amsterdam Canals"],
+    inclusions: ["Coach", "5 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  // ─── SPECIAL INDIAN SERIES ───────────────────────────
+
+  {
+    slug: "india-heart-of-europe",
+    name: "India Meets Europe",
+    days: 7, nights: 6,
+    series: "Special Indian",
+    countries: ["AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY"],
+    priceEUR: 925, priceINR: Math.round(925 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["18 Jul 2026", "1 Aug 2026", "15 Aug 2026", "29 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["Vienna Imperial Tour", "Budapest River Cruise", "Prague Castle", "Indian Meals Included", "Hindi Speaking Guide"],
+    inclusions: ["Coach travel", "6 nights hotel", "Indian breakfast & dinner", "Hindi guide", "All transfers", "Jain food option"],
+    exclusions: ["Flights", "Lunch", "Visa fees", "Personal expenses"],
+  },
+
+  {
+    slug: "india-european-charm",
+    name: "India European Charm",
+    days: 9, nights: 8,
+    series: "Special Indian",
+    countries: ["AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY", "THE NETHERLANDS"],
+    priceEUR: 1275, priceINR: Math.round(1275 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=90"],
+    departureDates: ["15 Jul 2026", "29 Jul 2026", "12 Aug 2026", "26 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Vienna", "Budapest", "Prague", "Amsterdam", "Indian Cuisine", "Hindi Guide"],
+    inclusions: ["Coach travel", "8 nights hotel", "Indian breakfast & dinner", "Hindi speaking guide", "Jain food available"],
+    exclusions: ["Flights", "Lunch", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "india-swiss-french-delight",
+    name: "India Swiss & French Delight",
+    days: 7, nights: 6,
+    series: "Special Indian",
+    countries: ["SWITZERLAND", "FRANCE"],
+    priceEUR: 1629, priceINR: Math.round(1629 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=90"],
+    departureDates: ["13 Jul 2026", "27 Jul 2026", "10 Aug 2026", "24 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["Jungfrau", "Lucerne", "Eiffel Tower", "Versailles", "Indian Food", "Hindi Guide"],
+    inclusions: ["Coach + train", "6 nights hotel", "Indian meals", "Hindi guide", "Jain option"],
+    exclusions: ["Flights", "Lunch", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "india-europe-complete-circle",
+    name: "India Europe Complete",
+    days: 16, nights: 15,
+    series: "Special Indian",
+    countries: ["ITALY", "AUSTRIA", "SWITZERLAND", "FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY"],
+    priceEUR: 3100, priceINR: Math.round(3100 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["10 Jul 2026", "24 Jul 2026", "7 Aug 2026", "21 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["Rome", "Venice", "Vienna", "Swiss Alps", "Paris", "London", "Amsterdam", "Indian Meals", "Hindi Guide"],
+    inclusions: ["Coach + Eurostar", "15 nights hotel", "Indian breakfast & dinner", "Hindi guide", "Jain food option", "All transfers"],
+    exclusions: ["Flights", "Lunch", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "india-romance-europe",
+    name: "India Romance of Europe",
+    days: 19, nights: 18,
+    series: "Special Indian",
+    countries: ["FRANCE", "SWITZERLAND", "ITALY", "AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC"],
+    priceEUR: 3500, priceINR: Math.round(3500 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=90"],
+    departureDates: ["8 Jul 2026", "22 Jul 2026", "5 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["Paris Eiffel Tower", "Jungfrau", "Rome Colosseum", "Venice", "Vienna", "Budapest", "Prague", "Indian Meals", "Hindi Guide"],
+    inclusions: ["Luxury coach", "18 nights hotel", "Indian breakfast & dinner", "Hindi guide", "Jain food available"],
+    exclusions: ["Flights", "Lunch", "Visa", "Personal expenses"],
+  },
+
+  // ─── CENTRAL & EAST EUROPE SERIES ────────────────────
+
+  {
+    slug: "eastern-gems",
+    name: "Eastern Gems of Europe",
+    days: 7, nights: 6,
+    series: "Central & East Europe",
+    countries: ["AUSTRIA", "HUNGARY", "SLOVAKIA", "CZECH REPUBLIC", "GERMANY"],
+    priceEUR: 788, priceINR: Math.round(788 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=90"],
+    departureDates: ["11 Jul 2026", "25 Jul 2026", "8 Aug 2026", "22 Aug 2026", "5 Sep 2026"],
+    highlights: ["Vienna Schönbrunn", "Budapest Parliament", "Bratislava Castle", "Prague Old Town", "Nuremberg"],
+    inclusions: ["Coach travel", "6 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "central-european-discovery",
+    name: "Central European Discovery",
+    days: 14, nights: 13,
+    series: "Central & East Europe",
+    countries: ["CZECH REPUBLIC", "GERMANY", "AUSTRIA", "SWITZERLAND", "ITALY"],
+    priceEUR: 2160, priceINR: Math.round(2160 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=90"],
+    departureDates: ["6 Jul 2026", "20 Jul 2026", "3 Aug 2026", "17 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Prague", "Munich", "Vienna", "Zurich", "Lucerne", "Milan", "Rome"],
+    inclusions: ["Coach", "13 nights hotel", "Breakfast", "Tour manager", "City tours"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "beautiful-europe-journey",
+    name: "Beautiful Europe Journey",
+    days: 16, nights: 15,
+    series: "Central & East Europe",
+    countries: ["CZECH REPUBLIC", "GERMANY", "AUSTRIA", "SWITZERLAND", "ITALY", "HUNGARY", "SLOVAKIA"],
+    priceEUR: 2425, priceINR: Math.round(2425 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=90"],
+    departureDates: ["4 Jul 2026", "18 Jul 2026", "1 Aug 2026", "15 Aug 2026", "29 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["Prague", "Dresden", "Vienna", "Innsbruck", "Venice", "Florence", "Budapest"],
+    inclusions: ["Luxury coach", "15 nights hotel", "Breakfast", "Tour manager", "Transfers"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "central-ring-explorer",
+    name: "Central Ring Explorer",
+    days: 9, nights: 8,
+    series: "Central & East Europe",
+    countries: ["CZECH REPUBLIC", "GERMANY", "AUSTRIA", "HUNGARY", "SLOVAKIA"],
+    priceEUR: 1137, priceINR: Math.round(1137 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=90"],
+    departureDates: ["9 Jul 2026", "23 Jul 2026", "6 Aug 2026", "20 Aug 2026", "3 Sep 2026"],
+    highlights: ["Prague Castle", "Munich Beer Hall", "Salzburg", "Vienna", "Budapest", "Bratislava"],
+    inclusions: ["Coach", "8 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "majestic-central-europe",
+    name: "Majestic Central Europe",
+    days: 9, nights: 8,
+    series: "Central & East Europe",
+    countries: ["CZECH REPUBLIC", "GERMANY", "AUSTRIA", "SWITZERLAND", "ITALY"],
+    priceEUR: 1359, priceINR: Math.round(1359 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1520986606214-8b456906c813?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1520986606214-8b456906c813?w=800&q=90"],
+    departureDates: ["14 Jul 2026", "28 Jul 2026", "11 Aug 2026", "25 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Prague", "Munich", "Innsbruck", "Zurich", "Lucerne", "Milan"],
+    inclusions: ["Coach", "8 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "east-of-europe-balkans",
+    name: "Balkans & East Europe",
+    days: 7, nights: 6,
+    series: "Central & East Europe",
+    countries: ["AUSTRIA", "SLOVENIA", "CROATIA", "BOSNIA HERZEGOVINA"],
+    priceEUR: 917, priceINR: Math.round(917 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["17 Jul 2026", "31 Jul 2026", "14 Aug 2026", "28 Aug 2026"],
+    tag: "New",
+    highlights: ["Vienna", "Ljubljana", "Plitvice Lakes", "Dubrovnik", "Mostar Bridge"],
+    inclusions: ["Coach", "6 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "germany-eastern-europe",
+    name: "Germany & Eastern Europe",
+    days: 13, nights: 12,
+    series: "Central & East Europe",
+    countries: ["GERMANY", "CZECH REPUBLIC", "HUNGARY", "SLOVAKIA", "POLAND"],
+    priceEUR: 1569, priceINR: Math.round(1569 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["7 Jul 2026", "21 Jul 2026", "4 Aug 2026", "18 Aug 2026"],
+    tag: "New",
+    highlights: ["Berlin", "Dresden", "Prague", "Budapest", "Bratislava", "Krakow", "Warsaw"],
+    inclusions: ["Coach", "12 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "majestic-europe-spain",
+    name: "Majestic Europe & Spain",
+    days: 13, nights: 12,
+    series: "Central & East Europe",
+    countries: ["CZECH REPUBLIC", "GERMANY", "AUSTRIA", "SWITZERLAND", "ITALY", "SPAIN"],
+    priceEUR: 2601, priceINR: Math.round(2601 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=90"],
+    departureDates: ["5 Jul 2026", "19 Jul 2026", "2 Aug 2026", "16 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Prague", "Munich", "Vienna", "Zurich", "Milan", "Rome", "Barcelona"],
+    inclusions: ["Coach", "12 nights hotel", "Breakfast", "Tour manager", "City tours"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "east-europe-venice",
+    name: "Eastern Europe & Venice",
+    days: 12, nights: 11,
+    series: "Central & East Europe",
+    countries: ["AUSTRIA", "SLOVENIA", "CROATIA", "BOSNIA HERZEGOVINA", "ITALY"],
+    priceEUR: 1768, priceINR: Math.round(1768 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["13 Jul 2026", "27 Jul 2026", "10 Aug 2026", "24 Aug 2026"],
+    tag: "New",
+    highlights: ["Vienna", "Ljubljana", "Plitvice Lakes", "Dubrovnik", "Mostar", "Venice Gondola"],
+    inclusions: ["Coach", "11 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  // ─── UK & FRANCE SERIES ───────────────────────────────
+
+  {
+    slug: "london-paris-amsterdam",
+    name: "London, Paris & Amsterdam",
+    days: 9, nights: 8,
+    series: "UK & France",
+    countries: ["ENGLAND", "THE NETHERLANDS", "GERMANY", "CZECH REPUBLIC"],
+    priceEUR: 1334, priceINR: Math.round(1334 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=90"],
+    departureDates: ["10 Jul 2026", "24 Jul 2026", "7 Aug 2026", "21 Aug 2026"],
+    tag: "Best Seller",
+    highlights: ["London Tower Bridge", "Eurostar to Paris", "Eiffel Tower", "Amsterdam Canals", "Rhine Valley"],
+    inclusions: ["Coach + Eurostar", "8 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "UK & Schengen visa", "Personal expenses"],
+  },
+
+  {
+    slug: "western-europe-highlights",
+    name: "Western Europe Highlights",
+    days: 14, nights: 13,
+    series: "UK & France",
+    countries: ["FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY", "CZECH REPUBLIC"],
+    priceEUR: 2081, priceINR: Math.round(2081 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=90"],
+    departureDates: ["7 Jul 2026", "21 Jul 2026", "4 Aug 2026", "18 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Paris Louvre", "London Buckingham Palace", "Amsterdam Rijksmuseum", "Rhine Cruise", "Prague"],
+    inclusions: ["Coach + Eurostar", "13 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "paris-london-triangle",
+    name: "Paris, London & Triangle",
+    days: 9, nights: 8,
+    series: "UK & France",
+    countries: ["FRANCE", "ENGLAND", "THE NETHERLANDS", "BELGIUM"],
+    priceEUR: 1398, priceINR: Math.round(1398 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=90"],
+    departureDates: ["12 Jul 2026", "26 Jul 2026", "9 Aug 2026", "23 Aug 2026"],
+    highlights: ["Paris Eiffel Tower", "Versailles", "London Tower", "Amsterdam Canals", "Brussels Grand Place"],
+    inclusions: ["Coach + Eurostar", "8 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "great-european-cities-tour",
+    name: "Great European Cities",
+    days: 11, nights: 10,
+    series: "UK & France",
+    countries: ["CZECH REPUBLIC", "GERMANY", "AUSTRIA", "SWITZERLAND", "FRANCE", "ENGLAND"],
+    priceEUR: 1940, priceINR: Math.round(1940 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["9 Jul 2026", "23 Jul 2026", "6 Aug 2026", "20 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Prague", "Munich", "Vienna", "Zurich", "Paris", "London"],
+    inclusions: ["Coach + Eurostar", "10 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "spain-france-england",
+    name: "Spain, France & England",
+    days: 13, nights: 12,
+    series: "UK & France",
+    countries: ["SPAIN", "FRANCE", "ENGLAND"],
+    priceEUR: 2525, priceINR: Math.round(2525 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=90"],
+    departureDates: ["5 Jul 2026", "19 Jul 2026", "2 Aug 2026", "16 Aug 2026"],
+    tag: "New",
+    highlights: ["Madrid Royal Palace", "Barcelona Sagrada Familia", "Paris Eiffel Tower", "London Eye", "Versailles"],
+    inclusions: ["Coach + Eurostar", "12 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "UK & Schengen visa", "Personal expenses"],
+  },
+
+  {
+    slug: "unforgettable-europe",
+    name: "Unforgettable Europe",
+    days: 13, nights: 12,
+    series: "UK & France",
+    countries: ["FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY", "CZECH REPUBLIC"],
+    priceEUR: 2176, priceINR: Math.round(2176 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1520986606214-8b456906c813?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1520986606214-8b456906c813?w=800&q=90"],
+    departureDates: ["6 Jul 2026", "20 Jul 2026", "3 Aug 2026", "17 Aug 2026"],
+    highlights: ["Paris Louvre", "Versailles", "London Tower", "Amsterdam Canals", "Rhine Cruise", "Berlin", "Prague"],
+    inclusions: ["Coach + Eurostar", "12 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "modern-europe-berlin",
+    name: "Modern Europe with Berlin",
+    days: 14, nights: 13,
+    series: "UK & France",
+    countries: ["SPAIN", "FRANCE", "ENGLAND", "THE NETHERLANDS", "GERMANY"],
+    priceEUR: 2701, priceINR: Math.round(2701 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=90"],
+    departureDates: ["4 Jul 2026", "18 Jul 2026", "1 Aug 2026", "15 Aug 2026"],
+    tag: "New",
+    highlights: ["Barcelona Sagrada Familia", "Madrid Royal Palace", "Paris", "London", "Amsterdam", "Berlin Brandenburg Gate"],
+    inclusions: ["Coach + Eurostar", "13 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "UK & Schengen visa", "Personal expenses"],
+  },
+
+  {
+    slug: "genuine-europe",
+    name: "Genuine Europe",
+    days: 12, nights: 11,
+    series: "UK & France",
+    countries: ["ITALY", "AUSTRIA", "SWITZERLAND", "FRANCE", "ENGLAND"],
+    priceEUR: 2329, priceINR: Math.round(2329 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=90"],
+    departureDates: ["8 Jul 2026", "22 Jul 2026", "5 Aug 2026", "19 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Rome Colosseum", "Florence Uffizi", "Venice Gondola", "Swiss Alps", "Paris Eiffel Tower", "London Eye"],
+    inclusions: ["Coach + Eurostar", "11 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "european-grandeur",
+    name: "European Grandeur",
+    days: 13, nights: 12,
+    series: "UK & France",
+    countries: ["SPAIN", "FRANCE", "ENGLAND"],
+    priceEUR: 2806, priceINR: Math.round(2806 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=90"],
+    departureDates: ["5 Jul 2026", "19 Jul 2026", "2 Aug 2026", "16 Aug 2026"],
+    highlights: ["Madrid Royal Palace", "Toledo", "Barcelona Sagrada Familia", "Paris Louvre", "London Buckingham Palace"],
+    inclusions: ["Coach + Eurostar", "12 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "UK & Schengen visa", "Personal expenses"],
+  },
+
+  // ─── SCANDINAVIA SERIES ───────────────────────────────
+
+  {
+    slug: "nordic-explorer",
+    name: "Nordic Explorer",
+    days: 18, nights: 17,
+    series: "Scandinavia",
+    countries: ["GERMANY", "DENMARK", "NORWAY", "SWEDEN", "FINLAND", "ESTONIA"],
+    priceEUR: 2667, priceINR: Math.round(2667 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=90"],
+    departureDates: ["4 Jul 2026", "18 Jul 2026", "1 Aug 2026", "15 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Hamburg", "Copenhagen Tivoli", "Oslo Fjords", "Stockholm Old Town", "Helsinki", "Tallinn Medieval City"],
+    inclusions: ["Coach + ferries", "17 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "pearls-of-norway-sweden",
+    name: "Pearls of Norway & Sweden",
+    days: 4, nights: 3,
+    series: "Scandinavia",
+    countries: ["NORWAY", "SWEDEN"],
+    priceEUR: 348, priceINR: Math.round(348 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=90"],
+    departureDates: ["10 Jul 2026", "17 Jul 2026", "24 Jul 2026", "31 Jul 2026", "7 Aug 2026", "14 Aug 2026"],
+    highlights: ["Oslo Viking Museum", "Bergen Fjords", "Stockholm Vasa Museum", "Midnight Sun"],
+    inclusions: ["Coach + ferry", "3 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "scandinavia-eastern-europe",
+    name: "Scandinavia & Eastern Europe",
+    days: 14, nights: 13,
+    series: "Scandinavia",
+    countries: ["NORWAY", "SWEDEN", "DENMARK", "GERMANY", "CZECH REPUBLIC", "HUNGARY", "SLOVAKIA", "POLAND"],
+    priceEUR: 1713, priceINR: Math.round(1713 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=90"],
+    departureDates: ["6 Jul 2026", "20 Jul 2026", "3 Aug 2026", "17 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Oslo", "Stockholm", "Copenhagen", "Berlin", "Prague", "Budapest", "Krakow"],
+    inclusions: ["Coach + ferries", "13 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "germany-northern-europe",
+    name: "Germany & Northern Europe",
+    days: 14, nights: 13,
+    series: "Scandinavia",
+    countries: ["GERMANY", "DENMARK", "NORWAY", "SWEDEN"],
+    priceEUR: 2062, priceINR: Math.round(2062 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=90"],
+    departureDates: ["8 Jul 2026", "22 Jul 2026", "5 Aug 2026", "19 Aug 2026"],
+    tag: "New",
+    highlights: ["Berlin", "Hamburg", "Copenhagen", "Oslo Fjords", "Stockholm Royal Palace"],
+    inclusions: ["Coach + ferries", "13 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "poland-scandinavia-east",
+    name: "Poland, Scandinavia & East Europe",
+    days: 16, nights: 15,
+    series: "Scandinavia",
+    countries: ["POLAND", "SWEDEN", "DENMARK", "GERMANY", "CZECH REPUBLIC", "HUNGARY", "SLOVAKIA"],
+    priceEUR: 2116, priceINR: Math.round(2116 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=90"],
+    departureDates: ["3 Jul 2026", "17 Jul 2026", "31 Jul 2026", "14 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Warsaw", "Krakow Auschwitz", "Stockholm", "Copenhagen", "Berlin", "Prague", "Budapest"],
+    inclusions: ["Coach + ferries", "15 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "scandinavia-budapest",
+    name: "Scandinavia & Budapest",
+    days: 11, nights: 10,
+    series: "Scandinavia",
+    countries: ["NORWAY", "SWEDEN", "DENMARK", "GERMANY", "CZECH REPUBLIC", "HUNGARY"],
+    priceEUR: 1315, priceINR: Math.round(1315 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=90"],
+    departureDates: ["10 Jul 2026", "24 Jul 2026", "7 Aug 2026", "21 Aug 2026"],
+    tag: "Popular",
+    highlights: ["Oslo Fjords", "Stockholm Old Town", "Copenhagen Tivoli", "Berlin", "Prague", "Budapest Parliament"],
+    inclusions: ["Coach + ferries", "10 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "pearls-nordic-copenhagen",
+    name: "Pearls of Nordic & Copenhagen",
+    days: 6, nights: 5,
+    series: "Scandinavia",
+    countries: ["NORWAY", "SWEDEN", "DENMARK"],
+    priceEUR: 698, priceINR: Math.round(698 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=90"],
+    departureDates: ["10 Jul 2026", "17 Jul 2026", "24 Jul 2026", "31 Jul 2026", "7 Aug 2026", "14 Aug 2026"],
+    tag: "New",
+    highlights: ["Oslo Viking Museum", "Bergen Fjords", "Stockholm Vasa Museum", "Copenhagen Little Mermaid", "Tivoli Gardens"],
+    inclusions: ["Coach + ferry", "5 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+  {
+    slug: "eastern-europe-poland-scandinavia",
+    name: "Eastern Europe, Poland & Scandinavia",
+    days: 15, nights: 14,
+    series: "Scandinavia",
+    countries: ["CZECH REPUBLIC", "HUNGARY", "SLOVAKIA", "POLAND", "SWEDEN", "DENMARK", "GERMANY"],
+    priceEUR: 2077, priceINR: Math.round(2077 * EUR_TO_INR),
+    heroImage: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=90",
+    images: ["https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=90"],
+    departureDates: ["3 Jul 2026", "17 Jul 2026", "31 Jul 2026", "14 Aug 2026"],
+    highlights: ["Prague", "Budapest", "Krakow Auschwitz", "Warsaw", "Stockholm", "Copenhagen", "Berlin"],
+    inclusions: ["Coach + ferries", "14 nights hotel", "Breakfast", "Tour manager"],
+    exclusions: ["Flights", "Most meals", "Visa", "Personal expenses"],
+  },
+
+]
+
+export const getGroupDepartureBySlug = (slug: string) =>
+  groupDepartures.find(p => p.slug === slug)
+
+export const getAllCountries = () => {
+  const all = groupDepartures.flatMap(p => p.countries)
+  return [...new Set(all)].sort()
+}
+
+export const getAllSeries = () =>
+  [...new Set(groupDepartures.map(p => p.series))]
+
+export const getAllMonths = () => {
+  const months = groupDepartures.flatMap(p =>
+    p.departureDates.map(d => d.split(" ")[1] + " " + d.split(" ")[2])
+  )
+  return [...new Set(months)]
+}
+----- FILE: hooks/usePrice.ts -----
+import { useCurrency } from "@/contexts/CurrencyContext"
+
+const SYMBOLS: Record<string, string> = {
+  INR: "₹", USD: "$", EUR: "€", GBP: "£",
+  AED: "AED ", SGD: "S$", AUD: "A$", CAD: "C$",
+  JPY: "¥", THB: "฿",
+}
+
+export function usePrice() {
+  const { currency, rates } = useCurrency()
+
+  function convert(amountInINR: number): string {
+    if (!amountInINR) return ""
+    const rate = rates[currency] ?? 1
+    const converted = amountInINR * rate
+    const symbol = SYMBOLS[currency] ?? currency + " "
+
+    if (currency === "INR") {
+      return `₹${converted.toLocaleString("en-IN")}`
+    }
+
+    if (converted >= 1000) {
+      return `${symbol}${converted.toLocaleString("en-US", { maximumFractionDigits: 0 })}`
+    }
+
+    return `${symbol}${converted.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+  }
+
+  return { convert, currency }
+}
+
+----- FILE: contexts/CurrencyContext.tsx -----
+"use client"
+import { createContext, useContext, useEffect, useState } from "react"
+
+interface CurrencyContextType {
+  currency: string
+  setCurrency: (c: string) => void
+  rates: Record<string, number>
+  currencies: string[]
+}
+
+const CurrencyContext = createContext<CurrencyContextType>({
+  currency: "INR",
+  setCurrency: () => {},
+  rates: {},
+  currencies: [],
+})
+
+const MAJOR = ["INR", "USD", "EUR", "GBP", "AED", "SGD", "AUD", "CAD", "JPY", "THB"]
+
+export function CurrencyProvider({ children }: { children: React.ReactNode }) {
+  const [currency, setCurrency] = useState("INR")
+  const [rates, setRates] = useState<Record<string, number>>({})
+  const [currencies, setCurrencies] = useState<string[]>(MAJOR)
+
+  useEffect(() => {
+    fetch("/api/currency")
+      .then(r => r.json())
+      .then(data => {
+        if (data.rates) {
+          setRates(data.rates)
+          setCurrencies(MAJOR.filter(c => data.rates[c]))
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  return (
+    <CurrencyContext.Provider value={{ currency, setCurrency, rates, currencies }}>
+      {children}
+    </CurrencyContext.Provider>
+  )
+}
+
+export function useCurrency() {
+  return useContext(CurrencyContext)
+}
+
+----- FILE: data/faqData.ts -----
+import { FAQItem } from "@/components/FAQSection";
+
+export const homeFaqs: FAQItem[] = [
+  {
+    question: "Is it actually safe to book with Get Trip Go, or should I just book directly with the airline or hotel?",
+    answer:
+      "Booking with us is just as safe as booking directly. We've been operating since 2016, and every flight, hotel, or package you book is confirmed through the same verified airline and hotel systems you'd use yourself. The difference is we often get better combined pricing on packages, and you get one team to call if anything goes wrong, instead of juggling multiple providers yourself.",
+  },
+  {
+    question: "What happens if my flight gets cancelled by the airline — do I have to sort it out myself?",
+    answer:
+      "No, you don't have to deal with the airline alone. If an airline, hotel, or tour operator cancels on you, we proactively reach out by email or SMS, explain your options (refund or free rebooking), and coordinate the fix on your behalf.",
+  },
+  {
+    question: "How do I know my booking actually went through?",
+    answer:
+      "You'll get a confirmation email within minutes of payment, and you can always check the status under 'My Trip' once logged in. If you paid but didn't receive confirmation within 30 minutes, that usually means the transaction timed out — contact support with your transaction ID and we'll sort it out immediately, no need to panic or repay.",
+  },
+  {
+    question: "Is Get Trip Go actually cheaper, or is it the same price as booking directly?",
+    answer:
+      "It depends on what you're booking. For single flights or hotels, prices are usually close to direct booking since we pull from the same inventory. For packages and group tours, we typically work out cheaper than booking each piece separately, since we negotiate combined rates with hotels and operators.",
+  },
+  {
+    question: "Are the discounted fares (student, senior citizen, armed forces) real, or is there a catch?",
+    answer:
+      "They're real discounts, no catch — but they do require valid ID at check-in (student ID, age proof, or service ID depending on the fare). The price you see at checkout is the final price; we don't add hidden convenience fees on top after you've selected a fare.",
+  },
+];
+
+export const helpFaqs: FAQItem[] = [
+  {
+    question: "How do I change or cancel my booking?",
+    answer:
+      "You can request changes or cancellations by contacting our support team with your booking reference number. Charges may apply depending on the airline, hotel, or operator's policy.",
+  },
+  {
+    question: "How long does it take to get a refund?",
+    answer:
+      "Most refunds are processed within 7 to 14 business days after approval, though timing can vary depending on your bank and the service provider.",
+  },
+  {
+    question: "I haven't received my booking confirmation. What should I do?",
+    answer:
+      "Check your spam or promotions folder first. If you still can't find it, contact our support team with your registered phone number or email and we'll resend it immediately.",
+  },
+  {
+    question: "How can I contact Get Trip Go support?",
+    answer:
+      "You can reach us through the contact page on our website, via email, or by phone. Our team typically responds within a few hours during business hours.",
+  },
+  {
+    question: "Can I make changes to my customized itinerary after booking?",
+    answer:
+      "Yes, minor changes are often possible depending on availability. Contact your assigned travel consultant as early as possible to request adjustments.",
+  },
+];
+
+export const popularDestinationsFaqs: FAQItem[] = [
+  {
+    question: "How do I know these destination packages are actually good value, and not overpriced?",
+    answer:
+      "Each package breaks down exactly what's included — flights, hotel category, meals, and activities — so you can compare it against booking everything separately. Many of our packages also carry real traveler reviews left after their trip, which you can check before booking.",
+  },
+  {
+    question: "Can I change the hotel, dates, or number of nights on a destination package?",
+    answer:
+      "Yes. Most packages can be adjusted for duration, hotel category, and activities. If you want something more tailored, you can also request a fully custom itinerary instead.",
+  },
+  {
+    question: "If something goes wrong with my hotel or flight during the trip, will Get Trip Go help, or am I on my own once I've left?",
+    answer:
+      "We coordinate with the hotel, airline, or tour operator on your behalf if something goes wrong — cancellations, overbooking, schedule changes — both before and during your trip. You're not left to negotiate with them alone.",
+  },
+  {
+    question: "What's the best time to visit a specific destination, and does that affect the price?",
+    answer:
+      "Yes, pricing shifts with season and demand — peak season (school holidays, major festivals) is usually pricier and more crowded. Our team can recommend the best window for your chosen destination based on weather, cost, and crowd levels if you're flexible on dates.",
+  },
+  {
+    question: "Is travel insurance included, or do I need to buy it separately?",
+    answer:
+      "Travel insurance isn't included by default in most destination packages, but it can be added during booking — especially worth considering for international trips. We'd recommend it for any trip involving flights or unfamiliar destinations.",
+  },
+];
+
+export const groupDeparturesFaqs: FAQItem[] = [
+  {
+    question: "What exactly is a 'group departure,' and is it actually fun if I'm not naturally a group-travel person?",
+    answer:
+      "Group departures are pre-scheduled tours on fixed dates, led by a tour manager, where you travel alongside 15 to 30 other travelers. Many people who join solo say it ends up being one of the best parts of the trip — you're not forced to socialize constantly, but there's always company if you want it.",
+  },
+  {
+    question: "Can I join alone, or do I need to bring someone with me?",
+    answer:
+      "You can absolutely join solo — a large portion of travelers on our group tours sign up individually. Solo and twin-sharing room options are typically both available.",
+  },
+  {
+    question: "What's actually included in the price, and what costs extra once I'm there?",
+    answer:
+      "Each tour page lists exact inclusions — typically accommodation, transport during the tour, a tour manager, sightseeing per the itinerary, and select meals. Anything not listed (personal shopping, optional excursions, tips) is extra, and we make sure that's clear before you book, not as a surprise mid-trip.",
+  },
+  {
+    question: "What happens if the tour doesn't get enough people to run?",
+    answer:
+      "In the rare case a tour doesn't reach minimum group size, we'll tell you in advance — not at the last minute — and you'll get a full refund or the option to switch to another available date or package.",
+  },
+  {
+    question: "Are these tours good for older travelers or people with limited mobility?",
+    answer:
+      "It depends on the specific itinerary — some tours involve more walking or longer travel days than others. Check the day-by-day itinerary on each tour page, or contact our team directly and we'll tell you honestly whether a particular tour suits your pace.",
+  },
+];
+
+export const customizedItinerariesFaqs: FAQItem[] = [
+  {
+    question: "How does a 'customized itinerary' actually work — do I design it myself or does someone help?",
+    answer:
+      "You share your destination, dates, budget, and preferences, and a dedicated travel consultant designs a draft itinerary for you. You review it, request changes, and only confirm once it actually matches what you want — you're not locked into the first draft.",
+  },
+  {
+    question: "Is a custom trip more expensive than picking a fixed package?",
+    answer:
+      "Not necessarily — it depends on your choices in hotels, activities, and transport. A custom trip can actually cost less if you're willing to skip inclusions you don't need, or more if you want a higher hotel category. We work to fit your stated budget rather than upselling.",
+  },
+  {
+    question: "How far in advance do I need to book a custom trip?",
+    answer:
+      "We'd recommend at least 3 to 4 weeks ahead for domestic trips and 6 to 8 weeks for international trips, mainly to lock in better hotel and flight availability. Last-minute custom trips are sometimes possible, but options narrow and prices tend to rise closer to the date.",
+  },
+  {
+    question: "Can you build a trip around a specific occasion, like a honeymoon or a family reunion?",
+    answer:
+      "Yes — we regularly design itineraries for honeymoons, family trips, solo travel, and group celebrations, with the pacing and activities adjusted for the occasion rather than a generic template.",
+  },
+  {
+    question: "If I have a problem mid-trip, do I call a general helpline, or is there someone who actually knows my itinerary?",
+    answer:
+      "You're assigned a dedicated travel consultant who manages your itinerary from planning through the end of your trip, so you're not explaining your situation from scratch to a random support agent if something comes up.",
+  },
+];
