@@ -2,10 +2,12 @@
 
 import { useState, useMemo, Suspense } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import { useSearchParams } from "next/navigation"
 import { themePackages, themes } from "@/data/themePackages"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
+import { buildItemListSchema } from "@/lib/seo/tripSchema"
 
 const themeColors: Record<string, string> = {
   "Honeymoon": "#be185d",
@@ -186,8 +188,22 @@ function ThemeHolidaysPageInner() {
     </div>
   )
 
+  const itemListJsonLd = buildItemListSchema({
+    name: "Theme Holidays — Get Trip Go",
+    url: "https://gettripgo.com/theme-holidays",
+    items: themePackages.map((p) => ({
+      name: p.name,
+      url: `https://gettripgo.com/theme-holidays/${encodeURIComponent(p.theme)}/${p.slug}`,
+    })),
+  })
+
   return (
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
+      <Script
+        id="theme-holidays-itemlist-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">

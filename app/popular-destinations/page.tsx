@@ -2,12 +2,14 @@
 
 import { useState, useMemo, useEffect, Suspense } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import { useSearchParams } from "next/navigation"
 import { packages, destinations } from "@/data/packages"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
 import FAQSection from "@/components/FAQSection"
 import { popularDestinationsFaqs } from "@/data/faqData"
+import { buildItemListSchema } from "@/lib/seo/tripSchema"
 
 const themes = ["Adventure", "Culture", "Pilgrimage", "Honeymoon", "Wildlife"]
 const hotelStars = [3, 4, 5] as const
@@ -222,8 +224,22 @@ function PopularDestinationsContent() {
     </div>
   )
 
+  const itemListJsonLd = buildItemListSchema({
+    name: "Popular Destinations — Get Trip Go",
+    url: "https://gettripgo.com/popular-destinations",
+    items: packages.map((p) => ({
+      name: p.name,
+      url: `https://gettripgo.com/popular-destinations/${p.slug}`,
+    })),
+  })
+
   return (
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
+      <Script
+        id="popular-destinations-itemlist-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">

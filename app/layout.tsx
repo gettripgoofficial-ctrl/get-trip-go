@@ -22,6 +22,7 @@ export default function RootLayout({
               "name": "Get Trip Go",
               "url": "https://gettripgo.com",
               "logo": "https://gettripgo.com/logo.png",
+              "image": "https://gettripgo.com/logo.png",
               "foundingDate": "2016",
               "description": "Embark on your next adventure with Get Trip Go, a premier travel booking platform founded in 2016 in New Delhi. We specialise in affordable flights, hotel bookings, custom holiday packages and confirmed group tours across India and international destinations.",
               "telephone": "+919334433557",

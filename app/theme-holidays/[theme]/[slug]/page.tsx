@@ -2,11 +2,13 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import { useParams } from "next/navigation"
 import { getThemePackageBySlug } from "@/data/themePackages"
 import EnquiryModal from "@/components/EnquiryModal"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
+import { buildTripSchemas } from "@/lib/seo/tripSchema"
 
 const themeColors: Record<string, string> = {
   "Honeymoon": "#be185d",
@@ -61,12 +63,34 @@ export default function ThemePackageDetailPage() {
     { id: "pricing", label: "Pricing" },
   ] as const
 
+  const { product: productJsonLd, touristTrip: touristTripJsonLd } = buildTripSchemas({
+    url: `https://gettripgo.com/theme-holidays/${encodeURIComponent(theme as string)}/${pkg.slug}`,
+    name: pkg.name,
+    description: `${pkg.duration} ${pkg.theme.toLowerCase()} holiday package to ${pkg.destination}, ${pkg.country}. Highlights include ${pkg.highlights.slice(0, 3).join(", ")}.`,
+    images: [pkg.heroImage, ...pkg.images],
+    price: pkg.price,
+    sku: pkg.slug,
+    availability: "InStock",
+    itineraryPlaces: [pkg.destination, pkg.country].filter((v, i, arr) => arr.indexOf(v) === i),
+    touristType: `${pkg.theme} holiday`,
+  })
+
   const totalCost = pkg.price * travelers
   const gst = Math.round(totalCost * 0.05)
   const grandTotal = totalCost + gst
 
   return (
     <div className="min-h-screen bg-gray-100 pb-32 sm:pb-10">
+      <Script
+        id="product-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <Script
+        id="touristtrip-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
+      />
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">

@@ -1,12 +1,28 @@
 "use client"
 
 import Link from "next/link"
+import Script from "next/script"
 import { offers } from "@/data/offers"
 import BottomNav from "@/components/BottomNav"
+import { buildItemListSchema } from "@/lib/seo/tripSchema"
 
 export default function OffersPage() {
+  const itemListJsonLd = buildItemListSchema({
+    name: "Special Offers & Deals — Get Trip Go",
+    url: "https://gettripgo.com/offers",
+    items: offers.map((o) => ({
+      name: o.title,
+      url: `https://gettripgo.com/offers/${o.slug}`,
+    })),
+  })
+
   return (
     <div className="min-h-screen bg-gray-50 pb-24 lg:pb-10">
+      <Script
+        id="offers-itemlist-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">

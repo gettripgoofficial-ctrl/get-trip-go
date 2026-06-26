@@ -4,6 +4,7 @@ import { Star, MapPin, Calendar, Users as UsersIcon } from "lucide-react"
 import { getGroupDepartureBySlug } from "@/data/groupDepartures"
 import TourTabs from "./TourTabs"
 import TourActions from "./TourActions"
+import { buildTripSchemas, hasUpcomingDate } from "@/lib/seo/tripSchema"
 
 export default function TourDetailPage({ params }: { params: { slug: string } }) {
   const tour = getGroupDepartureBySlug(params.slug)
@@ -13,8 +14,31 @@ export default function TourDetailPage({ params }: { params: { slug: string } })
   const galleryImages = Array.from({ length: 5 }, (_, i) => allImages[i % allImages.length])
   const labels = tour.galleryLabels ?? []
 
+  const { product: productJsonLd, touristTrip: touristTripJsonLd } = buildTripSchemas({
+    url: `https://gettripgo.com/group-departures/${tour.slug}`,
+    name: tour.name,
+    description: `${tour.days}-day, ${tour.nights}-night escorted group tour across ${tour.countries.join(", ")}. Highlights include ${tour.highlights.slice(0, 3).join(", ")}. Includes ${tour.inclusions.slice(0, 3).join(", ").toLowerCase()}.`,
+    images: [tour.heroImage, ...tour.images],
+    price: tour.priceINR,
+    sku: tour.slug,
+    availability: hasUpcomingDate(tour.departureDates) ? "InStock" : "SoldOut",
+    priceValidUntil: `${new Date().getFullYear()}-12-31`,
+    itineraryPlaces: tour.countries,
+    touristType: "Group tour",
+    // Real data straight from groupDepartures.ts — never fabricated.
+    realRating: tour.rating && tour.reviewCount ? { value: tour.rating, count: tour.reviewCount } : undefined,
+  })
+
   return (
     <main className="min-h-screen bg-gray-100 pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
+      />
       <div className="max-w-7xl mx-auto px-4 pt-6 pb-6">
 
 

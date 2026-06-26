@@ -2,12 +2,14 @@
 
 import { useState, useMemo } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import { customPackages } from "@/data/customPackages"
 import EnquiryModal from "@/components/EnquiryModal"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
 import FAQSection from "@/components/FAQSection"
 import { customizedItinerariesFaqs } from "@/data/faqData"
+import { buildItemListSchema } from "@/lib/seo/tripSchema"
 
 const types = ["Family", "Couple", "Honeymoon", "Adventure", "Cultural", "Beach"]
 const durations = [
@@ -159,8 +161,22 @@ export default function CustomizedItinerariesPage() {
     </div>
   )
 
+  const itemListJsonLd = buildItemListSchema({
+    name: "Customized Holiday Itineraries — Get Trip Go",
+    url: "https://gettripgo.com/customized-itineraries",
+    items: customPackages.map((p) => ({
+      name: p.name,
+      url: `https://gettripgo.com/customized-itineraries/${p.slug}`,
+    })),
+  })
+
   return (
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
+      <Script
+        id="customized-itineraries-itemlist-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">

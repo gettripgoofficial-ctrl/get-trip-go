@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Script from "next/script";
 import { BlogPost } from "@/types/blog";
+import { buildItemListSchema } from "@/lib/seo/tripSchema";
 
 const BG = "#F8F9FF";
 
@@ -106,6 +108,24 @@ export default function BlogListingPage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: BG }}>
+      {!loading && posts.length > 0 && (
+        <Script
+          id="blog-itemlist-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              buildItemListSchema({
+                name: "Travel Stories & Guides — Get Trip Go",
+                url: "https://gettripgo.com/blog",
+                items: posts.map((p) => ({
+                  name: p.title,
+                  url: `https://gettripgo.com/blog/${p.slug}`,
+                })),
+              })
+            ),
+          }}
+        />
+      )}
       <div className="border-b border-gray-200 py-14 sm:pt-36 sm:pb-16 px-4 text-center" style={{ backgroundColor: BG }}>
         <p className="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Travel Stories</p>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-3">Go Further. Know More.</h1>

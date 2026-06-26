@@ -2,11 +2,13 @@
 
 import { useState, useMemo } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import { groupDepartures, getAllCountries, getAllSeries } from "@/data/groupDepartures"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
 import FAQSection from "@/components/FAQSection"
 import { groupDeparturesFaqs } from "@/data/faqData"
+import { buildItemListSchema } from "@/lib/seo/tripSchema"
 
 const durationRanges = [
   { label: "Short (≤8 days)", min: 1, max: 8 },
@@ -201,8 +203,22 @@ export default function GroupDeparturesPage() {
     </div>
   )
 
+  const itemListJsonLd = buildItemListSchema({
+    name: "Europe Group Departures — Get Trip Go",
+    url: "https://gettripgo.com/group-departures",
+    items: groupDepartures.map((g) => ({
+      name: g.name,
+      url: `https://gettripgo.com/group-departures/${g.slug}`,
+    })),
+  })
+
   return (
     <div className="min-h-screen bg-gray-100 pb-20 sm:pb-0">
+      <Script
+        id="group-departures-itemlist-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">

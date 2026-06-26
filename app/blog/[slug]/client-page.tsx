@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Script from "next/script";
 import { BlogPost } from "@/types/blog";
 
 function formatDate(iso: string) {
@@ -86,8 +87,34 @@ export default function BlogPostClient() {
 
   if (notFound || !post) return <NotFound />;
 
+  // Only available once the client-side fetch resolves — Google's slower
+  // "second wave" render picks this up rather than the fast initial-HTML pass.
+  const blogPostingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    image: post.coverImage ? [post.coverImage] : undefined,
+    datePublished: post.createdAt,
+    dateModified: post.createdAt,
+    author: { "@type": "Person", name: post.author },
+    publisher: {
+      "@type": "Organization",
+      name: "Get Trip Go",
+      logo: { "@type": "ImageObject", url: "https://gettripgo.com/logo.png" },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://gettripgo.com/blog/${post.slug}`,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <Script
+        id="blogposting-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
+      />
       {post.coverImage && (
         <div className="w-full h-72 sm:h-96 overflow-hidden relative">
           <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />

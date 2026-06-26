@@ -2,10 +2,12 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import { useParams } from "next/navigation"
 import { getPackageBySlug } from "@/data/packages"
 import BottomNav from "@/components/BottomNav"
 import { usePrice } from "@/hooks/usePrice"
+import { buildTripSchemas } from "@/lib/seo/tripSchema"
 
 export default function PackageDetailPage() {
   const { slug } = useParams()
@@ -36,8 +38,30 @@ export default function PackageDetailPage() {
   const { convert } = usePrice()
   const totalCost = pkg.price * travelers
 
+  const { product: productJsonLd, touristTrip: touristTripJsonLd } = buildTripSchemas({
+    url: `https://gettripgo.com/popular-destinations/${pkg.slug}`,
+    name: pkg.name,
+    description: `${pkg.duration} holiday package to ${pkg.destination}, ${pkg.country}. Highlights include ${pkg.highlights.slice(0, 3).join(", ")}.`,
+    images: [pkg.heroImage, ...pkg.images],
+    price: pkg.price,
+    sku: pkg.slug,
+    availability: "InStock",
+    itineraryPlaces: [pkg.destination, pkg.country].filter((v, i, arr) => arr.indexOf(v) === i),
+    touristType: "Holiday package",
+  })
+
   return (
     <div className="min-h-screen bg-gray-100 pb-32 sm:pb-10">
+      <Script
+        id="product-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <Script
+        id="touristtrip-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
+      />
 
       {/* Hero Image Gallery */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
