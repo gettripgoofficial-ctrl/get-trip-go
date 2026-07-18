@@ -1,5 +1,4 @@
-import HeroSection from "@/components/HeroSection"
-import HeroSectionMobile from "@/components/HeroSectionMobile"
+import ResponsiveHero from "@/components/ResponsiveHero"
 import SecondaryServices from "@/components/SecondaryServices"
 import SpecialOffers from "@/components/SpecialOffers"
 import PopularDestinations from "@/components/PopularDestinations"
@@ -16,24 +15,17 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100">
 
-      {/* Desktop Hero */}
-      <div className="hidden md:block">
-        <HeroSection />
-      </div>
-
-      {/* Mobile Hero */}
-      <div className="block md:hidden">
-        <HeroSectionMobile />
-      </div>
+      {/* Hero — picks mobile or desktop version based on real screen size */}
+      <ResponsiveHero />
 
       {/* Sections below — shared for both */}
       <div className="hidden md:block">
         <SecondaryServices />
       </div>
- 
-    <div className="hidden md:block">
-      <SpecialOffers />
-    </div>
+
+      <div className="hidden md:block">
+        <SpecialOffers />
+      </div>
       <PopularDestinations />
       <GroupDepartures />
       <CustomPackages />

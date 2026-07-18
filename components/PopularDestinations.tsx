@@ -31,41 +31,34 @@ export default function PopularDestinations() {
           </Link>
         </div>
 
-        {/* Desktop: grid */}
-        <div className="hidden sm:grid sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+        {/* One set of cards. Mobile: flex row that scrolls sideways. sm+: switches to a grid. */}
+        <div
+          className="flex sm:grid sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0"
+          style={{ scrollbarWidth: "none" }}
+        >
           {destinations.map(dest => (
             <Link
               key={dest.name}
               href={`/popular-destinations?destination=${encodeURIComponent(dest.name)}`}
-              className="rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform shadow-md relative group"
-              style={{ height: "220px" }}
+              className="min-w-[calc(50%-6px)] max-w-[calc(50%-6px)] sm:min-w-0 sm:max-w-none flex-shrink-0 sm:flex-shrink rounded-2xl overflow-hidden cursor-pointer sm:hover:scale-105 transition-transform shadow-md relative group h-[180px] sm:h-[220px]"
             >
-              <Image src={dest.image} alt={dest.name} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw" className="object-cover brightness-90 group-hover:brightness-100 transition-all" />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" }} />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <p className="text-white font-bold text-sm">{dest.name}</p>
-                <p className="text-gray-300 text-xs">{dest.country}</p>
-                <p className="text-yellow-400 text-xs font-semibold mt-1">From {convert(dest.price)}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile: horizontal scroll */}
-        <div className="flex sm:hidden gap-3 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
-          {destinations.map(dest => (
-            <Link
-              key={dest.name}
-              href={`/popular-destinations?destination=${encodeURIComponent(dest.name)}`}
-              className="min-w-[calc(50%-6px)] max-w-[calc(50%-6px)] flex-shrink-0 rounded-2xl overflow-hidden cursor-pointer shadow-md relative group"
-              style={{ height: "180px" }}
-            >
-              <Image src={dest.image} alt={dest.name} fill sizes="50vw" className="object-cover brightness-90" />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%)" }} />
-              <div className="absolute bottom-0 left-0 right-0 p-2">
-                <p className="text-white font-bold text-xs">{dest.name}</p>
-                <p className="text-gray-300 text-[10px]">{dest.country}</p>
-                <p className="text-yellow-400 text-[10px] font-semibold mt-0.5">From {convert(dest.price)}</p>
+              <Image
+                src={dest.image}
+                alt={`${dest.name}, ${dest.country} holiday package`}
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
+                className="object-cover brightness-90 group-hover:brightness-100 transition-all"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%)" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3">
+                <p className="text-white font-bold text-xs sm:text-sm">{dest.name}</p>
+                <p className="text-gray-300 text-[10px] sm:text-xs">{dest.country}</p>
+                <p className="text-yellow-400 text-[10px] sm:text-xs font-semibold mt-0.5 sm:mt-1">
+                  From {convert(dest.price)}
+                </p>
               </div>
             </Link>
           ))}
