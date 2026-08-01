@@ -45,6 +45,7 @@ const ContentSecurityPolicy = `
     https://*.travelpayouts.com;
   img-src 'self' data: blob:
     https://images.unsplash.com
+    https://plus.unsplash.com
     https://tpscr.com
     https://*.travelpayouts.com
     https://www.google-analytics.com
@@ -106,6 +107,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
       },
     ],
   },

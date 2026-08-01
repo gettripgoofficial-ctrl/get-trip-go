@@ -1,4 +1,5 @@
 import ResponsiveHero from "@/components/ResponsiveHero"
+import KenyaBanner from "@/components/KenyaBanner"
 import SecondaryServices from "@/components/SecondaryServices"
 import SpecialOffers from "@/components/SpecialOffers"
 import PopularDestinations from "@/components/PopularDestinations"
@@ -26,6 +27,7 @@ export default function Home() {
       <div className="hidden md:block">
         <SpecialOffers />
       </div>
+      <KenyaBanner />
       <PopularDestinations />
       <GroupDepartures />
       <CustomPackages />
