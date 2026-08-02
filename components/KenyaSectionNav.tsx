@@ -9,7 +9,6 @@ const cards = [
   { id: "travel-wildlife", label: "Safari & Wildlife", image: "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=200&q=80" },
   { id: "who-should-go-trending", label: "Must Know Before Travel", image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=200&q=80" },
   { id: "explore", label: "Parks & Reserves", image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=200&q=80" },
-  { id: "conservation-culture", label: "FAQs", image: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=200&q=80" },
 ]
 
 export default function KenyaSectionNav() {
@@ -24,7 +23,7 @@ export default function KenyaSectionNav() {
     <div className="pt-[52px] sm:pt-[64px]">
       <div className="sticky top-[52px] sm:top-[64px] z-40 bg-white border-b border-gray-100 shadow-sm">
         <div
-          className="max-w-7xl mx-auto px-4 py-2.5 flex gap-2 justify-between overflow-x-auto"
+          className="max-w-7xl mx-auto px-4 py-2.5 flex gap-3 justify-between overflow-x-auto"
           style={{ scrollbarWidth: "none" }}
         >
           {cards.map(card => (
