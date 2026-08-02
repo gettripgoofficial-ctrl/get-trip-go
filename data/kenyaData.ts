@@ -1,80 +1,787 @@
-export const kenyaHero = {
-  breadcrumb: ["Home", "Countries", "Kenya"],
-  region: "East Africa",
-  title: "Kenya",
-  tagline: "The home of the safari — with wildlife, landscapes and journeys for every kind of traveller.",
-  image: "/images/kenya-banner.jpg",
-  infoStrip: [
-    { label: "Best Known For", value: "The original safari — the Mara, the migration, Amboseli's elephants", image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" },
-    { label: "When To Go", value: "Jul-Oct (dry, migration); Jan-Feb (dry, green)", image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" },
-    { label: "Getting There", value: "Nairobi (NBO), the regional hub with daily long-haul flights", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80" },
-    { label: "Getting Around", value: "Light aircraft between parks; road through the highlands", image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=600&q=80" },
-    { label: "Pairs With", value: "Tanzania, Zanzibar, or a Diani beach finish", image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" },
-  ],
-}
-
-export type KenyaDestination = {
-  id: string
-  name: string
-  region: string
-  image: string
-}
-
-export const kenyaDestinations: KenyaDestination[] = [
-  { id: "masai-mara", name: "Masai Mara National Reserve", region: "Wildlife Reserve · Southern Kenya", image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" },
-  { id: "amboseli", name: "Amboseli National Park", region: "Southern Kenya · Kilimanjaro Foothills", image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80" },
-  { id: "lake-nakuru", name: "Lake Nakuru National Park", region: "Rift Valley · Central Kenya", image: "https://images.unsplash.com/photo-1547970310-4b1d1e35c108?w=800&q=80" },
-  { id: "lake-elementaita", name: "Lake Elementaita", region: "Rift Valley · Central Kenya", image: "https://images.unsplash.com/photo-1552083375-1447ce886485?w=800&q=80" },
-  { id: "lake-naivasha", name: "Lake Naivasha", region: "Rift Valley · Central Kenya", image: "https://images.unsplash.com/photo-1516569422509-4d5a94125c02?w=800&q=80" },
-  { id: "ol-pejeta", name: "Ol Pejeta", region: "Laikipia · Central Kenya", image: "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=800&q=80" },
-]
-
-export type KenyaJourney = {
+export type KenyaArticle = {
   id: string
   title: string
-  days: number
-  nights: number
+  category: string
   image: string
+  excerpt: string
+  meta: string
 }
 
-export const kenyaJourneys: KenyaJourney[] = [
-  { id: "highlands-escape", title: "Kenya Highlands Escape", days: 7, nights: 6, image: "https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=800&q=80" },
-  { id: "forests-coast", title: "Forests to the Coast", days: 10, nights: 9, image: "https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=800&q=80" },
-  { id: "grand-circuit", title: "Classic Kenya Grand Circuit", days: 13, nights: 12, image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80" },
-  { id: "northern-explorer", title: "Northern Kenya Explorer", days: 10, nights: 9, image: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&q=80" },
-  { id: "walking-safari", title: "Walking Safari Kenya", days: 9, nights: 8, image: "https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=800&q=80" },
-  { id: "indian-ocean", title: "Highlands to the Indian Ocean", days: 10, nights: 9, image: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=800&q=80" },
+export const kenyaHeroArticles: KenyaArticle[] = [
+  {
+    id: "best-time-to-visit-kenya",
+    title: "Best Time to Visit Kenya: A Season-by-Season Guide",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+    excerpt: "From the dry-season migration to the green, quiet months — timing shapes every safari.",
+    meta: "6 min read",
+  },
+  {
+    id: "the-great-migration-explained",
+    title: "The Great Migration Explained: When, Where and Why",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1000&q=80",
+    excerpt: "Where the Great Migration thunders across open plains, and predators are never far behind.",
+    meta: "8 min read",
+  },
+  {
+    id: "big-five-how-to-spot",
+    title: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=800&q=80",
+    excerpt: "Five icons of the African bush, and how to tell them apart at a glance.",
+    meta: "7 min read",
+  },
+  {
+    id: "is-kenya-safe-for-tourists",
+    title: "Is Kenya Safe for Tourists? What You Should Know",
+    category: "Health & Safety",
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800&q=80",
+    excerpt: "A realistic look at safety on safari, in Nairobi, and everywhere in between.",
+    meta: "6 min read",
+  },
 ]
 
-export type KenyaStay = {
-  id: string
-  name: string
-  region: string
-  description: string
-  image: string
-}
-
-export const kenyaStays: KenyaStay[] = [
-  { id: "ilora-retreats", name: "Ilora Retreats", region: "Masai Mara", description: "An intimate, design-led tented retreat in the heart of the Mara.", image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" },
-  { id: "angama-mara", name: "Angama Mara", region: "Masai Mara", description: "Glass-fronted suites suspended on the Oloololo Escarpment.", image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80" },
-  { id: "finch-hattons", name: "Finch Hattons", region: "Tsavo West", description: "A refined, Out-of-Africa-styled luxury camp built around natural springs.", image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" },
-  { id: "loldia-house", name: "Loldia House", region: "Lake Naivasha", description: "A characterful colonial farmhouse on the lakeshore.", image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=800&q=80" },
-  { id: "giraffe-manor", name: "Giraffe Manor", region: "Nairobi", description: "The famous 1930s manor where resident giraffes lean through the windows.", image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=800&q=80" },
-  { id: "angama-amboseli", name: "Angama Amboseli", region: "Amboseli", description: "A ten-suite lodge framed by Kilimanjaro views.", image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&q=80" },
+export const kenyaTravelTips: KenyaArticle[] = [
+  {
+    id: "what-to-pack-for-a-kenya-safari",
+    title: "What to Pack for a Kenya Safari",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1547970310-4b1d1e35c108?w=400&q=80",
+    excerpt: "Layers, neutral colors, and a soft duffel bag -- what actually earns a spot in your bag.",
+    meta: "7 min read",
+  },
+  {
+    id: "getting-around-light-aircraft-vs-road-safaris",
+    title: "Getting Around: Light Aircraft vs Road Safaris",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=400&q=80",
+    excerpt: "How to move between parks without losing a day of your trip to transit.",
+    meta: "5 min read",
+  },
+  {
+    id: "how-many-days-do-you-need-for-a-kenya-safari",
+    title: "How Many Days Do You Need for a Kenya Safari",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&q=80",
+    excerpt: "The honest answer, and why fewer, longer stays usually beat a rushed circuit.",
+    meta: "5 min read",
+  },
+  {
+    id: "safari-budget-guide-luxury-vs-mid-range-vs-budget",
+    title: "Safari Budget Guide: Luxury vs Mid-Range vs Budget",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=400&q=80",
+    excerpt: "What actually changes in your experience as the price goes up -- and what doesn't.",
+    meta: "8 min read",
+  },
+  {
+    id: "first-time-safari-checklist",
+    title: "First-Time Safari Checklist",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&q=80",
+    excerpt: "Everything to sort before you fly, in the order it actually needs doing.",
+    meta: "6 min read",
+  },
+  {
+    id: "safari-photography-camera-gear-and-settings",
+    title: "Safari Photography: Camera Gear and Settings",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=400&q=80",
+    excerpt: "What to bring, and the settings that actually matter in fast-changing light.",
+    meta: "9 min read",
+  },
+  {
+    id: "kenya-eta-guide-how-to-apply-cost-and-processing",
+    title: "Kenya eTA Guide: How to Apply, Cost and Processing Time",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&q=80",
+    excerpt: "The mandatory entry step every visitor needs -- done right, well before you fly.",
+    meta: "4 min read",
+  },
+  {
+    id: "safari-footwear-what-actually-works",
+    title: "Safari Footwear: What Actually Works",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=400&q=80",
+    excerpt: "What holds up on dusty trails and long game drives, and what doesn't.",
+    meta: "4 min read",
+  },
 ]
 
-export type KenyaWildlife = {
-  id: string
-  name: string
-  image: string
-}
+export const kenyaJourneys: KenyaArticle[] = [
+  {
+    id: "7-days-through-the-kenya-highlands",
+    title: "7 Days Through the Kenya Highlands",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=800&q=80",
+    excerpt: "Cool air, volcanic peaks, and a slower side of Kenya few travelers see.",
+    meta: "7 Days . 6 Nights",
+  },
+  {
+    id: "the-classic-kenya-grand-circuit-13-days",
+    title: "The Classic Kenya Grand Circuit: 13 Days",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=800&q=80",
+    excerpt: "Thirteen days connecting the Mara, the Rift Valley, and the northern frontier.",
+    meta: "13 Days . 12 Nights",
+  },
+  {
+    id: "walking-safari-kenya-on-foot-through-the-bush",
+    title: "Walking Safari Kenya: On Foot Through the Bush",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=800&q=80",
+    excerpt: "Slower, quieter, and closer to the ground than a game drive ever gets you.",
+    meta: "9 Days . 8 Nights",
+  },
+  {
+    id: "northern-kenya-explorer-off-the-beaten-path",
+    title: "Northern Kenya Explorer: Off the Beaten Path",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=800&q=80",
+    excerpt: "Remote conservancies and landscapes most safari-goers never reach.",
+    meta: "10 Days . 9 Nights",
+  },
+  {
+    id: "highlands-to-the-indian-ocean",
+    title: "Highlands to the Indian Ocean: Combining Safari and Beach",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=800&q=80",
+    excerpt: "Trade the savannah for the coast without losing a single game drive.",
+    meta: "10 Days . 9 Nights",
+  },
+  {
+    id: "kenya-and-tanzania-combining-two-safari-countries",
+    title: "Kenya and Tanzania: Combining Two Safari Countries",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=800&q=80",
+    excerpt: "Two countries, one migration -- how to plan the crossing without wasting a day.",
+    meta: "14 Days . 13 Nights",
+  },
+]
 
-export const kenyaWildlife: KenyaWildlife[] = [
-  { id: "elephant", name: "Elephant", image: "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=600&q=80" },
-  { id: "rhino", name: "Rhino", image: "https://images.unsplash.com/photo-1584844115436-473887b1e6f5?w=600&q=80" },
-  { id: "leopard", name: "Leopard", image: "https://images.unsplash.com/photo-1456926631375-92c8ce872def?w=600&q=80" },
-  { id: "lion", name: "Lion", image: "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=600&q=80" },
-  { id: "birds", name: "Birds", image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600&q=80" },
-  { id: "primates", name: "Primates", image: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=600&q=80" },
-  { id: "cheetah", name: "Cheetah", image: "/images/kenya-banner.jpg" },
+export const kenyaStays: KenyaArticle[] = [
+  {
+    id: "angama-mara-suites-on-the-escarpment",
+    title: "Angama Mara: Suites on the Escarpment",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80",
+    excerpt: "Glass-fronted suites suspended above the Mara.",
+    meta: "Masai Mara",
+  },
+  {
+    id: "giraffe-manor-breakfast-with-giraffes",
+    title: "Giraffe Manor: Breakfast With Giraffes",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=400&q=80",
+    excerpt: "The famous 1930s manor where giraffes join you at the table.",
+    meta: "Nairobi",
+  },
+  {
+    id: "finch-hattons-out-of-africa-reimagined",
+    title: "Finch Hattons: Out of Africa, Reimagined",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80",
+    excerpt: "A refined camp built around natural springs.",
+    meta: "Tsavo West",
+  },
+  {
+    id: "ilora-retreats-design-led-luxury-in-the-mara",
+    title: "Ilora Retreats: Design-Led Luxury in the Mara",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80",
+    excerpt: "An intimate, design-led tented retreat.",
+    meta: "Masai Mara",
+  },
+  {
+    id: "loldia-house-a-colonial-farmhouse",
+    title: "Loldia House: A Colonial Farmhouse on Lake Naivasha",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=400&q=80",
+    excerpt: "A characterful colonial farmhouse on the lakeshore.",
+    meta: "Lake Naivasha",
+  },
+  {
+    id: "sasaab-a-moroccan-style-lodge",
+    title: "Sasaab: A Moroccan-Style Lodge on the Ewaso Nyiro",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80",
+    excerpt: "Open and airy, with plunge pools and strong community ties.",
+    meta: "Samburu",
+  },
+  {
+    id: "ol-donyo-lodge-under-kilimanjaros-shadow",
+    title: "Ol Donyo Lodge: Under Kilimanjaro's Shadow",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=400&q=80",
+    excerpt: "Tented rooms on 100,000 private hectares between Tsavo and Amboseli.",
+    meta: "Chyulu Hills",
+  },
+  {
+    id: "segera-retreat-conservancy-and-infinity-pool",
+    title: "Segera Retreat: Conservancy Living in Laikipia",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=400&q=80",
+    excerpt: "A private conservancy villa retreat with an infinity pool over the plains.",
+    meta: "Laikipia",
+  },
+  {
+    id: "elsas-kopje-built-into-the-rock",
+    title: "Elsa's Kopje: Built Into the Rock",
+    category: "Stays",
+    image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=400&q=80",
+    excerpt: "Thatched cottages set into a rocky outcrop, named after the lioness of Born Free.",
+    meta: "Meru National Park",
+  },
+]
+
+export const kenyaSafariWildlife: KenyaArticle[] = [
+  {
+    id: "cheetahs-of-the-mara",
+    title: "Cheetahs of the Mara: Africa's Fastest Predator",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1547970310-4b1d1e35c108?w=700&q=80",
+    excerpt: "Built for speed, hunting in daylight when other cats rest.",
+    meta: "6 min read",
+  },
+  {
+    id: "amboselis-last-super-tuskers",
+    title: "Amboseli's Last Super Tuskers",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80",
+    excerpt: "Home to some of Africa's last great tuskers, framed by Kilimanjaro.",
+    meta: "5 min read",
+  },
+  {
+    id: "lake-nakurus-flamingo-spectacle",
+    title: "Lake Nakuru's Flamingo Spectacle",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1552083375-1447ce886485?w=700&q=80",
+    excerpt: "A soda lake turned pink by thousands of flamingos.",
+    meta: "5 min read",
+  },
+  {
+    id: "night-safaris-what-happens-after-dark",
+    title: "Night Safaris: What Happens After Dark",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=700&q=80",
+    excerpt: "A different bush comes alive once the sun goes down.",
+    meta: "6 min read",
+  },
+  {
+    id: "kenyas-big-cats-compared",
+    title: "Kenya's Big Cats: Lions, Leopards and Cheetahs Compared",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1456926631375-92c8ce872def?w=700&q=80",
+    excerpt: "How to tell them apart, and where each one is likely to turn up.",
+    meta: "7 min read",
+  },
+  {
+    id: "wildebeest-river-crossing-guide",
+    title: "The Wildebeest River Crossing: A Photographer's Guide",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=700&q=80",
+    excerpt: "Timing, positioning, and patience for the migration's most dramatic moment.",
+    meta: "8 min read",
+  },
+  {
+    id: "birdwatching-in-kenya-detail",
+    title: "Birdwatching in Kenya: 50 Species to Look For",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=700&q=80",
+    excerpt: "From flamingos to fish eagles, a checklist for every kind of birder.",
+    meta: "9 min read",
+  },
+  {
+    id: "rare-sightings-black-rhinos",
+    title: "Rare Sightings: Black Rhinos of Ol Pejeta",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1584844115436-473887b1e6f5?w=700&q=80",
+    excerpt: "Home to the world's last northern white rhinos, and thriving black rhino numbers.",
+    meta: "5 min read",
+  },
+]
+
+export const kenyaParksReserves: KenyaArticle[] = [
+  {
+    id: "masai-mara-vs-serengeti",
+    title: "Masai Mara vs Serengeti: What's the Difference",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=400&q=80",
+    excerpt: "Two ecosystems, one migration -- how the parks actually differ.",
+    meta: "6 min read",
+  },
+  {
+    id: "masai-mara-reserve-vs-conservancies",
+    title: "Masai Mara: National Reserve vs Private Conservancies",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80",
+    excerpt: "Where night drives and walking safaris are allowed, and where they aren't.",
+    meta: "6 min read",
+  },
+  {
+    id: "amboseli-national-park-guide",
+    title: "Amboseli National Park: Complete Guide",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80",
+    excerpt: "Elephants, Kilimanjaro views, and swamps that draw wildlife year-round.",
+    meta: "8 min read",
+  },
+  {
+    id: "tsavo-largest-wildest-park",
+    title: "Tsavo: Kenya's Largest and Wildest Park",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1552083375-1447ce886485?w=400&q=80",
+    excerpt: "Red elephants, vast wilderness, and far fewer vehicles.",
+    meta: "7 min read",
+  },
+  {
+    id: "lake-nakuru-park-birds-rhinos",
+    title: "Lake Nakuru National Park: Birds and Rhinos",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=400&q=80",
+    excerpt: "A compact park packing in flamingos, rhinos, and lions.",
+    meta: "5 min read",
+  },
+  {
+    id: "samburu-special-five",
+    title: "Samburu: The Special Five You Won't See Elsewhere",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=400&q=80",
+    excerpt: "Grevy's zebra, reticulated giraffe, and other Samburu exclusives.",
+    meta: "6 min read",
+  },
+  {
+    id: "ol-pejeta-conservancy-model",
+    title: "Ol Pejeta Conservancy: A Model for Conservation",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1552083375-1447ce886485?w=400&q=80",
+    excerpt: "Home to the last northern white rhinos, and a chimpanzee sanctuary.",
+    meta: "6 min read",
+  },
+  {
+    id: "lake-naivasha-boat-safaris",
+    title: "Lake Naivasha: Boat Safaris and Hippos",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1516569422509-4d5a94125c02?w=400&q=80",
+    excerpt: "A freshwater lake with hippos, fish eagles, and Crescent Island walks.",
+    meta: "5 min read",
+  },
+  {
+    id: "hells-gate-walking-safari-park",
+    title: "Hell's Gate: Kenya's Walking Safari Park",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=400&q=80",
+    excerpt: "One of the few parks where you can walk and cycle among wildlife.",
+    meta: "5 min read",
+  },
+]
+
+export const kenyaVisaEntry: KenyaArticle[] = [
+  {
+    id: "kenya-eta-guide-apply-cost-processing-time",
+    title: "Kenya eTA Guide: How to Apply, Cost and Processing Time",
+    category: "Visa & Entry",
+    image: "https://images.unsplash.com/photo-1532188142562-df556b861e6a?w=400&q=80",
+    excerpt: "Step-by-step on applying online, what it costs, and how long approval takes.",
+    meta: "Travel Desk • Jul 12, 2026",
+  },
+  {
+    id: "common-eta-mistakes-travelers-denied-boarding",
+    title: "Common eTA Mistakes That Get Travelers Denied Boarding",
+    category: "Visa & Entry",
+    image: "https://images.unsplash.com/photo-1547572848-7009c748c5b8?w=400&q=80",
+    excerpt: "Small errors that can get your application rejected before you even fly.",
+    meta: "Travel Desk • Jul 18, 2026",
+  },
+  {
+    id: "yellow-fever-certificate-kenya-entry",
+    title: "Do You Need a Yellow Fever Certificate to Enter Kenya",
+    category: "Visa & Entry",
+    image: "https://images.unsplash.com/photo-1654163600175-efc47ce20b29?w=400&q=80",
+    excerpt: "The one vaccination record immigration actually checks for at the border.",
+    meta: "Travel Desk • Jul 25, 2026",
+  },
+  {
+    id: "overstay-kenya-eta-what-happens",
+    title: "What Happens If You Overstay Your Kenya eTA",
+    category: "Visa & Entry",
+    image: "https://images.unsplash.com/photo-1766851265145-5bca680e81ad?w=400&q=80",
+    excerpt: "Fines, bans, and how to fix it if your visa window has already closed.",
+    meta: "Travel Desk • Aug 1, 2026",
+  },
+]
+
+export const kenyaWhoShouldGo: KenyaArticle[] = [
+  {
+    id: "is-a-kenya-safari-safe-during-pregnancy",
+    title: "Is a Kenya Safari Safe During Pregnancy",
+    category: "Who Should Go",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80",
+    excerpt: "What to check with your doctor, which trimester works best, and which activities to skip.",
+    meta: "6 min read",
+  },
+  {
+    id: "safari-with-young-children-age-limits",
+    title: "Safari With Young Children: Age Limits and Lodge Policies",
+    category: "Who Should Go",
+    image: "https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=400&q=80",
+    excerpt: "Most camps set a minimum age for game drives — here's how to find one that welcomes your kids.",
+    meta: "5 min read",
+  },
+  {
+    id: "safari-for-travelers-with-mobility-issues",
+    title: "Safari for Travelers With Mobility Issues",
+    category: "Who Should Go",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80",
+    excerpt: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't.",
+    meta: "5 min read",
+  },
+  {
+    id: "is-kenya-suitable-for-solo-female-travelers",
+    title: "Is Kenya Suitable for Solo Female Travelers",
+    category: "Who Should Go",
+    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80",
+    excerpt: "What solo travelers actually experience on the ground, from booking to game drives.",
+    meta: "6 min read",
+  },
+  {
+    id: "safari-for-people-with-heart-conditions",
+    title: "Safari for People With Heart Conditions or Chronic Illness",
+    category: "Who Should Go",
+    image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=400&q=80",
+    excerpt: "Altitude, heat, and access to medical care — what to plan around before you book.",
+    meta: "7 min read",
+  },
+  {
+    id: "elderly-travelers-what-to-know",
+    title: "Elderly Travelers: What to Know Before a Safari",
+    category: "Who Should Go",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=400&q=80",
+    excerpt: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers.",
+    meta: "5 min read",
+  },
+]
+
+export const kenyaTrending: KenyaArticle[] = [
+  {
+    id: "wildebeest-crossing-2026-migration-forecast",
+    title: "The Wildebeest Crossing: 2026 Migration Forecast",
+    category: "Trending",
+    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=400&q=80",
+    excerpt: "Early rains are shifting the timing — here's when the herds are expected at the Mara River.",
+    meta: "5 min read",
+  },
+  {
+    id: "kenyas-rainy-season-what-changes",
+    title: "Kenya's Rainy Season: What Changes on Safari",
+    category: "Trending",
+    image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=400&q=80",
+    excerpt: "Fewer crowds, lower rates, and muddier roads — the trade-offs of a green-season safari.",
+    meta: "4 min read",
+  },
+  {
+    id: "solar-eclipse-and-stargazing-safaris",
+    title: "Solar Eclipse and Stargazing Safaris in Kenya",
+    category: "Trending",
+    image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=400&q=80",
+    excerpt: "Northern Kenya's dark skies are drawing a new kind of night safari.",
+    meta: "5 min read",
+  },
+  {
+    id: "kenyas-new-conservation-fees",
+    title: "Kenya's New Conservation Fees: What's Changing",
+    category: "Trending",
+    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80",
+    excerpt: "Park entry and conservancy fees are being restructured for 2026 — what it means for your budget.",
+    meta: "4 min read",
+  },
+  {
+    id: "hot-air-balloon-safaris-over-the-mara",
+    title: "Hot Air Balloon Safaris Over the Mara",
+    category: "Trending",
+    image: "https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=400&q=80",
+    excerpt: "Sunrise flights over the plains, and what the champagne-breakfast landing is actually like.",
+    meta: "5 min read",
+  },
+  {
+    id: "new-direct-flights-cutting-kenya-travel-time",
+    title: "New Direct Flights Are Cutting Kenya Travel Time in Half",
+    category: "Trending",
+    image: "https://images.unsplash.com/photo-1764555735463-78b9ff085350?w=400&q=80",
+    excerpt: "New long-haul routes into Nairobi mean less time in transit and more time on safari.",
+    meta: "4 min read",
+  },
+]
+
+export const kenyaWhatToWear: KenyaArticle[] = [
+  {
+    id: "what-to-wear-on-a-kenya-safari",
+    title: "What to Wear on a Kenya Safari: Colors, Fabrics and Layers",
+    category: "What to Wear",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80",
+    excerpt: "Neutral tones, breathable layers, and why cotton beats synthetic in the heat.",
+    meta: "5 min read",
+  },
+  {
+    id: "tsetse-flies-blue-and-black-clothing",
+    title: "Tsetse Flies: Why Blue and Black Clothing Is a Problem",
+    category: "What to Wear",
+    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=400&q=80",
+    excerpt: "These colors attract tsetse flies in certain parks — here's what to pack instead.",
+    meta: "4 min read",
+  },
+  {
+    id: "safari-footwear-what-actually-works",
+    title: "Safari Footwear: What Actually Works",
+    category: "What to Wear",
+    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80",
+    excerpt: "Closed shoes for game drives, sandals for camp — what you actually need and what to skip.",
+    meta: "4 min read",
+  },
+  {
+    id: "sun-protection-hats-spf-sunglasses",
+    title: "Sun Protection: Hats, SPF and Sunglasses for Safari",
+    category: "What to Wear",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=400&q=80",
+    excerpt: "The equator sun is stronger than it looks — what to bring and reapply.",
+    meta: "4 min read",
+  },
+  {
+    id: "packing-list-for-a-10-day-kenya-safari",
+    title: "Packing List for a 10-Day Kenya Safari",
+    category: "What to Wear",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80",
+    excerpt: "A full day-by-day list, built around laundry service and duffel weight limits.",
+    meta: "6 min read",
+  },
+  {
+    id: "duffel-bags-only-safari-luggage-restrictions",
+    title: "Duffel Bags Only: Safari Luggage Restrictions Explained",
+    category: "What to Wear",
+    image: "https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=400&q=80",
+    excerpt: "Light aircraft transfers cap you at soft bags and 15kg — how to pack around it.",
+    meta: "5 min read",
+  },
+]
+
+export const kenyaHealthSafety: KenyaArticle[] = [
+  {
+    id: "vaccinations-for-kenya-yellow-fever-and-more",
+    title: "Vaccinations for Kenya: Yellow Fever and What Else You Need",
+    category: "Health & Safety",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80",
+    excerpt: "Yellow fever is the only one that's a formal entry requirement — here's the fuller checklist to review with your doctor.",
+    meta: "5 min read",
+  },
+  {
+    id: "malaria-prevention-tablets-repellents",
+    title: "Malaria Prevention: Tablets, Repellents and Risk Areas",
+    category: "Health & Safety",
+    image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=400&q=80",
+    excerpt: "Which regions carry risk, which tablets doctors recommend, and what to pack.",
+    meta: "5 min read",
+  },
+  {
+    id: "travel-insurance-for-safari-what-it-should-cover",
+    title: "Travel Insurance for Safari: What It Should Cover",
+    category: "Health & Safety",
+    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80",
+    excerpt: "Medical evacuation cover matters more than trip cancellation for most safaris.",
+    meta: "5 min read",
+  },
+  {
+    id: "altitude-sickness-in-the-kenyan-highlands",
+    title: "Altitude Sickness in the Kenyan Highlands",
+    category: "Health & Safety",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=400&q=80",
+    excerpt: "Nairobi and the highlands sit high enough to matter — who should be careful.",
+    meta: "4 min read",
+  },
+  {
+    id: "drinking-water-and-food-safety-on-safari",
+    title: "Drinking Water and Food Safety on Safari",
+    category: "Health & Safety",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80",
+    excerpt: "Most lodges serve filtered or bottled water — what to check before you drink.",
+    meta: "4 min read",
+  },
+
+  {
+    id: "safari-first-aid-what-to-pack",
+    title: "Safari First Aid: What to Pack in Your Kit",
+    category: "Health & Safety",
+    image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=400&q=80",
+    excerpt: "A compact kit for the common stuff — most lodges handle anything serious.",
+    meta: "4 min read",
+  },
+]
+
+export const kenyaConservationCulture: KenyaArticle[] = [
+  {
+    id: "community-conservancies-how-locals-protect-wildlife",
+    title: "Community Conservancies: How Locals Protect Wildlife",
+    category: "Conservation & Culture",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80",
+    excerpt: "Land leased from Maasai communities now covers more wildlife area than the parks themselves.",
+    meta: "6 min read",
+  },
+  {
+    id: "anti-poaching-efforts-in-kenyas-parks",
+    title: "Anti-Poaching Efforts in Kenya's Parks",
+    category: "Conservation & Culture",
+    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80",
+    excerpt: "Ranger patrols and community reporting have cut poaching sharply since the last decade's peak.",
+    meta: "6 min read",
+  },
+  {
+    id: "rhino-conservation-the-fight-to-save-a-species",
+    title: "Rhino Conservation: The Fight to Save a Species",
+    category: "Conservation & Culture",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=400&q=80",
+    excerpt: "Ol Pejeta and Lake Nakuru hold most of Kenya's remaining black and white rhino population.",
+    meta: "5 min read",
+  },
+  {
+    id: "the-maasai-guardians-of-the-mara",
+    title: "The Maasai: Guardians of the Mara",
+    category: "Conservation & Culture",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80",
+    excerpt: "How Maasai landowners went from being pushed out of conservation to leading it, and what that partnership looks like on the ground today.",
+    meta: "8 min read",
+  },
+  {
+    id: "climate-change-and-the-great-migration",
+    title: "Climate Change and the Great Migration",
+    category: "Conservation & Culture",
+    image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=400&q=80",
+    excerpt: "Shifting rainfall is changing when and where the herds move — what researchers are tracking.",
+    meta: "6 min read",
+  },
+  {
+    id: "kenyas-community-run-safari-camps",
+    title: "Kenya's Community-Run Safari Camps",
+    category: "Conservation & Culture",
+    image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=400&q=80",
+    excerpt: "Camps owned and staffed by local communities, and why staying there changes where your money goes.",
+    meta: "5 min read",
+  },
+  {
+    id: "basic-swahili-phrases-and-kenyan-etiquette",
+    title: "Basic Swahili Phrases and Kenyan Etiquette",
+    category: "Conservation & Culture",
+    image: "https://images.unsplash.com/photo-1516569422509-4d5a94125c02?w=400&q=80",
+    excerpt: "A handful of greetings go a long way, plus a few etiquette norms worth knowing before you go.",
+    meta: "4 min read",
+  },
+]
+
+export const kenyaFaqs: KenyaArticle[] = [
+  {
+    id: "how-much-does-a-kenya-safari-cost",
+    title: "How Much Does a Kenya Safari Cost in 2026",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=200&q=80",
+    excerpt: "A realistic budget range across luxury, mid-range, and budget safaris.",
+    meta: "FAQs",
+  },
+  {
+    id: "tipping-etiquette-guides-drivers-lodge-staff",
+    title: "Tipping Etiquette: Guides, Drivers and Lodge Staff",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=200&q=80",
+    excerpt: "Standard amounts and how to hand tips over without it feeling awkward.",
+    meta: "FAQs",
+  },
+  {
+    id: "can-you-drink-the-water-in-kenya",
+    title: "Can You Drink the Water in Kenya",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=200&q=80",
+    excerpt: "Short answer: stick to bottled or filtered, even at nicer lodges.",
+    meta: "FAQs",
+  },
+  {
+    id: "what-currency-should-you-carry-in-kenya",
+    title: "What Currency Should You Carry in Kenya",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=200&q=80",
+    excerpt: "US dollars and Kenyan shillings both work, but not everywhere accepts both.",
+    meta: "FAQs",
+  },
+  {
+    id: "do-you-need-cash-or-card-on-safari",
+    title: "Do You Need Cash or Can You Pay by Card on Safari",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=200&q=80",
+    excerpt: "Cards work at most lodges, but small purchases and tips still run on cash.",
+    meta: "FAQs",
+  },
+  {
+    id: "kenya-time-zone-and-jet-lag-tips",
+    title: "Kenya Time Zone and Jet Lag Tips",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=200&q=80",
+    excerpt: "Kenya sits at UTC+3 year-round, with no daylight saving to worry about.",
+    meta: "FAQs",
+  },
+  {
+    id: "internet-and-phone-signal-in-the-bush",
+    title: "Internet and Phone Signal in the Bush",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=200&q=80",
+    excerpt: "Most lodges have WiFi in common areas; signal drops fast once you're out on a drive.",
+    meta: "FAQs",
+  },
+  {
+    id: "what-happens-if-you-get-sick-during-a-safari",
+    title: "What Happens If You Get Sick During a Safari",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=200&q=80",
+    excerpt: "Camps have first-response protocols and access to flying-doctor evacuation if needed.",
+    meta: "FAQs",
+  },
+  {
+    id: "kenya-safari-faqs-everything-first-timers-ask",
+    title: "Kenya Safari FAQs: Everything First-Timers Ask",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=200&q=80",
+    excerpt: "A catch-all roundup for whatever isn't covered elsewhere on this page.",
+    meta: "FAQs",
+  },
+  {
+    id: "is-it-ethical-to-go-on-safari",
+    title: "Is It Ethical to Go on Safari? Common Concerns Answered",
+    category: "FAQs",
+    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=200&q=80",
+    excerpt: "How tourism revenue actually funds conservation, and what to look for in an operator.",
+    meta: "FAQs",
+  },
+]
+
+export const kenyaPracticalLegal: KenyaArticle[] = [
+  {
+    id: "plastic-bag-ban-whats-illegal-to-bring",
+    title: "Plastic Bag Ban: What's Illegal to Bring Into Kenya",
+    category: "Practical & Legal",
+    image: "https://images.unsplash.com/photo-1516569422509-4d5a94125c02?w=200&q=80",
+    excerpt: "Kenya has one of the strictest plastic bans in the world — what gets confiscated at the border.",
+    meta: "4 min read",
+  },
+  {
+    id: "booking-through-a-local-tour-operator-vs-diy",
+    title: "Booking Through a Local Tour Operator vs DIY",
+    category: "Practical & Legal",
+    image: "https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=200&q=80",
+    excerpt: "What you actually gain from a local operator, and where DIY can still work.",
+    meta: "5 min read",
+  },
+  {
+    id: "bumpy-roads-and-motion-sickness",
+    title: "Bumpy Roads and Motion Sickness: What Game Drives Are Really Like",
+    category: "Practical & Legal",
+    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=200&q=80",
+    excerpt: "Honest expectations on road conditions, and what actually helps with motion sickness.",
+    meta: "4 min read",
+  },
 ]
