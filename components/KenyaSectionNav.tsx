@@ -20,8 +20,8 @@ export default function KenyaSectionNav() {
   }
 
   return (
-    <div className="pt-[52px] sm:pt-[64px]">
-      <div className="sticky top-[52px] sm:top-[64px] z-40 bg-white border-b border-gray-100 shadow-sm">
+    <div className="md:pt-[64px]">
+      <div className="sticky top-14 md:top-[64px] z-40 bg-white border-b border-gray-100 shadow-sm">
         <div
           className="max-w-7xl mx-auto px-4 py-2.5 flex gap-3 justify-between overflow-x-auto"
           style={{ scrollbarWidth: "none" }}

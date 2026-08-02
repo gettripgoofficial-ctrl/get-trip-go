@@ -1,3 +1,4 @@
+import KenyaMobileHeader from "@/components/KenyaMobileHeader"
 import KenyaHero from "@/components/KenyaHero"
 import KenyaSectionNav from "@/components/KenyaSectionNav"
 import KenyaTipsAndRoutes from "@/components/KenyaTipsAndRoutes"
@@ -8,6 +9,8 @@ import KenyaConservationCultureSection from "@/components/KenyaConservationCultu
 export default function KenyaPage() {
   return (
     <main className="min-h-screen bg-white">
+      <KenyaMobileHeader />
+      <div className="md:hidden h-14" />
       <KenyaSectionNav />
       <KenyaHero />
       <div id="safari-routes">
