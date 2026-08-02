@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { kenyaHeroArticles } from "@/data/kenyaData"
 
 export default function KenyaHero() {
@@ -8,7 +9,7 @@ export default function KenyaHero() {
     <div className="max-w-7xl mx-auto px-4 py-6">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {/* Left card */}
-        <div className="lg:col-span-1 relative rounded-xl overflow-hidden h-[260px] lg:h-[440px] cursor-pointer group">
+        <Link href={`/kenya/${left.id}`} className="lg:col-span-1 relative rounded-xl overflow-hidden h-[260px] lg:h-[440px] cursor-pointer group block">
           <Image
             src={left.image}
             alt={left.title}
@@ -26,10 +27,10 @@ export default function KenyaHero() {
             </span>
             <p className="text-white font-bold text-base leading-snug">{left.title}</p>
           </div>
-        </div>
+        </Link>
 
         {/* Center wide card */}
-        <div className="lg:col-span-2 relative rounded-xl overflow-hidden h-[320px] lg:h-[440px] cursor-pointer group">
+        <Link href={`/kenya/${center.id}`} className="lg:col-span-2 relative rounded-xl overflow-hidden h-[320px] lg:h-[440px] cursor-pointer group block">
           <Image
             src={center.image}
             alt={center.title}
@@ -52,14 +53,15 @@ export default function KenyaHero() {
               <span>{center.meta}</span>
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* Right stacked cards */}
         <div className="lg:col-span-1 grid grid-cols-1 gap-4">
           {[topRight, bottomRight].map(article => (
-            <div
+            <Link
               key={article.id}
-              className="relative rounded-xl overflow-hidden h-[200px] lg:h-[212px] cursor-pointer group"
+              href={`/kenya/${article.id}`}
+              className="relative rounded-xl overflow-hidden h-[200px] lg:h-[212px] cursor-pointer group block"
             >
               <Image
                 src={article.image}
@@ -78,7 +80,7 @@ export default function KenyaHero() {
                 </span>
                 <p className="text-white font-semibold text-sm leading-snug">{article.title}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
