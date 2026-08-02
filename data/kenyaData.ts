@@ -107,6 +107,22 @@ export const kenyaTravelTips: KenyaArticle[] = [
     excerpt: "What holds up on dusty trails and long game drives, and what doesn't.",
     meta: "4 min read",
   },
+  {
+    id: "yellow-fever-certificate-entry",
+    title: "Do You Need a Yellow Fever Certificate to Enter Kenya",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=400&q=80",
+    excerpt: "Required only in specific cases -- here's exactly when it applies to you.",
+    meta: "4 min read",
+  },
+  {
+    id: "tipping-etiquette-guides-drivers-lodge-staff",
+    title: "Tipping Etiquette: Guides, Drivers and Lodge Staff",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=400&q=80",
+    excerpt: "Who to tip, how much, and the easiest way to handle it in the field.",
+    meta: "4 min read",
+  },
 ]
 
 export const kenyaJourneys: KenyaArticle[] = [
@@ -157,6 +173,22 @@ export const kenyaJourneys: KenyaArticle[] = [
     image: "https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=800&q=80",
     excerpt: "Two countries, one migration -- how to plan the crossing without wasting a day.",
     meta: "14 Days . 13 Nights",
+  },
+  {
+    id: "quick-kenya-safari-escape",
+    title: "Quick Kenya Safari Escape",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+    excerpt: "A short, focused safari for travelers who can't spare two weeks but still want the Mara.",
+    meta: "6 Days . 5 Nights",
+  },
+  {
+    id: "ultimate-kenya-wildlife-safari",
+    title: "Ultimate Kenya Wildlife Safari",
+    category: "Journeys",
+    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+    excerpt: "A fuller circuit through Kenya's flagship parks, paced for serious wildlife viewing.",
+    meta: "8 Days . 7 Nights",
   },
 ]
 
@@ -300,6 +332,14 @@ export const kenyaSafariWildlife: KenyaArticle[] = [
     excerpt: "Home to the world's last northern white rhinos, and thriving black rhino numbers.",
     meta: "5 min read",
   },
+  {
+    id: "giraffes-of-kenya",
+    title: "Giraffes of Kenya: Reticulated, Masai and Rothschild's",
+    category: "Safari & Wildlife",
+    image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=700&q=80",
+    excerpt: "Three distinct giraffe species, and where each one turns up across the country.",
+    meta: "5 min read",
+  },
 ]
 
 export const kenyaParksReserves: KenyaArticle[] = [
@@ -373,6 +413,14 @@ export const kenyaParksReserves: KenyaArticle[] = [
     category: "Parks & Reserves",
     image: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=400&q=80",
     excerpt: "One of the few parks where you can walk and cycle among wildlife.",
+    meta: "5 min read",
+  },
+  {
+    id: "meru-national-park",
+    title: "Meru National Park: Kenya's Quietest Big Game Country",
+    category: "Parks & Reserves",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80",
+    excerpt: "Rhino sanctuary, rivers, and some of the lowest visitor numbers of any major park.",
     meta: "5 min read",
   },
 ]
@@ -659,18 +707,10 @@ export const kenyaConservationCulture: KenyaArticle[] = [
     meta: "6 min read",
   },
   {
-    id: "kenyas-community-run-safari-camps",
-    title: "Kenya's Community-Run Safari Camps",
-    category: "Conservation & Culture",
-    image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=400&q=80",
-    excerpt: "Camps owned and staffed by local communities, and why staying there changes where your money goes.",
-    meta: "5 min read",
-  },
-  {
     id: "basic-swahili-phrases-and-kenyan-etiquette",
     title: "Basic Swahili Phrases and Kenyan Etiquette",
     category: "Conservation & Culture",
-    image: "https://images.unsplash.com/photo-1516569422509-4d5a94125c02?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=400&q=80",
     excerpt: "A handful of greetings go a long way, plus a few etiquette norms worth knowing before you go.",
     meta: "4 min read",
   },
@@ -783,5 +823,16 @@ export const kenyaPracticalLegal: KenyaArticle[] = [
     image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=200&q=80",
     excerpt: "Honest expectations on road conditions, and what actually helps with motion sickness.",
     meta: "4 min read",
+  },
+]
+
+export const kenyaVisaEntryExtra: KenyaArticle[] = [
+  {
+    id: "visa-on-arrival-vs-eta-which-applies-to-you",
+    title: "Kenya Visa on Arrival vs eTA: Which One Applies to You",
+    category: "Visa & Entry",
+    image: "https://images.unsplash.com/photo-1490430657723-4d607c1503fc?w=800&q=80",
+    excerpt: "Most nationalities now need the eTA, not visa-on-arrival — here's how to check which applies to your passport.",
+    meta: "Travel Desk",
   },
 ]

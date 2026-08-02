@@ -5,7 +5,7 @@ export default function KenyaHero() {
   const [left, center, topRight, bottomRight] = kenyaHeroArticles
 
   return (
-    <div className="max-w-7xl mx-auto px-4 pt-20 sm:pt-24 pb-6">
+    <div className="max-w-7xl mx-auto px-4 py-6">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {/* Left card */}
         <div className="lg:col-span-1 relative rounded-xl overflow-hidden h-[260px] lg:h-[440px] cursor-pointer group">

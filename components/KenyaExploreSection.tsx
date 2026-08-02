@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import { kenyaStays, kenyaVisaEntry, kenyaParksReserves } from "@/data/kenyaData"
+import { kenyaStays, kenyaVisaEntry, kenyaVisaEntryExtra, kenyaParksReserves } from "@/data/kenyaData"
 
 function ArticleList({ articles }: { articles: typeof kenyaStays }) {
   return (
@@ -40,12 +40,12 @@ export default function KenyaExploreSection() {
           <ArticleList articles={kenyaStays} />
         </div>
 
-        {/* Middle: Visa & Entry, 2x2 image-card grid, stretched to match column height */}
+        {/* Middle: Visa & Entry, 2x2 image-card grid + 1 big card below, same column width */}
         <div className="lg:col-span-2 h-full flex flex-col">
           <h2 className="text-gray-800 font-bold text-lg mb-4 pb-2 border-b-2 border-yellow-500 inline-block">
             Visa &amp; Entry
           </h2>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-4 flex-1">
+          <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-4">
             {kenyaVisaEntry.map(article => (
               <div key={article.id} className="cursor-pointer group flex flex-col h-full">
                 <div className="relative rounded-md overflow-hidden mb-2 flex-1 min-h-[160px]">
@@ -64,6 +64,23 @@ export default function KenyaExploreSection() {
               </div>
             ))}
           </div>
+          {kenyaVisaEntryExtra.map(article => (
+            <div key={article.id} className="cursor-pointer group flex flex-col mt-4 flex-1">
+              <div className="relative rounded-md overflow-hidden mb-2 flex-1 min-h-[160px]">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 32vw"
+                  className="object-cover group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <p className="text-gray-900 font-bold text-sm leading-snug mb-1 group-hover:text-yellow-600 transition-colors">
+                {article.title}
+              </p>
+              <p className="text-gray-400 text-[11px]">{article.meta}</p>
+            </div>
+          ))}
         </div>
 
         {/* Right: Parks & Reserves list */}
