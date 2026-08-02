@@ -24,7 +24,7 @@ export default function KenyaSectionNav() {
     <div className="pt-[52px] sm:pt-[64px]">
       <div className="sticky top-[52px] sm:top-[64px] z-40 bg-white border-b border-gray-100 shadow-sm">
         <div
-          className="max-w-7xl mx-auto px-4 py-2.5 flex gap-2 overflow-x-auto"
+          className="max-w-7xl mx-auto px-4 py-2.5 flex gap-2 justify-between overflow-x-auto"
           style={{ scrollbarWidth: "none" }}
         >
           {cards.map(card => (
