@@ -2,7 +2,7 @@
 import Image from "next/image"
 
 const cards = [
-  { id: "travel-wildlife", label: "Travel Tips", image: "https://images.unsplash.com/photo-1547970310-4b1d1e35c108?w=200&q=80" },
+  { id: "travel-wildlife", label: "Travel Tips", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&q=80" },
   { id: "safari-routes", label: "Itinerary", image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=200&q=80" },
   { id: "explore", label: "Where to Stay", image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=200&q=80" },
   { id: "explore", label: "Visa", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&q=80" },
@@ -31,18 +31,18 @@ export default function KenyaSectionNav() {
             <button
               key={card.label}
               onClick={() => handleClick(card.id)}
-              className="flex-shrink-0 flex items-center gap-1.5 bg-gray-50 hover:bg-yellow-50 border border-gray-100 rounded-full pl-1 pr-3 py-1 transition-colors group"
+              className="flex-shrink-0 flex items-center gap-2 bg-gray-50 hover:bg-yellow-50 border border-gray-100 rounded-full pl-1.5 pr-4 py-2 transition-colors group"
             >
-              <div className="relative w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
+              <div className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
                 <Image
                   src={card.image}
                   alt={card.label}
                   fill
-                  sizes="24px"
+                  sizes="36px"
                   className="object-cover"
                 />
               </div>
-              <span className="whitespace-nowrap text-[11px] sm:text-xs font-semibold text-gray-700 group-hover:text-yellow-600 transition-colors">
+              <span className="whitespace-nowrap text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-yellow-600 transition-colors">
                 {card.label}
               </span>
             </button>
