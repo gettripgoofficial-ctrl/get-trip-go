@@ -1,6 +1,18 @@
 "use client"
 import Image from "next/image"
+import Link from "next/link"
 import { kenyaTravelTips, kenyaSafariWildlife } from "@/data/kenyaData"
+
+const builtTravelTipsSlugs = [
+  "what-to-pack-for-a-kenya-safari",
+  "getting-around-light-aircraft-vs-road-safaris",
+  "how-many-days-do-you-need-for-a-kenya-safari",
+  "safari-budget-guide-luxury-vs-mid-range-vs-budget",
+  "first-time-safari-checklist",
+  "safari-photography-camera-gear-and-settings",
+  "kenya-eta-guide-how-to-apply-cost-and-processing",
+  "safari-footwear-what-actually-works",
+]
 
 export default function KenyaTravelTipsWildlife() {
   return (
@@ -13,25 +25,35 @@ export default function KenyaTravelTipsWildlife() {
               Travel Tips
             </h2>
             <div className="space-y-4 mt-4">
-              {kenyaTravelTips.map(article => (
-                <div key={article.id} className="flex gap-3 cursor-pointer group">
-                  <div className="relative w-16 h-16 flex-shrink-0 rounded-md overflow-hidden">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      sizes="64px"
-                      className="object-cover group-hover:scale-105 transition-transform"
-                    />
+              {kenyaTravelTips.map(article => {
+                const isBuilt = builtTravelTipsSlugs.includes(article.id)
+                const CardInner = (
+                  <div className="flex gap-3 cursor-pointer group">
+                    <div className="relative w-16 h-16 flex-shrink-0 rounded-md overflow-hidden">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        sizes="64px"
+                        className="object-cover group-hover:scale-105 transition-transform"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-gray-800 font-semibold text-sm leading-snug group-hover:text-yellow-600 transition-colors">
+                        {article.title}
+                      </p>
+                      <p className="text-gray-400 text-[11px] mt-1">{article.meta}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-gray-800 font-semibold text-sm leading-snug group-hover:text-yellow-600 transition-colors">
-                      {article.title}
-                    </p>
-                    <p className="text-gray-400 text-[11px] mt-1">{article.meta}</p>
-                  </div>
-                </div>
-              ))}
+                )
+                return isBuilt ? (
+                  <Link key={article.id} href={`/kenya/${article.id}`}>
+                    {CardInner}
+                  </Link>
+                ) : (
+                  <div key={article.id}>{CardInner}</div>
+                )
+              })}
             </div>
           </div>
 
