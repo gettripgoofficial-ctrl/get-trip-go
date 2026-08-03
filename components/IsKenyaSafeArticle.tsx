@@ -33,6 +33,15 @@ export default function IsKenyaSafeArticle() {
           travelers already plan their trips.
         </p>
 
+        <div className="bg-gray-50 border-l-4 border-yellow-500 rounded-r-lg p-6 mb-10">
+          <h2 className="text-gray-900 font-bold text-base mb-3">Quick Answer</h2>
+          <ul className="space-y-2 text-gray-700 text-sm">
+            <li><span className="font-semibold text-gray-900">Safari circuit:</span> Very safe — the main risks are sun, dehydration, and motion sickness, not crime.</li>
+            <li><span className="font-semibold text-gray-900">Nairobi:</span> Normal big-city precautions, especially after dark.</li>
+            <li><span className="font-semibold text-gray-900">Areas to skip:</span> The Somali border region and parts of the northeast coast — not on any standard itinerary anyway.</li>
+          </ul>
+        </div>
+
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
             On Safari
@@ -87,6 +96,49 @@ export default function IsKenyaSafeArticle() {
 
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            How Kenya Compares to Other Safari Destinations
+          </h2>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Travelers weighing Kenya against Tanzania, South Africa, or Botswana are often
+            comparing apples to oranges, since the relevant risks differ by country. South Africa
+            has notably higher urban crime rates in cities like Johannesburg than Nairobi does,
+            while Tanzania's safari circuit carries a broadly similar risk profile to Kenya's.
+            Botswana and Namibia tend to be viewed as the lowest-risk options overall, partly due
+            to lower population density and fewer large cities, but that comes with a much higher
+            price tag and fewer budget options.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            In practice, the safari portion of a trip to any of these countries carries similarly
+            low risk, since the actual experience — guided vehicles, fenced or staffed camps,
+            controlled game drives — looks nearly identical regardless of country. The differences
+            that matter most tend to show up in the cities you pass through, not the parks
+            themselves.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Solo, Family, and Group Travel
+          </h2>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Solo travelers, including solo women, safari Kenya regularly without incident, largely
+            because a guided safari means you're rarely actually alone — you're with a driver-guide
+            and often other guests for most of the trip. The exception is independent city
+            exploration, where the same precautions that apply anywhere (staying in well-reviewed
+            accommodation, arranging transport in advance, avoiding isolated areas after dark)
+            matter more without a group around you.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Families traveling with children face few Kenya-specific safety concerns beyond
+            standard safari rules — staying inside vehicles during game drives, not feeding
+            wildlife, and following camp guidance about walking after dark, since some
+            unfenced camps do see animals passing through at night. Most reputable operators
+            have clear age-appropriate policies already built into their itineraries.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
             Health and Wildlife
           </h2>
           <p className="text-gray-700 leading-relaxed mt-4">
@@ -95,6 +147,18 @@ export default function IsKenyaSafeArticle() {
             precisely because reputable operators enforce strict rules — staying in the vehicle,
             keeping a safe distance, and following guide instructions. Injuries almost always trace
             back to someone ignoring those rules, not bad luck.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Timing your trip also affects health prep — mosquito activity rises right after the
+            rains, so if you're planning around{" "}
+            <Link href="/kenya/the-great-migration-explained" className="text-yellow-600 hover:text-yellow-700 font-semibold">
+              the Great Migration
+            </Link>{" "}
+            or checking our{" "}
+            <Link href="/kenya/best-time-to-visit-kenya" className="text-yellow-600 hover:text-yellow-700 font-semibold">
+              best time to visit guide
+            </Link>
+            , it's worth reviewing malaria prevention for whichever season you land in.
           </p>
         </section>
 
@@ -110,6 +174,44 @@ export default function IsKenyaSafeArticle() {
             asking about a resort town. Book with a reputable operator, buy proper travel
             insurance, and the actual on-the-ground risk is low.
           </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-4 space-y-6">
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Is it safe to go on safari alone in Kenya?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Yes — solo travelers are common on organized safaris, since you're always with a
+                guide and vehicle. It's a different question from independent, unguided travel.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Do I need travel insurance for Kenya?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Strongly recommended, specifically with medical evacuation coverage, given the
+                remote location of many safari camps relative to hospitals.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Is Nairobi safe for tourists?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Yes, with normal precautions. Most visitors only pass through briefly and stick to
+                hotel transport and well-known areas without issue.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-10 pt-6 border-t border-gray-200">
+          <h2 className="text-gray-800 font-bold text-base mb-4">Related Reads</h2>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/kenya/best-time-to-visit-kenya" className="text-yellow-600 hover:text-yellow-700 font-semibold">Best Time to Visit Kenya: A Season-by-Season Guide</Link></li>
+            <li><Link href="/kenya/big-five-how-to-spot" className="text-yellow-600 hover:text-yellow-700 font-semibold">Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo</Link></li>
+            <li><Link href="/kenya/the-great-migration-explained" className="text-yellow-600 hover:text-yellow-700 font-semibold">The Great Migration Explained: When, Where and Why</Link></li>
+          </ul>
         </section>
 
         <div className="border-t border-gray-200 pt-6">

@@ -1,6 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 
+const difficultyTable = [
+  { animal: "Elephant", difficulty: "Easy", bestTime: "Year-round near water", bestPark: "Amboseli, Tsavo" },
+  { animal: "Lion", difficulty: "Easy", bestTime: "Dry season, midday rest", bestPark: "Masai Mara, Amboseli" },
+  { animal: "Buffalo", difficulty: "Easy", bestTime: "Year-round, large herds", bestPark: "Masai Mara, Lake Nakuru" },
+  { animal: "Rhino", difficulty: "Hard", bestTime: "Year-round, specific reserves only", bestPark: "Ol Pejeta, Lake Nakuru" },
+  { animal: "Leopard", difficulty: "Very hard", bestTime: "Early morning, dusk", bestPark: "Serengeti (Seronera), Masai Mara" },
+]
+
 export default function BigFiveArticle() {
   return (
     <article className="bg-white">
@@ -32,6 +40,37 @@ export default function BigFiveArticle() {
           distinguishes each animal, and where to look, makes a huge difference in how much you
           actually see.
         </p>
+
+        <div className="bg-gray-50 border-l-4 border-yellow-500 rounded-r-lg p-6 mb-10">
+          <h2 className="text-gray-900 font-bold text-base mb-3">Quick Answer</h2>
+          <ul className="space-y-2 text-gray-700 text-sm">
+            <li><span className="font-semibold text-gray-900">Easiest to spot:</span> Lion and elephant — social, active by day.</li>
+            <li><span className="font-semibold text-gray-900">Hardest to spot:</span> Leopard — solitary, nocturnal, and well camouflaged.</li>
+            <li><span className="font-semibold text-gray-900">Best overall odds for all five:</span> 5–7 days between Masai Mara and Ol Pejeta Conservancy.</li>
+          </ul>
+        </div>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Where the Term "Big Five" Actually Comes From
+          </h2>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            The phrase originated with big-game hunters in the 19th and early 20th centuries, who
+            ranked animals by how dangerous they were to hunt on foot rather than by rarity or
+            size — a buffalo or wounded lion charging at close range was, and still is, far more
+            dangerous than an animal like the giraffe or hippo, despite either being larger or
+            statistically more lethal overall. When photographic safaris replaced hunting safaris
+            through the mid-20th century, the term stuck around, shifting from a hunting
+            trophy list to a wildlife-viewing checklist.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            It's worth knowing the term isn't a conservation or scientific classification — it
+            says nothing about which animals are endangered (rhinos are, lions increasingly are,
+            buffalo are not) or which are most ecologically important. Guides use it mainly
+            because travelers already know it, not because it's the most meaningful way to think
+            about African wildlife.
+          </p>
+        </section>
 
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
@@ -111,6 +150,51 @@ export default function BigFiveArticle() {
 
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Difficulty at a Glance
+          </h2>
+          <div className="overflow-x-auto mt-4">
+            <table className="w-full text-sm text-left border-collapse">
+              <thead>
+                <tr className="border-b-2 border-gray-200">
+                  <th className="py-2 pr-4 font-semibold text-gray-900">Animal</th>
+                  <th className="py-2 pr-4 font-semibold text-gray-900">Difficulty</th>
+                  <th className="py-2 pr-4 font-semibold text-gray-900">Best Time</th>
+                  <th className="py-2 font-semibold text-gray-900">Best Park</th>
+                </tr>
+              </thead>
+              <tbody>
+                {difficultyTable.map((row) => (
+                  <tr key={row.animal} className="border-b border-gray-100">
+                    <td className="py-2 pr-4 text-gray-800 font-medium">{row.animal}</td>
+                    <td className="py-2 pr-4 text-gray-600">{row.difficulty}</td>
+                    <td className="py-2 pr-4 text-gray-600">{row.bestTime}</td>
+                    <td className="py-2 text-gray-600">{row.bestPark}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Best Time and Place to See All Five
+          </h2>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            No single park guarantees all five, since rhino populations are so localized. The
+            most reliable combination is a few days in the Masai Mara for lion, leopard, elephant,
+            and buffalo, paired with a stop at Ol Pejeta Conservancy or Lake Nakuru National Park
+            for rhino. Timing matters too — visiting during{" "}
+            <Link href="/kenya/the-great-migration-explained" className="text-yellow-600 hover:text-yellow-700 font-semibold">
+              the Great Migration
+            </Link>{" "}
+            (July–September) concentrates wildlife density in the Mara, improving your odds
+            across the board, not just for the migrating herds themselves.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
             A Note on Expectations
           </h2>
           <p className="text-gray-700 leading-relaxed mt-4">
@@ -119,6 +203,45 @@ export default function BigFiveArticle() {
             reserve you're in. A guide who asks what you most want to see, rather than driving a
             fixed route, will usually get you better odds than chasing all five equally.
           </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-4 space-y-6">
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Can I see all Big Five in one national park?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Rarely in a single park — rhino populations are concentrated in specific
+                conservancies. Most travelers combine the Masai Mara with Ol Pejeta or Lake Nakuru
+                to see all five on one trip.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Why is the leopard the hardest to see?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Leopards are solitary and mostly active at night, spending daylight hours hidden
+                in trees or dense brush, unlike the more visible, social lion or elephant.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Is the Big Five term still accurate today?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                It's a legacy hunting term, not a measure of rarity or importance, but it remains
+                the standard reference point most safari itineraries and guides still use.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-10 pt-6 border-t border-gray-200">
+          <h2 className="text-gray-800 font-bold text-base mb-4">Related Reads</h2>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/kenya/the-great-migration-explained" className="text-yellow-600 hover:text-yellow-700 font-semibold">The Great Migration Explained: When, Where and Why</Link></li>
+            <li><Link href="/kenya/best-time-to-visit-kenya" className="text-yellow-600 hover:text-yellow-700 font-semibold">Best Time to Visit Kenya: A Season-by-Season Guide</Link></li>
+            <li><Link href="/kenya/is-kenya-safe-for-tourists" className="text-yellow-600 hover:text-yellow-700 font-semibold">Is Kenya Safe for Tourists? What You Should Know</Link></li>
+          </ul>
         </section>
 
         <div className="border-t border-gray-200 pt-6">

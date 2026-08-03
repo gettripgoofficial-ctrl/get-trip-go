@@ -4,7 +4,6 @@ import Link from "next/link"
 export default function GreatMigrationExplainedArticle() {
   return (
     <article className="bg-white">
-      {/* Hero */}
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
           src="https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=1600&q=80"
@@ -25,9 +24,7 @@ export default function GreatMigrationExplainedArticle() {
         </div>
       </div>
 
-      {/* Single-column article, centered */}
       <div className="max-w-3xl mx-auto px-4 py-10">
-        {/* Intro */}
         <p className="text-gray-700 text-lg leading-relaxed mb-8">
           Every year, roughly two million wildebeest, zebra, and gazelle move in a rough circle
           between Tanzania's Serengeti and Kenya's Masai Mara, chasing rain and fresh grass. It's
@@ -35,7 +32,15 @@ export default function GreatMigrationExplainedArticle() {
           fixed calendar — it follows the weather.
         </p>
 
-        {/* When does it happen */}
+        <div className="bg-gray-50 border-l-4 border-yellow-500 rounded-r-lg p-6 mb-10">
+          <h2 className="text-gray-900 font-bold text-base mb-3">Quick Answer</h2>
+          <ul className="space-y-2 text-gray-700 text-sm">
+            <li><span className="font-semibold text-gray-900">Best months for Mara River crossings:</span> July through September.</li>
+            <li><span className="font-semibold text-gray-900">Best months for calving:</span> January through March, southern Serengeti.</li>
+            <li><span className="font-semibold text-gray-900">Where the herds are right now:</span> depends on rainfall — exact dates shift 2–4 weeks year to year.</li>
+          </ul>
+        </div>
+
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
             When Does the Migration Happen?
@@ -53,11 +58,36 @@ export default function GreatMigrationExplainedArticle() {
           <p className="text-gray-700 leading-relaxed mt-4">
             These dates shift by two to four weeks most years depending on rainfall, so "the
             migration" isn't a single event you can pin to a date on a calendar — it's a
-            slow-moving wave that a good local guide tracks in near real time.
+            slow-moving wave that a good local guide tracks in near real time. For a full
+            season-by-season breakdown of Kenya's weather patterns, see our{" "}
+            <Link href="/kenya/best-time-to-visit-kenya" className="text-yellow-600 hover:text-yellow-700 font-semibold">
+              guide to the best time to visit Kenya
+            </Link>.
           </p>
         </section>
 
-        {/* River crossings image */}
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Why Do They Migrate?
+          </h2>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            The migration isn't a fixed instinctive route so much as a constant response to
+            rainfall and grass quality. Wildebeest need short, nutrient-dense grass, and they
+            follow storm systems that trigger new growth, which is why the timing shifts from
+            year to year rather than running on a strict calendar. Researchers tracking collared
+            animals have found the herds can sense rainfall from many kilometers away, likely
+            through a combination of smell, distant lightning, and visual cues like darkening
+            skies on the horizon.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Zebra and gazelle travel alongside the wildebeest but for slightly different reasons —
+            zebra eat the taller, coarser grass first, effectively clearing the way for wildebeest
+            to reach the shorter grass underneath, while gazelle follow behind picking off the
+            shortest regrowth. This layered grazing pattern is part of why the three species move
+            together rather than competing directly for the same food.
+          </p>
+        </section>
+
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
             src="https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1200&q=80"
@@ -68,7 +98,6 @@ export default function GreatMigrationExplainedArticle() {
           />
         </div>
 
-        {/* River crossings */}
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
             The River Crossings
@@ -82,9 +111,14 @@ export default function GreatMigrationExplainedArticle() {
             River in the Masai Mara give you the best odds of catching one between July and
             September, but patience — sometimes days of it — is part of the deal.
           </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Positioning matters more than most people realize. Popular crossing points get
+            crowded with vehicles during peak months, and a guide who knows which bend in the
+            river the herds are currently favoring — rather than parking at the most famous spot
+            and waiting — usually gets you a clearer, less obstructed view.
+          </p>
         </section>
 
-        {/* Where to base yourself */}
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
             Where to Base Yourself
@@ -99,11 +133,35 @@ export default function GreatMigrationExplainedArticle() {
           <p className="text-gray-700 leading-relaxed mt-4">
             If you only have one trip in you and want the classic river-crossing shot, July
             through September in the Masai Mara is the safest bet, though also the busiest and
-            most expensive stretch of the year.
+            most expensive stretch of the year. Wildlife density in the Mara during these months
+            also makes it one of the more reliable windows for seeing the{" "}
+            <Link href="/kenya/big-five-how-to-spot" className="text-yellow-600 hover:text-yellow-700 font-semibold">
+              Big Five
+            </Link>{" "}
+            in the same trip.
           </p>
         </section>
 
-        {/* What people get wrong */}
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Photographing the Migration
+          </h2>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Early morning light between roughly 6:30 and 8:30am produces the strongest images —
+            low, warm sun and dust kicked up by moving herds. A telephoto lens in the 200–400mm
+            range covers most action shots, while a wider lens helps capture the scale of a large
+            herd or a crossing in full swing. At river crossings specifically, position matters:
+            a slightly elevated vantage point on the near bank, rather than being level with the
+            water, tends to produce cleaner shots without other vehicles cluttering the frame.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Patience is the real skill. Many photographers wait two to four hours at a single
+            crossing point without a guaranteed payoff, so budgeting multiple mornings for a real
+            attempt — rather than expecting one drive to deliver — sets more realistic
+            expectations than most trip itineraries suggest.
+          </p>
+        </section>
+
         <section className="mb-10">
           <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
             What People Get Wrong
@@ -122,6 +180,47 @@ export default function GreatMigrationExplainedArticle() {
             — where the grass is, where the water is — is what separates a lucky sighting from a
             planned one.
           </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-4 space-y-6">
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Is the Great Migration guaranteed if I visit in July?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                No sighting in nature is guaranteed, but July through September in the Masai Mara
+                is statistically the most reliable window for both the general migration and
+                river crossings specifically.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">Can I see the migration in Kenya, or only Tanzania?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Both. The migration is a single circuit spanning both countries — Kenya's Masai
+                Mara hosts the herds roughly July through October, while Tanzania's Serengeti
+                hosts them the rest of the year, including calving season.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-gray-900 font-semibold text-base mb-1">How many days do I need to see a river crossing?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Most experienced guides recommend at least three to four days in the Mara during
+                peak season to give yourself a realistic chance, since crossings can't be
+                scheduled on demand.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-10 pt-6 border-t border-gray-200">
+          <h2 className="text-gray-800 font-bold text-base mb-4">Related Reads</h2>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/kenya/best-time-to-visit-kenya" className="text-yellow-600 hover:text-yellow-700 font-semibold">Best Time to Visit Kenya: A Season-by-Season Guide</Link></li>
+            <li><Link href="/kenya/big-five-how-to-spot" className="text-yellow-600 hover:text-yellow-700 font-semibold">Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo</Link></li>
+            <li><Link href="/kenya/is-kenya-safe-for-tourists" className="text-yellow-600 hover:text-yellow-700 font-semibold">Is Kenya Safe for Tourists? What You Should Know</Link></li>
+          </ul>
         </section>
 
         <div className="border-t border-gray-200 pt-6">
