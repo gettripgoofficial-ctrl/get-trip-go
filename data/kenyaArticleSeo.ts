@@ -1,6 +1,12 @@
 // Meta descriptions for dynamic Kenya articles at /kenya/[slug].
 // Add one entry per article as it's written.
 export const kenyaArticleSeo: Record<string, string> = {
+  "birdwatching-in-kenya-detail":
+    "Where to go for Kenya's best birdwatching by habitat, the standout species to look for, and the best time of year to see the most.",
+
+  "wildebeest-river-crossing-guide":
+    "Where to position for a Mara River crossing, what actually happens once the herd commits, and the camera settings that make the difference.",
+
   "cheetahs-of-the-mara":
     "Where to spot Masai Mara cheetahs, how they hunt in daylight, the best time of day to see them, and what their numbers look like today.",
   "amboselis-last-super-tuskers":
@@ -11,4 +17,16 @@ export const kenyaArticleSeo: Record<string, string> = {
     "Why night drives are banned inside most parks but allowed in private conservancies, what animals become active after dark, and how the spotlight works without disturbing them.",
   "community-conservancies-how-locals-protect-wildlife":
     "How Maasai-leased conservancies work, why they now cover more wildlife habitat than Kenya's national parks, and what makes the experience different from a standard reserve safari.",
+  "anti-poaching-efforts-in-kenyas-parks":
+    "How Kenya turned around a poaching crisis through ranger capacity, tracking technology, tougher penalties, and community-based reporting networks — and why the threat isn't fully gone.",
+  "rhino-conservation-the-fight-to-save-a-species":
+    "How Kenya protects its black and white rhino population, why Ol Pejeta and Lake Nakuru are the top sighting spots, and the last-ditch science trying to save the northern white rhino.",
+  "the-maasai-guardians-of-the-mara":
+    "How Maasai communities went from being excluded by the Mara Reserve to co-owning and leading conservancy conservation, and what a village visit near the Mara actually involves.",
+  "climate-change-and-the-great-migration":
+    "How shifting rainfall patterns are changing when and where the Great Migration herds move, what researchers are tracking, and what it means for planning a safari around the river crossings.",
+  "basic-swahili-phrases-and-kenyan-etiquette":
+    "Essential Swahili greetings and safari vocabulary, plus everyday etiquette around greetings, dress, photography, and tipping to know before visiting Kenya.",
+  "kenyas-big-cats-compared":
+    "How to tell lions, leopards and cheetahs apart at a glance, where each is most likely to turn up, and how they rank against one another in the wild.",
 }

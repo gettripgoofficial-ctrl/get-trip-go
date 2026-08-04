@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { kenyaTravelTips, kenyaSafariWildlife } from "@/data/kenyaData"
 
-const PUBLISHED_SAFARI_SLUGS = new Set<string>(["cheetahs-of-the-mara", "amboselis-last-super-tuskers", "lake-nakurus-flamingo-spectacle", "night-safaris-what-happens-after-dark"])
+const PUBLISHED_SAFARI_SLUGS = new Set<string>(["birdwatching-in-kenya-detail", "wildebeest-river-crossing-guide", "cheetahs-of-the-mara", "amboselis-last-super-tuskers", "lake-nakurus-flamingo-spectacle", "night-safaris-what-happens-after-dark", "kenyas-big-cats-compared"])
 
 const builtTravelTipsSlugs = [
   "what-to-pack-for-a-kenya-safari",

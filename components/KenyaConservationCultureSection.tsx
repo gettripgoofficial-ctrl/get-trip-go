@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { kenyaConservationCulture, kenyaFaqs } from "@/data/kenyaData"
 
-const PUBLISHED_CONSERVATION_SLUGS = new Set<string>(["community-conservancies-how-locals-protect-wildlife"])
+const PUBLISHED_CONSERVATION_SLUGS = new Set<string>(["community-conservancies-how-locals-protect-wildlife", "anti-poaching-efforts-in-kenyas-parks", "rhino-conservation-the-fight-to-save-a-species", "the-maasai-guardians-of-the-mara", "climate-change-and-the-great-migration", "basic-swahili-phrases-and-kenyan-etiquette"])
 
 export default function KenyaConservationCultureSection() {
   return (

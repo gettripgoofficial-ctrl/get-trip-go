@@ -14,8 +14,16 @@ import KenyaArticleShell from "@/components/KenyaArticleShell"
 import AmboselisLastSuperTuskersArticle from "@/components/kenya-articles/amboselis-last-super-tuskers"
 import LakeNakurusFlamingoSpectacleArticle from "@/components/kenya-articles/lake-nakurus-flamingo-spectacle"
 import CheetahsOfTheMaraArticle from "@/components/kenya-articles/cheetahs-of-the-mara"
+import BirdwatchingInKenyaDetailArticle from "@/components/kenya-articles/birdwatching-in-kenya-detail"
+import WildebeestRiverCrossingGuideArticle from "@/components/kenya-articles/wildebeest-river-crossing-guide"
+import KenyasBigCatsComparedArticle from "@/components/kenya-articles/kenyas-big-cats-compared"
 import NightSafarisWhatHappensAfterDarkArticle from "@/components/kenya-articles/night-safaris-what-happens-after-dark"
 import CommunityConservanciesHowLocalsProtectWildlifeArticle from "@/components/kenya-articles/community-conservancies-how-locals-protect-wildlife"
+import AntiPoachingEffortsInKenyasParksArticle from "@/components/kenya-articles/anti-poaching-efforts-in-kenyas-parks"
+import RhinoConservationTheFightToSaveASpeciesArticle from "@/components/kenya-articles/rhino-conservation-the-fight-to-save-a-species"
+import TheMaasaiGuardiansOfTheMaraArticle from "@/components/kenya-articles/the-maasai-guardians-of-the-mara"
+import ClimateChangeAndTheGreatMigrationArticle from "@/components/kenya-articles/climate-change-and-the-great-migration"
+import BasicSwahiliPhrasesAndKenyanEtiquetteArticle from "@/components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette"
 
 // All articles that can be looked up by slug across every Kenya category.
 const allArticles = [
@@ -29,10 +37,18 @@ const allArticles = [
 // Add one entry here per article as it's written.
 const registry: Record<string, React.ComponentType> = {
   "cheetahs-of-the-mara": CheetahsOfTheMaraArticle,
+  "birdwatching-in-kenya-detail": BirdwatchingInKenyaDetailArticle,
+  "wildebeest-river-crossing-guide": WildebeestRiverCrossingGuideArticle,
+  "kenyas-big-cats-compared": KenyasBigCatsComparedArticle,
   "amboselis-last-super-tuskers": AmboselisLastSuperTuskersArticle,
   "lake-nakurus-flamingo-spectacle": LakeNakurusFlamingoSpectacleArticle,
   "night-safaris-what-happens-after-dark": NightSafarisWhatHappensAfterDarkArticle,
   "community-conservancies-how-locals-protect-wildlife": CommunityConservanciesHowLocalsProtectWildlifeArticle,
+  "anti-poaching-efforts-in-kenyas-parks": AntiPoachingEffortsInKenyasParksArticle,
+  "rhino-conservation-the-fight-to-save-a-species": RhinoConservationTheFightToSaveASpeciesArticle,
+  "the-maasai-guardians-of-the-mara": TheMaasaiGuardiansOfTheMaraArticle,
+  "climate-change-and-the-great-migration": ClimateChangeAndTheGreatMigrationArticle,
+  "basic-swahili-phrases-and-kenyan-etiquette": BasicSwahiliPhrasesAndKenyanEtiquetteArticle,
 }
 
 function getArticleMeta(slug: string) {
