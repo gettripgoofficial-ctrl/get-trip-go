@@ -14,6 +14,11 @@ import KenyaArticleShell from "@/components/KenyaArticleShell"
 import AmboselisLastSuperTuskersArticle from "@/components/kenya-articles/amboselis-last-super-tuskers"
 import LakeNakurusFlamingoSpectacleArticle from "@/components/kenya-articles/lake-nakurus-flamingo-spectacle"
 import CheetahsOfTheMaraArticle from "@/components/kenya-articles/cheetahs-of-the-mara"
+import MasaiMaraVsSerengetiArticle from "@/components/kenya-articles/masai-mara-vs-serengeti"
+import MasaiMaraReserveVsConservanciesArticle from "@/components/kenya-articles/masai-mara-reserve-vs-conservancies"
+import AmboseliNationalParkGuideArticle from "@/components/kenya-articles/amboseli-national-park-guide"
+import TsavoLargestWildestParkArticle from "@/components/kenya-articles/tsavo-largest-wildest-park"
+import LakeNakuruParkBirdsRhinosArticle from "@/components/kenya-articles/lake-nakuru-park-birds-rhinos"
 import BirdwatchingInKenyaDetailArticle from "@/components/kenya-articles/birdwatching-in-kenya-detail"
 import WildebeestRiverCrossingGuideArticle from "@/components/kenya-articles/wildebeest-river-crossing-guide"
 import KenyasBigCatsComparedArticle from "@/components/kenya-articles/kenyas-big-cats-compared"
@@ -37,6 +42,11 @@ const allArticles = [
 // Add one entry here per article as it's written.
 const registry: Record<string, React.ComponentType> = {
   "cheetahs-of-the-mara": CheetahsOfTheMaraArticle,
+  "masai-mara-vs-serengeti": MasaiMaraVsSerengetiArticle,
+  "masai-mara-reserve-vs-conservancies": MasaiMaraReserveVsConservanciesArticle,
+  "amboseli-national-park-guide": AmboseliNationalParkGuideArticle,
+  "tsavo-largest-wildest-park": TsavoLargestWildestParkArticle,
+  "lake-nakuru-park-birds-rhinos": LakeNakuruParkBirdsRhinosArticle,
   "birdwatching-in-kenya-detail": BirdwatchingInKenyaDetailArticle,
   "wildebeest-river-crossing-guide": WildebeestRiverCrossingGuideArticle,
   "kenyas-big-cats-compared": KenyasBigCatsComparedArticle,

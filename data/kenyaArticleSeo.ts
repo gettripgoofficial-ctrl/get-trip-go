@@ -1,6 +1,21 @@
 // Meta descriptions for dynamic Kenya articles at /kenya/[slug].
 // Add one entry per article as it's written.
 export const kenyaArticleSeo: Record<string, string> = {
+  "lake-nakuru-park-birds-rhinos":
+    "The real story on Lake Nakuru's flamingos today, why it's still one of Kenya's best rhino sanctuaries, and how long to stay.",
+
+  "tsavo-largest-wildest-park":
+    "Inside Kenya's largest park -- how Tsavo East and West differ, why the elephants are red, and the 1898 man-eater history behind it.",
+
+  "amboseli-national-park-guide":
+    "Everything you need to know about Amboseli -- when to see Kilimanjaro clearly, the elephant research behind its famous herds, and how long to stay.",
+
+  "masai-mara-reserve-vs-conservancies":
+    "The real difference between the Masai Mara National Reserve and its private conservancies -- vehicle limits, night drives, and who actually sees the river crossings.",
+
+  "masai-mara-vs-serengeti":
+    "How the Masai Mara and the Serengeti compare on size, migration timing, cost, and crowds — and how to choose between them.",
+
   "birdwatching-in-kenya-detail":
     "Where to go for Kenya's best birdwatching by habitat, the standout species to look for, and the best time of year to see the most.",
 

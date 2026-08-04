@@ -1,29 +1,44 @@
 "use client"
 import Image from "next/image"
+import Link from "next/link"
 import { kenyaStays, kenyaVisaEntry, kenyaVisaEntryExtra, kenyaParksReserves } from "@/data/kenyaData"
 
-function ArticleList({ articles }: { articles: typeof kenyaStays }) {
+const PUBLISHED_PARKS_SLUGS = new Set<string>(["masai-mara-vs-serengeti", "masai-mara-reserve-vs-conservancies", "amboseli-national-park-guide", "tsavo-largest-wildest-park", "lake-nakuru-park-birds-rhinos"])
+
+function ArticleList({ articles, publishedSlugs }: { articles: typeof kenyaStays; publishedSlugs?: Set<string> }) {
   return (
     <div className="space-y-4 mt-4">
-      {articles.map(article => (
-        <div key={article.id} className="flex gap-3 cursor-pointer group">
-          <div className="relative w-16 h-16 flex-shrink-0 rounded-md overflow-hidden">
-            <Image
-              src={article.image}
-              alt={article.title}
-              fill
-              sizes="64px"
-              className="object-cover group-hover:scale-105 transition-transform"
-            />
+      {articles.map(article => {
+        const isPublished = publishedSlugs?.has(article.id)
+        const cardInner = (
+          <div className="flex gap-3 group">
+            <div className="relative w-16 h-16 flex-shrink-0 rounded-md overflow-hidden">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                sizes="64px"
+                className="object-cover group-hover:scale-105 transition-transform"
+              />
+            </div>
+            <div>
+              <p className={`font-semibold text-sm leading-snug transition-colors ${isPublished ? "text-gray-800 group-hover:text-yellow-600" : "text-gray-800"}`}>
+                {article.title}
+              </p>
+              <p className="text-gray-400 text-[11px] mt-1">{article.meta}</p>
+            </div>
           </div>
-          <div>
-            <p className="text-gray-800 font-semibold text-sm leading-snug group-hover:text-yellow-600 transition-colors">
-              {article.title}
-            </p>
-            <p className="text-gray-400 text-[11px] mt-1">{article.meta}</p>
+        )
+        return isPublished ? (
+          <Link key={article.id} href={`/kenya/${article.id}`} className="block cursor-pointer">
+            {cardInner}
+          </Link>
+        ) : (
+          <div key={article.id} className="cursor-default">
+            {cardInner}
           </div>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
@@ -88,7 +103,7 @@ export default function KenyaExploreSection() {
           <h2 className="text-gray-800 font-bold text-lg mb-4 pb-2 border-b-2 border-yellow-500 inline-block">
             Parks &amp; Reserves
           </h2>
-          <ArticleList articles={kenyaParksReserves} />
+          <ArticleList articles={kenyaParksReserves} publishedSlugs={PUBLISHED_PARKS_SLUGS} />
         </div>
       </div>
     </div>

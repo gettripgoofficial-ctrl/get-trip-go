@@ -2,6 +2,82 @@
 // Keep these in sync with the visible "Frequently Asked Questions" section
 // rendered inside each article component in components/kenya-articles/.
 export const kenyaArticleFaqs: Record<string, { question: string; answer: string }[]> = {
+  "lake-nakuru-park-birds-rhinos": [
+    {
+      question: "Are there still flamingos at Lake Nakuru?",
+      answer: "Yes, but in far smaller numbers than the park's historical reputation suggests. Since 2012, rising water levels have pushed most large flocks to other Rift Valley lakes like Bogoria, so visitors focused specifically on flamingos may want to check current conditions or consider Bogoria instead.",
+    },
+    {
+      question: "Does Lake Nakuru have elephants?",
+      answer: "No — the park is one of the few major Kenyan reserves that doesn't support elephants, making it a Big Four rather than Big Five destination.",
+    },
+    {
+      question: "Is Lake Nakuru a good place to see rhinos?",
+      answer: "Yes — it's one of Kenya's most reliable rhino sanctuaries, with healthy populations of both black and white rhino and consistently good sighting odds.",
+    },
+    {
+      question: "How long should I spend at Lake Nakuru?",
+      answer: "One day is enough to cover the rhino sanctuary and main viewpoints; two days allows for deeper exploration and better photography conditions.",
+    },
+  ],
+
+  "amboseli-national-park-guide": [
+    {
+      question: "Can I see Mount Kilimanjaro every day at Amboseli?",
+      answer: "No guarantee — cloud cover is common, especially later in the day. Early mornings during the dry season, roughly June through October and January through February, give the best odds of a clear view.",
+    },
+    {
+      question: "Does Amboseli have the Big Five?",
+      answer: "Four of the five — elephant, lion, leopard, and buffalo are present, but black rhino are not commonly resident, making Amboseli one Big Five species short.",
+    },
+    {
+      question: "How far is Amboseli from Nairobi?",
+      answer: "About a 4-hour drive, or roughly 45 minutes by small aircraft from Wilson Airport, making it one of the more accessible parks for a shorter Kenya safari.",
+    },
+    {
+      question: "How many days should I spend in Amboseli?",
+      answer: "A minimum of two nights is recommended, giving at least one full day of game driving plus one Kilimanjaro-watching morning, rather than a rushed single-day visit.",
+    },
+  ],
+
+  "masai-mara-reserve-vs-conservancies": [
+    {
+      question: "Which is better, the Masai Mara Reserve or a private conservancy?",
+      answer: "Neither is universally better — the Reserve is the only place to see river crossings, while conservancies offer fewer vehicles, night drives, and walking safaris that the Reserve doesn't allow.",
+    },
+    {
+      question: "Can I see the river crossings if I stay in a conservancy?",
+      answer: "Only by traveling into the Reserve itself and paying its separate daily entry fee — no conservancy includes any of the actual crossing points.",
+    },
+    {
+      question: "Can I do a night drive in the Masai Mara National Reserve?",
+      answer: "No — the Reserve keeps fixed daytime gate hours with no night drives, off-road driving, or walking safaris. Those activities are only available in the private conservancies.",
+    },
+    {
+      question: "Can I combine both the Reserve and a conservancy in one trip?",
+      answer: "Yes, and it's a common approach — many conservancy camps sit close enough to the Reserve boundary to make a day visit for a crossing straightforward.",
+    },
+  ],
+
+  "masai-mara-vs-serengeti": [
+    {
+      question: "Is Masai Mara part of the Serengeti?",
+      answer: "Not officially — they're separate protected areas in different countries — but they form one continuous ecosystem, and wildlife, including the migrating herds, moves freely between them.",
+    },
+    {
+      question: "Which is better for first-time safari-goers, Mara or Serengeti?",
+      answer: "Neither is objectively better — the Mara suits shorter trips built around river crossings, while the Serengeti suits travelers with more time who want a larger, quieter landscape.",
+    },
+    {
+      question: "Can I visit both the Masai Mara and the Serengeti on one trip?",
+      answer: "Yes, and many multi-week itineraries do exactly that, though it requires crossing an international border and adds meaningful transfer time.",
+    },
+    {
+      question: "When is the migration in the Masai Mara versus the Serengeti?",
+      answer: "Roughly July through October in the Mara, and the rest of the year spread across the Serengeti, though exact timing shifts annually with rainfall patterns.",
+    },
+  ],
+
   "birdwatching-in-kenya-detail": [
     {
       question: "How many bird species does Kenya actually have?",

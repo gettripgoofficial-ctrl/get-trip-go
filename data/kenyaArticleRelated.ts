@@ -3,6 +3,36 @@
 // (e.g. /kenya/big-five-how-to-spot), since routing doesn't care which system
 // built the destination page.
 export const kenyaArticleRelated: Record<string, { title: string; href: string }[]> = {
+  "lake-nakuru-park-birds-rhinos": [
+    { title: "Lake Nakuru's Flamingo Spectacle", href: "/kenya/lake-nakurus-flamingo-spectacle" },
+    { title: "Birdwatching in Kenya: 50 Species to Look For", href: "/kenya/birdwatching-in-kenya-detail" },
+    { title: "Loldia House: A Colonial Farmhouse on Lake Naivasha", href: "/kenya/loldia-house-a-colonial-farmhouse" },
+  ],
+
+  "tsavo-largest-wildest-park": [
+    { title: "Amboseli National Park: Complete Guide", href: "/kenya/amboseli-national-park-guide" },
+    { title: "Finch Hattons: Out of Africa, Reimagined", href: "/kenya/finch-hattons-out-of-africa-reimagined" },
+    { title: "Kenya's Big Cats: Lions, Leopards and Cheetahs Compared", href: "/kenya/kenyas-big-cats-compared" },
+  ],
+
+  "amboseli-national-park-guide": [
+    { title: "Amboseli's Last Super Tuskers", href: "/kenya/amboselis-last-super-tuskers" },
+    { title: "Masai Mara vs Serengeti: What's the Difference", href: "/kenya/masai-mara-vs-serengeti" },
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+  ],
+
+  "masai-mara-reserve-vs-conservancies": [
+    { title: "Masai Mara vs Serengeti: What's the Difference", href: "/kenya/masai-mara-vs-serengeti" },
+    { title: "Night Safaris: What Happens After Dark", href: "/kenya/night-safaris-what-happens-after-dark" },
+    { title: "The Wildebeest River Crossing: A Photographer's Guide", href: "/kenya/wildebeest-river-crossing-guide" },
+  ],
+
+  "masai-mara-vs-serengeti": [
+    { title: "The Wildebeest River Crossing: A Photographer's Guide", href: "/kenya/wildebeest-river-crossing-guide" },
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+    { title: "Kenya's Big Cats: Lions, Leopards and Cheetahs Compared", href: "/kenya/kenyas-big-cats-compared" },
+  ],
+
   "birdwatching-in-kenya-detail": [
     { title: "Lake Nakuru's Flamingo Spectacle", href: "/kenya/lake-nakurus-flamingo-spectacle" },
     { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
