@@ -17,6 +17,37 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   { url: `${BASE_URL}/terms`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   { url: `${BASE_URL}/cookies`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+  { url: `${BASE_URL}/kenya`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+];
+
+// Individual-folder Kenya articles -- each has its own app/kenya/<slug>/page.tsx
+const kenyaArticleSlugs = [
+  "best-time-to-visit-kenya",
+  "the-great-migration-explained",
+  "big-five-how-to-spot",
+  "is-kenya-safe-for-tourists",
+  "what-to-pack-for-a-kenya-safari",
+  "getting-around-light-aircraft-vs-road-safaris",
+  "how-many-days-do-you-need-for-a-kenya-safari",
+  "safari-budget-guide-luxury-vs-mid-range-vs-budget",
+  "first-time-safari-checklist",
+  "safari-photography-camera-gear-and-settings",
+  "kenya-eta-guide-how-to-apply-cost-and-processing",
+  "safari-footwear-what-actually-works",
+  "vaccinations-for-kenya-yellow-fever-and-more",
+  "malaria-prevention-tablets-repellents",
+  "travel-insurance-for-safari-what-it-should-cover",
+  "altitude-sickness-in-the-kenyan-highlands",
+  "drinking-water-and-food-safety-on-safari",
+  "safari-first-aid-what-to-pack",
+];
+
+// Dynamic /kenya/[slug] articles -- only include ones actually registered in
+// app/kenya/[slug]/page.tsx's `registry` object, or they'll 404.
+const kenyaDynamicSlugArticles = [
+  "cheetahs-of-the-mara",
+  "amboselis-last-super-tuskers",
+  "lake-nakurus-flamingo-spectacle",
 ];
 
 const popularDestinationSlugs = [
@@ -126,6 +157,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...kenyaArticleSlugs.map((slug) => ({
+      url: `${BASE_URL}/kenya/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...kenyaDynamicSlugArticles.map((slug) => ({
+      url: `${BASE_URL}/kenya/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     ...popularDestinationSlugs.map((slug) => ({
       url: `${BASE_URL}/popular-destinations/${slug}`,
       lastModified: new Date(),
