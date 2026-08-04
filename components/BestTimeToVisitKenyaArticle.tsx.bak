@@ -210,8 +210,8 @@ export default function BestTimeToVisitKenyaArticle() {
           <ul className="mt-4 space-y-2 text-gray-700 leading-relaxed list-disc list-inside">
             <li>Book dry-season (July–October) camps six to twelve months in advance.</li>
             <li>Pack layers — mornings and evenings are cold even in dry season, especially at higher elevations like the Mara or Aberdares.</li>
-            <li>A <Link href="/kenya/vaccinations-for-kenya-yellow-fever-and-more" className="text-yellow-600 hover:text-yellow-700 font-semibold">yellow fever certificate</Link> and Kenya eTA are required year-round regardless of season.</li>
-            <li><Link href="/kenya/malaria-prevention-tablets-repellents" className="text-yellow-600 hover:text-yellow-700 font-semibold">Malaria prevention</Link> is recommended throughout the year, with higher mosquito activity right after rains.</li>
+            <li>A yellow fever certificate and Kenya eTA are required year-round regardless of season.</li>
+            <li>Malaria prevention is recommended throughout the year, with higher mosquito activity right after rains.</li>
           </ul>
         </section>
 

@@ -220,6 +220,8 @@ export default function GreatMigrationExplainedArticle() {
             <li><Link href="/kenya/best-time-to-visit-kenya" className="text-yellow-600 hover:text-yellow-700 font-semibold">Best Time to Visit Kenya: A Season-by-Season Guide</Link></li>
             <li><Link href="/kenya/big-five-how-to-spot" className="text-yellow-600 hover:text-yellow-700 font-semibold">Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo</Link></li>
             <li><Link href="/kenya/is-kenya-safe-for-tourists" className="text-yellow-600 hover:text-yellow-700 font-semibold">Is Kenya Safe for Tourists? What You Should Know</Link></li>
+            <li><Link href="/kenya/malaria-prevention-tablets-repellents" className="text-yellow-600 hover:text-yellow-700 font-semibold">Malaria Prevention: Tablets, Repellents and Risk Areas</Link></li>
+            <li><Link href="/kenya/travel-insurance-for-safari-what-it-should-cover" className="text-yellow-600 hover:text-yellow-700 font-semibold">Travel Insurance for Safari: What It Should Cover</Link></li>
           </ul>
         </section>
 

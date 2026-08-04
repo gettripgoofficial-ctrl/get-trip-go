@@ -142,7 +142,7 @@ export default function IsKenyaSafeArticle() {
             Health and Wildlife
           </h2>
           <p className="text-gray-700 leading-relaxed mt-4">
-            Malaria risk exists in most safari regions (though not at higher elevations like
+            <Link href="/kenya/malaria-prevention-tablets-repellents" className="text-yellow-600 hover:text-yellow-700 font-semibold">Malaria risk</Link> exists in most safari regions (though not at higher elevations like
             Nairobi), so prophylaxis is generally recommended. Wildlife-related injuries are rare
             precisely because reputable operators enforce strict rules — staying in the vehicle,
             keeping a safe distance, and following guide instructions. Injuries almost always trace
@@ -171,8 +171,8 @@ export default function IsKenyaSafeArticle() {
             excellent safety record and is what almost every tourist actually experiences. The
             perception gap exists because "Kenya" as a country includes regions tourists never
             visit, the same way "is the US safe" would be a strange question if you were only
-            asking about a resort town. Book with a reputable operator, buy proper travel
-            insurance, and the actual on-the-ground risk is low.
+            asking about a resort town. Book with a reputable operator, buy proper <Link href="/kenya/travel-insurance-for-safari-what-it-should-cover" className="text-yellow-600 hover:text-yellow-700 font-semibold">travel
+            insurance</Link>, and the actual on-the-ground risk is low.
           </p>
         </section>
 

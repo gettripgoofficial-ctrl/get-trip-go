@@ -241,6 +241,8 @@ export default function BigFiveArticle() {
             <li><Link href="/kenya/the-great-migration-explained" className="text-yellow-600 hover:text-yellow-700 font-semibold">The Great Migration Explained: When, Where and Why</Link></li>
             <li><Link href="/kenya/best-time-to-visit-kenya" className="text-yellow-600 hover:text-yellow-700 font-semibold">Best Time to Visit Kenya: A Season-by-Season Guide</Link></li>
             <li><Link href="/kenya/is-kenya-safe-for-tourists" className="text-yellow-600 hover:text-yellow-700 font-semibold">Is Kenya Safe for Tourists? What You Should Know</Link></li>
+            <li><Link href="/kenya/safari-first-aid-what-to-pack" className="text-yellow-600 hover:text-yellow-700 font-semibold">Safari First Aid: What to Pack in Your Kit</Link></li>
+            <li><Link href="/kenya/vaccinations-for-kenya-yellow-fever-and-more" className="text-yellow-600 hover:text-yellow-700 font-semibold">Vaccinations for Kenya: Yellow Fever and What Else You Need</Link></li>
           </ul>
         </section>
 
