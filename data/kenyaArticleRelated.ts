@@ -116,4 +116,39 @@ export const kenyaArticleRelated: Record<string, { title: string; href: string }
     { title: "Common eTA Mistakes That Get Travelers Denied Boarding", href: "/kenya/common-eta-mistakes-travelers-denied-boarding" },
     { title: "What Happens If You Overstay Your Kenya eTA", href: "/kenya/overstay-kenya-eta-what-happens" },
   ],
+  "how-much-does-a-kenya-safari-cost": [
+    { title: "Safari Budget Guide: Luxury vs Mid-Range vs Budget", href: "/kenya/safari-budget-guide-luxury-vs-mid-range-vs-budget" },
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+  ],
+  "can-you-drink-the-water-in-kenya": [
+    { title: "What to Pack for a Kenya Safari", href: "/kenya/what-to-pack-for-a-kenya-safari" },
+    { title: "Safari First Aid: What to Pack in Your Kit", href: "/kenya/safari-first-aid-what-to-pack-in-your-kit" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+  ],
+  "what-currency-should-you-carry-in-kenya": [
+    { title: "Do You Need Cash or Can You Pay by Card on Safari", href: "/kenya/do-you-need-cash-or-card-on-safari" },
+    { title: "How Much Does a Kenya Safari Cost in 2026", href: "/kenya/how-much-does-a-kenya-safari-cost" },
+    { title: "Tipping Etiquette: Guides, Drivers and Lodge Staff", href: "/kenya/tipping-etiquette-guides-drivers-lodge-staff" },
+  ],
+  "do-you-need-cash-or-card-on-safari": [
+    { title: "What Currency Should You Carry in Kenya", href: "/kenya/what-currency-should-you-carry-in-kenya" },
+    { title: "Tipping Etiquette: Guides, Drivers and Lodge Staff", href: "/kenya/tipping-etiquette-guides-drivers-lodge-staff" },
+    { title: "How Much Does a Kenya Safari Cost in 2026", href: "/kenya/how-much-does-a-kenya-safari-cost" },
+  ],
+  "kenya-time-zone-and-jet-lag-tips": [
+    { title: "What to Pack for a Kenya Safari", href: "/kenya/what-to-pack-for-a-kenya-safari" },
+    { title: "How Many Days Do You Need for a Kenya Safari", href: "/kenya/how-many-days-do-you-need-for-a-kenya-safari" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+  ],
+  "internet-and-phone-signal-in-the-bush": [
+    { title: "What Happens If You Get Sick During a Safari", href: "/kenya/what-happens-if-you-get-sick-during-a-safari" },
+    { title: "Kenya Time Zone and Jet Lag Tips", href: "/kenya/kenya-time-zone-and-jet-lag-tips" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+  ],
+  "what-happens-if-you-get-sick-during-a-safari": [
+    { title: "Internet and Phone Signal in the Bush", href: "/kenya/internet-and-phone-signal-in-the-bush" },
+    { title: "Safari First Aid: What to Pack in Your Kit", href: "/kenya/safari-first-aid-what-to-pack-in-your-kit" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+  ],
 }

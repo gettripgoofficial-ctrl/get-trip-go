@@ -7,6 +7,7 @@ import {
   kenyaVisaEntry,
   kenyaVisaEntryExtra,
   kenyaConservationCulture,
+  kenyaFaqs,
 } from "@/data/kenyaData"
 import { kenyaArticleSeo } from "@/data/kenyaArticleSeo"
 import { kenyaArticleFaqs } from "@/data/kenyaArticleFaqs"
@@ -33,6 +34,13 @@ import BasicSwahiliPhrasesAndKenyanEtiquetteArticle from "@/components/kenya-art
 import CommonEtaMistakesArticle from "@/components/kenya-articles/common-eta-mistakes-travelers-denied-boarding"
 import OverstayKenyaEtaWhatHappensArticle from "@/components/kenya-articles/overstay-kenya-eta-what-happens"
 import VisaOnArrivalVsEtaArticle from "@/components/kenya-articles/visa-on-arrival-vs-eta-which-applies-to-you"
+import HowMuchDoesAKenyaSafariCostArticle from "@/components/kenya-articles/how-much-does-a-kenya-safari-cost"
+import CanYouDrinkTheWaterInKenyaArticle from "@/components/kenya-articles/can-you-drink-the-water-in-kenya"
+import WhatCurrencyShouldYouCarryInKenyaArticle from "@/components/kenya-articles/what-currency-should-you-carry-in-kenya"
+import DoYouNeedCashOrCardOnSafariArticle from "@/components/kenya-articles/do-you-need-cash-or-card-on-safari"
+import KenyaTimeZoneAndJetLagTipsArticle from "@/components/kenya-articles/kenya-time-zone-and-jet-lag-tips"
+import InternetAndPhoneSignalInTheBushArticle from "@/components/kenya-articles/internet-and-phone-signal-in-the-bush"
+import WhatHappensIfYouGetSickDuringASafariArticle from "@/components/kenya-articles/what-happens-if-you-get-sick-during-a-safari"
 
 // All articles that can be looked up by slug across every Kenya category.
 const allArticles = [
@@ -42,6 +50,7 @@ const allArticles = [
   ...kenyaVisaEntry,
   ...kenyaVisaEntryExtra,
   ...kenyaConservationCulture,
+  ...kenyaFaqs,
 ]
 
 // Add one entry here per article as it's written.
@@ -67,6 +76,13 @@ const registry: Record<string, React.ComponentType> = {
   "common-eta-mistakes-travelers-denied-boarding": CommonEtaMistakesArticle,
   "overstay-kenya-eta-what-happens": OverstayKenyaEtaWhatHappensArticle,
   "visa-on-arrival-vs-eta-which-applies-to-you": VisaOnArrivalVsEtaArticle,
+  "how-much-does-a-kenya-safari-cost": HowMuchDoesAKenyaSafariCostArticle,
+  "can-you-drink-the-water-in-kenya": CanYouDrinkTheWaterInKenyaArticle,
+  "what-currency-should-you-carry-in-kenya": WhatCurrencyShouldYouCarryInKenyaArticle,
+  "do-you-need-cash-or-card-on-safari": DoYouNeedCashOrCardOnSafariArticle,
+  "kenya-time-zone-and-jet-lag-tips": KenyaTimeZoneAndJetLagTipsArticle,
+  "internet-and-phone-signal-in-the-bush": InternetAndPhoneSignalInTheBushArticle,
+  "what-happens-if-you-get-sick-during-a-safari": WhatHappensIfYouGetSickDuringASafariArticle,
 }
 
 function getArticleMeta(slug: string) {

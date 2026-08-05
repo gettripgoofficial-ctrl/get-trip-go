@@ -50,4 +50,18 @@ export const kenyaArticleSeo: Record<string, string> = {
     "How Kenya's overstay fines work, what to do if you've overstayed, and how to extend your stay legally before it becomes a problem.",
   "visa-on-arrival-vs-eta-which-applies-to-you":
     "Why visa-on-arrival has largely been replaced by the eTA system, and how to confirm what actually applies to your nationality before you travel.",
+  "how-much-does-a-kenya-safari-cost":
+    "A realistic 2026 breakdown of what drives Kenya safari costs — budget, mid-range, and luxury tiers, what's typically included, and how to manage the overall price.",
+  "can-you-drink-the-water-in-kenya":
+    "Whether tap water is safe to drink in Kenya, what safari lodges actually provide, and practical tips for staying hydrated safely throughout a trip.",
+  "what-currency-should-you-carry-in-kenya":
+    "Whether to carry US dollars or Kenyan shillings, when each is accepted, and the best way to get local currency without losing money to poor exchange rates.",
+  "do-you-need-cash-or-card-on-safari":
+    "Where cards work reliably on a Kenya safari, where you genuinely need cash, and a practical split for carrying money on your trip.",
+  "kenya-time-zone-and-jet-lag-tips":
+    "Kenya's time zone explained, how big the jet lag adjustment is from Europe and North America, and practical tips for adjusting quickly before early morning game drives.",
+  "internet-and-phone-signal-in-the-bush":
+    "What internet and phone connectivity actually looks like on a Kenya safari, whether a local SIM card is worth getting, and how camps handle emergencies without cell coverage.",
+  "what-happens-if-you-get-sick-during-a-safari":
+    "How Kenya safari camps handle illness and injury, how flying-doctor evacuation works for serious cases, and what to prepare before your trip to stay covered.",
 }

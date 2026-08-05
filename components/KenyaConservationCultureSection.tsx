@@ -3,6 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { kenyaConservationCulture, kenyaFaqs } from "@/data/kenyaData"
 
+const PUBLISHED_FAQ_SLUGS = new Set<string>(["how-much-does-a-kenya-safari-cost", "tipping-etiquette-guides-drivers-lodge-staff", "can-you-drink-the-water-in-kenya", "what-currency-should-you-carry-in-kenya", "do-you-need-cash-or-card-on-safari", "kenya-time-zone-and-jet-lag-tips", "internet-and-phone-signal-in-the-bush", "what-happens-if-you-get-sick-during-a-safari"])
+
 const PUBLISHED_CONSERVATION_SLUGS = new Set<string>(["community-conservancies-how-locals-protect-wildlife", "anti-poaching-efforts-in-kenyas-parks", "rhino-conservation-the-fight-to-save-a-species", "the-maasai-guardians-of-the-mara", "climate-change-and-the-great-migration", "basic-swahili-phrases-and-kenyan-etiquette"])
 
 export default function KenyaConservationCultureSection() {
@@ -53,24 +55,36 @@ export default function KenyaConservationCultureSection() {
             FAQs
           </h2>
           <div className="flex flex-col gap-4 mt-4">
-            {kenyaFaqs.map(article => (
-              <div key={article.id} className="flex gap-3 cursor-pointer group">
-                <div className="relative w-12 h-12 flex-shrink-0 rounded-md overflow-hidden">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    sizes="48px"
-                    className="object-cover group-hover:scale-105 transition-transform"
-                  />
+            {kenyaFaqs.map(article => {
+              const isPublished = PUBLISHED_FAQ_SLUGS.has(article.id)
+              const cardInner = (
+                <>
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-md overflow-hidden">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      sizes="48px"
+                      className="object-cover group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 font-bold text-sm leading-snug group-hover:text-yellow-600 transition-colors">
+                      {article.title}
+                    </p>
+                  </div>
+                </>
+              )
+              return isPublished ? (
+                <Link key={article.id} href={`/kenya/${article.id}`} className="flex gap-3 cursor-pointer group">
+                  {cardInner}
+                </Link>
+              ) : (
+                <div key={article.id} className="flex gap-3 cursor-pointer group">
+                  {cardInner}
                 </div>
-                <div>
-                  <p className="text-gray-900 font-bold text-sm leading-snug group-hover:text-yellow-600 transition-colors">
-                    {article.title}
-                  </p>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

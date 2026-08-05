@@ -357,4 +357,130 @@ export const kenyaArticleFaqs: Record<string, { question: string; answer: string
       answer: "Airlines verify eTA status at check-in, so you risk being denied boarding before your flight even departs, not just facing an issue after landing in Kenya.",
     },
   ],
+  "how-much-does-a-kenya-safari-cost": [
+    {
+      question: "What's the difference between a budget and luxury Kenya safari?",
+      answer: "Budget safaris use group camping or basic lodges with road transfers, while luxury safaris offer high-end camps, often fly-in transfers, private guiding, and all-inclusive rates — the core wildlife experience is available at every tier.",
+    },
+    {
+      question: "What's usually not included in a safari package price?",
+      answer: "International flights, visa or eTA fees, travel insurance, guide and staff tips, and alcoholic drinks are typically extra unless the package is specifically marketed as fully all-inclusive.",
+    },
+    {
+      question: "Is it cheaper to travel during a specific season?",
+      answer: "Yes — shoulder seasons like November and April through May generally cost less than peak migration season (July to October) or the December holiday period.",
+    },
+    {
+      question: "Does a longer trip cost proportionally more?",
+      answer: "Not always — accommodation tier and internal flights affect the total cost more than trip length alone, so a shorter luxury trip can cost more than a longer budget one.",
+    },
+  ],
+  "can-you-drink-the-water-in-kenya": [
+    {
+      question: "Is tap water safe anywhere in Kenya?",
+      answer: "No — the standard advice is to avoid tap water for drinking throughout the country, including in Nairobi and at upscale hotels, and to rely on bottled or filtered water instead.",
+    },
+    {
+      question: "Do safari lodges provide drinking water?",
+      answer: "Yes — most established camps supply bottled or filtered water in rooms, often included in the rate, and increasingly use refillable bottles and filtered stations to reduce plastic waste.",
+    },
+    {
+      question: "Is ice safe to have in drinks in Kenya?",
+      answer: "At reputable lodges and hotels, yes — ice is typically made with filtered water, but it's worth being more cautious at very basic guesthouses or street vendors.",
+    },
+    {
+      question: "Should I bring a water purifier to Kenya?",
+      answer: "Not necessary for a standard lodge-based safari, since bottled and filtered water is widely available, but it can be a useful backup for longer overland or remote trips.",
+    },
+  ],
+  "what-currency-should-you-carry-in-kenya": [
+    {
+      question: "Should I bring US dollars or Kenyan shillings?",
+      answer: "Both — shillings for everyday spending like markets and tips, and dollars for larger pre-arranged payments like park fees and some safari packages.",
+    },
+    {
+      question: "Why are some US dollar bills rejected in Kenya?",
+      answer: "Many businesses and park gates only accept newer, undamaged bills, typically printed after around 2009, so it's worth requesting clean bills from your bank before traveling.",
+    },
+    {
+      question: "Is it better to withdraw cash or exchange currency in Kenya?",
+      answer: "Withdrawing shillings from an ATM after arrival generally gets a better exchange rate than exchanging cash at the airport.",
+    },
+    {
+      question: "Are credit cards widely accepted in Kenya?",
+      answer: "Yes, at most lodges, hotels, and higher-end restaurants, but cash is still needed for markets, small vendors, and tips.",
+    },
+  ],
+  "do-you-need-cash-or-card-on-safari": [
+    {
+      question: "Can I pay for my entire Kenya safari by card?",
+      answer: "Larger payments like lodge bills and tour packages can generally be settled by card, but tips, small purchases, and remote-area transactions still require cash.",
+    },
+    {
+      question: "Do lodges charge extra for card payments?",
+      answer: "Some do, typically a surcharge of around 3–5% to cover processing fees, so it's worth asking whether cash gets a better rate before paying.",
+    },
+    {
+      question: "How should I tip guides and staff — cash or card?",
+      answer: "Cash — tipping by card isn't standard practice in the safari industry, so carrying small-denomination bills for this purpose is essential.",
+    },
+    {
+      question: "Should I tell my bank I'm traveling to Kenya?",
+      answer: "Yes — notifying your bank of your travel dates ahead of time helps avoid your card being declined or flagged for suspicious activity mid-trip.",
+    },
+  ],
+  "kenya-time-zone-and-jet-lag-tips": [
+    {
+      question: "Does Kenya observe daylight saving time?",
+      answer: "No — Kenya stays on East Africa Time (UTC+3) year-round with no seasonal clock changes, so the time difference from home stays constant.",
+    },
+    {
+      question: "How big is the time difference from the US to Kenya?",
+      answer: "Roughly seven hours from the US East Coast and closer to ten hours from the West Coast, depending on the specific city and time of year in the US.",
+    },
+    {
+      question: "Should I plan a rest day before starting my safari?",
+      answer: "It's a good idea, especially for longer-haul travelers, since game drives often start before sunrise and a night in Nairobi first helps you adjust before those early mornings begin.",
+    },
+    {
+      question: "What's the fastest way to adjust to Kenya's time zone?",
+      answer: "Switching to destination time on the flight, getting sunlight soon after arrival, and staying hydrated all help your body adjust faster than fighting the new schedule.",
+    },
+  ],
+  "internet-and-phone-signal-in-the-bush": [
+    {
+      question: "Will I have phone signal on a game drive?",
+      answer: "Generally no — cell signal typically disappears once you leave camp, since most conservancies and remote park areas have no cellular infrastructure at all.",
+    },
+    {
+      question: "Do safari lodges have WiFi?",
+      answer: "Most established camps offer WiFi in common areas via satellite internet, usually sufficient for messaging and light browsing, though video calls can be unreliable.",
+    },
+    {
+      question: "Should I buy a local SIM card for a Kenya safari?",
+      answer: "It's useful for time spent in Nairobi or coastal towns, but it won't extend coverage into remote conservancies where no cellular network exists to connect to.",
+    },
+    {
+      question: "What happens in an emergency with no phone signal?",
+      answer: "Camps maintain their own radio networks and can coordinate emergency response, including flying-doctor evacuation, entirely independent of commercial cell coverage.",
+    },
+  ],
+  "what-happens-if-you-get-sick-during-a-safari": [
+    {
+      question: "What happens if I get seriously injured on safari?",
+      answer: "Camps coordinate flying-doctor evacuation to a Nairobi hospital using radio communication, even in areas with no cell signal, often getting a patient airlifted within a few hours.",
+    },
+    {
+      question: "Do I need special insurance for a Kenya safari?",
+      answer: "Travel insurance that specifically includes medical evacuation is strongly recommended, since standard medical coverage alone may not cover an airlift from a remote camp.",
+    },
+    {
+      question: "What are the most common health issues on safari?",
+      answer: "Mild stomach upset, sunburn, and dehydration are the most frequent complaints — serious injuries or wildlife-related incidents are rare.",
+    },
+    {
+      question: "Should I bring my own first aid supplies?",
+      answer: "Yes — a basic kit with any prescription medications, pain relief, and rehydration salts covers common needs that camps may not specifically stock for you.",
+    },
+  ],
 }
