@@ -44,4 +44,10 @@ export const kenyaArticleSeo: Record<string, string> = {
     "Essential Swahili greetings and safari vocabulary, plus everyday etiquette around greetings, dress, photography, and tipping to know before visiting Kenya.",
   "kenyas-big-cats-compared":
     "How to tell lions, leopards and cheetahs apart at a glance, where each is most likely to turn up, and how they rank against one another in the wild.",
+  "common-eta-mistakes-travelers-denied-boarding":
+    "The most common eTA application mistakes that get travelers denied boarding, from document quality issues to passport validity, and how to avoid them.",
+  "overstay-kenya-eta-what-happens":
+    "How Kenya's overstay fines work, what to do if you've overstayed, and how to extend your stay legally before it becomes a problem.",
+  "visa-on-arrival-vs-eta-which-applies-to-you":
+    "Why visa-on-arrival has largely been replaced by the eTA system, and how to confirm what actually applies to your nationality before you travel.",
 }

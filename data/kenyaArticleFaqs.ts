@@ -315,4 +315,46 @@ export const kenyaArticleFaqs: Record<string, { question: string; answer: string
       answer: "It's best to ask permission first — a quick request is a normal courtesy, and taking a photo without asking can come across as intrusive rather than friendly.",
     },
   ],
+  "common-eta-mistakes-travelers-denied-boarding": [
+    {
+      question: "Why was my Kenya eTA application rejected?",
+      answer: "Most rejections come from blurry document uploads, mismatched personal details between the application and passport, or applying through an unofficial third-party site with different processing standards.",
+    },
+    {
+      question: "Can I be denied boarding even with an approved eTA?",
+      answer: "Yes — if your passport doesn't meet the six-month validity requirement at check-in, airlines can deny boarding regardless of eTA approval status.",
+    },
+    {
+      question: "How early should I apply for my Kenya eTA?",
+      answer: "At least a week before departure, to leave time to fix any document or detail errors if the application is flagged or rejected on the first attempt.",
+    },
+  ],
+  "overstay-kenya-eta-what-happens": [
+    {
+      question: "What happens if I overstay my Kenya eTA by one day?",
+      answer: "A daily fine applies starting the day after your authorized stay ends. A single-day overstay is usually a minor, easily resolved cost if paid promptly before departure.",
+    },
+    {
+      question: "Where do I pay an overstay fine in Kenya?",
+      answer: "At an immigration office (Nairobi or another major city) before your departure date, or at the airport itself if the issue is only discovered at check-in.",
+    },
+    {
+      question: "Will an overstay affect my ability to visit Kenya again?",
+      answer: "A single short overstay resolved properly rarely causes long-term issues, but repeated or extended overstays can be flagged and complicate future applications.",
+    },
+  ],
+  "visa-on-arrival-vs-eta-which-applies-to-you": [
+    {
+      question: "Can I still get a visa on arrival in Kenya?",
+      answer: "For almost all travelers, no — Kenya has shifted to the eTA system, which must be approved before you travel. Visa-on-arrival is not a reliable option to plan around.",
+    },
+    {
+      question: "How do I know if I need an eTA for Kenya?",
+      answer: "Check Kenya's official immigration eTA portal directly with your nationality — this is the only reliably current source, since requirements have changed recently.",
+    },
+    {
+      question: "What happens if I arrive without an approved eTA?",
+      answer: "Airlines verify eTA status at check-in, so you risk being denied boarding before your flight even departs, not just facing an issue after landing in Kenya.",
+    },
+  ],
 }

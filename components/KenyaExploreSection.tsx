@@ -5,6 +5,14 @@ import { kenyaStays, kenyaVisaEntry, kenyaVisaEntryExtra, kenyaParksReserves } f
 
 const PUBLISHED_PARKS_SLUGS = new Set<string>(["masai-mara-vs-serengeti", "masai-mara-reserve-vs-conservancies", "amboseli-national-park-guide", "tsavo-largest-wildest-park", "lake-nakuru-park-birds-rhinos"])
 
+const PUBLISHED_VISA_SLUGS = new Set<string>([
+  "kenya-eta-guide-how-to-apply-cost-and-processing",
+  "yellow-fever-certificate-entry",
+  "common-eta-mistakes-travelers-denied-boarding",
+  "overstay-kenya-eta-what-happens",
+  "visa-on-arrival-vs-eta-which-applies-to-you",
+])
+
 function ArticleList({ articles, publishedSlugs }: { articles: typeof kenyaStays; publishedSlugs?: Set<string> }) {
   return (
     <div className="space-y-4 mt-4">
@@ -43,6 +51,36 @@ function ArticleList({ articles, publishedSlugs }: { articles: typeof kenyaStays
   )
 }
 
+function VisaCard({ article, isPublished }: { article: typeof kenyaVisaEntry[number]; isPublished: boolean }) {
+  const cardInner = (
+    <>
+      <div className="relative rounded-md overflow-hidden mb-2 flex-1 min-h-[160px]">
+        <Image
+          src={article.image}
+          alt={article.title}
+          fill
+          sizes="(max-width: 1024px) 50vw, 16vw"
+          className="object-cover group-hover:scale-105 transition-transform"
+        />
+      </div>
+      <p className={`font-bold text-sm leading-snug mb-1 transition-colors ${isPublished ? "text-gray-900 group-hover:text-yellow-600" : "text-gray-900"}`}>
+        {article.title}
+      </p>
+      <p className="text-gray-400 text-[11px]">{article.meta}</p>
+    </>
+  )
+
+  return isPublished ? (
+    <Link href={`/kenya/${article.id}`} className="cursor-pointer group flex flex-col h-full">
+      {cardInner}
+    </Link>
+  ) : (
+    <div className="cursor-default flex flex-col h-full">
+      {cardInner}
+    </div>
+  )
+}
+
 export default function KenyaExploreSection() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
@@ -62,38 +100,12 @@ export default function KenyaExploreSection() {
           </h2>
           <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-4">
             {kenyaVisaEntry.map(article => (
-              <div key={article.id} className="cursor-pointer group flex flex-col h-full">
-                <div className="relative rounded-md overflow-hidden mb-2 flex-1 min-h-[160px]">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 16vw"
-                    className="object-cover group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <p className="text-gray-900 font-bold text-sm leading-snug mb-1 group-hover:text-yellow-600 transition-colors">
-                  {article.title}
-                </p>
-                <p className="text-gray-400 text-[11px]">{article.meta}</p>
-              </div>
+              <VisaCard key={article.id} article={article} isPublished={PUBLISHED_VISA_SLUGS.has(article.id)} />
             ))}
           </div>
           {kenyaVisaEntryExtra.map(article => (
-            <div key={article.id} className="cursor-pointer group flex flex-col mt-4 flex-1">
-              <div className="relative rounded-md overflow-hidden mb-2 flex-1 min-h-[160px]">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 32vw"
-                  className="object-cover group-hover:scale-105 transition-transform"
-                />
-              </div>
-              <p className="text-gray-900 font-bold text-sm leading-snug mb-1 group-hover:text-yellow-600 transition-colors">
-                {article.title}
-              </p>
-              <p className="text-gray-400 text-[11px]">{article.meta}</p>
+            <div key={article.id} className="mt-4 flex-1">
+              <VisaCard article={article} isPublished={PUBLISHED_VISA_SLUGS.has(article.id)} />
             </div>
           ))}
         </div>

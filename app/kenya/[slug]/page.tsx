@@ -5,6 +5,7 @@ import {
   kenyaSafariWildlife,
   kenyaParksReserves,
   kenyaVisaEntry,
+  kenyaVisaEntryExtra,
   kenyaConservationCulture,
 } from "@/data/kenyaData"
 import { kenyaArticleSeo } from "@/data/kenyaArticleSeo"
@@ -29,6 +30,9 @@ import RhinoConservationTheFightToSaveASpeciesArticle from "@/components/kenya-a
 import TheMaasaiGuardiansOfTheMaraArticle from "@/components/kenya-articles/the-maasai-guardians-of-the-mara"
 import ClimateChangeAndTheGreatMigrationArticle from "@/components/kenya-articles/climate-change-and-the-great-migration"
 import BasicSwahiliPhrasesAndKenyanEtiquetteArticle from "@/components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette"
+import CommonEtaMistakesArticle from "@/components/kenya-articles/common-eta-mistakes-travelers-denied-boarding"
+import OverstayKenyaEtaWhatHappensArticle from "@/components/kenya-articles/overstay-kenya-eta-what-happens"
+import VisaOnArrivalVsEtaArticle from "@/components/kenya-articles/visa-on-arrival-vs-eta-which-applies-to-you"
 
 // All articles that can be looked up by slug across every Kenya category.
 const allArticles = [
@@ -36,6 +40,7 @@ const allArticles = [
   ...kenyaSafariWildlife,
   ...kenyaParksReserves,
   ...kenyaVisaEntry,
+  ...kenyaVisaEntryExtra,
   ...kenyaConservationCulture,
 ]
 
@@ -59,6 +64,9 @@ const registry: Record<string, React.ComponentType> = {
   "the-maasai-guardians-of-the-mara": TheMaasaiGuardiansOfTheMaraArticle,
   "climate-change-and-the-great-migration": ClimateChangeAndTheGreatMigrationArticle,
   "basic-swahili-phrases-and-kenyan-etiquette": BasicSwahiliPhrasesAndKenyanEtiquetteArticle,
+  "common-eta-mistakes-travelers-denied-boarding": CommonEtaMistakesArticle,
+  "overstay-kenya-eta-what-happens": OverstayKenyaEtaWhatHappensArticle,
+  "visa-on-arrival-vs-eta-which-applies-to-you": VisaOnArrivalVsEtaArticle,
 }
 
 function getArticleMeta(slug: string) {

@@ -101,4 +101,19 @@ export const kenyaArticleRelated: Record<string, { title: string; href: string }
     { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
     { title: "Safari Budget Guide: Luxury vs Mid-Range vs Budget", href: "/kenya/safari-budget-guide-luxury-vs-mid-range-vs-budget" },
   ],
+  "common-eta-mistakes-travelers-denied-boarding": [
+    { title: "Kenya eTA Guide: How to Apply, Cost and Processing Time", href: "/kenya/kenya-eta-guide-how-to-apply-cost-and-processing" },
+    { title: "What Happens If You Overstay Your Kenya eTA", href: "/kenya/overstay-kenya-eta-what-happens" },
+    { title: "Kenya Visa on Arrival vs eTA: Which One Applies to You", href: "/kenya/visa-on-arrival-vs-eta-which-applies-to-you" },
+  ],
+  "overstay-kenya-eta-what-happens": [
+    { title: "Kenya eTA Guide: How to Apply, Cost and Processing Time", href: "/kenya/kenya-eta-guide-how-to-apply-cost-and-processing" },
+    { title: "Common eTA Mistakes That Get Travelers Denied Boarding", href: "/kenya/common-eta-mistakes-travelers-denied-boarding" },
+    { title: "Kenya Visa on Arrival vs eTA: Which One Applies to You", href: "/kenya/visa-on-arrival-vs-eta-which-applies-to-you" },
+  ],
+  "visa-on-arrival-vs-eta-which-applies-to-you": [
+    { title: "Kenya eTA Guide: How to Apply, Cost and Processing Time", href: "/kenya/kenya-eta-guide-how-to-apply-cost-and-processing" },
+    { title: "Common eTA Mistakes That Get Travelers Denied Boarding", href: "/kenya/common-eta-mistakes-travelers-denied-boarding" },
+    { title: "What Happens If You Overstay Your Kenya eTA", href: "/kenya/overstay-kenya-eta-what-happens" },
+  ],
 }
