@@ -89,6 +89,10 @@ function getArticleMeta(slug: string) {
   return allArticles.find((a) => a.id === slug)
 }
 
+export async function generateStaticParams() {
+  return Object.keys(registry).map((slug) => ({ slug }))
+}
+
 export async function generateMetadata({
   params,
 }: {

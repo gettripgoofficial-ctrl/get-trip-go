@@ -1,8 +1,15 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import HeroSection from "./HeroSection"
-import HeroSectionMobile from "./HeroSectionMobile"
+import dynamic from "next/dynamic"
+const HeroSection = dynamic(() => import("./HeroSection"), {
+  ssr: false,
+  loading: () => <div style={{ height: "85vh", minHeight: "648px" }} className="w-full bg-[#1A56F0] md:bg-transparent" />,
+})
+const HeroSectionMobile = dynamic(() => import("./HeroSectionMobile"), {
+  ssr: false,
+  loading: () => <div style={{ height: "85vh", minHeight: "648px" }} className="w-full bg-[#1A56F0] md:bg-transparent" />,
+})
 
 /**
  * Renders ONLY the hero variant that matches the real screen size,
