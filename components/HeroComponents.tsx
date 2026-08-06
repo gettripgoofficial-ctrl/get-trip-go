@@ -279,7 +279,7 @@ export function OfferModal({ offer, onClose }: { offer: Offer; onClose: () => vo
             </span>
             <h2 className="text-white font-extrabold text-xl leading-tight">{offer.title}</h2>
           </div>
-          <button onClick={onClose} className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+          <button onClick={onClose} aria-label="Close offer" className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
             <X size={16} color="white" />
           </button>
         </div>

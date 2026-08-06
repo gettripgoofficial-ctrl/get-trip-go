@@ -85,6 +85,7 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => { setShowCurrency(!showCurrency); setShowLang(false) }}
+              aria-label="Change currency"
               className="flex items-center gap-1 text-sm font-bold text-[#1A3A6B] border border-[#1A3A6B]/20 px-3 py-2 rounded-full hover:bg-[#1A3A6B]/10 transition-colors"
             >
               {selectedCurrency} ▾
@@ -110,6 +111,7 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => { setShowLang(!showLang); setShowCurrency(false) }}
+              aria-label="Change language"
               className="flex items-center gap-1 text-sm font-bold text-[#1A3A6B] border border-[#1A3A6B]/20 px-3 py-2 rounded-full hover:bg-[#1A3A6B]/10 transition-colors"
             >
               {langShort[selectedLang]} ▾

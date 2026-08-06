@@ -58,7 +58,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
               <p className="text-white/70 text-xs">We typically reply within minutes</p>
             </div>
           </div>
-          <button onClick={onClose} className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+          <button onClick={onClose} aria-label="Close support chat" className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors">
             <X size={14} />
           </button>
         </div>

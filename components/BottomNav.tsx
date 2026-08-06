@@ -62,6 +62,7 @@ export default function BottomNav() {
           <div className="flex flex-col items-center -mt-5">
             <button
               onClick={() => setEnquiryOpen(true)}
+              aria-label="Open enquiry form"
               className="flex flex-col items-center justify-center w-14 h-14 rounded-full bg-[#1A56F0] shadow-lg shadow-blue-300 active:scale-95 transition-transform"
             >
               <PhoneCall size={20} className="text-white" />
@@ -104,6 +105,7 @@ export default function BottomNav() {
               <h3 className="text-sm font-bold text-gray-800">Travel Tools</h3>
               <button
                 onClick={() => setToolsOpen(false)}
+                aria-label="Close travel tools"
                 className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-100"
               >
                 <X size={14} className="text-gray-500" />
