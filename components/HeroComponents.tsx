@@ -45,23 +45,30 @@ export function KlookBannerCarousel() {
     return () => clearInterval(interval)
   }, [])
 
-  const { bgtype } = KLOOK_SLIDES[activeIndex]
-
   return (
     <div ref={containerRef} className="relative rounded-xl overflow-hidden w-full" style={{ height: 60 * scale + "px" }}>
-      <iframe
-        key={activeIndex}
-        src={`/api/klook-widget?bgtype=${bgtype}&t=${activeIndex}`}
-        style={{
-          width: "468px",
-          height: "60px",
-          transform: `scale(${scale})`,
-          transformOrigin: "top left",
-          border: "none",
-          display: "block",
-        }}
-        scrolling="no"
-      />
+      {KLOOK_SLIDES.map((slide, i) => (
+        <iframe
+          key={slide.bgtype}
+          src={`/api/klook-widget?bgtype=${slide.bgtype}`}
+          loading="lazy"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "468px",
+            height: "60px",
+            transform: `scale(${scale})`,
+            transformOrigin: "top left",
+            border: "none",
+            display: "block",
+            opacity: i === activeIndex ? 1 : 0,
+            transition: "opacity 0.4s ease",
+            pointerEvents: i === activeIndex ? "auto" : "none",
+          }}
+          scrolling="no"
+        />
+      ))}
       <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 flex gap-1 z-10" style={{ pointerEvents: "none" }}>
         {KLOOK_SLIDES.map((_, i) => (
           <div

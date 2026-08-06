@@ -30,8 +30,7 @@ export async function GET(req: NextRequest) {
   return new NextResponse(html, {
     headers: {
       "Content-Type": "text/html",
-      // No caching — each request must be fresh
-      "Cache-Control": "no-store",
+      "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
     },
   })
 }
