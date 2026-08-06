@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function CheetahsOfTheMaraArticle() {
   return (
     <>
@@ -60,11 +61,13 @@ export default function CheetahsOfTheMaraArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1755968835797-96c5e810242f?w=1200&q=80"
           alt="A cheetah running across grassy plains in the Masai Mara"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

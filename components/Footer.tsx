@@ -3,6 +3,8 @@ import React, { useState } from "react"
 import Link from "next/link"
 
 const quickLinks = [
+  { label: "Flights", href: "/flights" },
+  { label: "Hotels", href: "/hotels" },
   { label: "Best Deals", href: null },
   { label: "Special Offers", href: null },
   { label: "Group Departures", href: "/group-departures" },
@@ -13,6 +15,8 @@ const quickLinks = [
 ]
 
 const supportLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Visa Assistance", href: "/visa" },
   { label: "Help Center", href: "/help" },
   { label: "Terms of Service", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },

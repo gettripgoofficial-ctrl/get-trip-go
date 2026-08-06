@@ -40,6 +40,12 @@ const kenyaArticleSlugs = [
   "altitude-sickness-in-the-kenyan-highlands",
   "drinking-water-and-food-safety-on-safari",
   "safari-first-aid-what-to-pack",
+  "is-a-kenya-safari-safe-during-pregnancy",
+  "safari-with-young-children-age-limits",
+  "safari-for-travelers-with-mobility-issues",
+  "is-kenya-suitable-for-solo-female-travelers",
+  "safari-for-people-with-heart-conditions",
+  "elderly-travelers-what-to-know",
 ];
 
 // Dynamic /kenya/[slug] articles -- only include ones actually registered in

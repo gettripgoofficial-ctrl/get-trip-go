@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function CommunityConservanciesHowLocalsProtectWildlifeArticle() {
   return (
     <>
@@ -62,11 +63,13 @@ export default function CommunityConservanciesHowLocalsProtectWildlifeArticle() 
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1547970793-b0e1f0b73cf6?w=1200&q=80"
           alt="Maasai guide walking across open conservancy land in Kenya"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

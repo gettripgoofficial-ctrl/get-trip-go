@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Why Choose Get Trip Go? Trusted by 50M+ Travellers",
+  description:
+    "See why millions of Indian travellers book flights, hotels and holidays with Get Trip Go — best fares, 24/7 support, and secure payments.",
+};
+
 const stats = [
   { num: "50M+", label: "Travellers Served" },
   { num: "150+", label: "Countries Covered" },

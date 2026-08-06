@@ -427,7 +427,7 @@ export const kenyaParksReserves: KenyaArticle[] = [
 
 export const kenyaVisaEntry: KenyaArticle[] = [
   {
-    id: "kenya-eta-guide-apply-cost-processing-time",
+    id: "kenya-eta-guide-how-to-apply-cost-and-processing",
     title: "Kenya eTA Guide: How to Apply, Cost and Processing Time",
     category: "Visa & Entry",
     image: "https://images.unsplash.com/photo-1532188142562-df556b861e6a?w=400&q=80",
@@ -443,7 +443,7 @@ export const kenyaVisaEntry: KenyaArticle[] = [
     meta: "Travel Desk • Jul 18, 2026",
   },
   {
-    id: "yellow-fever-certificate-kenya-entry",
+    id: "yellow-fever-certificate-entry",
     title: "Do You Need a Yellow Fever Certificate to Enter Kenya",
     category: "Visa & Entry",
     image: "https://images.unsplash.com/photo-1654163600175-efc47ce20b29?w=400&q=80",

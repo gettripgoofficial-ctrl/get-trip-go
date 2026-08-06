@@ -151,4 +151,69 @@ export const kenyaArticleRelated: Record<string, { title: string; href: string }
     { title: "Safari First Aid: What to Pack in Your Kit", href: "/kenya/safari-first-aid-what-to-pack-in-your-kit" },
     { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
   ],
+  "what-to-wear-on-a-kenya-safari": [
+    { title: "Tsetse Flies: Why Blue and Black Clothing Is a Problem", href: "/kenya/tsetse-flies-blue-and-black-clothing" },
+    { title: "Packing List for a 10-Day Kenya Safari", href: "/kenya/packing-list-for-a-10-day-kenya-safari" },
+    { title: "Safari Footwear: What Actually Works", href: "/kenya/safari-footwear-what-actually-works" },
+  ],
+  "tsetse-flies-blue-and-black-clothing": [
+    { title: "What to Wear on a Kenya Safari: Colors, Fabrics and Layers", href: "/kenya/what-to-wear-on-a-kenya-safari" },
+    { title: "Packing List for a 10-Day Kenya Safari", href: "/kenya/packing-list-for-a-10-day-kenya-safari" },
+    { title: "Sun Protection: Hats, SPF and Sunglasses for Safari", href: "/kenya/sun-protection-hats-spf-sunglasses" },
+  ],
+  "sun-protection-hats-spf-sunglasses": [
+    { title: "What to Wear on a Kenya Safari: Colors, Fabrics and Layers", href: "/kenya/what-to-wear-on-a-kenya-safari" },
+    { title: "Packing List for a 10-Day Kenya Safari", href: "/kenya/packing-list-for-a-10-day-kenya-safari" },
+    { title: "Safari Footwear: What Actually Works", href: "/kenya/safari-footwear-what-actually-works" },
+  ],
+  "packing-list-for-a-10-day-kenya-safari": [
+    { title: "What to Wear on a Kenya Safari: Colors, Fabrics and Layers", href: "/kenya/what-to-wear-on-a-kenya-safari" },
+    { title: "Duffel Bags Only: Safari Luggage Restrictions Explained", href: "/kenya/duffel-bags-only-safari-luggage-restrictions" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+  ],
+  "duffel-bags-only-safari-luggage-restrictions": [
+    { title: "Packing List for a 10-Day Kenya Safari", href: "/kenya/packing-list-for-a-10-day-kenya-safari" },
+    { title: "What to Wear on a Kenya Safari: Colors, Fabrics and Layers", href: "/kenya/what-to-wear-on-a-kenya-safari" },
+    { title: "Getting Around: Light Aircraft vs Road Safaris", href: "/kenya/getting-around-light-aircraft-vs-road-safaris" },
+  ],
+  "angama-mara-suites-on-the-escarpment": [
+    { title: "Masai Mara vs Serengeti", href: "/kenya/masai-mara-vs-serengeti" },
+    { title: "Masai Mara Reserve vs Conservancies", href: "/kenya/masai-mara-reserve-vs-conservancies" },
+    { title: "The Wildebeest River Crossing: A Photographer's Guide", href: "/kenya/wildebeest-river-crossing-guide" },
+  ],
+  "giraffe-manor-breakfast-with-giraffes": [
+    { title: "Giraffes of Kenya", href: "/kenya/giraffes-of-kenya" },
+    { title: "Angama Mara: Suites on the Escarpment", href: "/kenya/angama-mara-suites-on-the-escarpment" },
+    { title: "How Many Days Do You Need for a Kenya Safari", href: "/kenya/how-many-days-do-you-need-for-a-kenya-safari" },
+  ],
+  "finch-hattons-out-of-africa-reimagined": [
+    { title: "Tsavo: Largest, Wildest Park", href: "/kenya/tsavo-largest-wildest-park" },
+    { title: "Giraffe Manor: Breakfast With Giraffes", href: "/kenya/giraffe-manor-breakfast-with-giraffes" },
+    { title: "Rare Sightings: Black Rhinos", href: "/kenya/rare-sightings-black-rhinos" },
+  ],
+  "ilora-retreats-design-led-luxury-in-the-mara": [
+    { title: "Angama Mara: Suites on the Escarpment", href: "/kenya/angama-mara-suites-on-the-escarpment" },
+    { title: "Masai Mara vs Serengeti", href: "/kenya/masai-mara-vs-serengeti" },
+    { title: "Masai Mara Reserve vs Conservancies", href: "/kenya/masai-mara-reserve-vs-conservancies" },
+  ],
+  "loldia-house-a-colonial-farmhouse": [
+    { title: "Lake Naivasha Boat Safaris", href: "/kenya/lake-naivasha-boat-safaris" },
+    { title: "Hell's Gate Walking Safari Park", href: "/kenya/hells-gate-walking-safari-park" },
+    { title: "How Many Days Do You Need for a Kenya Safari", href: "/kenya/how-many-days-do-you-need-for-a-kenya-safari" },
+  ],
+  "sasaab-a-moroccan-style-lodge": [
+    { title: "Rare Sightings: Black Rhinos", href: "/kenya/rare-sightings-black-rhinos" },
+    { title: "Giraffes of Kenya", href: "/kenya/giraffes-of-kenya" },
+    { title: "Ol Donyo Lodge: Under Kilimanjaro's Shadow", href: "/kenya/ol-donyo-lodge-under-kilimanjaros-shadow" },
+  ],
+  "ol-donyo-lodge-under-kilimanjaros-shadow": [
+    { title: "Tsavo: Largest, Wildest Park", href: "/kenya/tsavo-largest-wildest-park" },
+    { title: "Amboseli National Park Guide", href: "/kenya/amboseli-national-park-guide" },
+    { title: "Amboseli's Last Super Tuskers", href: "/kenya/amboselis-last-super-tuskers" },
+  ],
+  "segera-retreat-conservancy-and-infinity-pool": [
+    { title: "Community Conservancies: How Locals Protect Wildlife", href: "/kenya/community-conservancies-how-locals-protect-wildlife" },
+    { title: "Ol Donyo Lodge: Under Kilimanjaro's Shadow", href: "/kenya/ol-donyo-lodge-under-kilimanjaros-shadow" },
+    { title: "Giraffes of Kenya", href: "/kenya/giraffes-of-kenya" },
+  ],
 }

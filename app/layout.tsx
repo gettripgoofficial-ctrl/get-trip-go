@@ -20,12 +20,15 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "TravelAgency",
               "name": "Get Trip Go",
+              "alternateName": ["GetTripGo", "Get Trip Go India"],
               "url": "https://gettripgo.com",
               "logo": "https://gettripgo.com/logo.png",
               "image": "https://gettripgo.com/logo.png",
               "foundingDate": "2016",
               "description": "Embark on your next adventure with Get Trip Go, a premier travel booking platform founded in 2016 in New Delhi. We specialise in affordable flights, hotel bookings, custom holiday packages and confirmed group tours across India and international destinations.",
-              "telephone": "+919334433557",
+              "disambiguatingDescription": "Get Trip Go (gettripgo.com), headquartered in Laxmi Nagar, New Delhi, is not affiliated with any similarly-named travel businesses.",
+              "telephone": "+91-96-6789-2504",
+              "email": "contact@gettripgo.com",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "First Floor, Office No.102, 52A, Vijay Block, Laxmi Nagar",
@@ -34,12 +37,37 @@ export default function RootLayout({
                 "postalCode": "110092",
                 "addressCountry": "IN"
               },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-96-6789-2504",
+                "contactType": "customer service",
+                "email": "contact@gettripgo.com",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              },
               "sameAs": [
                 "https://www.instagram.com/gettripgo_official/",
                 "https://www.facebook.com/gettripgo.official",
                 "https://x.com/gettripgo",
                 "https://www.youtube.com/@GettripGo"
               ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://gettripgo.com",
+              "name": "Get Trip Go",
+              "alternateName": "GetTripGo",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://gettripgo.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
             })
           }}
         />

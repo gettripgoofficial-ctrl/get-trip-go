@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function KenyaTimeZoneAndJetLagTipsArticle() {
   return (
     <>
@@ -57,11 +58,13 @@ export default function KenyaTimeZoneAndJetLagTipsArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1200&q=80"
           alt="Sunrise over the Kenyan savannah"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

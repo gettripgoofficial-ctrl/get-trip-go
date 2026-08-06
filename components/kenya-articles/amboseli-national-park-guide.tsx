@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function AmboseliNationalParkGuideArticle() {
   return (
     <>
@@ -48,11 +49,13 @@ export default function AmboseliNationalParkGuideArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1516947401450-4b5a58c60a08?w=1200&q=80"
           alt="Elephant herd crossing Amboseli's plains with Mount Kilimanjaro in the background"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

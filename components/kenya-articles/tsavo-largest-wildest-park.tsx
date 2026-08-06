@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function TsavoLargestWildestParkArticle() {
   return (
     <>
@@ -52,11 +53,13 @@ export default function TsavoLargestWildestParkArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?w=1200&q=80"
           alt="Red-dust elephants in Tsavo East National Park, Kenya"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

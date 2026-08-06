@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function HowMuchDoesAKenyaSafariCostArticle() {
   return (
     <>
@@ -63,11 +64,13 @@ export default function HowMuchDoesAKenyaSafariCostArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80"
           alt="Safari camp tent overlooking the Kenyan savannah"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

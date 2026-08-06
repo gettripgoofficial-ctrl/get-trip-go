@@ -483,4 +483,218 @@ export const kenyaArticleFaqs: Record<string, { question: string; answer: string
       answer: "Yes — a basic kit with any prescription medications, pain relief, and rehydration salts covers common needs that camps may not specifically stock for you.",
     },
   ],
+  "what-to-wear-on-a-kenya-safari": [
+    {
+      question: "What colors should I avoid on a Kenya safari?",
+      answer: "Avoid white (shows dust), black (absorbs heat and attracts tsetse flies), and bright colors (unnatural against the landscape and can startle wildlife at close range).",
+    },
+    {
+      question: "Do I really need a warm layer if I'm visiting in dry season?",
+      answer: "Yes — early morning game drives are cold even in peak dry season, especially at higher-elevation camps, regardless of how hot the afternoon gets.",
+    },
+    {
+      question: "Is cotton or synthetic fabric better for safari?",
+      answer: "Lightweight cotton or cotton-blend fabric generally performs better across a multi-day safari than synthetic athletic wear, which tends to trap heat and odor.",
+    },
+  ],
+  "tsetse-flies-blue-and-black-clothing": [
+    {
+      question: "Why do tsetse flies prefer blue and black clothing?",
+      answer: "Tsetse flies hunt visually and are measurably drawn to dark blue and black over lighter, neutral colors — the same principle used in blue-and-black cloth traps for fly-control programs.",
+    },
+    {
+      question: "Are tsetse fly bites dangerous in Kenya's main safari parks?",
+      answer: "The bite itself is painful but the disease-transmission risk in Kenya's main tourist circuit is low; it's more of a comfort issue than a serious health concern for most travelers.",
+    },
+    {
+      question: "Does insect repellent work against tsetse flies?",
+      answer: "Standard mosquito repellent has limited effectiveness against tsetse flies — clothing color and covering exposed skin matter more.",
+    },
+  ],
+  "sun-protection-hats-spf-sunglasses": [
+    {
+      question: "Is sun exposure really stronger in Kenya than at home?",
+      answer: "Yes, generally — equatorial location combined with the altitude of many safari areas increases UV intensity compared to most travelers' home climates.",
+    },
+    {
+      question: "How often should I reapply sunscreen on a game drive?",
+      answer: "Roughly every two to three hours during extended sun exposure, and sooner if you're sweating heavily or the drive runs through the middle of the day.",
+    },
+    {
+      question: "Do I need polarized sunglasses specifically?",
+      answer: "Not strictly required, but polarized lenses noticeably cut glare off open grassland and dry ground, making it easier to spot wildlife as well as protecting your eyes.",
+    },
+  ],
+  "packing-list-for-a-10-day-kenya-safari": [
+    {
+      question: "Do I need to pack clothes for all 10 days?",
+      answer: "No — most camps offer laundry service, so packing for 5 to 6 days and refreshing your rotation is enough for a 10-day trip.",
+    },
+    {
+      question: "What kind of bag should I bring?",
+      answer: "A soft-sided duffel bag — hard-shell suitcases usually aren't accepted on light aircraft transfers between camps.",
+    },
+    {
+      question: "Should I bring my own binoculars?",
+      answer: "Most camps have a few to share, but a personal pair is worth packing if birding or detailed wildlife viewing is a priority for you.",
+    },
+  ],
+  "duffel-bags-only-safari-luggage-restrictions": [
+    {
+      question: "Can I bring a regular wheeled suitcase on safari?",
+      answer: "Only if your entire itinerary stays on road transfers — if any leg involves a light aircraft, you'll need a soft duffel instead.",
+    },
+    {
+      question: "What happens if my bag is overweight?",
+      answer: "You'll typically be charged a per-kilo excess fee on the spot, or in some cases the excess weight is held back for a later flight.",
+    },
+    {
+      question: "Can I store extra luggage somewhere during my safari?",
+      answer: "Yes — most tour operators can arrange luggage storage in Nairobi for bags that don't need to travel with you on internal light-aircraft flights.",
+    },
+  ],
+  "angama-mara-suites-on-the-escarpment": [
+    {
+      question: "Where exactly is Angama Mara located?",
+      answer: "On the Oloololo Escarpment, overlooking the Mara Triangle within the greater Masai Mara ecosystem, roughly 1,000 feet above the valley floor.",
+    },
+    {
+      question: "What's the difference between Angama Mara and Angama Safari Camp?",
+      answer: "Angama Mara is the original, more design-forward property, while Angama Safari Camp nearby offers a slightly more classic tented style — both share the same escarpment setting and game drive access.",
+    },
+    {
+      question: "Do the game drives reach the Mara Triangle from the escarpment?",
+      answer: "Yes — vehicles descend into the valley for game drives, giving full access to the same wildlife and migration territory as camps based on the plains below.",
+    },
+    {
+      question: "How do you get to Angama Mara?",
+      answer: "Most guests fly in via a nearby airstrip; the camp is also reachable by road up the escarpment from the Mara Triangle valley floor.",
+    },
+  ],
+  "giraffe-manor-breakfast-with-giraffes": [
+    {
+      question: "Where is Giraffe Manor located?",
+      answer: "In Nairobi, adjacent to the Giraffe Centre, roughly 20 minutes from the city center — making it easy to combine with an arrival or departure day.",
+    },
+    {
+      question: "Do the giraffes really put their heads through the windows?",
+      answer: "Yes — resident Rothschild's giraffes regularly approach the dining room windows during breakfast and other meals looking for pellets from guests.",
+    },
+    {
+      question: "How far in advance should I book Giraffe Manor?",
+      answer: "Well in advance — often a year or more for peak periods, given the limited number of rooms and high demand from travelers building it into their Kenya itinerary.",
+    },
+    {
+      question: "Is Giraffe Manor connected to a conservation program?",
+      answer: "Yes — it's linked to the neighboring Giraffe Centre's Rothschild's giraffe breeding and rehabilitation program, which the resident giraffes descend from.",
+    },
+  ],
+  "finch-hattons-out-of-africa-reimagined": [
+    {
+      question: "Where is Finch Hattons located?",
+      answer: "In Tsavo West National Park, built around a cluster of natural freshwater springs that draw wildlife directly to the camp.",
+    },
+    {
+      question: "Who was Finch Hatton, and why is the camp named after him?",
+      answer: "Denys Finch Hatton was a safari guide and aviator central to the \"Out of Africa\" story, and the camp's vintage 1920s aesthetic is a deliberate nod to that era of East African safari travel.",
+    },
+    {
+      question: "Can you see wildlife directly from the camp?",
+      answer: "Yes — the surrounding springs and forest regularly draw elephants, buffalo, and birdlife right to the edge of the property.",
+    },
+    {
+      question: "What is Tsavo West known for?",
+      answer: "A volcanic landscape, the Mzima Springs ecosystem, and elephants known for their reddish tint from dust-bathing in the park's distinctive red soil.",
+    },
+  ],
+  "ilora-retreats-design-led-luxury-in-the-mara": [
+    {
+      question: "What makes Ilora Retreats different from other Mara camps?",
+      answer: "A contemporary, design-led aesthetic rather than the traditional colonial-style safari look most Mara camps use, combined with an intentionally intimate scale.",
+    },
+    {
+      question: "Is Ilora Retreats a good fit for a first Mara safari?",
+      answer: "Yes — it offers full access to the Mara ecosystem's wildlife and migration territory, suited to travelers who also want a more design-conscious, boutique atmosphere.",
+    },
+    {
+      question: "Why does camp size matter for the guest experience?",
+      answer: "A smaller camp typically means higher staff-to-guest ratios, more personalized game drive planning, and a quieter, less crowded overall pace.",
+    },
+    {
+      question: "What wildlife can you see from a camp based in the Mara ecosystem?",
+      answer: "Big cats, resident plains game, and, seasonally, the Great Migration herds — the same headline sightings most Mara-area properties offer access to.",
+    },
+  ],
+  "loldia-house-a-colonial-farmhouse": [
+    {
+      question: "Where is Loldia House located?",
+      answer: "On the shores of Lake Naivasha in Kenya's Great Rift Valley, roughly a two-hour drive from Nairobi.",
+    },
+    {
+      question: "What makes Loldia House different from a typical safari camp?",
+      answer: "It's part of a genuine working farm with a colonial-era farmhouse character, rather than a purpose-built lodge, set on lakeshore and farmland rather than open savannah.",
+    },
+    {
+      question: "What activities are available at Lake Naivasha?",
+      answer: "Boat safaris for hippo and bird viewing, fishing, horseback riding, and general birdwatching across the lake's rich surrounding habitat.",
+    },
+    {
+      question: "Is Lake Naivasha a good stop to combine with a Mara safari?",
+      answer: "Yes — many travelers use it as a lower-key transition stop early or late in a Kenya itinerary, given its proximity to Nairobi and different pace from a game-drive-heavy schedule.",
+    },
+  ],
+  "sasaab-a-moroccan-style-lodge": [
+    {
+      question: "Where is Sasaab located?",
+      answer: "Above the Ewaso Nyiro River in the Samburu region of northern Kenya, a drier and more remote landscape than the Mara or Amboseli.",
+    },
+    {
+      question: "What is the Samburu Special Five?",
+      answer: "Grevy's zebra, reticulated giraffe, Somali ostrich, gerenuk, and beisa oryx — species adapted to Samburu's arid landscape that aren't typically found in Kenya's southern parks.",
+    },
+    {
+      question: "What's distinctive about Sasaab's design?",
+      answer: "A Moroccan-influenced style with white domed architecture and open, airy rooms, each with a private plunge pool overlooking the river valley — a notable contrast to the canvas-tent look common elsewhere in Kenya.",
+    },
+    {
+      question: "Is Sasaab a good addition after visiting the Mara?",
+      answer: "Yes — Samburu's arid ecosystem and species list are genuinely different from the Mara's, making it a strong second stop for travelers who want variety across their trip.",
+    },
+  ],
+  "ol-donyo-lodge-under-kilimanjaros-shadow": [
+    {
+      question: "Where is Ol Donyo Lodge located?",
+      answer: "In the Chyulu Hills, on 100,000 private hectares positioned between Tsavo and Amboseli national parks.",
+    },
+    {
+      question: "Can you actually see Kilimanjaro from Ol Donyo?",
+      answer: "Yes, on clear days, particularly early in the morning before cloud cover builds up over the mountain.",
+    },
+    {
+      question: "What is a star-bed room?",
+      answer: "A bed that rolls out onto a private outdoor deck, letting guests sleep under the open night sky with unobstructed stargazing.",
+    },
+    {
+      question: "Why does the conservancy see so many elephants?",
+      answer: "The land functions as a natural wildlife corridor between Tsavo and Amboseli, so large elephant herds regularly move through the property.",
+    },
+  ],
+  "segera-retreat-conservancy-and-infinity-pool": [
+    {
+      question: "Where is Segera Retreat located?",
+      answer: "In Laikipia, a private conservancy region north of the Mara known for lower visitor density and diverse landscapes.",
+    },
+    {
+      question: "What wildlife can you see at Segera and around Laikipia?",
+      answer: "Classic savannah species alongside rarer sightings like the reticulated giraffe and Grevy's zebra, which are less common in Kenya's southern parks.",
+    },
+    {
+      question: "What makes Segera's conservancy model distinctive?",
+      answer: "It combines tourism with sustainable agriculture and arts programming alongside wildlife conservation, funding a broader working conservancy rather than operating as a standalone lodge.",
+    },
+    {
+      question: "What activities are available beyond game drives?",
+      answer: "Night drives, walking safaris, and horseback riding are typically available through Laikipia's private conservancies, activities that most national parks restrict.",
+    },
+  ],
 }

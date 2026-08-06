@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function DoYouNeedCashOrCardOnSafariArticle() {
   return (
     <>
@@ -57,11 +58,13 @@ export default function DoYouNeedCashOrCardOnSafariArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80"
           alt="Traveler paying with cash at a Kenyan market stall"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

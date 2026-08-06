@@ -8,6 +8,7 @@ import {
   kenyaVisaEntryExtra,
   kenyaConservationCulture,
   kenyaFaqs,
+  kenyaWhatToWear,
 } from "@/data/kenyaData"
 import { kenyaArticleSeo } from "@/data/kenyaArticleSeo"
 import { kenyaArticleFaqs } from "@/data/kenyaArticleFaqs"
@@ -41,6 +42,19 @@ import DoYouNeedCashOrCardOnSafariArticle from "@/components/kenya-articles/do-y
 import KenyaTimeZoneAndJetLagTipsArticle from "@/components/kenya-articles/kenya-time-zone-and-jet-lag-tips"
 import InternetAndPhoneSignalInTheBushArticle from "@/components/kenya-articles/internet-and-phone-signal-in-the-bush"
 import WhatHappensIfYouGetSickDuringASafariArticle from "@/components/kenya-articles/what-happens-if-you-get-sick-during-a-safari"
+import WhatToWearOnAKenyaSafariArticle from "@/components/kenya-articles/what-to-wear-on-a-kenya-safari"
+import TsetseFliesBlueAndBlackClothingArticle from "@/components/kenya-articles/tsetse-flies-blue-and-black-clothing"
+import SunProtectionHatsSpfSunglassesArticle from "@/components/kenya-articles/sun-protection-hats-spf-sunglasses"
+import PackingListForATenDayKenyaSafariArticle from "@/components/kenya-articles/packing-list-for-a-10-day-kenya-safari"
+import DuffelBagsOnlySafariLuggageRestrictionsArticle from "@/components/kenya-articles/duffel-bags-only-safari-luggage-restrictions"
+import AngamaMaraSuitesOnTheEscarpmentArticle from "@/components/kenya-articles/angama-mara-suites-on-the-escarpment"
+import GiraffeManorBreakfastWithGiraffesArticle from "@/components/kenya-articles/giraffe-manor-breakfast-with-giraffes"
+import FinchHattonsOutOfAfricaReimaginedArticle from "@/components/kenya-articles/finch-hattons-out-of-africa-reimagined"
+import IloraRetreatsDesignLedLuxuryInTheMaraArticle from "@/components/kenya-articles/ilora-retreats-design-led-luxury-in-the-mara"
+import LoldiaHouseAColonialFarmhouseArticle from "@/components/kenya-articles/loldia-house-a-colonial-farmhouse"
+import SasaabAMoroccanStyleLodgeArticle from "@/components/kenya-articles/sasaab-a-moroccan-style-lodge"
+import OlDonyoLodgeUnderKilimanjarosShadowArticle from "@/components/kenya-articles/ol-donyo-lodge-under-kilimanjaros-shadow"
+import SegeraRetreatConservancyAndInfinityPoolArticle from "@/components/kenya-articles/segera-retreat-conservancy-and-infinity-pool"
 
 // All articles that can be looked up by slug across every Kenya category.
 const allArticles = [
@@ -51,6 +65,7 @@ const allArticles = [
   ...kenyaVisaEntryExtra,
   ...kenyaConservationCulture,
   ...kenyaFaqs,
+  ...kenyaWhatToWear,
 ]
 
 // Add one entry here per article as it's written.
@@ -83,6 +98,19 @@ const registry: Record<string, React.ComponentType> = {
   "kenya-time-zone-and-jet-lag-tips": KenyaTimeZoneAndJetLagTipsArticle,
   "internet-and-phone-signal-in-the-bush": InternetAndPhoneSignalInTheBushArticle,
   "what-happens-if-you-get-sick-during-a-safari": WhatHappensIfYouGetSickDuringASafariArticle,
+  "what-to-wear-on-a-kenya-safari": WhatToWearOnAKenyaSafariArticle,
+  "tsetse-flies-blue-and-black-clothing": TsetseFliesBlueAndBlackClothingArticle,
+  "sun-protection-hats-spf-sunglasses": SunProtectionHatsSpfSunglassesArticle,
+  "packing-list-for-a-10-day-kenya-safari": PackingListForATenDayKenyaSafariArticle,
+  "duffel-bags-only-safari-luggage-restrictions": DuffelBagsOnlySafariLuggageRestrictionsArticle,
+  "angama-mara-suites-on-the-escarpment": AngamaMaraSuitesOnTheEscarpmentArticle,
+  "giraffe-manor-breakfast-with-giraffes": GiraffeManorBreakfastWithGiraffesArticle,
+  "finch-hattons-out-of-africa-reimagined": FinchHattonsOutOfAfricaReimaginedArticle,
+  "ilora-retreats-design-led-luxury-in-the-mara": IloraRetreatsDesignLedLuxuryInTheMaraArticle,
+  "loldia-house-a-colonial-farmhouse": LoldiaHouseAColonialFarmhouseArticle,
+  "sasaab-a-moroccan-style-lodge": SasaabAMoroccanStyleLodgeArticle,
+  "ol-donyo-lodge-under-kilimanjaros-shadow": OlDonyoLodgeUnderKilimanjarosShadowArticle,
+  "segera-retreat-conservancy-and-infinity-pool": SegeraRetreatConservancyAndInfinityPoolArticle,
 }
 
 function getArticleMeta(slug: string) {

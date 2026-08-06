@@ -1,0 +1,26 @@
+=== TITLE TAGS ===
+homepage.html:<title>Get Trip Go | India&#x27;s Trusted Travel Booking Platform</title>
+contact.html:<title>Get Trip Go | India&#x27;s Trusted Travel Booking Platform</title>
+why-us.html:<title>Get Trip Go | India&#x27;s Trusted Travel Booking Platform</title>
+destinations.html:<title>Get Trip Go | India&#x27;s Trusted Travel Booking Platform</title>
+groupdep.html:<title>Get Trip Go | India&#x27;s Trusted Travel Booking Platform</title>
+
+=== META DESCRIPTIONS ===
+homepage.html:name="description" content="Book flights, hotels, custom holidays &amp; group tours at the best prices. India&#x27;s trusted travel platform for domestic and international travel."
+contact.html:name="description" content="Book flights, hotels, custom holidays &amp; group tours at the best prices. India&#x27;s trusted travel platform for domestic and international travel."
+why-us.html:name="description" content="Book flights, hotels, custom holidays &amp; group tours at the best prices. India&#x27;s trusted travel platform for domestic and international travel."
+destinations.html:name="description" content="Book flights, hotels, custom holidays &amp; group tours at the best prices. India&#x27;s trusted travel platform for domestic and international travel."
+groupdep.html:name="description" content="Book flights, hotels, custom holidays &amp; group tours at the best prices. India&#x27;s trusted travel platform for domestic and international travel."
+
+=== CANONICAL TAGS ===
+
+=== JSON-LD SCHEMA PRESENT? ===
+homepage.html:2
+contact.html:2
+why-us.html:2
+destinations.html:2
+groupdep.html:2
+
+=== H1 TAGS ===
+contact.html:<h1 class="text-4xl md:text-6xl font-semibold leading-[1.1] mb-5 tracking-tight text-gray-900">Get In Touch With<br/>Our Team</h1>
+why-us.html:<h1 class="text-4xl md:text-6xl font-semibold leading-[1.1] mb-5 tracking-tight text-gray-900">Travel smarter.<br/>Book with confidence.</h1>

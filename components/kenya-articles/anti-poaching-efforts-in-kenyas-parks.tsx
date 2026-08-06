@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function AntiPoachingEffortsInKenyasParksArticle() {
   return (
     <>
@@ -62,11 +63,13 @@ export default function AntiPoachingEffortsInKenyasParksArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1200&q=80"
           alt="Ranger on patrol in a Kenyan national park"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function BirdwatchingInKenyaDetailArticle() {
   return (
     <>
@@ -53,11 +54,13 @@ export default function BirdwatchingInKenyaDetailArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1696260050228-8b981115d192?w=1200&q=80"
           alt="An African fish eagle perched in a tree in the Masai Mara, Kenya"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

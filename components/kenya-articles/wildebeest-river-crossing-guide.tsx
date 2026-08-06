@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function WildebeestRiverCrossingGuideArticle() {
   return (
     <>
@@ -65,11 +66,13 @@ export default function WildebeestRiverCrossingGuideArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1496761523829-6ee70d7928aa?w=1200&q=80"
           alt="Wildebeest gathering to cross the Mara River during the Great Migration"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

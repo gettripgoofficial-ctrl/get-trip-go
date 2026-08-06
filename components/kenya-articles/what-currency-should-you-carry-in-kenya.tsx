@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function WhatCurrencyShouldYouCarryInKenyaArticle() {
   return (
     <>
@@ -58,11 +59,13 @@ export default function WhatCurrencyShouldYouCarryInKenyaArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=1200&q=80"
           alt="Kenyan shilling notes and coins"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

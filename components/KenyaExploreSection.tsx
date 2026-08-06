@@ -3,7 +3,29 @@ import Image from "next/image"
 import Link from "next/link"
 import { kenyaStays, kenyaVisaEntry, kenyaVisaEntryExtra, kenyaParksReserves } from "@/data/kenyaData"
 
-const PUBLISHED_PARKS_SLUGS = new Set<string>(["masai-mara-vs-serengeti", "masai-mara-reserve-vs-conservancies", "amboseli-national-park-guide", "tsavo-largest-wildest-park", "lake-nakuru-park-birds-rhinos"])
+const PUBLISHED_STAYS_SLUGS = new Set<string>([
+  "angama-mara-suites-on-the-escarpment",
+  "giraffe-manor-breakfast-with-giraffes",
+  "finch-hattons-out-of-africa-reimagined",
+  "ilora-retreats-design-led-luxury-in-the-mara",
+  "loldia-house-a-colonial-farmhouse",
+  "sasaab-a-moroccan-style-lodge",
+  "ol-donyo-lodge-under-kilimanjaros-shadow",
+  "segera-retreat-conservancy-and-infinity-pool",
+])
+
+const PUBLISHED_PARKS_SLUGS = new Set<string>([
+  "masai-mara-vs-serengeti",
+  "masai-mara-reserve-vs-conservancies",
+  "amboseli-national-park-guide",
+  "tsavo-largest-wildest-park",
+  "lake-nakuru-park-birds-rhinos",
+  "samburu-special-five",
+  "ol-pejeta-conservancy-model",
+  "lake-naivasha-boat-safaris",
+  "hells-gate-walking-safari-park",
+  "meru-national-park",
+])
 
 const PUBLISHED_VISA_SLUGS = new Set<string>([
   "kenya-eta-guide-how-to-apply-cost-and-processing",
@@ -90,7 +112,7 @@ export default function KenyaExploreSection() {
           <h2 className="text-gray-800 font-bold text-lg mb-4 pb-2 border-b-2 border-yellow-500 inline-block">
             Where To Stay
           </h2>
-          <ArticleList articles={kenyaStays} />
+          <ArticleList articles={kenyaStays} publishedSlugs={PUBLISHED_STAYS_SLUGS} />
         </div>
 
         {/* Middle: Visa & Entry, 2x2 image-card grid + 1 big card below, same column width */}

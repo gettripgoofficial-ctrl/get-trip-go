@@ -29,7 +29,7 @@ const TRAVEL_TOOLS = [
   { label: "Villas", icon: Castle, href: "#" },
   { label: "Cruises", icon: Ship, href: "#" },
   { label: "Insurance", icon: ShieldCheck, href: "#" },
-  { label: "Visa", icon: FileText, href: "#" },
+  { label: "Visa", icon: FileText, href: "/visa" },
 ]
 
 export default function BottomNav() {

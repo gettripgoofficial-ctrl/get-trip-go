@@ -64,4 +64,30 @@ export const kenyaArticleSeo: Record<string, string> = {
     "What internet and phone connectivity actually looks like on a Kenya safari, whether a local SIM card is worth getting, and how camps handle emergencies without cell coverage.",
   "what-happens-if-you-get-sick-during-a-safari":
     "How Kenya safari camps handle illness and injury, how flying-doctor evacuation works for serious cases, and what to prepare before your trip to stay covered.",
+  "what-to-wear-on-a-kenya-safari":
+    "Why neutral colors and breathable layers matter on safari, what fabric actually works, and a realistic weekly clothing list built around camp laundry.",
+  "tsetse-flies-blue-and-black-clothing":
+    "Why tsetse flies are specifically drawn to blue and black clothing, where they're most common in Kenya, and what actually works to avoid painful bites.",
+  "sun-protection-hats-spf-sunglasses":
+    "Why equatorial sun and altitude make Kenya's UV exposure stronger than expected, and what hat, SPF, and sunglasses setup actually holds up on a game drive.",
+  "packing-list-for-a-10-day-kenya-safari":
+    "A complete, realistic packing list for a 10-day Kenya safari, built around camp laundry service and strict light-aircraft luggage limits.",
+  "duffel-bags-only-safari-luggage-restrictions":
+    "Why light aircraft transfers require soft duffel bags only, how strict the 15kg weight limit really is, and what to do with luggage that doesn't fit.",
+  "angama-mara-suites-on-the-escarpment":
+    "Inside Angama Mara's glass-fronted suites on the Oloololo Escarpment, the views over the Mara Triangle, and what game drives and activities are available from this clifftop setting.",
+  "giraffe-manor-breakfast-with-giraffes":
+    "Inside Nairobi's famous Giraffe Manor, where resident Rothschild's giraffes join guests at breakfast, the conservation story behind them, and what to know before booking.",
+  "finch-hattons-out-of-africa-reimagined":
+    "Inside Finch Hattons, the vintage-styled camp built around natural springs in Tsavo West, its Out of Africa namesake, and the wildlife it draws right to the property.",
+  "ilora-retreats-design-led-luxury-in-the-mara":
+    "Inside Ilora Retreats, an intimate design-led tented camp in the Masai Mara offering a contemporary take on the classic safari experience.",
+  "loldia-house-a-colonial-farmhouse":
+    "Inside Loldia House, a colonial-era working farmhouse on Lake Naivasha, its boat safari and birdwatching activities, and why it makes a good change-of-pace stop on a Kenya itinerary.",
+  "sasaab-a-moroccan-style-lodge":
+    "Inside Sasaab, a Moroccan-styled lodge above the Ewaso Nyiro River in Samburu, the region's unique Special Five wildlife, and the camp's ties to the local Samburu community.",
+  "ol-donyo-lodge-under-kilimanjaros-shadow":
+    "Inside Ol Donyo Lodge on 100,000 private hectares in the Chyulu Hills, its Kilimanjaro views, star-bed rooms, and role as an elephant corridor between Tsavo and Amboseli.",
+  "segera-retreat-conservancy-and-infinity-pool":
+    "Inside Segera Retreat, a private conservancy stay in Laikipia with spacious villas and an infinity pool, and how its conservation model combines tourism, agriculture, and the arts.",
 }

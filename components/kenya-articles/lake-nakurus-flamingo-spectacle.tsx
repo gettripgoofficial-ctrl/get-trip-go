@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function LakeNakurusFlamingoSpectacleArticle() {
   return (
     <>
@@ -73,11 +74,13 @@ export default function LakeNakurusFlamingoSpectacleArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1620018764859-530ce4a5523b?w=1200&q=80"
           alt="A flock of pink flamingos feeding at the edge of a lake"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
           className="w-full h-full object-cover"
-        />
+          />
       </div>
 
       <section className="mb-10">

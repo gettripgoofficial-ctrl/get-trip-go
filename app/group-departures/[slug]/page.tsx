@@ -5,6 +5,28 @@ import { getGroupDepartureBySlug } from "@/data/groupDepartures"
 import TourTabs from "./TourTabs"
 import TourActions from "./TourActions"
 import { buildTripSchemas, hasUpcomingDate } from "@/lib/seo/tripSchema"
+import type { Metadata } from "next"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const tour = getGroupDepartureBySlug(params.slug)
+
+  if (!tour) {
+    return { title: "Tour Not Found" }
+  }
+
+  const countries = tour.countries.join(", ")
+  const priceFormatted = tour.priceINR.toLocaleString("en-IN")
+
+  return {
+    title: `${tour.name} — ${tour.days}D/${tour.nights}N Group Tour | Get Trip Go`,
+    description: `Join the ${tour.name} group departure covering ${countries}. ${tour.days} days, ${tour.nights} nights, starting at ₹${priceFormatted} per person. Fixed departure dates with Get Trip Go.`,
+  }
+}
+
 
 export default function TourDetailPage({ params }: { params: { slug: string } }) {
   const tour = getGroupDepartureBySlug(params.slug)
