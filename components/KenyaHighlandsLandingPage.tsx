@@ -5,7 +5,7 @@ import { useState } from "react"
 const ANIMALS = [
   { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
   { name: "Elephant", image: "https://images.unsplash.com/photo-1674909072480-ad551618b63e?w=300&q=80" },
-  { name: "Rhino", image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=300&q=80" },
+  { name: "Rhino", image: "https://images.unsplash.com/photo-1541414779316-956a5084c0d4?w=300&q=80" },
   { name: "Leopard", image: "https://images.unsplash.com/photo-1759055646019-e076c6482ed1?w=300&q=80" },
   { name: "Buffalo", image: "https://images.unsplash.com/photo-1672438605161-22d8c2912054?w=300&q=80" },
   { name: "Giraffe", image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=300&q=80" },
@@ -457,23 +457,23 @@ export default function KenyaHighlandsLandingPage() {
 
       {/* FAQs */}
       <div className="max-w-7xl mx-auto px-4 pb-12">
-        <h3 className="text-gray-800 font-extrabold text-xl mb-6 text-center">Frequently Asked Questions</h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-3">
+        <h3 className="text-gray-800 font-extrabold text-lg mb-3 text-center">Frequently Asked Questions</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-1.5">
           {FAQS.map((faq, i) => (
-            <div key={faq.q} className="bg-gray-50 rounded-xl overflow-hidden">
+            <div key={faq.q} className="bg-gray-50 rounded-lg overflow-hidden">
               <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="w-full flex items-center justify-between gap-3 p-4 text-left"
+                className="w-full flex items-center justify-between gap-3 px-3 py-2 text-left"
               >
-                <span className="text-gray-900 font-bold text-sm">{faq.q}</span>
+                <span className="text-gray-900 font-bold text-xs">{faq.q}</span>
                 <span
-                  className={`shrink-0 text-gray-400 transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
+                  className={`shrink-0 text-gray-400 text-xs transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
                 >
                   &#9662;
                 </span>
               </button>
               {openFaq === i && (
-                <p className="text-gray-600 text-sm leading-relaxed px-4 pb-4">{faq.a}</p>
+                <p className="text-gray-600 text-xs leading-snug px-3 pb-2.5">{faq.a}</p>
               )}
             </div>
           ))}
