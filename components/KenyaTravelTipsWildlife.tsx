@@ -31,11 +31,11 @@ export default function KenyaTravelTipsWildlife() {
             <h2 className="text-gray-800 font-bold text-lg mb-4 pb-2 border-b-2 border-yellow-500 inline-block">
               Travel Tips
             </h2>
-            <div className="space-y-8 mt-4">
+            <div className="space-y-6 mt-4 divide-y divide-gray-200">
               {kenyaTravelTips.map(article => {
                 const isBuilt = builtTravelTipsSlugs.includes(article.id)
                 const CardInner = (
-                  <div className="flex gap-3 cursor-pointer group">
+                  <div className="flex gap-3 cursor-pointer group pt-6 first:pt-0">
                     <div className="relative w-16 h-16 flex-shrink-0 rounded-md overflow-hidden">
                       <Image
                         src={article.image}
