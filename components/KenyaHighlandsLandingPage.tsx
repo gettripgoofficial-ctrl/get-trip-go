@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image"
 import { useState } from "react"
-import KenyaMobileHeader from "@/components/KenyaMobileHeader"
 
 const ANIMALS = [
   { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
@@ -203,8 +202,6 @@ export default function KenyaHighlandsLandingPage() {
 
   return (
     <div className="bg-white">
-      <KenyaMobileHeader />
-      <div className="md:hidden h-14" />
       {/* Hero */}
       <div className="relative w-full min-h-[620px] sm:min-h-[520px] md:mt-[68px]">
         <Image
