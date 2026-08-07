@@ -3,6 +3,24 @@
 // (e.g. /kenya/big-five-how-to-spot), since routing doesn't care which system
 // built the destination page.
 export const kenyaArticleRelated: Record<string, { title: string; href: string }[]> = {
+  "elsas-kopje-built-into-the-rock": [
+    { title: "Rare Sightings: Black Rhinos of Ol Pejeta", href: "/kenya/rare-sightings-black-rhinos" },
+    { title: "Community Conservancies: How Locals Protect Wildlife", href: "/kenya/community-conservancies-how-locals-protect-wildlife" },
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+  ],
+
+  "giraffes-of-kenya": [
+    { title: "Giraffe Manor: Breakfast With Giraffes", href: "/kenya/giraffe-manor-breakfast-with-giraffes" },
+    { title: "Sasaab: A Moroccan-Style Lodge on the Ewaso Nyiro", href: "/kenya/sasaab-a-moroccan-style-lodge" },
+    { title: "Lake Nakuru's Flamingo Spectacle", href: "/kenya/lake-nakurus-flamingo-spectacle" },
+  ],
+
+  "rare-sightings-black-rhinos": [
+    { title: "Rhino Conservation: The Fight to Save a Species", href: "/kenya/rhino-conservation-the-fight-to-save-a-species" },
+    { title: "Kenya's Big Cats: Lions, Leopards and Cheetahs Compared", href: "/kenya/kenyas-big-cats-compared" },
+    { title: "Anti-Poaching Efforts in Kenya's Parks", href: "/kenya/anti-poaching-efforts-in-kenyas-parks" },
+  ],
+
   "lake-nakuru-park-birds-rhinos": [
     { title: "Lake Nakuru's Flamingo Spectacle", href: "/kenya/lake-nakurus-flamingo-spectacle" },
     { title: "Birdwatching in Kenya: 50 Species to Look For", href: "/kenya/birdwatching-in-kenya-detail" },
@@ -215,5 +233,60 @@ export const kenyaArticleRelated: Record<string, { title: string; href: string }
     { title: "Community Conservancies: How Locals Protect Wildlife", href: "/kenya/community-conservancies-how-locals-protect-wildlife" },
     { title: "Ol Donyo Lodge: Under Kilimanjaro's Shadow", href: "/kenya/ol-donyo-lodge-under-kilimanjaros-shadow" },
     { title: "Giraffes of Kenya", href: "/kenya/giraffes-of-kenya" },
+  ],
+  "wildebeest-crossing-2026-migration-forecast": [
+    { title: "The Great Migration Explained: When, Where and Why", href: "/kenya/the-great-migration-explained" },
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+    { title: "Kenya's Rainy Season: What Changes on Safari", href: "/kenya/kenyas-rainy-season-what-changes" },
+  ],
+  "kenyas-rainy-season-what-changes": [
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+    { title: "The Great Migration Explained: When, Where and Why", href: "/kenya/the-great-migration-explained" },
+    { title: "The Wildebeest Crossing: 2026 Migration Forecast", href: "/kenya/wildebeest-crossing-2026-migration-forecast" },
+  ],
+  "solar-eclipse-and-stargazing-safaris": [
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+    { title: "Night Safaris: What Happens After Dark", href: "/kenya/night-safaris-what-happens-after-dark" },
+    { title: "Cheetahs of the Mara: Africa's Fastest Predator", href: "/kenya/cheetahs-of-the-mara" },
+  ],
+  "kenyas-new-conservation-fees": [
+    { title: "Safari Budget Guide: Luxury vs Mid-Range vs Budget", href: "/kenya/safari-budget-guide-luxury-vs-mid-range-vs-budget" },
+    { title: "Kenya eTA Guide: How to Apply, Cost and Processing Time", href: "/kenya/kenya-eta-guide-how-to-apply-cost-and-processing" },
+    { title: "How Much Does a Kenya Safari Cost", href: "/kenya/how-much-does-a-kenya-safari-cost" },
+  ],
+  "hot-air-balloon-safaris-over-the-mara": [
+    { title: "Cheetahs of the Mara: Africa's Fastest Predator", href: "/kenya/cheetahs-of-the-mara" },
+    { title: "The Great Migration Explained: When, Where and Why", href: "/kenya/the-great-migration-explained" },
+    { title: "Safari Photography: Camera Gear and Settings", href: "/kenya/safari-photography-camera-gear-and-settings" },
+  ],
+  "new-direct-flights-cutting-kenya-travel-time": [
+    { title: "Getting Around: Light Aircraft vs Road Safaris", href: "/kenya/getting-around-light-aircraft-vs-road-safaris" },
+    { title: "How Many Days Do You Need for a Kenya Safari", href: "/kenya/how-many-days-do-you-need-for-a-kenya-safari" },
+    { title: "Best Time to Visit Kenya: A Season-by-Season Guide", href: "/kenya/best-time-to-visit-kenya" },
+  ],
+  "kenya-safari-faqs-everything-first-timers-ask": [
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+    { title: "How Much Does a Kenya Safari Cost in 2026", href: "/kenya/how-much-does-a-kenya-safari-cost" },
+    { title: "Is It Ethical to Go on Safari? Common Concerns Answered", href: "/kenya/is-it-ethical-to-go-on-safari" },
+  ],
+  "is-it-ethical-to-go-on-safari": [
+    { title: "Community Conservancies: How Locals Protect Wildlife", href: "/kenya/community-conservancies-how-locals-protect-wildlife" },
+    { title: "Anti-Poaching Efforts in Kenya's Parks", href: "/kenya/anti-poaching-efforts-in-kenyas-parks" },
+    { title: "The Maasai: Guardians of the Mara", href: "/kenya/the-maasai-guardians-of-the-mara" },
+  ],
+  "plastic-bag-ban-whats-illegal-to-bring": [
+    { title: "What to Pack for a Kenya Safari", href: "/kenya/what-to-pack-for-a-kenya-safari" },
+    { title: "Kenya eTA Guide: How to Apply, Cost and Processing Time", href: "/kenya/kenya-eta-guide-how-to-apply-cost-and-processing" },
+    { title: "Duffel Bags Only: Safari Luggage Restrictions", href: "/kenya/duffel-bags-only-safari-luggage-restrictions" },
+  ],
+  "booking-through-a-local-tour-operator-vs-diy": [
+    { title: "How Much Does a Kenya Safari Cost in 2026", href: "/kenya/how-much-does-a-kenya-safari-cost" },
+    { title: "Safari Budget Guide: Luxury vs Mid-Range vs Budget", href: "/kenya/safari-budget-guide-luxury-vs-mid-range-vs-budget" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
+  ],
+  "bumpy-roads-and-motion-sickness": [
+    { title: "Safari First Aid: What to Pack in Your Kit", href: "/kenya/safari-first-aid-what-to-pack-in-your-kit" },
+    { title: "Getting Around: Light Aircraft vs Road Safaris", href: "/kenya/getting-around-light-aircraft-vs-road-safaris" },
+    { title: "First-Time Safari Checklist", href: "/kenya/first-time-safari-checklist" },
   ],
 }

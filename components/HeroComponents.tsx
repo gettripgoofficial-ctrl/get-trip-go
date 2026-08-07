@@ -26,6 +26,7 @@ export function KlookBannerCarousel() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scale, setScale] = useState(1)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const update = () => {
@@ -39,11 +40,27 @@ export function KlookBannerCarousel() {
   }, [])
 
   useEffect(() => {
+    if (!containerRef.current) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: "200px" }
+    )
+    observer.observe(containerRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!visible) return
     const interval = setInterval(() => {
       setActiveIndex(prev => (prev + 1) % KLOOK_SLIDES.length)
     }, 4000)
     return () => clearInterval(interval)
-  }, [])
+  }, [visible])
 
   return (
     <div ref={containerRef} className="relative rounded-xl overflow-hidden w-full" style={{ height: 60 * scale + "px" }}>

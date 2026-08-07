@@ -1,6 +1,15 @@
 // Meta descriptions for dynamic Kenya articles at /kenya/[slug].
 // Add one entry per article as it's written.
 export const kenyaArticleSeo: Record<string, string> = {
+  "elsas-kopje-built-into-the-rock":
+    "Inside Elsa's Kopje, the Born Free-inspired lodge built into the granite of Meru National Park, and why it's credited with reviving one of Kenya's most overlooked parks.",
+
+  "giraffes-of-kenya":
+    "Kenya hosts three distinct giraffe species -- Masai, reticulated and Rothschild's -- more than any other country. How to tell them apart and where to find each one.",
+
+  "rare-sightings-black-rhinos":
+    "Ol Pejeta is East Africa's largest black rhino sanctuary and home to the world's last two northern white rhinos -- what to know before visiting.",
+
   "lake-nakuru-park-birds-rhinos":
     "The real story on Lake Nakuru's flamingos today, why it's still one of Kenya's best rhino sanctuaries, and how long to stay.",
 
@@ -90,4 +99,26 @@ export const kenyaArticleSeo: Record<string, string> = {
     "Inside Ol Donyo Lodge on 100,000 private hectares in the Chyulu Hills, its Kilimanjaro views, star-bed rooms, and role as an elephant corridor between Tsavo and Amboseli.",
   "segera-retreat-conservancy-and-infinity-pool":
     "Inside Segera Retreat, a private conservancy stay in Laikipia with spacious villas and an infinity pool, and how its conservation model combines tourism, agriculture, and the arts.",
+  "wildebeest-crossing-2026-migration-forecast":
+    "How to think about Mara River crossing timing for 2026 — why exact dates shift yearly, and how to get the most current migration positioning before you book.",
+  "kenyas-rainy-season-what-changes":
+    "What actually changes on a Kenya safari during the rains — lower rates, greener landscapes, and which camps stay open, versus the classic dry-season experience.",
+  "solar-eclipse-and-stargazing-safaris":
+    "What to expect from the August 12, 2026 partial solar eclipse over northern Kenya, and why the region's dark skies make it a genuine stargazing destination year-round.",
+  "kenyas-new-conservation-fees":
+    "Kenya's first comprehensive national park fee revision in 18 years — the new four-tier pricing structure and what it means for your safari budget.",
+  "hot-air-balloon-safaris-over-the-mara":
+    "What a sunrise hot air balloon safari over the Masai Mara actually involves, from pre-dawn pickup to the champagne bush breakfast landing.",
+  "new-direct-flights-cutting-kenya-travel-time":
+    "New and expanded flight routes into Nairobi through 2026, including added Emirates and Qatar Airways frequency, and what it means for your safari trip.",
+  "kenya-safari-faqs-everything-first-timers-ask":
+    "A catch-all guide answering common first-time Kenya safari questions — daily schedules, vehicle setup, and traveling solo, as a couple, or with family.",
+  "is-it-ethical-to-go-on-safari":
+    "How safari tourism revenue funds conservation and community conservancies in Kenya, where ethics get more complicated, and what to look for in a responsible operator.",
+  "plastic-bag-ban-whats-illegal-to-bring":
+    "What Kenya's strict plastic bag ban actually covers, what gets confiscated at the border, and practical packing tips to avoid issues on arrival.",
+  "booking-through-a-local-tour-operator-vs-diy":
+    "Whether to book a Kenya safari through a local tour operator or arrange it yourself, what each option actually gains you, and questions worth asking before choosing either route.",
+  "bumpy-roads-and-motion-sickness":
+    "Honest expectations on Kenya safari road conditions, who's most prone to motion sickness on game drives, and practical tips for minimizing it.",
 }

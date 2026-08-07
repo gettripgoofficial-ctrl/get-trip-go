@@ -2,6 +2,63 @@
 // Keep these in sync with the visible "Frequently Asked Questions" section
 // rendered inside each article component in components/kenya-articles/.
 export const kenyaArticleFaqs: Record<string, { question: string; answer: string }[]> = {
+  "elsas-kopje-built-into-the-rock": [
+    {
+      question: "Is Elsa's Kopje named after a real lioness?",
+      answer: "Yes -- Elsa, the lioness raised by George and Joy Adamson, whose story became the book and film Born Free. The lodge sits above the site of the Adamsons' original camp.",
+    },
+    {
+      question: "How do I get to Elsa's Kopje?",
+      answer: "Daily flights connect Nairobi's Wilson Airport to Mughwango Airstrip, five minutes from the lodge. By road, it's roughly a 4.5-hour drive from Nairobi.",
+    },
+    {
+      question: "Is Meru National Park worth visiting over the classic Mara circuit?",
+      answer: "It offers something different rather than better -- genuinely uncrowded game viewing, rare species like Grevy's zebra, and activities like walking safaris and night drives that busier parks often restrict.",
+    },
+    {
+      question: "Is Elsa's Kopje accessible for travelers with mobility issues?",
+      answer: "Worth confirming directly -- the lodge is built into rocky terrain with a number of steps between cottages and the main areas, a deliberate design choice to preserve the natural landscape.",
+    },
+  ],
+
+  "giraffes-of-kenya": [
+    {
+      question: "How many giraffe species are in Kenya?",
+      answer: "Three -- Masai, reticulated, and Rothschild's -- more than any other country in the world.",
+    },
+    {
+      question: "What's the easiest way to tell giraffe species apart?",
+      answer: "Check the legs: spots to the hooves means Masai, a clean net pattern with sharp white lines means reticulated, and bare, unmarked lower legs mean Rothschild's.",
+    },
+    {
+      question: "Where can I see reticulated giraffes in Kenya?",
+      answer: "Samburu, Buffalo Springs, Shaba, and the Laikipia conservancies in northern Kenya are the most reliable locations.",
+    },
+    {
+      question: "Are all Kenyan giraffe species endangered?",
+      answer: "Yes -- Masai, reticulated, and Rothschild's giraffes are all currently classified as Endangered, driven mainly by habitat loss and poaching.",
+    },
+  ],
+
+  "rare-sightings-black-rhinos": [
+    {
+      question: "How many black rhinos live at Ol Pejeta?",
+      answer: "Over 165, making it the largest black rhino sanctuary in East and Central Africa.",
+    },
+    {
+      question: "Are there any northern white rhinos left in the world?",
+      answer: "Only two, Najin and Fatu, both female, both living at Ol Pejeta Conservancy under round-the-clock protection.",
+    },
+    {
+      question: "Can you get close to the rhinos at Ol Pejeta?",
+      answer: "Yes -- guided visits to see Najin and Fatu are available, along with rhino tracking on foot and the chance to feed Baraka, a blind black rhino, from a viewing platform.",
+    },
+    {
+      question: "How far is Ol Pejeta from Nairobi?",
+      answer: "Roughly 3.5 to 4.5 hours by road, making it a feasible stop within a Kenya highlands or Mount Kenya-area itinerary rather than a standalone trip.",
+    },
+  ],
+
   "lake-nakuru-park-birds-rhinos": [
     {
       question: "Are there still flamingos at Lake Nakuru?",
@@ -695,6 +752,180 @@ export const kenyaArticleFaqs: Record<string, { question: string; answer: string
     {
       question: "What activities are available beyond game drives?",
       answer: "Night drives, walking safaris, and horseback riding are typically available through Laikipia's private conservancies, activities that most national parks restrict.",
+    },
+  ],
+  "wildebeest-crossing-2026-migration-forecast": [
+    {
+      question: "Can you predict the exact date of a Mara River crossing?",
+      answer: "No — crossings depend on herd movement and rainfall patterns that shift year to year, so the reliable window is a season (roughly July–September), not a specific date months in advance.",
+    },
+    {
+      question: "Where can I find the most current migration updates?",
+      answer: "Your camp or ground operator, who typically receives regular updates from guides actively tracking the herds, is a far more current source than a general seasonal forecast.",
+    },
+    {
+      question: "Should I book a longer stay to improve my chances of seeing a crossing?",
+      answer: "Yes — staying multiple nights near the Mara River during the broad crossing season improves your odds far more than a single night timed to one predicted date.",
+    },
+  ],
+  "kenyas-rainy-season-what-changes": [
+    {
+      question: "Does it rain all day during Kenya's rainy season?",
+      answer: "Rarely — rain is typically a concentrated downpour, often in the afternoon, rather than a fully washed-out day, especially during the shorter November rains.",
+    },
+    {
+      question: "How much cheaper is a rainy-season safari?",
+      answer: "Rates during the long rains, particularly April, are often 30–40% below July–September peak pricing at comparable camps.",
+    },
+    {
+      question: "Do all camps stay open during the rains?",
+      answer: "No — some remote or rustic camps close briefly during the heaviest weeks of April for maintenance, so it's worth checking a specific property's calendar before booking.",
+    },
+  ],
+  "solar-eclipse-and-stargazing-safaris": [
+    {
+      question: "Will the 2026 eclipse be visible on a normal Kenya safari?",
+      answer: "No — the eclipse path crosses far northern Kenya only. Nairobi and the main safari circuit (Mara, Amboseli, Tsavo) will not see it.",
+    },
+    {
+      question: "Is the 2026 Kenya eclipse a total eclipse?",
+      answer: "No — it's a partial eclipse, with up to roughly 18% of the sun covered at maximum in the highest-coverage areas near Kakuma and Lodwar.",
+    },
+    {
+      question: "Do I need special equipment to view a partial eclipse safely?",
+      answer: "Yes — proper eclipse glasses or a solar filter are required for safe direct viewing, even at partial coverage.",
+    },
+  ],
+  "kenyas-new-conservation-fees": [
+    {
+      question: "Why did Kenya raise its national park fees?",
+      answer: "It was the first comprehensive fee review in roughly 18 years, aimed at funding conservation efforts and park infrastructure that old, largely static fees no longer covered adequately.",
+    },
+    {
+      question: "How much have non-resident park fees increased?",
+      answer: "Increases vary by park and category, generally in the range of 80–160%, with premium parks like Amboseli and Lake Nakuru seeing some of the steepest rises.",
+    },
+    {
+      question: "Where should I check current park fees before booking?",
+      answer: "KWS's official eCitizen KWSPay portal is the most reliable source, since many third-party sites and older guides may still show outdated pre-revision pricing.",
+    },
+  ],
+  "hot-air-balloon-safaris-over-the-mara": [
+    {
+      question: "How early do I need to wake up for a balloon safari?",
+      answer: "Pickup from camp is typically between 4:30 and 5:30am, to reach the launch site before sunrise.",
+    },
+    {
+      question: "Is a hot air balloon safari included in a standard package?",
+      answer: "No — it's typically a separate, additional paid activity booked on top of your regular safari itinerary.",
+    },
+    {
+      question: "Can a balloon flight be cancelled?",
+      answer: "Yes — flights are weather-dependent and can be postponed or cancelled if wind conditions aren't safe for flying.",
+    },
+  ],
+  "new-direct-flights-cutting-kenya-travel-time": [
+    {
+      question: "What's the most significant new route into Nairobi in 2026?",
+      answer: "Emirates' third daily Dubai–Nairobi flight, launched March 2026, bringing total weekly frequency on that route to 21 flights.",
+    },
+    {
+      question: "Are there more flight options for combining Kenya with a coastal or regional trip?",
+      answer: "Yes — new Mombasa–Doha flights and additional Johannesburg–Nairobi frequency both expanded in 2026, useful for multi-destination itineraries.",
+    },
+    {
+      question: "Should I book flights based on this article's specific schedule details?",
+      answer: "Treat this as a general trend rather than a fixed timetable — always confirm current routes and frequencies directly with your airline or a booking platform.",
+    },
+  ],
+  "kenya-safari-faqs-everything-first-timers-ask": [
+    {
+      question: "What does a typical day on safari look like?",
+      answer: "An early morning game drive before sunrise, a midday rest at camp, and a second game drive in the late afternoon heading into sunset, with meals and downtime filling the gaps.",
+    },
+    {
+      question: "Is Kenya a good destination for solo travelers?",
+      answer: "Yes — solo travelers are common on both scheduled group departures and private itineraries, and most reputable operators handle solo bookings well.",
+    },
+    {
+      question: "Are safari vehicles comfortable for long drives?",
+      answer: "Most are open-sided 4x4s with pop-up roofs for good visibility, though drives can be bumpy on rougher terrain, so an active, physical ride is worth expecting.",
+    },
+    {
+      question: "Is Kenya safe and suitable for families with children?",
+      answer: "Many lodges are well set up for families with dedicated suites and activities, though age minimums vary by camp, so it's worth confirming directly when traveling with younger children.",
+    },
+  ],
+  "is-it-ethical-to-go-on-safari": [
+    {
+      question: "Does safari tourism actually help conservation?",
+      answer: "Yes — park entry fees and conservancy lease payments are a direct funding source for ranger salaries, anti-poaching efforts, and keeping land protected as wildlife habitat rather than converted to other uses.",
+    },
+    {
+      question: "What should I look for in a responsible safari operator?",
+      answer: "Transparency about community lease payments and employment, clear vehicle policies at sightings, and camps operating within conservancies that cap visitor and vehicle numbers.",
+    },
+    {
+      question: "Is it more ethical to visit a conservancy than a national reserve?",
+      answer: "Conservancies generally offer more direct community benefit through lease payments and lower vehicle crowding at sightings, though well-run operators exist in both settings.",
+    },
+    {
+      question: "What guide behaviors should raise concern during a game drive?",
+      answer: "Off-road driving to approach animals, excessive vehicle crowding at a single sighting, and pursuing an animal that's clearly trying to move away are all signs of poor wildlife etiquette.",
+    },
+  ],
+  "plastic-bag-ban-whats-illegal-to-bring": [
+    {
+      question: "Will my plastic bags be confiscated at the Kenya border?",
+      answer: "Plastic carrier and shopping bags found in luggage are typically confiscated at customs, so it's worth checking your bags for any loose plastic bags before arrival.",
+    },
+    {
+      question: "Are ziplock bags and other plastic packaging banned too?",
+      answer: "No — the ban targets flat, handled plastic carrier and shopping bags specifically, not general plastic packaging like ziplock bags for toiletries or electronics.",
+    },
+    {
+      question: "Are single-use plastics banned in national parks too?",
+      answer: "Yes — a separate, stricter policy restricts single-use plastics like water bottles, straws, and cutlery within national parks, reserves, and protected areas.",
+    },
+    {
+      question: "What should I pack instead of plastic bags?",
+      answer: "A couple of reusable fabric or woven bags cover most needs, like laundry or wet swimwear, and most hotels and shops already offer paper or reusable alternatives.",
+    },
+  ],
+  "booking-through-a-local-tour-operator-vs-diy": [
+    {
+      question: "Is it cheaper to book a Kenya safari myself?",
+      answer: "Sometimes, but not always — local operators often have access to rates and availability that aren't publicly listed, which can offset or exceed any savings from booking direct.",
+    },
+    {
+      question: "When does a local operator make the most sense?",
+      answer: "For multi-park circuits requiring internal flights, peak-season travel, or complex coordination between remote camps and transfers.",
+    },
+    {
+      question: "Can I really book a safari entirely on my own?",
+      answer: "Yes, particularly for a simpler single-region trip with flexible dates and a traveler comfortable managing their own logistics directly with camps.",
+    },
+    {
+      question: "What should I ask a local operator before booking?",
+      answer: "How they're compensated, what happens if plans need to change mid-trip, and whether they can provide references from past travelers.",
+    },
+  ],
+  "bumpy-roads-and-motion-sickness": [
+    {
+      question: "Are Kenya safari game drives really that bumpy?",
+      answer: "Yes — most tracks are unpaved dirt or grass, and vehicles regularly go off-track following sightings, making the terrain genuinely rough at times.",
+    },
+    {
+      question: "Will I get motion sick on a game drive?",
+      answer: "If you're prone to motion sickness on winding roads or boats, there's a reasonable chance game drives will affect you similarly, though travelers without that history usually find it manageable.",
+    },
+    {
+      question: "Where should I sit to minimize motion sickness?",
+      answer: "Toward the front of the vehicle tends to be smoother than the back, and keeping your eyes on the horizon rather than a screen helps reduce nausea.",
+    },
+    {
+      question: "Should I bring motion sickness medication?",
+      answer: "Yes, if it's been an issue for you before — standard over-the-counter remedies work the same way on a game drive, and remote camps won't necessarily have it available.",
     },
   ],
 }

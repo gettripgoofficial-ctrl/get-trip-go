@@ -123,6 +123,30 @@ export const kenyaTravelTips: KenyaArticle[] = [
     excerpt: "Who to tip, how much, and the easiest way to handle it in the field.",
     meta: "4 min read",
   },
+  {
+    id: "plastic-bag-ban-whats-illegal-to-bring",
+    title: "Plastic Bag Ban: What's Illegal to Bring Into Kenya",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80",
+    excerpt: "Kenya has one of the strictest plastic bans in the world — what gets confiscated at the border.",
+    meta: "4 min read",
+  },
+  {
+    id: "booking-through-a-local-tour-operator-vs-diy",
+    title: "Booking Through a Local Tour Operator vs DIY",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=400&q=80",
+    excerpt: "What you actually gain from a local operator, and where DIY can still work.",
+    meta: "5 min read",
+  },
+  {
+    id: "bumpy-roads-and-motion-sickness",
+    title: "Bumpy Roads and Motion Sickness: What Game Drives Are Really Like",
+    category: "Travel Tips",
+    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=400&q=80",
+    excerpt: "Honest expectations on road conditions, and what actually helps with motion sickness.",
+    meta: "4 min read",
+  },
 ]
 
 export const kenyaJourneys: KenyaArticle[] = [
@@ -800,30 +824,6 @@ export const kenyaFaqs: KenyaArticle[] = [
 ]
 
 export const kenyaPracticalLegal: KenyaArticle[] = [
-  {
-    id: "plastic-bag-ban-whats-illegal-to-bring",
-    title: "Plastic Bag Ban: What's Illegal to Bring Into Kenya",
-    category: "Practical & Legal",
-    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=200&q=80",
-    excerpt: "Kenya has one of the strictest plastic bans in the world — what gets confiscated at the border.",
-    meta: "4 min read",
-  },
-  {
-    id: "booking-through-a-local-tour-operator-vs-diy",
-    title: "Booking Through a Local Tour Operator vs DIY",
-    category: "Practical & Legal",
-    image: "https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=200&q=80",
-    excerpt: "What you actually gain from a local operator, and where DIY can still work.",
-    meta: "5 min read",
-  },
-  {
-    id: "bumpy-roads-and-motion-sickness",
-    title: "Bumpy Roads and Motion Sickness: What Game Drives Are Really Like",
-    category: "Practical & Legal",
-    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=200&q=80",
-    excerpt: "Honest expectations on road conditions, and what actually helps with motion sickness.",
-    meta: "4 min read",
-  },
 ]
 
 export const kenyaVisaEntryExtra: KenyaArticle[] = [

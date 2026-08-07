@@ -9,11 +9,16 @@ import {
   kenyaConservationCulture,
   kenyaFaqs,
   kenyaWhatToWear,
+  kenyaTrending,
+  kenyaTravelTips,
 } from "@/data/kenyaData"
 import { kenyaArticleSeo } from "@/data/kenyaArticleSeo"
 import { kenyaArticleFaqs } from "@/data/kenyaArticleFaqs"
 import { kenyaArticleRelated } from "@/data/kenyaArticleRelated"
 import KenyaArticleShell from "@/components/KenyaArticleShell"
+import ElsasKopjeArticle from "@/components/kenya-articles/elsas-kopje-built-into-the-rock"
+import GiraffesOfKenyaArticle from "@/components/kenya-articles/giraffes-of-kenya"
+import RareSightingsBlackRhinosArticle from "@/components/kenya-articles/rare-sightings-black-rhinos"
 import AmboselisLastSuperTuskersArticle from "@/components/kenya-articles/amboselis-last-super-tuskers"
 import LakeNakurusFlamingoSpectacleArticle from "@/components/kenya-articles/lake-nakurus-flamingo-spectacle"
 import CheetahsOfTheMaraArticle from "@/components/kenya-articles/cheetahs-of-the-mara"
@@ -55,6 +60,17 @@ import LoldiaHouseAColonialFarmhouseArticle from "@/components/kenya-articles/lo
 import SasaabAMoroccanStyleLodgeArticle from "@/components/kenya-articles/sasaab-a-moroccan-style-lodge"
 import OlDonyoLodgeUnderKilimanjarosShadowArticle from "@/components/kenya-articles/ol-donyo-lodge-under-kilimanjaros-shadow"
 import SegeraRetreatConservancyAndInfinityPoolArticle from "@/components/kenya-articles/segera-retreat-conservancy-and-infinity-pool"
+import KenyaSafariFaqsEverythingFirstTimersAskArticle from "@/components/kenya-articles/kenya-safari-faqs-everything-first-timers-ask"
+import IsItEthicalToGoOnSafariArticle from "@/components/kenya-articles/is-it-ethical-to-go-on-safari"
+import PlasticBagBanWhatsIllegalToBringArticle from "@/components/kenya-articles/plastic-bag-ban-whats-illegal-to-bring"
+import BookingThroughALocalTourOperatorVsDiyArticle from "@/components/kenya-articles/booking-through-a-local-tour-operator-vs-diy"
+import BumpyRoadsAndMotionSicknessArticle from "@/components/kenya-articles/bumpy-roads-and-motion-sickness"
+import WildebeestCrossing2026MigrationForecastArticle from "@/components/kenya-articles/wildebeest-crossing-2026-migration-forecast"
+import KenyasRainySeasonWhatChangesArticle from "@/components/kenya-articles/kenyas-rainy-season-what-changes"
+import SolarEclipseAndStargazingSafarisArticle from "@/components/kenya-articles/solar-eclipse-and-stargazing-safaris"
+import KenyasNewConservationFeesArticle from "@/components/kenya-articles/kenyas-new-conservation-fees"
+import HotAirBalloonSafarisOverTheMaraArticle from "@/components/kenya-articles/hot-air-balloon-safaris-over-the-mara"
+import NewDirectFlightsCuttingKenyaTravelTimeArticle from "@/components/kenya-articles/new-direct-flights-cutting-kenya-travel-time"
 
 // All articles that can be looked up by slug across every Kenya category.
 const allArticles = [
@@ -66,10 +82,15 @@ const allArticles = [
   ...kenyaConservationCulture,
   ...kenyaFaqs,
   ...kenyaWhatToWear,
+  ...kenyaTrending,
+  ...kenyaTravelTips,
 ]
 
 // Add one entry here per article as it's written.
 const registry: Record<string, React.ComponentType> = {
+  "elsas-kopje-built-into-the-rock": ElsasKopjeArticle,
+  "giraffes-of-kenya": GiraffesOfKenyaArticle,
+  "rare-sightings-black-rhinos": RareSightingsBlackRhinosArticle,
   "cheetahs-of-the-mara": CheetahsOfTheMaraArticle,
   "masai-mara-vs-serengeti": MasaiMaraVsSerengetiArticle,
   "masai-mara-reserve-vs-conservancies": MasaiMaraReserveVsConservanciesArticle,
@@ -111,6 +132,17 @@ const registry: Record<string, React.ComponentType> = {
   "sasaab-a-moroccan-style-lodge": SasaabAMoroccanStyleLodgeArticle,
   "ol-donyo-lodge-under-kilimanjaros-shadow": OlDonyoLodgeUnderKilimanjarosShadowArticle,
   "segera-retreat-conservancy-and-infinity-pool": SegeraRetreatConservancyAndInfinityPoolArticle,
+  "wildebeest-crossing-2026-migration-forecast": WildebeestCrossing2026MigrationForecastArticle,
+  "kenyas-rainy-season-what-changes": KenyasRainySeasonWhatChangesArticle,
+  "solar-eclipse-and-stargazing-safaris": SolarEclipseAndStargazingSafarisArticle,
+  "kenyas-new-conservation-fees": KenyasNewConservationFeesArticle,
+  "hot-air-balloon-safaris-over-the-mara": HotAirBalloonSafarisOverTheMaraArticle,
+  "new-direct-flights-cutting-kenya-travel-time": NewDirectFlightsCuttingKenyaTravelTimeArticle,
+  "kenya-safari-faqs-everything-first-timers-ask": KenyaSafariFaqsEverythingFirstTimersAskArticle,
+  "is-it-ethical-to-go-on-safari": IsItEthicalToGoOnSafariArticle,
+  "plastic-bag-ban-whats-illegal-to-bring": PlasticBagBanWhatsIllegalToBringArticle,
+  "booking-through-a-local-tour-operator-vs-diy": BookingThroughALocalTourOperatorVsDiyArticle,
+  "bumpy-roads-and-motion-sickness": BumpyRoadsAndMotionSicknessArticle,
 }
 
 function getArticleMeta(slug: string) {

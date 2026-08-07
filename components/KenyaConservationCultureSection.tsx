@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { kenyaConservationCulture, kenyaFaqs } from "@/data/kenyaData"
 
-const PUBLISHED_FAQ_SLUGS = new Set<string>(["how-much-does-a-kenya-safari-cost", "tipping-etiquette-guides-drivers-lodge-staff", "can-you-drink-the-water-in-kenya", "what-currency-should-you-carry-in-kenya", "do-you-need-cash-or-card-on-safari", "kenya-time-zone-and-jet-lag-tips", "internet-and-phone-signal-in-the-bush", "what-happens-if-you-get-sick-during-a-safari"])
+const PUBLISHED_FAQ_SLUGS = new Set<string>(["how-much-does-a-kenya-safari-cost", "tipping-etiquette-guides-drivers-lodge-staff", "can-you-drink-the-water-in-kenya", "what-currency-should-you-carry-in-kenya", "do-you-need-cash-or-card-on-safari", "kenya-time-zone-and-jet-lag-tips", "internet-and-phone-signal-in-the-bush", "what-happens-if-you-get-sick-during-a-safari", "kenya-safari-faqs-everything-first-timers-ask", "is-it-ethical-to-go-on-safari"])
 
 const PUBLISHED_CONSERVATION_SLUGS = new Set<string>(["community-conservancies-how-locals-protect-wildlife", "anti-poaching-efforts-in-kenyas-parks", "rhino-conservation-the-fight-to-save-a-species", "the-maasai-guardians-of-the-mara", "climate-change-and-the-great-migration", "basic-swahili-phrases-and-kenyan-etiquette"])
 
