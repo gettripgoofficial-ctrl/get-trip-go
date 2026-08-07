@@ -97,24 +97,47 @@ const TESTIMONIALS = [
   { text: "Our guide was fantastic. Truly a trip of a lifetime.", name: "Amit Verma", place: "Bangalore" },
 ]
 
-const HOW_IT_WORKS = [
-  { step: "1", title: "Enquire", desc: "Fill the form or contact us." },
-  { step: "2", title: "We Connect", desc: "Our travel expert contacts you." },
-  { step: "3", title: "Get Quote", desc: "Receive your detailed itinerary & quote." },
-  { step: "4", title: "Book & Travel", desc: "Confirm & get ready for adventure!" },
-]
-
 const FAQS = [
-  "Is this a private safari?",
-  "Are flights included?",
-  "Which hotels will we stay at?",
-  "Is the safari vehicle private?",
-  "What meals are included?",
-  "Is visa assistance included?",
-  "What is the best month to visit Kenya?",
-  "How many people can travel together?",
-  "Can I customise the itinerary?",
-  "What happens after I submit an enquiry?",
+  {
+    q: "Is this a private safari?",
+    a: "Yes. This itinerary runs as a private safari for your group only — you will not be combined with other travellers you don\'t know. Your vehicle, guide and pace are entirely your own.",
+  },
+  {
+    q: "Are flights included?",
+    a: "No, international and domestic flights are not included in the package price. This keeps the price flexible since flight costs vary widely by departure city and season — we\'re happy to help you find the best fares separately.",
+  },
+  {
+    q: "Which hotels will we stay at?",
+    a: "The standard itinerary includes handpicked 3-star lodges and camps at each stop — comfortable, well-located properties suited for a safari trip. If you\'d prefer a different category, the itinerary can be customised with 4-star or luxury properties at each location based on your preference and budget.",
+  },
+  {
+    q: "Is the safari vehicle private?",
+    a: "Yes. You get a private 4x4 safari vehicle with a dedicated driver-guide for your group throughout the trip — it is not shared with other travellers, so you set the pace for game drives and stops.",
+  },
+  {
+    q: "What meals are included?",
+    a: "Yes, meals are included as specified in the itinerary for each day — typically breakfast, lunch and dinner at your lodge or camp, plus any specified meals during transfers and game drives.",
+  },
+  {
+    q: "Is visa assistance included?",
+    a: "Yes, we provide visa assistance as part of your booking — including guidance on the Kenya eTA application process, required documents, and timelines, so you\'re not navigating it alone.",
+  },
+  {
+    q: "What is the best month to visit Kenya?",
+    a: "June to October is generally the best window — dry weather, easier wildlife spotting, and (from around July) the Great Migration in the Masai Mara. That said, other months have their own advantages like lower prices and quieter parks, and we can help you pick based on what matters most to you.",
+  },
+  {
+    q: "How many people can travel together?",
+    a: "This itinerary is designed for a minimum of 2 and a maximum of 7 travellers per vehicle. Larger groups can absolutely be accommodated — we\'ll simply arrange additional vehicles and guides so everyone travels comfortably together.",
+  },
+  {
+    q: "Can I customise the itinerary?",
+    a: "Yes, absolutely. This 7-day route is a starting template — we can adjust the number of days, swap destinations, upgrade accommodation, add activities like a hot air balloon safari or a Maasai village visit, or rework the pace entirely to match how you like to travel.",
+  },
+  {
+    q: "What happens after I submit an enquiry?",
+    a: "Our Kenya Safari Team will contact you directly — usually within a few hours — to understand your travel dates, group size and any preferences, then send you a detailed, personalised quote and itinerary for your trip.",
+  },
 ]
 
 function buildWhatsAppUrl(data: Record<string, string>) {
@@ -199,6 +222,7 @@ function LeadForm() {
 
 export default function KenyaHighlandsLandingPage() {
   const [showStickyBar, setShowStickyBar] = useState(true)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
     <div className="bg-white">
@@ -431,30 +455,28 @@ export default function KenyaHighlandsLandingPage() {
         </div>
       </div>
 
-      {/* How booking works + FAQs */}
+      {/* FAQs */}
       <div className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-gray-800 font-extrabold text-sm mb-4 text-center">HOW BOOKING WORKS</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {HOW_IT_WORKS.map(step => (
-                <div key={step.step} className="text-center">
-                  <div className="w-10 h-10 rounded-full bg-green-900 text-white font-bold flex items-center justify-center mx-auto mb-2">{step.step}</div>
-                  <p className="text-gray-900 font-bold text-xs mb-1">{step.title}</p>
-                  <p className="text-gray-500 text-[11px]">{step.desc}</p>
-                </div>
-              ))}
+        <h3 className="text-gray-800 font-extrabold text-xl mb-6 text-center">Frequently Asked Questions</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-3">
+          {FAQS.map((faq, i) => (
+            <div key={faq.q} className="bg-gray-50 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                className="w-full flex items-center justify-between gap-3 p-4 text-left"
+              >
+                <span className="text-gray-900 font-bold text-sm">{faq.q}</span>
+                <span
+                  className={`shrink-0 text-gray-400 transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
+                >
+                  &#9662;
+                </span>
+              </button>
+              {openFaq === i && (
+                <p className="text-gray-600 text-sm leading-relaxed px-4 pb-4">{faq.a}</p>
+              )}
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-gray-800 font-extrabold text-sm mb-4 text-center">FAQS</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
-              {FAQS.map(q => (
-                <p key={q} className="text-gray-600 text-xs">• {q}</p>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
