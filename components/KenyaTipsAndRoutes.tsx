@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { kenyaJourneys } from "@/data/kenyaData"
 
 export default function KenyaTipsAndRoutes() {
@@ -40,9 +41,22 @@ export default function KenyaTipsAndRoutes() {
 
             {/* Always-visible CTAs, pinned to the bottom so they line up across cards */}
             <div className="flex gap-2 mt-auto">
-              <button className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-xs px-3 py-2 rounded-md transition-colors">
-                View Itinerary
-              </button>
+              {article.id === "7-days-through-the-kenya-highlands" ? (
+                <Link
+                  href={`/kenya/${article.id}`}
+                  className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-xs px-3 py-2 rounded-md transition-colors text-center"
+                >
+                  View Itinerary
+                </Link>
+              ) : (
+                <button
+                  disabled
+                  className="flex-1 bg-gray-200 text-gray-400 font-bold text-xs px-3 py-2 rounded-md cursor-not-allowed"
+                  title="Full itinerary coming soon"
+                >
+                  Coming Soon
+                </button>
+              )}
               <button
                 onClick={() => setEnquiryFor(article.title)}
                 className="flex-1 border border-yellow-500 text-yellow-600 hover:bg-yellow-50 font-bold text-xs px-3 py-2 rounded-md transition-colors"
