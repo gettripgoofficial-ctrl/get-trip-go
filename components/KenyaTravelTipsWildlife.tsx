@@ -31,7 +31,7 @@ export default function KenyaTravelTipsWildlife() {
             <h2 className="text-gray-800 font-bold text-lg mb-4 pb-2 border-b-2 border-yellow-500 inline-block">
               Travel Tips
             </h2>
-            <div className="space-y-4 mt-4">
+            <div className="space-y-8 mt-4">
               {kenyaTravelTips.map(article => {
                 const isBuilt = builtTravelTipsSlugs.includes(article.id)
                 const CardInner = (

@@ -92,27 +92,11 @@ export const kenyaTravelTips: KenyaArticle[] = [
     meta: "9 min read",
   },
   {
-    id: "kenya-eta-guide-how-to-apply-cost-and-processing",
-    title: "Kenya eTA Guide: How to Apply, Cost and Processing Time",
-    category: "Travel Tips",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&q=80",
-    excerpt: "The mandatory entry step every visitor needs -- done right, well before you fly.",
-    meta: "4 min read",
-  },
-  {
     id: "safari-footwear-what-actually-works",
     title: "Safari Footwear: What Actually Works",
     category: "Travel Tips",
     image: "https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=400&q=80",
     excerpt: "What holds up on dusty trails and long game drives, and what doesn't.",
-    meta: "4 min read",
-  },
-  {
-    id: "yellow-fever-certificate-entry",
-    title: "Do You Need a Yellow Fever Certificate to Enter Kenya",
-    category: "Travel Tips",
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=400&q=80",
-    excerpt: "Required only in specific cases -- here's exactly when it applies to you.",
     meta: "4 min read",
   },
   {
