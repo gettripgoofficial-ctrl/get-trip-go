@@ -189,7 +189,7 @@ function LeadForm() {
           </div>
         </div>
         <button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-4 py-3 rounded-md transition-colors flex items-center justify-center gap-2">
-          GET MY SAFARI QUOTE →
+          GET MY SAFARI QUOTE
         </button>
         <p className="text-gray-400 text-[11px] text-center">Your details are safe with us. No spam.</p>
       </form>
@@ -203,7 +203,7 @@ export default function KenyaHighlandsLandingPage() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <div className="relative w-full min-h-[520px] md:mt-[68px]">
+      <div className="relative w-full min-h-[620px] sm:min-h-[520px] md:mt-[68px]">
         <Image
           src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80"
           alt="Lion on the savanna with a safari vehicle in the Kenya highlands"
@@ -214,7 +214,7 @@ export default function KenyaHighlandsLandingPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 py-8">
-          <div className="flex justify-between items-start mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start gap-3 mb-6">
             <span className="inline-flex items-center gap-2 bg-white/90 border border-gray-200 rounded-full px-4 py-2 text-xs font-bold text-gray-800 shadow-sm">
               📅 BEST TIME TO VISIT: JUN – OCT
             </span>
@@ -228,8 +228,8 @@ export default function KenyaHighlandsLandingPage() {
           <div className="max-w-xl">
             <p className="italic text-gray-700 mb-2">Wild by Nature, Unforgettable by Choice</p>
             <h1 className="leading-none mb-3">
-              <span className="block text-green-900 font-black text-6xl tracking-tight">KENYA</span>
-              <span className="block text-orange-600 font-black text-6xl tracking-tight">SAFARI</span>
+              <span className="block text-green-900 font-black text-4xl sm:text-6xl tracking-tight">KENYA</span>
+              <span className="block text-orange-600 font-black text-4xl sm:text-6xl tracking-tight">SAFARI</span>
             </h1>
             <p className="text-gray-700 text-sm mb-1">📍 Lake Naivasha · Lake Nakuru National Park</p>
             <p className="text-gray-700 text-sm mb-4">Masai Mara National Reserve · Nairobi</p>
@@ -252,7 +252,7 @@ export default function KenyaHighlandsLandingPage() {
                 rel="noreferrer"
                 className="bg-green-800 hover:bg-green-900 text-white font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
               >
-                GET KENYA SAFARI QUOTE →
+                GET KENYA SAFARI QUOTE
               </a>
               <a
                 href="tel:+919667892504"
@@ -471,7 +471,7 @@ export default function KenyaHighlandsLandingPage() {
           </div>
           <div className="flex flex-wrap gap-3">
             <a href={buildWhatsAppUrl({})} target="_blank" rel="noreferrer" className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-5 py-3 rounded-md">
-              GET MY KENYA SAFARI QUOTE →
+              GET MY KENYA SAFARI QUOTE
             </a>
             <a href={`https://wa.me/919667892504`} target="_blank" rel="noreferrer" className="bg-green-700 hover:bg-green-600 text-white font-bold text-sm px-5 py-3 rounded-md">
               WhatsApp Chat
