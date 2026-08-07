@@ -4,7 +4,7 @@ import Link from "next/link"
 import { kenyaWhoShouldGo, kenyaWhatToWear, kenyaTrending, kenyaHealthSafety } from "@/data/kenyaData"
 
 // Trending articles don't have real pages built yet — add slugs here as they go live.
-const PUBLISHED_TRENDING_SLUGS = new Set<string>([])
+const PUBLISHED_TRENDING_SLUGS = new Set<string>(["kenyas-rainy-season-what-changes", "solar-eclipse-and-stargazing-safaris", "kenyas-new-conservation-fees", "wildebeest-crossing-2026-migration-forecast", "hot-air-balloon-safaris-over-the-mara", "new-direct-flights-cutting-kenya-travel-time"])
 
 function ArticleCard({
   article,

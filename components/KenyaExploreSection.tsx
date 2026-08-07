@@ -12,7 +12,6 @@ const PUBLISHED_STAYS_SLUGS = new Set<string>([
   "sasaab-a-moroccan-style-lodge",
   "ol-donyo-lodge-under-kilimanjaros-shadow",
   "segera-retreat-conservancy-and-infinity-pool",
-,
   "elsas-kopje-built-into-the-rock",
 ])
 

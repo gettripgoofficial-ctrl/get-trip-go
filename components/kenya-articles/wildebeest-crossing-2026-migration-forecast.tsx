@@ -1,68 +1,98 @@
-import Link from "next/link"
+import Image from "next/image"
 
 export default function WildebeestCrossing2026MigrationForecastArticle() {
   return (
     <>
       <p className="text-gray-700 text-lg leading-relaxed mb-8">
-        Migration timing shifts a little every year based on rainfall, and travelers booking a
-        Mara River crossing trip often want the most current read on where the herds are
-        expected to be. Here's how to think about the forecast rather than treat it as a fixed
-        date.
+        No one can promise an exact date for a Mara River crossing — the herds move on rainfall,
+        not a calendar. But migration patterns repeat closely enough year to year that a genuinely
+        useful forecast is possible. Here's what current 2026 forecasting from safari guides and
+        migration trackers points to, and how to plan around it rather than against it.
       </p>
 
       <div className="bg-gray-50 border-l-4 border-yellow-500 rounded-r-lg p-6 mb-10">
         <h2 className="text-gray-900 font-bold text-base mb-3">Quick Facts</h2>
         <ul className="space-y-2 text-gray-700 text-sm">
-          <li><span className="font-semibold text-gray-900">Typical crossing window:</span> Late June through September, concentrated in the Masai Mara.</li>
-          <li><span className="font-semibold text-gray-900">What shifts it:</span> Rainfall timing in the Serengeti and southern Kenya each year.</li>
-          <li><span className="font-semibold text-gray-900">Best source for current timing:</span> Your camp or guide, who tracks herd movement in real time.</li>
-          <li><span className="font-semibold text-gray-900">Booking advice:</span> Book six months to a year ahead; adjust exact dates closer to travel if your operator allows.</li>
+          <li><span className="font-semibold text-gray-900">Expected arrival:</span> Herds begin moving toward the Mara from mid-to-late July 2026.</li>
+          <li><span className="font-semibold text-gray-900">Peak crossing window:</span> August through early September, historically the most reliable stretch.</li>
+          <li><span className="font-semibold text-gray-900">Return crossings:</span> Herds typically cross south again around mid-September through October or November.</li>
+          <li><span className="font-semibold text-gray-900">No guarantees:</span> Exact timing shifts every year based on rainfall — this is a forecast, not a schedule.</li>
         </ul>
       </div>
 
       <section className="mb-10">
         <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
-          Why "Forecasting" the Migration Is Different From Forecasting Weather
+          How a Migration Forecast Actually Works
         </h2>
         <p className="text-gray-700 leading-relaxed mt-4">
-          The Great Migration follows rainfall and grass growth, not a calendar, which means any
-          specific date given more than a few weeks in advance is really an estimate based on
-          historical averages, not a guarantee. The broad pattern is consistent — herds are
-          typically in the Masai Mara from around July through September or October — but the
-          exact week the first major Mara River crossing happens can shift meaningfully year to
-          year depending on how the rains fell further south in the preceding months. For the
-          full underlying mechanics of why and how the migration moves, see our{" "}
-          <Link href="/kenya/the-great-migration-explained" className="text-yellow-600 hover:text-yellow-700 font-semibold">
-            Great Migration guide
-          </Link>.
+          Wildebeest move for one reason: fresh grass, which follows the rain. Forecasters build
+          their predictions from long-term migration patterns, rainfall cycles, and grass
+          regeneration trends rather than fixed calendar dates. That's why every credible 2026
+          forecast lands in roughly the same range — late July through October — while still
+          stressing that the precise week of any single crossing can't be pinned down months in
+          advance.
         </p>
       </section>
 
       <section className="mb-10">
         <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
-          How to Get the Most Current Read Before You Book
+          The 2026 Season, Month by Month
+        </h2>
+        <ul className="mt-4 space-y-3 text-gray-700 leading-relaxed">
+          <li><span className="font-semibold text-gray-900">Late June:</span> The first "scouts" reach the Sand River in the northern Mara — a quiet preview before the main herds arrive, with far fewer vehicles around.</li>
+          <li><span className="font-semibold text-gray-900">Mid-to-late July:</span> The bulk of the herds begin moving into the Mara from the northern Serengeti, with early, smaller crossings as the front runners test the water.</li>
+          <li><span className="font-semibold text-gray-900">August–early September:</span> The peak window. This is when the largest, most dramatic crossings are most likely, though it also brings the biggest crowds and highest prices.</li>
+          <li><span className="font-semibold text-gray-900">Mid-September onward:</span> Herds begin shifting back toward the Mara Triangle and crossing south again as short rains approach Tanzania.</li>
+          <li><span className="font-semibold text-gray-900">November–December:</span> The migration continues its return into the southern Serengeti, dispersing across the plains ahead of the next calving season.</li>
+        </ul>
+      </section>
+
+      <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
+        <Image
+          src="https://images.unsplash.com/photo-1516934024742-b461fba47600?w=1200&q=80"
+          alt="Wildebeest herds gathering at the Mara River during peak migration season"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
+        />
+      </div>
+
+      <section className="mb-10">
+        <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+          Why Longer Stays Beat Precise Dates
         </h2>
         <p className="text-gray-700 leading-relaxed mt-4">
-          Rather than relying on a fixed forecast published months in advance, the most reliable
-          source of current migration positioning is your camp or ground operator, who typically
-          gets daily or weekly updates from guides actively tracking herd movement across the
-          Mara-Serengeti ecosystem. Many camps and safari operators also publish informal
-          migration updates on their websites or social channels during the July–October window,
-          which are far more current than any static seasonal guide.
+          Crossings happen multiple times throughout the season, not just once — herds cross back
+          and forth as rain patterns shift between the Mara and Tanzania side. That means the
+          length of your stay matters more than which exact week you book. A short two- or
+          three-night visit gives a moderate chance; four nights meaningfully improves the odds;
+          five or more nights during the peak window gives a very high chance of witnessing at
+          least one crossing.
         </p>
       </section>
 
       <section className="mb-10">
         <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
-          How to Book Around Genuine Uncertainty
+          August vs. September: The Trade-Off
         </h2>
         <p className="text-gray-700 leading-relaxed mt-4">
-          Because exact crossing timing can't be pinned down far in advance, the most reliable
-          strategy is booking within the broad July-through-September window rather than a single
-          narrow date, and staying multiple nights near the Mara River rather than a single-night
-          stop timed to a specific predicted crossing. Some operators also offer flexible date
-          changes closer to travel if migration positioning shifts meaningfully — worth asking
-          about when booking, particularly if the crossing itself is the main goal of your trip.
+          August is the most iconic month and typically has the highest crossing frequency — but
+          it's also peak season, meaning more vehicles at every sighting and higher lodge prices.
+          September often delivers equally dramatic crossings with noticeably fewer crowds, making
+          it a strong choice for travelers prioritizing a quieter experience over the absolute
+          highest odds.
+        </p>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-gray-800 font-bold text-xl mb-3 pb-2 border-b-2 border-yellow-500 inline-block">
+          Booking Timeline for 2026
+        </h2>
+        <p className="text-gray-700 leading-relaxed mt-4">
+          Camps closest to the main crossing points routinely sell out 12 to 18 months in advance
+          for the July-September window. If the peak season is the priority, booking early isn't
+          just advisable — it's often the only way to secure a camp with genuinely good access to
+          the crossing points rather than a long daily transfer.
         </p>
       </section>
 
@@ -73,31 +103,41 @@ export default function WildebeestCrossing2026MigrationForecastArticle() {
         <div className="mt-4 space-y-5">
           <div>
             <h3 className="text-gray-900 font-semibold text-base mb-1">
-              Can you predict the exact date of a Mara River crossing?
+              When exactly will the Mara River crossings happen in 2026?
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              No — crossings depend on herd movement and rainfall patterns that shift year to
-              year, so the reliable window is a season (roughly July–September), not a specific
-              date months in advance.
+              No exact date can be predicted months in advance — crossings depend on rainfall.
+              Current forecasts point to a peak window between August and early September, with
+              activity possible from mid-July through November.
             </p>
           </div>
           <div>
             <h3 className="text-gray-900 font-semibold text-base mb-1">
-              Where can I find the most current migration updates?
+              Is August or September better for the 2026 migration?
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Your camp or ground operator, who typically receives regular updates from guides
-              actively tracking the herds, is a far more current source than a general seasonal
-              forecast.
+              August typically has the highest crossing frequency but also the biggest crowds.
+              September often offers equally dramatic crossings with noticeably fewer vehicles at
+              each sighting.
             </p>
           </div>
           <div>
             <h3 className="text-gray-900 font-semibold text-base mb-1">
-              Should I book a longer stay to improve my chances of seeing a crossing?
+              How many nights should I book to see a crossing?
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Yes — staying multiple nights near the Mara River during the broad crossing season
-              improves your odds far more than a single night timed to one predicted date.
+              Longer stays matter more than exact dates. Four nights gives a high chance during the
+              peak window, and five or more nights gives a very high chance, since crossings happen
+              repeatedly throughout the season rather than on a single day.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-gray-900 font-semibold text-base mb-1">
+              How far in advance should I book for the 2026 migration season?
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Camps near the main crossing points for the July-September window often sell out 12
+              to 18 months ahead, so early booking is strongly recommended for peak-season access.
             </p>
           </div>
         </div>
