@@ -14,59 +14,85 @@ const ANIMALS = [
 const ITINERARY = [
   {
     day: "Day 1",
-    route: "Nairobi → Lake Naivasha",
-    overnight: "Lake Naivasha Lodge",
-    bullets: ["Private drive from Nairobi to Lake Naivasha.", "Evening boat ride on Lake Naivasha.", "Watch hippos, pelicans and fish eagles."],
+    route: "Nairobi to Lake Naivasha",
+    overnight: "Naivasha | Full Board",
+    bullets: [
+      "Arrive at Nairobi International Airport, where you will meet our representative and drive to Lake Naivasha, a beautiful freshwater lake in the Great Rift Valley.",
+      "Check in and enjoy lunch before an afternoon boat ride on the lake, with opportunities to see hippos, pelicans, African fish eagles and other birdlife.",
+      "Return to the lodge for dinner and overnight stay.",
+    ],
     image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=700&q=80",
   },
   {
     day: "Day 2",
-    route: "Lake Naivasha → Lake Nakuru",
-    overnight: "Lake Nakuru Lodge",
-    bullets: ["Scenic drive to Lake Nakuru.", "Afternoon game drive — home to rhino and flamingo."],
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80",
+    route: "Lake Naivasha to Lake Nakuru National Park",
+    overnight: "Nakuru | Full Board",
+    bullets: [
+      "After breakfast, depart Naivasha for Lake Nakuru National Park. Arrive in time for lunch before an afternoon game drive.",
+      "The park is well known for its rhino population and diverse wildlife, including buffaloes, giraffes, lions, leopards and other species. The lake also attracts various waterbirds, including flamingos.",
+      "Return to the lodge for dinner and overnight stay.",
+    ],
+    image: "https://images.unsplash.com/photo-1541414779316-956a5084c0d4?w=700&q=80",
   },
   {
     day: "Day 3",
-    route: "Lake Nakuru → Masai Mara",
-    overnight: "Masai Mara Safari Camp",
-    bullets: ["Drive to the world-famous Masai Mara National Reserve.", "Enjoy evening game drive."],
+    route: "Lake Nakuru to Masai Mara National Reserve",
+    overnight: "Masai Mara | Full Board",
+    bullets: [
+      "After breakfast, depart Lake Nakuru and drive towards the Masai Mara National Reserve, approximately 5–6 hours.",
+      "Arrive around lunchtime, check in and enjoy lunch before your first afternoon game drive. Search for lions, elephants, cheetahs, buffaloes, giraffes and other wildlife.",
+      "Return to the lodge in the evening.",
+    ],
     image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=700&q=80",
   },
   {
     day: "Day 4",
-    route: "Masai Mara: Full Day Safari",
-    overnight: "Masai Mara Safari Camp",
-    bullets: ["Full day of game drives in Masai Mara.", "Explore rich wildlife and the vast savannah."],
+    route: "Full Day Masai Mara National Reserve",
+    overnight: "Masai Mara | Full Board",
+    bullets: [
+      "Enjoy a full day exploring the Masai Mara with morning and afternoon game drives.",
+      "With your Maasai safari guide, explore the open plains and different wildlife areas, offering excellent opportunities for wildlife viewing and photography.",
+    ],
     image: "https://images.unsplash.com/photo-1728891376539-14448ef60798?w=700&q=80",
   },
   {
     day: "Day 5",
-    route: "Masai Mara: Deeper into the Wild",
-    overnight: "Masai Mara Safari Camp",
-    bullets: ["Morning and afternoon game drives.", "Optional visit to a Maasai village (village fee applies)."],
+    route: "Full Day Masai Mara National Reserve",
+    overnight: "Masai Mara | Full Board",
+    bullets: [
+      "After breakfast, set out for another full day in the Masai Mara, exploring river areas, rocky kopjes and expansive grasslands while searching for abundant wildlife.",
+      "Enjoy a picnic lunch in the reserve before continuing the day's exploration.",
+      "Return to the lodge in the late afternoon.",
+    ],
     image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=700&q=80",
   },
   {
     day: "Day 6",
-    route: "Masai Mara: Dawn from the Air",
-    overnight: "Masai Mara Safari Camp",
-    bullets: ["Optional hot air balloon safari at sunrise.", "Later, enjoy a game drive in the park."],
+    route: "Masai Mara to Nairobi",
+    overnight: "Nairobi | Breakfast",
+    bullets: [
+      "After breakfast, drive back to Nairobi.",
+      "Upon arrival, enjoy some free time to visit local places, explore the city, or do shopping at your own pace, depending on the available time.",
+    ],
     image: "https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=700&q=80",
   },
   {
     day: "Day 7",
-    route: "Masai Mara → Nairobi",
+    route: "Departure",
     overnight: "End of Unforgettable Journey",
-    bullets: ["Morning game drive.", "Drive back to Nairobi and drop off at airport for your onward flight."],
+    bullets: [
+      "After breakfast, transfer to the airport.",
+      "Depending on your flight schedule, you may have time for lunch or some leisure time in Nairobi before proceeding to Jomo Kenyatta International Airport for your onward flight.",
+    ],
     image: "https://images.unsplash.com/photo-1764555735463-78b9ff085350?w=700&q=80",
   },
 ]
 
 const STAYS = [
-  { location: "Lake Naivasha", name: "Enashipai Resort & Spa or similar", stars: 4, image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=400&q=80" },
-  { location: "Lake Nakuru", name: "Lake Nakuru Lodge or similar", stars: 4, image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80" },
-  { location: "Masai Mara", name: "Mara Sopa Lodge or similar", stars: 4, image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80" },
+  { location: "Lake Naivasha", name: "Naivasha Kongoni Lodge", stars: 3, image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=400&q=80" },
+  { location: "Lake Nakuru", name: "Ziwa Bush Lodge", stars: 3, image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80" },
+  { location: "Masai Mara", name: "Jambo Mara Safari Lodge", stars: 3, image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80" },
+  { location: "Nairobi", name: "Kingfisher Nest Hotel", stars: 3, image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" },
 ]
 
 const INCLUSIONS = [
