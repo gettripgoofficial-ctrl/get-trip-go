@@ -328,7 +328,7 @@ export default function KenyaHighlandsLandingPage() {
             </p>
             <p className="text-gray-400 text-xs mb-5">Flights Optional · All Taxes Included</p>
 
-            <div className="flex flex-wrap gap-3 mb-3">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
               <a href="#safari-quote-form"
                 onClick={(e) => {
                   e.preventDefault()
@@ -349,7 +349,6 @@ export default function KenyaHighlandsLandingPage() {
                 {showPhonePopup && (
                   <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg px-4 py-3 whitespace-nowrap z-10">
                     <p className="text-gray-500 text-[11px] mb-1">Call us directly</p>
-            
                     <a href="tel:+919667892504" className="text-green-800 font-bold text-sm">
                       +91 96 6789 2504
                     </a>

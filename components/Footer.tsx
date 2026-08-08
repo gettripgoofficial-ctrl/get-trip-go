@@ -222,7 +222,7 @@ export default function Footer() {
 
           {/* App + Partners — rendered once */}
           <div className="border-t border-white/10 lg:border-0 lg:ml-auto pt-4 lg:pt-0 pb-4 lg:pb-0">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2.5">Trusted Partners</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2.5">Travel Platform Partners</p>
             <div className="flex flex-wrap lg:flex-col gap-2 lg:gap-1.5">
               {partners.map((p) => (
                 <a key={p.name} href={p.link} target="_blank" rel="noopener noreferrer"

@@ -8,6 +8,8 @@ import { useCurrency } from "@/contexts/CurrencyContext"
 import DealsModal from "@/components/DealsModal"
 import SupportModal from "@/components/SupportModal"
 import KenyaBanner from "@/components/KenyaBanner"
+import MobileSearchSheet, { MobileSearchTab } from "@/components/search/mobile/MobileSearchSheet"
+import SecondaryServices from "@/components/SecondaryServices"
 import { offers } from "@/data/offers"
 import {
   MobileOfferCard,
@@ -16,24 +18,17 @@ import {
 
 type Offer = typeof offers[0]
 
-const SERVICES = [
-  { label: "Flights",      icon: <Plane   size={28} strokeWidth={2} />, bg: "#1A56F0", color: "#fff", href: "#flights"    },
-  { label: "Hotels",       icon: <Hotel   size={28} strokeWidth={2} />, bg: "#16A34A", color: "#fff", href: "#hotels"     },
-  { label: "Things to do", icon: <Camera  size={28} strokeWidth={2} />, bg: "#EA8C1E", color: "#fff", href: "#activities" },
-  { label: "Transfers",    icon: <Car     size={28} strokeWidth={2} />, bg: "#7C3AED", color: "#fff", href: "#transfers"  },
+const SERVICES: { label: string; icon: React.ReactNode; bg: string; color: string; tab: MobileSearchTab }[] = [
+  { label: "Flights",      icon: <Plane   size={28} strokeWidth={2} />, bg: "#1A56F0", color: "#fff", tab: "Flights"    },
+  { label: "Hotels",       icon: <Hotel   size={28} strokeWidth={2} />, bg: "#16A34A", color: "#fff", tab: "Hotels"     },
+  { label: "Things to do", icon: <Camera  size={28} strokeWidth={2} />, bg: "#EA8C1E", color: "#fff", tab: "Activities" },
+  { label: "Transfers",    icon: <Car     size={28} strokeWidth={2} />, bg: "#7C3AED", color: "#fff", tab: "Transfers"  },
 ]
 
-const SECONDARY = [
-  { icon: "🏢", label: "Apartments" },
-  { icon: "🛂", label: "Visa"       },
-  { icon: "🛡️", label: "Insurance"  },
-  { icon: "🚢", label: "Cruises"    },
-  { icon: "💱", label: "Forex"      },
-  { icon: "🏡", label: "Villas"     },
-]
 
 export default function HeroSectionMobile() {
   const [showMenu, setShowMenu] = useState(false)
+  const [activeSheet, setActiveSheet] = useState<MobileSearchTab | null>(null)
   const [showCurrency, setShowCurrency] = useState(false)
   const [dealsOpen, setDealsOpen] = useState(false)
   const [supportOpen, setSupportOpen] = useState(false)
@@ -199,23 +194,14 @@ export default function HeroSectionMobile() {
           <div className="px-4 mb-3">
             <h2 className="text-base font-bold text-[#0A1628]">More Services</h2>
           </div>
-          <div className="grid grid-cols-6 gap-1 px-3">
-            {SECONDARY.map(({ icon, label }) => (
-              <button
-                key={label}
-                className="flex flex-col items-center gap-1 active:scale-95 transition-transform"
-              >
-                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-xl">
-                  {icon}
-                </div>
-                <span className="text-[9px] font-semibold text-[#0A1628] text-center leading-tight w-full">{label}</span>
-              </button>
-            ))}
-          </div>
+          <SecondaryServices />
         </div>
 
       </div>
 
+      {activeSheet && (
+        <MobileSearchSheet initialTab={activeSheet} onClose={() => setActiveSheet(null)} />
+      )}
       {activeOffer && <OfferModal offer={activeOffer} onClose={() => setActiveOffer(null)} />}
       <DealsModal isOpen={dealsOpen} onClose={() => setDealsOpen(false)} />
       <SupportModal isOpen={supportOpen} onClose={() => setSupportOpen(false)} />

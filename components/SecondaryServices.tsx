@@ -304,18 +304,18 @@ export default function SecondaryServices() {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 relative z-10 -mt-8">
+      <div className="max-w-7xl mx-auto px-4 relative z-10 mt-4 sm:-mt-8">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-6 divide-x divide-gray-200">
             {SERVICES.map(service => (
               <button
                 key={service.title}
                 onClick={() => setActive(service)}
-                className="flex-1 flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3 sm:py-4 hover:bg-blue-50/50 transition-all group"
+                className="flex-1 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-3 px-1 sm:px-5 py-3 sm:py-4 hover:bg-blue-50/50 transition-all group"
               >
-                <span className="text-xl sm:text-2xl">{service.icon}</span>
-                <div className="text-left">
-                  <p className="text-xs sm:text-sm font-semibold text-gray-800 whitespace-nowrap group-hover:text-[#1A56F0] transition-colors">
+                <span className="text-lg sm:text-2xl">{service.icon}</span>
+                <div className="text-center sm:text-left">
+                  <p className="text-[9px] sm:text-sm font-semibold text-gray-800 leading-tight sm:whitespace-nowrap group-hover:text-[#1A56F0] transition-colors">
                     {service.title}
                   </p>
                   <p className="text-xs text-gray-400 whitespace-nowrap hidden sm:block">{service.sub}</p>

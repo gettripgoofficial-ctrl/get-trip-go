@@ -49,7 +49,7 @@ export default function TrustedPartners() {
 
         {/* Heading */}
         <p className="text-lg font-extrabold tracking-[0.2em] uppercase text-orange-500 mb-1">
-          Trusted Partners
+          Travel Platform Partners
         </p>
         <p className="text-sm font-semibold text-gray-700 mb-7">
           We partner with the world&apos;s most trusted travel platforms
