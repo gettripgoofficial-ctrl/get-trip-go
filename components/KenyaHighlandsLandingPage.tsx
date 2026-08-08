@@ -300,20 +300,28 @@ export default function KenyaHighlandsLandingPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 py-8">
-          <div className="flex justify-end items-start mb-6">
-            <div className="bg-white rounded-lg shadow-md px-5 py-3 text-center">
-              <p className="text-gray-900 font-extrabold text-lg">4.8/5</p>
-              <p className="text-amber-500 text-sm">★★★★★</p>
-              <p className="text-gray-500 text-xs mt-1">500+<br />Happy Travellers</p>
-            </div>
+          <span className="hidden lg:flex absolute right-4 bottom-10 bg-white border border-gray-300 text-gray-800 font-bold text-sm px-5 py-3 rounded-md items-center gap-2 whitespace-nowrap shadow-md z-10">
+            📅 BEST TIME TO VISIT: JUN – OCT
+          </span>
+          <div className="hidden lg:block absolute right-4 top-6 bg-white rounded-lg shadow-md px-5 py-3 text-center z-10">
+            <p className="text-gray-900 font-extrabold text-lg">4.8/5</p>
+            <p className="text-amber-500 text-sm">★★★★★</p>
+            <p className="text-gray-500 text-xs mt-1">500+<br />Happy Travellers</p>
           </div>
 
-          <div className="max-w-xl">
+          <div className="max-w-2xl">
             <p className="italic text-gray-700 mb-2">Wild by Nature, Unforgettable by Choice</p>
-            <h1 className="leading-none mb-3">
-              <span className="block text-green-900 font-black text-4xl sm:text-6xl tracking-tight">KENYA</span>
-              <span className="block text-orange-600 font-black text-4xl sm:text-6xl tracking-tight">SAFARI</span>
-            </h1>
+            <div className="flex items-center justify-between gap-3 mb-3 lg:block">
+              <h1 className="leading-none lg:mb-3">
+                <span className="block text-green-900 font-black text-4xl sm:text-6xl tracking-tight">KENYA</span>
+                <span className="block text-orange-600 font-black text-4xl sm:text-6xl tracking-tight">SAFARI</span>
+              </h1>
+              <div className="lg:hidden flex-shrink-0 bg-white rounded-lg shadow-md px-3 py-2 text-center">
+                <p className="text-gray-900 font-extrabold text-sm">4.8/5</p>
+                <p className="text-amber-500 text-xs">★★★★★</p>
+                <p className="text-gray-500 text-[10px] mt-1">500+<br />Happy Travellers</p>
+              </div>
+            </div>
             <p className="text-gray-700 text-sm mb-1">📍 Lake Naivasha · Lake Nakuru National Park</p>
             <p className="text-gray-700 text-sm mb-4">Masai Mara National Reserve · Nairobi</p>
 
@@ -328,13 +336,13 @@ export default function KenyaHighlandsLandingPage() {
             </p>
             <p className="text-gray-400 text-xs mb-5">Flights Optional · All Taxes Included</p>
 
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 lg:gap-3 mb-3">
               <a href="#safari-quote-form"
                 onClick={(e) => {
                   e.preventDefault()
                   document.getElementById("safari-quote-form")?.scrollIntoView({ behavior: "smooth", block: "center" })
                 }}
-                className="bg-green-800 hover:bg-green-900 text-white font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
+                className="bg-green-800 hover:bg-green-900 text-white font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap"
               >
                 GET MY SAFARI QUOTE
               </a>
@@ -342,7 +350,7 @@ export default function KenyaHighlandsLandingPage() {
                 <button
                   type="button"
                   onClick={() => setShowPhonePopup(!showPhonePopup)}
-                  className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
+                  className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap"
                 >
                   📞 TALK TO SAFARI EXPERT
                 </button>
@@ -355,7 +363,7 @@ export default function KenyaHighlandsLandingPage() {
                   </div>
                 )}
               </div>
-              <span className="bg-white border border-gray-300 text-gray-800 font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2">
+              <span className="lg:hidden bg-white border border-gray-300 text-gray-800 font-bold text-sm px-4 py-3 rounded-md flex items-center gap-2 whitespace-nowrap">
                 📅 BEST TIME TO VISIT: JUN – OCT
               </span>
             </div>
