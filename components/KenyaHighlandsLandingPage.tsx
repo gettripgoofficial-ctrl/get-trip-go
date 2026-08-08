@@ -89,10 +89,38 @@ const ITINERARY = [
 ]
 
 const STAYS = [
-  { location: "Lake Naivasha", name: "Naivasha Kongoni Lodge", stars: 3, image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=400&q=80" },
-  { location: "Lake Nakuru", name: "Ziwa Bush Lodge", stars: 3, image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80" },
-  { location: "Masai Mara", name: "Jambo Mara Safari Lodge", stars: 3, image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80" },
-  { location: "Nairobi", name: "Kingfisher Nest Hotel", stars: 3, image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" },
+  {
+    location: "Lake Naivasha",
+    name: "Naivasha Kongoni Lodge",
+    stars: 4,
+    rating: 4.2,
+    tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g317067-d3474739-Reviews-Naivasha_Kongoni_Lodge-Naivasha_Rift_Valley_Province.html",
+    image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=400&q=80",
+  },
+  {
+    location: "Lake Nakuru",
+    name: "Ziwa Bush Lodge",
+    stars: 4,
+    rating: 4.5,
+    tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g1015946-d4598733-Reviews-Ziwa_Bush_Lodge-Nakuru_Rift_Valley_Province.html",
+    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80",
+  },
+  {
+    location: "Masai Mara",
+    name: "Jambo Mara Safari Lodge",
+    stars: 4,
+    rating: 3.9,
+    tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g294209-d7195107-Reviews-Jambo_Mara_Safari_Lodge-Maasai_Mara_National_Reserve_Rift_Valley_Province.html",
+    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80",
+  },
+  {
+    location: "Nairobi",
+    name: "Kingfisher Nest Hotel",
+    stars: 4,
+    rating: 4.1,
+    tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g294207-d13880353-Reviews-Kingfisher_Nest_Hotel_Suites-Nairobi.html",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80",
+  },
 ]
 
 const INCLUSIONS = [
@@ -189,10 +217,13 @@ function LeadForm() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-      <h3 className="text-gray-900 font-extrabold text-lg text-center">PLAN YOUR KENYA SAFARI</h3>
-      <p className="text-gray-500 text-sm text-center mb-5">Get your personalised quote</p>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div id="safari-quote-form" className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+      <div className="bg-gradient-to-r from-green-900 to-green-800 px-6 py-5 text-center">
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/15 text-xl mb-2">🦏</span>
+        <h3 className="text-white font-extrabold text-lg">PLAN YOUR KENYA SAFARI</h3>
+        <p className="text-green-100 text-sm">Get your personalised quote in minutes</p>
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-4 p-6">
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Full Name</label>
           <input name="name" required type="text" placeholder="Enter your name" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
@@ -237,10 +268,12 @@ function LeadForm() {
             </div>
           </div>
         </div>
-        <button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-4 py-3 rounded-md transition-colors flex items-center justify-center gap-2">
+        <button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-4 py-3.5 rounded-lg transition-colors shadow-md shadow-orange-600/30 flex items-center justify-center gap-2">
           GET MY SAFARI QUOTE
         </button>
-        <p className="text-gray-400 text-[11px] text-center">Your details are safe with us. No spam.</p>
+        <p className="text-gray-400 text-[11px] text-center flex items-center justify-center gap-1">
+          <span>🔒</span> Your details are safe with us. No spam.
+        </p>
       </form>
     </div>
   )
@@ -249,11 +282,12 @@ function LeadForm() {
 export default function KenyaHighlandsLandingPage() {
   const [showStickyBar, setShowStickyBar] = useState(true)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [showPhonePopup, setShowPhonePopup] = useState(false)
 
   return (
     <div className="bg-white">
       {/* Hero */}
-      <div className="relative w-full min-h-[620px] sm:min-h-[520px] md:mt-[68px]">
+      <div className="relative w-full min-h-[480px] sm:min-h-[380px] md:mt-[68px]">
         <Image
           src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80"
           alt="Lion on the savanna with a safari vehicle in the Kenya highlands"
@@ -264,10 +298,7 @@ export default function KenyaHighlandsLandingPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 py-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start gap-3 mb-6">
-            <span className="inline-flex items-center gap-2 bg-white/90 border border-gray-200 rounded-full px-4 py-2 text-xs font-bold text-gray-800 shadow-sm">
-              📅 BEST TIME TO VISIT: JUN – OCT
-            </span>
+          <div className="flex justify-end items-start mb-6">
             <div className="bg-white rounded-lg shadow-md px-5 py-3 text-center">
               <p className="text-gray-900 font-extrabold text-lg">4.8/5</p>
               <p className="text-amber-500 text-sm">★★★★★</p>
@@ -296,34 +327,38 @@ export default function KenyaHighlandsLandingPage() {
             <p className="text-gray-400 text-xs mb-5">Flights Optional · All Taxes Included</p>
 
             <div className="flex flex-wrap gap-3 mb-3">
-              
-              <a
-                target="_blank"
-                rel="noreferrer"
+              <a href="#safari-quote-form"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById("safari-quote-form")?.scrollIntoView({ behavior: "smooth", block: "center" })
+                }}
                 className="bg-green-800 hover:bg-green-900 text-white font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
               >
                 GET KENYA SAFARI QUOTE
               </a>
-              <a
-                href="tel:+919667892504"
-                className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
-              >
-                📞 TALK TO SAFARI EXPERT
-              </a>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setShowPhonePopup(!showPhonePopup)}
+                  className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
+                >
+                  📞 TALK TO SAFARI EXPERT
+                </button>
+                {showPhonePopup && (
+                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg px-4 py-3 whitespace-nowrap z-10">
+                    <p className="text-gray-500 text-[11px] mb-1">Call us directly</p>
+                    <a href="tel:+919667892504" className="text-green-800 font-bold text-sm">
+                      +91 96 6789 2504
+                    </a>
+                  </div>
+                )}
+              </div>
+              <span className="inline-flex items-center gap-2 bg-white/90 border border-gray-200 rounded-full px-4 py-2 text-xs font-bold text-gray-800 shadow-sm">
+                📅 BEST TIME TO VISIT: JUN – OCT
+              </span>
             </div>
             <p className="text-gray-400 text-xs">⏱ Takes 30 seconds · No payment required</p>
           </div>
-        </div>
-      </div>
-
-      {/* Trust bar */}
-      <div className="bg-green-900">
-        <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-2 sm:grid-cols-5 gap-4 text-white text-xs font-semibold text-center">
-          <div>🛏 Comfortable Safari Stays</div>
-          <div>🧑 Experienced Local Guides</div>
-          <div>🚙 Game Drives & Boat Safari</div>
-          <div>📷 Scenic Landscapes & Wildlife</div>
-          <div>🎧 24/7 Travel Support</div>
         </div>
       </div>
 
@@ -402,10 +437,6 @@ export default function KenyaHighlandsLandingPage() {
 
           {/* Right: sidebar */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="relative w-full h-56 rounded-xl overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1759055646019-e076c6482ed1?w=600&q=80" alt="Leopard resting in a tree" fill sizes="400px" className="object-cover" />
-            </div>
-
             <LeadForm />
 
             <div>
@@ -414,13 +445,13 @@ export default function KenyaHighlandsLandingPage() {
               </h3>
               <div className="space-y-3">
                 {STAYS.map(stay => (
-                  <div key={stay.location} className="relative rounded-lg overflow-hidden h-24">
+                  <div key={stay.location} className="relative rounded-lg overflow-hidden h-40">
                     <Image src={stay.image} alt={stay.name} fill sizes="400px" className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <p className="text-white font-bold text-sm">{stay.location}</p>
-                      <p className="text-gray-200 text-xs">{stay.name}</p>
-                      <p className="text-amber-400 text-xs">{"★".repeat(stay.stars)}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-white font-bold text-base">{stay.location}</p>
+                      <p className="text-gray-200 text-sm">{stay.name}</p>
+                      <p className="text-amber-400 text-sm">{"★".repeat(stay.stars)}</p>
                     </div>
                   </div>
                 ))}
