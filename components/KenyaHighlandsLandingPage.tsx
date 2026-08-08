@@ -202,6 +202,7 @@ function buildWhatsAppUrl(data: Record<string, string>) {
     `Phone: ${data.phone || ""}`,
     `Email: ${data.email || ""}`,
     data.month ? `Preferred Month: ${data.month}` : null,
+    data.departureCity ? `Departure City: ${data.departureCity}` : null,
     `Travellers: ${data.adults || "0"} Adults, ${data.children || "0"} Children, ${data.infants || "0"} Infants`,
   ].filter(Boolean)
   return `https://wa.me/919667892504?text=${encodeURIComponent(lines.join("\n"))}`
@@ -218,10 +219,9 @@ function LeadForm() {
 
   return (
     <div id="safari-quote-form" className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-      <div className="bg-gradient-to-r from-green-900 to-green-800 px-6 py-5 text-center">
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/15 text-xl mb-2">🦏</span>
-        <h3 className="text-white font-extrabold text-lg">PLAN YOUR KENYA SAFARI</h3>
-        <p className="text-green-100 text-sm">Get your personalised quote in minutes</p>
+      <div className="bg-gradient-to-r from-green-900 to-green-800 px-6 py-3 text-center">
+        <h3 className="text-white font-extrabold text-base">PLAN YOUR KENYA SAFARI</h3>
+        <p className="text-green-100 text-xs">Get your personalised quote in minutes</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4 p-6">
         <div>
@@ -244,6 +244,10 @@ function LeadForm() {
               <option key={m} value={m}>{m}</option>
             ))}
           </select>
+        </div>
+        <div>
+          <label className="block text-gray-700 text-xs font-bold mb-1">Departure City</label>
+          <input name="departureCity" type="text" placeholder="e.g. Delhi, Mumbai, Bangalore" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Number of Travellers</label>
@@ -271,9 +275,6 @@ function LeadForm() {
         <button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-4 py-3.5 rounded-lg transition-colors shadow-md shadow-orange-600/30 flex items-center justify-center gap-2">
           GET MY SAFARI QUOTE
         </button>
-        <p className="text-gray-400 text-[11px] text-center flex items-center justify-center gap-1">
-          <span>🔒</span> Your details are safe with us. No spam.
-        </p>
       </form>
     </div>
   )
