@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import { useState } from "react"
+import { MapPin, Car, TreePine, Headphones, Users, Phone, MessageCircle, ShieldCheck, Binoculars, Award, Heart, Star } from "lucide-react"
 
 const ANIMALS = [
   { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
@@ -323,7 +324,7 @@ export default function KenyaHighlandsLandingPage() {
 
             <p className="text-gray-500 text-xs uppercase tracking-wide mb-1">Starting from</p>
             <p className="text-orange-600 font-black text-4xl mb-1">
-              ₹1,49,999<span className="text-gray-500 font-normal text-base"> / person</span>
+              ₹1,90,000<span className="text-gray-500 font-normal text-base"> / person</span>
             </p>
             <p className="text-gray-400 text-xs mb-5">Flights Optional · All Taxes Included</p>
 
@@ -335,7 +336,7 @@ export default function KenyaHighlandsLandingPage() {
                 }}
                 className="bg-green-800 hover:bg-green-900 text-white font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
               >
-                GET KENYA SAFARI QUOTE
+                GET MY SAFARI QUOTE
               </a>
               <div className="relative">
                 <button
@@ -348,13 +349,14 @@ export default function KenyaHighlandsLandingPage() {
                 {showPhonePopup && (
                   <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg px-4 py-3 whitespace-nowrap z-10">
                     <p className="text-gray-500 text-[11px] mb-1">Call us directly</p>
+            
                     <a href="tel:+919667892504" className="text-green-800 font-bold text-sm">
                       +91 96 6789 2504
                     </a>
                   </div>
                 )}
               </div>
-              <span className="inline-flex items-center gap-2 bg-white/90 border border-gray-200 rounded-full px-4 py-2 text-xs font-bold text-gray-800 shadow-sm">
+              <span className="bg-white border border-gray-300 text-gray-800 font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2">
                 📅 BEST TIME TO VISIT: JUN – OCT
               </span>
             </div>
@@ -462,54 +464,74 @@ export default function KenyaHighlandsLandingPage() {
         </div>
       </div>
 
-      {/* Inclusions / Exclusions / Reviews */}
+      {/* Inclusions / Exclusions / Plan Your Tour */}
       <div className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-gray-50 rounded-xl p-6">
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-gray-900 font-extrabold text-sm mb-3">PACKAGE INCLUSIONS</h3>
-                <ul className="space-y-2">
-                  {INCLUSIONS.map(i => (
-                    <li key={i} className="text-gray-600 text-xs flex gap-2">
-                      <span className="text-green-700">✓</span><span>{i}</span>
-                    </li>
-                  ))}
-                </ul>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_2fr] gap-6 items-stretch">
+
+          <div className="bg-gray-50 rounded-xl p-5 h-full">
+            <h3 className="text-gray-900 font-extrabold text-base pb-3 mb-4 border-b-2 border-gray-300">PACKAGE INCLUSIONS</h3>
+            <ul className="space-y-3.5">
+              {INCLUSIONS.map(i => (
+                <li key={i} className="text-gray-700 text-sm flex gap-2">
+                  <span className="text-green-700">✓</span><span>{i}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-gray-50 rounded-xl p-5 h-full">
+            <h3 className="text-orange-600 font-extrabold text-base pb-3 mb-4 border-b-2 border-orange-200">PACKAGE EXCLUSIONS</h3>
+            <ul className="space-y-3.5">
+              {EXCLUSIONS.map(i => (
+                <li key={i} className="text-gray-700 text-sm flex gap-2">
+                  <span className="text-red-500">✗</span><span>{i}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl bg-[#F7F3E9] border border-[#E4DCC8] shadow-lg p-5 sm:p-8">
+            <h3 className="leading-tight text-xl sm:text-3xl font-black text-center">
+              <span className="text-green-900">Plan Your </span><span className="text-amber-800">Kenya Safari Tour</span>
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed text-center mt-3 mb-6">
+              Tell us your travel month, departure city and number of travellers, and our travel experts will create a personalized Kenya safari package based on your travel preferences.
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="bg-white rounded-xl p-3 border border-[#E4DCC8] text-center">
+                <div className="w-12 h-12 rounded-full bg-[#EFEBDD] flex items-center justify-center mx-auto mb-2"><MapPin className="w-5 h-5 text-green-900" /></div>
+                <div className="flex items-center justify-center gap-1 mb-2">{Array.from({ length: 5 }).map((_, i) => (<span key={i} className="w-1 h-1 rounded-full bg-green-800" />))}</div>
+                <p className="text-gray-900 font-bold text-xs leading-snug">Personalized Kenya Safari Itinerary</p>
               </div>
-              <div>
-                <h3 className="text-orange-600 font-extrabold text-sm mb-3">PACKAGE EXCLUSIONS</h3>
-                <ul className="space-y-2">
-                  {EXCLUSIONS.map(i => (
-                    <li key={i} className="text-gray-600 text-xs flex gap-2">
-                      <span className="text-red-500">✗</span><span>{i}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="bg-white rounded-xl p-3 border border-[#E4DCC8] text-center">
+                <div className="w-12 h-12 rounded-full bg-[#EFEBDD] flex items-center justify-center mx-auto mb-2"><Car className="w-5 h-5 text-green-900" /></div>
+                <div className="flex items-center justify-center gap-1 mb-2">{Array.from({ length: 5 }).map((_, i) => (<span key={i} className="w-1 h-1 rounded-full bg-green-800" />))}</div>
+                <p className="text-gray-900 font-bold text-xs leading-snug">Private 4×4 Safari Vehicle</p>
               </div>
+              <div className="bg-white rounded-xl p-3 border border-[#E4DCC8] text-center">
+                <div className="w-12 h-12 rounded-full bg-[#EFEBDD] flex items-center justify-center mx-auto mb-2"><TreePine className="w-5 h-5 text-green-900" /></div>
+                <div className="flex items-center justify-center gap-1 mb-2">{Array.from({ length: 5 }).map((_, i) => (<span key={i} className="w-1 h-1 rounded-full bg-green-800" />))}</div>
+                <p className="text-gray-900 font-bold text-xs leading-snug">Handpicked Safari Lodges</p>
+              </div>
+              <div className="bg-white rounded-xl p-3 border border-[#E4DCC8] text-center">
+                <div className="w-12 h-12 rounded-full bg-[#EFEBDD] flex items-center justify-center mx-auto mb-2"><Headphones className="w-5 h-5 text-green-900" /></div>
+                <div className="flex items-center justify-center gap-1 mb-2">{Array.from({ length: 5 }).map((_, i) => (<span key={i} className="w-1 h-1 rounded-full bg-green-800" />))}</div>
+                <p className="text-gray-900 font-bold text-xs leading-snug">Expert Travel Assistance</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
+              <a href="tel:+919667892504" className="flex-1 w-full flex items-center justify-center gap-2 bg-green-900 hover:bg-green-950 text-white font-bold text-xs px-4 py-3 rounded-full transition-colors uppercase tracking-wide">
+                <Phone className="w-4 h-4" /> TALK TO SAFARI EXPERT
+              </a>
+              <span className="text-gray-400 text-xs">or</span>
+              <a href="https://wa.me/919667892504" target="_blank" rel="noreferrer" className="flex-1 w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold text-xs px-4 py-3 rounded-full transition-colors uppercase tracking-wide">
+                <MessageCircle className="w-4 h-4" /> Message us on WhatsApp
+              </a>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-gray-900 font-extrabold text-sm">TRUSTED BY TRAVELLERS</h3>
-              <span className="text-gray-400 text-xs font-semibold">Google Verified Reviews</span>
-            </div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-gray-900 font-extrabold text-lg">4.8/5</span>
-              <span className="text-amber-500 text-sm">★★★★★</span>
-              <span className="text-gray-400 text-xs">Based on 500+ Google Reviews</span>
-            </div>
-            <div className="space-y-3">
-              {TESTIMONIALS.map(t => (
-                <div key={t.name} className="bg-white rounded-lg p-3">
-                  <p className="text-gray-600 text-xs leading-snug mb-1">"{t.text}"</p>
-                  <p className="text-gray-800 text-xs font-bold">{t.name} <span className="text-gray-400 font-normal">· {t.place}</span></p>
-                </div>
-              ))}
-            </div>
-            <p className="text-gray-400 text-[10px] mt-3">Sample reviews shown for illustration — replace with your verified Google Reviews before launch.</p>
-          </div>
         </div>
       </div>
 
@@ -547,17 +569,21 @@ export default function KenyaHighlandsLandingPage() {
           <div>
             <p className="font-extrabold text-lg mb-1">YOUR KENYA ADVENTURE STARTS HERE</p>
             <p className="text-gray-200 text-sm mb-1">7 Days / 6 Nights · Masai Mara · Lake Nakuru · Lake Naivasha</p>
-            <p className="text-amber-400 font-bold">FROM ₹1,49,999 <span className="text-gray-300 font-normal text-xs">/ person</span></p>
+            <p className="text-amber-400 font-bold">FROM ₹1,90,000 <span className="text-gray-300 font-normal text-xs">/ person</span></p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a href={buildWhatsAppUrl({})} target="_blank" rel="noreferrer" className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-5 py-3 rounded-md">
-              GET MY KENYA SAFARI QUOTE
+            <button
+              type="button"
+              onClick={() => document.getElementById("safari-quote-form")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              className="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 hover:scale-105 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all uppercase tracking-wide min-w-[220px]"
+            >
+              GET MY SAFARI QUOTE
+            </button>
+            <a href={`https://wa.me/919667892504`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 hover:scale-105 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all uppercase tracking-wide min-w-[220px]">
+              <MessageCircle className="w-4 h-4" /> Message us on WhatsApp
             </a>
-            <a href={`https://wa.me/919667892504`} target="_blank" rel="noreferrer" className="bg-green-700 hover:bg-green-600 text-white font-bold text-sm px-5 py-3 rounded-md">
-              WhatsApp Chat
-            </a>
-            <a href="tel:+919667892504" className="bg-white/10 border border-white/30 hover:bg-white/20 text-white font-bold text-sm px-5 py-3 rounded-md">
-              Call Our Expert
+            <a href="tel:+919667892504" className="flex items-center justify-center gap-2 bg-green-900 hover:bg-green-950 hover:scale-105 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all uppercase tracking-wide min-w-[220px]">
+              <Phone className="w-4 h-4" /> TALK TO SAFARI EXPERT
             </a>
           </div>
         </div>
