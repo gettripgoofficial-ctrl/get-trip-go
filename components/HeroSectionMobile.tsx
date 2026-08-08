@@ -147,10 +147,10 @@ export default function HeroSectionMobile() {
         {/* ── Service Grid 1×4 ── */}
         <div className="px-4 pb-5">
           <div className="grid grid-cols-4 gap-3">
-            {SERVICES.map(({ label, icon, bg, color, href }) => (
-              <a
+            {SERVICES.map(({ label, icon, bg, color, tab }) => (
+              <button
                 key={label}
-                href={href}
+                onClick={() => setActiveSheet(tab)}
                 className="flex flex-col items-center gap-2 active:scale-95 transition-transform"
               >
                 <div
@@ -160,7 +160,7 @@ export default function HeroSectionMobile() {
                   {icon}
                 </div>
                 <span className="text-[11px] font-semibold text-[#0A1628] text-center leading-tight">{label}</span>
-              </a>
+              </button>
             ))}
           </div>
         </div>
