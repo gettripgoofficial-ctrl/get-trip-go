@@ -95,7 +95,7 @@ const socials = [
   },
 ]
 
-function QuickLinkItem({ link }: { link: typeof quickLinks[0] }) {
+function QuickLinkItem({ link }: { link: { label: string; href: string | null } }) {
   if (link.label === "Best Deals") {
     return (
       <button
