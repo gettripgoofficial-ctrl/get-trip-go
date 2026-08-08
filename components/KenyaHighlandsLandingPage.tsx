@@ -238,8 +238,8 @@ function LeadForm() {
           <input name="email" type="email" placeholder="Enter your email" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
-          <label className="block text-gray-700 text-xs font-bold mb-1">Preferred Travel Month</label>
-          <select name="month" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600">
+          <label htmlFor="safari-month" className="block text-gray-700 text-xs font-bold mb-1">Preferred Travel Month</label>
+          <select id="safari-month" name="month" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600">
             <option value="">Select month</option>
             {["January","February","March","April","May","June","July","August","September","October","November","December"].map(m => (
               <option key={m} value={m}>{m}</option>
@@ -254,20 +254,20 @@ function LeadForm() {
           <label className="block text-gray-700 text-xs font-bold mb-1">Number of Travellers</label>
           <div className="grid grid-cols-3 gap-2">
             <div>
-              <span className="block text-gray-400 text-[10px] mb-1">Adults</span>
-              <select name="adults" defaultValue="2" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
+              <label htmlFor="safari-adults" className="block text-gray-500 text-[10px] mb-1">Adults</label>
+              <select id="safari-adults" name="adults" defaultValue="2" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(9)].map((_, i) => <option key={i} value={i + 1}>{i + 1}</option>)}
               </select>
             </div>
             <div>
-              <span className="block text-gray-400 text-[10px] mb-1">Children</span>
-              <select name="children" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
+              <label htmlFor="safari-children" className="block text-gray-500 text-[10px] mb-1">Children</label>
+              <select id="safari-children" name="children" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(6)].map((_, i) => <option key={i} value={i}>{i}</option>)}
               </select>
             </div>
             <div>
-              <span className="block text-gray-400 text-[10px] mb-1">Infants</span>
-              <select name="infants" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
+              <label htmlFor="safari-infants" className="block text-gray-500 text-[10px] mb-1">Infants</label>
+              <select id="safari-infants" name="infants" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(4)].map((_, i) => <option key={i} value={i}>{i}</option>)}
               </select>
             </div>
@@ -295,6 +295,7 @@ export default function KenyaHighlandsLandingPage() {
           alt="Lion on the savanna with a safari vehicle in the Kenya highlands"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60" />
@@ -334,7 +335,7 @@ export default function KenyaHighlandsLandingPage() {
             <p className="text-orange-600 font-black text-4xl mb-1">
               ₹1,90,000<span className="text-gray-500 font-normal text-base"> / person</span>
             </p>
-            <p className="text-gray-400 text-xs mb-5">Flights Optional · All Taxes Included</p>
+            <p className="text-gray-500 text-xs mb-5">Flights Optional · All Taxes Included</p>
 
             <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 lg:gap-3 mb-3">
               <a href="#safari-quote-form"
@@ -367,7 +368,7 @@ export default function KenyaHighlandsLandingPage() {
                 📅 BEST TIME TO VISIT: JUN – OCT
               </span>
             </div>
-            <p className="text-gray-400 text-xs">⏱ Takes 30 seconds · No payment required</p>
+            <p className="text-gray-500 text-xs">⏱ Takes 30 seconds · No payment required</p>
           </div>
         </div>
       </div>
@@ -435,7 +436,7 @@ export default function KenyaHighlandsLandingPage() {
                         </li>
                       ))}
                     </ul>
-                    <p className="text-gray-400 text-xs">🛏 Overnight: {item.overnight}</p>
+                    <p className="text-gray-500 text-xs">🛏 Overnight: {item.overnight}</p>
                   </div>
                   <div className="hidden sm:block relative w-32 h-24 flex-shrink-0 rounded-lg overflow-hidden">
                     <Image src={item.image} alt={item.route} fill sizes="128px" className="object-cover" />
@@ -532,7 +533,7 @@ export default function KenyaHighlandsLandingPage() {
               <a href="tel:+919667892504" className="flex-1 w-full flex items-center justify-center gap-2 bg-green-900 hover:bg-green-950 text-white font-bold text-xs px-4 py-3 rounded-full transition-colors uppercase tracking-wide">
                 <Phone className="w-4 h-4" /> TALK TO SAFARI EXPERT
               </a>
-              <span className="text-gray-400 text-xs">or</span>
+              <span className="text-gray-500 text-xs">or</span>
               <a href="https://wa.me/919667892504" target="_blank" rel="noreferrer" className="flex-1 w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold text-xs px-4 py-3 rounded-full transition-colors uppercase tracking-wide">
                 <MessageCircle className="w-4 h-4" /> Message us on WhatsApp
               </a>
@@ -554,7 +555,7 @@ export default function KenyaHighlandsLandingPage() {
               >
                 <span className="text-gray-900 font-bold text-xs">{faq.q}</span>
                 <span
-                  className={`shrink-0 text-gray-400 text-xs transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
+                  className={`shrink-0 text-gray-500 text-xs transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
                 >
                   &#9662;
                 </span>
@@ -570,7 +571,7 @@ export default function KenyaHighlandsLandingPage() {
       {/* Bottom CTA banner */}
       <div className="relative bg-green-900 text-white">
         <div className="absolute inset-0 opacity-30">
-          <Image src="https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=1600&q=80" alt="Kenya sunset safari" fill className="object-cover" />
+          <Image src="https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=1600&q=80" alt="Kenya sunset safari" fill sizes="100vw" className="object-cover" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
