@@ -27,7 +27,9 @@ export default function Home() {
       <div className="hidden md:block">
         <SpecialOffers />
       </div>
-      <KenyaBanner />
+      <div className="hidden md:block">
+        <KenyaBanner />
+      </div>
       <PopularDestinations />
       <GroupDepartures />
       <CustomPackages />

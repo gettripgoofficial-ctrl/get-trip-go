@@ -11,7 +11,6 @@ import {
 } from "lucide-react"
 import SearchBox from "./search/SearchBox"
 import { ServiceTab } from "./search/searchUtils"
-import HeroSidebarBanner from "@/components/klook-banners/HeroSidebarBanner"
 
 interface Tab {
   name: string
@@ -190,9 +189,6 @@ export default function HeroSection() {
           </div>
         </motion.div>
       </div>
-
-      {/* Klook banner — desktop only, right side */}
-      <HeroSidebarBanner />
 
     </section>
   )

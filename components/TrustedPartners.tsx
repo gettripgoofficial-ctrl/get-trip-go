@@ -32,6 +32,15 @@ export default function TrustedPartners() {
         <span style={{ fontSize: "16px", fontWeight: 900, color: "#ffffff", fontFamily: "sans-serif" }}>G</span>
       ),
     },
+    {
+      name: "Klook",
+      link: "https://klook.tpx.lu/T6hgKm7u",
+      logoBg: "#FF5B00",
+      tagline: "Tours, activities & travel deals",
+      logo: (
+        <span style={{ fontSize: "16px", fontWeight: 900, color: "#ffffff", fontFamily: "sans-serif" }}>K</span>
+      ),
+    },
   ]
 
   return (
@@ -47,17 +56,17 @@ export default function TrustedPartners() {
         </p>
 
         {/* Pills — stack on mobile, row on desktop */}
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {partners.map((partner) => (
             <a
               key={partner.name}
               href={partner.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center sm:flex-col gap-3 sm:gap-2 bg-white border border-gray-100 rounded-2xl px-5 py-3 sm:px-6 sm:py-4 shadow-sm hover:shadow-md hover:border-gray-200 transition-all"
+              className="flex flex-col items-center gap-2 bg-white border border-gray-100 rounded-2xl px-4 py-4 sm:px-6 sm:py-4 shadow-sm hover:shadow-md hover:border-gray-200 transition-all"
             >
               {/* Logo + name row */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 justify-center">
                 <span
                   className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: partner.logoBg }}
@@ -70,7 +79,7 @@ export default function TrustedPartners() {
               </div>
 
               {/* Tagline */}
-              <p className="text-[11px] text-gray-500 font-medium sm:text-center">
+              <p className="text-[11px] text-gray-500 font-medium text-center">
                 {partner.tagline}
               </p>
             </a>

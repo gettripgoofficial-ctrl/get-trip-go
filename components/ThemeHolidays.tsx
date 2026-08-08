@@ -144,7 +144,7 @@ export default function ThemeHolidays() {
 
         {/* RIGHT PANEL */}
         <div
-          className="flex-shrink-0 relative overflow-hidden border-l border-amber-100"
+          className="flex-shrink-0 relative overflow-hidden border-l border-amber-100 p-3 md:p-8"
           style={{
             width: "40%",
             background: "linear-gradient(145deg, #fff7ed 0%, #fef3c7 50%, #fff7ed 100%)",
@@ -152,7 +152,6 @@ export default function ThemeHolidays() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            padding: "12px 12px",
           }}
         >
           {/* Mandala SVG */}
@@ -196,20 +195,20 @@ export default function ThemeHolidays() {
             </g>
           </svg>
 
-          <p style={{
+          <p className="text-[8px] md:text-sm" style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
-            fontSize: "8px", fontWeight: 600,
+            fontWeight: 600,
             letterSpacing: "2px", color: "#b45309", whiteSpace: "nowrap",
             textTransform: "uppercase", marginBottom: "4px",
           }}>
             Curated for you
           </p>
 
-          <h2 style={{
+          <h2 className="text-[10px] md:text-xl" style={{
             position: "relative", zIndex: 10,
             width: "100%", textAlign: "center",
-            fontSize: "10px", fontWeight: 800,
+            fontWeight: 800,
             color: "#78350f", lineHeight: 1.2, marginBottom: "4px",
           }}>
             Explore Holidays by Theme
@@ -217,9 +216,10 @@ export default function ThemeHolidays() {
 
           <Link
             href="/theme-holidays"
+            className="text-[8px] md:text-sm"
             style={{
               position: "relative", zIndex: 10,
-              fontSize: "8px", fontWeight: 700,
+              fontWeight: 700,
               color: "#b45309", textDecoration: "underline",
               marginBottom: "10px",
               letterSpacing: "0.5px",
@@ -235,13 +235,13 @@ export default function ThemeHolidays() {
           }}>
             <button
               onClick={() => scroll("left")}
-              className="w-8 h-8 rounded-full border-2 border-amber-500 text-amber-600 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-all text-sm font-bold"
+              className="w-8 h-8 md:w-11 md:h-11 rounded-full border-2 border-amber-500 text-amber-600 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-all text-sm md:text-lg font-bold"
             >
               ‹
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-8 h-8 rounded-full border-2 border-amber-500 text-amber-600 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-all text-sm font-bold"
+              className="w-8 h-8 md:w-11 md:h-11 rounded-full border-2 border-amber-500 text-amber-600 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-all text-sm md:text-lg font-bold"
             >
               ›
             </button>

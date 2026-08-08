@@ -366,7 +366,7 @@ export default function SpecialOffers() {
         <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-4 sm:mb-6">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-800">Special Offers</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-800">Explore Coupons</h3>
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrev}

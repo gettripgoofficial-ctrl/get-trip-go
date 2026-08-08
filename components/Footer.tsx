@@ -3,10 +3,9 @@ import React, { useState } from "react"
 import Link from "next/link"
 
 const quickLinks = [
+  { label: "Discover Kenya", href: "/kenya" },
   { label: "Flights", href: "/flights" },
   { label: "Hotels", href: "/hotels" },
-  { label: "Best Deals", href: null },
-  { label: "Special Offers", href: null },
   { label: "Group Departures", href: "/group-departures" },
   { label: "Customized Itineraries", href: "/customized-itineraries" },
   { label: "Popular Destinations", href: "/popular-destinations" },
@@ -18,12 +17,11 @@ const supportLinks = [
   { label: "About Us", href: "/about" },
   { label: "Visa Assistance", href: "/visa" },
   { label: "Help Center", href: "/help" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Cookie Policy", href: "/cookies" },
   { label: "Why Us", href: "/why-us" },
   { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
+  { label: "Best Deals", href: null },
+  { label: "Explore Coupons", href: null },
 ]
 
 const travelTools = [
@@ -40,6 +38,7 @@ const partners = [
   { name: "Expedia", link: "https://expedia.com/affiliates/expedia-home.w6qCuSl", logoBg: "#FFCC00", logoColor: "#1a1a1a", letter: "↗" },
   { name: "Viator", link: "https://www.viator.com/?pid=P00257641&mcid=42383&medium=link&campaign=gettripgo", logoBg: "#37B249", logoColor: "#fff", letter: "V" },
   { name: "GetYourGuide", link: "https://www.getyourguide.com?partner_id=9X14REW&cmp=share_to_earn", logoBg: "#FF5533", logoColor: "#fff", letter: "G" },
+  { name: "Klook", link: "https://klook.tpx.lu/T6hgKm7u", logoBg: "#FF5B00", logoColor: "#fff", letter: "K" },
 ]
 
 const socials = [
@@ -107,7 +106,7 @@ function QuickLinkItem({ link }: { link: typeof quickLinks[0] }) {
       </button>
     )
   }
-  if (link.label === "Special Offers") {
+  if (link.label === "Explore Coupons") {
     return (
       <button
         onClick={() => window.dispatchEvent(new CustomEvent("open-special-offers"))}
@@ -201,7 +200,7 @@ export default function Footer() {
             <FooterColumn title="Support">
               {supportLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors">{link.label}</Link>
+                  <QuickLinkItem link={link} />
                 </li>
               ))}
             </FooterColumn>
@@ -223,21 +222,6 @@ export default function Footer() {
 
           {/* App + Partners — rendered once */}
           <div className="border-t border-white/10 lg:border-0 lg:ml-auto pt-4 lg:pt-0 pb-4 lg:pb-0">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Get the App</p>
-            <div className="flex flex-wrap lg:flex-col gap-2 lg:gap-1.5 mb-4 lg:mb-5">
-              <a href="#" className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg px-2.5 py-1.5 lg:py-1 transition-all lg:w-36">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" className="text-gray-400 flex-shrink-0">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                <span className="text-xs text-gray-400 font-medium">App Store</span>
-              </a>
-              <a href="#" className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg px-2.5 py-1.5 lg:py-1 transition-all lg:w-36">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" className="text-gray-400 flex-shrink-0">
-                  <path d="M3.18 23.76c.3.17.64.24.99.2l12.49-12.49L13.41 8.2 3.18 23.76zm17.14-10.88L17.49 11l-3.28 3.27 3.28 3.28 2.86-1.61c.81-.46.81-1.63-.03-2.06zM2.06.69C1.73.93 1.5 1.33 1.5 1.84v20.32c0 .51.23.91.56 1.15L14.31 11.5 2.06.69zm11.35 9.49L2.06.69l-.01-.01 12.49 12.49-1.13-3.09z"/>
-                </svg>
-                <span className="text-xs text-gray-400 font-medium">Google Play</span>
-              </a>
-            </div>
             <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2.5">Trusted Partners</p>
             <div className="flex flex-wrap lg:flex-col gap-2 lg:gap-1.5">
               {partners.map((p) => (
@@ -258,13 +242,11 @@ export default function Footer() {
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-gray-600 text-center">© 2026 Get Trip Go. All rights reserved.</p>
-          <p className="text-xs text-gray-600">
-            Designed &amp; developed by{" "}
-            <a href="https://useclickads.com" target="_blank" rel="noopener noreferrer"
-              className="text-orange-500 hover:text-orange-400 font-semibold transition-colors">
-              ClickAds
-            </a>
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/terms" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">Privacy Policy</Link>
+            <Link href="/cookies" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">Cookie Policy</Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -7,10 +7,9 @@ import { Plane, Hotel, Camera, Car, Menu, X, DollarSign } from "lucide-react"
 import { useCurrency } from "@/contexts/CurrencyContext"
 import DealsModal from "@/components/DealsModal"
 import SupportModal from "@/components/SupportModal"
+import KenyaBanner from "@/components/KenyaBanner"
 import { offers } from "@/data/offers"
 import {
-  KlookBannerCarousel,
-  WidgetCarousel,
   MobileOfferCard,
   OfferModal,
 } from "./HeroComponents"
@@ -71,7 +70,6 @@ export default function HeroSectionMobile() {
   return (
     <>
       {/* ── Scripts ── */}
-      <Script src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="9X14REW" strategy="lazyOnload" />
       <Script src="https://www.viator.com/orion/partner/widget.js" strategy="lazyOnload" />
 
 
@@ -151,11 +149,6 @@ export default function HeroSectionMobile() {
       {/* ── Page Content ── */}
       <div className="md:hidden pt-16 bg-[#F8F9FF]">
 
-        {/* ── Klook Banner Carousel ── */}
-        <div className="px-4 pt-3 pb-1">
-          <KlookBannerCarousel />
-        </div>
-
         {/* ── Service Grid 1×4 ── */}
         <div className="px-4 pb-5">
           <div className="grid grid-cols-4 gap-3">
@@ -180,7 +173,7 @@ export default function HeroSectionMobile() {
         {/* ── Special Offers ── */}
         <div className="pb-5">
           <div className="flex items-center justify-between px-4 mb-3">
-            <h2 className="text-base font-bold text-[#0A1628]">Special Offers</h2>
+            <h2 className="text-base font-bold text-[#0A1628]">Explore Coupons</h2>
           </div>
           <div className="px-4">
             <div
@@ -198,18 +191,8 @@ export default function HeroSectionMobile() {
           </div>
         </div>
 
-        {/* ── Widget Carousel ── */}
-        <div
-          className="mx-4 mb-5 rounded-2xl overflow-hidden relative"
-          style={{
-            height: "180px",
-            background: "linear-gradient(135deg, #0A1628 0%, #1A56F0 50%, #0ea5e9 100%)",
-          }}
-        >
-          <div className="relative z-10 w-full h-full">
-            <WidgetCarousel />
-          </div>
-        </div>
+        {/* ── Kenya Banner ── */}
+        <KenyaBanner />
 
         {/* ── Secondary Services ── */}
         <div className="pb-4">
