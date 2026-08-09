@@ -69,9 +69,9 @@ export default function Navbar() {
           <Link href="/blog" className="text-[#1A3A6B] font-bold text-sm px-4 py-2 rounded-full border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/10 transition-colors">
             Blog
           </Link>
-          <button className="text-[#1A3A6B] font-bold text-sm px-4 py-2 rounded-full border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/10 transition-colors">
+          <Link href="/my-trip" className="text-[#1A3A6B] font-bold text-sm px-4 py-2 rounded-full border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/10 transition-colors">
             My Trip
-          </button>
+          </Link>
           <button
             onClick={() => setSupportOpen(true)}
             className="text-[#1A3A6B] font-bold text-sm px-4 py-2 rounded-full border border-[#1A3A6B]/20 hover:bg-[#1A3A6B]/10 transition-colors"

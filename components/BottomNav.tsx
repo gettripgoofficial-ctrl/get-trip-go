@@ -53,10 +53,10 @@ export default function BottomNav() {
           </Link>
 
           {/* My Trip */}
-          <button className="flex flex-col items-center justify-center gap-1 py-2 flex-1">
+          <Link href="/my-trip" className="flex flex-col items-center justify-center gap-1 py-2 flex-1">
             <Briefcase size={22} className="text-gray-400" />
             <span className="text-[10px] font-medium text-gray-400">My Trip</span>
-          </button>
+          </Link>
 
           {/* Enquiry — Center FAB */}
           <div className="flex flex-col items-center -mt-5">

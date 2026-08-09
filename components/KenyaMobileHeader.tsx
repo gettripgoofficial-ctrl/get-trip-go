@@ -94,9 +94,9 @@ export default function KenyaMobileHeader() {
             <Link href="/blog" onClick={() => setShowMenu(false)} className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 block">
               Blog
             </Link>
-            <button className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 text-left">
+            <Link href="/my-trip" className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 text-left block">
               My Trip
-            </button>
+            </Link>
             <button
               onClick={() => { setShowMenu(false); setSupportOpen(true) }}
               className="text-[#1A3A6B] font-bold text-sm px-4 py-3 rounded-xl border border-[#1A3A6B]/20 text-left"
