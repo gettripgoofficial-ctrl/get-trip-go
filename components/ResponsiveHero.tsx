@@ -1,45 +1,26 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
+import HeroSectionMobile from "./HeroSectionMobile"
+
 const HeroSection = dynamic(() => import("./HeroSection"), {
-  ssr: false,
-  loading: () => <div style={{ height: "85vh", minHeight: "648px" }} className="w-full bg-[#1A56F0] md:bg-transparent" />,
-})
-const HeroSectionMobile = dynamic(() => import("./HeroSectionMobile"), {
-  ssr: false,
-  loading: () => <div style={{ height: "85vh", minHeight: "648px" }} className="w-full bg-[#1A56F0] md:bg-transparent" />,
+  loading: () => <div style={{ height: "85vh", minHeight: "648px" }} className="hidden md:block w-full bg-[#1A56F0]" />,
 })
 
 /**
- * Renders ONLY the hero variant that matches the real screen size,
- * instead of mounting both HeroSection and HeroSectionMobile and
- * hiding one with CSS. This stops the hidden variant's timers,
- * scroll listeners, image preloads, and third-party scripts
- * (GetYourGuide/Viator) from running when nobody can see it.
- *
- * We don't know the screen size until the browser tells us (on
- * mount), so for one split-second we render an empty placeholder
- * the same height as the hero — this avoids a layout jump and
- * avoids briefly mounting the wrong version.
+ * Renders BOTH hero variants in the initial server-rendered HTML.
+ * Visibility is controlled purely by CSS (HeroSectionMobile's own
+ * internal "md:hidden" classes, and a "hidden md:block" wrapper here
+ * for the desktop version) instead of waiting for client-side JS to
+ * detect screen size and mount the right one. This lets the browser
+ * discover and paint real content immediately from the initial HTML,
+ * instead of blocking on JS hydration first.
  */
 export default function ResponsiveHero() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null)
-
-  useEffect(() => {
-    const mql = window.matchMedia("(max-width: 767px)")
-    setIsMobile(mql.matches)
-
-    const handleChange = (e: MediaQueryListEvent) => setIsMobile(e.matches)
-    mql.addEventListener("change", handleChange)
-    return () => mql.removeEventListener("change", handleChange)
-  }, [])
-
-  if (isMobile === null) {
-    // Placeholder while we detect screen size — matches HeroSection's height
-    // so the page doesn't jump once the real component mounts.
-    return <div style={{ height: "85vh", minHeight: "648px" }} className="w-full bg-[#1A56F0] md:bg-transparent" />
-  }
-
-  return isMobile ? <HeroSectionMobile /> : <HeroSection />
+  return (
+    <>
+      <div className="hidden md:block">
+        <HeroSection />
+      </div>
+      <HeroSectionMobile />
+    </>
+  )
 }

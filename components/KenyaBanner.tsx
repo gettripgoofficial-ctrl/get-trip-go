@@ -9,7 +9,7 @@ export default function KenyaBanner() {
         className="relative block rounded-2xl overflow-hidden shadow-lg group h-[220px] sm:h-[320px]"
       >
         <Image
-          src="/images/kenya-banner.jpg"
+          src="/images/kenya-highlands/hero-banner.jpg"
           alt="Discover Kenya - safari and wildlife holidays"
           fill
           sizes="(max-width: 640px) 100vw, 1200px"

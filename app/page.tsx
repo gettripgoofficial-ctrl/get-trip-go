@@ -16,6 +16,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100">
 
+      {/* Preload the desktop hero image so the browser starts fetching it
+          immediately from the initial HTML, instead of waiting for JS to
+          hydrate ResponsiveHero and mount the <img> tag client-side. */}
+      <link rel="preload" as="image" href="/hero1.jpg" fetchPriority="high" media="(min-width: 768px)" />
+
       {/* Hero — picks mobile or desktop version based on real screen size */}
       <ResponsiveHero />
 
