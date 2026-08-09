@@ -4,6 +4,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { kenyaJourneys } from "@/data/kenyaData"
 
+const PUBLISHED_JOURNEY_SLUGS = new Set<string>([
+  "7-days-through-the-kenya-highlands",
+  "walking-safari-kenya-on-foot-through-the-bush",
+  "quick-kenya-safari-escape",
+])
+
 export default function KenyaTipsAndRoutes() {
   const [enquiryFor, setEnquiryFor] = useState<string | null>(null)
 
@@ -41,7 +47,7 @@ export default function KenyaTipsAndRoutes() {
 
             {/* Always-visible CTAs, pinned to the bottom so they line up across cards */}
             <div className="flex gap-2 mt-auto">
-              {article.id === "7-days-through-the-kenya-highlands" ? (
+              {PUBLISHED_JOURNEY_SLUGS.has(article.id) ? (
                 <Link
                   href={`/kenya/${article.id}`}
                   className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-xs px-3 py-2 rounded-md transition-colors text-center"
