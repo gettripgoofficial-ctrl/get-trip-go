@@ -95,7 +95,7 @@ export default function KenyaTipsAndRoutes() {
                   <label className="block text-gray-700 text-xs font-bold mb-1">
                     Full Name
                   </label>
-                  <input
+                  <input aria-label="Your full name"
                     type="text"
                     required
                     className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-yellow-500"
@@ -106,7 +106,7 @@ export default function KenyaTipsAndRoutes() {
                   <label className="block text-gray-700 text-xs font-bold mb-1">
                     Email
                   </label>
-                  <input
+                  <input aria-label="you@example.com"
                     type="email"
                     required
                     className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-yellow-500"
@@ -120,7 +120,7 @@ export default function KenyaTipsAndRoutes() {
                   <label className="block text-gray-700 text-xs font-bold mb-1">
                     Phone Number
                   </label>
-                  <input
+                  <input aria-label="+1 555 000 0000"
                     type="tel"
                     required
                     className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-yellow-500"
@@ -131,7 +131,7 @@ export default function KenyaTipsAndRoutes() {
                   <label className="block text-gray-700 text-xs font-bold mb-1">
                     Number of Travelers
                   </label>
-                  <input
+                  <input aria-label="2"
                     type="number"
                     min={1}
                     required

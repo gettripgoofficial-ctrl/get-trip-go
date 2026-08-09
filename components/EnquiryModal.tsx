@@ -106,7 +106,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                   <form onSubmit={handleSubmit} className="space-y-3">
                     <div>
                       <label className="text-xs font-semibold text-gray-600 mb-1 block">Full Name *</label>
-                      <input
+                      <input aria-label="Your name"
                         required
                         type="text"
                         placeholder="Your name"
@@ -117,7 +117,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-gray-600 mb-1 block">Phone Number *</label>
-                      <input
+                      <input aria-label="+91 96678 92504"
                         required
                         type="tel"
                         placeholder="+91 96678 92504"
@@ -128,7 +128,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-gray-600 mb-1 block">Email</label>
-                      <input
+                      <input aria-label="your@email.com"
                         type="email"
                         placeholder="your@email.com"
                         value={formData.email}

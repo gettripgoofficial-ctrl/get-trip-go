@@ -350,7 +350,7 @@ export default function TermsPage() {
           <div className="clause-bar">
             <div className="clause-input-wrap">
               <span className="s-icon">🔍</span>
-              <input
+              <input aria-label="Find a clause… e.g. refund, liability, cancellation"
                 type="text"
                 placeholder="Find a clause… e.g. refund, liability, cancellation"
                 value={clauseQuery}

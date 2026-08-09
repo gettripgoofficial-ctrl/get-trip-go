@@ -305,7 +305,7 @@ export default function CookiesPage() {
           </div>
           <div className="search-bar">
             <span className="s-icon">🔍</span>
-            <input
+            <input aria-label="Search cookie categories…"
               type="text"
               placeholder="Search cookie categories…"
               value={search}

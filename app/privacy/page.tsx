@@ -282,7 +282,7 @@ export default function PrivacyPage() {
           {/* Search */}
           <div className="search-bar">
             <span className="s-icon">🔍</span>
-            <input
+            <input aria-label="Search policy…"
               type="text"
               placeholder="Search policy…"
               value={search}

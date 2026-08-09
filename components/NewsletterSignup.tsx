@@ -52,7 +52,7 @@ export default function NewsletterSignup() {
         ) : (
           <div className="w-full max-w-sm px-2 sm:px-0">
             <div className="flex items-center bg-white rounded-full shadow-xl overflow-hidden p-1">
-              <input
+              <input aria-label="Enter your email address"
                 type="email"
                 placeholder="Enter your email address"
                 value={email}

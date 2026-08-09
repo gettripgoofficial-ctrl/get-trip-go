@@ -227,15 +227,15 @@ function LeadForm() {
       <form onSubmit={handleSubmit} className="space-y-4 p-6">
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Full Name</label>
-          <input name="name" required type="text" placeholder="Enter your name" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="Enter your name" name="name" required type="text" placeholder="Enter your name" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">WhatsApp / Phone</label>
-          <input name="phone" required type="tel" placeholder="Enter your number" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="Enter your number" name="phone" required type="tel" placeholder="Enter your number" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Email</label>
-          <input name="email" type="email" placeholder="Enter your email" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="Enter your email" name="email" type="email" placeholder="Enter your email" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label htmlFor="safari-month" className="block text-gray-700 text-xs font-bold mb-1">Preferred Travel Month</label>
@@ -248,7 +248,7 @@ function LeadForm() {
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Departure City</label>
-          <input name="departureCity" type="text" placeholder="e.g. Delhi, Mumbai, Bangalore" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="e.g. Delhi, Mumbai, Bangalore" name="departureCity" type="text" placeholder="e.g. Delhi, Mumbai, Bangalore" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Number of Travellers</label>

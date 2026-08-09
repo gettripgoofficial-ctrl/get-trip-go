@@ -193,10 +193,10 @@ export default function HelpCenterPage() {
                 <div className="text-center py-3 text-sm font-semibold text-green-600">✓ Scheduled! We'll call you soon.</div>
               ) : (
                 <div className="space-y-2">
-                  <input type="text" placeholder="Your name" value={callbackForm.name}
+                  <input aria-label="Your name" type="text" placeholder="Your name" value={callbackForm.name}
                     onChange={e => setCallbackForm({ ...callbackForm, name: e.target.value })}
                     className="w-full px-3 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-400" />
-                  <input type="text" placeholder="+91 phone number" value={callbackForm.phone}
+                  <input aria-label="+91 phone number" type="text" placeholder="+91 phone number" value={callbackForm.phone}
                     onChange={e => setCallbackForm({ ...callbackForm, phone: e.target.value })}
                     className="w-full px-3 py-2 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-400" />
                   <select value={callbackForm.time}
@@ -339,20 +339,20 @@ export default function HelpCenterPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1 block">Full Name</label>
-                    <input type="text" placeholder="Rahul Sharma" value={msgForm.name}
+                    <input aria-label="Rahul Sharma" type="text" placeholder="Rahul Sharma" value={msgForm.name}
                       onChange={e => setMsgForm({ ...msgForm, name: e.target.value })}
                       className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blue-400" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1 block">Email Address</label>
-                    <input type="email" placeholder="rahul@example.com" value={msgForm.email}
+                    <input aria-label="rahul@example.com" type="email" placeholder="rahul@example.com" value={msgForm.email}
                       onChange={e => setMsgForm({ ...msgForm, email: e.target.value })}
                       className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blue-400" />
                   </div>
                 </div>
                 <div>
                   <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1 block">Subject</label>
-                  <input type="text" placeholder="e.g. Refund for booking GTG-2024-XXX" value={msgForm.subject}
+                  <input aria-label="e.g. Refund for booking GTG-2024-XXX" type="text" placeholder="e.g. Refund for booking GTG-2024-XXX" value={msgForm.subject}
                     onChange={e => setMsgForm({ ...msgForm, subject: e.target.value })}
                     className="w-full px-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blue-400" />
                 </div>

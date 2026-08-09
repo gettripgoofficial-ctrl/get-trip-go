@@ -136,15 +136,15 @@ function EnquiryModal({ tour, onClose }: { tour: Tour; onClose: () => void }) {
             <div>
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Your Details</p>
               <div className="space-y-2.5">
-                <input type="text" placeholder="Full name *" value={form.name} onChange={e => set("name", e.target.value)}
+                <input aria-label="Full name *" type="text" placeholder="Full name *" value={form.name} onChange={e => set("name", e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gray-400 transition-colors" />
-                <input type="email" placeholder="Email address *" value={form.email} onChange={e => set("email", e.target.value)}
+                <input aria-label="Email address *" type="email" placeholder="Email address *" value={form.email} onChange={e => set("email", e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gray-400 transition-colors" />
                 <div className="flex gap-2">
                   <select className="px-3 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-600 focus:outline-none bg-white">
                     <option>+91</option><option>+1</option><option>+44</option><option>+971</option>
                   </select>
-                  <input type="tel" placeholder="Phone number *" value={form.phone} onChange={e => set("phone", e.target.value)}
+                  <input aria-label="Phone number *" type="tel" placeholder="Phone number *" value={form.phone} onChange={e => set("phone", e.target.value)}
                     className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gray-400 transition-colors" />
                 </div>
               </div>

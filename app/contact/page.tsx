@@ -195,7 +195,7 @@ export default function ContactPage() {
                 ].map((f) => (
                   <div key={f.key}>
                     <label className="block text-[11px] font-bold text-[#0a1628] uppercase tracking-wider mb-1.5">{f.label}</label>
-                    <input
+                    <input aria-label={f.placeholder}
                       type={f.type}
                       placeholder={f.placeholder}
                       value={form[f.key as keyof typeof form]}
