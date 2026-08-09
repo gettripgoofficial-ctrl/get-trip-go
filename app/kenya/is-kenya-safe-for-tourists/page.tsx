@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Is Kenya Safe for Tourists? What You Should Know",
   description: "A realistic look at safety on safari, in Nairobi, and everywhere in between — what the real risks are and which areas to avoid.",
-  image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=1600&q=80",
+  image: "/images/external/unsplash-158451597995.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

@@ -51,7 +51,7 @@ export default function GiraffesOfKenyaArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=1200&q=80"
+          src="/images/external/unsplash-1547721064-d.jpg"
           alt="Reticulated giraffe with distinctive net-pattern coat in northern Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

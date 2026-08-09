@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo",
   description: "How to identify each of the Big Five, where they're most commonly seen in Kenya, and realistic expectations for spotting all five on one safari.",
-  image: "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=1600&q=80",
+  image: "/images/external/unsplash-153456711024.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

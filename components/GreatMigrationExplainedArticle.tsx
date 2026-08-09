@@ -6,7 +6,7 @@ export default function GreatMigrationExplainedArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=1600&q=80"
+          src="/images/external/unsplash-156410116053.jpg"
           alt="Wildebeest herds crossing the Mara River during the Great Migration"
           fill
           priority
@@ -90,7 +90,7 @@ export default function GreatMigrationExplainedArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1200&q=80"
+            src="/images/external/unsplash-174185082115.jpg"
             alt="Safari vehicle watching wildebeest herds on the plains at sunset"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

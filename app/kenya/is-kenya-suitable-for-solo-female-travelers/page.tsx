@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Is Kenya Suitable for Solo Female Travelers",
   description: "What solo travelers actually experience on the ground, from booking to game drives -- and where ordinary travel precautions actually matter.",
-  image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1600&q=80",
+  image: "/images/external/unsplash-152380500934.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

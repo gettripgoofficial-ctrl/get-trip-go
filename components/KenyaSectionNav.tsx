@@ -2,13 +2,13 @@
 import Image from "next/image"
 
 const cards = [
-  { id: "travel-wildlife", label: "Travel Tips", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&q=80" },
-  { id: "safari-routes", label: "Itinerary", image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=200&q=80" },
-  { id: "explore", label: "Where to Stay", image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=200&q=80" },
-  { id: "explore", label: "Visa", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&q=80" },
-  { id: "travel-wildlife", label: "Safari & Wildlife", image: "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=200&q=80" },
-  { id: "who-should-go-trending", label: "Must Know Before Travel", image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=200&q=80" },
-  { id: "explore", label: "Parks & Reserves", image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=200&q=80" },
+  { id: "travel-wildlife", label: "Travel Tips", image: "/images/external/unsplash-143649186533.jpg" },
+  { id: "safari-routes", label: "Itinerary", image: "/images/external/unsplash-151642612207.jpg" },
+  { id: "explore", label: "Where to Stay", image: "/images/external/unsplash-152380500934.jpg" },
+  { id: "explore", label: "Visa", image: "/images/external/unsplash-143649186533.jpg" },
+  { id: "travel-wildlife", label: "Safari & Wildlife", image: "/images/external/unsplash-153456711024.jpg" },
+  { id: "who-should-go-trending", label: "Must Know Before Travel", image: "/images/external/unsplash-158451597995.jpg" },
+  { id: "explore", label: "Parks & Reserves", image: "/images/external/unsplash-151693402474.jpg" },
 ]
 
 export default function KenyaSectionNav() {

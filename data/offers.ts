@@ -1,6 +1,6 @@
 export const offers = [
   {
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+    image: "/images/external/unsplash-143649186533.jpg",
     title: "Flat ₹5,000 Off",
     desc: "on your first booking",
     code: "FIRST5000",
@@ -17,7 +17,7 @@ export const offers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+    image: "/images/external/unsplash-151245397979.jpg",
     title: "Mumbai → Dubai",
     desc: "from ₹12,999 only",
     code: "DUBFLY",
@@ -34,7 +34,7 @@ export const offers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
+    image: "/images/external/unsplash-150666553119.jpg",
     title: "Bangkok Getaway",
     desc: "starting ₹8,999 per person",
     code: "BKKFLY",
@@ -51,7 +51,7 @@ export const offers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=800&q=80",
+    image: "/images/external/unsplash-149155734535.jpg",
     title: "Flat ₹10,000 Off",
     desc: "Europe Group Departure",
     code: "EURGRP10K",
@@ -68,7 +68,7 @@ export const offers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=800&q=80",
+    image: "/images/external/unsplash-159964084222.jpg",
     title: "Cruise Deal",
     desc: "25% off on 2nd person",
     code: "CRUISE25",
@@ -85,7 +85,7 @@ export const offers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+    image: "/images/external/unsplash-1544735716-3.jpg",
     title: "Kids Travel Free",
     desc: "on Bhutan packages",
     code: "BHUTANKID",
@@ -102,7 +102,7 @@ export const offers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80",
+    image: "/images/external/unsplash-157384398126.jpg",
     title: "Maldives Honeymoon",
     desc: "Free candlelight dinner included",
     code: "MALDCANDLE",
@@ -119,7 +119,7 @@ export const offers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
+    image: "/images/external/unsplash-152836098327.jpg",
     title: "Thailand 4N + 2N Free",
     desc: "2 nights in Pattaya absolutely free",
     code: "THAI4N2F",

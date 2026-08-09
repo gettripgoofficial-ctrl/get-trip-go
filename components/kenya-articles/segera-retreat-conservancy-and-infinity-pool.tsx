@@ -51,7 +51,7 @@ export default function SegeraRetreatConservancyAndInfinityPoolArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=1200&q=80"
+          src="/images/external/unsplash-178103986937.jpg"
           alt="Infinity pool overlooking the plains at Segera Retreat in Laikipia"
           className="w-full h-full object-cover"
         />

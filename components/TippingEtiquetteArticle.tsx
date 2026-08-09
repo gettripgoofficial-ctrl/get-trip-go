@@ -13,7 +13,7 @@ export default function TippingEtiquetteArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=1600&q=80"
+          src="/images/external/unsplash-1547721064-d.jpg"
           alt="Safari guide and guests at a lodge"
           fill
           priority
@@ -61,7 +61,7 @@ export default function TippingEtiquetteArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=1200&q=80"
+            src="/images/external/unsplash-156808468078.jpg"
             alt="Lodge staff preparing a meal for guests"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

@@ -75,7 +75,7 @@ export default function LakeNakurusFlamingoSpectacleArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1620018764859-530ce4a5523b?w=1200&q=80"
+          src="/images/external/unsplash-162001876485.jpg"
           alt="A flock of pink flamingos feeding at the edge of a lake"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

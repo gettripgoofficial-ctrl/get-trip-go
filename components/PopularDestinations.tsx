@@ -4,18 +4,18 @@ import Image from "next/image"
 import { usePrice } from "@/hooks/usePrice"
 
 const destinations = [
-  { name: "Bali", country: "Indonesia", price: 35999, image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=90" },
-  { name: "Thailand", country: "Thailand", price: 28999, image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=90" },
-  { name: "Kerala", country: "India", price: 18999, image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=90" },
-  { name: "Singapore", country: "Singapore", price: 42999, image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=90" },
-  { name: "Kashmir", country: "India", price: 22999, image: "https://images.unsplash.com/photo-1614094082869-cd4e4b2905c7?w=800&q=90" },
-  { name: "Maldives", country: "Maldives", price: 65999, image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=90" },
-  { name: "Incrediable India", country: "India", price: 15999, image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=90" },
-  { name: "Dubai", country: "UAE", price: 38999, image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=90" },
-  { name: "Georgia", country: "Georgia", price: 45999, image: "https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=90" },
-  { name: "Bhutan", country: "Bhutan", price: 32999, image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=90" },
-  { name: "Vietnam", country: "Vietnam", price: 29999, image: "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=90" },
-  { name: "Northeast India", country: "India", price: 19999, image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=90" },
+  { name: "Bali", country: "Indonesia", price: 35999, image: "/images/external/unsplash-153799619447.jpg" },
+  { name: "Thailand", country: "Thailand", price: 28999, image: "/images/external/unsplash-150666553119.jpg" },
+  { name: "Kerala", country: "India", price: 18999, image: "/images/external/unsplash-160221605609.jpg" },
+  { name: "Singapore", country: "Singapore", price: 42999, image: "/images/external/unsplash-152562529338.jpg" },
+  { name: "Kashmir", country: "India", price: 22999, image: "/images/external/unsplash-161409408286.jpg" },
+  { name: "Maldives", country: "Maldives", price: 65999, image: "/images/external/unsplash-157384398126.jpg" },
+  { name: "Incrediable India", country: "India", price: 15999, image: "/images/external/unsplash-152449241293.jpg" },
+  { name: "Dubai", country: "UAE", price: 38999, image: "/images/external/unsplash-151245397979.jpg" },
+  { name: "Georgia", country: "Georgia", price: 45999, image: "/images/external/unsplash-156500857654.jpg" },
+  { name: "Bhutan", country: "Bhutan", price: 32999, image: "/images/external/unsplash-1544735716-3.jpg" },
+  { name: "Vietnam", country: "Vietnam", price: 29999, image: "/images/external/unsplash-152812726932.jpg" },
+  { name: "Northeast India", country: "India", price: 19999, image: "/images/external/unsplash-150690592534.jpg" },
 ]
 
 export default function PopularDestinations() {

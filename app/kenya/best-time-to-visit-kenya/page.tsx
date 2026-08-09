@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Time to Visit Kenya: A Season-by-Season Guide",
   description: "When to go for the Great Migration, the driest skies, the lowest prices, or the quietest parks — a full season-by-season breakdown for planning a Kenya safari.",
-  image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80",
+  image: "/images/external/unsplash-1547471080-7.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

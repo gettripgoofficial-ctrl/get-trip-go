@@ -3,7 +3,7 @@
 
 export const klookOffers = [
   {
-    image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=800&q=80",
+    image: "/images/external/unsplash-148573842297.jpg",
     title: "Europe Railway 5% Off",
     desc: "Europe Railway Tickets · Max $25 USD",
     code: "SPRINGEUPTP",
@@ -22,7 +22,7 @@ export const klookOffers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80",
+    image: "/images/external/unsplash-149985687195.jpg",
     title: "Europe Attractions 5% Off",
     desc: "All Europe Attractions · Max $3 USD",
     code: "SUMMER2EUATT",
@@ -41,7 +41,7 @@ export const klookOffers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80",
+    image: "/images/external/unsplash-153659901810.jpg",
     title: "HK & Macau 5% Off",
     desc: "HK & Macau Attractions · Max $3 USD",
     code: "SUMMER2HKMOATT",
@@ -60,7 +60,7 @@ export const klookOffers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80",
+    image: "/images/external/unsplash-1555921015-5.jpg",
     title: "Vietnam Attractions 5% Off",
     desc: "All Vietnam Attractions · Max HK$80",
     code: "HKVNATT95",
@@ -79,7 +79,7 @@ export const klookOffers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
+    image: "/images/external/unsplash-152562529338.jpg",
     title: "Singapore Hotel HKD 200 Off",
     desc: "Singapore Hotels · Min spend HK$1,000",
     code: "PM26SGHT200",
@@ -98,7 +98,7 @@ export const klookOffers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800&q=80",
+    image: "/images/external/unsplash-144501998059.jpg",
     title: "First Hotel Booking HKD 200 Off",
     desc: "Any Hotel · Min spend HK$1,500",
     code: "NEWHOTEL200",
@@ -117,7 +117,7 @@ export const klookOffers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1493707553966-283afac8c358?w=800&q=80",
+    image: "/images/external/unsplash-europe-street.jpg",
     title: "Europe Tours 20% Off",
     desc: "Selected Europe Tours · Max $15 USD",
     code: "TNAEUJUNE",
@@ -136,7 +136,7 @@ export const klookOffers = [
     ],
   },
   {
-    image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
+    image: "/images/external/unsplash-152836098327.jpg",
     title: "Japan Tours 20% Off",
     desc: "Selected Japan Tours · Max $10 USD",
     code: "TNAJPJUNE",

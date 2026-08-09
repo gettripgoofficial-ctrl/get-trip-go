@@ -55,7 +55,7 @@ export default function BirdwatchingInKenyaDetailArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1696260050228-8b981115d192?w=1200&q=80"
+          src="/images/external/unsplash-169626005022.jpg"
           alt="An African fish eagle perched in a tree in the Masai Mara, Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

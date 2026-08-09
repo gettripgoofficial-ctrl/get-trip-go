@@ -52,7 +52,7 @@ export default function DuffelBagsOnlySafariLuggageRestrictionsArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=1200&q=80"
+          src="/images/external/unsplash-175855836448.jpg"
           alt="Small aircraft on a remote airstrip in Kenya"
           className="w-full h-full object-cover"
         />

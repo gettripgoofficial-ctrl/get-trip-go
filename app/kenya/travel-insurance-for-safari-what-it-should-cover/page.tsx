@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Travel Insurance for Safari: What It Should Cover",
   description: "Medical evacuation cover matters more than trip cancellation for most safaris. Here's the exact checklist to compare before you buy.",
-  image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1600&q=80",
+  image: "/images/external/unsplash-152380500934.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

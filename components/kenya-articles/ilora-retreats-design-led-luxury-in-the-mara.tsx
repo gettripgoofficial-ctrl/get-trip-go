@@ -60,7 +60,7 @@ export default function IloraRetreatsDesignLedLuxuryInTheMaraArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=1200&q=80"
+          src="/images/external/unsplash-156808468078.jpg"
           alt="Design-forward tented suite interior in the Masai Mara"
           className="w-full h-full object-cover"
         />

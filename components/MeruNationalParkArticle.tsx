@@ -13,7 +13,7 @@ export default function MeruNationalParkArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1600&q=80"
+          src="/images/external/unsplash-151642612207.jpg"
           alt="Lush river landscape of Meru National Park"
           fill
           priority
@@ -62,7 +62,7 @@ export default function MeruNationalParkArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1584844115436-473887b1e6f5?w=1200&q=80"
+            src="/images/external/unsplash-savanna-landscape.jpg"
             alt="Rhino in the grasslands of a Kenyan rhino sanctuary"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

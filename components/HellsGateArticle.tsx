@@ -13,7 +13,7 @@ export default function HellsGateArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=1600&q=80"
+          src="/images/external/unsplash-1549366021-9.jpg"
           alt="Dramatic gorge and cliff scenery at Hell's Gate National Park"
           fill
           priority
@@ -62,7 +62,7 @@ export default function HellsGateArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=1200&q=80"
+            src="/images/external/unsplash-153533845477.jpg"
             alt="Hikers walking through Hell's Gate Gorge"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

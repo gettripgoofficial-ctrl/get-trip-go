@@ -67,7 +67,7 @@ export default function WildebeestRiverCrossingGuideArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1496761523829-6ee70d7928aa?w=1200&q=80"
+          src="/images/external/unsplash-149676152382.jpg"
           alt="Wildebeest gathering to cross the Mara River during the Great Migration"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

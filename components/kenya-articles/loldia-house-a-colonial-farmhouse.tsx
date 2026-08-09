@@ -59,7 +59,7 @@ export default function LoldiaHouseAColonialFarmhouseArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=1200&q=80"
+          src="/images/external/unsplash-176004428068.jpg"
           alt="Colonial farmhouse setting on the shores of Lake Naivasha"
           className="w-full h-full object-cover"
         />

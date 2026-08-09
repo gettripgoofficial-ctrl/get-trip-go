@@ -208,7 +208,7 @@ function ThemeHolidaysPageInner() {
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=90"
+          src="/images/external/unsplash-147651452553.jpg"
           alt="Theme Holidays"
           className="w-full h-full object-cover"
         />

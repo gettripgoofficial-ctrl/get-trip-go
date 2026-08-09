@@ -62,7 +62,7 @@ export default function BasicSwahiliPhrasesAndKenyanEtiquetteArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=1200&q=80"
+          src="/images/external/unsplash-175855836448.jpg"
           alt="Local market scene in Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

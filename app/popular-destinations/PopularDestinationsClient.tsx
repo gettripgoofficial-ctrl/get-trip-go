@@ -244,7 +244,7 @@ function PopularDestinationsContent() {
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
-          src={heroDestination?.image ?? "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=90"}
+          src={heroDestination?.image ?? "/images/external/unsplash-148808506138.jpg"}
           alt={activeDestination}
           className="w-full h-full object-cover"
         />

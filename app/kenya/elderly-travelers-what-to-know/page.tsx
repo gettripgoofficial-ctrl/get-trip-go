@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Elderly Travelers: What to Know Before a Safari",
   description: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers -- what to know before booking a Kenya safari.",
-  image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=1600&q=80",
+  image: "/images/external/unsplash-1547721064-d.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

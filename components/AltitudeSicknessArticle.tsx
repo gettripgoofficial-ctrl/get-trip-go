@@ -14,7 +14,7 @@ export default function AltitudeSicknessArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=1600&q=80"
+          src="/images/external/unsplash-1547721064-d.jpg"
           alt="Highland landscape near Mount Kenya at altitude"
           fill
           priority
@@ -92,7 +92,7 @@ export default function AltitudeSicknessArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=1200&q=80"
+            src="/images/external/unsplash-151681523156.jpg"
             alt="Mount Kenya peak visible above the highland landscape"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

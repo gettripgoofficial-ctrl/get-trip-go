@@ -8,19 +8,19 @@ const articles = [
     id: 1,
     title: "10 Mistakes to Avoid When Booking Your First International Trip",
     category: "Travel Tips",
-    image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&h=500&fit=crop&q=100",
+    image: "/images/external/unsplash-148808506138.jpg",
   },
   {
     id: 2,
     title: "Best Family Destinations Under ₹50,000",
     category: "Family Travel",
-    image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&h=500&fit=crop&q=100",
+    image: "/images/external/unsplash-160913714481.jpg",
   },
   {
     id: 3,
     title: "Honeymoon on a Budget: Top 5 Romantic Getaways in 2026",
     category: "Honeymoon Guide",
-    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&h=500&fit=crop&q=100",
+    image: "/images/external/unsplash-151428240104.jpg",
   },
 ]
 

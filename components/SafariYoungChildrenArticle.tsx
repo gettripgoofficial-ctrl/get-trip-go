@@ -14,7 +14,7 @@ export default function SafariYoungChildrenArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=1600&q=80"
+          src="/images/external/unsplash-178103986937.jpg"
           alt="Family with young children on a game drive vehicle in Kenya"
           fill
           priority
@@ -93,7 +93,7 @@ export default function SafariYoungChildrenArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200&q=80"
+            src="/images/external/unsplash-152380500934.jpg"
             alt="Children watching wildlife from a lodge viewing deck"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Safari First Aid: What to Pack in Your Kit",
   description: "A compact kit for the common stuff -- what to bring on a Kenya safari, and why most lodges handle anything serious without you needing to worry.",
-  image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=1600&q=80",
+  image: "/images/external/unsplash-177921617578.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Lake Naivasha, Lake Nakuru and Masai Mara - a 7-day guided Kenya safari with private game drives and handpicked stays.",
     url: "https://gettripgo.com/kenya/7-days-through-the-kenya-highlands",
     siteName: "Get Trip Go",
-    images: [{ url: "https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=1200&q=80", width: 1200, height: 630, alt: "Kenya Highlands safari" }],
+    images: [{ url: "/images/external/unsplash-151681523156.jpg", width: 1200, height: 630, alt: "Kenya Highlands safari" }],
     locale: "en_IN",
     type: "article",
   },

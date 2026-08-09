@@ -27,7 +27,7 @@ export default function OffersPage() {
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=90"
+          src="/images/external/unsplash-143649186533.jpg"
           alt="Special Offers"
           className="w-full h-full object-cover"
         />

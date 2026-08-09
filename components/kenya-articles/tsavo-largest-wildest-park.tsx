@@ -54,7 +54,7 @@ export default function TsavoLargestWildestParkArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?w=1200&q=80"
+          src="/images/external/unsplash-1553095066-5.jpg"
           alt="Red-dust elephants in Tsavo East National Park, Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

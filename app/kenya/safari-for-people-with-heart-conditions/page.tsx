@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Safari for People With Heart Conditions or Chronic Illness",
   description: "Altitude, heat, and access to medical care -- what to plan around before you book a Kenya safari with a heart condition or chronic illness.",
-  image: "https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=1600&q=80",
+  image: "/images/external/unsplash-177921617578.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

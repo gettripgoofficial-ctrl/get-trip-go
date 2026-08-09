@@ -62,7 +62,7 @@ export default function WhatHappensIfYouGetSickDuringASafariArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=1200&q=80"
+          src="/images/external/unsplash-177921617578.jpg"
           alt="Small aircraft on a remote airstrip in Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

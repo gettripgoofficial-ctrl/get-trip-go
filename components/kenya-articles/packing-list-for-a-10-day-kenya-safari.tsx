@@ -46,7 +46,7 @@ export default function PackingListForATenDayKenyaSafariArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=1200&q=80"
+          src="/images/external/unsplash-178103986937.jpg"
           alt="Packed duffel bag ready for a safari trip"
           className="w-full h-full object-cover"
         />

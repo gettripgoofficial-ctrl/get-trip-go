@@ -63,7 +63,7 @@ export default function AmboselisLastSuperTuskersArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1613061445510-e296bfedb73e?w=1200&q=80"
+          src="/images/external/unsplash-161306144551.jpg"
           alt="Mount Kilimanjaro seen from Amboseli National Park, Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

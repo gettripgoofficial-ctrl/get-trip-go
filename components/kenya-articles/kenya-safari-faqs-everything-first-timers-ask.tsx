@@ -54,7 +54,7 @@ export default function KenyaSafariFaqsEverythingFirstTimersAskArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1200&q=80"
+          src="/images/external/unsplash-174185082115.jpg"
           alt="Open-sided safari vehicle on a game drive in Kenya"
           className="w-full h-full object-cover"
         />

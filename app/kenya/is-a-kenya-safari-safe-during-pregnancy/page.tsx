@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Is a Kenya Safari Safe During Pregnancy",
   description: "What to check with your doctor, which trimester works best, and which activities to skip if you're planning a Kenya safari while pregnant.",
-  image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80",
+  image: "/images/external/unsplash-157189634984.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

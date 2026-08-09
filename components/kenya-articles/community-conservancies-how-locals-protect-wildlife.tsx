@@ -64,7 +64,7 @@ export default function CommunityConservanciesHowLocalsProtectWildlifeArticle() 
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1547970793-b0e1f0b73cf6?w=1200&q=80"
+          src="/images/external/unsplash-maasai-community.jpg"
           alt="Maasai guide walking across open conservancy land in Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

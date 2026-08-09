@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "The Great Migration Explained: When, Where and Why",
   description: "A month-by-month breakdown of the Great Migration — where the herds are, when the Mara River crossings happen, and where to base yourself for the best odds.",
-  image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=1600&q=80",
+  image: "/images/external/unsplash-156410116053.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

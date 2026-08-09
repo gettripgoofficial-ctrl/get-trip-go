@@ -16,7 +16,7 @@ const themes = [
   {
     id: 2,
     name: "Honeymoon Specials",
-    image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=90",
+    image: "/images/external/unsplash-157384398126.jpg",
     color: "#be185d",
     tagBg: "#fdf2f8",
     tagBorder: "#fbcfe8",
@@ -26,7 +26,7 @@ const themes = [
   {
     id: 3,
     name: "Wildlife & Safari",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=90",
+    image: "/images/external/unsplash-151642612207.jpg",
     color: "#166534",
     tagBg: "#f0fdf4",
     tagBorder: "#bbf7d0",
@@ -36,7 +36,7 @@ const themes = [
   {
     id: 4,
     name: "Luxury Escapes",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=90",
+    image: "/images/external/unsplash-157189634984.jpg",
     color: "#b45309",
     tagBg: "#fffbeb",
     tagBorder: "#fde68a",
@@ -46,7 +46,7 @@ const themes = [
   {
     id: 5,
     name: "Adventure Trips",
-    image: "https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=800&q=90",
+    image: "/images/external/unsplash-153313006179.jpg",
     color: "#b45309",
     tagBg: "#fffbeb",
     tagBorder: "#fde68a",
@@ -56,7 +56,7 @@ const themes = [
   {
     id: 6,
     name: "Beach Getaways",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=90",
+    image: "/images/external/unsplash-150752542803.jpg",
     color: "#0369a1",
     tagBg: "#f0f9ff",
     tagBorder: "#bae6fd",
@@ -66,7 +66,7 @@ const themes = [
   {
     id: 7,
     name: "Family Holidays",
-    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=90",
+    image: "/images/external/unsplash-160221605609.jpg",
     color: "#0369a1",
     tagBg: "#f0f9ff",
     tagBorder: "#bae6fd",
@@ -76,7 +76,7 @@ const themes = [
   {
     id: 8,
     name: "Hill Stations",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=90",
+    image: "/images/external/unsplash-150690592534.jpg",
     color: "#166534",
     tagBg: "#f0fdf4",
     tagBorder: "#bbf7d0",

@@ -15,7 +15,7 @@ export default function MalariaPreventionArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1600&q=80"
+          src="/images/external/unsplash-174185082115.jpg"
           alt="Mosquito net over a safari lodge bed in Kenya"
           fill
           priority
@@ -106,7 +106,7 @@ export default function MalariaPreventionArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=1200&q=80"
+            src="/images/external/unsplash-156808468078.jpg"
             alt="Insect repellent and long-sleeved clothing packed for a Kenya safari"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

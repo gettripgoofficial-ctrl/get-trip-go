@@ -59,7 +59,7 @@ export default function KenyaTimeZoneAndJetLagTipsArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1200&q=80"
+          src="/images/external/unsplash-174185082115.jpg"
           alt="Sunrise over the Kenyan savannah"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

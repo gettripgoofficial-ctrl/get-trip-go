@@ -6,7 +6,7 @@ export default function IsKenyaSafeArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=1600&q=80"
+          src="/images/external/unsplash-158451597995.jpg"
           alt="Healthcare worker administering a vaccination"
           fill
           priority
@@ -72,7 +72,7 @@ export default function IsKenyaSafeArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200&q=80"
+            src="/images/external/unsplash-152380500934.jpg"
             alt="Lodge suite overlooking the Masai Mara"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

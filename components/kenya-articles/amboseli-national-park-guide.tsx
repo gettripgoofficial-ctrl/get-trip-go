@@ -50,7 +50,7 @@ export default function AmboseliNationalParkGuideArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1516947401450-4b5a58c60a08?w=1200&q=80"
+          src="/images/external/unsplash-amboseli-elephants.jpg"
           alt="Elephant herd crossing Amboseli's plains with Mount Kilimanjaro in the background"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

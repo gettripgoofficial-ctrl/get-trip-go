@@ -59,7 +59,7 @@ export default function RareSightingsBlackRhinosArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=1200&q=80"
+          src="/images/external/unsplash-153456711024.jpg"
           alt="Black rhino grazing at Ol Pejeta Conservancy in Kenya"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

@@ -16,7 +16,7 @@ export default function SafariFirstAidArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1779216175784-a67b6da108bb?w=1600&q=80"
+          src="/images/external/unsplash-177921617578.jpg"
           alt="Compact first aid kit packed for a Kenya safari"
           fill
           priority
@@ -100,7 +100,7 @@ export default function SafariFirstAidArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80"
+            src="/images/external/unsplash-157189634984.jpg"
             alt="Daypack packed for a game drive with essentials inside"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

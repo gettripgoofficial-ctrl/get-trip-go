@@ -14,7 +14,7 @@ export default function MasaiMaraVsSerengetiArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1516934024742-b461fba47600?w=1600&q=80"
+          src="/images/external/unsplash-151693402474.jpg"
           alt="Open savanna landscape typical of the Mara-Serengeti ecosystem"
           fill
           priority
@@ -64,7 +64,7 @@ export default function MasaiMaraVsSerengetiArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80"
+            src="/images/external/unsplash-151642612207.jpg"
             alt="Wildebeest herds during the Great Migration"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

@@ -13,7 +13,7 @@ export default function SafariFootwearArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=1600&q=80"
+          src="/images/external/unsplash-148949388746.jpg"
           alt="Hiking boots and safari gear packed for a trip"
           fill
           priority
@@ -62,7 +62,7 @@ export default function SafariFootwearArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=1200&q=80"
+            src="/images/external/unsplash-153533845477.jpg"
             alt="Walking safari group on foot through the bush"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

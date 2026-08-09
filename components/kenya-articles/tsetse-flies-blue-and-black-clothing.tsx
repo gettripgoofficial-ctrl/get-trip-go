@@ -49,7 +49,7 @@ export default function TsetseFliesBlueAndBlackClothingArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80"
+          src="/images/external/unsplash-151642612207.jpg"
           alt="Wooded bushland in a Kenyan national park"
           className="w-full h-full object-cover"
         />

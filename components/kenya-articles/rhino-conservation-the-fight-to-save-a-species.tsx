@@ -63,7 +63,7 @@ export default function RhinoConservationTheFightToSaveASpeciesArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1591952096943-38ec1d9dae02?w=1200&q=80"
+          src="/images/external/unsplash-black-rhino.jpg"
           alt="White rhino grazing in a Kenyan conservancy"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

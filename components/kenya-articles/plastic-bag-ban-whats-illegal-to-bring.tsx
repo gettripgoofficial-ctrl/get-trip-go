@@ -59,7 +59,7 @@ export default function PlasticBagBanWhatsIllegalToBringArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80"
+          src="/images/external/unsplash-1547471080-7.jpg"
           alt="Reusable bags packed for travel to Kenya"
           className="w-full h-full object-cover"
         />

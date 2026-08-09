@@ -14,7 +14,7 @@ export default function KenyaETAGuideArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80"
+          src="/images/external/unsplash-143649186533.jpg"
           alt="Passport and travel documents ready for a Kenya trip"
           fill
           priority
@@ -70,7 +70,7 @@ export default function KenyaETAGuideArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80"
+            src="/images/external/unsplash-151782480670.jpg"
             alt="Airport departure boards showing international flights"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

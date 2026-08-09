@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Safari for Travelers With Mobility Issues",
   description: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't -- what to confirm before you book a Kenya safari.",
-  image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=1600&q=80",
+  image: "/images/external/unsplash-156808468078.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

@@ -58,7 +58,7 @@ export default function BumpyRoadsAndMotionSicknessArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=1200&q=80"
+          src="/images/external/unsplash-156410116053.jpg"
           alt="Safari vehicle navigating an unpaved track through the bush"
           className="w-full h-full object-cover"
         />

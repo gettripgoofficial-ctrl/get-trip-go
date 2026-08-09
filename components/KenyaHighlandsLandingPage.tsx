@@ -4,12 +4,12 @@ import { useState } from "react"
 import { MapPin, Car, TreePine, Headphones, Users, Phone, MessageCircle, ShieldCheck, Binoculars, Award, Heart, Star } from "lucide-react"
 
 const ANIMALS = [
-  { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
-  { name: "Elephant", image: "https://images.unsplash.com/photo-1674909072480-ad551618b63e?w=300&q=80" },
-  { name: "Rhino", image: "https://images.unsplash.com/photo-1541414779316-956a5084c0d4?w=300&q=80" },
-  { name: "Leopard", image: "https://images.unsplash.com/photo-1759055646019-e076c6482ed1?w=300&q=80" },
-  { name: "Buffalo", image: "https://images.unsplash.com/photo-1672438605161-22d8c2912054?w=300&q=80" },
-  { name: "Giraffe", image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=300&q=80" },
+  { name: "Lion", image: "/images/external/unsplash-169763833246.jpg" },
+  { name: "Elephant", image: "/images/external/unsplash-167490907248.jpg" },
+  { name: "Rhino", image: "/images/external/unsplash-154141477931.jpg" },
+  { name: "Leopard", image: "/images/external/unsplash-175905564601.jpg" },
+  { name: "Buffalo", image: "/images/external/unsplash-167243860516.jpg" },
+  { name: "Giraffe", image: "/images/external/unsplash-1547721064-d.jpg" },
 ]
 
 const ITINERARY = [
@@ -22,7 +22,7 @@ const ITINERARY = [
       "Check in and enjoy lunch before an afternoon boat ride on the lake, with opportunities to see hippos, pelicans, African fish eagles and other birdlife.",
       "Return to the lodge for dinner and overnight stay.",
     ],
-    image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=700&q=80",
+    image: "/images/kenya-highlands/naivasha-kongoni-lodge.jpg",
   },
   {
     day: "Day 2",
@@ -33,7 +33,7 @@ const ITINERARY = [
       "The park is well known for its rhino population and diverse wildlife, including buffaloes, giraffes, lions, leopards and other species. The lake also attracts various waterbirds, including flamingos.",
       "Return to the lodge for dinner and overnight stay.",
     ],
-    image: "https://images.unsplash.com/photo-1541414779316-956a5084c0d4?w=700&q=80",
+    image: "/images/external/unsplash-154141477931.jpg",
   },
   {
     day: "Day 3",
@@ -44,7 +44,7 @@ const ITINERARY = [
       "Arrive around lunchtime, check in and enjoy lunch before your first afternoon game drive. Search for lions, elephants, cheetahs, buffaloes, giraffes and other wildlife.",
       "Return to the lodge in the evening.",
     ],
-    image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=700&q=80",
+    image: "/images/external/unsplash-174185082115.jpg",
   },
   {
     day: "Day 4",
@@ -54,7 +54,7 @@ const ITINERARY = [
       "Enjoy a full day exploring the Masai Mara with morning and afternoon game drives.",
       "With your Maasai safari guide, explore the open plains and different wildlife areas, offering excellent opportunities for wildlife viewing and photography.",
     ],
-    image: "https://images.unsplash.com/photo-1728891376539-14448ef60798?w=700&q=80",
+    image: "/images/external/unsplash-172889137653.jpg",
   },
   {
     day: "Day 5",
@@ -65,7 +65,7 @@ const ITINERARY = [
       "Enjoy a picnic lunch in the reserve before continuing the day's exploration.",
       "Return to the lodge in the late afternoon.",
     ],
-    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=700&q=80",
+    image: "/images/external/unsplash-156410116053.jpg",
   },
   {
     day: "Day 6",
@@ -75,7 +75,7 @@ const ITINERARY = [
       "After breakfast, drive back to Nairobi.",
       "Upon arrival, enjoy some free time to visit local places, explore the city, or do shopping at your own pace, depending on the available time.",
     ],
-    image: "https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=700&q=80",
+    image: "/images/external/unsplash-175855836448.jpg",
   },
   {
     day: "Day 7",
@@ -85,7 +85,7 @@ const ITINERARY = [
       "After breakfast, transfer to the airport.",
       "Depending on your flight schedule, you may have time for lunch or some leisure time in Nairobi before proceeding to Jomo Kenyatta International Airport for your onward flight.",
     ],
-    image: "https://images.unsplash.com/photo-1764555735463-78b9ff085350?w=700&q=80",
+    image: "/images/external/unsplash-176455573546.jpg",
   },
 ]
 
@@ -96,7 +96,7 @@ const STAYS = [
     stars: 4,
     rating: 4.2,
     tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g317067-d3474739-Reviews-Naivasha_Kongoni_Lodge-Naivasha_Rift_Valley_Province.html",
-    image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=400&q=80",
+    image: "/images/kenya-highlands/naivasha-kongoni-lodge.jpg",
   },
   {
     location: "Lake Nakuru",
@@ -104,7 +104,7 @@ const STAYS = [
     stars: 4,
     rating: 4.5,
     tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g1015946-d4598733-Reviews-Ziwa_Bush_Lodge-Nakuru_Rift_Valley_Province.html",
-    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80",
+    image: "/images/kenya-highlands/ziwa-bush-lodge.jpg",
   },
   {
     location: "Masai Mara",
@@ -112,7 +112,7 @@ const STAYS = [
     stars: 4,
     rating: 3.9,
     tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g294209-d7195107-Reviews-Jambo_Mara_Safari_Lodge-Maasai_Mara_National_Reserve_Rift_Valley_Province.html",
-    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80",
+    image: "/images/kenya-highlands/jambo-mara-safari-lodge.jpg",
   },
   {
     location: "Nairobi",
@@ -120,7 +120,7 @@ const STAYS = [
     stars: 4,
     rating: 4.1,
     tripadvisorUrl: "https://www.tripadvisor.in/Hotel_Review-g294207-d13880353-Reviews-Kingfisher_Nest_Hotel_Suites-Nairobi.html",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80",
+    image: "/images/kenya-highlands/kingfisher-nest-hotel.jpg",
   },
 ]
 
@@ -291,14 +291,14 @@ export default function KenyaHighlandsLandingPage() {
       {/* Hero */}
       <div className="relative w-full min-h-[480px] sm:min-h-[380px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80"
-          alt="Lion on the savanna with a safari vehicle in the Kenya highlands"
+          src="/images/kenya-highlands/hero-banner.jpg"
+          alt="Cheetah beside a safari vehicle in the Kenya highlands"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[center_85%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent md:from-white md:via-white/5 md:to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 py-8">
           <span className="hidden lg:flex absolute right-4 bottom-10 bg-white border border-gray-300 text-gray-800 font-bold text-sm px-5 py-3 rounded-md items-center gap-2 whitespace-nowrap shadow-md z-10">
@@ -571,7 +571,7 @@ export default function KenyaHighlandsLandingPage() {
       {/* Bottom CTA banner */}
       <div className="relative bg-green-900 text-white">
         <div className="absolute inset-0 opacity-30">
-          <Image src="https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=1600&q=80" alt="Kenya sunset safari" fill sizes="100vw" className="object-cover" />
+          <Image src="/images/external/unsplash-175855836448.jpg" alt="Kenya sunset safari" fill sizes="100vw" className="object-cover" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>

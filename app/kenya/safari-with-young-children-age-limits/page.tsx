@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Safari With Young Children: Age Limits and Lodge Policies",
   description: "Most camps set a minimum age for game drives -- here's how to find one that welcomes your kids, and what to confirm before you book.",
-  image: "https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=1600&q=80",
+  image: "/images/external/unsplash-178103986937.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

@@ -12,7 +12,7 @@ export default function SafariPregnancyArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80"
+          src="/images/external/unsplash-157189634984.jpg"
           alt="Pregnant traveler enjoying a view over the Kenya savanna"
           fill
           priority
@@ -100,7 +100,7 @@ export default function SafariPregnancyArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1200&q=80"
+            src="/images/external/unsplash-174185082115.jpg"
             alt="Smooth safari vehicle on a game drive in Kenya"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

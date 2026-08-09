@@ -15,7 +15,7 @@ export default function SafariPhotographyArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?w=1600&q=80"
+          src="/images/external/unsplash-153456711024.jpg"
           alt="Photographer capturing wildlife from a safari vehicle"
           fill
           priority
@@ -64,7 +64,7 @@ export default function SafariPhotographyArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1456926631375-92c8ce872def?w=1200&q=80"
+            src="/images/external/unsplash-145692663137.jpg"
             alt="Leopard resting on a tree branch, photographed with a telephoto lens"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

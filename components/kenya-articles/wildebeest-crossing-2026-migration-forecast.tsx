@@ -49,7 +49,7 @@ export default function WildebeestCrossing2026MigrationForecastArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1516934024742-b461fba47600?w=1200&q=80"
+          src="/images/external/unsplash-151693402474.jpg"
           alt="Wildebeest herds gathering at the Mara River during peak migration season"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

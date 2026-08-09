@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Malaria Prevention: Tablets, Repellents and Risk Areas",
   description: "Which parts of Kenya carry malaria risk, which tablets doctors recommend, and how to protect yourself on safari and the coast.",
-  image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=1600&q=80",
+  image: "/images/external/unsplash-174185082115.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

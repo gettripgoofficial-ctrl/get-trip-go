@@ -39,7 +39,7 @@ export const tours: Tour[] = [
     dealColor: "#E53935",
     dealHook: "🔥 Save ₹15,000 Per Person",
     dealSub: "Limited seats · Book now",
-    image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-149985687195.jpg",
     highlights: ["London", "Paris", "Swiss Alps", "Venice", "Rome"],
   },
   {
@@ -58,7 +58,7 @@ export const tours: Tour[] = [
     dealColor: "#FF6F00",
     dealHook: "🛂 Free Visa Assistance",
     dealSub: "France visa support included",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-150260289865.jpg",
     highlights: ["Paris", "Lyon", "Nice", "Florence", "Rome"],
   },
   {
@@ -78,7 +78,7 @@ export const tours: Tour[] = [
     dealColor: "#7B1FA2",
     dealHook: "✨ Save ₹12,000 — Introductory Price",
     dealSub: "Rhine Falls included · New route",
-    image: "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-143127417276.jpg",
     highlights: ["Paris", "Strasbourg", "Black Forest", "Rhine Falls", "Zurich"],
   },
   {
@@ -97,7 +97,7 @@ export const tours: Tour[] = [
     dealColor: "#E65100",
     dealHook: "👨‍👩‍👧‍👦 ₹10,000 Off Per Person",
     dealSub: "Min. 4 travellers · Group booking",
-    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-1552832230-c.jpg",
     highlights: ["London", "Brussels", "Amsterdam", "Paris", "Rome"],
   },
   {
@@ -116,7 +116,7 @@ export const tours: Tour[] = [
     dealColor: "#F9A825",
     dealHook: "👶 Kids Under 12 Travel Free",
     dealSub: "No child cost · Family special",
-    image: "https://images.unsplash.com/photo-1543429776-2782fc8e0ec0?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-paris-eiffel.jpg",
     highlights: ["Paris", "Geneva", "Milan", "Venice", "Rome"],
   },
   {
@@ -135,7 +135,7 @@ export const tours: Tour[] = [
     dealColor: "#D32F2F",
     dealHook: "🏔️ Save ₹10,000 — Jungfrau Combo",
     dealSub: "UK + Swiss visa · All included",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-150690592534.jpg",
     highlights: ["London", "Paris", "Lucerne", "Jungfrau", "Zurich"],
   },
   {
@@ -154,7 +154,7 @@ export const tours: Tour[] = [
     dealColor: "#FF8F00",
     dealHook: "🏨 1 Complimentary Hotel Night",
     dealSub: "Most booked 8-day itinerary",
-    image: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-152766875296.jpg",
     highlights: ["Paris", "Colmar", "Lucerne", "Mt. Titlis", "Zurich"],
   },
   {
@@ -173,7 +173,7 @@ export const tours: Tour[] = [
     dealColor: "#BF360C",
     dealHook: "🍂 Save ₹20,000 — Off Season",
     dealSub: "Sep–Oct · Fewer crowds",
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-146726920459.jpg",
     highlights: ["London", "Paris", "Interlaken", "Milan", "Rome"],
   },
   {
@@ -192,7 +192,7 @@ export const tours: Tour[] = [
     dealColor: "#FF6D00",
     dealHook: "🛡️ Free Travel Insurance",
     dealSub: "5 departures Jun–Aug 2026",
-    image: "https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-149155734535.jpg",
     highlights: ["Paris", "Nice", "Pisa", "Florence", "Rome"],
   },
   {
@@ -212,7 +212,7 @@ export const tours: Tour[] = [
     dealColor: "#C62828",
     dealHook: "🇨🇭 Save ₹12,000 — Pure Switzerland",
     dealSub: "Jungfrau · Interlaken · Bern",
-    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-157016800720.jpg",
     highlights: ["Zurich", "Lucerne", "Jungfrau", "Interlaken", "Bern"],
   },
   {
@@ -231,7 +231,7 @@ export const tours: Tour[] = [
     dealColor: "#E53935",
     dealHook: "🏰 Save ₹8,000 — 4 Countries",
     dealSub: "Vienna · Budapest · Prague · Munich",
-    image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-151655089392.jpg",
     highlights: ["Vienna", "Budapest", "Prague", "Salzburg", "Munich"],
   },
   {
@@ -250,7 +250,7 @@ export const tours: Tour[] = [
     dealColor: "#FF6F00",
     dealHook: "🌅 Free City Tour Worth ₹8,000",
     dealSub: "Midnight Sun · Jul & Aug only",
-    image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-153136693633.jpg",
     highlights: ["Helsinki", "Stockholm", "Oslo", "Bergen", "Copenhagen"],
   },
   {
@@ -269,7 +269,7 @@ export const tours: Tour[] = [
     dealColor: "#D32F2F",
     dealHook: "🎊 Save ₹10,000 — 2 Countries",
     dealSub: "Spain + Portugal · No extra cost",
-    image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-1543783207-e.jpg",
     highlights: ["Madrid", "Lisbon", "Seville", "Granada", "Barcelona"],
   },
   {
@@ -288,7 +288,7 @@ export const tours: Tour[] = [
     dealColor: "#BF360C",
     dealHook: "🎡 Free Airport Transfer",
     dealSub: "Edinburgh · Highlands · Oxford",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&q=100&auto=format&fit=crop&sat=30",
+    image: "/images/external/unsplash-151363526997.jpg",
     highlights: ["London", "Edinburgh", "Highlands", "Lake District", "Oxford"],
   },
 ]

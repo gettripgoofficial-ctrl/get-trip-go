@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Drinking Water and Food Safety on Safari",
   description: "Most lodges serve filtered or bottled water -- here's exactly what's safe to drink and eat on a Kenya safari, and what to check before you drink.",
-  image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=1600&q=80",
+  image: "/images/external/unsplash-156808468078.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

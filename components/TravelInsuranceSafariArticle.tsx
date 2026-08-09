@@ -14,7 +14,7 @@ export default function TravelInsuranceSafariArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1600&q=80"
+          src="/images/external/unsplash-152380500934.jpg"
           alt="Small aircraft on a remote airstrip near a Kenya safari camp"
           fill
           priority
@@ -97,7 +97,7 @@ export default function TravelInsuranceSafariArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=1200&q=80"
+            src="/images/external/unsplash-148949388746.jpg"
             alt="Safari vehicle on a remote track in a Kenya conservancy"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

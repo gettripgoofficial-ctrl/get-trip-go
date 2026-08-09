@@ -14,7 +14,7 @@ export const metadata = {
     description: "Everything you need to plan a Kenya safari -- park guides, wildlife spotting, visa requirements, where to stay, and practical travel tips.",
     url: "https://gettripgo.com/kenya",
     siteName: "Get Trip Go",
-    images: [{ url: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=1200&q=80", width: 1200, height: 630, alt: "Kenya safari guide" }],
+    images: [{ url: "/images/external/unsplash-151693402474.jpg", width: 1200, height: 630, alt: "Kenya safari guide" }],
     locale: "en_IN",
     type: "website",
   },

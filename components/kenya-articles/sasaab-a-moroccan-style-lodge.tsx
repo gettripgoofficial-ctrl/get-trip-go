@@ -57,7 +57,7 @@ export default function SasaabAMoroccanStyleLodgeArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80"
+          src="/images/external/unsplash-157189634984.jpg"
           alt="Moroccan-style domed suite overlooking the Ewaso Nyiro River"
           className="w-full h-full object-cover"
         />

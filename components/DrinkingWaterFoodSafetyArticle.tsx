@@ -15,7 +15,7 @@ export default function DrinkingWaterFoodSafetyArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=1600&q=80"
+          src="/images/external/unsplash-156808468078.jpg"
           alt="Bottled water and a packed lunch at a Kenya safari lodge"
           fill
           priority
@@ -94,7 +94,7 @@ export default function DrinkingWaterFoodSafetyArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=1200&q=80"
+            src="/images/external/unsplash-148949388746.jpg"
             alt="Fresh fruit and cooked meal served at a safari lodge"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

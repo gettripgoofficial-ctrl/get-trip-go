@@ -63,7 +63,7 @@ export default function MasaiMaraVsSerengetiArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80"
+          src="/images/external/unsplash-1547471080-7.jpg"
           alt="Wide open savanna landscape typical of the Masai Mara and Serengeti ecosystem"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

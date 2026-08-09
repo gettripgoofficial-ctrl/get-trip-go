@@ -6,7 +6,7 @@ export default function SoloFemaleTravelersArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1600&q=80"
+          src="/images/external/unsplash-152380500934.jpg"
           alt="Solo female traveler enjoying a lodge veranda view over Kenya"
           fill
           priority
@@ -76,7 +76,7 @@ export default function SoloFemaleTravelersArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80"
+            src="/images/external/unsplash-157189634984.jpg"
             alt="Communal dining table at a Kenya safari lodge"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

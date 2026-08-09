@@ -13,7 +13,7 @@ export default function LakeNaivashaArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=1600&q=80"
+          src="/images/external/unsplash-148949388746.jpg"
           alt="Boat on Lake Naivasha with hippos nearby"
           fill
           priority
@@ -62,7 +62,7 @@ export default function LakeNaivashaArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80"
+            src="/images/external/unsplash-1547471080-7.jpg"
             alt="Wildlife grazing on Crescent Island near Lake Naivasha"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

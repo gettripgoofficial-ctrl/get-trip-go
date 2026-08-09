@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Vaccinations for Kenya: Yellow Fever and What Else You Need",
   description: "Do Indian travelers need the yellow fever vaccine for Kenya? What's mandatory, what's recommended, and the one rule most people miss on the way back to India.",
-  image: "https://images.unsplash.com/photo-1583591458731-8c9a3d6f6a2f?w=1600&q=80",
+  image: "/images/external/unsplash-vaccine-syringe.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

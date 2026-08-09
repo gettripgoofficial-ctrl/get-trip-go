@@ -52,7 +52,7 @@ export default function SunProtectionHatsSpfSunglassesArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=1200&q=80"
+          src="/images/external/unsplash-1547721064-d.jpg"
           alt="Open plains under bright equatorial sun in Kenya"
           className="w-full h-full object-cover"
         />

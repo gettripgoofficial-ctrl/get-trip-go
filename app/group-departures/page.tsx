@@ -222,7 +222,7 @@ export default function GroupDeparturesPage() {
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=90" alt="Europe Group Departures" className="w-full h-full object-cover" />
+        <img src="/images/external/unsplash-147651452553.jpg" alt="Europe Group Departures" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 p-4 sm:p-8">
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white">Europe Group Departures</h1>

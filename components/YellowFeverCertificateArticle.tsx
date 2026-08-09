@@ -6,7 +6,7 @@ export default function YellowFeverCertificateArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=1600&q=80"
+          src="/images/external/unsplash-158451597995.jpg"
           alt="Vaccination record and travel documents"
           fill
           priority
@@ -55,7 +55,7 @@ export default function YellowFeverCertificateArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80"
+            src="/images/external/unsplash-157609116039.jpg"
             alt="Medical professional administering a vaccination"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

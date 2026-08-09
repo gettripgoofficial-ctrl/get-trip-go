@@ -64,7 +64,7 @@ export default function AntiPoachingEffortsInKenyasParksArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <Image
-          src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1200&q=80"
+          src="/images/external/unsplash-156476005577.jpg"
           alt="Ranger on patrol in a Kenyan national park"
           fill
           sizes="(max-width: 768px) 100vw, 800px"

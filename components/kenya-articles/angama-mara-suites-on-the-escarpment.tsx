@@ -59,7 +59,7 @@ export default function AngamaMaraSuitesOnTheEscarpmentArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200&q=80"
+          src="/images/external/unsplash-152380500934.jpg"
           alt="Glass-fronted suite overlooking the Mara Triangle at Angama Mara"
           className="w-full h-full object-cover"
         />

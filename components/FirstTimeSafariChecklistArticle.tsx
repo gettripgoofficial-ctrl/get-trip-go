@@ -14,7 +14,7 @@ export default function FirstTimeSafariChecklistArticle() {
     <article className="bg-white">
       <div className="relative w-full h-[360px] sm:h-[440px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1516934024742-b461fba47600?w=1600&q=80"
+          src="/images/external/unsplash-151693402474.jpg"
           alt="Traveler preparing for a first Kenya safari trip"
           fill
           priority
@@ -64,7 +64,7 @@ export default function FirstTimeSafariChecklistArticle() {
 
         <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=1200&q=80"
+            src="/images/external/unsplash-148949388746.jpg"
             alt="Passport and travel documents laid out for a trip"
             fill
             sizes="(max-width: 768px) 100vw, 800px"

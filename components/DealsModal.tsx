@@ -4,20 +4,20 @@ import { tours, type Tour } from "@/data/tours"
 
 // ─── Image map ────────────────────────────────────────────────────────────────
 const tourImages: Record<number, string> = {
-  1:  "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&q=80&auto=format&fit=crop",
-  2:  "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&q=80&auto=format&fit=crop",
-  3:  "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=400&q=80&auto=format&fit=crop",
-  4:  "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=80&auto=format&fit=crop",
-  5:  "https://images.unsplash.com/photo-1543429776-2782fc8e0ec0?w=400&q=80&auto=format&fit=crop",
-  6:  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80&auto=format&fit=crop",
-  7:  "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=400&q=80&auto=format&fit=crop",
-  8:  "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=80&auto=format&fit=crop",
-  9:  "https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=400&q=80&auto=format&fit=crop",
-  10: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&q=80&auto=format&fit=crop",
-  11: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=400&q=80&auto=format&fit=crop",
-  12: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80&auto=format&fit=crop",
-  13: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=400&q=80&auto=format&fit=crop",
-  14: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=80&auto=format&fit=crop",
+  1:  "/images/external/unsplash-149985687195.jpg",
+  2:  "/images/external/unsplash-150260289865.jpg",
+  3:  "/images/external/unsplash-143127417276.jpg",
+  4:  "/images/external/unsplash-1552832230-c.jpg",
+  5:  "/images/external/unsplash-paris-eiffel.jpg",
+  6:  "/images/external/unsplash-150690592534.jpg",
+  7:  "/images/external/unsplash-152766875296.jpg",
+  8:  "/images/external/unsplash-146726920459.jpg",
+  9:  "/images/external/unsplash-149155734535.jpg",
+  10: "/images/external/unsplash-157016800720.jpg",
+  11: "/images/external/unsplash-151655089392.jpg",
+  12: "/images/external/unsplash-153136693633.jpg",
+  13: "/images/external/unsplash-1543783207-e.jpg",
+  14: "/images/external/unsplash-151363526997.jpg",
 }
 
 // ─── Enquiry Modal ─────────────────────────────────────────────────────────────
@@ -319,7 +319,7 @@ function FlightDealCard({ onEnquire }: { onEnquire: () => void }) {
       {/* Image */}
       <div className="relative flex-shrink-0 overflow-hidden" style={{ width: 120 }}>
         <img
-          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&q=80&auto=format&fit=crop"
+          src="/images/external/unsplash-143649186533.jpg"
           alt="Flight deal"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />

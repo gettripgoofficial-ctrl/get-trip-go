@@ -11,7 +11,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Altitude Sickness in the Kenyan Highlands",
   description: "Nairobi and the highlands sit high enough to matter for some travelers -- here's who should be careful and what actually poses a risk.",
-  image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=1600&q=80",
+  image: "/images/external/unsplash-1547721064-d.jpg",
   author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
   publisher: { "@type": "Organization", name: "Get Trip Go" },
 }

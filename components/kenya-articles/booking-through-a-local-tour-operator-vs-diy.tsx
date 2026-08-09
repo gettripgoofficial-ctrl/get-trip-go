@@ -59,7 +59,7 @@ export default function BookingThroughALocalTourOperatorVsDiyArticle() {
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
         <img
-          src="https://images.unsplash.com/photo-1781039869379-5561fe260d26?w=1200&q=80"
+          src="/images/external/unsplash-178103986937.jpg"
           alt="Planning a Kenya safari itinerary with maps and notes"
           className="w-full h-full object-cover"
         />
