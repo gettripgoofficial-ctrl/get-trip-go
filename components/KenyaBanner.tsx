@@ -12,6 +12,7 @@ export default function KenyaBanner() {
           src="/images/kenya-highlands/hero-banner.jpg"
           alt="Discover Kenya - safari and wildlife holidays"
           fill
+          priority
           sizes="(max-width: 640px) 100vw, 1200px"
           className="object-cover brightness-90 group-hover:brightness-100 transition-all"
         />
