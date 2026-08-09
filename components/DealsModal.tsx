@@ -69,7 +69,7 @@ function EnquiryModal({ tour, onClose }: { tour: Tour; onClose: () => void }) {
               <h2 className="text-white font-extrabold text-base leading-snug mt-0.5">{tour.name}</h2>
               <p className="text-white/60 text-xs mt-0.5">{tour.nights} · {tour.route}</p>
             </div>
-            <button onClick={onClose} className="text-white/70 hover:text-white mt-1 ml-4 flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors">
+            <button onClick={onClose} aria-label="Close deal details" className="text-white/70 hover:text-white mt-1 ml-4 flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
               </svg>
@@ -416,6 +416,7 @@ export default function DealsModal({ isOpen, onClose }: { isOpen: boolean; onClo
               </div>
               <button
                 onClick={onClose}
+                aria-label="Close deals"
                 className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors text-gray-500"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">

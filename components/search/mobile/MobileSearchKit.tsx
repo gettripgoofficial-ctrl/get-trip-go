@@ -271,7 +271,7 @@ export function MobileSummaryModal({
       onClick={e => { if (e.target === e.currentTarget) onClose() }}
     >
       <div className="bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl w-full sm:max-w-sm p-6 relative">
-        <button onClick={onClose} className="absolute top-4 right-4 text-slate-400">
+        <button onClick={onClose} aria-label="Close" className="absolute top-4 right-4 text-slate-400">
           <X size={18} />
         </button>
         <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">

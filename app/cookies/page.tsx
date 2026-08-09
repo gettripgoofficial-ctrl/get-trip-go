@@ -394,7 +394,7 @@ export default function CookiesPage() {
                         </label>
                       )}
                     </div>
-                    <button className={`chevron${isOpen ? " open" : ""}`}>▾</button>
+                    <button aria-expanded={isOpen} aria-label={isOpen ? "Collapse section" : "Expand section"} className={`chevron${isOpen ? " open" : ""}`}>▾</button>
                   </div>
 
                   <div className={`card-body${isOpen ? " open" : ""}`}>

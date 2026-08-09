@@ -346,7 +346,7 @@ function WhatsAppModal({ tripType, from, to, depDate, retDate, travelers, active
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
       onClick={e => { if (e.target === e.currentTarget) onClose() }}>
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 relative">
-        <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+        <button onClick={onClose} aria-label="Close" className="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
           <X size={18} />
         </button>
         <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
@@ -471,6 +471,7 @@ export default function FlightSearch() {
             <div className="flex items-center justify-center px-0 -mx-4 z-10">
               <button
                 onClick={swap}
+                aria-label="Swap origin and destination"
                 className="w-8 h-8 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center hover:bg-blue-50 hover:border-blue-300 transition-all shadow-sm"
               >
                 <ArrowLeftRight size={14} className="text-[#1A56F0]" />
@@ -512,6 +513,7 @@ export default function FlightSearch() {
           <div className="flex items-center justify-center px-0 -mx-4 z-10">
             <button
               onClick={swap}
+              aria-label="Swap origin and destination"
               className="w-8 h-8 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center hover:bg-blue-50 hover:border-blue-300 transition-all shadow-sm"
             >
               <ArrowLeftRight size={14} className="text-[#1A56F0]" />

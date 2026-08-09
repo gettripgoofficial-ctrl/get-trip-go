@@ -30,7 +30,7 @@ export default function MobileSearchSheet({
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 flex-shrink-0">
         <h2 className="text-[15px] font-bold text-[#0e1f45]">Search & Enquire</h2>
-        <button onClick={onClose} className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+        <button onClick={onClose} aria-label="Close search" className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
           <X size={16} className="text-slate-600" />
         </button>
       </div>

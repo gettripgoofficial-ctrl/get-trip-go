@@ -58,6 +58,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
               </div>
               <button
                 onClick={onClose}
+                aria-label="Close"
                 className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center text-lg"
               >
                 ✕

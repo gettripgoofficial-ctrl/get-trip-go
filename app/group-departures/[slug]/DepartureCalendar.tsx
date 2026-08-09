@@ -52,11 +52,11 @@ export default function DepartureCalendar({
     <div>
       {/* Month header */}
       <div className="flex items-center justify-between mb-0.5">
-        <button onClick={goPrev} className="p-0.5 rounded-md hover:bg-gray-100 text-gray-500">
+        <button onClick={goPrev} aria-label="Previous month" className="p-0.5 rounded-md hover:bg-gray-100 text-gray-500">
           <ChevronLeft size={12} />
         </button>
         <span className="text-[11px] font-bold text-gray-900">{MONTH_NAMES[viewMonth]} {viewYear}</span>
-        <button onClick={goNext} className="p-0.5 rounded-md hover:bg-gray-100 text-gray-500">
+        <button onClick={goNext} aria-label="Next month" className="p-0.5 rounded-md hover:bg-gray-100 text-gray-500">
           <ChevronRight size={12} />
         </button>
       </div>

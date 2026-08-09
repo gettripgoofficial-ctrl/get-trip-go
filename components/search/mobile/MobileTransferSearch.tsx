@@ -45,7 +45,7 @@ export default function MobileTransferSearch() {
 
       <MobileAutocomplete icon={<MapPin size={15} />} label="Pickup" value={pickup} onChange={setPickup} endpoint="/api/hotels/locations" placeholder="Pickup location" />
       <div className="flex justify-center -my-1 mb-1">
-        <button onClick={swap} className="w-8 h-8 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shadow-sm">
+        <button onClick={swap} aria-label="Swap pickup and drop-off locations" className="w-8 h-8 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shadow-sm">
           <ArrowLeftRight size={13} className="text-[#1A56F0]" />
         </button>
       </div>
