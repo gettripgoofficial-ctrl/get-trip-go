@@ -252,21 +252,21 @@ function LeadForm() {
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Number of Travellers</label>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
             <div>
-              <label htmlFor="safari-adults" className="block text-gray-500 text-[10px] mb-1">Adults</label>
+              <label htmlFor="safari-adults" className="block text-gray-600 text-xs font-semibold mb-1">Adults</label>
               <select id="safari-adults" name="adults" defaultValue="2" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(9)].map((_, i) => <option key={i} value={i + 1}>{i + 1}</option>)}
               </select>
             </div>
             <div>
-              <label htmlFor="safari-children" className="block text-gray-500 text-[10px] mb-1">Children</label>
+              <label htmlFor="safari-children" className="block text-gray-600 text-xs font-semibold mb-1">Children</label>
               <select id="safari-children" name="children" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(6)].map((_, i) => <option key={i} value={i}>{i}</option>)}
               </select>
             </div>
             <div>
-              <label htmlFor="safari-infants" className="block text-gray-500 text-[10px] mb-1">Infants</label>
+              <label htmlFor="safari-infants" className="block text-gray-600 text-xs font-semibold mb-1">Infants</label>
               <select id="safari-infants" name="infants" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(4)].map((_, i) => <option key={i} value={i}>{i}</option>)}
               </select>

@@ -481,3 +481,6 @@ export default function KenyaGrandCircuitLandingPage() {
           </div>
         </div>
       </div>
+    </div>
+  )
+}

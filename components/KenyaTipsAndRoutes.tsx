@@ -8,6 +8,7 @@ const PUBLISHED_JOURNEY_SLUGS = new Set<string>([
   "7-days-through-the-kenya-highlands",
   "walking-safari-kenya-on-foot-through-the-bush",
   "quick-kenya-safari-escape",
+  "the-classic-kenya-grand-circuit-13-days",
 ])
 
 export default function KenyaTipsAndRoutes() {
