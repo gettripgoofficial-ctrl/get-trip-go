@@ -64,11 +64,10 @@ export default function TourDetailPage({ params }: { params: { slug: string } })
       <div className="max-w-7xl mx-auto px-4 pt-6 pb-6">
 
 
-        {/* Full-width Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-[1.6fr_1fr] gap-2 rounded-2xl overflow-hidden mb-6" style={{ height: "480px" }}>
-          {/* Hero */}
-          <div className="relative h-full rounded-2xl overflow-hidden">
-            <img src={galleryImages[0]} alt={labels[0] ?? tour.name} className="w-full h-full object-cover" />
+        {tour.slug === "heart-of-europe" ? (
+          /* Full-width Hero — Heart of Europe only */
+          <div className="relative rounded-2xl overflow-hidden mb-6" style={{ height: "480px" }}>
+            <img src={tour.heroImage} alt={labels[0] ?? tour.name} className="w-full h-full object-cover" />
             {tour.rating && (
               <div className="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
                 <Star size={12} className="fill-yellow-400 text-yellow-400" />
@@ -82,25 +81,45 @@ export default function TourDetailPage({ params }: { params: { slug: string } })
               </div>
             )}
           </div>
-
-          {/* Thumbnail grid */}
-          <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
-            {galleryImages.slice(1, 5).map((img, i) => (
-              <div key={i} className="relative rounded-xl overflow-hidden">
-                <img src={img} alt={labels[i + 1] ?? tour.name} className="w-full h-full object-cover" />
-                <div className="absolute top-2 right-2 bg-black/50 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded">
-
+        ) : (
+          /* Full-width Gallery — every other tour */
+          <div className="grid grid-cols-1 sm:grid-cols-[1.6fr_1fr] gap-2 rounded-2xl overflow-hidden mb-6" style={{ height: "480px" }}>
+            {/* Hero */}
+            <div className="relative h-full rounded-2xl overflow-hidden">
+              <img src={galleryImages[0]} alt={labels[0] ?? tour.name} className="w-full h-full object-cover" />
+              {tour.rating && (
+                <div className="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+                  <Star size={12} className="fill-yellow-400 text-yellow-400" />
+                  {tour.rating} {tour.reviewCount ? `(${tour.reviewCount} reviews)` : ""}
                 </div>
-                {labels[i + 1] && (
-                  <div className="absolute bottom-2 left-2 bg-black/60 text-white text-[11px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 truncate">
-                    <MapPin size={10} />
-                    {labels[i + 1]}
+              )}
+              {labels[0] && (
+                <div className="absolute bottom-3 left-3 bg-black/60 text-white text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1">
+                  <MapPin size={12} />
+                  {labels[0]}
+                </div>
+              )}
+            </div>
+
+            {/* Thumbnail grid */}
+            <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
+              {galleryImages.slice(1, 5).map((img, i) => (
+                <div key={i} className="relative rounded-xl overflow-hidden">
+                  <img src={img} alt={labels[i + 1] ?? tour.name} className="w-full h-full object-cover" />
+                  <div className="absolute top-2 right-2 bg-black/50 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded">
+
                   </div>
-                )}
-              </div>
-            ))}
+                  {labels[i + 1] && (
+                    <div className="absolute bottom-2 left-2 bg-black/60 text-white text-[11px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 truncate">
+                      <MapPin size={10} />
+                      {labels[i + 1]}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Title + badges */}
         <div className="bg-white rounded-2xl shadow-sm py-4 mb-6 overflow-hidden">
