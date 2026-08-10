@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import KenyaWalkingSafariLandingPage from "@/components/KenyaWalkingSafariLandingPage";
 
 export const metadata: Metadata = {
-  title: "Walking Safari Kenya: On Foot Through the Bush | Get Trip Go",
+  title: "Walking Safari Kenya: On Foot Through the Bush",
   description: "A 9-day, 8-night Kenya safari through Nairobi, Aberdares, Samburu, Ol Pejeta Conservancy, Lake Nakuru and Masai Mara. Private 4x4 game drives, handpicked lodges, and Big Five sightings.",
   openGraph: {
     title: "Walking Safari Kenya: On Foot Through the Bush | Get Trip Go",

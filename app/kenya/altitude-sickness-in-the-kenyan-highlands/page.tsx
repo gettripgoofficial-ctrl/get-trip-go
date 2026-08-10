@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import AltitudeSicknessArticle from "@/components/AltitudeSicknessArticle"
 
 export const metadata: Metadata = {
-  title: "Altitude Sickness in the Kenyan Highlands | Get Trip Go",
+  title: "Altitude Sickness in the Kenyan Highlands",
   description: "Nairobi and the highlands sit high enough to matter for some travelers -- here's who should be careful and what actually poses a risk.",
 }
 

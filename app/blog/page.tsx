@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Travel Stories & Guides | Get Trip Go",
+  title: "Travel Stories & Guides",
   description:
     "Insider travel intel, destination guides, and trip-planning wisdom — straight from the team that lives and breathes travel every single day.",
   keywords: [

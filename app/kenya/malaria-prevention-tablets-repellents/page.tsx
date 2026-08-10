@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import MalariaPreventionArticle from "@/components/MalariaPreventionArticle"
 
 export const metadata: Metadata = {
-  title: "Malaria Prevention: Tablets, Repellents and Risk Areas | Get Trip Go",
+  title: "Malaria Prevention: Tablets, Repellents and Risk Areas",
   description: "Which parts of Kenya carry malaria risk, which tablets doctors recommend, and how to protect yourself on safari and the coast.",
 }
 

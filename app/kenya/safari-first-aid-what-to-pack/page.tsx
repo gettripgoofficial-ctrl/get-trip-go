@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SafariFirstAidArticle from "@/components/SafariFirstAidArticle"
 
 export const metadata: Metadata = {
-  title: "Safari First Aid: What to Pack in Your Kit | Get Trip Go",
+  title: "Safari First Aid: What to Pack in Your Kit",
   description: "A compact kit for the common stuff -- what to bring on a Kenya safari, and why most lodges handle anything serious without you needing to worry.",
 }
 

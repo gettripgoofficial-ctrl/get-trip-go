@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SoloFemaleTravelersArticle from "@/components/SoloFemaleTravelersArticle"
 
 export const metadata: Metadata = {
-  title: "Is Kenya Suitable for Solo Female Travelers | Get Trip Go",
+  title: "Is Kenya Suitable for Solo Female Travelers",
   description: "What solo travelers actually experience on the ground, from booking to game drives -- and where ordinary travel precautions actually matter.",
 }
 

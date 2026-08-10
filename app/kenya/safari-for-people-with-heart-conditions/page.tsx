@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SafariHeartConditionsArticle from "@/components/SafariHeartConditionsArticle"
 
 export const metadata: Metadata = {
-  title: "Safari for People With Heart Conditions or Chronic Illness | Get Trip Go",
+  title: "Safari for People With Heart Conditions or Chronic Illness",
   description: "Altitude, heat, and access to medical care -- what to plan around before you book a Kenya safari with a heart condition or chronic illness.",
 }
 

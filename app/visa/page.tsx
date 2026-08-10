@@ -3,7 +3,7 @@ import Link from "next/link";
 import VisaCountryExplorer from "@/components/visa/VisaCountryExplorer";
 
 export const metadata: Metadata = {
-  title: "Visa Assistance — Tourist, Business & Transit Visas | Get Trip Go",
+  title: "Visa Assistance — Tourist, Business & Transit Visas",
   description: "Apply for tourist, business, and transit visas to 150+ countries with Get Trip Go. Fast processing, document checklists, and expert guidance every step of the way.",
 };
 

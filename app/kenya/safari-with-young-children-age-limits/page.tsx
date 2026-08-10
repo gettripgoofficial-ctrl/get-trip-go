@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SafariYoungChildrenArticle from "@/components/SafariYoungChildrenArticle"
 
 export const metadata: Metadata = {
-  title: "Safari With Young Children: Age Limits and Lodge Policies | Get Trip Go",
+  title: "Safari With Young Children: Age Limits and Lodge Policies",
   description: "Most camps set a minimum age for game drives -- here's how to find one that welcomes your kids, and what to confirm before you book.",
 }
 

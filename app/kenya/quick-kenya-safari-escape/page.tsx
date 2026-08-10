@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import KenyaQuickEscapeLandingPage from "@/components/KenyaQuickEscapeLandingPage";
 
 export const metadata: Metadata = {
-  title: "Quick Kenya Safari Escape | Get Trip Go",
+  title: "Quick Kenya Safari Escape",
   description: "A 6-day, 5-night Kenya safari through Lake Elementaita and the Maasai Mara. Private 4x4 game drives, handpicked lodges, and Big Five sightings on a shorter timeline.",
   openGraph: {
     title: "Quick Kenya Safari Escape | Get Trip Go",

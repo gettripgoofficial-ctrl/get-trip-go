@@ -7,7 +7,7 @@ import KenyaWhoShouldGoTrending from "@/components/KenyaWhoShouldGoTrending"
 import KenyaConservationCultureSection from "@/components/KenyaConservationCultureSection"
 
 export const metadata = {
-  title: "Kenya Safari Guide: Parks, Wildlife, Visas & Travel Tips | Get Trip Go",
+  title: "Kenya Safari Guide: Parks, Wildlife, Visas & Travel Tips",
   description: "Everything you need to plan a Kenya safari -- park guides, wildlife spotting, visa requirements, where to stay, and practical travel tips.",
   openGraph: {
     title: "Kenya Safari Guide: Parks, Wildlife, Visas & Travel Tips",

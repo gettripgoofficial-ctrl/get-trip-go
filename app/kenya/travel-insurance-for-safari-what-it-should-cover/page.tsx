@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import TravelInsuranceSafariArticle from "@/components/TravelInsuranceSafariArticle"
 
 export const metadata: Metadata = {
-  title: "Travel Insurance for Safari: What It Should Cover | Get Trip Go",
+  title: "Travel Insurance for Safari: What It Should Cover",
   description: "Medical evacuation cover matters more than trip cancellation for most safaris. Here's the exact checklist to compare before you buy.",
 }
 

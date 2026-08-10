@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import KenyaHighlandsLandingPage from "@/components/KenyaHighlandsLandingPage";
 
 export const metadata: Metadata = {
-  title: "7 Days Through the Kenya Highlands | Kenya Safari Package | Get Trip Go",
+  title: "7 Days Through the Kenya Highlands | Kenya Safari Package",
   description: "A 7-day, 6-night Kenya safari through Lake Naivasha, Lake Nakuru and Masai Mara. Private 4x4 game drives, handpicked lodges, and Big Five sightings.",
   openGraph: {
     title: "7 Days Through the Kenya Highlands | Get Trip Go",

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import VaccinationsForKenyaArticle from "@/components/VaccinationsForKenyaArticle"
 
 export const metadata: Metadata = {
-  title: "Vaccinations for Kenya: Yellow Fever and What Else You Need | Get Trip Go",
+  title: "Vaccinations for Kenya: Yellow Fever and What Else You Need",
   description: "Do Indian travelers need the yellow fever vaccine for Kenya? What's mandatory, what's recommended, and the one rule most people miss on the way back to India.",
 }
 

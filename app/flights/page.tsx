@@ -3,7 +3,7 @@ import Link from "next/link";
 import SearchBox from "@/components/search/SearchBox";
 
 export const metadata: Metadata = {
-  title: "Cheap Flights — Domestic & International | Get Trip Go",
+  title: "Cheap Flights — Domestic & International",
   description:
     "Book domestic and international flights at the best prices with Get Trip Go. Compare fares across airlines, flexible dates, and instant booking confirmation.",
 };

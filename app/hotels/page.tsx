@@ -3,7 +3,7 @@ import Link from "next/link";
 import SearchBox from "@/components/search/SearchBox";
 
 export const metadata: Metadata = {
-  title: "Hotel Booking — Best Rates Worldwide | Get Trip Go",
+  title: "Hotel Booking — Best Rates Worldwide",
   description:
     "Book hotels across India and worldwide with Get Trip Go. Compare rates, real guest reviews, and flexible cancellation on thousands of properties.",
 };

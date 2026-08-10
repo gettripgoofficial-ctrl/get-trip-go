@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import KenyaGrandCircuitLandingPage from "@/components/KenyaGrandCircuitLandingPage";
 export const metadata: Metadata = {
-  title: "The Classic Kenya Grand Circuit | 13-Day Kenya Safari | Get Trip Go",
+  title: "The Classic Kenya Grand Circuit | 13-Day Kenya Safari",
   description: "A 13-day, 12-night Kenya grand circuit safari covering the country's top parks and reserves. Private 4x4 game drives, handpicked lodges, and unforgettable wildlife encounters.",
   openGraph: {
     title: "The Classic Kenya Grand Circuit | Get Trip Go",

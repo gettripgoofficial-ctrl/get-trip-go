@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import ElderlyTravelersArticle from "@/components/ElderlyTravelersArticle"
 
 export const metadata: Metadata = {
-  title: "Elderly Travelers: What to Know Before a Safari | Get Trip Go",
+  title: "Elderly Travelers: What to Know Before a Safari",
   description: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers -- what to know before booking a Kenya safari.",
 }
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SafariPregnancyArticle from "@/components/SafariPregnancyArticle"
 
 export const metadata: Metadata = {
-  title: "Is a Kenya Safari Safe During Pregnancy | Get Trip Go",
+  title: "Is a Kenya Safari Safe During Pregnancy",
   description: "What to check with your doctor, which trimester works best, and which activities to skip if you're planning a Kenya safari while pregnant.",
 }
 

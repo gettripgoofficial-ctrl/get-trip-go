@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import DrinkingWaterFoodSafetyArticle from "@/components/DrinkingWaterFoodSafetyArticle"
 
 export const metadata: Metadata = {
-  title: "Drinking Water and Food Safety on Safari | Get Trip Go",
+  title: "Drinking Water and Food Safety on Safari",
   description: "Most lodges serve filtered or bottled water -- here's exactly what's safe to drink and eat on a Kenya safari, and what to check before you drink.",
 }
 

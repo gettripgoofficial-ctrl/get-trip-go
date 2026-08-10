@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SafariMobilityIssuesArticle from "@/components/SafariMobilityIssuesArticle"
 
 export const metadata: Metadata = {
-  title: "Safari for Travelers With Mobility Issues | Get Trip Go",
+  title: "Safari for Travelers With Mobility Issues",
   description: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't -- what to confirm before you book a Kenya safari.",
 }
 
