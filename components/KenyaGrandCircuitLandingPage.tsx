@@ -5,12 +5,12 @@ import KenyaMobileHeader from "@/components/KenyaMobileHeader"
 import { Phone, MessageCircle, MapPin, Car, TreePine, Headphones } from "lucide-react"
 
 const ANIMALS = [
-  { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
-  { name: "Elephant", image: "https://images.unsplash.com/photo-1674909072480-ad551618b63e?w=300&q=80" },
-  { name: "Rhino", image: "https://images.unsplash.com/photo-1541414779316-956a5084c0d4?w=300&q=80" },
-  { name: "Leopard", image: "https://images.unsplash.com/photo-1759055646019-e076c6482ed1?w=300&q=80" },
-  { name: "Buffalo", image: "https://images.unsplash.com/photo-1672438605161-22d8c2912054?w=300&q=80" },
-  { name: "Giraffe", image: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=300&q=80" },
+  { name: "Lion", image: "/images/external/unsplash-169763833246.jpg" },
+  { name: "Elephant", image: "/images/external/unsplash-167490907248.jpg" },
+  { name: "Rhino", image: "/images/external/unsplash-154141477931.jpg" },
+  { name: "Leopard", image: "/images/external/unsplash-175905564601.jpg" },
+  { name: "Buffalo", image: "/images/external/unsplash-167243860516.jpg" },
+  { name: "Giraffe", image: "/images/external/unsplash-1547721064-d.jpg" },
 ]
 
 const ITINERARY = [
@@ -22,7 +22,7 @@ const ITINERARY = [
       "Arrive in Nairobi and transfer to Movenpick Hotel.",
       "This night is optional depending on your international flight arrival time and is available at an additional cost.",
     ],
-    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80",
+    image: "/images/external/unsplash-1547471080-7.jpg",
   },
   {
     day: "Day 2",
@@ -32,7 +32,7 @@ const ITINERARY = [
       "After breakfast, transfer from the airport to Movenpick Hotel. Rest of the day is at leisure.",
       "Optional visits to the Giraffe Centre, Elephant Orphanage, Nairobi National Museum or Nairobi National Park can be arranged at an additional cost.",
     ],
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80",
+    image: "/images/external/unsplash-157189634984.jpg",
   },
   {
     day: "Day 3",
@@ -42,7 +42,7 @@ const ITINERARY = [
       "After breakfast, drive to Lake Nakuru and check in at Lake Nakuru Sopa Lodge.",
       "After lunch, enjoy an afternoon game drive in Lake Nakuru National Park.",
     ],
-    image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=700&q=80",
+    image: "/images/external/unsplash-156808468078.jpg",
   },
   {
     day: "Day 4",
@@ -52,7 +52,7 @@ const ITINERARY = [
       "Drive to Ol Pejeta Conservancy and check in at Jambo Mutara Camp.",
       "Enjoy a game drive in the conservancy, with visits to the Chimpanzee and Rhino Sanctuaries.",
     ],
-    image: "https://images.unsplash.com/photo-1541414779316-956a5084c0d4?w=700&q=80",
+    image: "/images/external/unsplash-154141477931.jpg",
   },
   {
     day: "Day 5",
@@ -62,7 +62,7 @@ const ITINERARY = [
       "Transfer to the airstrip for your flight to Masai Mara. On arrival, transfer to Fairmont Mara Safari Club and enjoy lunch.",
       "Proceed for an afternoon game drive in the Masai Mara National Reserve.",
     ],
-    image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=700&q=80",
+    image: "/images/external/unsplash-174185082115.jpg",
   },
   {
     day: "Day 6",
@@ -72,7 +72,7 @@ const ITINERARY = [
       "Enjoy a full day of game drives in the Masai Mara National Reserve, with opportunities to see abundant wildlife and the seasonal wildebeest migration.",
       "Optional Masai village visit can also be arranged.",
     ],
-    image: "https://images.unsplash.com/photo-1728891376539-14448ef60798?w=700&q=80",
+    image: "/images/external/unsplash-172889137653.jpg",
   },
   {
     day: "Day 7",
@@ -82,7 +82,7 @@ const ITINERARY = [
       "Spend another full day exploring the Masai Mara with morning and afternoon game drives.",
       "Enjoy excellent opportunities for wildlife viewing and photography.",
     ],
-    image: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=700&q=80",
+    image: "/images/external/unsplash-156410116053.jpg",
   },
   {
     day: "Day 8",
@@ -92,7 +92,7 @@ const ITINERARY = [
       "Fly from Masai Mara to Serengeti. On arrival, proceed for a game drive in Serengeti National Park.",
       "Continue to Serengeti Serena Lodge for dinner and overnight stay.",
     ],
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80",
+    image: "/images/external/unsplash-151642612207.jpg",
   },
   {
     day: "Day 9",
@@ -101,7 +101,7 @@ const ITINERARY = [
     bullets: [
       "Enjoy a full day of game drives in Serengeti National Park, exploring the plains and looking for lions, elephants, cheetahs, leopards, zebras and wildebeest.",
     ],
-    image: "https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=700&q=80",
+    image: "/images/external/unsplash-175855836448.jpg",
   },
   {
     day: "Day 10",
@@ -111,7 +111,7 @@ const ITINERARY = [
       "Enjoy a game drive through the Serengeti en route to Ngorongoro, with a picnic lunch.",
       "Continue to Ngorongoro Serena Lodge for dinner and overnight stay.",
     ],
-    image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=80",
+    image: "/images/external/unsplash-152380500934.jpg",
   },
   {
     day: "Day 11",
@@ -121,7 +121,7 @@ const ITINERARY = [
       "Enjoy a full-day game drive in the Ngorongoro Crater with a picnic lunch.",
       "Explore the crater and its abundant wildlife before returning to the lodge.",
     ],
-    image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=700&q=80",
+    image: "/images/external/unsplash-176004428068.jpg",
   },
   {
     day: "Day 12",
@@ -131,7 +131,7 @@ const ITINERARY = [
       "Travel to Lake Manyara and check in at Lake Manyara Serena Lodge.",
       "Enjoy an evening game drive in Lake Manyara National Park.",
     ],
-    image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=700&q=80",
+    image: "/images/external/unsplash-176004428068.jpg",
   },
   {
     day: "Day 13",
@@ -141,18 +141,18 @@ const ITINERARY = [
       "After breakfast, travel to Arusha and enjoy lunch.",
       "Continue to Kilimanjaro International Airport for your onward flight, marking the end of your safari.",
     ],
-    image: "https://images.unsplash.com/photo-1764555735463-78b9ff085350?w=700&q=80",
+    image: "/images/external/unsplash-176455573546.jpg",
   },
 ]
 
 const STAYS = [
-  { location: "Nairobi", name: "Movenpick Hotel", stars: 4, image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" },
-  { location: "Lake Nakuru", name: "Lake Nakuru Sopa Lodge", stars: 4, image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=400&q=80" },
-  { location: "Ol Pejeta", name: "Jambo Mutara Camp", stars: 4, image: "https://images.unsplash.com/photo-1760044280686-c5bf1edf3cbb?w=400&q=80" },
-  { location: "Masai Mara", name: "Fairmont Mara Safari Club", stars: 4, image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80" },
-  { location: "Serengeti", name: "Serengeti Serena Lodge", stars: 4, image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" },
-  { location: "Ngorongoro", name: "Ngorongoro Serena Lodge", stars: 4, image: "https://images.unsplash.com/photo-1758558364489-e6b0a03d1fcf?w=400&q=80" },
-  { location: "Lake Manyara", name: "Lake Manyara Serena Lodge", stars: 4, image: "https://images.unsplash.com/photo-1741850821150-58b56e0e6156?w=400&q=80" },
+  { location: "Nairobi", name: "Movenpick Hotel", stars: 4, image: "/images/external/unsplash-157189634984.jpg" },
+  { location: "Lake Nakuru", name: "Lake Nakuru Sopa Lodge", stars: 4, image: "/images/external/unsplash-156808468078.jpg" },
+  { location: "Ol Pejeta", name: "Jambo Mutara Camp", stars: 4, image: "/images/external/unsplash-176004428068.jpg" },
+  { location: "Masai Mara", name: "Fairmont Mara Safari Club", stars: 4, image: "/images/external/unsplash-152380500934.jpg" },
+  { location: "Serengeti", name: "Serengeti Serena Lodge", stars: 4, image: "/images/external/unsplash-151642612207.jpg" },
+  { location: "Ngorongoro", name: "Ngorongoro Serena Lodge", stars: 4, image: "/images/external/unsplash-175855836448.jpg" },
+  { location: "Lake Manyara", name: "Lake Manyara Serena Lodge", stars: 4, image: "/images/external/unsplash-174185082115.jpg" },
 ]
 
 const INCLUSIONS = [
@@ -319,7 +319,7 @@ export default function KenyaGrandCircuitLandingPage() {
       {/* Hero */}
       <div className="relative w-full min-h-[480px] sm:min-h-[380px] md:mt-[68px]">
         <Image
-          src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80"
+          src="/images/external/unsplash-1547471080-7.jpg"
           alt="Savanna sunrise on the Kenya Tanzania safari circuit"
           fill
           priority
@@ -582,7 +582,7 @@ export default function KenyaGrandCircuitLandingPage() {
       {/* Bottom CTA banner */}
       <div className="relative bg-green-900 text-white">
         <div className="absolute inset-0 opacity-30">
-          <Image src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80" alt="Kenya and Tanzania sunset safari" fill sizes="100vw" className="object-cover" />
+          <Image src="/images/external/unsplash-1547471080-7.jpg" alt="Kenya and Tanzania sunset safari" fill sizes="100vw" className="object-cover" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
