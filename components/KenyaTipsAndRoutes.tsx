@@ -6,9 +6,12 @@ import { kenyaJourneys } from "@/data/kenyaData"
 
 const PUBLISHED_JOURNEY_SLUGS = new Set<string>([
   "7-days-through-the-kenya-highlands",
+  "highlands-to-the-indian-ocean",
   "walking-safari-kenya-on-foot-through-the-bush",
   "quick-kenya-safari-escape",
   "the-classic-kenya-grand-circuit-13-days",
+  "kenya-and-tanzania-combining-two-safari-countries",
+  "ultimate-kenya-wildlife-safari",
 ])
 
 export default function KenyaTipsAndRoutes() {

@@ -13,7 +13,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${pkg.name} — ${params.theme} Holiday Package | Get Trip Go`,
+    title: `${pkg.name} — ${params.theme} Holiday Package`,
     description: `${pkg.name} — a ${pkg.duration} ${params.theme.toLowerCase()} holiday to ${pkg.destination}, ${pkg.country}. Starting at ₹${pkg.price.toLocaleString("en-IN")} per person with Get Trip Go.`,
   };
 }

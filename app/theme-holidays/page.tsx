@@ -24,7 +24,7 @@ export async function generateMetadata({
   const lowestPrice = count > 0 ? Math.min(...matches.map((p) => p.price)) : null;
 
   return {
-    title: `${theme} Holiday Packages | Get Trip Go`,
+    title: `${theme} Holiday Packages`,
     description: `Explore ${count} ${theme.toLowerCase()} holiday package${count === 1 ? "" : "s"}${
       lowestPrice ? ` starting at ₹${lowestPrice.toLocaleString("en-IN")} per person` : ""
     }. Compare destinations and inclusions with Get Trip Go.`,

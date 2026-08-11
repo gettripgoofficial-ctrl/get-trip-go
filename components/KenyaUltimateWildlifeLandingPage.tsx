@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image"
 import { useState } from "react"
-import KenyaMobileHeader from "@/components/KenyaMobileHeader"
 import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
 
 const ANIMALS = [
@@ -16,215 +15,164 @@ const ANIMALS = [
 const ITINERARY = [
   {
     day: "Day 1",
-    route: "Nairobi",
-    overnight: "Nairobi | Optional",
+    route: "Arrival in Nairobi",
+    overnight: "Nairobi | Kingfisher Nest | Half Board",
     bullets: [
-      "Arrive in Nairobi and transfer to Movenpick Hotel.",
-      "This night is optional depending on your international flight arrival time and is available at an additional cost.",
+      "Upon arrival in Nairobi, meet your warm and professional driver-guide. After a short briefing, enjoy a relaxed drive to your Nairobi accommodation for an overnight stay.",
     ],
-    image: "/images/external/unsplash-1547471080-7.jpg",
+    image: "/images/external/unsplash-176455573546.jpg",
   },
   {
     day: "Day 2",
-    route: "Nairobi",
-    overnight: "Nairobi",
+    route: "Nairobi to Samburu National Reserve",
+    overnight: "Samburu | Samburu Simba Lodge | Full Board",
     bullets: [
-      "After breakfast, transfer from the airport to Movenpick Hotel. Rest of the day is at leisure.",
-      "Optional visits to the Giraffe Centre, Elephant Orphanage, Nairobi National Museum or Nairobi National Park can be arranged at an additional cost.",
+      "After breakfast, depart for Samburu National Reserve, located in Kenya's northern frontier. Enjoy a scenic drive as the landscape changes dramatically to semi-arid savannah, dotted with doum palms and dramatic riverbanks.",
+      "Arrive in time for lunch, followed by an afternoon game drive in search of the Samburu Special Five: Grevy's Zebra, Somali Ostrich, Gerenuk, Beisa Oryx and Reticulated Giraffe.",
     ],
-    image: "/images/external/unsplash-157189634984.jpg",
+    image: "/images/external/unsplash-172889137653.jpg",
   },
   {
     day: "Day 3",
-    route: "Lake Nakuru",
-    overnight: "Nakuru",
+    route: "Samburu National Reserve: Game Drives",
+    overnight: "Samburu | Samburu Simba Lodge | Full Board",
     bullets: [
-      "After breakfast, drive to Lake Nakuru and check in at Lake Nakuru Sopa Lodge.",
-      "After lunch, enjoy an afternoon game drive in Lake Nakuru National Park.",
+      "Begin the day with an early morning game drive, when wildlife is most active. Track lions along the Ewaso Nyiro River and look out for leopards resting in acacia trees.",
+      "After lunch, head out for an afternoon game drive. An optional cultural safari can also be arranged, including a visit to a Samburu village for cultural interaction and storytelling about traditional Samburu life.",
     ],
-    image: "/images/external/unsplash-156808468078.jpg",
+    image: "/images/external/unsplash-156410116053.jpg",
   },
   {
     day: "Day 4",
-    route: "Ol Pejeta",
-    overnight: "Ol Pejeta",
+    route: "Samburu to Ol Pejeta Conservancy",
+    overnight: "Ol Pejeta | Maisha Sweetwaters Camp | Full Board",
     bullets: [
-      "Drive to Ol Pejeta Conservancy and check in at Jambo Mutara Camp.",
-      "Enjoy a game drive in the conservancy, with visits to the Chimpanzee and Rhino Sanctuaries.",
+      "After an early breakfast, journey from Samburu to Ol Pejeta Conservancy, located at the foothills of Mount Kenya.",
+      "Ol Pejeta is renowned for its wildlife conservation efforts and is home to the last two remaining northern white rhinos. Arrive in time for lunch, followed by an afternoon game drive through the conservancy.",
     ],
-    image: "/images/external/unsplash-154141477931.jpg",
+    image: "/images/external/unsplash-167490907248.jpg",
   },
   {
     day: "Day 5",
-    route: "Masai Mara",
-    overnight: "Masai Mara",
+    route: "Ol Pejeta to Lake Elementaita",
+    overnight: "Lake Elementaita | Sentrim Elementaita | Full Board",
     bullets: [
-      "Transfer to the airstrip for your flight to Masai Mara. On arrival, transfer to Fairmont Mara Safari Club and enjoy lunch.",
-      "Proceed for an afternoon game drive in the Masai Mara National Reserve.",
+      "After breakfast, depart for the lush Great Rift Valley.",
+      "Arrive at Lake Elementaita in time for lunch. Spend a relaxing afternoon at leisure along the lake shores, enjoying the scenic surroundings and birdlife.",
     ],
     image: "/images/external/unsplash-174185082115.jpg",
   },
   {
     day: "Day 6",
-    route: "Masai Mara",
-    overnight: "Masai Mara",
+    route: "Lake Elementaita to Masai Mara",
+    overnight: "Masai Mara | Mara Simba Lodge | Full Board",
     bullets: [
-      "Enjoy a full day of game drives in the Masai Mara National Reserve, with opportunities to see abundant wildlife and the seasonal wildebeest migration.",
-      "Optional Masai village visit can also be arranged.",
+      "After breakfast, depart for a scenic drive from Lake Elementaita to Maasai Mara.",
+      "Arrive at your lodge or tented camp in time for lunch. In the afternoon, head out into the golden savannah for your first game drive, with opportunities to spot lions, elephants, zebras and other wildlife.",
     ],
-    image: "/images/external/unsplash-172889137653.jpg",
+    image: "/images/external/unsplash-151681523156.jpg",
   },
   {
     day: "Day 7",
-    route: "Masai Mara",
-    overnight: "Masai Mara",
+    route: "Masai Mara: Game Drives",
+    overnight: "Masai Mara | Mara Simba Lodge | Full Board",
     bullets: [
-      "Spend another full day exploring the Masai Mara with morning and afternoon game drives.",
-      "Enjoy excellent opportunities for wildlife viewing and photography.",
+      "Rise early for a morning game drive in Masai Mara, when predators are active and wildlife can be seen across the savannah.",
+      "Spend the afternoon enjoying another thrilling game drive in the reserve.",
+      "Optional activities: a hot air balloon ride over the Mara at sunrise, or a cultural visit to a Maasai village.",
     ],
-    image: "/images/external/unsplash-156410116053.jpg",
+    image: "/images/external/unsplash-savanna-landscape.jpg",
   },
   {
     day: "Day 8",
-    route: "Serengeti",
-    overnight: "Serengeti",
+    route: "Masai Mara to Nairobi: Departure",
+    overnight: "End of Unforgettable Journey",
     bullets: [
-      "Fly from Masai Mara to Serengeti. On arrival, proceed for a game drive in Serengeti National Park.",
-      "Continue to Serengeti Serena Lodge for dinner and overnight stay.",
-    ],
-    image: "/images/external/unsplash-151642612207.jpg",
-  },
-  {
-    day: "Day 9",
-    route: "Serengeti",
-    overnight: "Serengeti",
-    bullets: [
-      "Enjoy a full day of game drives in Serengeti National Park, exploring the plains and looking for lions, elephants, cheetahs, leopards, zebras and wildebeest.",
+      "After breakfast, enjoy a scenic drive back to Nairobi.",
+      "Upon arrival, enjoy some time for lunch or shopping before your transfer to Jomo Kenyatta International Airport for your flight home.",
+      "Depart Kenya with unforgettable memories of your safari adventure.",
     ],
     image: "/images/external/unsplash-175855836448.jpg",
-  },
-  {
-    day: "Day 10",
-    route: "Ngorongoro",
-    overnight: "Ngorongoro",
-    bullets: [
-      "Enjoy a game drive through the Serengeti en route to Ngorongoro, with a picnic lunch.",
-      "Continue to Ngorongoro Serena Lodge for dinner and overnight stay.",
-    ],
-    image: "/images/external/unsplash-152380500934.jpg",
-  },
-  {
-    day: "Day 11",
-    route: "Ngorongoro",
-    overnight: "Ngorongoro",
-    bullets: [
-      "Enjoy a full-day game drive in the Ngorongoro Crater with a picnic lunch.",
-      "Explore the crater and its abundant wildlife before returning to the lodge.",
-    ],
-    image: "/images/external/unsplash-176004428068.jpg",
-  },
-  {
-    day: "Day 12",
-    route: "Lake Manyara",
-    overnight: "Lake Manyara",
-    bullets: [
-      "Travel to Lake Manyara and check in at Lake Manyara Serena Lodge.",
-      "Enjoy an evening game drive in Lake Manyara National Park.",
-    ],
-    image: "/images/external/unsplash-176004428068.jpg",
-  },
-  {
-    day: "Day 13",
-    route: "Arusha - Departure",
-    overnight: "End of Safari",
-    bullets: [
-      "After breakfast, travel to Arusha and enjoy lunch.",
-      "Continue to Kilimanjaro International Airport for your onward flight, marking the end of your safari.",
-    ],
-    image: "/images/external/unsplash-176455573546.jpg",
   },
 ]
 
 const STAYS = [
-  { location: "Nairobi", name: "Movenpick Hotel", stars: 4, image: "/images/external/unsplash-157189634984.jpg" },
-  { location: "Lake Nakuru", name: "Lake Nakuru Sopa Lodge", stars: 4, image: "/images/external/unsplash-156808468078.jpg" },
-  { location: "Ol Pejeta", name: "Jambo Mutara Camp", stars: 4, image: "/images/external/unsplash-176004428068.jpg" },
-  { location: "Masai Mara", name: "Fairmont Mara Safari Club", stars: 4, image: "/images/external/unsplash-152380500934.jpg" },
-  { location: "Serengeti", name: "Serengeti Serena Lodge", stars: 4, image: "/images/external/unsplash-151642612207.jpg" },
-  { location: "Ngorongoro", name: "Ngorongoro Serena Lodge", stars: 4, image: "/images/external/unsplash-175855836448.jpg" },
-  { location: "Lake Manyara", name: "Lake Manyara Serena Lodge", stars: 4, image: "/images/external/unsplash-174185082115.jpg" },
+  { location: "Nairobi", name: "Kingfisher Nest — 1 Night", image: "/images/kenya-highlands/kingfisher-nest-hotel.jpg" },
+  { location: "Samburu", name: "Samburu Simba Lodge — 2 Nights", image: "/images/external/unsplash-172889137653.jpg" },
+  { location: "Ol Pejeta", name: "Maisha Sweetwaters Camp — 1 Night", image: "/images/external/unsplash-167490907248.jpg" },
+  { location: "Lake Elementaita", name: "Sentrim Elementaita — 1 Night", image: "/images/external/unsplash-174185082115.jpg" },
+  { location: "Masai Mara", name: "Mara Simba Lodge — 2 Nights", image: "/images/external/unsplash-151681523156.jpg" },
 ]
 
 const INCLUSIONS = [
   "Airport Meet & Greet",
-  "12 Nights Accommodation",
-  "All Meals as per Itinerary",
+  "7 Nights Accommodation",
+  "All Meals as per Itinerary (Half Board & Full Board)",
   "Private 4x4 Safari Vehicle",
-  "Professional English-speaking Guide",
-  "Internal Flight: Masai Mara to Serengeti",
-  "Game Drives as per Itinerary",
-  "Park and Conservancy Entry Fees",
+  "Professional English-speaking Driver-Guide",
+  "Samburu, Ol Pejeta & Masai Mara Game Drives",
+  "Park Entry Fees",
   "Drinking Water During Safari",
   "All Applicable Taxes",
 ]
 
 const EXCLUSIONS = [
   "International Flights",
-  "Kenya and Tanzania Visa Fees",
+  "Visa Fees",
   "Travel Insurance",
   "Personal Expenses",
   "Tips & Gratuities",
-  "Optional Activities (Giraffe Centre, Elephant Orphanage, Masai Village Visit)",
+  "Optional Activities (Hot Air Balloon Ride, Cultural Village Visits)",
   "Any Services Not Mentioned in Inclusions",
 ]
 
 const FAQS = [
   {
     q: "Is this a private safari?",
-    a: "Yes. This itinerary runs as a private safari for your group only, with your own vehicle, guide and pace throughout Kenya and Tanzania.",
+    a: "Yes. This itinerary runs as a private safari for your group only — you will not be combined with other travellers you don't know. Your vehicle, guide and pace are entirely your own.",
   },
   {
     q: "Are flights included?",
-    a: "International flights are not included. The one internal flight from Masai Mara to Serengeti is included, since it is a required part of crossing between the two countries on this route.",
+    a: "No, international and domestic flights are not included in the package. Flight costs vary widely by departure city and season, so we're happy to help you find the best fares separately.",
   },
   {
-    q: "Which hotels will we stay at?",
-    a: "You will stay at Movenpick Hotel in Nairobi, Lake Nakuru Sopa Lodge, Jambo Mutara Camp in Ol Pejeta, Fairmont Mara Safari Club in the Masai Mara, Serengeti Serena Lodge, Ngorongoro Serena Lodge, and Lake Manyara Serena Lodge.",
+    q: "Which lodges will we stay at?",
+    a: "Kingfisher Nest in Nairobi, Samburu Simba Lodge, Maisha Sweetwaters Camp at Ol Pejeta, Sentrim Elementaita, and Mara Simba Lodge in the Masai Mara. The itinerary can be customised with different properties based on your preference.",
+  },
+  {
+    q: "What does the meal plan cover?",
+    a: "Nairobi is on Half Board (dinner, bed and breakfast), while every other stop on the itinerary — Samburu, Ol Pejeta, Lake Elementaita and Masai Mara — is on Full Board (breakfast, lunch and dinner included).",
   },
   {
     q: "Is the safari vehicle private?",
-    a: "Yes, you get a private 4x4 safari vehicle with a dedicated driver-guide for your group throughout the trip.",
-  },
-  {
-    q: "What meals are included?",
-    a: "Yes, meals are included as specified in the itinerary each day, including picnic lunches on full-day game drive days in the Serengeti and Ngorongoro Crater.",
+    a: "Yes. You get a private 4x4 safari vehicle with a dedicated driver-guide for your group throughout the trip — it is not shared with other travellers, so you set the pace for game drives and stops.",
   },
   {
     q: "Is visa assistance included?",
-    a: "This itinerary crosses from Kenya into Tanzania, so you will need entry documentation for both countries. We provide visa assistance and guidance for both the Kenya eTA and Tanzania visa requirements as part of your booking.",
+    a: "Yes, we provide visa assistance as part of your booking — including guidance on the Kenya eTA application process, required documents, and timelines, so you're not navigating it alone.",
   },
   {
-    q: "What is the best time to visit for this route?",
-    a: "June to October offers the best overall conditions across both Kenya and Tanzania, including strong chances of the wildebeest migration depending on the exact month. We can help you time your trip around specific migration river crossings if that is a priority.",
+    q: "Can I add the hot air balloon ride or a village visit?",
+    a: "Yes — both are available as optional add-ons in the Masai Mara and Samburu respectively, and can be arranged in advance or once you're on safari, subject to availability.",
   },
   {
     q: "How many people can travel together?",
-    a: "This itinerary is designed for small private groups. Larger groups can be accommodated with additional vehicles and guides so everyone travels together comfortably.",
+    a: "This itinerary is designed for a minimum of 2 and a maximum of 7 travellers per vehicle. Larger groups can absolutely be accommodated — we'll arrange additional vehicles and guides so everyone travels comfortably together.",
   },
   {
     q: "Can I customise the itinerary?",
-    a: "Yes. Days in Nairobi can be shortened or extended, optional activities like the Giraffe Centre or a Masai village visit can be added, and accommodation categories can be upgraded.",
+    a: "Yes, absolutely. This 8-day route is a starting template — we can adjust the number of days, swap destinations, upgrade accommodation, add activities, or rework the pace entirely to match how you like to travel.",
   },
   {
     q: "What happens after I submit an enquiry?",
-    a: "Our Kenya Safari Team will contact you directly to understand your travel dates, group size and preferences, then send you a detailed itinerary and quote for your trip.",
+    a: "Our Kenya Safari Team will contact you directly — usually within a few hours — to understand your travel dates, group size and any preferences, then send you a detailed, personalised itinerary for your trip.",
   },
 ]
 
 function buildWhatsAppUrl(data: Record<string, string>) {
   const lines = [
     "*New Kenya Safari Quote Request*",
-    "Package: The Classic Kenya Grand Circuit: 13 Days",
+    "Package: Ultimate Kenya Wildlife Safari",
     `Name: ${data.name || ""}`,
     `Phone: ${data.phone || ""}`,
     `Email: ${data.email || ""}`,
@@ -248,24 +196,24 @@ function LeadForm() {
     <div id="safari-quote-form" className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
       <div className="bg-gradient-to-r from-green-900 to-green-800 px-6 py-3 text-center">
         <h3 className="text-white font-extrabold text-base">PLAN YOUR KENYA SAFARI</h3>
-        <p className="text-green-100 text-xs">Get your personalised quote in minutes</p>
+        <p className="text-green-100 text-xs">Get your personalised itinerary in minutes</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4 p-6">
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Full Name</label>
-          <input name="name" required type="text" placeholder="Enter your name" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="Enter your name" name="name" required type="text" placeholder="Enter your name" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">WhatsApp / Phone</label>
-          <input name="phone" required type="tel" placeholder="Enter your number" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="Enter your number" name="phone" required type="tel" placeholder="Enter your number" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Email</label>
-          <input name="email" type="email" placeholder="Enter your email" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="Enter your email" name="email" type="email" placeholder="Enter your email" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
-          <label className="block text-gray-700 text-xs font-bold mb-1">Preferred Travel Month</label>
-          <select name="month" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600">
+          <label htmlFor="ultimate-safari-month" className="block text-gray-700 text-xs font-bold mb-1">Preferred Travel Month</label>
+          <select id="ultimate-safari-month" name="month" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600">
             <option value="">Select month</option>
             {["January","February","March","April","May","June","July","August","September","October","November","December"].map(m => (
               <option key={m} value={m}>{m}</option>
@@ -274,98 +222,95 @@ function LeadForm() {
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Departure City</label>
-          <input name="departureCity" type="text" placeholder="e.g. Delhi, Mumbai, Bangalore" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
+          <input aria-label="e.g. Delhi, Mumbai, Bangalore" name="departureCity" type="text" placeholder="e.g. Delhi, Mumbai, Bangalore" className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-green-600" />
         </div>
         <div>
           <label className="block text-gray-700 text-xs font-bold mb-1">Number of Travellers</label>
           <div className="grid grid-cols-3 gap-2">
             <div>
-              <span className="block text-gray-400 text-[10px] mb-1">Adults</span>
-              <select name="adults" defaultValue="2" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
+              <label htmlFor="ultimate-safari-adults" className="block text-gray-500 text-[10px] mb-1">Adults</label>
+              <select id="ultimate-safari-adults" name="adults" defaultValue="2" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(9)].map((_, i) => <option key={i} value={i + 1}>{i + 1}</option>)}
               </select>
             </div>
             <div>
-              <span className="block text-gray-400 text-[10px] mb-1">Children</span>
-              <select name="children" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
+              <label htmlFor="ultimate-safari-children" className="block text-gray-500 text-[10px] mb-1">Children</label>
+              <select id="ultimate-safari-children" name="children" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(6)].map((_, i) => <option key={i} value={i}>{i}</option>)}
               </select>
             </div>
             <div>
-              <span className="block text-gray-400 text-[10px] mb-1">Infants</span>
-              <select name="infants" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
+              <label htmlFor="ultimate-safari-infants" className="block text-gray-500 text-[10px] mb-1">Infants</label>
+              <select id="ultimate-safari-infants" name="infants" defaultValue="0" className="w-full border border-gray-200 rounded-md px-2 py-2 text-sm focus:outline-none focus:border-green-600">
                 {[...Array(4)].map((_, i) => <option key={i} value={i}>{i}</option>)}
               </select>
             </div>
           </div>
         </div>
         <button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-4 py-3.5 rounded-lg transition-colors shadow-md shadow-orange-600/30 flex items-center justify-center gap-2">
-          GET MY SAFARI QUOTE
+          GET MY SAFARI ITINERARY
         </button>
       </form>
     </div>
   )
 }
 
-export default function KenyaGrandCircuitLandingPage() {
-  const [showPhonePopup, setShowPhonePopup] = useState(false)
+export default function KenyaUltimateWildlifeLandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [showPhonePopup, setShowPhonePopup] = useState(false)
 
   return (
     <div className="bg-white">
-      <KenyaMobileHeader />
-      <div className="md:hidden h-14" />
-
       {/* Hero */}
       <div className="relative w-full min-h-[480px] sm:min-h-[380px] md:mt-[68px]">
         <Image
-          src="/images/external/unsplash-1547471080-7.jpg"
-          alt="Savanna sunrise on the Kenya Tanzania safari circuit"
+          src="/images/external/unsplash-169763833246.jpg"
+          alt="Lion resting in the golden grass of the Masai Mara"
           fill
           priority
-          className="object-cover"
+          sizes="100vw"
+          className="object-cover object-[center_85%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent md:from-white md:via-white/5 md:to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 py-8">
-          <div className="flex justify-end items-start mb-6">
-            <div className="bg-white rounded-lg shadow-md px-5 py-3 text-center">
-              <p className="text-gray-900 font-extrabold text-lg">13 Days</p>
-              <p className="text-gray-500 text-xs mt-1">Kenya + Tanzania<br />Safari Circuit</p>
-            </div>
-          </div>
+          <span className="hidden lg:flex absolute right-4 bottom-10 bg-white border border-gray-300 text-gray-800 font-bold text-sm px-5 py-3 rounded-md items-center gap-2 whitespace-nowrap shadow-md z-10">
+            📅 BEST TIME TO VISIT: JUN – OCT
+          </span>
 
-          <div className="max-w-xl">
-            <p className="italic text-gray-700 mb-2">Two Countries, One Unforgettable Migration</p>
-            <h1 className="leading-none mb-3">
-              <span className="block text-green-900 font-black text-4xl sm:text-6xl tracking-tight">GRAND</span>
-              <span className="block text-orange-600 font-black text-4xl sm:text-6xl tracking-tight">CIRCUIT</span>
-            </h1>
-            <p className="text-gray-700 text-sm mb-1">Nairobi - Lake Nakuru - Ol Pejeta - Masai Mara</p>
-            <p className="text-gray-700 text-sm mb-4">Serengeti - Ngorongoro - Lake Manyara - Arusha</p>
+          <div className="max-w-2xl">
+            <p className="italic text-gray-700 mb-2">Wild by Nature, Unforgettable by Choice</p>
+            <div className="flex items-center justify-between gap-3 mb-3 lg:block">
+              <h1 className="leading-none lg:mb-3">
+                <span className="block text-green-900 font-black text-4xl sm:text-6xl tracking-tight">KENYA</span>
+                <span className="block text-orange-600 font-black text-4xl sm:text-6xl tracking-tight">SAFARI</span>
+              </h1>
+            </div>
+            <p className="text-gray-700 text-sm mb-1">📍 Nairobi · Samburu · Ol Pejeta Conservancy</p>
+            <p className="text-gray-700 text-sm mb-4">Lake Elementaita · Masai Mara</p>
 
             <div className="flex flex-wrap gap-4 text-gray-700 text-sm font-semibold mb-5">
-              <span>13 DAYS / 12 NIGHTS</span>
-              <span>GUIDED SAFARI EXPERIENCE</span>
+              <span>📅 8 DAYS / 7 NIGHTS</span>
+              <span>👥 GUIDED SAFARI EXPERIENCE</span>
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 lg:gap-3 mb-3">
               <a href="#safari-quote-form"
                 onClick={(e) => {
                   e.preventDefault()
                   document.getElementById("safari-quote-form")?.scrollIntoView({ behavior: "smooth", block: "center" })
                 }}
-                className="bg-green-800 hover:bg-green-900 text-white font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
+                className="bg-green-800 hover:bg-green-900 text-white font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap"
               >
-                GET MY SAFARI QUOTE
+                GET MY SAFARI ITINERARY
               </a>
               <div className="relative">
                 <button
                   type="button"
                   onClick={() => setShowPhonePopup(!showPhonePopup)}
-                  className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2 transition-colors"
+                  className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap"
                 >
-                  TALK TO SAFARI EXPERT
+                  📞 TALK TO SAFARI EXPERT
                 </button>
                 {showPhonePopup && (
                   <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg px-4 py-3 whitespace-nowrap z-10">
@@ -376,11 +321,11 @@ export default function KenyaGrandCircuitLandingPage() {
                   </div>
                 )}
               </div>
-              <span className="bg-white border border-gray-300 text-gray-800 font-bold text-sm px-6 py-3 rounded-md flex items-center gap-2">
-                BEST TIME TO VISIT: JUN - OCT
+              <span className="lg:hidden bg-white border border-gray-300 text-gray-800 font-bold text-sm px-4 py-3 rounded-md flex items-center gap-2 whitespace-nowrap">
+                📅 BEST TIME TO VISIT: JUN – OCT
               </span>
             </div>
-            <p className="text-gray-400 text-xs">Takes 30 seconds - No payment required</p>
+            <p className="text-gray-500 text-xs">⏱ Takes 30 seconds · No payment required</p>
           </div>
         </div>
       </div>
@@ -388,17 +333,18 @@ export default function KenyaGrandCircuitLandingPage() {
       {/* Why choose */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <h2 className="text-center text-gray-800 font-extrabold text-xl tracking-wide mb-8">
-          <span className="border-b-2 border-yellow-500 pb-2">WHY CHOOSE THIS SAFARI CIRCUIT?</span>
+          <span className="border-b-2 border-yellow-500 pb-2">WHY CHOOSE THIS KENYA SAFARI?</span>
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
           {[
-            { title: "2 Countries, 1 Trip", desc: "Kenya and Tanzania combined, with the migration crossing between them." },
-            { title: "Private 4x4 Safari Vehicle", desc: "Comfortable and reliable private vehicle for your entire journey." },
-            { title: "Big Five Wildlife", desc: "Spot Lions, Elephants, Rhinos, Leopards and Buffalo across two ecosystems." },
-            { title: "Handpicked Stays", desc: "Serena and Sopa properties selected for location and comfort." },
-            { title: "End-to-End Support", desc: "We are with you from Nairobi arrival to Kilimanjaro departure." },
+            { icon: "📍", title: "5 Iconic Regions", desc: "Explore Nairobi, Samburu, Ol Pejeta, Lake Elementaita and Masai Mara." },
+            { icon: "🚙", title: "Private 4x4 Safari Vehicle", desc: "Comfortable & reliable private vehicle for your entire journey." },
+            { icon: "🐾", title: "Big Five Wildlife", desc: "Spot Lions, Elephants, Rhinos, Leopards & Buffalo." },
+            { icon: "🛏", title: "Handpicked Stays", desc: "Carefully selected lodges & camps for best experience." },
+            { icon: "🎧", title: "End-to-End Support", desc: "We're with you from airport pickup to departure." },
           ].map(item => (
             <div key={item.title} className="bg-gray-50 rounded-lg p-4 text-center">
+              <div className="text-2xl mb-2">{item.icon}</div>
               <p className="text-gray-900 font-bold text-sm mb-1">{item.title}</p>
               <p className="text-gray-500 text-xs leading-snug">{item.desc}</p>
             </div>
@@ -429,7 +375,7 @@ export default function KenyaGrandCircuitLandingPage() {
           {/* Left: itinerary */}
           <div className="lg:col-span-2">
             <h2 className="text-gray-800 font-extrabold text-xl tracking-wide mb-6">
-              <span className="border-b-2 border-yellow-500 pb-2">YOUR 13-DAY SAFARI ITINERARY</span>
+              <span className="border-b-2 border-yellow-500 pb-2">YOUR 8-DAY KENYA SAFARI ITINERARY</span>
             </h2>
             <div className="space-y-6">
               {ITINERARY.map(item => (
@@ -442,12 +388,12 @@ export default function KenyaGrandCircuitLandingPage() {
                     <ul className="space-y-1 mb-2">
                       {item.bullets.map(b => (
                         <li key={b} className="text-gray-600 text-sm flex gap-2">
-                          <span className="text-yellow-500">-</span>
+                          <span className="text-yellow-500">•</span>
                           <span>{b}</span>
                         </li>
                       ))}
                     </ul>
-                    <p className="text-gray-400 text-xs">Overnight: {item.overnight}</p>
+                    <p className="text-gray-500 text-xs">🛏 Overnight: {item.overnight}</p>
                   </div>
                   <div className="hidden sm:block relative w-32 h-24 flex-shrink-0 rounded-lg overflow-hidden">
                     <Image src={item.image} alt={item.route} fill sizes="128px" className="object-cover" />
@@ -473,7 +419,6 @@ export default function KenyaGrandCircuitLandingPage() {
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <p className="text-white font-bold text-base">{stay.location}</p>
                       <p className="text-gray-200 text-sm">{stay.name}</p>
-                      <p className="text-amber-400 text-sm">★★★★</p>
                     </div>
                   </div>
                 ))}
@@ -492,7 +437,7 @@ export default function KenyaGrandCircuitLandingPage() {
             <ul className="space-y-3.5">
               {INCLUSIONS.map(i => (
                 <li key={i} className="text-gray-700 text-sm flex gap-2">
-                  <span className="text-green-700">Yes</span><span>{i}</span>
+                  <span className="text-green-700">✓</span><span>{i}</span>
                 </li>
               ))}
             </ul>
@@ -503,7 +448,7 @@ export default function KenyaGrandCircuitLandingPage() {
             <ul className="space-y-3.5">
               {EXCLUSIONS.map(i => (
                 <li key={i} className="text-gray-700 text-sm flex gap-2">
-                  <span className="text-red-500">No</span><span>{i}</span>
+                  <span className="text-red-500">✗</span><span>{i}</span>
                 </li>
               ))}
             </ul>
@@ -511,22 +456,22 @@ export default function KenyaGrandCircuitLandingPage() {
 
           <div className="rounded-2xl bg-[#F7F3E9] border border-[#E4DCC8] shadow-lg p-5 sm:p-8">
             <h3 className="leading-tight text-xl sm:text-3xl font-black text-center">
-              <span className="text-green-900">Plan Your </span><span className="text-amber-800">Grand Circuit Safari</span>
+              <span className="text-green-900">Plan Your </span><span className="text-amber-800">Kenya Safari Tour</span>
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed text-center mt-3 mb-6">
-              Tell us your travel month, departure city and number of travellers, and our travel experts will create a personalized Kenya and Tanzania safari package based on your preferences.
+              Tell us your travel month, departure city and number of travellers, and our travel experts will create a personalized Kenya safari itinerary based on your travel preferences.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="bg-white rounded-xl p-3 border border-[#E4DCC8] text-center">
                 <div className="w-12 h-12 rounded-full bg-[#EFEBDD] flex items-center justify-center mx-auto mb-2"><MapPin className="w-5 h-5 text-green-900" /></div>
                 <div className="flex items-center justify-center gap-1 mb-2">{Array.from({ length: 5 }).map((_, i) => (<span key={i} className="w-1 h-1 rounded-full bg-green-800" />))}</div>
-                <p className="text-gray-900 font-bold text-xs leading-snug">Personalized Safari Itinerary</p>
+                <p className="text-gray-900 font-bold text-xs leading-snug">Personalized Kenya Safari Itinerary</p>
               </div>
               <div className="bg-white rounded-xl p-3 border border-[#E4DCC8] text-center">
                 <div className="w-12 h-12 rounded-full bg-[#EFEBDD] flex items-center justify-center mx-auto mb-2"><Car className="w-5 h-5 text-green-900" /></div>
                 <div className="flex items-center justify-center gap-1 mb-2">{Array.from({ length: 5 }).map((_, i) => (<span key={i} className="w-1 h-1 rounded-full bg-green-800" />))}</div>
-                <p className="text-gray-900 font-bold text-xs leading-snug">Private 4x4 Safari Vehicle</p>
+                <p className="text-gray-900 font-bold text-xs leading-snug">Private 4×4 Safari Vehicle</p>
               </div>
               <div className="bg-white rounded-xl p-3 border border-[#E4DCC8] text-center">
                 <div className="w-12 h-12 rounded-full bg-[#EFEBDD] flex items-center justify-center mx-auto mb-2"><TreePine className="w-5 h-5 text-green-900" /></div>
@@ -565,8 +510,10 @@ export default function KenyaGrandCircuitLandingPage() {
                 className="w-full flex items-center justify-between gap-3 px-3 py-2 text-left"
               >
                 <span className="text-gray-900 font-bold text-xs">{faq.q}</span>
-                <span className={`shrink-0 text-gray-400 text-xs transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}>
-                  v
+                <span
+                  className={`shrink-0 text-gray-500 text-xs transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
+                >
+                  &#9662;
                 </span>
               </button>
               {openFaq === i && (
@@ -580,22 +527,26 @@ export default function KenyaGrandCircuitLandingPage() {
       {/* Bottom CTA banner */}
       <div className="relative bg-green-900 text-white">
         <div className="absolute inset-0 opacity-30">
-          <Image src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1600&q=80" alt="Serengeti sunset safari" fill className="object-cover" />
+          <Image src="/images/external/unsplash-175855836448.jpg" alt="Kenya sunset safari" fill sizes="100vw" className="object-cover" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <p className="font-extrabold text-lg mb-1">YOUR GRAND SAFARI CIRCUIT STARTS HERE</p>
-            <p className="text-gray-200 text-sm mb-1">13 Days / 12 Nights - Kenya and Tanzania</p>
+            <p className="font-extrabold text-lg mb-1">YOUR KENYA ADVENTURE STARTS HERE</p>
+            <p className="text-gray-200 text-sm mb-1">8 Days / 7 Nights · Samburu · Ol Pejeta · Lake Elementaita · Masai Mara</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a href="#safari-quote-form" onClick={(e) => { e.preventDefault(); document.getElementById("safari-quote-form")?.scrollIntoView({ behavior: "smooth", block: "center" }) }} className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-5 py-3 rounded-md">
-              GET MY SAFARI QUOTE
+            <button
+              type="button"
+              onClick={() => document.getElementById("safari-quote-form")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              className="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 hover:scale-105 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all uppercase tracking-wide min-w-[220px]"
+            >
+              GET MY SAFARI ITINERARY
+            </button>
+            <a href={`https://wa.me/919667892504`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 hover:scale-105 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all uppercase tracking-wide min-w-[220px]">
+              <MessageCircle className="w-4 h-4" /> Message us on WhatsApp
             </a>
-            <a href="https://wa.me/919667892504" target="_blank" rel="noreferrer" className="bg-green-700 hover:bg-green-600 text-white font-bold text-sm px-5 py-3 rounded-md">
-              WhatsApp Chat
-            </a>
-            <a href="tel:+919667892504" className="bg-white/10 border border-white/30 hover:bg-white/20 text-white font-bold text-sm px-5 py-3 rounded-md">
-              Call Our Expert
+            <a href="tel:+919667892504" className="flex items-center justify-center gap-2 bg-green-900 hover:bg-green-950 hover:scale-105 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all uppercase tracking-wide min-w-[220px]">
+              <Phone className="w-4 h-4" /> TALK TO SAFARI EXPERT
             </a>
           </div>
         </div>

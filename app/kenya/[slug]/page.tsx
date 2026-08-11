@@ -162,7 +162,7 @@ export async function generateMetadata({
   if (!meta) return {}
   const description = kenyaArticleSeo[params.slug] ?? meta.excerpt
   return {
-    title: `${meta.title} | Get Trip Go`,
+    title: meta.title,
     description,
     openGraph: {
       title: `${meta.title} | Get Trip Go`,

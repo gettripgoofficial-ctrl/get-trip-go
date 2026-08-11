@@ -25,7 +25,7 @@ export async function generateMetadata({
   const country = matches[0]?.country;
 
   return {
-    title: `${destination} Holiday Packages${country ? ` — ${country}` : ""} | Get Trip Go`,
+    title: `${destination} Holiday Packages${country ? ` — ${country}` : ""}`,
     description: `Explore ${count} ${destination} holiday package${count === 1 ? "" : "s"}${
       lowestPrice ? ` starting at ₹${lowestPrice.toLocaleString("en-IN")} per person` : ""
     }. Compare hotels, themes and inclusions with Get Trip Go.`,
