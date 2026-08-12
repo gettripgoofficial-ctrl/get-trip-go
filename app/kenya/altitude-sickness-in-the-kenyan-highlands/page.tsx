@@ -4,6 +4,25 @@ import AltitudeSicknessArticle from "@/components/AltitudeSicknessArticle"
 export const metadata: Metadata = {
   title: "Altitude Sickness in the Kenyan Highlands",
   description: "Nairobi and the highlands sit high enough to matter for some travelers -- here's who should be careful and what actually poses a risk.",
+  openGraph: {
+    title: "Altitude Sickness in the Kenyan Highlands | Get Trip Go",
+    description: "Nairobi and the highlands sit high enough to matter for some travelers -- here's who should be careful and what actually poses a risk.",
+    url: "https://gettripgo.com/kenya/altitude-sickness-in-the-kenyan-highlands",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-1547721064-d.jpg", width: 1200, height: 630, alt: "Altitude Sickness in the Kenyan Highlands" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Altitude Sickness in the Kenyan Highlands | Get Trip Go",
+    description: "Nairobi and the highlands sit high enough to matter for some travelers -- here's who should be careful and what actually poses a risk.",
+    images: ["/images/external/unsplash-1547721064-d.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/altitude-sickness-in-the-kenyan-highlands",
+  },
+  keywords: ["altitude sickness Kenya", "Nairobi elevation", "Mount Kenya trekking health"],
 }
 
 const articleSchema = {

@@ -4,6 +4,25 @@ import MalariaPreventionArticle from "@/components/MalariaPreventionArticle"
 export const metadata: Metadata = {
   title: "Malaria Prevention: Tablets, Repellents and Risk Areas",
   description: "Which parts of Kenya carry malaria risk, which tablets doctors recommend, and how to protect yourself on safari and the coast.",
+  openGraph: {
+    title: "Malaria Prevention: Tablets, Repellents and Risk Areas | Get Trip Go",
+    description: "Which parts of Kenya carry malaria risk, which tablets doctors recommend, and how to protect yourself on safari and the coast.",
+    url: "https://gettripgo.com/kenya/malaria-prevention-tablets-repellents",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-174185082115.jpg", width: 1200, height: 630, alt: "Malaria Prevention: Tablets, Repellents and Risk Areas" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Malaria Prevention: Tablets, Repellents and Risk Areas | Get Trip Go",
+    description: "Which parts of Kenya carry malaria risk, which tablets doctors recommend, and how to protect yourself on safari and the coast.",
+    images: ["/images/external/unsplash-174185082115.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/malaria-prevention-tablets-repellents",
+  },
+  keywords: ["malaria prevention Kenya", "Kenya malaria tablets", "safari health precautions"],
 }
 
 const articleSchema = {

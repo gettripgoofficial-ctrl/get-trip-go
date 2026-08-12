@@ -4,6 +4,25 @@ import VaccinationsForKenyaArticle from "@/components/VaccinationsForKenyaArticl
 export const metadata: Metadata = {
   title: "Vaccinations for Kenya: Yellow Fever and What Else You Need",
   description: "Do Indian travelers need the yellow fever vaccine for Kenya? What's mandatory, what's recommended, and the one rule most people miss on the way back to India.",
+  openGraph: {
+    title: "Vaccinations for Kenya: Yellow Fever and What Else You Need | Get Trip Go",
+    description: "Do Indian travelers need the yellow fever vaccine for Kenya? What's mandatory, what's recommended, and the one rule most people miss on the way back to India.",
+    url: "https://gettripgo.com/kenya/vaccinations-for-kenya-yellow-fever-and-more",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-vaccine-syringe.jpg", width: 1200, height: 630, alt: "Vaccinations for Kenya: Yellow Fever and What Else You Need" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vaccinations for Kenya: Yellow Fever and What Else You Need | Get Trip Go",
+    description: "Do Indian travelers need the yellow fever vaccine for Kenya? What's mandatory, what's recommended, and the one rule most people miss on the way back to India.",
+    images: ["/images/external/unsplash-vaccine-syringe.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/vaccinations-for-kenya-yellow-fever-and-more",
+  },
+  keywords: ["Kenya vaccinations", "yellow fever vaccine Kenya", "Kenya travel health India"],
 }
 
 const articleSchema = {

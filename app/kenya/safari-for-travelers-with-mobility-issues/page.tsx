@@ -4,6 +4,25 @@ import SafariMobilityIssuesArticle from "@/components/SafariMobilityIssuesArticl
 export const metadata: Metadata = {
   title: "Safari for Travelers With Mobility Issues",
   description: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't -- what to confirm before you book a Kenya safari.",
+  openGraph: {
+    title: "Safari for Travelers With Mobility Issues | Get Trip Go",
+    description: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't -- what to confirm before you book a Kenya safari.",
+    url: "https://gettripgo.com/kenya/safari-for-travelers-with-mobility-issues",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-156808468078.jpg", width: 1200, height: 630, alt: "Safari for Travelers With Mobility Issues" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Safari for Travelers With Mobility Issues | Get Trip Go",
+    description: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't -- what to confirm before you book a Kenya safari.",
+    images: ["/images/external/unsplash-156808468078.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/safari-for-travelers-with-mobility-issues",
+  },
+  keywords: ["accessible safari Kenya", "wheelchair safari lodges", "mobility issues safari travel"],
 }
 
 const articleSchema = {

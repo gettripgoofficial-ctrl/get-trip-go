@@ -4,6 +4,25 @@ import BestTimeToVisitKenyaArticle from "@/components/BestTimeToVisitKenyaArticl
 export const metadata: Metadata = {
   title: "Best Time to Visit Kenya: A Season-by-Season Guide",
   description: "When to go for the Great Migration, the driest skies, the lowest prices, or the quietest parks — a full season-by-season breakdown for planning a Kenya safari.",
+  openGraph: {
+    title: "Best Time to Visit Kenya: A Season-by-Season Guide | Get Trip Go",
+    description: "When to go for the Great Migration, the driest skies, the lowest prices, or the quietest parks — a full season-by-season breakdown for planning a Kenya safari.",
+    url: "https://gettripgo.com/kenya/best-time-to-visit-kenya",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-1547471080-7.jpg", width: 1200, height: 630, alt: "Best Time to Visit Kenya: A Season-by-Season Guide" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Time to Visit Kenya: A Season-by-Season Guide | Get Trip Go",
+    description: "When to go for the Great Migration, the driest skies, the lowest prices, or the quietest parks — a full season-by-season breakdown for planning a Kenya safari.",
+    images: ["/images/external/unsplash-1547471080-7.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/best-time-to-visit-kenya",
+  },
+  keywords: ["best time to visit Kenya", "Kenya safari season", "Great Migration timing"],
 }
 
 const articleSchema = {

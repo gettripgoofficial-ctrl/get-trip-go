@@ -4,6 +4,25 @@ import BigFiveArticle from "@/components/BigFiveArticle"
 export const metadata: Metadata = {
   title: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo",
   description: "How to identify each of the Big Five, where they're most commonly seen in Kenya, and realistic expectations for spotting all five on one safari.",
+  openGraph: {
+    title: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo | Get Trip Go",
+    description: "How to identify each of the Big Five, where they're most commonly seen in Kenya, and realistic expectations for spotting all five on one safari.",
+    url: "https://gettripgo.com/kenya/big-five-how-to-spot",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-153456711024.jpg", width: 1200, height: 630, alt: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo | Get Trip Go",
+    description: "How to identify each of the Big Five, where they're most commonly seen in Kenya, and realistic expectations for spotting all five on one safari.",
+    images: ["/images/external/unsplash-153456711024.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/big-five-how-to-spot",
+  },
+  keywords: ["Big Five Kenya", "Kenya safari wildlife", "spot lion leopard rhino elephant buffalo"],
 }
 
 const articleSchema = {

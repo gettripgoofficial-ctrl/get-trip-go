@@ -4,6 +4,25 @@ import IsKenyaSafeArticle from "@/components/IsKenyaSafeArticle"
 export const metadata: Metadata = {
   title: "Is Kenya Safe for Tourists? What You Should Know",
   description: "A realistic look at safety on safari, in Nairobi, and everywhere in between — what the real risks are and which areas to avoid.",
+  openGraph: {
+    title: "Is Kenya Safe for Tourists? What You Should Know | Get Trip Go",
+    description: "A realistic look at safety on safari, in Nairobi, and everywhere in between — what the real risks are and which areas to avoid.",
+    url: "https://gettripgo.com/kenya/is-kenya-safe-for-tourists",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-158451597995.jpg", width: 1200, height: 630, alt: "Is Kenya Safe for Tourists? What You Should Know" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Is Kenya Safe for Tourists? What You Should Know | Get Trip Go",
+    description: "A realistic look at safety on safari, in Nairobi, and everywhere in between — what the real risks are and which areas to avoid.",
+    images: ["/images/external/unsplash-158451597995.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/is-kenya-safe-for-tourists",
+  },
+  keywords: ["is Kenya safe", "Kenya tourist safety", "Nairobi safety travelers"],
 }
 
 const articleSchema = {

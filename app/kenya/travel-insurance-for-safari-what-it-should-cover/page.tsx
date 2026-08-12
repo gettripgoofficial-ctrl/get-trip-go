@@ -4,6 +4,25 @@ import TravelInsuranceSafariArticle from "@/components/TravelInsuranceSafariArti
 export const metadata: Metadata = {
   title: "Travel Insurance for Safari: What It Should Cover",
   description: "Medical evacuation cover matters more than trip cancellation for most safaris. Here's the exact checklist to compare before you buy.",
+  openGraph: {
+    title: "Travel Insurance for Safari: What It Should Cover | Get Trip Go",
+    description: "Medical evacuation cover matters more than trip cancellation for most safaris. Here's the exact checklist to compare before you buy.",
+    url: "https://gettripgo.com/kenya/travel-insurance-for-safari-what-it-should-cover",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-152380500934.jpg", width: 1200, height: 630, alt: "Travel Insurance for Safari: What It Should Cover" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Travel Insurance for Safari: What It Should Cover | Get Trip Go",
+    description: "Medical evacuation cover matters more than trip cancellation for most safaris. Here's the exact checklist to compare before you buy.",
+    images: ["/images/external/unsplash-152380500934.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/travel-insurance-for-safari-what-it-should-cover",
+  },
+  keywords: ["safari travel insurance", "Kenya medical evacuation cover", "safari insurance checklist"],
 }
 
 const articleSchema = {

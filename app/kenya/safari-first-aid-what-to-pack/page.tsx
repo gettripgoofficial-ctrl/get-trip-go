@@ -4,6 +4,25 @@ import SafariFirstAidArticle from "@/components/SafariFirstAidArticle"
 export const metadata: Metadata = {
   title: "Safari First Aid: What to Pack in Your Kit",
   description: "A compact kit for the common stuff -- what to bring on a Kenya safari, and why most lodges handle anything serious without you needing to worry.",
+  openGraph: {
+    title: "Safari First Aid: What to Pack in Your Kit | Get Trip Go",
+    description: "A compact kit for the common stuff -- what to bring on a Kenya safari, and why most lodges handle anything serious without you needing to worry.",
+    url: "https://gettripgo.com/kenya/safari-first-aid-what-to-pack",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-177921617578.jpg", width: 1200, height: 630, alt: "Safari First Aid: What to Pack in Your Kit" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Safari First Aid: What to Pack in Your Kit | Get Trip Go",
+    description: "A compact kit for the common stuff -- what to bring on a Kenya safari, and why most lodges handle anything serious without you needing to worry.",
+    images: ["/images/external/unsplash-177921617578.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/safari-first-aid-what-to-pack",
+  },
+  keywords: ["safari first aid kit", "Kenya safari packing", "safari medical kit"],
 }
 
 const articleSchema = {

@@ -4,6 +4,25 @@ import DrinkingWaterFoodSafetyArticle from "@/components/DrinkingWaterFoodSafety
 export const metadata: Metadata = {
   title: "Drinking Water and Food Safety on Safari",
   description: "Most lodges serve filtered or bottled water -- here's exactly what's safe to drink and eat on a Kenya safari, and what to check before you drink.",
+  openGraph: {
+    title: "Drinking Water and Food Safety on Safari | Get Trip Go",
+    description: "Most lodges serve filtered or bottled water -- here's exactly what's safe to drink and eat on a Kenya safari, and what to check before you drink.",
+    url: "https://gettripgo.com/kenya/drinking-water-and-food-safety-on-safari",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-156808468078.jpg", width: 1200, height: 630, alt: "Drinking Water and Food Safety on Safari" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Drinking Water and Food Safety on Safari | Get Trip Go",
+    description: "Most lodges serve filtered or bottled water -- here's exactly what's safe to drink and eat on a Kenya safari, and what to check before you drink.",
+    images: ["/images/external/unsplash-156808468078.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/drinking-water-and-food-safety-on-safari",
+  },
+  keywords: ["Kenya food safety", "drinking water Kenya safari", "safari health tips"],
 }
 
 const articleSchema = {

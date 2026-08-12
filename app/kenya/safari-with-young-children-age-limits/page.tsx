@@ -4,6 +4,25 @@ import SafariYoungChildrenArticle from "@/components/SafariYoungChildrenArticle"
 export const metadata: Metadata = {
   title: "Safari With Young Children: Age Limits and Lodge Policies",
   description: "Most camps set a minimum age for game drives -- here's how to find one that welcomes your kids, and what to confirm before you book.",
+  openGraph: {
+    title: "Safari With Young Children: Age Limits and Lodge Policies | Get Trip Go",
+    description: "Most camps set a minimum age for game drives -- here's how to find one that welcomes your kids, and what to confirm before you book.",
+    url: "https://gettripgo.com/kenya/safari-with-young-children-age-limits",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-178103986937.jpg", width: 1200, height: 630, alt: "Safari With Young Children: Age Limits and Lodge Policies" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Safari With Young Children: Age Limits and Lodge Policies | Get Trip Go",
+    description: "Most camps set a minimum age for game drives -- here's how to find one that welcomes your kids, and what to confirm before you book.",
+    images: ["/images/external/unsplash-178103986937.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/safari-with-young-children-age-limits",
+  },
+  keywords: ["family safari Kenya", "safari age limits children", "Kenya safari with kids"],
 }
 
 const articleSchema = {

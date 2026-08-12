@@ -4,6 +4,25 @@ import SafariPregnancyArticle from "@/components/SafariPregnancyArticle"
 export const metadata: Metadata = {
   title: "Is a Kenya Safari Safe During Pregnancy",
   description: "What to check with your doctor, which trimester works best, and which activities to skip if you're planning a Kenya safari while pregnant.",
+  openGraph: {
+    title: "Is a Kenya Safari Safe During Pregnancy | Get Trip Go",
+    description: "What to check with your doctor, which trimester works best, and which activities to skip if you're planning a Kenya safari while pregnant.",
+    url: "https://gettripgo.com/kenya/is-a-kenya-safari-safe-during-pregnancy",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-157189634984.jpg", width: 1200, height: 630, alt: "Is a Kenya Safari Safe During Pregnancy" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Is a Kenya Safari Safe During Pregnancy | Get Trip Go",
+    description: "What to check with your doctor, which trimester works best, and which activities to skip if you're planning a Kenya safari while pregnant.",
+    images: ["/images/external/unsplash-157189634984.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/is-a-kenya-safari-safe-during-pregnancy",
+  },
+  keywords: ["pregnancy safari Kenya", "safari while pregnant", "Kenya travel pregnancy safety"],
 }
 
 const articleSchema = {

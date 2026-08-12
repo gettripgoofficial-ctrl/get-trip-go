@@ -26,6 +26,7 @@ export const metadata = {
   alternates: {
     canonical: "https://gettripgo.com/kenya",
   },
+  keywords: ["Kenya safari guide", "Kenya safari packages", "Kenya parks and reserves", "Kenya travel tips", "Kenya wildlife safari"],
 }
 export default function KenyaPage() {
   return (

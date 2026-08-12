@@ -4,6 +4,25 @@ import SafariHeartConditionsArticle from "@/components/SafariHeartConditionsArti
 export const metadata: Metadata = {
   title: "Safari for People With Heart Conditions or Chronic Illness",
   description: "Altitude, heat, and access to medical care -- what to plan around before you book a Kenya safari with a heart condition or chronic illness.",
+  openGraph: {
+    title: "Safari for People With Heart Conditions or Chronic Illness | Get Trip Go",
+    description: "Altitude, heat, and access to medical care -- what to plan around before you book a Kenya safari with a heart condition or chronic illness.",
+    url: "https://gettripgo.com/kenya/safari-for-people-with-heart-conditions",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-177921617578.jpg", width: 1200, height: 630, alt: "Safari for People With Heart Conditions or Chronic Illness" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Safari for People With Heart Conditions or Chronic Illness | Get Trip Go",
+    description: "Altitude, heat, and access to medical care -- what to plan around before you book a Kenya safari with a heart condition or chronic illness.",
+    images: ["/images/external/unsplash-177921617578.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/safari-for-people-with-heart-conditions",
+  },
+  keywords: ["safari heart condition", "chronic illness safari travel", "Kenya safari medical planning"],
 }
 
 const articleSchema = {

@@ -4,6 +4,25 @@ import SoloFemaleTravelersArticle from "@/components/SoloFemaleTravelersArticle"
 export const metadata: Metadata = {
   title: "Is Kenya Suitable for Solo Female Travelers",
   description: "What solo travelers actually experience on the ground, from booking to game drives -- and where ordinary travel precautions actually matter.",
+  openGraph: {
+    title: "Is Kenya Suitable for Solo Female Travelers | Get Trip Go",
+    description: "What solo travelers actually experience on the ground, from booking to game drives -- and where ordinary travel precautions actually matter.",
+    url: "https://gettripgo.com/kenya/is-kenya-suitable-for-solo-female-travelers",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-152380500934.jpg", width: 1200, height: 630, alt: "Is Kenya Suitable for Solo Female Travelers" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Is Kenya Suitable for Solo Female Travelers | Get Trip Go",
+    description: "What solo travelers actually experience on the ground, from booking to game drives -- and where ordinary travel precautions actually matter.",
+    images: ["/images/external/unsplash-152380500934.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/is-kenya-suitable-for-solo-female-travelers",
+  },
+  keywords: ["solo female travel Kenya", "Kenya safari solo women", "safari safety women"],
 }
 
 const articleSchema = {

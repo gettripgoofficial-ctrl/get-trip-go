@@ -4,6 +4,25 @@ import GreatMigrationExplainedArticle from "@/components/GreatMigrationExplained
 export const metadata: Metadata = {
   title: "The Great Migration Explained: When, Where and Why",
   description: "A month-by-month breakdown of the Great Migration — where the herds are, when the Mara River crossings happen, and where to base yourself for the best odds.",
+  openGraph: {
+    title: "The Great Migration Explained: When, Where and Why | Get Trip Go",
+    description: "A month-by-month breakdown of the Great Migration — where the herds are, when the Mara River crossings happen, and where to base yourself for the best odds.",
+    url: "https://gettripgo.com/kenya/the-great-migration-explained",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-156410116053.jpg", width: 1200, height: 630, alt: "The Great Migration Explained: When, Where and Why" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Great Migration Explained: When, Where and Why | Get Trip Go",
+    description: "A month-by-month breakdown of the Great Migration — where the herds are, when the Mara River crossings happen, and where to base yourself for the best odds.",
+    images: ["/images/external/unsplash-156410116053.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/the-great-migration-explained",
+  },
+  keywords: ["Great Migration Kenya", "Mara river crossing", "wildebeest migration guide"],
 }
 
 const articleSchema = {

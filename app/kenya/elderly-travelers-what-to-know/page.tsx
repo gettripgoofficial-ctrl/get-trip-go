@@ -4,6 +4,25 @@ import ElderlyTravelersArticle from "@/components/ElderlyTravelersArticle"
 export const metadata: Metadata = {
   title: "Elderly Travelers: What to Know Before a Safari",
   description: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers -- what to know before booking a Kenya safari.",
+  openGraph: {
+    title: "Elderly Travelers: What to Know Before a Safari | Get Trip Go",
+    description: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers -- what to know before booking a Kenya safari.",
+    url: "https://gettripgo.com/kenya/elderly-travelers-what-to-know",
+    siteName: "Get Trip Go",
+    images: [{ url: "/images/external/unsplash-1547721064-d.jpg", width: 1200, height: 630, alt: "Elderly Travelers: What to Know Before a Safari" }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elderly Travelers: What to Know Before a Safari | Get Trip Go",
+    description: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers -- what to know before booking a Kenya safari.",
+    images: ["/images/external/unsplash-1547721064-d.jpg"],
+  },
+  alternates: {
+    canonical: "https://gettripgo.com/kenya/elderly-travelers-what-to-know",
+  },
+  keywords: ["Kenya safari for seniors", "elderly travelers safari", "safari trip pacing"],
 }
 
 const articleSchema = {
