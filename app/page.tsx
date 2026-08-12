@@ -21,6 +21,12 @@ export default function Home() {
           hydrate ResponsiveHero and mount the <img> tag client-side. */}
       <link rel="preload" as="image" href="/hero1.jpg" fetchPriority="high" media="(min-width: 768px)" />
 
+      {/* Preload the first mobile offer card's background image. It's set via
+          CSS background-image (not an <img> tag), so the browser's preload
+          scanner can't discover it until CSS is parsed — this hint starts the
+          fetch immediately from the initial HTML instead. */}
+      <link rel="preload" as="image" href="/images/external/unsplash-143649186533.jpg" fetchPriority="high" media="(max-width: 767px)" />
+
       {/* Hero — picks mobile or desktop version based on real screen size */}
       <ResponsiveHero />
 
