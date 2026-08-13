@@ -1,0 +1,849 @@
+=== raw <img> tags (should be next/image instead) ===
+./app/offers/page.tsx:29:        <img
+./app/offers/page.tsx:57:                <img
+./app/offers/[slug]/page.tsx:66:        <img
+./app/customized-itineraries/page.tsx:183:        <img
+./app/customized-itineraries/page.tsx:266:                        <img
+./app/customized-itineraries/[slug]/page.tsx:72:        <img src={pkg.heroImage} alt={pkg.name} className="w-full h-full object-cover" />
+./app/customized-itineraries/[slug]/page.tsx:178:                          <img src={img} alt={`${pkg.name} ${i + 1}`} className="w-full h-full object-cover" />
+./app/group-departures/page.tsx:225:        <img src="/images/external/unsplash-147651452553.jpg" alt="Europe Group Departures" className="w-full h-full object-cover" />
+./app/group-departures/page.tsx:302:                        <img
+./app/group-departures/[slug]/TourTabs.tsx:50:                <img src={img} alt={stop.title} className="w-36 h-28 rounded-xl object-cover flex-shrink-0" />
+./app/group-departures/[slug]/TourTabs.tsx:186:                  <img src={hotel.image} alt={hotel.hotelName} className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
+./app/group-departures/[slug]/page.tsx:69:          <img src={tour.heroImage} alt={labels[0] ?? tour.name} className="w-full h-full object-cover" />
+./app/theme-holidays/[theme]/[slug]/page.tsx:97:        <img src={pkg.heroImage} alt={pkg.name} className="w-full h-full object-cover" />
+./app/theme-holidays/[theme]/[slug]/page.tsx:206:                          <img src={img} alt={`${pkg.name} ${i + 1}`} className="w-full h-full object-cover" />
+./app/theme-holidays/ThemeHolidaysClient.tsx:210:        <img
+./app/theme-holidays/ThemeHolidaysClient.tsx:300:                          <img
+./app/blog/admin/page.tsx:75:          <img
+./app/blog/[slug]/client-page.tsx:120:          <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
+./app/blog/[slug]/client-page.tsx:185:                    <img src={r.coverImage} alt={r.title} className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+./app/blog/client-page.tsx:27:            <img src={post.coverImage} alt={post.title}
+./app/api/newsletter/route.ts:37:            <img src="https://www.gettripgo.com/logo.png" alt="GetTripGo" style="height:40px;margin-bottom:24px;" />
+./app/page.tsx:21:          hydrate ResponsiveHero and mount the <img> tag client-side. */}
+./app/popular-destinations/PopularDestinationsClient.tsx:246:        <img
+./app/popular-destinations/PopularDestinationsClient.tsx:342:                      <img
+./app/popular-destinations/[slug]/PackageTabs.tsx:63:                <img src={img} alt={day.title} className="w-36 h-28 rounded-xl object-cover flex-shrink-0" />
+./app/popular-destinations/[slug]/PackageTabs.tsx:162:                    <img src={img} alt={`${pkg.name} ${i + 1}`} className="w-full h-full object-cover" />
+./app/popular-destinations/[slug]/page.tsx:60:          <img src={pkg.heroImage} alt={pkg.name} className="w-full h-full object-cover" />
+./components/Navbar.tsx:58:          <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
+./components/Navbar.tsx:59:          <img src="/logo-text.png" alt="Get Trip Go" className="h-8 object-contain" />
+./components/CustomPackages.tsx:27:        <img
+./components/KenyaMobileHeader.tsx:53:              <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-8 h-8 object-contain" />
+./components/KenyaMobileHeader.tsx:54:              <img src="/logo-text.png" alt="Get Trip Go" className="h-6 object-contain" />
+./components/HeroSectionMobile.tsx:87:              <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-8 h-8 object-contain" />
+./components/HeroSectionMobile.tsx:88:              <img src="/logo-text.png" alt="Get Trip Go" className="h-6 object-contain" />
+./components/ThemeHolidays.tsx:115:                <img
+./components/MyTripLoginPage.tsx:59:                <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-9 h-9 object-contain" />
+./components/DealsModal.tsx:234:        <img
+./components/DealsModal.tsx:321:        <img
+./components/GroupDepartures.tsx:22:      <img
+./components/Footer.tsx:171:              <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
+./components/Footer.tsx:172:              <img src="/logo-text.png" alt="Get Trip Go" className="h-7 object-contain" style={{ filter: "brightness(0) invert(1)" }} />
+./components/TravelStories.tsx:66:                <img
+./components/TravelStories.tsx:127:                <img
+./components/kenya-articles/is-it-ethical-to-go-on-safari.tsx:62:        <img
+./components/kenya-articles/sasaab-a-moroccan-style-lodge.tsx:59:        <img
+./components/kenya-articles/angama-mara-suites-on-the-escarpment.tsx:61:        <img
+./components/kenya-articles/packing-list-for-a-10-day-kenya-safari.tsx:48:        <img
+./components/kenya-articles/what-to-wear-on-a-kenya-safari.tsx:52:        <img
+./components/kenya-articles/giraffe-manor-breakfast-with-giraffes.tsx:61:        <img
+./components/kenya-articles/kenya-safari-faqs-everything-first-timers-ask.tsx:56:        <img
+./components/kenya-articles/sun-protection-hats-spf-sunglasses.tsx:54:        <img
+./components/kenya-articles/plastic-bag-ban-whats-illegal-to-bring.tsx:61:        <img
+./components/kenya-articles/ol-donyo-lodge-under-kilimanjaros-shadow.tsx:53:        <img
+./components/kenya-articles/duffel-bags-only-safari-luggage-restrictions.tsx:54:        <img
+./components/kenya-articles/bumpy-roads-and-motion-sickness.tsx:60:        <img
+./components/kenya-articles/booking-through-a-local-tour-operator-vs-diy.tsx:61:        <img
+./components/kenya-articles/tsetse-flies-blue-and-black-clothing.tsx:51:        <img
+./components/kenya-articles/loldia-house-a-colonial-farmhouse.tsx:61:        <img
+./components/kenya-articles/finch-hattons-out-of-africa-reimagined.tsx:58:        <img
+./components/kenya-articles/ilora-retreats-design-led-luxury-in-the-mara.tsx:62:        <img
+./components/kenya-articles/segera-retreat-conservancy-and-infinity-pool.tsx:53:        <img
+./components/HeroSection.tsx:71:      <img
+./components/BlogEditor.tsx:287:            <img src={coverImage} alt="Cover preview"
+
+=== next/image usage (check for missing priority/width/height) ===
+./components/KenyaTipsAndRoutes.tsx:3:import Image from "next/image"
+./components/KenyaTipsAndRoutes.tsx-4-import Link from "next/link"
+./components/KenyaTipsAndRoutes.tsx-5-import { kenyaJourneys } from "@/data/kenyaData"
+./components/KenyaTipsAndRoutes.tsx-6-
+./components/KenyaTipsAndRoutes.tsx-7-const PUBLISHED_JOURNEY_SLUGS = new Set<string>([
+./components/KenyaTipsAndRoutes.tsx-8-  "7-days-through-the-kenya-highlands",
+--
+./components/ElderlyTravelersArticle.tsx:1:import Image from "next/image"
+./components/ElderlyTravelersArticle.tsx-2-import Link from "next/link"
+./components/ElderlyTravelersArticle.tsx-3-
+./components/ElderlyTravelersArticle.tsx-4-export default function ElderlyTravelersArticle() {
+./components/ElderlyTravelersArticle.tsx-5-  return (
+./components/ElderlyTravelersArticle.tsx-6-    <article className="bg-white">
+--
+./components/SafariHeartConditionsArticle.tsx:1:import Image from "next/image"
+./components/SafariHeartConditionsArticle.tsx-2-import Link from "next/link"
+./components/SafariHeartConditionsArticle.tsx-3-
+./components/SafariHeartConditionsArticle.tsx-4-const conditionsTable = [
+./components/SafariHeartConditionsArticle.tsx-5-  { condition: "Heart conditions", consideration: "Avoid overexertion and extreme heat; discuss fitness to travel with your cardiologist" },
+./components/SafariHeartConditionsArticle.tsx-6-  { condition: "Diabetes", consideration: "Strict meal and medication timing needed around game drive schedules" },
+--
+./components/AltitudeSicknessArticle.tsx:1:import Image from "next/image"
+./components/AltitudeSicknessArticle.tsx-2-import Link from "next/link"
+./components/AltitudeSicknessArticle.tsx-3-
+./components/AltitudeSicknessArticle.tsx-4-const elevationTable = [
+./components/AltitudeSicknessArticle.tsx-5-  { location: "Nairobi", elevation: "1,795m / 5,889ft", risk: "Low — moderate altitude, mild effects possible on arrival" },
+./components/AltitudeSicknessArticle.tsx-6-  { location: "Masai Mara", elevation: "~1,500–2,100m", risk: "Low — within the safe range for most travelers" },
+--
+./components/SafariMobilityIssuesArticle.tsx:1:import Image from "next/image"
+./components/SafariMobilityIssuesArticle.tsx-2-import Link from "next/link"
+./components/SafariMobilityIssuesArticle.tsx-3-
+./components/SafariMobilityIssuesArticle.tsx-4-const checklistTable = [
+./components/SafariMobilityIssuesArticle.tsx-5-  { item: "Accessible vehicle", why: "Standard safari vehicles aren't wheelchair-friendly; you need one with a ramp or hydraulic lift confirmed in writing" },
+./components/SafariMobilityIssuesArticle.tsx-6-  { item: "Roll-in bathroom", why: "Ask specifically about wheelchair clearance, not just 'grab bars' -- some tented camps have bars but no room to maneuver" },
+--
+./components/StickySidebar.tsx:2:import Image from "next/image"
+./components/StickySidebar.tsx-3-import Link from "next/link"
+./components/StickySidebar.tsx-4-import { useEffect, useRef, useState } from "react"
+./components/StickySidebar.tsx-5-import { createPortal } from "react-dom"
+./components/StickySidebar.tsx-6-
+./components/StickySidebar.tsx-7-const TOP_OFFSET = 100
+--
+./components/HowManyDaysKenyaSafariArticle.tsx:1:import Image from "next/image"
+./components/HowManyDaysKenyaSafariArticle.tsx-2-import Link from "next/link"
+./components/HowManyDaysKenyaSafariArticle.tsx-3-
+./components/HowManyDaysKenyaSafariArticle.tsx-4-const itineraryTable = [
+./components/HowManyDaysKenyaSafariArticle.tsx-5-  { days: "4-5 days", coverage: "One park (e.g. Masai Mara only)", bestFor: "Short breaks, first safari taste" },
+./components/HowManyDaysKenyaSafariArticle.tsx-6-  { days: "7-8 days", coverage: "Two parks (e.g. Mara + Amboseli)", bestFor: "Balanced pace, varied landscapes" },
+--
+./components/SafariFootwearArticle.tsx:1:import Image from "next/image"
+./components/SafariFootwearArticle.tsx-2-import Link from "next/link"
+./components/SafariFootwearArticle.tsx-3-
+./components/SafariFootwearArticle.tsx-4-const footwearTable = [
+./components/SafariFootwearArticle.tsx-5-  { activity: "Game drives", best: "Closed-toe sneakers or light hiking shoes", why: "Comfortable for hours seated, easy to slip on/off" },
+./components/SafariFootwearArticle.tsx-6-  { activity: "Walking safaris", best: "Sturdy hiking boots with ankle support", why: "Uneven terrain, protection from thorns and rocks" },
+--
+./components/BestTimeToVisitKenyaArticle.tsx:1:import Image from "next/image"
+./components/BestTimeToVisitKenyaArticle.tsx-2-import Link from "next/link"
+./components/BestTimeToVisitKenyaArticle.tsx-3-
+./components/BestTimeToVisitKenyaArticle.tsx-4-const monthTable = [
+./components/BestTimeToVisitKenyaArticle.tsx-5-  { month: "January", weather: "Dry, warm", highlight: "Great visibility, birdlife building", crowds: "Moderate" },
+./components/BestTimeToVisitKenyaArticle.tsx-6-  { month: "February", weather: "Dry, warm", highlight: "Peak dry-season wildlife viewing", crowds: "Moderate" },
+--
+./components/KenyaExploreSection.tsx:2:import Image from "next/image"
+./components/KenyaExploreSection.tsx-3-import Link from "next/link"
+./components/KenyaExploreSection.tsx-4-import { kenyaStays, kenyaVisaEntry, kenyaVisaEntryExtra, kenyaParksReserves } from "@/data/kenyaData"
+./components/KenyaExploreSection.tsx-5-
+./components/KenyaExploreSection.tsx-6-const PUBLISHED_STAYS_SLUGS = new Set<string>([
+./components/KenyaExploreSection.tsx-7-  "angama-mara-suites-on-the-escarpment",
+--
+./components/SafariPhotographyArticle.tsx:1:import Image from "next/image"
+./components/SafariPhotographyArticle.tsx-2-import Link from "next/link"
+./components/SafariPhotographyArticle.tsx-3-
+./components/SafariPhotographyArticle.tsx-4-const gearTable = [
+./components/SafariPhotographyArticle.tsx-5-  { item: "Camera body", note: "Any mirrorless or DSLR with fast autofocus works well" },
+./components/SafariPhotographyArticle.tsx-6-  { item: "Zoom lens", note: "70-200mm minimum; 100-400mm or longer is ideal for distant subjects" },
+--
+./components/HellsGateArticle.tsx:1:import Image from "next/image"
+./components/HellsGateArticle.tsx-2-import Link from "next/link"
+./components/HellsGateArticle.tsx-3-
+./components/HellsGateArticle.tsx-4-const quickFactsTable = [
+./components/HellsGateArticle.tsx-5-  { fact: "Known for", detail: "Walking and cycling safaris, dramatic gorge scenery" },
+./components/HellsGateArticle.tsx-6-  { fact: "Predators", detail: "Minimal — one of the few parks safe for unguided walking in places" },
+--
+./components/KenyaHighlandsLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaHighlandsLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaHighlandsLandingPage.tsx-4-import { MapPin, Car, TreePine, Headphones, Users, Phone, MessageCircle, ShieldCheck, Binoculars, Award, Heart, Star } from "lucide-react"
+./components/KenyaHighlandsLandingPage.tsx-5-
+./components/KenyaHighlandsLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaHighlandsLandingPage.tsx-7-  { name: "Lion", image: "/images/external/unsplash-169763833246.jpg" },
+--
+./components/IsKenyaSafeArticle.tsx:1:import Image from "next/image"
+./components/IsKenyaSafeArticle.tsx-2-import Link from "next/link"
+./components/IsKenyaSafeArticle.tsx-3-
+./components/IsKenyaSafeArticle.tsx-4-export default function IsKenyaSafeArticle() {
+./components/IsKenyaSafeArticle.tsx-5-  return (
+./components/IsKenyaSafeArticle.tsx-6-    <article className="bg-white">
+--
+./components/TippingEtiquetteArticle.tsx:1:import Image from "next/image"
+./components/TippingEtiquetteArticle.tsx-2-import Link from "next/link"
+./components/TippingEtiquetteArticle.tsx-3-
+./components/TippingEtiquetteArticle.tsx-4-const tippingTable = [
+./components/TippingEtiquetteArticle.tsx-5-  { role: "Safari guide/driver", amount: "$15-20 USD per person, per day" },
+./components/TippingEtiquetteArticle.tsx-6-  { role: "Camp/lodge staff (pooled)", amount: "$10-15 USD per person, per day" },
+--
+./components/GreatMigrationExplainedArticle.tsx:1:import Image from "next/image"
+./components/GreatMigrationExplainedArticle.tsx-2-import Link from "next/link"
+./components/GreatMigrationExplainedArticle.tsx-3-
+./components/GreatMigrationExplainedArticle.tsx-4-export default function GreatMigrationExplainedArticle() {
+./components/GreatMigrationExplainedArticle.tsx-5-  return (
+./components/GreatMigrationExplainedArticle.tsx-6-    <article className="bg-white">
+--
+./components/KenyaUltimateWildlifeLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaUltimateWildlifeLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaUltimateWildlifeLandingPage.tsx-4-import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
+./components/KenyaUltimateWildlifeLandingPage.tsx-5-
+./components/KenyaUltimateWildlifeLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaUltimateWildlifeLandingPage.tsx-7-  { name: "Lion", image: "/images/external/unsplash-169763833246.jpg" },
+--
+./components/SafariBudgetGuideArticle.tsx:1:import Image from "next/image"
+./components/SafariBudgetGuideArticle.tsx-2-import Link from "next/link"
+./components/SafariBudgetGuideArticle.tsx-3-
+./components/SafariBudgetGuideArticle.tsx-4-const budgetTable = [
+./components/SafariBudgetGuideArticle.tsx-5-  { tier: "Budget", perNight: "$150-300", accommodation: "Basic tented camps, shared vehicles", inclusions: "Meals, park fees, group game drives" },
+./components/SafariBudgetGuideArticle.tsx-6-  { tier: "Mid-Range", perNight: "$300-600", accommodation: "Comfortable lodges, private or small-group vehicles", inclusions: "Meals, park fees, most drinks, guided drives" },
+--
+./components/FirstTimeSafariChecklistArticle.tsx:1:import Image from "next/image"
+./components/FirstTimeSafariChecklistArticle.tsx-2-import Link from "next/link"
+./components/FirstTimeSafariChecklistArticle.tsx-3-
+./components/FirstTimeSafariChecklistArticle.tsx-4-const timeline = [
+./components/FirstTimeSafariChecklistArticle.tsx-5-  { when: "3-6 months before", tasks: "Book flights, lodges, and confirm your itinerary; apply for Kenya eTA if travel dates are close" },
+./components/FirstTimeSafariChecklistArticle.tsx-6-  { when: "1-2 months before", tasks: "Get travel vaccinations, buy travel insurance, start packing list" },
+--
+./components/KenyaETAGuideArticle.tsx:1:import Image from "next/image"
+./components/KenyaETAGuideArticle.tsx-2-import Link from "next/link"
+./components/KenyaETAGuideArticle.tsx-3-
+./components/KenyaETAGuideArticle.tsx-4-const etaFacts = [
+./components/KenyaETAGuideArticle.tsx-5-  { fact: "Who needs it", detail: "Almost all nationalities, including infants — check the official list for exceptions" },
+./components/KenyaETAGuideArticle.tsx-6-  { fact: "Cost", detail: "$30-32.50 USD, applied only through the official portal" },
+--
+./components/SafariPregnancyArticle.tsx:1:import Image from "next/image"
+./components/SafariPregnancyArticle.tsx-2-import Link from "next/link"
+./components/SafariPregnancyArticle.tsx-3-
+./components/SafariPregnancyArticle.tsx-4-const trimesterTable = [
+./components/SafariPregnancyArticle.tsx-5-  { trimester: "First (weeks 1-12)", verdict: "Possible, often uncomfortable", note: "Morning sickness and fatigue are common; higher baseline miscarriage risk means some travelers prefer to wait" },
+./components/SafariPregnancyArticle.tsx-6-  { trimester: "Second (weeks 13-27)", verdict: "Generally the best window", note: "Often called the 'golden period' -- energy is back, symptoms have eased, mobility is still good" },
+--
+./components/KenyaBanner.tsx:2:import Image from "next/image"
+./components/KenyaBanner.tsx-3-
+./components/KenyaBanner.tsx-4-export default function KenyaBanner() {
+./components/KenyaBanner.tsx-5-  return (
+./components/KenyaBanner.tsx-6-    <div className="max-w-7xl mx-auto px-4 py-6">
+./components/KenyaBanner.tsx-7-      <Link
+--
+./components/TravelInsuranceSafariArticle.tsx:1:import Image from "next/image"
+./components/TravelInsuranceSafariArticle.tsx-2-import Link from "next/link"
+./components/TravelInsuranceSafariArticle.tsx-3-
+./components/TravelInsuranceSafariArticle.tsx-4-const coverageTable = [
+./components/TravelInsuranceSafariArticle.tsx-5-  { item: "Emergency medical treatment", why: "Private hospital care in Nairobi isn't cheap, and standard policies sometimes cap it too low", minimum: "USD 100,000–500,000" },
+./components/TravelInsuranceSafariArticle.tsx-6-  { item: "Medical evacuation", why: "A remote conservancy to a Nairobi hospital can run USD 15,000–40,000 by air", minimum: "USD 200,000–500,000, unlimited preferred" },
+--
+./components/SoloFemaleTravelersArticle.tsx:1:import Image from "next/image"
+./components/SoloFemaleTravelersArticle.tsx-2-import Link from "next/link"
+./components/SoloFemaleTravelersArticle.tsx-3-
+./components/SoloFemaleTravelersArticle.tsx-4-export default function SoloFemaleTravelersArticle() {
+./components/SoloFemaleTravelersArticle.tsx-5-  return (
+./components/SoloFemaleTravelersArticle.tsx-6-    <article className="bg-white">
+--
+./components/LakeNaivashaArticle.tsx:1:import Image from "next/image"
+./components/LakeNaivashaArticle.tsx-2-import Link from "next/link"
+./components/LakeNaivashaArticle.tsx-3-
+./components/LakeNaivashaArticle.tsx-4-const quickFactsTable = [
+./components/LakeNaivashaArticle.tsx-5-  { fact: "Known for", detail: "Boat safaris, hippos, Crescent Island walking safari" },
+./components/LakeNaivashaArticle.tsx-6-  { fact: "Water type", detail: "Freshwater — one of the few Rift Valley lakes that isn't a soda lake" },
+--
+./components/KenyaGrandCircuitLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaGrandCircuitLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaGrandCircuitLandingPage.tsx-4-import KenyaMobileHeader from "@/components/KenyaMobileHeader"
+./components/KenyaGrandCircuitLandingPage.tsx-5-import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
+./components/KenyaGrandCircuitLandingPage.tsx-6-
+./components/KenyaGrandCircuitLandingPage.tsx-7-const ANIMALS = [
+--
+./components/KenyaTanzaniaCombinedLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaTanzaniaCombinedLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaTanzaniaCombinedLandingPage.tsx-4-import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
+./components/KenyaTanzaniaCombinedLandingPage.tsx-5-
+./components/KenyaTanzaniaCombinedLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaTanzaniaCombinedLandingPage.tsx-7-  { name: "Lion", image: "/images/external/unsplash-169763833246.jpg" },
+--
+./components/LakeNakuruArticle.tsx:1:import Image from "next/image"
+./components/LakeNakuruArticle.tsx-2-import Link from "next/link"
+./components/LakeNakuruArticle.tsx-3-
+./components/LakeNakuruArticle.tsx-4-const quickFactsTable = [
+./components/LakeNakuruArticle.tsx-5-  { fact: "Known for", detail: "Rhino sanctuary, flamingo populations, compact size" },
+./components/LakeNakuruArticle.tsx-6-  { fact: "Size", detail: "Roughly 188 km² — one of Kenya's smallest major parks" },
+--
+./components/KenyaArticleShell.tsx:1:import Image from "next/image"
+./components/KenyaArticleShell.tsx-2-import Link from "next/link"
+./components/KenyaArticleShell.tsx-3-
+./components/KenyaArticleShell.tsx-4-interface RelatedLink {
+./components/KenyaArticleShell.tsx-5-  title: string
+./components/KenyaArticleShell.tsx-6-  href: string
+--
+./components/YellowFeverCertificateArticle.tsx:1:import Image from "next/image"
+./components/YellowFeverCertificateArticle.tsx-2-import Link from "next/link"
+./components/YellowFeverCertificateArticle.tsx-3-
+./components/YellowFeverCertificateArticle.tsx-4-export default function YellowFeverCertificateArticle() {
+./components/YellowFeverCertificateArticle.tsx-5-  return (
+./components/YellowFeverCertificateArticle.tsx-6-    <article className="bg-white">
+--
+./components/SamburuArticle.tsx:1:import Image from "next/image"
+./components/SamburuArticle.tsx-2-import Link from "next/link"
+./components/SamburuArticle.tsx-3-
+./components/SamburuArticle.tsx-4-const specialFive = [
+./components/SamburuArticle.tsx-5-  { animal: "Grevy's zebra", detail: "Larger, more narrowly striped than the common plains zebra" },
+./components/SamburuArticle.tsx-6-  { animal: "Reticulated giraffe", detail: "Sharp, geometric coat pattern distinct from the Masai giraffe further south" },
+--
+./components/PopularDestinations.tsx:3:import Image from "next/image"
+./components/PopularDestinations.tsx-4-import { usePrice } from "@/hooks/usePrice"
+./components/PopularDestinations.tsx-5-
+./components/PopularDestinations.tsx-6-const destinations = [
+./components/PopularDestinations.tsx-7-  { name: "Bali", country: "Indonesia", price: 35999, image: "/images/external/unsplash-153799619447.jpg" },
+./components/PopularDestinations.tsx-8-  { name: "Thailand", country: "Thailand", price: 28999, image: "/images/external/unsplash-150666553119.jpg" },
+--
+./components/DrinkingWaterFoodSafetyArticle.tsx:1:import Image from "next/image"
+./components/DrinkingWaterFoodSafetyArticle.tsx-2-import Link from "next/link"
+./components/DrinkingWaterFoodSafetyArticle.tsx-3-
+./components/DrinkingWaterFoodSafetyArticle.tsx-4-const safetyTable = [
+./components/DrinkingWaterFoodSafetyArticle.tsx-5-  { item: "Bottled/sealed water", verdict: "Safest default", note: "Check the seal is intact before drinking" },
+./components/DrinkingWaterFoodSafetyArticle.tsx-6-  { item: "Lodge-filtered/purified water", verdict: "Generally safe", note: "Most upscale camps run their own filtration systems" },
+--
+./components/KenyaHero.tsx:1:import Image from "next/image"
+./components/KenyaHero.tsx-2-import Link from "next/link"
+./components/KenyaHero.tsx-3-import { kenyaHeroArticles } from "@/data/kenyaData"
+./components/KenyaHero.tsx-4-
+./components/KenyaHero.tsx-5-export default function KenyaHero() {
+./components/KenyaHero.tsx-6-  const [left, center, topRight, bottomRight] = kenyaHeroArticles
+--
+./components/GettingAroundKenyaArticle.tsx:1:import Image from "next/image"
+./components/GettingAroundKenyaArticle.tsx-2-import Link from "next/link"
+./components/GettingAroundKenyaArticle.tsx-3-
+./components/GettingAroundKenyaArticle.tsx-4-const comparisonTable = [
+./components/GettingAroundKenyaArticle.tsx-5-  { factor: "Speed", air: "40-60 min between most parks", road: "4-8 hours depending on route" },
+./components/GettingAroundKenyaArticle.tsx-6-  { factor: "Cost", air: "Higher per transfer, from ~$150-300", road: "Lower per transfer, from ~$50-100" },
+--
+./components/MasaiMaraVsSerengetiArticle.tsx:1:import Image from "next/image"
+./components/MasaiMaraVsSerengetiArticle.tsx-2-import Link from "next/link"
+./components/MasaiMaraVsSerengetiArticle.tsx-3-
+./components/MasaiMaraVsSerengetiArticle.tsx-4-const comparisonTable = [
+./components/MasaiMaraVsSerengetiArticle.tsx-5-  { factor: "Country", mara: "Kenya", serengeti: "Tanzania" },
+./components/MasaiMaraVsSerengetiArticle.tsx-6-  { factor: "Size", mara: "Smaller (~1,500 km²)", serengeti: "Much larger (~14,750 km²)" },
+--
+./components/KenyaHighlandsBeachLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaHighlandsBeachLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaHighlandsBeachLandingPage.tsx-4-import { Phone, MessageCircle, MapPin, Car, TreePine, Headphones } from "lucide-react"
+./components/KenyaHighlandsBeachLandingPage.tsx-5-
+./components/KenyaHighlandsBeachLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaHighlandsBeachLandingPage.tsx-7-  { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
+--
+./components/VaccinationsForKenyaArticle.tsx:1:import Image from "next/image"
+./components/VaccinationsForKenyaArticle.tsx-2-import Link from "next/link"
+./components/VaccinationsForKenyaArticle.tsx-3-
+./components/VaccinationsForKenyaArticle.tsx-4-const vaccineTable = [
+./components/VaccinationsForKenyaArticle.tsx-5-  { vaccine: "Yellow Fever", required: "Only if arriving from/transiting an endemic country", note: "Required for India → India return, since Kenya is endemic" },
+./components/VaccinationsForKenyaArticle.tsx-6-  { vaccine: "Malaria prophylaxis", required: "Not required, strongly recommended", note: "~70% of Kenya is a risk zone below 2,500m" },
+--
+./components/TsavoArticle.tsx:1:import Image from "next/image"
+./components/TsavoArticle.tsx-2-import Link from "next/link"
+./components/TsavoArticle.tsx-3-
+./components/TsavoArticle.tsx-4-const quickFactsTable = [
+./components/TsavoArticle.tsx-5-  { fact: "Size", detail: "Roughly 22,000 km² combined (Tsavo East + West) — Kenya's largest protected area" },
+./components/TsavoArticle.tsx-6-  { fact: "Known for", detail: "Red-dust elephants, vast open wilderness, fewer vehicles" },
+--
+./components/kenya-articles/wildebeest-river-crossing-guide.tsx:1:import Image from "next/image"
+./components/kenya-articles/wildebeest-river-crossing-guide.tsx-2-export default function WildebeestRiverCrossingGuideArticle() {
+./components/kenya-articles/wildebeest-river-crossing-guide.tsx-3-  return (
+./components/kenya-articles/wildebeest-river-crossing-guide.tsx-4-    <>
+./components/kenya-articles/wildebeest-river-crossing-guide.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/wildebeest-river-crossing-guide.tsx-6-        No single moment in African wildlife photography is more chased, more unpredictable, or
+--
+./components/kenya-articles/birdwatching-in-kenya-detail.tsx:1:import Image from "next/image"
+./components/kenya-articles/birdwatching-in-kenya-detail.tsx-2-export default function BirdwatchingInKenyaDetailArticle() {
+./components/kenya-articles/birdwatching-in-kenya-detail.tsx-3-  return (
+./components/kenya-articles/birdwatching-in-kenya-detail.tsx-4-    <>
+./components/kenya-articles/birdwatching-in-kenya-detail.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/birdwatching-in-kenya-detail.tsx-6-        Kenya isn't just a Big Five destination — it's one of the richest birding countries on
+--
+./components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette.tsx:1:import Image from "next/image"
+./components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette.tsx-2-export default function BasicSwahiliPhrasesAndKenyanEtiquetteArticle() {
+./components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette.tsx-3-  return (
+./components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette.tsx-4-    <>
+./components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/basic-swahili-phrases-and-kenyan-etiquette.tsx-6-        You don't need fluency to get real value out of a few Swahili words in Kenya — a
+--
+./components/kenya-articles/cheetahs-of-the-mara.tsx:1:import Image from "next/image"
+./components/kenya-articles/cheetahs-of-the-mara.tsx-2-export default function CheetahsOfTheMaraArticle() {
+./components/kenya-articles/cheetahs-of-the-mara.tsx-3-  return (
+./components/kenya-articles/cheetahs-of-the-mara.tsx-4-    <>
+./components/kenya-articles/cheetahs-of-the-mara.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/cheetahs-of-the-mara.tsx-6-        No animal in the Masai Mara draws a bigger gasp from a safari vehicle than a cheetah
+--
+./components/kenya-articles/lake-nakurus-flamingo-spectacle.tsx:1:import Image from "next/image"
+./components/kenya-articles/lake-nakurus-flamingo-spectacle.tsx-2-export default function LakeNakurusFlamingoSpectacleArticle() {
+./components/kenya-articles/lake-nakurus-flamingo-spectacle.tsx-3-  return (
+./components/kenya-articles/lake-nakurus-flamingo-spectacle.tsx-4-    <>
+./components/kenya-articles/lake-nakurus-flamingo-spectacle.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/lake-nakurus-flamingo-spectacle.tsx-6-        For decades, Lake Nakuru was famous for one of nature's most improbable sights: a shallow
+--
+./components/kenya-articles/community-conservancies-how-locals-protect-wildlife.tsx:1:import Image from "next/image"
+./components/kenya-articles/community-conservancies-how-locals-protect-wildlife.tsx-2-export default function CommunityConservanciesHowLocalsProtectWildlifeArticle() {
+./components/kenya-articles/community-conservancies-how-locals-protect-wildlife.tsx-3-  return (
+./components/kenya-articles/community-conservancies-how-locals-protect-wildlife.tsx-4-    <>
+./components/kenya-articles/community-conservancies-how-locals-protect-wildlife.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/community-conservancies-how-locals-protect-wildlife.tsx-6-        Kenya's national parks get the fame, but they only cover a fraction of the country's
+--
+./components/kenya-articles/what-happens-if-you-get-sick-during-a-safari.tsx:1:import Image from "next/image"
+./components/kenya-articles/what-happens-if-you-get-sick-during-a-safari.tsx-2-export default function WhatHappensIfYouGetSickDuringASafariArticle() {
+./components/kenya-articles/what-happens-if-you-get-sick-during-a-safari.tsx-3-  return (
+./components/kenya-articles/what-happens-if-you-get-sick-during-a-safari.tsx-4-    <>
+./components/kenya-articles/what-happens-if-you-get-sick-during-a-safari.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/what-happens-if-you-get-sick-during-a-safari.tsx-6-        Camps have first-response protocols and access to flying-doctor evacuation if needed, so
+--
+./components/kenya-articles/anti-poaching-efforts-in-kenyas-parks.tsx:1:import Image from "next/image"
+./components/kenya-articles/anti-poaching-efforts-in-kenyas-parks.tsx-2-export default function AntiPoachingEffortsInKenyasParksArticle() {
+./components/kenya-articles/anti-poaching-efforts-in-kenyas-parks.tsx-3-  return (
+./components/kenya-articles/anti-poaching-efforts-in-kenyas-parks.tsx-4-    <>
+./components/kenya-articles/anti-poaching-efforts-in-kenyas-parks.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/anti-poaching-efforts-in-kenyas-parks.tsx-6-        A decade ago, Kenya's elephant and rhino populations were being cut down by poaching at a
+--
+./components/kenya-articles/kenyas-big-cats-compared.tsx:1:import Image from "next/image"
+./components/kenya-articles/kenyas-big-cats-compared.tsx-2-export default function KenyasBigCatsComparedArticle() {
+./components/kenya-articles/kenyas-big-cats-compared.tsx-3-  return (
+./components/kenya-articles/kenyas-big-cats-compared.tsx-4-    <>
+./components/kenya-articles/kenyas-big-cats-compared.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/kenyas-big-cats-compared.tsx-6-        Lion, leopard, and cheetah share the same plains, the same prey, and — from a distance —
+--
+./components/kenya-articles/what-currency-should-you-carry-in-kenya.tsx:1:import Image from "next/image"
+./components/kenya-articles/what-currency-should-you-carry-in-kenya.tsx-2-export default function WhatCurrencyShouldYouCarryInKenyaArticle() {
+./components/kenya-articles/what-currency-should-you-carry-in-kenya.tsx-3-  return (
+./components/kenya-articles/what-currency-should-you-carry-in-kenya.tsx-4-    <>
+./components/kenya-articles/what-currency-should-you-carry-in-kenya.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/what-currency-should-you-carry-in-kenya.tsx-6-        Both US dollars and Kenyan shillings work in Kenya, but not everywhere accepts both, and
+--
+./components/kenya-articles/elsas-kopje-built-into-the-rock.tsx:1:import Image from "next/image"
+./components/kenya-articles/elsas-kopje-built-into-the-rock.tsx-2-
+./components/kenya-articles/elsas-kopje-built-into-the-rock.tsx-3-export default function ElsasKopjeArticle() {
+./components/kenya-articles/elsas-kopje-built-into-the-rock.tsx-4-  return (
+./components/kenya-articles/elsas-kopje-built-into-the-rock.tsx-5-    <>
+./components/kenya-articles/elsas-kopje-built-into-the-rock.tsx-6-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+--
+./components/kenya-articles/amboselis-last-super-tuskers.tsx:1:import Image from "next/image"
+./components/kenya-articles/amboselis-last-super-tuskers.tsx-2-export default function AmboselisLastSuperTuskersArticle() {
+./components/kenya-articles/amboselis-last-super-tuskers.tsx-3-  return (
+./components/kenya-articles/amboselis-last-super-tuskers.tsx-4-    <>
+./components/kenya-articles/amboselis-last-super-tuskers.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/amboselis-last-super-tuskers.tsx-6-        Amboseli is the one place in Africa where you can still reliably see a "super tusker" —
+--
+./components/kenya-articles/rhino-conservation-the-fight-to-save-a-species.tsx:1:import Image from "next/image"
+./components/kenya-articles/rhino-conservation-the-fight-to-save-a-species.tsx-2-export default function RhinoConservationTheFightToSaveASpeciesArticle() {
+./components/kenya-articles/rhino-conservation-the-fight-to-save-a-species.tsx-3-  return (
+./components/kenya-articles/rhino-conservation-the-fight-to-save-a-species.tsx-4-    <>
+./components/kenya-articles/rhino-conservation-the-fight-to-save-a-species.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/rhino-conservation-the-fight-to-save-a-species.tsx-6-        Kenya holds most of what's left of East Africa's black and white rhino population, and
+--
+./components/kenya-articles/climate-change-and-the-great-migration.tsx:1:import Image from "next/image"
+./components/kenya-articles/climate-change-and-the-great-migration.tsx-2-export default function ClimateChangeAndTheGreatMigrationArticle() {
+./components/kenya-articles/climate-change-and-the-great-migration.tsx-3-  return (
+./components/kenya-articles/climate-change-and-the-great-migration.tsx-4-    <>
+./components/kenya-articles/climate-change-and-the-great-migration.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/climate-change-and-the-great-migration.tsx-6-        The Great Migration has always followed rainfall — over a million wildebeest and zebra
+--
+./components/kenya-articles/the-maasai-guardians-of-the-mara.tsx:1:import Image from "next/image"
+./components/kenya-articles/the-maasai-guardians-of-the-mara.tsx-2-export default function TheMaasaiGuardiansOfTheMaraArticle() {
+./components/kenya-articles/the-maasai-guardians-of-the-mara.tsx-3-  return (
+./components/kenya-articles/the-maasai-guardians-of-the-mara.tsx-4-    <>
+./components/kenya-articles/the-maasai-guardians-of-the-mara.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/the-maasai-guardians-of-the-mara.tsx-6-        For much of the 20th century, conservation in Kenya meant pushing pastoralist communities
+--
+./components/kenya-articles/masai-mara-reserve-vs-conservancies.tsx:1:import Image from "next/image"
+./components/kenya-articles/masai-mara-reserve-vs-conservancies.tsx-2-export default function MasaiMaraReserveVsConservanciesArticle() {
+./components/kenya-articles/masai-mara-reserve-vs-conservancies.tsx-3-  return (
+./components/kenya-articles/masai-mara-reserve-vs-conservancies.tsx-4-    <>
+./components/kenya-articles/masai-mara-reserve-vs-conservancies.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/masai-mara-reserve-vs-conservancies.tsx-6-        The Masai Mara National Reserve and the private conservancies that surround it sit inside
+--
+./components/kenya-articles/wildebeest-crossing-2026-migration-forecast.tsx:1:import Image from "next/image"
+./components/kenya-articles/wildebeest-crossing-2026-migration-forecast.tsx-2-
+./components/kenya-articles/wildebeest-crossing-2026-migration-forecast.tsx-3-export default function WildebeestCrossing2026MigrationForecastArticle() {
+./components/kenya-articles/wildebeest-crossing-2026-migration-forecast.tsx-4-  return (
+./components/kenya-articles/wildebeest-crossing-2026-migration-forecast.tsx-5-    <>
+./components/kenya-articles/wildebeest-crossing-2026-migration-forecast.tsx-6-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+--
+./components/kenya-articles/masai-mara-vs-serengeti.tsx:1:import Image from "next/image"
+./components/kenya-articles/masai-mara-vs-serengeti.tsx-2-export default function MasaiMaraVsSerengetiArticle() {
+./components/kenya-articles/masai-mara-vs-serengeti.tsx-3-  return (
+./components/kenya-articles/masai-mara-vs-serengeti.tsx-4-    <>
+./components/kenya-articles/masai-mara-vs-serengeti.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/masai-mara-vs-serengeti.tsx-6-        They're the same ecosystem split by a border, but Masai Mara and the Serengeti aren't
+--
+./components/kenya-articles/giraffes-of-kenya.tsx:1:import Image from "next/image"
+./components/kenya-articles/giraffes-of-kenya.tsx-2-
+./components/kenya-articles/giraffes-of-kenya.tsx-3-export default function GiraffesOfKenyaArticle() {
+./components/kenya-articles/giraffes-of-kenya.tsx-4-  return (
+./components/kenya-articles/giraffes-of-kenya.tsx-5-    <>
+./components/kenya-articles/giraffes-of-kenya.tsx-6-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+--
+./components/kenya-articles/night-safaris-what-happens-after-dark.tsx:1:import Image from "next/image"
+./components/kenya-articles/night-safaris-what-happens-after-dark.tsx-2-export default function NightSafarisWhatHappensAfterDarkArticle() {
+./components/kenya-articles/night-safaris-what-happens-after-dark.tsx-3-  return (
+./components/kenya-articles/night-safaris-what-happens-after-dark.tsx-4-    <>
+./components/kenya-articles/night-safaris-what-happens-after-dark.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/night-safaris-what-happens-after-dark.tsx-6-        Most of a national park's residents are barely visible during the day. Leopards, genets,
+--
+./components/kenya-articles/can-you-drink-the-water-in-kenya.tsx:1:import Image from "next/image"
+./components/kenya-articles/can-you-drink-the-water-in-kenya.tsx-2-export default function CanYouDrinkTheWaterInKenyaArticle() {
+./components/kenya-articles/can-you-drink-the-water-in-kenya.tsx-3-  return (
+./components/kenya-articles/can-you-drink-the-water-in-kenya.tsx-4-    <>
+./components/kenya-articles/can-you-drink-the-water-in-kenya.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/can-you-drink-the-water-in-kenya.tsx-6-        Short answer: no, don't drink tap water in Kenya, even at nicer lodges. Bottled or
+--
+./components/kenya-articles/amboseli-national-park-guide.tsx:1:import Image from "next/image"
+./components/kenya-articles/amboseli-national-park-guide.tsx-2-export default function AmboseliNationalParkGuideArticle() {
+./components/kenya-articles/amboseli-national-park-guide.tsx-3-  return (
+./components/kenya-articles/amboseli-national-park-guide.tsx-4-    <>
+./components/kenya-articles/amboseli-national-park-guide.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/amboseli-national-park-guide.tsx-6-        Amboseli's reputation rests on one image: elephant herds crossing dusty plains with
+--
+./components/kenya-articles/lake-nakuru-park-birds-rhinos.tsx:1:import Image from "next/image"
+./components/kenya-articles/lake-nakuru-park-birds-rhinos.tsx-2-export default function LakeNakuruParkBirdsRhinosArticle() {
+./components/kenya-articles/lake-nakuru-park-birds-rhinos.tsx-3-  return (
+./components/kenya-articles/lake-nakuru-park-birds-rhinos.tsx-4-    <>
+./components/kenya-articles/lake-nakuru-park-birds-rhinos.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/lake-nakuru-park-birds-rhinos.tsx-6-        Lake Nakuru is small by Kenyan standards, but it packs an outsized amount into a compact
+--
+./components/kenya-articles/rare-sightings-black-rhinos.tsx:1:import Image from "next/image"
+./components/kenya-articles/rare-sightings-black-rhinos.tsx-2-
+./components/kenya-articles/rare-sightings-black-rhinos.tsx-3-export default function RareSightingsBlackRhinosArticle() {
+./components/kenya-articles/rare-sightings-black-rhinos.tsx-4-  return (
+./components/kenya-articles/rare-sightings-black-rhinos.tsx-5-    <>
+./components/kenya-articles/rare-sightings-black-rhinos.tsx-6-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+--
+./components/kenya-articles/do-you-need-cash-or-card-on-safari.tsx:1:import Image from "next/image"
+./components/kenya-articles/do-you-need-cash-or-card-on-safari.tsx-2-export default function DoYouNeedCashOrCardOnSafariArticle() {
+./components/kenya-articles/do-you-need-cash-or-card-on-safari.tsx-3-  return (
+./components/kenya-articles/do-you-need-cash-or-card-on-safari.tsx-4-    <>
+./components/kenya-articles/do-you-need-cash-or-card-on-safari.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/do-you-need-cash-or-card-on-safari.tsx-6-        Cards work at most lodges, but small purchases and tips still run on cash. The realistic
+--
+./components/kenya-articles/internet-and-phone-signal-in-the-bush.tsx:1:import Image from "next/image"
+./components/kenya-articles/internet-and-phone-signal-in-the-bush.tsx-2-export default function InternetAndPhoneSignalInTheBushArticle() {
+./components/kenya-articles/internet-and-phone-signal-in-the-bush.tsx-3-  return (
+./components/kenya-articles/internet-and-phone-signal-in-the-bush.tsx-4-    <>
+./components/kenya-articles/internet-and-phone-signal-in-the-bush.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/internet-and-phone-signal-in-the-bush.tsx-6-        Most lodges have WiFi in common areas, but signal drops fast once you're out on a drive.
+--
+./components/kenya-articles/kenya-time-zone-and-jet-lag-tips.tsx:1:import Image from "next/image"
+./components/kenya-articles/kenya-time-zone-and-jet-lag-tips.tsx-2-export default function KenyaTimeZoneAndJetLagTipsArticle() {
+./components/kenya-articles/kenya-time-zone-and-jet-lag-tips.tsx-3-  return (
+./components/kenya-articles/kenya-time-zone-and-jet-lag-tips.tsx-4-    <>
+./components/kenya-articles/kenya-time-zone-and-jet-lag-tips.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/kenya-time-zone-and-jet-lag-tips.tsx-6-        Kenya sits at UTC+3 year-round, with no daylight saving time to complicate the math. For
+--
+./components/kenya-articles/tsavo-largest-wildest-park.tsx:1:import Image from "next/image"
+./components/kenya-articles/tsavo-largest-wildest-park.tsx-2-export default function TsavoLargestWildestParkArticle() {
+./components/kenya-articles/tsavo-largest-wildest-park.tsx-3-  return (
+./components/kenya-articles/tsavo-largest-wildest-park.tsx-4-    <>
+./components/kenya-articles/tsavo-largest-wildest-park.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/tsavo-largest-wildest-park.tsx-6-        Tsavo is Kenya's largest protected area by a wide margin, and its least crowded major
+--
+./components/kenya-articles/how-much-does-a-kenya-safari-cost.tsx:1:import Image from "next/image"
+./components/kenya-articles/how-much-does-a-kenya-safari-cost.tsx-2-export default function HowMuchDoesAKenyaSafariCostArticle() {
+./components/kenya-articles/how-much-does-a-kenya-safari-cost.tsx-3-  return (
+./components/kenya-articles/how-much-does-a-kenya-safari-cost.tsx-4-    <>
+./components/kenya-articles/how-much-does-a-kenya-safari-cost.tsx-5-      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+./components/kenya-articles/how-much-does-a-kenya-safari-cost.tsx-6-        "How much does a Kenya safari cost" doesn't have one answer — a budget camping safari and
+--
+./components/MalariaPreventionArticle.tsx:1:import Image from "next/image"
+./components/MalariaPreventionArticle.tsx-2-import Link from "next/link"
+./components/MalariaPreventionArticle.tsx-3-
+./components/MalariaPreventionArticle.tsx-4-const riskTable = [
+./components/MalariaPreventionArticle.tsx-5-  { region: "Coast (Mombasa, Diani, Watamu, Lamu)", risk: "High", note: "Low altitude, year-round transmission" },
+./components/MalariaPreventionArticle.tsx-6-  { region: "Lake Victoria / Western Kenya (Kisumu, Kakamega)", risk: "High", note: "Low altitude, favorable climate for mosquitoes" },
+--
+./components/OlPejetaArticle.tsx:1:import Image from "next/image"
+./components/OlPejetaArticle.tsx-2-import Link from "next/link"
+./components/OlPejetaArticle.tsx-3-
+./components/OlPejetaArticle.tsx-4-const quickFactsTable = [
+./components/OlPejetaArticle.tsx-5-  { fact: "Known for", detail: "Last two northern white rhinos on Earth, chimpanzee sanctuary" },
+./components/OlPejetaArticle.tsx-6-  { fact: "Type", detail: "Private, not-for-profit conservancy" },
+--
+./components/WhatToPackForKenyaSafariArticle.tsx:1:import Image from "next/image"
+./components/WhatToPackForKenyaSafariArticle.tsx-2-import Link from "next/link"
+./components/WhatToPackForKenyaSafariArticle.tsx-3-
+./components/WhatToPackForKenyaSafariArticle.tsx-4-const packingList = [
+./components/WhatToPackForKenyaSafariArticle.tsx-5-  { category: "Clothing", items: "4-5 lightweight, neutral-colored tops; 2-3 trousers/shorts; a fleece or light jacket; a warm layer for early mornings" },
+./components/WhatToPackForKenyaSafariArticle.tsx-6-  { category: "Footwear", items: "One pair of comfortable closed-toe shoes; sandals for camp downtime" },
+--
+./components/KenyaWhoShouldGoTrending.tsx:2:import Image from "next/image"
+./components/KenyaWhoShouldGoTrending.tsx-3-import Link from "next/link"
+./components/KenyaWhoShouldGoTrending.tsx-4-import { kenyaWhoShouldGo, kenyaWhatToWear, kenyaTrending, kenyaHealthSafety } from "@/data/kenyaData"
+./components/KenyaWhoShouldGoTrending.tsx-5-
+./components/KenyaWhoShouldGoTrending.tsx-6-// Trending articles don't have real pages built yet — add slugs here as they go live.
+./components/KenyaWhoShouldGoTrending.tsx-7-const PUBLISHED_TRENDING_SLUGS = new Set<string>(["kenyas-rainy-season-what-changes", "solar-eclipse-and-stargazing-safaris", "kenyas-new-conservation-fees", "wildebeest-crossing-2026-migration-forecast", "hot-air-balloon-safaris-over-the-mara", "new-direct-flights-cutting-kenya-travel-time"])
+--
+./components/KenyaConservationCultureSection.tsx:2:import Image from "next/image"
+./components/KenyaConservationCultureSection.tsx-3-import Link from "next/link"
+./components/KenyaConservationCultureSection.tsx-4-import { kenyaConservationCulture, kenyaFaqs } from "@/data/kenyaData"
+./components/KenyaConservationCultureSection.tsx-5-
+./components/KenyaConservationCultureSection.tsx-6-const PUBLISHED_FAQ_SLUGS = new Set<string>(["how-much-does-a-kenya-safari-cost", "tipping-etiquette-guides-drivers-lodge-staff", "can-you-drink-the-water-in-kenya", "what-currency-should-you-carry-in-kenya", "do-you-need-cash-or-card-on-safari", "kenya-time-zone-and-jet-lag-tips", "internet-and-phone-signal-in-the-bush", "what-happens-if-you-get-sick-during-a-safari", "kenya-safari-faqs-everything-first-timers-ask", "is-it-ethical-to-go-on-safari"])
+./components/KenyaConservationCultureSection.tsx-7-
+--
+./components/SafariYoungChildrenArticle.tsx:1:import Image from "next/image"
+./components/SafariYoungChildrenArticle.tsx-2-import Link from "next/link"
+./components/SafariYoungChildrenArticle.tsx-3-
+./components/SafariYoungChildrenArticle.tsx-4-const ageTable = [
+./components/SafariYoungChildrenArticle.tsx-5-  { age: "Under 5", policy: "Most restricted", note: "Many classic Mara tented camps decline; some family-oriented lodges accept with a private vehicle" },
+./components/SafariYoungChildrenArticle.tsx-6-  { age: "5-7", policy: "Growing acceptance", note: "A rising number of camps accept from age 5, with shorter, sleep-schedule-friendly drives" },
+--
+./components/KenyaQuickEscapeLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaQuickEscapeLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaQuickEscapeLandingPage.tsx-4-import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
+./components/KenyaQuickEscapeLandingPage.tsx-5-
+./components/KenyaQuickEscapeLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaQuickEscapeLandingPage.tsx-7-  { name: "Lion", image: "/images/external/unsplash-169763833246.jpg" },
+--
+./components/MeruNationalParkArticle.tsx:1:import Image from "next/image"
+./components/MeruNationalParkArticle.tsx-2-import Link from "next/link"
+./components/MeruNationalParkArticle.tsx-3-
+./components/MeruNationalParkArticle.tsx-4-const quickFactsTable = [
+./components/MeruNationalParkArticle.tsx-5-  { fact: "Known for", detail: "Rhino sanctuary, rivers and lush terrain, very low visitor numbers" },
+./components/MeruNationalParkArticle.tsx-6-  { fact: "Notable history", detail: "Setting of the book and film Born Free" },
+--
+./components/KenyaNorthernExplorerLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaNorthernExplorerLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaNorthernExplorerLandingPage.tsx-4-import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
+./components/KenyaNorthernExplorerLandingPage.tsx-5-
+./components/KenyaNorthernExplorerLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaNorthernExplorerLandingPage.tsx-7-  { name: "Grevy's Zebra", image: "https://images.unsplash.com/photo-1526095179574-86e545346ae6?w=300&q=80" },
+--
+./components/KenyaTravelTipsWildlife.tsx:2:import Image from "next/image"
+./components/KenyaTravelTipsWildlife.tsx-3-import Link from "next/link"
+./components/KenyaTravelTipsWildlife.tsx-4-import { kenyaTravelTips, kenyaSafariWildlife } from "@/data/kenyaData"
+./components/KenyaTravelTipsWildlife.tsx-5-
+./components/KenyaTravelTipsWildlife.tsx-6-const PUBLISHED_SAFARI_SLUGS = new Set<string>(["birdwatching-in-kenya-detail", "wildebeest-river-crossing-guide", "cheetahs-of-the-mara", "amboselis-last-super-tuskers", "lake-nakurus-flamingo-spectacle", "night-safaris-what-happens-after-dark", "kenyas-big-cats-compared", "rare-sightings-black-rhinos", "giraffes-of-kenya"])
+./components/KenyaTravelTipsWildlife.tsx-7-
+--
+./components/KenyaTanzaniaLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaTanzaniaLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaTanzaniaLandingPage.tsx-4-import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
+./components/KenyaTanzaniaLandingPage.tsx-5-
+./components/KenyaTanzaniaLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaTanzaniaLandingPage.tsx-7-  { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
+--
+./components/MasaiMaraReserveVsConservanciesArticle.tsx:1:import Image from "next/image"
+./components/MasaiMaraReserveVsConservanciesArticle.tsx-2-import Link from "next/link"
+./components/MasaiMaraReserveVsConservanciesArticle.tsx-3-
+./components/MasaiMaraReserveVsConservanciesArticle.tsx-4-const comparisonTable = [
+./components/MasaiMaraReserveVsConservanciesArticle.tsx-5-  { factor: "Vehicle limits at sightings", reserve: "Can get crowded, no strict cap", conservancy: "Strictly limited, often 5 vehicles max" },
+./components/MasaiMaraReserveVsConservanciesArticle.tsx-6-  { factor: "Night drives", reserve: "Not permitted", conservancy: "Permitted" },
+--
+./components/KenyaWalkingSafariLandingPage.tsx:2:import Image from "next/image"
+./components/KenyaWalkingSafariLandingPage.tsx-3-import { useState } from "react"
+./components/KenyaWalkingSafariLandingPage.tsx-4-import { MapPin, Car, TreePine, Headphones, Phone, MessageCircle } from "lucide-react"
+./components/KenyaWalkingSafariLandingPage.tsx-5-
+./components/KenyaWalkingSafariLandingPage.tsx-6-const ANIMALS = [
+./components/KenyaWalkingSafariLandingPage.tsx-7-  { name: "Lion", image: "/images/external/unsplash-169763833246.jpg" },
+--
+./components/BigFiveArticle.tsx:1:import Image from "next/image"
+./components/BigFiveArticle.tsx-2-import Link from "next/link"
+./components/BigFiveArticle.tsx-3-
+./components/BigFiveArticle.tsx-4-const difficultyTable = [
+./components/BigFiveArticle.tsx-5-  { animal: "Elephant", difficulty: "Easy", bestTime: "Year-round near water", bestPark: "Amboseli, Tsavo" },
+./components/BigFiveArticle.tsx-6-  { animal: "Lion", difficulty: "Easy", bestTime: "Dry season, midday rest", bestPark: "Masai Mara, Amboseli" },
+--
+./components/KenyaSectionNav.tsx:2:import Image from "next/image"
+./components/KenyaSectionNav.tsx-3-
+./components/KenyaSectionNav.tsx-4-const cards = [
+./components/KenyaSectionNav.tsx-5-  { id: "travel-wildlife", label: "Travel Tips", image: "/images/external/unsplash-143649186533.jpg" },
+./components/KenyaSectionNav.tsx-6-  { id: "safari-routes", label: "Itinerary", image: "/images/external/unsplash-151642612207.jpg" },
+./components/KenyaSectionNav.tsx-7-  { id: "explore", label: "Where to Stay", image: "/images/external/unsplash-152380500934.jpg" },
+--
+./components/SafariFirstAidArticle.tsx:1:import Image from "next/image"
+./components/SafariFirstAidArticle.tsx-2-import Link from "next/link"
+./components/SafariFirstAidArticle.tsx-3-
+./components/SafariFirstAidArticle.tsx-4-const kitTable = [
+./components/SafariFirstAidArticle.tsx-5-  { category: "Pain & fever", items: "Paracetamol, ibuprofen" },
+./components/SafariFirstAidArticle.tsx-6-  { category: "Stomach", items: "Anti-diarrheal (e.g. loperamide), oral rehydration salts, antacid" },
+--
+./components/AmboseliNationalParkArticle.tsx:1:import Image from "next/image"
+./components/AmboseliNationalParkArticle.tsx-2-import Link from "next/link"
+./components/AmboseliNationalParkArticle.tsx-3-
+./components/AmboseliNationalParkArticle.tsx-4-const quickFactsTable = [
+./components/AmboseliNationalParkArticle.tsx-5-  { fact: "Best for", detail: "Elephants, Kilimanjaro backdrop photography" },
+./components/AmboseliNationalParkArticle.tsx-6-  { fact: "Size", detail: "Roughly 392 km² — one of Kenya's smaller major parks" },
+
+=== next.config images block ===
+/** @type {import('next').NextConfig} */
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval'
+    https://tpscr.com
+    https://*.travelpayouts.com
+    https://www.googletagmanager.com
+    https://www.google-analytics.com
+    https://*.crisp.chat
+    https://client.crisp.chat
+    https://*.sentry.io
+    https://*.contentsquare.net
+    https://assets.calendly.com
+    https://vercel.live
+    https://widget.getyourguide.com
+    https://www.viator.com
+    https://affiliate.klook.com
+    https://*.klook.com;
+  script-src-elem 'self' 'unsafe-inline'
+    https://tpscr.com
+    https://*.travelpayouts.com
+    https://www.googletagmanager.com
+    https://www.google-analytics.com
+    https://*.crisp.chat
+    https://client.crisp.chat
+    https://*.contentsquare.net
+    https://assets.calendly.com
+    https://vercel.live
+    https://widget.getyourguide.com
+    https://www.viator.com
+    https://affiliate.klook.com
+    https://*.klook.com;
+  style-src 'self' 'unsafe-inline'
+    https://tpscr.com
+    https://*.travelpayouts.com
+    https://fonts.googleapis.com
+    https://*.crisp.chat
+    https://assets.calendly.com
+    https://*.getyourguide.com
+    https://*.viator.com
+    https://www.viator.com;
+  font-src 'self'
+    https://fonts.gstatic.com
+    https://*.crisp.chat
+    https://*.travelpayouts.com;
+  img-src 'self' data: blob:
+    https://images.unsplash.com
+    https://plus.unsplash.com
+    https://tpscr.com
+    https://*.travelpayouts.com
+    https://www.google-analytics.com
+    https://www.googletagmanager.com
+    https://*.crisp.chat
+    https://image.crisp.chat
+    https://*.contentsquare.net
+    https://assets.calendly.com
+    https://*.getyourguide.com
+    https://*.viator.com
+    https://www.viator.com
+    https://affiliate.klook.com
+    https://*.klook.com
+    https://*.supabase.co;
+  connect-src 'self'
+    https://tpscr.com
+    https://*.travelpayouts.com
+    https://www.google-analytics.com
+    https://analytics.google.com
+    https://*.crisp.chat
+    wss://*.crisp.chat
+    https://*.sentry.io
+    https://*.contentsquare.net
+    https://ace-shiner-107105.upstash.io
+    https://api.resend.com
+    https://assets.calendly.com
+    https://*.getyourguide.com
+    https://*.viator.com
+    https://www.viator.com;
+  frame-src 'self'
+    https://widget.getyourguide.com
+    https://www.viator.com
+    https://affiliate.klook.com
+    https://*.klook.com;
+  worker-src 'self' blob:;
+  media-src 'self' https://*.travelpayouts.com;
+`
+const securityHeaders = [
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
+  {
+    key: "Cross-Origin-Opener-Policy",
+    value: "same-origin-allow-popups",
+  },
+  {
+    key: "Content-Security-Policy",
+    value: ContentSecurityPolicy.replace(/\n/g, " ").trim(),
+  },
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  {
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
+  },
+]
+const nextConfig = {
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
+    ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+    ]
+  },
+}
+module.exports = nextConfig
+
+=== hero/gallery image file sizes (find the fat files) ===
+424K	./public/hero1.jpg
+400K	./public/hero3.jpg
+376K	./public/images/external/unsplash-151363526997.webp
+376K	./public/images/external/unsplash-149985687195.webp
+376K	./public/hero2.jpg
+368K	./public/images/external/unsplash-1558642452-9.webp
+368K	./public/images/external/unsplash-151554262210.webp
+344K	./public/images/external/unsplash-1541849546-2.webp
+344K	./public/images/external/unsplash-153435159066.webp
+332K	./public/images/external/unsplash-151363526997.jpg
+332K	./public/images/external/unsplash-149985687195.jpg
+324K	./public/images/external/unsplash-152098660621.webp
+324K	./public/images/external/unsplash-146726920459.webp
+308K	./public/images/external/unsplash-1558642452-9.jpg
+308K	./public/images/external/unsplash-151554262210.jpg
+284K	./public/images/external/unsplash-152098660621.jpg
+284K	./public/images/external/unsplash-146726920459.jpg
+260K	./public/images/kenya-highlands/jambo-mara-safari-lodge.jpg
+260K	./public/images/external/unsplash-1541849546-2.jpg
+260K	./public/images/external/unsplash-153435159066.jpg
+248K	./public/images/external/unsplash-150690592534.webp
+240K	./public/images/external/unsplash-153136693633.webp
+240K	./public/images/external/unsplash-147651452553.webp
+232K	./public/images/kenya-highlands/hero-banner.jpg
+212K	./public/images/external/unsplash-153136693633.jpg
+212K	./public/images/external/unsplash-147651452553.jpg
+204K	./public/images/external/unsplash-162001876485.jpg
+192K	./public/images/external/unsplash-150690592534.jpg
+188K	./public/images/external/unsplash-152390683465.jpg
+188K	./public/images/external/unsplash-148808506138.jpg
+
+=== font loading (check for render-blocking) ===
+./app/privacy/page.tsx:136:        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+./app/terms/page.tsx:174:        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+./app/cookies/page.tsx:141:        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+./.next/static/css/app/page.css:5:@font-face {
+./.next/static/css/app/page.css:14:@font-face {
+./.next/static/css/app/page.css:23:@font-face {
+./.next/static/css/app/page.css:32:@font-face {
+./.next/static/css/app/page.css:41:@font-face {
+./.next/static/css/app/page.css:50:@font-face {
+./.next/static/css/app/page.css:59:@font-face {
+./.next/static/css/app/page.css:68:@font-face {
+./.next/static/css/app/page.css:77:@font-face {
+./.next/static/css/app/page.css:86:@font-face {
+./.next/static/css/app/page.css:95:@font-face {
+./.next/static/css/app/page.css:104:@font-face {
+./.next/static/css/app/page.css:111:}@font-face {font-family: '__Manrope_Fallback_294701';src: local("Arial");ascent-override: 103.31%;descent-override: 29.07%;line-gap-override: 0.00%;size-adjust: 103.19%
+./components/NewsletterSignup.tsx:3:import { Manrope } from "next/font/google"
+./components/MyTripLoginPage.tsx:4:import { Fraunces, IBM_Plex_Mono } from "next/font/google"

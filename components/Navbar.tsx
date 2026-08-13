@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import SupportModal from "@/components/SupportModal"
 import { useCurrency } from "@/contexts/CurrencyContext"
@@ -55,8 +56,8 @@ export default function Navbar() {
         }`}
       >
         <Link href="/" className="flex items-center gap-2">
-          <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
-          <img src="/logo-text.png" alt="Get Trip Go" className="h-8 object-contain" />
+          <Image src="/logo-icon.png" alt="Get Trip Go icon" width={200} height={197} priority className="w-10 h-10 object-contain" />
+          <Image src="/logo-text.png" alt="Get Trip Go" width={400} height={90} priority className="h-8 w-auto object-contain" />
         </Link>
 
         <div className="flex items-center gap-3">

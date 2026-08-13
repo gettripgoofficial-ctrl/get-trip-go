@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Fraunces, IBM_Plex_Mono } from "next/font/google"
 import { Loader2 } from "lucide-react"
 
@@ -56,7 +57,7 @@ export default function MyTripLoginPage() {
           <div className="lg:w-[38%] bg-[#0F2557] px-8 py-9 flex flex-col justify-between border-b lg:border-b-0 border-dashed border-white/25">
             <div>
               <div className="flex items-center gap-2.5 mb-8">
-                <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-9 h-9 object-contain" />
+                <Image src="/logo-icon.png" alt="Get Trip Go icon" width={200} height={197} priority className="w-9 h-9 object-contain" />
                 <span className="text-white font-bold text-lg tracking-tight">get trip go</span>
               </div>
 

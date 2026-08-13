@@ -3,6 +3,7 @@ import { usePrice } from "@/hooks/usePrice"
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { customPackages } from "@/data/customPackages"
 import EnquiryModal from "@/components/EnquiryModal"
 
@@ -24,10 +25,12 @@ function PackageCard({
     >
       {/* Left — Image (clickable) */}
       <Link href={`/customized-itineraries/${pkg.slug}`} className="relative w-2/5 sm:w-1/2 flex-shrink-0 overflow-hidden block">
-        <img
+        <Image
           src={pkg.heroImage}
           alt={pkg.name}
-          className="w-full h-full object-cover brightness-110 saturate-125"
+          fill
+          sizes="(max-width: 640px) 40vw, 190px"
+          className="object-cover brightness-110 saturate-125"
         />
         <div
           className="absolute top-2 left-2 text-white text-xs font-bold px-2 py-0.5 rounded-full"

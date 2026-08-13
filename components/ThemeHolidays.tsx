@@ -1,6 +1,7 @@
 "use client"
 import { useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 const themes = [
   {
@@ -112,11 +113,15 @@ export default function ThemeHolidays() {
                 className="flex-shrink-0 rounded-2xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 transition-transform duration-200 block self-start"
                 style={{ scrollSnapAlign: "start", width: "100%" }}
               >
-                <img
-                  src={theme.image}
-                  alt={theme.name}
-                  className="w-full h-[200px] object-cover"
-                />
+                <div className="relative w-full h-[200px]">
+                  <Image
+                    src={theme.image}
+                    alt={theme.name}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 400px"
+                    className="object-cover"
+                  />
+                </div>
                 <div className="p-2.5 pb-0 md:pb-4">
                   <h4 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h4>
                   <div className="flex flex-wrap gap-1 mb-2.5">

@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function SegeraRetreatConservancyAndInfinityPoolArticle() {
   return (
     <>
@@ -50,10 +51,12 @@ export default function SegeraRetreatConservancyAndInfinityPoolArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-178103986937.jpg"
           alt="Infinity pool overlooking the plains at Segera Retreat in Laikipia"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { tours, type Tour } from "@/data/tours"
 
 // ─── Image map ────────────────────────────────────────────────────────────────
@@ -231,10 +232,12 @@ function DealCard({ tour, onEnquire }: { tour: Tour; onEnquire: (t: Tour) => voi
     >
       {/* Image — left ~32% */}
       <div className="relative flex-shrink-0 overflow-hidden" style={{ width: 120 }}>
-        <img
+        <Image
           src={img}
           alt={tour.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="120px"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 
@@ -318,10 +321,12 @@ function FlightDealCard({ onEnquire }: { onEnquire: () => void }) {
     >
       {/* Image */}
       <div className="relative flex-shrink-0 overflow-hidden" style={{ width: 120 }}>
-        <img
+        <Image
           src="/images/external/unsplash-143649186533.jpg"
           alt="Flight deal"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="120px"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 

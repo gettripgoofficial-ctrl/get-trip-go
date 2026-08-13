@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function SasaabAMoroccanStyleLodgeArticle() {
   return (
     <>
@@ -56,10 +57,12 @@ export default function SasaabAMoroccanStyleLodgeArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-157189634984.jpg"
           alt="Moroccan-style domed suite overlooking the Ewaso Nyiro River"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

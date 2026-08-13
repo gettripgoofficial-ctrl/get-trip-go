@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function OlDonyoLodgeUnderKilimanjarosShadowArticle() {
   return (
     <>
@@ -50,10 +51,12 @@ export default function OlDonyoLodgeUnderKilimanjarosShadowArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-174185082115.jpg"
           alt="Chyulu Hills landscape with Kilimanjaro visible in the distance"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

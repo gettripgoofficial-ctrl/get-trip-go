@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function LoldiaHouseAColonialFarmhouseArticle() {
   return (
     <>
@@ -58,10 +59,12 @@ export default function LoldiaHouseAColonialFarmhouseArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-176004428068.jpg"
           alt="Colonial farmhouse setting on the shores of Lake Naivasha"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

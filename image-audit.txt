@@ -1,0 +1,121 @@
+=== raw <img> tags remaining ===
+./app/blog/[slug]/client-page.tsx
+./app/blog/admin/page.tsx
+./app/blog/client-page.tsx
+./app/customized-itineraries/[slug]/CustomItineraryTabs.tsx
+./app/customized-itineraries/[slug]/page.tsx
+./app/customized-itineraries/page.tsx
+./app/group-departures/[slug]/TourTabs.tsx
+./app/group-departures/[slug]/page.tsx
+./app/group-departures/page.tsx
+./app/offers/[slug]/page.tsx
+./app/offers/page.tsx
+./app/page.tsx
+./app/popular-destinations/PopularDestinationsClient.tsx
+./app/popular-destinations/[slug]/PackageTabs.tsx
+./app/popular-destinations/[slug]/page.tsx
+./app/theme-holidays/ThemeHolidaysClient.tsx
+./app/theme-holidays/[theme]/[slug]/ThemeHolidayTabs.tsx
+./app/theme-holidays/[theme]/[slug]/page.tsx
+./components/BlogEditor.tsx
+./components/CustomPackages.tsx
+./components/DealsModal.tsx
+./components/Footer.tsx
+./components/GroupDepartures.tsx
+./components/HeroSection.tsx
+./components/HeroSectionMobile.tsx
+./components/KenyaMobileHeader.tsx
+./components/MyTripLoginPage.tsx
+./components/Navbar.tsx
+./components/ThemeHolidays.tsx
+./components/TravelStories.tsx
+./components/kenya-articles/angama-mara-suites-on-the-escarpment.tsx
+./components/kenya-articles/booking-through-a-local-tour-operator-vs-diy.tsx
+./components/kenya-articles/bumpy-roads-and-motion-sickness.tsx
+./components/kenya-articles/duffel-bags-only-safari-luggage-restrictions.tsx
+./components/kenya-articles/finch-hattons-out-of-africa-reimagined.tsx
+./components/kenya-articles/giraffe-manor-breakfast-with-giraffes.tsx
+./components/kenya-articles/ilora-retreats-design-led-luxury-in-the-mara.tsx
+./components/kenya-articles/is-it-ethical-to-go-on-safari.tsx
+./components/kenya-articles/kenya-safari-faqs-everything-first-timers-ask.tsx
+./components/kenya-articles/loldia-house-a-colonial-farmhouse.tsx
+./components/kenya-articles/ol-donyo-lodge-under-kilimanjaros-shadow.tsx
+./components/kenya-articles/packing-list-for-a-10-day-kenya-safari.tsx
+./components/kenya-articles/plastic-bag-ban-whats-illegal-to-bring.tsx
+./components/kenya-articles/sasaab-a-moroccan-style-lodge.tsx
+./components/kenya-articles/segera-retreat-conservancy-and-infinity-pool.tsx
+./components/kenya-articles/sun-protection-hats-spf-sunglasses.tsx
+./components/kenya-articles/tsetse-flies-blue-and-black-clothing.tsx
+./components/kenya-articles/what-to-wear-on-a-kenya-safari.tsx
+
+=== count per file ===
+./components/TravelStories.tsx:2
+./components/Navbar.tsx:2
+./components/KenyaMobileHeader.tsx:2
+./components/HeroSectionMobile.tsx:2
+./components/Footer.tsx:2
+./components/DealsModal.tsx:2
+./app/theme-holidays/[theme]/[slug]/page.tsx:2
+./app/theme-holidays/[theme]/[slug]/ThemeHolidayTabs.tsx:2
+./app/theme-holidays/ThemeHolidaysClient.tsx:2
+./app/popular-destinations/[slug]/PackageTabs.tsx:2
+./app/popular-destinations/PopularDestinationsClient.tsx:2
+./app/page.tsx:2
+./app/offers/page.tsx:2
+./app/group-departures/page.tsx:2
+./app/group-departures/[slug]/TourTabs.tsx:2
+./app/customized-itineraries/page.tsx:2
+./app/customized-itineraries/[slug]/CustomItineraryTabs.tsx:2
+./app/blog/[slug]/client-page.tsx:2
+./components/kenya-articles/what-to-wear-on-a-kenya-safari.tsx:1
+./components/kenya-articles/tsetse-flies-blue-and-black-clothing.tsx:1
+./components/kenya-articles/sun-protection-hats-spf-sunglasses.tsx:1
+./components/kenya-articles/segera-retreat-conservancy-and-infinity-pool.tsx:1
+./components/kenya-articles/sasaab-a-moroccan-style-lodge.tsx:1
+./components/kenya-articles/plastic-bag-ban-whats-illegal-to-bring.tsx:1
+./components/kenya-articles/packing-list-for-a-10-day-kenya-safari.tsx:1
+./components/kenya-articles/ol-donyo-lodge-under-kilimanjaros-shadow.tsx:1
+./components/kenya-articles/loldia-house-a-colonial-farmhouse.tsx:1
+./components/kenya-articles/kenya-safari-faqs-everything-first-timers-ask.tsx:1
+./components/kenya-articles/is-it-ethical-to-go-on-safari.tsx:1
+./components/kenya-articles/ilora-retreats-design-led-luxury-in-the-mara.tsx:1
+./components/kenya-articles/giraffe-manor-breakfast-with-giraffes.tsx:1
+./components/kenya-articles/finch-hattons-out-of-africa-reimagined.tsx:1
+./components/kenya-articles/duffel-bags-only-safari-luggage-restrictions.tsx:1
+./components/kenya-articles/bumpy-roads-and-motion-sickness.tsx:1
+./components/kenya-articles/booking-through-a-local-tour-operator-vs-diy.tsx:1
+./components/kenya-articles/angama-mara-suites-on-the-escarpment.tsx:1
+./components/ThemeHolidays.tsx:1
+./components/MyTripLoginPage.tsx:1
+./components/HeroSection.tsx:1
+./components/GroupDepartures.tsx:1
+./components/CustomPackages.tsx:1
+./components/BlogEditor.tsx:1
+./app/popular-destinations/[slug]/page.tsx:1
+./app/offers/[slug]/page.tsx:1
+./app/group-departures/[slug]/page.tsx:1
+./app/customized-itineraries/[slug]/page.tsx:1
+./app/blog/client-page.tsx:1
+./app/blog/admin/page.tsx:1
+
+=== largest images in public/ ===
+424K	./public/hero1.jpg
+400K	./public/hero3.jpg
+376K	./public/images/external/unsplash-151363526997.webp
+376K	./public/images/external/unsplash-149985687195.webp
+376K	./public/hero2.jpg
+368K	./public/images/external/unsplash-1558642452-9.webp
+368K	./public/images/external/unsplash-151554262210.webp
+344K	./public/images/external/unsplash-1541849546-2.webp
+344K	./public/images/external/unsplash-153435159066.webp
+332K	./public/images/external/unsplash-151363526997.jpg
+332K	./public/images/external/unsplash-149985687195.jpg
+324K	./public/images/external/unsplash-152098660621.webp
+324K	./public/images/external/unsplash-146726920459.webp
+308K	./public/images/external/unsplash-1558642452-9.jpg
+308K	./public/images/external/unsplash-151554262210.jpg
+284K	./public/images/external/unsplash-152098660621.jpg
+284K	./public/images/external/unsplash-146726920459.jpg
+260K	./public/images/kenya-highlands/jambo-mara-safari-lodge.jpg
+260K	./public/images/external/unsplash-1541849546-2.jpg
+260K	./public/images/external/unsplash-153435159066.jpg

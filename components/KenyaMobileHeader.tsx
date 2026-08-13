@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X, DollarSign } from "lucide-react"
 import { useCurrency } from "@/contexts/CurrencyContext"
 import DealsModal from "@/components/DealsModal"
@@ -50,8 +51,8 @@ export default function KenyaMobileHeader() {
               {showMenu ? <X size={22} /> : <Menu size={22} />}
             </button>
             <Link href="/" className="flex items-center gap-1.5">
-              <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-8 h-8 object-contain" />
-              <img src="/logo-text.png" alt="Get Trip Go" className="h-6 object-contain" />
+              <Image src="/logo-icon.png" alt="Get Trip Go icon" width={200} height={197} priority className="w-8 h-8 object-contain" />
+              <Image src="/logo-text.png" alt="Get Trip Go" width={400} height={90} priority className="h-6 w-auto object-contain" />
             </Link>
           </div>
 

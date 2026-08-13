@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function GiraffeManorBreakfastWithGiraffesArticle() {
   return (
     <>
@@ -58,10 +59,12 @@ export default function GiraffeManorBreakfastWithGiraffesArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-1547721064-d.jpg"
           alt="Giraffe reaching through a window at Giraffe Manor"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

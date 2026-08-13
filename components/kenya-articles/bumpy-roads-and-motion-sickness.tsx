@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function BumpyRoadsAndMotionSicknessArticle() {
   return (
     <>
@@ -57,10 +58,12 @@ export default function BumpyRoadsAndMotionSicknessArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-156410116053.jpg"
           alt="Safari vehicle navigating an unpaved track through the bush"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

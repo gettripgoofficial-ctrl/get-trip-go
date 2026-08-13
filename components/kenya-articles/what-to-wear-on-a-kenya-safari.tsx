@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function WhatToWearOnAKenyaSafariArticle() {
   return (
@@ -49,10 +50,12 @@ export default function WhatToWearOnAKenyaSafariArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-157189634984.jpg"
           alt="Safari lodge interior with neutral tones"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   Plane,
@@ -68,13 +69,14 @@ export default function HeroSection() {
       aria-label="Travel search"
     >
       {/* First hero image */}
-      <img
+      <Image
         src={BG_IMAGES[0]}
         alt=""
-        fetchPriority="high"
-        decoding="async"
+        fill
+        priority
+        sizes="100vw"
         onLoad={() => setFirstImageLoaded(true)}
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="object-cover z-0"
         style={{ display: bgIndex === 0 ? "block" : "none" }}
       />
 

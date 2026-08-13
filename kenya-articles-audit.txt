@@ -1,0 +1,1257 @@
+=== altitude-sickness-in-the-kenyan-highlands ===
+import type { Metadata } from "next"
+import AltitudeSicknessArticle from "@/components/AltitudeSicknessArticle"
+
+export const metadata: Metadata = {
+  title: "Altitude Sickness in the Kenyan Highlands",
+  description: "Nairobi and the highlands sit high enough to matter for some travelers -- here's who should be careful and what actually poses a risk.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Altitude Sickness in the Kenyan Highlands",
+  description: "Nairobi and the highlands sit high enough to matter for some travelers -- here's who should be careful and what actually poses a risk.",
+  image: "/images/external/unsplash-1547721064-d.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is Nairobi's altitude dangerous for tourists?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. At around 1,795 meters, Nairobi's altitude is moderate and typically causes at most mild, short-lived fatigue for travelers arriving from sea level, not altitude sickness.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Will I get altitude sickness on a standard Masai Mara safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Very unlikely. The Mara and most classic safari parks sit well below the elevation where altitude sickness typically begins.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Mount Kenya trekking risky for altitude sickness?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Routes climb as high as 4,985 meters, well past the threshold where genuine AMS risk begins, and it can affect trekkers regardless of fitness level.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does being physically fit protect against altitude sickness?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not reliably. Altitude sickness can affect anyone regardless of fitness level, since pace of ascent and individual susceptibility matter more than conditioning.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <AltitudeSicknessArticle />
+    </>
+  )
+}
+
+=== best-time-to-visit-kenya ===
+import type { Metadata } from "next"
+import BestTimeToVisitKenyaArticle from "@/components/BestTimeToVisitKenyaArticle"
+
+export const metadata: Metadata = {
+  title: "Best Time to Visit Kenya: A Season-by-Season Guide",
+  description: "When to go for the Great Migration, the driest skies, the lowest prices, or the quietest parks — a full season-by-season breakdown for planning a Kenya safari.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Best Time to Visit Kenya: A Season-by-Season Guide",
+  description: "When to go for the Great Migration, the driest skies, the lowest prices, or the quietest parks — a full season-by-season breakdown for planning a Kenya safari.",
+  image: "/images/external/unsplash-1547471080-7.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the single best month to visit Kenya?",
+      acceptedAnswer: { "@type": "Answer", text: "For most travelers, September offers the best balance — dry weather, the migration still concentrated in the Masai Mara, and slightly fewer crowds than the July–August peak." },
+    },
+    {
+      "@type": "Question",
+      name: "Is it worth visiting Kenya during the rainy season?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes, if lower rates and lush scenery matter more to you than guaranteed dry game drives — April and May in particular offer the lowest prices of the year." },
+    },
+    {
+      "@type": "Question",
+      name: "When should I book if I want to see the migration?",
+      acceptedAnswer: { "@type": "Answer", text: "Book six to twelve months ahead for July–September Masai Mara camps." },
+    },
+  ],
+}
+
+export default function BestTimeToVisitKenyaPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BestTimeToVisitKenyaArticle />
+    </>
+  )
+}
+
+=== big-five-how-to-spot ===
+import type { Metadata } from "next"
+import BigFiveArticle from "@/components/BigFiveArticle"
+
+export const metadata: Metadata = {
+  title: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo",
+  description: "How to identify each of the Big Five, where they're most commonly seen in Kenya, and realistic expectations for spotting all five on one safari.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Big Five: How to Spot Lion, Leopard, Rhino, Elephant and Buffalo",
+  description: "How to identify each of the Big Five, where they're most commonly seen in Kenya, and realistic expectations for spotting all five on one safari.",
+  image: "/images/external/unsplash-153456711024.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Can I see all Big Five in one national park?",
+      acceptedAnswer: { "@type": "Answer", text: "Rarely in a single park — rhino populations are concentrated in specific conservancies. Most travelers combine the Masai Mara with Ol Pejeta or Lake Nakuru to see all five on one trip." },
+    },
+    {
+      "@type": "Question",
+      name: "Why is the leopard the hardest to see?",
+      acceptedAnswer: { "@type": "Answer", text: "Leopards are solitary and mostly active at night, spending daylight hours hidden in trees or dense brush, unlike the more visible, social lion or elephant." },
+    },
+    {
+      "@type": "Question",
+      name: "Is the Big Five term still accurate today?",
+      acceptedAnswer: { "@type": "Answer", text: "It's a legacy hunting term, not a measure of rarity or importance, but it remains the standard reference point most safari itineraries and guides still use." },
+    },
+  ],
+}
+
+export default function BigFivePage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BigFiveArticle />
+    </>
+  )
+}
+
+=== drinking-water-and-food-safety-on-safari ===
+import type { Metadata } from "next"
+import DrinkingWaterFoodSafetyArticle from "@/components/DrinkingWaterFoodSafetyArticle"
+
+export const metadata: Metadata = {
+  title: "Drinking Water and Food Safety on Safari",
+  description: "Most lodges serve filtered or bottled water -- here's exactly what's safe to drink and eat on a Kenya safari, and what to check before you drink.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Drinking Water and Food Safety on Safari",
+  description: "Most lodges serve filtered or bottled water -- here's exactly what's safe to drink and eat on a Kenya safari, and what to check before you drink.",
+  image: "/images/external/unsplash-156808468078.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Can I drink tap water in Nairobi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's best avoided. Municipal treatment exists, but aging infrastructure and inconsistent supply mean it's not reliably safe for visitors, so stick to bottled or filtered water.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is ice safe to have in drinks on safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Generally yes at reputable lodges, since it's typically made from boiled or filtered water. At budget venues or street vendors, it's safer to skip it.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do lodges provide safe drinking water automatically?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most reputable lodges and camps supply bottled or filtered water as standard, so it usually isn't something you need to arrange yourself.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is street food safe to try in Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It carries more variability than lodge meals. Stick to busy, visibly clean vendors with high turnover if you want to try it.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <DrinkingWaterFoodSafetyArticle />
+    </>
+  )
+}
+
+=== elderly-travelers-what-to-know ===
+import type { Metadata } from "next"
+import ElderlyTravelersArticle from "@/components/ElderlyTravelersArticle"
+
+export const metadata: Metadata = {
+  title: "Elderly Travelers: What to Know Before a Safari",
+  description: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers -- what to know before booking a Kenya safari.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Elderly Travelers: What to Know Before a Safari",
+  description: "Comfort, pacing, and lodge choice matter more than fitness for most older travelers -- what to know before booking a Kenya safari.",
+  image: "/images/external/unsplash-1547721064-d.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is there an age limit for a Kenya safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. There's no official age restriction, and travelers in their 80s and 90s go on safari regularly and comfortably.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is a fly-in safari necessary for older travelers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not necessarily, since it's a comfort preference. Many older travelers enjoy road transfers as part of the experience, provided the itinerary allows for rest stops.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How should I pace an itinerary for elderly travelers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Favor longer stays of 3-5 nights at fewer camps rather than a fast-moving circuit, to cut down on transfer days while allowing enough rest between game drives.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What should I tell my operator in advance?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Any mobility aids, health conditions, or pacing preferences, so they can arrange the right vehicle, rooming, and itinerary structure before you arrive.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <ElderlyTravelersArticle />
+    </>
+  )
+}
+
+=== first-time-safari-checklist ===
+import type { Metadata } from "next"
+import FirstTimeSafariChecklistArticle from "@/components/FirstTimeSafariChecklistArticle"
+export const metadata: Metadata = {
+  title: "First-Time Safari Checklist",
+  description: "Everything to sort before a first Kenya safari, organized into a countdown timeline from booking to departure day.",
+}
+export default function FirstTimeSafariChecklistPage() {
+  return <FirstTimeSafariChecklistArticle />
+}
+
+=== getting-around-light-aircraft-vs-road-safaris ===
+import type { Metadata } from "next"
+import GettingAroundKenyaArticle from "@/components/GettingAroundKenyaArticle"
+export const metadata: Metadata = {
+  title: "Getting Around: Light Aircraft vs Road Safaris",
+  description: "Flying versus driving between Kenya's parks — cost, time, comfort, and which option fits your itinerary.",
+}
+export default function GettingAroundKenyaPage() {
+  return <GettingAroundKenyaArticle />
+}
+
+=== hells-gate-walking-safari-park ===
+import type { Metadata } from "next"
+import HellsGateArticle from "@/components/HellsGateArticle"
+export const metadata: Metadata = {
+  title: "Hell's Gate: Kenya's Walking Safari Park",
+  description: "Walking and cycling safaris through dramatic gorges at one of Kenya's few low-predator parks.",
+}
+export default function HellsGatePage() {
+  return <HellsGateArticle />
+}
+
+=== how-many-days-do-you-need-for-a-kenya-safari ===
+import type { Metadata } from "next"
+import HowManyDaysKenyaSafariArticle from "@/components/HowManyDaysKenyaSafariArticle"
+export const metadata: Metadata = {
+  title: "How Many Days Do You Need for a Kenya Safari",
+  description: "How to match trip length to how many parks you want to see, with a length-vs-coverage breakdown.",
+}
+export default function HowManyDaysKenyaSafariPage() {
+  return <HowManyDaysKenyaSafariArticle />
+}
+
+=== is-a-kenya-safari-safe-during-pregnancy ===
+import type { Metadata } from "next"
+import SafariPregnancyArticle from "@/components/SafariPregnancyArticle"
+
+export const metadata: Metadata = {
+  title: "Is a Kenya Safari Safe During Pregnancy",
+  description: "What to check with your doctor, which trimester works best, and which activities to skip if you're planning a Kenya safari while pregnant.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Is a Kenya Safari Safe During Pregnancy",
+  description: "What to check with your doctor, which trimester works best, and which activities to skip if you're planning a Kenya safari while pregnant.",
+  image: "/images/external/unsplash-157189634984.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What's the best trimester for a Kenya safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The second trimester (roughly weeks 13-27) is generally considered the most comfortable and lowest-risk window, once early symptoms have eased and before mobility becomes more limited.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I take bush flights while pregnant?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Often yes earlier in pregnancy, but many operators stop accepting pregnant passengers around 28-32 weeks. Confirm the specific cutoff with your safari operator directly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is malaria prevention different during pregnancy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Some standard antimalarial medications aren't recommended during pregnancy, so this needs a specific conversation with your doctor rather than following general guidance.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need a doctor's letter to fly to Kenya while pregnant?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Requirements vary by airline and typically kick in somewhere between 28-34 weeks. Check your specific carrier's policy well before booking.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <SafariPregnancyArticle />
+    </>
+  )
+}
+
+=== is-kenya-safe-for-tourists ===
+import type { Metadata } from "next"
+import IsKenyaSafeArticle from "@/components/IsKenyaSafeArticle"
+
+export const metadata: Metadata = {
+  title: "Is Kenya Safe for Tourists? What You Should Know",
+  description: "A realistic look at safety on safari, in Nairobi, and everywhere in between — what the real risks are and which areas to avoid.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Is Kenya Safe for Tourists? What You Should Know",
+  description: "A realistic look at safety on safari, in Nairobi, and everywhere in between — what the real risks are and which areas to avoid.",
+  image: "/images/external/unsplash-158451597995.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is it safe to go on safari alone in Kenya?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes — solo travelers are common on organized safaris, since you're always with a guide and vehicle. It's a different question from independent, unguided travel." },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need travel insurance for Kenya?",
+      acceptedAnswer: { "@type": "Answer", text: "Strongly recommended, specifically with medical evacuation coverage, given the remote location of many safari camps relative to hospitals." },
+    },
+    {
+      "@type": "Question",
+      name: "Is Nairobi safe for tourists?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes, with normal precautions. Most visitors only pass through briefly and stick to hotel transport and well-known areas without issue." },
+    },
+  ],
+}
+
+export default function IsKenyaSafePage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <IsKenyaSafeArticle />
+    </>
+  )
+}
+
+=== is-kenya-suitable-for-solo-female-travelers ===
+import type { Metadata } from "next"
+import SoloFemaleTravelersArticle from "@/components/SoloFemaleTravelersArticle"
+
+export const metadata: Metadata = {
+  title: "Is Kenya Suitable for Solo Female Travelers",
+  description: "What solo travelers actually experience on the ground, from booking to game drives -- and where ordinary travel precautions actually matter.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Is Kenya Suitable for Solo Female Travelers",
+  description: "What solo travelers actually experience on the ground, from booking to game drives -- and where ordinary travel precautions actually matter.",
+  image: "/images/external/unsplash-152380500934.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is it safe for a woman to safari alone in Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Generally yes, especially with reputable operators, since you're rarely actually alone on a guided safari -- you're with a driver-guide and often other guests for most of the trip.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What's the single supplement, and can it be avoided?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's an added charge, typically 25-50% above per-person rates, for solo occupancy of a room or tent. Some properties waive it in shoulder season.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are there women-only or women-staffed camps in Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A small number exist regionally, though this concept is currently more established in neighboring Tanzania than in Kenya specifically.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What transport should solo women avoid in Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Matatus (shared public minibuses), especially at night. Registered taxis, ride-hailing apps, or pre-arranged private transfers are the safer standard.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <SoloFemaleTravelersArticle />
+    </>
+  )
+}
+
+=== kenya-eta-guide-how-to-apply-cost-and-processing ===
+import type { Metadata } from "next"
+import KenyaETAGuideArticle from "@/components/KenyaETAGuideArticle"
+export const metadata: Metadata = {
+  title: "Kenya eTA Guide: How to Apply, Cost and Processing Time",
+  description: "How to apply for Kenya's mandatory eTA — cost, processing time, official portal, and common mistakes to avoid.",
+}
+export default function KenyaETAGuidePage() {
+  return <KenyaETAGuideArticle />
+}
+
+=== lake-naivasha-boat-safaris ===
+import type { Metadata } from "next"
+import LakeNaivashaArticle from "@/components/LakeNaivashaArticle"
+export const metadata: Metadata = {
+  title: "Lake Naivasha: Boat Safaris and Hippos",
+  description: "Boat safaris, hippos, and the walk-among-wildlife experience of Crescent Island on Lake Naivasha.",
+}
+export default function LakeNaivashaPage() {
+  return <LakeNaivashaArticle />
+}
+
+=== malaria-prevention-tablets-repellents ===
+import type { Metadata } from "next"
+import MalariaPreventionArticle from "@/components/MalariaPreventionArticle"
+
+export const metadata: Metadata = {
+  title: "Malaria Prevention: Tablets, Repellents and Risk Areas",
+  description: "Which parts of Kenya carry malaria risk, which tablets doctors recommend, and how to protect yourself on safari and the coast.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Malaria Prevention: Tablets, Repellents and Risk Areas",
+  description: "Which parts of Kenya carry malaria risk, which tablets doctors recommend, and how to protect yourself on safari and the coast.",
+  image: "/images/external/unsplash-174185082115.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do I need malaria tablets if I'm only visiting Nairobi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "If you're staying strictly within central Nairobi, prophylaxis is generally not recommended, since the risk there is low. That changes as soon as your itinerary adds a safari park or the coast.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is the Masai Mara high risk for malaria?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's moderate — higher altitude than the coast means lower transmission than Mombasa or Diani, but most travel clinics still recommend prophylaxis, especially since Mara itineraries are usually combined with lower-altitude stops.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can a short 3-4 day safari skip the tablets?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Trip length doesn't remove the risk — even short stays in a risk area warrant the same conversation with a doctor as a longer trip would.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What if I get a fever after coming home?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "See a doctor promptly and mention your travel history specifically — malaria symptoms can appear weeks after you return, and a blood test is the fastest way to rule it in or out.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <MalariaPreventionArticle />
+    </>
+  )
+}
+
+=== meru-national-park ===
+import type { Metadata } from "next"
+import MeruNationalParkArticle from "@/components/MeruNationalParkArticle"
+export const metadata: Metadata = {
+  title: "Meru National Park: Kenya's Quietest Big Game Country",
+  description: "Meru's Born Free history, rhino sanctuary, and why it's one of Kenya's least crowded major parks.",
+}
+export default function MeruNationalParkPage() {
+  return <MeruNationalParkArticle />
+}
+
+=== ol-pejeta-conservancy-model ===
+import type { Metadata } from "next"
+import OlPejetaArticle from "@/components/OlPejetaArticle"
+export const metadata: Metadata = {
+  title: "Ol Pejeta Conservancy: A Model for Conservation",
+  description: "The last northern white rhinos, a chimpanzee sanctuary, and why Ol Pejeta is a conservation success story.",
+}
+export default function OlPejetaPage() {
+  return <OlPejetaArticle />
+}
+
+=== safari-budget-guide-luxury-vs-mid-range-vs-budget ===
+import type { Metadata } from "next"
+import SafariBudgetGuideArticle from "@/components/SafariBudgetGuideArticle"
+export const metadata: Metadata = {
+  title: "Safari Budget Guide: Luxury vs Mid-Range vs Budget",
+  description: "What actually changes as safari prices go up — accommodation, privacy, service — and what stays the same regardless of tier.",
+}
+export default function SafariBudgetGuidePage() {
+  return <SafariBudgetGuideArticle />
+}
+
+=== safari-first-aid-what-to-pack ===
+import type { Metadata } from "next"
+import SafariFirstAidArticle from "@/components/SafariFirstAidArticle"
+
+export const metadata: Metadata = {
+  title: "Safari First Aid: What to Pack in Your Kit",
+  description: "A compact kit for the common stuff -- what to bring on a Kenya safari, and why most lodges handle anything serious without you needing to worry.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Safari First Aid: What to Pack in Your Kit",
+  description: "A compact kit for the common stuff -- what to bring on a Kenya safari, and why most lodges handle anything serious without you needing to worry.",
+  image: "/images/external/unsplash-177921617578.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do I need to bring my own first aid kit if the camp has one?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Camps handle genuine emergencies well, but a compact personal kit covers the everyday, minor stuff, such as headaches, upset stomachs, and small cuts, without relying on shared camp supplies.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What's the most commonly forgotten item on a safari packing list?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Motion sickness tablets. Bush roads and light aircraft transfers are rougher than most travelers anticipate.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Should I pack my medication in checked luggage or my daypack?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Your daypack. Bush flights between camps can occasionally separate you from checked luggage for a few hours, so keep essentials with you.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need a copy of my prescription for Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's good practice. Keep medication in its original packaging with a prescription copy in case a question comes up at customs or you need a local refill.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <SafariFirstAidArticle />
+    </>
+  )
+}
+
+=== safari-footwear-what-actually-works ===
+import type { Metadata } from "next"
+import SafariFootwearArticle from "@/components/SafariFootwearArticle"
+export const metadata: Metadata = {
+  title: "Safari Footwear: What Actually Works",
+  description: "What shoes to pack for game drives, walking safaris, and camp downtime — and when heavy boots are actually needed.",
+}
+export default function SafariFootwearPage() {
+  return <SafariFootwearArticle />
+}
+
+=== safari-for-people-with-heart-conditions ===
+import type { Metadata } from "next"
+import SafariHeartConditionsArticle from "@/components/SafariHeartConditionsArticle"
+
+export const metadata: Metadata = {
+  title: "Safari for People With Heart Conditions or Chronic Illness",
+  description: "Altitude, heat, and access to medical care -- what to plan around before you book a Kenya safari with a heart condition or chronic illness.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Safari for People With Heart Conditions or Chronic Illness",
+  description: "Altitude, heat, and access to medical care -- what to plan around before you book a Kenya safari with a heart condition or chronic illness.",
+  image: "/images/external/unsplash-177921617578.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Can I go on safari if I have a heart condition?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Often yes, with your cardiologist's clearance and some adjustments, such as avoiding overexertion and extreme heat, and considering a fly-in safari to reduce physical strain.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a travel insurance look-back period?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The window, typically starting from your first trip deposit, during which your pre-existing condition needs to have been stable for the insurer to cover it.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is a fly-in safari better for chronic health conditions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Generally yes, since it reduces the physical strain of long road transfers and provides quicker access to medical facilities if needed.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How far in advance should I see a doctor before a safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "About 6-8 weeks before departure, with your specific itinerary in hand so the advice can be tailored to your actual trip.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <SafariHeartConditionsArticle />
+    </>
+  )
+}
+
+=== safari-for-travelers-with-mobility-issues ===
+import type { Metadata } from "next"
+import SafariMobilityIssuesArticle from "@/components/SafariMobilityIssuesArticle"
+
+export const metadata: Metadata = {
+  title: "Safari for Travelers With Mobility Issues",
+  description: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't -- what to confirm before you book a Kenya safari.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Safari for Travelers With Mobility Issues",
+  description: "Which lodges have step-free access and vehicles fitted for wheelchairs, and which don't -- what to confirm before you book a Kenya safari.",
+  image: "/images/external/unsplash-156808468078.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Are Kenya safari vehicles wheelchair accessible?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not standard ones. A small number of specialist operators offer adapted vehicles with ramps or lifts, and this needs to be confirmed and booked specifically, not assumed.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is there an official accessibility rating for Kenya safari lodges?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. There's no central database or certification system, so accessible claims vary widely between properties and should be verified directly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is a private vehicle necessary for travelers with mobility issues?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not strictly required, but strongly recommended, since it removes time pressure and gives you control over pacing and route flexibility that shared vehicles don't allow.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which parks have the best accessibility infrastructure?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Masai Mara, Lake Nakuru, and Amboseli currently have the widest range of lodges with specific accessibility investments, though this changes over time and should be confirmed per property.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <SafariMobilityIssuesArticle />
+    </>
+  )
+}
+
+=== safari-photography-camera-gear-and-settings ===
+import type { Metadata } from "next"
+import SafariPhotographyArticle from "@/components/SafariPhotographyArticle"
+export const metadata: Metadata = {
+  title: "Safari Photography: Camera Gear and Settings",
+  description: "The lens, camera settings, and gear checklist that make the biggest difference to safari photos.",
+}
+export default function SafariPhotographyPage() {
+  return <SafariPhotographyArticle />
+}
+
+=== safari-with-young-children-age-limits ===
+import type { Metadata } from "next"
+import SafariYoungChildrenArticle from "@/components/SafariYoungChildrenArticle"
+
+export const metadata: Metadata = {
+  title: "Safari With Young Children: Age Limits and Lodge Policies",
+  description: "Most camps set a minimum age for game drives -- here's how to find one that welcomes your kids, and what to confirm before you book.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Safari With Young Children: Age Limits and Lodge Policies",
+  description: "Most camps set a minimum age for game drives -- here's how to find one that welcomes your kids, and what to confirm before you book.",
+  image: "/images/external/unsplash-178103986937.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is there a legal minimum age for a Kenya safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Kenya has no national legal minimum age enforced by the Kenya Wildlife Service, since age limits come entirely from individual lodge and camp policies.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What's the best age for a first family safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ages 8-12 are widely considered the sweet spot, old enough to follow safety instructions and stay engaged, without needing the accommodations younger children require.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can toddlers go on safari in Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, with the right planning: a private vehicle, shorter drives timed around nap schedules, and a lodge that explicitly accepts young children.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does a private vehicle remove age restrictions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Often, yes for game drives specifically, since many camps that restrict shared drives for young children will allow them with a private vehicle. It doesn't typically apply to walking safaris or ballooning.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <SafariYoungChildrenArticle />
+    </>
+  )
+}
+
+=== samburu-special-five ===
+import type { Metadata } from "next"
+import SamburuArticle from "@/components/SamburuArticle"
+export const metadata: Metadata = {
+  title: "Samburu: The Special Five You Won't See Elsewhere",
+  description: "Grevy's zebra, reticulated giraffe, and Samburu's other arid-adapted species you won't find in southern Kenya.",
+}
+export default function SamburuPage() {
+  return <SamburuArticle />
+}
+
+=== the-great-migration-explained ===
+import type { Metadata } from "next"
+import GreatMigrationExplainedArticle from "@/components/GreatMigrationExplainedArticle"
+
+export const metadata: Metadata = {
+  title: "The Great Migration Explained: When, Where and Why",
+  description: "A month-by-month breakdown of the Great Migration — where the herds are, when the Mara River crossings happen, and where to base yourself for the best odds.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "The Great Migration Explained: When, Where and Why",
+  description: "A month-by-month breakdown of the Great Migration — where the herds are, when the Mara River crossings happen, and where to base yourself for the best odds.",
+  image: "/images/external/unsplash-156410116053.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is the Great Migration guaranteed if I visit in July?",
+      acceptedAnswer: { "@type": "Answer", text: "No sighting in nature is guaranteed, but July through September in the Masai Mara is statistically the most reliable window for both the general migration and river crossings specifically." },
+    },
+    {
+      "@type": "Question",
+      name: "Can I see the migration in Kenya, or only Tanzania?",
+      acceptedAnswer: { "@type": "Answer", text: "Both. The migration is a single circuit spanning both countries — Kenya's Masai Mara hosts the herds roughly July through October, while Tanzania's Serengeti hosts them the rest of the year, including calving season." },
+    },
+    {
+      "@type": "Question",
+      name: "How many days do I need to see a river crossing?",
+      acceptedAnswer: { "@type": "Answer", text: "Most experienced guides recommend at least three to four days in the Mara during peak season to give yourself a realistic chance, since crossings can't be scheduled on demand." },
+    },
+  ],
+}
+
+export default function GreatMigrationExplainedPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <GreatMigrationExplainedArticle />
+    </>
+  )
+}
+
+=== tipping-etiquette-guides-drivers-lodge-staff ===
+import type { Metadata } from "next"
+import TippingEtiquetteArticle from "@/components/TippingEtiquetteArticle"
+export const metadata: Metadata = {
+  title: "Tipping Etiquette: Guides, Drivers and Lodge Staff",
+  description: "Suggested tipping amounts for safari guides, drivers, and lodge staff in Kenya.",
+}
+export default function TippingEtiquettePage() {
+  return <TippingEtiquetteArticle />
+}
+
+=== travel-insurance-for-safari-what-it-should-cover ===
+import type { Metadata } from "next"
+import TravelInsuranceSafariArticle from "@/components/TravelInsuranceSafariArticle"
+
+export const metadata: Metadata = {
+  title: "Travel Insurance for Safari: What It Should Cover",
+  description: "Medical evacuation cover matters more than trip cancellation for most safaris. Here's the exact checklist to compare before you buy.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Travel Insurance for Safari: What It Should Cover",
+  description: "Medical evacuation cover matters more than trip cancellation for most safaris. Here's the exact checklist to compare before you buy.",
+  image: "/images/external/unsplash-152380500934.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What's the single most important coverage for a Kenya safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Medical evacuation coverage. A remote-area air evacuation to Nairobi can cost USD 15,000-40,000, and standard policies often cap this too low or exclude remote areas entirely.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does my regular travel insurance cover a safari?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not always. Many standard policies exclude adventure or hazardous activities by default, which can technically include game drives, ballooning, or walking safaris.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is AMREF Flying Doctors a replacement for travel insurance?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. AMREF covers the emergency evacuation flight itself, not medical treatment costs, so it's meant to pair with a comprehensive travel insurance policy, not replace one.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much medical coverage should I look for?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most safari-specific guidance recommends at least USD 100,000 in medical expense coverage and USD 200,000+ in evacuation coverage, with unlimited preferred where affordable.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <TravelInsuranceSafariArticle />
+    </>
+  )
+}
+
+=== vaccinations-for-kenya-yellow-fever-and-more ===
+import type { Metadata } from "next"
+import VaccinationsForKenyaArticle from "@/components/VaccinationsForKenyaArticle"
+
+export const metadata: Metadata = {
+  title: "Vaccinations for Kenya: Yellow Fever and What Else You Need",
+  description: "Do Indian travelers need the yellow fever vaccine for Kenya? What's mandatory, what's recommended, and the one rule most people miss on the way back to India.",
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Vaccinations for Kenya: Yellow Fever and What Else You Need",
+  description: "Do Indian travelers need the yellow fever vaccine for Kenya? What's mandatory, what's recommended, and the one rule most people miss on the way back to India.",
+  image: "/images/external/unsplash-vaccine-syringe.jpg",
+  author: { "@type": "Organization", name: "GetTripGo Travel Desk" },
+  publisher: { "@type": "Organization", name: "Get Trip Go" },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do I need the yellow fever vaccine for a direct Delhi–Nairobi flight?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Direct travel from India doesn't require a yellow fever certificate for entry into Kenya, since India isn't on the endemic-country list.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Will I need it if my flight connects through Addis Ababa or Entebbe?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Transiting through a yellow-fever-endemic country, even for a short layover, can trigger the requirement at Kenyan immigration.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need proof of vaccination to re-enter India after visiting Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Because Kenya is itself yellow-fever-endemic, Indian immigration expects a valid certificate on your return, separate from whatever Kenya required on the way in.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How far in advance do I need the vaccine?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "At least 10 days before departure for the certificate to be valid. A single dose lasts for life.",
+      },
+    },
+  ],
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <VaccinationsForKenyaArticle />
+    </>
+  )
+}
+
+=== what-to-pack-for-a-kenya-safari ===
+import type { Metadata } from "next"
+import WhatToPackForKenyaSafariArticle from "@/components/WhatToPackForKenyaSafariArticle"
+export const metadata: Metadata = {
+  title: "What to Pack for a Kenya Safari",
+  description: "The full packing list for a Kenya safari — clothing colors, duffel bag rules, gear, and documents you actually need.",
+}
+export default function WhatToPackForKenyaSafariPage() {
+  return <WhatToPackForKenyaSafariArticle />
+}
+
+=== yellow-fever-certificate-entry ===
+import type { Metadata } from "next"
+import YellowFeverCertificateArticle from "@/components/YellowFeverCertificateArticle"
+export const metadata: Metadata = {
+  title: "Do You Need a Yellow Fever Certificate to Enter Kenya",
+  description: "When Kenya requires a yellow fever certificate, and how to check based on your specific travel route.",
+}
+export default function YellowFeverCertificatePage() {
+  return <YellowFeverCertificateArticle />
+}
+

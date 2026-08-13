@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function PackingListForATenDayKenyaSafariArticle() {
   return (
@@ -45,10 +46,12 @@ export default function PackingListForATenDayKenyaSafariArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-178103986937.jpg"
           alt="Packed duffel bag ready for a safari trip"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

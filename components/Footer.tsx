@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 const quickLinks = [
   { label: "Discover Kenya", href: "/kenya" },
@@ -168,8 +169,8 @@ export default function Footer() {
           {/* Brand — rendered once */}
           <div className="mb-6 lg:mb-0">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img src="/logo-icon.png" alt="Get Trip Go icon" className="w-10 h-10 object-contain" />
-              <img src="/logo-text.png" alt="Get Trip Go" className="h-7 object-contain" style={{ filter: "brightness(0) invert(1)" }} />
+              <Image src="/logo-icon.png" alt="Get Trip Go icon" width={200} height={197} className="w-10 h-10 object-contain" />
+              <Image src="/logo-text.png" alt="Get Trip Go" width={400} height={90} className="h-7 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-5 lg:mb-6 max-w-xs">
               India&apos;s trusted travel booking platform. Flights, hotels, custom holidays &amp; group tours — all at the best prices.

@@ -3,6 +3,7 @@ import { usePrice } from "@/hooks/usePrice"
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { groupDepartures } from "@/data/groupDepartures"
 
 const HOME_PACKAGES = groupDepartures.slice(0, 12)
@@ -19,11 +20,12 @@ function DepCard({ dep }: { dep: typeof groupDepartures[0] }) {
     style={{ height: "240px", marginBottom: "60px" }}
   >
     <div className="absolute inset-0 rounded-2xl overflow-hidden">
-      <img
+      <Image
         src={dep.heroImage}
         alt={dep.name}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        loading="lazy"
+        fill
+        sizes="(max-width: 640px) 100vw, 25vw"
+        className="object-cover group-hover:scale-105 transition-transform duration-300"
       />
     </div>
     <div className="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full z-10">

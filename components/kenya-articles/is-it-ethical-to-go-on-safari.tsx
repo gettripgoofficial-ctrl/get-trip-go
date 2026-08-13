@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function IsItEthicalToGoOnSafariArticle() {
   return (
     <>
@@ -59,10 +60,12 @@ export default function IsItEthicalToGoOnSafariArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-156410116053.jpg"
           alt="Safari guide and vehicle observing wildlife respectfully at a distance"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

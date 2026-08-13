@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 const articles = [
   {
@@ -63,10 +64,12 @@ export default function TravelStories() {
                 className="group relative rounded-2xl overflow-hidden"
                 style={{ height: "250px" }}
               >
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   style={{ filter: "brightness(1.05) saturate(1.1)" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
@@ -124,10 +127,12 @@ export default function TravelStories() {
                 className="group relative rounded-2xl overflow-hidden flex-shrink-0 w-full"
                 style={{ scrollSnapAlign: "start", height: "320px" }}
               >
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
                   style={{ filter: "brightness(1.05) saturate(1.1)" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function DuffelBagsOnlySafariLuggageRestrictionsArticle() {
   return (
@@ -51,10 +52,12 @@ export default function DuffelBagsOnlySafariLuggageRestrictionsArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-175855836448.jpg"
           alt="Small aircraft on a remote airstrip in Kenya"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 

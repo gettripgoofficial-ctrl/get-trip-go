@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function PlasticBagBanWhatsIllegalToBringArticle() {
   return (
     <>
@@ -58,10 +59,12 @@ export default function PlasticBagBanWhatsIllegalToBringArticle() {
       </section>
 
       <div className="relative rounded-lg overflow-hidden h-[280px] mb-10">
-        <img
+        <Image
           src="/images/external/unsplash-1547471080-7.jpg"
           alt="Reusable bags packed for travel to Kenya"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover"
         />
       </div>
 
