@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar"
 import BottomNav from "@/components/BottomNav"
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import Footer from "@/components/Footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export default function RootLayout({
   children,
@@ -73,6 +74,16 @@ export default function RootLayout({
         />
       </head>
       <body style={{ backgroundColor: "#F8F9FF" }}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         <CurrencyProvider>
           <Navbar />
           <main>{children}</main>
@@ -80,6 +91,7 @@ export default function RootLayout({
           <BottomNav />
         </CurrencyProvider>
       </body>
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
     </html>
   );
 }
