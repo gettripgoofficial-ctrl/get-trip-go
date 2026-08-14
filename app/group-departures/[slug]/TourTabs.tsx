@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import Image from "next/image"
 import { MapPin, LayoutDashboard, Map, Building2, CheckCircle, XCircle, ScrollText } from "lucide-react"
 import type { GroupDeparture } from "@/data/groupDepartures"
 import Accordion from "./Accordion"
@@ -47,7 +48,7 @@ function ItineraryAccordion({ itinerary, images, heroImage }: {
             </button>
             {isOpen && (
               <div className="px-4 py-4 flex gap-4">
-                <img src={img} alt={stop.title} className="w-36 h-28 rounded-xl object-cover flex-shrink-0" />
+                <Image src={img} alt={stop.title} width={144} height={112} className="rounded-xl object-cover flex-shrink-0" />
                 <div className="flex-1">
                   <p className="text-sm text-gray-600 leading-relaxed mb-3">{stop.description}</p>
                   <div className="flex flex-wrap gap-1.5">
@@ -183,7 +184,7 @@ export default function TourTabs({ tour }: { tour: GroupDeparture }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {tour.hotels.map((hotel, i) => (
                 <div key={i} className="flex items-center gap-3 bg-gray-50 rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                  <img src={hotel.image} alt={hotel.hotelName} className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
+                  <Image src={hotel.image} alt={hotel.hotelName} width={64} height={64} className="rounded-lg object-cover flex-shrink-0" />
                   <div className="flex-1">
                     <p className="text-xs font-semibold text-gray-400 mb-0.5">{hotel.city} · {hotel.nightsLabel}</p>
                     <p className="text-sm font-bold text-gray-900">{hotel.hotelName}</p>

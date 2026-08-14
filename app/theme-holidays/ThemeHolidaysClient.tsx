@@ -2,6 +2,7 @@
 
 import { useState, useMemo, Suspense } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import Script from "next/script"
 import { useSearchParams } from "next/navigation"
 import { themePackages, themes } from "@/data/themePackages"
@@ -207,10 +208,13 @@ function ThemeHolidaysPageInner() {
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
-        <img
+        <Image
           src="/images/external/unsplash-147651452553.jpg"
           alt="Theme Holidays"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 p-4 sm:p-8">
@@ -297,10 +301,12 @@ function ThemeHolidaysPageInner() {
                       >
                         {/* Image */}
                         <div className="relative h-44 overflow-hidden">
-                          <img
+                          <Image
                             src={pkg.heroImage}
                             alt={pkg.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           {pkg.tag && (
                             <span className="absolute top-3 left-3 bg-white text-xs font-bold px-2 py-1 rounded-full" style={{ color }}>

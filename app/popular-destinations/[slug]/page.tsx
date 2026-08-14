@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { MapPin, Calendar, Building2, Plane, Phone } from "lucide-react"
 import { getPackageBySlug } from "@/data/packages"
 import { buildTripSchemas } from "@/lib/seo/tripSchema"
@@ -57,7 +58,7 @@ export default function PackageDetailPage({ params }: { params: { slug: string }
 
         {/* Full-width Hero */}
         <div className="relative rounded-2xl overflow-hidden mb-6" style={{ height: "480px" }}>
-          <img src={pkg.heroImage} alt={pkg.name} className="w-full h-full object-cover" />
+          <Image src={pkg.heroImage} alt={pkg.name} fill priority sizes="100vw" className="object-cover" />
 
           <Link
             href="/popular-destinations"

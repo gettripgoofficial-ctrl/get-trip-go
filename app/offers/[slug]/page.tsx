@@ -2,6 +2,7 @@ import { offers } from "@/data/offers"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import OfferActions from "./OfferActions"
 import Script from "next/script"
 
@@ -63,10 +64,13 @@ export default function OfferDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
-        <img
+        <Image
           src={offer.image}
           alt={offer.title}
-          className="w-full h-full object-cover brightness-110 saturate-150"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover brightness-110 saturate-150"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <Link

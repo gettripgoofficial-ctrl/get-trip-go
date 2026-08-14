@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { MapPin, Calendar } from "lucide-react"
 import { getThemePackageBySlug } from "@/data/themePackages"
 import { buildTripSchemas } from "@/lib/seo/tripSchema"
@@ -80,7 +81,7 @@ export default function ThemePackageDetailPage({ params }: { params: { theme: st
 
         {/* Full-width Hero */}
         <div className="relative rounded-2xl overflow-hidden mb-6" style={{ height: "480px" }}>
-          <img src={pkg.heroImage} alt={pkg.name} className="w-full h-full object-cover" />
+          <Image src={pkg.heroImage} alt={pkg.name} fill priority sizes="100vw" className="object-cover" />
 
           <Link
             href={`/theme-holidays?theme=${encodeURIComponent(pkg.theme)}`}

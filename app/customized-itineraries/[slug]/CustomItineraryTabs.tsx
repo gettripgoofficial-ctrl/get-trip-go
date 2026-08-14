@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import Image from "next/image"
 import { MapPin, LayoutDashboard, Map, CheckCircle, XCircle, ScrollText } from "lucide-react"
 import type { CustomPackage } from "@/data/customPackages"
 import Accordion from "../../group-departures/[slug]/Accordion"
@@ -61,7 +62,7 @@ function ItineraryAccordion({ itinerary, images, heroImage, typeColor }: {
             </button>
             {isOpen && (
               <div className="px-4 py-4 flex gap-4">
-                <img src={img} alt={day.title} className="w-36 h-28 rounded-xl object-cover flex-shrink-0" />
+                <Image src={img} alt={day.title} width={144} height={112} className="rounded-xl object-cover flex-shrink-0" />
                 <div className="flex-1">
                   <p className="text-sm text-gray-600 leading-relaxed mb-3">{day.description}</p>
                   <span className="text-[11px] font-medium text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
@@ -156,8 +157,8 @@ export default function CustomItineraryTabs({ pkg }: { pkg: CustomPackage }) {
               <h2 className="text-base font-bold text-gray-900 mb-4">Photos</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {pkg.images.map((img, i) => (
-                  <div key={i} className="rounded-xl overflow-hidden h-32">
-                    <img src={img} alt={`${pkg.name} ${i + 1}`} className="w-full h-full object-cover" />
+                  <div key={i} className="relative rounded-xl overflow-hidden h-32">
+                    <Image src={img} alt={`${pkg.name} ${i + 1}`} fill sizes="(max-width: 640px) 50vw, 33vw" className="object-cover" />
                   </div>
                 ))}
               </div>

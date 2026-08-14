@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { Star, MapPin, Calendar, Users as UsersIcon } from "lucide-react"
 import { getGroupDepartureBySlug } from "@/data/groupDepartures"
 import TourTabs from "./TourTabs"
@@ -66,7 +67,7 @@ export default function TourDetailPage({ params }: { params: { slug: string } })
 
         {/* Full-width Hero */}
         <div className="relative rounded-2xl overflow-hidden mb-6" style={{ height: "480px" }}>
-          <img src={tour.heroImage} alt={labels[0] ?? tour.name} className="w-full h-full object-cover" />
+          <Image src={tour.heroImage} alt={labels[0] ?? tour.name} fill priority sizes="100vw" className="object-cover" />
           {tour.rating && (
             <div className="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
               <Star size={12} className="fill-yellow-400 text-yellow-400" />

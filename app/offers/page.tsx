@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import Script from "next/script"
 import { offers } from "@/data/offers"
 import BottomNav from "@/components/BottomNav"
@@ -26,10 +27,13 @@ export default function OffersPage() {
 
       {/* Hero */}
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
-        <img
+        <Image
           src="/images/external/unsplash-143649186533.jpg"
           alt="Special Offers"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <Link
@@ -54,10 +58,12 @@ export default function OffersPage() {
             >
               {/* Image */}
               <div className="relative h-44 overflow-hidden">
-                <img
+                <Image
                   src={offer.image}
                   alt={offer.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 brightness-110 saturate-150"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300 brightness-110 saturate-150"
                 />
                 <span
                   className="absolute top-3 left-3 text-white text-xs font-bold px-2.5 py-1 rounded-full"
