@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BlogPost } from "@/types/blog";
 import { AdminAuthProvider } from "@/components/AdminAuthContext";
@@ -72,10 +73,12 @@ function BlogRow({
       {/* Cover thumbnail */}
       <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
         {post.coverImage ? (
-          <img
+          <Image
             src={post.coverImage}
             alt={post.title}
-            className="w-full h-full object-cover"
+            width={64}
+            height={64}
+            className="w-16 h-16 object-cover"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-2xl">

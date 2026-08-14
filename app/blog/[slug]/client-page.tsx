@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import { BlogPost } from "@/types/blog";
 
@@ -117,7 +118,7 @@ export default function BlogPostClient() {
       />
       {post.coverImage && (
         <div className="w-full h-72 sm:h-96 overflow-hidden relative">
-          <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
+          <Image src={post.coverImage} alt={post.title} fill priority sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <span className="absolute top-5 left-5 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase">
             {post.category}
@@ -182,7 +183,7 @@ export default function BlogPostClient() {
                 <Link key={r.id} href={`/blog/${r.slug}`}
                   className="group flex gap-4 bg-gray-50 hover:bg-orange-50 rounded-xl p-4 transition-colors">
                   {r.coverImage && (
-                    <img src={r.coverImage} alt={r.title} className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+                    <Image src={r.coverImage} alt={r.title} width={80} height={80} className="object-cover rounded-lg flex-shrink-0" />
                   )}
                   <div className="flex flex-col justify-center">
                     <span className="text-orange-500 text-xs font-bold uppercase tracking-wide mb-1">{r.category}</span>

@@ -3,6 +3,7 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
+import NextImage from "next/image";
 import Placeholder from "@tiptap/extension-placeholder";
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -284,8 +285,9 @@ export default function BlogEditor({ onSave, initialData }: BlogEditorProps) {
           )}
 
           {coverImage && (
-            <img src={coverImage} alt="Cover preview"
-              className="mt-3 w-full h-48 object-cover rounded-lg border border-gray-200" />
+            <div className="relative mt-3 w-full h-48 rounded-lg overflow-hidden border border-gray-200">
+              <NextImage src={coverImage} alt="Cover preview" fill className="object-cover" unoptimized />
+            </div>
           )}
         </div>
 

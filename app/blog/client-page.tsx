@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import { BlogPost } from "@/types/blog";
 import { buildItemListSchema } from "@/lib/seo/tripSchema";
@@ -24,8 +25,9 @@ function BlogCard({ post }: { post: BlogPost }) {
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
         <div className="relative h-52 overflow-hidden bg-gray-100">
           {post.coverImage ? (
-            <img src={post.coverImage} alt={post.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <Image src={post.coverImage} alt={post.title}
+              fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500" />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-100 to-blue-100">
               <span className="text-4xl">✈️</span>
