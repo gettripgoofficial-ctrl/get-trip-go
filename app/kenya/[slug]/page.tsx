@@ -16,6 +16,7 @@ import { kenyaArticleSeo } from "@/data/kenyaArticleSeo"
 import { kenyaArticleFaqs } from "@/data/kenyaArticleFaqs"
 import { kenyaArticleRelated } from "@/data/kenyaArticleRelated"
 import KenyaArticleShell from "@/components/KenyaArticleShell"
+import Breadcrumbs from "@/components/Breadcrumbs"
 import ElsasKopjeArticle from "@/components/kenya-articles/elsas-kopje-built-into-the-rock"
 import GiraffesOfKenyaArticle from "@/components/kenya-articles/giraffes-of-kenya"
 import RareSightingsBlackRhinosArticle from "@/components/kenya-articles/rare-sightings-black-rhinos"
@@ -231,6 +232,12 @@ export default function KenyaArticlePage({ params }: { params: { slug: string } 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <Breadcrumbs
+        items={[
+          { label: "Kenya", href: "/kenya" },
+          { label: meta!.title },
+        ]}
+      />
       <KenyaArticleShell
         category={meta!.category}
         title={meta!.title}

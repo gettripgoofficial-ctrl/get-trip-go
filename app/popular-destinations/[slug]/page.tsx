@@ -6,6 +6,7 @@ import { getPackageBySlug } from "@/data/packages"
 import { buildTripSchemas } from "@/lib/seo/tripSchema"
 import PackageTabs from "./PackageTabs"
 import PackageActions from "./PackageActions"
+import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from "next"
 
 export async function generateMetadata({
@@ -52,6 +53,13 @@ export default function PackageDetailPage({ params }: { params: { slug: string }
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Popular Destinations", href: "/popular-destinations" },
+          { label: pkg.name },
+        ]}
       />
 
       <div className="max-w-7xl mx-auto px-4 pt-6 pb-6">

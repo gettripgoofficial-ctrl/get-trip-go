@@ -6,6 +6,7 @@ import { getThemePackageBySlug } from "@/data/themePackages"
 import { buildTripSchemas } from "@/lib/seo/tripSchema"
 import ThemeHolidayTabs from "./ThemeHolidayTabs"
 import ThemeHolidayActions from "./ThemeHolidayActions"
+import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from "next"
 
 const themeColors: Record<string, string> = {
@@ -75,6 +76,14 @@ export default function ThemePackageDetailPage({ params }: { params: { theme: st
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Theme Holidays", href: "/theme-holidays" },
+          { label: pkg.theme, href: `/theme-holidays?theme=${encodeURIComponent(pkg.theme)}` },
+          { label: pkg.name },
+        ]}
       />
 
       <div className="max-w-7xl mx-auto px-4 pt-6 pb-6">

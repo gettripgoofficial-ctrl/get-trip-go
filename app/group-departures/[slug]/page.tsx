@@ -6,6 +6,7 @@ import { getGroupDepartureBySlug } from "@/data/groupDepartures"
 import TourTabs from "./TourTabs"
 import TourActions from "./TourActions"
 import { buildTripSchemas, hasUpcomingDate } from "@/lib/seo/tripSchema"
+import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from "next"
 
 export async function generateMetadata({
@@ -62,6 +63,12 @@ export default function TourDetailPage({ params }: { params: { slug: string } })
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
       />
+      <Breadcrumbs
+        items={[
+          { label: "Group Departures", href: "/group-departures" },
+          { label: tour.name },
+        ]}
+      />
       <div className="max-w-7xl mx-auto px-4 pt-6 pb-6">
 
 
@@ -69,7 +76,7 @@ export default function TourDetailPage({ params }: { params: { slug: string } })
         <div className="relative rounded-2xl overflow-hidden mb-6" style={{ height: "480px" }}>
           <Image src={tour.heroImage} alt={labels[0] ?? tour.name} fill priority sizes="100vw" className="object-cover" />
           {tour.rating && (
-            <div className="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+            <div className="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-centergap-1">
               <Star size={12} className="fill-yellow-400 text-yellow-400" />
               {tour.rating} {tour.reviewCount ? `(${tour.reviewCount} reviews)` : ""}
             </div>
