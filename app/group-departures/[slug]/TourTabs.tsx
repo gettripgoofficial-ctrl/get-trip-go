@@ -2,7 +2,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { MapPin, LayoutDashboard, Map, Building2, CheckCircle, XCircle, ScrollText } from "lucide-react"
-import type { GroupDeparture } from "@/data/groupDepartures"
+import { type GroupDeparture, DEFAULT_TERMS_AND_CONDITIONS, DEFAULT_BOOKING_POLICY, DEFAULT_CANCELLATION_POLICY } from "@/data/groupDepartures"
 import Accordion from "./Accordion"
 
 const TABS = ["Overview", "Itinerary", "Hotels", "Inclusions", "Exclusions", "Policies"] as const
@@ -234,9 +234,9 @@ export default function TourTabs({ tour }: { tour: GroupDeparture }) {
         <div className="bg-white rounded-2xl shadow-sm p-5 sm:p-6">
           <h2 className="text-lg font-bold text-gray-900 mb-4">Policies</h2>
           <div className="space-y-3">
-            <Accordion title="Terms & Conditions" items={tour.termsAndConditions ?? []} defaultOpen />
-            <Accordion title="Booking Policy" items={tour.bookingPolicy ?? []} />
-            <Accordion title="Cancellations" items={tour.cancellationPolicy ?? []} />
+            <Accordion title="Terms & Conditions" items={tour.termsAndConditions ?? DEFAULT_TERMS_AND_CONDITIONS} defaultOpen />
+            <Accordion title="Booking Policy" items={tour.bookingPolicy ?? DEFAULT_BOOKING_POLICY} />
+            <Accordion title="Cancellations" items={tour.cancellationPolicy ?? DEFAULT_CANCELLATION_POLICY} />
           </div>
         </div>
       )}
