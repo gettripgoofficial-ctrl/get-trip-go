@@ -105,8 +105,9 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-3">
                     <div>
-                      <label className="text-xs font-semibold text-gray-600 mb-1 block">Full Name *</label>
-                      <input aria-label="Your name"
+                      <label htmlFor="enquiry-name" className="text-xs font-semibold text-gray-600 mb-1 block">Full Name *</label>
+                      <input
+                        id="enquiry-name"
                         required
                         type="text"
                         placeholder="Your name"
@@ -116,8 +117,9 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-gray-600 mb-1 block">Phone Number *</label>
-                      <input aria-label="+91 96678 92504"
+                      <label htmlFor="enquiry-phone" className="text-xs font-semibold text-gray-600 mb-1 block">Phone Number *</label>
+                      <input
+                        id="enquiry-phone"
                         required
                         type="tel"
                         placeholder="+91 96678 92504"
@@ -127,8 +129,9 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-gray-600 mb-1 block">Email</label>
-                      <input aria-label="your@email.com"
+                      <label htmlFor="enquiry-email" className="text-xs font-semibold text-gray-600 mb-1 block">Email</label>
+                      <input
+                        id="enquiry-email"
                         type="email"
                         placeholder="your@email.com"
                         value={formData.email}
@@ -138,8 +141,9 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-xs font-semibold text-gray-600 mb-1 block">Travel Date</label>
+                        <label htmlFor="enquiry-date" className="text-xs font-semibold text-gray-600 mb-1 block">Travel Date</label>
                         <input
+                          id="enquiry-date"
                           type="date"
                           value={formData.date}
                           onChange={e => setFormData({ ...formData, date: e.target.value })}
@@ -147,8 +151,9 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-semibold text-gray-600 mb-1 block">Travelers</label>
+                        <label htmlFor="enquiry-travelers" className="text-xs font-semibold text-gray-600 mb-1 block">Travelers</label>
                         <select
+                          id="enquiry-travelers"
                           value={formData.travelers}
                           onChange={e => setFormData({ ...formData, travelers: e.target.value })}
                           className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-400"
@@ -160,8 +165,9 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                       </div>
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-gray-600 mb-1 block">Message (Optional)</label>
+                      <label htmlFor="enquiry-message" className="text-xs font-semibold text-gray-600 mb-1 block">Message (Optional)</label>
                       <textarea
+                        id="enquiry-message"
                         rows={3}
                         placeholder="Any special requirements or questions..."
                         value={formData.message}
