@@ -5,17 +5,14 @@ import Link from "next/link"
 import Image from "next/image"
 import OfferActions from "./OfferActions"
 import Script from "next/script"
-
+import Breadcrumbs from "@/components/Breadcrumbs"
 type Props = { params: { slug: string } }
-
 export function generateStaticParams() {
   return offers.map((o) => ({ slug: o.slug }))
 }
-
 export function generateMetadata({ params }: Props): Metadata {
   const offer = offers.find((o) => o.slug === params.slug)
   if (!offer) return {}
-
   return {
     title: offer.title,
     description: offer.desc,
@@ -34,11 +31,9 @@ export function generateMetadata({ params }: Props): Metadata {
     },
   }
 }
-
 export default function OfferDetailPage({ params }: Props) {
   const offer = offers.find((o) => o.slug === params.slug)
   if (!offer) notFound()
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Offer",
@@ -55,13 +50,18 @@ export default function OfferDetailPage({ params }: Props) {
       url: "https://gettripgo.com",
     },
   }
-
   return (
     <div className="min-h-screen bg-gray-100 pb-32 sm:pb-10">
       <Script
         id="offer-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { label: "Offers", href: "/offers" },
+          { label: offer.title },
+        ]}
       />
       <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
         <Image
@@ -88,13 +88,11 @@ export default function OfferDetailPage({ params }: Props) {
           <p className="text-white/80 text-sm mt-1">Valid till {offer.validTill}</p>
         </div>
       </div>
-
       <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
         <div className="bg-white rounded-2xl shadow-sm p-5">
           <h2 className="text-base font-bold text-gray-800 mb-2">About this Offer</h2>
           <p className="text-sm text-gray-600 leading-relaxed">{offer.desc}</p>
         </div>
-
         <div className="bg-white rounded-2xl shadow-sm p-5">
           <h2 className="text-base font-bold text-gray-800 mb-3">Terms & Conditions</h2>
           <div className="space-y-2">
@@ -106,7 +104,6 @@ export default function OfferDetailPage({ params }: Props) {
             ))}
           </div>
         </div>
-
         <OfferActions offer={offer} />
       </div>
     </div>

@@ -6,6 +6,7 @@ import { getCustomPackageBySlug } from "@/data/customPackages"
 import { buildTripSchemas } from "@/lib/seo/tripSchema"
 import CustomItineraryTabs from "./CustomItineraryTabs"
 import CustomItineraryActions from "./CustomItineraryActions"
+import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from "next"
 
 export async function generateMetadata({
@@ -50,6 +51,13 @@ export default function CustomPackageDetailPage({ params }: { params: { slug: st
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: "Customized Itineraries", href: "/customized-itineraries" },
+          { label: pkg.name },
+        ]}
       />
 
       <div className="max-w-7xl mx-auto px-4 pt-6 pb-6">
