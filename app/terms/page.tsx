@@ -28,24 +28,60 @@ const sections = [
     id: "booking-payments",
     title: "Booking & Payments",
     icon: "💳",
-    plain: "Prices shown are final at checkout. Pay securely. Once confirmed, your booking is a contract with the travel provider — not just with us.",
+    plain: "A ₹20,000 booking deposit confirms your spot. Land costs are paid in three instalments before your trip; flights and visas are paid in full by their own deadlines.",
     content: [
-      { subtitle: "Booking Confirmation", text: "A booking is confirmed only when you receive a confirmation email with a booking reference number. Get Trip Go acts as an intermediary between you and the travel service provider." },
+      { subtitle: "Booking Confirmation", text: "Bookings are confirmed only upon receipt of the required booking deposit or full payment, depending on the service type. All bookings are subject to availability and final confirmation by the relevant supplier. Clients are responsible for providing a valid passport and all required travel documentation at the time of booking." },
+      { subtitle: "Booking Deposit", text: "A booking amount of INR 20,000/- is payable upon confirmation to secure your reservation." },
+      { subtitle: "Airline Tickets", text: "Full payment must be made before ticket issuance and within the applicable airline fare/ticketing deadline." },
+      { subtitle: "Visa Services", text: "Full payment for visa services must be made prior to submission of the application to the relevant embassy, consulate, or visa processing centre." },
+      { subtitle: "Land Arrangements", text: "Payment for land arrangements is due in three instalments: 50% of the Land Part is payable 60 days prior to arrival, 40% is payable 30 days prior to arrival, and the remaining 10% is payable 7 days prior to arrival." },
       { subtitle: "Pricing & Taxes", text: "All prices are displayed inclusive of applicable taxes and fees unless stated otherwise. Prices are subject to change until payment is completed and confirmation is issued." },
       { subtitle: "Payment Processing", text: "Payments are processed securely through our PCI-DSS compliant payment partners. By submitting payment, you authorise Get Trip Go to charge the stated amount to your selected payment method." },
-      { subtitle: "Failed Transactions", text: "If a payment fails after booking initiation, the booking may not be confirmed. We are not responsible for price changes or unavailability between a failed attempt and a successful retry." },
     ],
   },
   {
     id: "cancellations-refunds",
     title: "Cancellations & Refunds",
     icon: "🔄",
-    plain: "Cancellation rules vary by airline or hotel. We'll always show you the exact fee before you confirm. Refunds go back to your original payment method.",
+    plain: "Cancellation fees depend on what you're cancelling and when. The ₹20,000 booking amount is never refundable. Approved refunds typically take 30–90 days.",
     content: [
-      { subtitle: "Cancellation Policy", text: "Cancellation policies vary by travel provider, fare type, and booking date. The applicable policy is displayed at the time of booking and in your confirmation email." },
-      { subtitle: "Refund Processing", text: "Approved refunds are processed within 7–10 business days to the original payment method. UPI and wallet refunds may be processed within 2–3 business days." },
-      { subtitle: "Non-Refundable Bookings", text: "Certain promotional fares, last-minute deals, or special rates may be entirely non-refundable. These restrictions will be clearly indicated before you complete your purchase." },
-      { subtitle: "Force Majeure", text: "Get Trip Go is not liable for cancellations or changes caused by events beyond reasonable control, including natural disasters, government actions, pandemics, or airline operational decisions." },
+      { subtitle: "Cancellation Charges", text: "Cancellation charges may apply and will vary depending on the travel component, supplier terms, and the date of cancellation." },
+      { subtitle: "Non-Refundable Amounts", text: "Service fees and the INR 20,000/- booking amount are non-refundable under any circumstances." },
+      { subtitle: "Refund Eligibility", text: "Any eligible refund is subject to the cancellation and refund policies of the respective suppliers, including airlines, hotels, tour operators, and other service providers." },
+      { subtitle: "Refund Processing Time", text: "Refund processing may take approximately 30–90 days, depending on the relevant supplier's processing timelines." },
+      { subtitle: "Peak Season Variations", text: "Cancellation terms may differ during national holidays and peak/high-season periods, particularly around Christmas and New Year. Any such variations will be communicated and handled on a case-by-case basis." },
+    ],
+  },
+  {
+    id: "quotation-availability",
+    title: "Quotations & Availability",
+    icon: "📋",
+    plain: "A quote is not a booking — nothing is held for you until you actually confirm and pay. Prices and hotel availability can change right up until then.",
+    content: [
+      { subtitle: "Reference Only", text: "All quotations provided are for reference purposes only and do not constitute a confirmed booking. No flights, hotels, rooms, tours, or other services are being held or blocked based on a quotation." },
+      { subtitle: "Subject to Confirmation", text: "All services remain subject to availability and applicable supplier confirmation at the time of actual booking. The quoted hotel and room category are not guaranteed until the booking has been confirmed and the relevant supplier has accepted the reservation." },
+      { subtitle: "Prices May Change", text: "Prices and availability may change without prior notice until the booking is confirmed." },
+    ],
+  },
+  {
+    id: "hotel-policies",
+    title: "Hotel Check-in & Check-out",
+    icon: "🏨",
+    plain: "Standard check-in is 3 PM and check-out is 12 PM. Earlier or later timing isn't guaranteed and depends on the hotel.",
+    content: [
+      { subtitle: "Check-in", text: "Standard hotel check-in time is 15:00 hrs. Requests for early check-in are subject to hotel availability and cannot be guaranteed." },
+      { subtitle: "Check-out", text: "Standard hotel check-out time is 12:00 hrs. Requests for late check-out are subject to hotel availability and may be subject to additional charges." },
+    ],
+  },
+  {
+    id: "visa-assistance",
+    title: "Visa Assistance",
+    icon: "🛢️",
+    plain: "We help with the visa paperwork and application, but the embassy makes the final call — we can't guarantee approval, and visa fees usually aren't refundable if it's refused.",
+    content: [
+      { subtitle: "Scope of Assistance", text: "We assist clients with visa applications for various countries by providing documentation guidance, application submission, and liaison services with embassies or visa processing centers where applicable." },
+      { subtitle: "No Guarantee of Approval", text: "Final approval is solely at the discretion of the embassy or consulate. Get Trip Go does not guarantee visa approval under any circumstances." },
+      { subtitle: "Non-Refundable Fees", text: "Visa fees and service charges may be non-refundable in the event of refusal, withdrawal, or cancellation, subject to the applicable terms of the relevant embassy or consulate." },
     ],
   },
   {
@@ -147,7 +183,7 @@ export default function TermsPage() {
     const text = sections.map(s =>
       `${s.title}\n${"─".repeat(40)}\n` + s.content.map(c => `${c.subtitle}\n${c.text}`).join("\n\n")
     ).join("\n\n\n");
-    const blob = new Blob([`GET TRIP GO — TERMS OF SERVICE\nLast updated: June 4, 2025\n\n${text}`], { type: "text/plain" });
+    const blob = new Blob([`GET TRIP GO — TERMS OF SERVICE\nLast updated: August 16, 2026\n\n${text}`], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a"); a.href = url; a.download = "GetTripGo-Terms.txt"; a.click();
     URL.revokeObjectURL(url);
@@ -326,7 +362,7 @@ export default function TermsPage() {
               <div className="banner-dot" />
               <div>
                 <span className="banner-text">Terms updated</span>
-                <span className="banner-sub">— Revised Terms of Service effective June 4, 2025. Key changes in Cancellations & Liability sections.</span>
+                <span className="banner-sub">— Revised Terms of Service effective August 16, 2026. Updated booking deposit, payment schedule, visa, and cancellation terms.</span>
               </div>
             </div>
             <button className="banner-close" onClick={() => setShowBanner(false)}>✕</button>
@@ -340,7 +376,7 @@ export default function TermsPage() {
           <p className="hero-sub">Please read these terms carefully before using Get Trip Go's platform, services, or mobile application.</p>
           <div className="hero-meta">
             <span className="hero-chip">🕐 8 min read</span>
-            <span className="hero-chip">📅 Last updated: June 4, 2025</span>
+            <span className="hero-chip">📅 Last updated: August 16, 2026</span>
             <span className="hero-chip">📋 {sections.length} sections</span>
             <button className="dl-btn" onClick={download}>📥 Download Terms</button>
             <button className="dl-btn" style={{ background: "rgba(10,22,40,0.08)", color: "#0a1628" }} onClick={() => window.print()}>🖨️ Print</button>
