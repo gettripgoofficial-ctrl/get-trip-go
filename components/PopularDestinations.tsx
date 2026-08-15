@@ -25,7 +25,7 @@ export default function PopularDestinations() {
     <div className="max-w-7xl mx-auto px-4 py-10">
       <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-800">Popular Destinations</h3>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Popular Destinations</h2>
           <Link href="/popular-destinations" className="text-blue-600 text-sm font-semibold hover:underline">
             View all ↗
           </Link>

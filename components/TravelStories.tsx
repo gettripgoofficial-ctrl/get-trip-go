@@ -161,6 +161,7 @@ export default function TravelStories() {
                     })
                   }
                 }}
+                aria-label={`Show slide ${i + 1}`}
                 className="w-2 h-2 rounded-full bg-gray-300 hover:bg-orange-400 transition-colors"
               />
             ))}

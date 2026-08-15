@@ -123,7 +123,7 @@ export default function ThemeHolidays() {
                   />
                 </div>
                 <div className="p-2.5 pb-0 md:pb-4">
-                  <h4 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h4>
+                  <h3 className="text-xs font-bold text-gray-900 mb-2 leading-tight">{theme.name}</h3>
                   <div className="flex flex-wrap gap-1 mb-2.5">
                     {theme.tags.map(tag => (
                       <span

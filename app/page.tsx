@@ -16,6 +16,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100">
 
+      <h1 className="sr-only">Get Trip Go — Flights, Hotels, Holiday Packages and Group Tours</h1>
+
       {/* Preload the desktop hero image so the browser starts fetching it
           immediately from the initial HTML, instead of waiting for JS to
           hydrate ResponsiveHero and mount the <img> tag client-side. */}

@@ -114,6 +114,8 @@ export default function HeroSection() {
           <button
             key={i}
             onClick={() => setBgIndex(i)}
+            aria-label={`Show slide ${i + 1}`}
+            aria-current={bgIndex === i}
             className="rounded-full transition-all duration-300"
             style={{
               width: bgIndex === i ? "20px" : "7px",

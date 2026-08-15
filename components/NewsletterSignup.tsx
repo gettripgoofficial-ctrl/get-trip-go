@@ -37,9 +37,9 @@ export default function NewsletterSignup() {
           <p className="text-blue-200 text-xs font-normal uppercase tracking-widest mb-2">
             Newsletter
           </p>
-          <h3 className="text-xl sm:text-2xl font-black text-white leading-tight mb-2">
+          <h2 className="text-xl sm:text-2xl font-black text-white leading-tight mb-2">
             Get the best travel deals straight to your inbox.
-          </h3>
+          </h2>
           <p className="text-blue-200 text-sm leading-relaxed max-w-md mx-auto">
             Flight deals, visa updates, destination guides and exclusive offers — delivered weekly. No spam, ever.
           </p>

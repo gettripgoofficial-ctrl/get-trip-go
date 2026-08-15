@@ -115,7 +115,7 @@ export default function GroupDepartures() {
         {/* Header */}
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-800">Europe Group Departures</h3>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Europe Group Departures</h2>
             <p className="text-gray-500 text-sm mt-1 hidden sm:block">
               Guaranteed departures — travel with like-minded explorers
             </p>

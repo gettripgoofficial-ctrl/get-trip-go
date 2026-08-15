@@ -260,12 +260,12 @@ function OfferCard({ offer, onOpen }: { offer: Offer; onOpen: () => void }) {
             >
               {offer.tag}
             </span>
-            <h4
+            <h3
               className="font-extrabold text-white leading-tight mb-1"
               style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", textShadow: "0 1px 8px rgba(0,0,0,0.18)" }}
             >
               {offer.title}
-            </h4>
+            </h3>
             <p className="text-white/80 text-xs leading-snug mt-1">{offer.desc}</p>
           </div>
 
@@ -366,7 +366,7 @@ export default function SpecialOffers() {
         <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-4 sm:mb-6">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-800">Explore Coupons</h3>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Explore Coupons</h2>
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrev}

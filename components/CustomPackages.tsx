@@ -46,9 +46,9 @@ function PackageCard({
       {/* Right — Content */}
       <div className="flex-1 p-2.5 sm:p-3 flex flex-col justify-between min-w-0">
         <Link href={`/customized-itineraries/${pkg.slug}`} className="block">
-          <h4 className="text-xs sm:text-sm font-bold text-gray-900 leading-tight line-clamp-2 hover:text-blue-600 transition-colors">
+          <h3 className="text-xs sm:text-sm font-bold text-gray-900 leading-tight line-clamp-2 hover:text-blue-600 transition-colors">
             {pkg.name}
-          </h4>
+          </h3>
           <p className="text-xs text-gray-400 mt-0.5 truncate">{pkg.cities}</p>
           <p className="text-xs font-semibold mt-1" style={{ color: pkg.typeColor }}>{pkg.duration}</p>
         </Link>
@@ -85,7 +85,7 @@ export default function CustomPackages() {
         <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800">Customized Itineraries</h3>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Customized Itineraries</h2>
               <p className="text-gray-500 text-sm mt-1">Handcrafted journeys — tailored just for you</p>
             </div>
             <Link

@@ -21,7 +21,7 @@ export default function KenyaBanner() {
           style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%)" }}
         />
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8">
-          <h3 className="text-white font-bold text-xl sm:text-3xl">Discover Kenya</h3>
+          <h2 className="text-white font-bold text-xl sm:text-3xl">Discover Kenya</h2>
           <p className="text-gray-200 text-sm sm:text-base mt-1">Experience Africa's wild heart</p>
           <span className="inline-block mt-3 sm:mt-4 bg-yellow-400 text-gray-900 font-semibold text-sm sm:text-base px-4 py-2 rounded-lg">
             Explore Now
