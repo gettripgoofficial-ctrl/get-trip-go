@@ -232,12 +232,14 @@ export default function KenyaArticlePage({ params }: { params: { slug: string } 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
-      <Breadcrumbs
-        items={[
-          { label: "Kenya", href: "/kenya" },
-          { label: meta!.title },
-        ]}
-      />
+      <div className="max-w-3xl mx-auto px-4 pt-[68px]">
+        <Breadcrumbs
+          items={[
+            { label: "Kenya", href: "/kenya" },
+            { label: meta!.title },
+          ]}
+        />
+      </div>
       <KenyaArticleShell
         category={meta!.category}
         title={meta!.title}
