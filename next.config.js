@@ -59,7 +59,8 @@ const ContentSecurityPolicy = `
     https://www.viator.com
     https://affiliate.klook.com
     https://*.klook.com
-    https://*.supabase.co;
+    https://*.supabase.co
+    https://www.google.co.in;
   connect-src 'self'
     https://tpscr.com
     https://*.travelpayouts.com
@@ -74,7 +75,8 @@ const ContentSecurityPolicy = `
     https://assets.calendly.com
     https://*.getyourguide.com
     https://*.viator.com
-    https://www.viator.com;
+    https://www.viator.com
+    https://stats.g.doubleclick.net;
   frame-src 'self'
     https://widget.getyourguide.com
     https://www.viator.com
