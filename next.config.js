@@ -6,11 +6,6 @@ const ContentSecurityPolicy = `
     https://*.travelpayouts.com
     https://www.googletagmanager.com
     https://www.google-analytics.com
-    https://*.crisp.chat
-    https://client.crisp.chat
-    https://*.sentry.io
-    https://*.contentsquare.net
-    https://assets.calendly.com
     https://vercel.live
     https://widget.getyourguide.com
     https://www.viator.com
@@ -21,10 +16,6 @@ const ContentSecurityPolicy = `
     https://*.travelpayouts.com
     https://www.googletagmanager.com
     https://www.google-analytics.com
-    https://*.crisp.chat
-    https://client.crisp.chat
-    https://*.contentsquare.net
-    https://assets.calendly.com
     https://vercel.live
     https://widget.getyourguide.com
     https://www.viator.com
@@ -34,14 +25,11 @@ const ContentSecurityPolicy = `
     https://tpscr.com
     https://*.travelpayouts.com
     https://fonts.googleapis.com
-    https://*.crisp.chat
-    https://assets.calendly.com
     https://*.getyourguide.com
     https://*.viator.com
     https://www.viator.com;
   font-src 'self'
     https://fonts.gstatic.com
-    https://*.crisp.chat
     https://*.travelpayouts.com;
   img-src 'self' data: blob:
     https://images.unsplash.com
@@ -50,10 +38,6 @@ const ContentSecurityPolicy = `
     https://*.travelpayouts.com
     https://www.google-analytics.com
     https://www.googletagmanager.com
-    https://*.crisp.chat
-    https://image.crisp.chat
-    https://*.contentsquare.net
-    https://assets.calendly.com
     https://*.getyourguide.com
     https://*.viator.com
     https://www.viator.com
@@ -66,13 +50,7 @@ const ContentSecurityPolicy = `
     https://*.travelpayouts.com
     https://www.google-analytics.com
     https://analytics.google.com
-    https://*.crisp.chat
-    wss://*.crisp.chat
-    https://*.sentry.io
-    https://*.contentsquare.net
-    https://ace-shiner-107105.upstash.io
     https://api.resend.com
-    https://assets.calendly.com
     https://*.getyourguide.com
     https://*.viator.com
     https://www.viator.com
