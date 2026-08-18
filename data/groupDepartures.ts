@@ -274,7 +274,7 @@ export const groupDepartures: GroupDeparture[] = [
   },
 
   {
-    slug: "europe-complete-circle",
+    slug: "europe-complete-circle-go-english",
     name: "Europe Complete Circle",
     days: 16, nights: 15,
     series: "Go English",
