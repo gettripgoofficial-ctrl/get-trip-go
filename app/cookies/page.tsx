@@ -26,7 +26,6 @@ const cookieTypes = [
     examples: [
       "Google Analytics (_ga, _gid)",
       "Page load performance metrics",
-      "Error tracking (Sentry)",
       "A/B testing assignments",
     ],
   },
