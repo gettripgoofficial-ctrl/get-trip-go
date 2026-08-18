@@ -1,4 +1,10 @@
 import { MetadataRoute } from "next";
+import { groupDepartures } from "@/data/groupDepartures";
+import { packages } from "@/data/packages";
+import { themePackages } from "@/data/themePackages";
+import { customPackages } from "@/data/customPackages";
+import { offers } from "@/data/offers";
+import { supabaseAdmin } from "@/lib/supabase";
 
 const BASE_URL = "https://gettripgo.com";
 
@@ -20,146 +26,44 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/kenya`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
 ];
 
-// Individual-folder Kenya articles -- each has its own app/kenya/<slug>/page.tsx
+// Kenya articles are static per-folder pages, not driven by a data file — keep hardcoded.
 const kenyaArticleSlugs = [
-  "best-time-to-visit-kenya",
-  "the-great-migration-explained",
-  "big-five-how-to-spot",
-  "is-kenya-safe-for-tourists",
-  "what-to-pack-for-a-kenya-safari",
-  "getting-around-light-aircraft-vs-road-safaris",
-  "how-many-days-do-you-need-for-a-kenya-safari",
-  "safari-budget-guide-luxury-vs-mid-range-vs-budget",
-  "first-time-safari-checklist",
-  "safari-photography-camera-gear-and-settings",
-  "kenya-eta-guide-how-to-apply-cost-and-processing",
-  "safari-footwear-what-actually-works",
-  "vaccinations-for-kenya-yellow-fever-and-more",
-  "malaria-prevention-tablets-repellents",
-  "travel-insurance-for-safari-what-it-should-cover",
-  "altitude-sickness-in-the-kenyan-highlands",
-  "drinking-water-and-food-safety-on-safari",
-  "safari-first-aid-what-to-pack",
-  "is-a-kenya-safari-safe-during-pregnancy",
-  "safari-with-young-children-age-limits",
-  "safari-for-travelers-with-mobility-issues",
-  "is-kenya-suitable-for-solo-female-travelers",
-  "safari-for-people-with-heart-conditions",
+  "best-time-to-visit-kenya", "the-great-migration-explained", "big-five-how-to-spot",
+  "is-kenya-safe-for-tourists", "what-to-pack-for-a-kenya-safari",
+  "getting-around-light-aircraft-vs-road-safaris", "how-many-days-do-you-need-for-a-kenya-safari",
+  "safari-budget-guide-luxury-vs-mid-range-vs-budget", "first-time-safari-checklist",
+  "safari-photography-camera-gear-and-settings", "kenya-eta-guide-how-to-apply-cost-and-processing",
+  "safari-footwear-what-actually-works", "vaccinations-for-kenya-yellow-fever-and-more",
+  "malaria-prevention-tablets-repellents", "travel-insurance-for-safari-what-it-should-cover",
+  "altitude-sickness-in-the-kenyan-highlands", "drinking-water-and-food-safety-on-safari",
+  "safari-first-aid-what-to-pack", "is-a-kenya-safari-safe-during-pregnancy",
+  "safari-with-young-children-age-limits", "safari-for-travelers-with-mobility-issues",
+  "is-kenya-suitable-for-solo-female-travelers", "safari-for-people-with-heart-conditions",
   "elderly-travelers-what-to-know",
 ];
 
-// Dynamic /kenya/[slug] articles -- only include ones actually registered in
-// app/kenya/[slug]/page.tsx's `registry` object, or they'll 404.
 const kenyaDynamicSlugArticles = [
-  "cheetahs-of-the-mara",
-  "amboselis-last-super-tuskers",
-  "lake-nakurus-flamingo-spectacle",
+  "cheetahs-of-the-mara", "amboselis-last-super-tuskers", "lake-nakurus-flamingo-spectacle",
 ];
 
-const popularDestinationSlugs = [
-  "bali-honeymoon-delight","bali-adventure-explorer","bali-family-fun",
-  "thailand-bangkok-pattaya","thailand-phuket-krabi","kerala-backwaters-honeymoon",
-  "kerala-family-adventure","singapore-family-explorer","kashmir-paradise-honeymoon",
-  "kashmir-winter-wonderland","maldives-luxury-overwater","maldives-budget-beach",
-  "rajasthan-royal-heritage","dubai-luxury-experience","georgia-caucasus-explorer",
-  "bhutan-kingdom-discovery","vietnam-north-south-tour","northeast-india-explorer",
-];
+const themeSlugToUrl = (theme: string) =>
+  theme.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-");
 
-const groupDepartureSlugs = [
-  "heart-of-europe","alpine-wonders","grand-european-adventure","europe-complete-circle",
-  "continental-explorer","european-capitals-express","paris-and-capitals","romance-of-europe",
-  "swiss-french-escape","european-memories","jewels-of-europe","european-ring",
-  "european-bliss","european-dance","european-delight","european-triangle-go",
-  "european-journey-go","beloved-europe","india-heart-of-europe","india-european-charm",
-  "india-swiss-french-delight","india-europe-complete-circle","india-romance-europe",
-  "eastern-gems","central-european-discovery","beautiful-europe-journey","central-ring-explorer",
-  "majestic-central-europe","east-of-europe-balkans","germany-eastern-europe",
-  "majestic-europe-spain","east-europe-venice","london-paris-amsterdam",
-  "western-europe-highlights","paris-london-triangle","great-european-cities-tour",
-  "spain-france-england","unforgettable-europe","modern-europe-berlin","genuine-europe",
-  "european-grandeur","nordic-explorer","pearls-of-norway-sweden","scandinavia-eastern-europe",
-  "germany-northern-europe","poland-scandinavia-east","scandinavia-budapest",
-  "pearls-nordic-copenhagen","eastern-europe-poland-scandinavia",
-];
-
-const customizedItinerarySlugs = [
-  "singapore-malaysia-discovery","italy-bella-vita","vietnam-hidden-trails",
-  "georgia-unexplored","paris-swiss-romance","australia-dream-journey",
-  "bali-soul-escape","eastern-europe-grand-tour","japan-sakura-serenity","andaman-island-bliss",
-];
-
-const offerSlugs = [
-  "first-booking-5000","mumbai-dubai-12999","bangkok-8999",
-  "cruise-25-off","europe-group-10000","thailand-4n-pattaya-free","bhutan-kids-free",
-];
-
-const themePackages: { theme: string; slug: string }[] = [
-  { theme: "Honeymoon", slug: "maldives-overwater-honeymoon" },
-  { theme: "Honeymoon", slug: "bali-honeymoon-romance" },
-  { theme: "Honeymoon", slug: "paris-honeymoon" },
-  { theme: "Honeymoon", slug: "kashmir-honeymoon" },
-  { theme: "Honeymoon", slug: "santorini-honeymoon" },
-  { theme: "Honeymoon", slug: "kerala-honeymoon" },
-  { theme: "Honeymoon", slug: "dubai-honeymoon" },
-  { theme: "Honeymoon", slug: "andaman-honeymoon" },
-  { theme: "Family", slug: "singapore-family" },
-  { theme: "Family", slug: "thailand-family" },
-  { theme: "Family", slug: "kerala-family" },
-  { theme: "Family", slug: "australia-family" },
-  { theme: "Family", slug: "rajasthan-family" },
-  { theme: "Family", slug: "japan-family" },
-  { theme: "Family", slug: "dubai-family" },
-  { theme: "Family", slug: "new-zealand-family" },
-  { theme: "Adventure", slug: "nepal-adventure" },
-  { theme: "Adventure", slug: "ladakh-adventure" },
-  { theme: "Adventure", slug: "rishikesh-adventure" },
-  { theme: "Adventure", slug: "iceland-adventure" },
-  { theme: "Adventure", slug: "patagonia-adventure" },
-  { theme: "Adventure", slug: "spiti-adventure" },
-  { theme: "Adventure", slug: "new-zealand-adventure" },
-  { theme: "Adventure", slug: "africa-adventure" },
-  { theme: "Beach", slug: "phuket-beach" },
-  { theme: "Beach", slug: "maldives-beach" },
-  { theme: "Beach", slug: "goa-beach" },
-  { theme: "Beach", slug: "bali-beach" },
-  { theme: "Beach", slug: "mauritius-beach" },
-  { theme: "Beach", slug: "sri-lanka-beach" },
-  { theme: "Beach", slug: "zanzibar-beach" },
-  { theme: "Beach", slug: "andaman-beach" },
-  { theme: "Hill Stations", slug: "shimla-manali-hills" },
-  { theme: "Hill Stations", slug: "darjeeling-sikkim-hills" },
-  { theme: "Hill Stations", slug: "swiss-alps-hills" },
-  { theme: "Hill Stations", slug: "ooty-kodaikanal-hills" },
-  { theme: "Hill Stations", slug: "mussoorie-nainital-hills" },
-  { theme: "Hill Stations", slug: "coorg-hills" },
-  { theme: "Hill Stations", slug: "scotland-highlands" },
-  { theme: "Wildlife & Safari", slug: "kenya-safari" },
-  { theme: "Wildlife & Safari", slug: "jim-corbett-safari" },
-  { theme: "Wildlife & Safari", slug: "south-africa-safari" },
-  { theme: "Wildlife & Safari", slug: "ranthambore-safari" },
-  { theme: "Wildlife & Safari", slug: "kaziranga-safari" },
-  { theme: "Wildlife & Safari", slug: "serengeti-safari" },
-  { theme: "Wildlife & Safari", slug: "borneo-wildlife" },
-  { theme: "Spiritual", slug: "varanasi-spiritual" },
-  { theme: "Spiritual", slug: "char-dham-spiritual" },
-  { theme: "Spiritual", slug: "golden-temple-spiritual" },
-  { theme: "Spiritual", slug: "bali-spiritual" },
-  { theme: "Spiritual", slug: "jerusalem-spiritual" },
-  { theme: "Spiritual", slug: "lhasa-spiritual" },
-  { theme: "Spiritual", slug: "camino-spiritual" },
-  { theme: "Luxury", slug: "maldives-luxury" },
-  { theme: "Luxury", slug: "safari-luxury" },
-  { theme: "Luxury", slug: "amalfi-luxury" },
-  { theme: "Luxury", slug: "dubai-luxury" },
-  { theme: "Luxury", slug: "swiss-luxury" },
-  { theme: "Luxury", slug: "french-riviera-luxury" },
-  { theme: "Luxury", slug: "rajasthan-luxury" },
-  { theme: "Luxury", slug: "japan-luxury" },
-];
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  const themeSlugToUrl = (theme: string) =>
-    theme.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-");
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  let blogRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const { data: blogPosts } = await supabaseAdmin
+      .from("blog_posts")
+      .select("slug, created_at");
+    blogRoutes = (blogPosts || []).map((post) => ({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: post.created_at ? new Date(post.created_at) : new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  } catch {
+    // If Supabase fetch fails at build time, skip blog routes rather than failing the whole sitemap.
+  }
 
   return [
     ...staticRoutes,
@@ -175,35 +79,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...popularDestinationSlugs.map((slug) => ({
-      url: `${BASE_URL}/popular-destinations/${slug}`,
+    ...packages.map((pkg) => ({
+      url: `${BASE_URL}/popular-destinations/${pkg.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
-    ...groupDepartureSlugs.map((slug) => ({
-      url: `${BASE_URL}/group-departures/${slug}`,
+    ...groupDepartures.map((tour) => ({
+      url: `${BASE_URL}/group-departures/${tour.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
-    ...customizedItinerarySlugs.map((slug) => ({
-      url: `${BASE_URL}/customized-itineraries/${slug}`,
+    ...customPackages.map((pkg) => ({
+      url: `${BASE_URL}/customized-itineraries/${pkg.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
-    ...offerSlugs.map((slug) => ({
-      url: `${BASE_URL}/offers/${slug}`,
+    ...offers.map((offer) => ({
+      url: `${BASE_URL}/offers/${offer.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     })),
-    ...themePackages.map(({ theme, slug }) => ({
-      url: `${BASE_URL}/theme-holidays/${themeSlugToUrl(theme)}/${slug}`,
+    ...themePackages.map((pkg) => ({
+      url: `${BASE_URL}/theme-holidays/${themeSlugToUrl(pkg.theme)}/${pkg.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
+    ...blogRoutes,
   ];
 }
