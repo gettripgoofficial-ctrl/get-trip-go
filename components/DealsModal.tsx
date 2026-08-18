@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { tours, type Tour } from "@/data/tours"
+import PriceTag from '@/components/PriceTag'
 
 // ─── Image map ────────────────────────────────────────────────────────────────
 const tourImages: Record<number, string> = {
@@ -106,13 +107,13 @@ function EnquiryModal({ tour, onClose }: { tour: Tour; onClose: () => void }) {
               </div>
               {tour.dealDiscount > 0 ? (
                 <div className="flex items-baseline gap-2">
-                  <p className="text-gray-400 line-through text-sm">₹{tour.originalPriceINR.toLocaleString("en-IN")}</p>
-                  <p className="font-extrabold text-2xl text-gray-900">₹{tour.priceINR.toLocaleString("en-IN")}</p>
+                  <p className="text-gray-400 line-through text-sm"><PriceTag amountInr={tour.originalPriceINR} /></p>
+                  <p className="font-extrabold text-2xl text-gray-900"><PriceTag amountInr={tour.priceINR} /></p>
                   <span className="text-xs font-normal text-gray-400">/ person</span>
                 </div>
               ) : (
                 <div className="flex items-baseline gap-2">
-                  <p className="font-extrabold text-2xl text-gray-900">₹{tour.priceINR.toLocaleString("en-IN")}</p>
+                  <p className="font-extrabold text-2xl text-gray-900"><PriceTag amountInr={tour.priceINR} /></p>
                   <span className="text-xs font-normal text-gray-400">/ person</span>
                 </div>
               )}

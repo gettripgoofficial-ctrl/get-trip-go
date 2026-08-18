@@ -334,23 +334,9 @@ export default function KenyaNorthernExplorerLandingPage() {
               >
                 GET MY SAFARI QUOTE
               </a>
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setShowPhonePopup(!showPhonePopup)}
-                  className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap"
-                >
-                  📞 TALK TO SAFARI EXPERT
-                </button>
-                {showPhonePopup && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg px-4 py-3 whitespace-nowrap z-10">
-                    <p className="text-gray-500 text-[11px] mb-1">Call us directly</p>
-                    <a href="tel:+919667892504" className="text-green-800 font-bold text-sm">
-                      +91 96 6789 2504
-                    </a>
-                  </div>
-                )}
-              </div>
+              <a href="tel:+919667892504" className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap">
+                📞 TALK TO SAFARI EXPERT
+              </a>
               <span className="lg:hidden bg-white border border-gray-300 text-gray-800 font-bold text-sm px-4 py-3 rounded-md flex items-center gap-2 whitespace-nowrap">
                 📅 BEST TIME TO VISIT: JUN – OCT
               </span>

@@ -2,6 +2,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Phone, MessageCircle, MapPin, Car, TreePine, Headphones } from "lucide-react"
+import PriceTag from '@/components/PriceTag'
 
 const ANIMALS = [
   { name: "Lion", image: "https://images.unsplash.com/photo-1697638332466-16f48f835b96?w=300&q=80" },
@@ -359,7 +360,7 @@ export default function KenyaHighlandsBeachLandingPage() {
 
             <p className="text-gray-500 text-xs uppercase tracking-wide mb-1">Starting from</p>
             <p className="text-orange-600 font-black text-4xl mb-1">
-              ₹2,19,999<span className="text-gray-500 font-normal text-base"> / person</span>
+              <PriceTag amountInr={219999} /><span className="text-gray-500 font-normal text-base"> / person</span>
             </p>
             <p className="text-gray-500 text-xs mb-5">Flights Optional · All Taxes Included</p>
 
@@ -373,23 +374,9 @@ export default function KenyaHighlandsBeachLandingPage() {
               >
                 GET MY SAFARI QUOTE
               </a>
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setShowPhonePopup(!showPhonePopup)}
-                  className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap"
-                >
-                  📞 TALK TO SAFARI EXPERT
-                </button>
-                {showPhonePopup && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg px-4 py-3 whitespace-nowrap z-10">
-                    <p className="text-gray-500 text-[11px] mb-1">Call us directly</p>
-                    <a href="tel:+919667892504" className="text-green-800 font-bold text-sm">
-                      +91 96 6789 2504
-                    </a>
-                  </div>
-                )}
-              </div>
+              <a href="tel:+919667892504" className="bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm px-4 lg:px-5 py-3 rounded-md flex items-center gap-2 transition-colors whitespace-nowrap">
+                📞 TALK TO SAFARI EXPERT
+              </a>
               <span className="lg:hidden bg-white border border-gray-300 text-gray-800 font-bold text-sm px-4 py-3 rounded-md flex items-center gap-2 whitespace-nowrap">
                 📅 BEST TIME TO VISIT: JUN – OCT
               </span>
@@ -603,7 +590,7 @@ export default function KenyaHighlandsBeachLandingPage() {
           <div>
             <p className="font-extrabold text-lg mb-1">YOUR SAFARI & BEACH ADVENTURE STARTS HERE</p>
             <p className="text-gray-200 text-sm mb-1">10 Days / 9 Nights · Masai Mara · Lake Nakuru · Ol Pejeta · Diani Beach</p>
-            <p className="text-amber-400 font-bold">FROM ₹2,19,999 <span className="text-gray-300 font-normal text-xs">/ person</span></p>
+            <p className="text-amber-400 font-bold">FROM <PriceTag amountInr={219999} /> <span className="text-gray-300 font-normal text-xs">/ person</span></p>
           </div>
           <div className="flex flex-wrap gap-3">
             <button

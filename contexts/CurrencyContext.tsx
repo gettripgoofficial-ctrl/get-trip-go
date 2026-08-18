@@ -17,8 +17,8 @@ const CurrencyContext = createContext<CurrencyContextType>({
 
 const MAJOR = ["INR", "USD", "EUR", "GBP", "AED", "SGD", "AUD", "CAD", "JPY", "THB"]
 
-export function CurrencyProvider({ children }: { children: React.ReactNode }) {
-  const [currency, setCurrency] = useState("INR")
+export function CurrencyProvider({ children, initialCurrency }: { children: React.ReactNode; initialCurrency?: string }) {
+  const [currency, setCurrency] = useState(initialCurrency || "INR")
   const [rates, setRates] = useState<Record<string, number>>({})
   const [currencies, setCurrencies] = useState<string[]>(MAJOR)
 

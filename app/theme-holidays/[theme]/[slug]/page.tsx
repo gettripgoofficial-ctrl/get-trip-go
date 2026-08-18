@@ -8,6 +8,7 @@ import ThemeHolidayTabs from "./ThemeHolidayTabs"
 import ThemeHolidayActions from "./ThemeHolidayActions"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from "next"
+import PriceTag from '@/components/PriceTag'
 
 const themeColors: Record<string, string> = {
   "Honeymoon": "#be185d",
@@ -136,7 +137,7 @@ export default function ThemePackageDetailPage({ params }: { params: { theme: st
             <div className="bg-orange-500 rounded-2xl p-4 text-white flex flex-col justify-center mr-5 lg:mr-6">
               <p className="text-[11px] text-orange-100 mb-0.5">Starting from</p>
               <div className="flex items-end gap-1.5 mb-2">
-                <span className="text-2xl font-extrabold text-white">₹{pkg.price.toLocaleString("en-IN")}</span>
+                <span className="text-2xl font-extrabold text-white"><PriceTag amountInr={pkg.price} /></span>
                 <span className="text-orange-100 text-[11px] mb-0.5">/ person</span>
               </div>
               <div className="flex items-center gap-1.5 bg-white/15 rounded-xl px-3 py-1.5">

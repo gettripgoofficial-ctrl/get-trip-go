@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar"
 import BottomNav from "@/components/BottomNav"
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
+import { cookies } from "next/headers";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 
@@ -84,7 +85,7 @@ export default function RootLayout({
           />
         </noscript>
 
-        <CurrencyProvider>
+        <CurrencyProvider initialCurrency={cookies().get("currency")?.value || "INR"}>
           <Navbar />
           <main>{children}</main>
           <Footer />
