@@ -11,11 +11,17 @@ const CURRENCY_MAP: Record<string, string> = {
 }
 
 export function middleware(req: NextRequest) {
+  const res = NextResponse.next()
+
+  if (req.cookies.get('currency_source')?.value === 'user') {
+    return res
+  }
+
   const country = req.headers.get('x-vercel-ip-country') || 'IN'
   const currency = CURRENCY_MAP[country] || 'USD'
 
-  const res = NextResponse.next()
   res.cookies.set('currency', currency, { path: '/', maxAge: 60 * 60 * 24 * 30 })
+  res.cookies.set('currency_source', 'geo', { path: '/', maxAge: 60 * 60 * 24 * 30 })
   return res
 }
 

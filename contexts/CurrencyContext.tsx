@@ -1,5 +1,6 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react"
+import Cookies from "js-cookie"
 
 interface CurrencyContextType {
   currency: string
@@ -18,9 +19,15 @@ const CurrencyContext = createContext<CurrencyContextType>({
 const MAJOR = ["INR", "USD", "EUR", "GBP", "AED", "SGD", "AUD", "CAD", "JPY", "THB"]
 
 export function CurrencyProvider({ children, initialCurrency }: { children: React.ReactNode; initialCurrency?: string }) {
-  const [currency, setCurrency] = useState(initialCurrency || "INR")
+  const [currency, setCurrencyState] = useState(initialCurrency || "INR")
   const [rates, setRates] = useState<Record<string, number>>({})
   const [currencies, setCurrencies] = useState<string[]>(MAJOR)
+
+  function setCurrency(c: string) {
+    setCurrencyState(c)
+    Cookies.set("currency", c, { expires: 90, path: "/" })
+    Cookies.set("currency_source", "user", { expires: 90, path: "/" })
+  }
 
   useEffect(() => {
     fetch("/api/currency")
