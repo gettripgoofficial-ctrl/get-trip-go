@@ -25,7 +25,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "not_found" }, { status: 404 })
     }
 
-    return NextResponse.json({ booking: data })
+    const { data: documents } = await supabaseAdmin
+      .from("booking_documents")
+      .select("file_name, file_url, uploaded_at")
+      .ilike("booking_id", bookingId.trim())
+      .order("uploaded_at", { ascending: false })
+
+    return NextResponse.json({ booking: data, documents: documents || [] })
   } catch (err) {
     console.error(err)
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 })

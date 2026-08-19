@@ -19,11 +19,18 @@ interface Booking {
   itinerary_summary: string | null
 }
 
+interface BookingDoc {
+  file_name: string
+  file_url: string
+  uploaded_at: string
+}
+
 export default function MyTripLoginPage() {
   const [bookingId, setBookingId] = useState("")
   const [surname, setSurname] = useState("")
   const [status, setStatus] = useState<Status>("idle")
   const [booking, setBooking] = useState<Booking | null>(null)
+  const [documents, setDocuments] = useState<BookingDoc[]>([])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -48,6 +55,7 @@ export default function MyTripLoginPage() {
       }
       const data = await res.json()
       setBooking(data.booking)
+      setDocuments(data.documents || [])
       setStatus("found")
     } catch {
       setStatus("notConnected")
@@ -142,8 +150,29 @@ export default function MyTripLoginPage() {
                     </div>
                   )}
                 </div>
+                <div className="pt-2">
+                  {documents.length > 0 && (
+                    <div className="space-y-2">
+                      <p className="font-bold text-sm text-gray-900">Documents</p>
+                      <ul className="space-y-1">
+                        {documents.map((doc) => (
+                          <li key={doc.file_url}>
+                            <a
+                              href={doc.file_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#2451D6] text-sm underline"
+                            >
+                              {doc.file_name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
                 <button
-                  onClick={() => { setStatus("idle"); setBooking(null); setBookingId(""); setSurname("") }}
+                  onClick={() => { setStatus("idle"); setBooking(null); setDocuments([]); setBookingId(""); setSurname("") }}
                   className="text-[#2451D6] text-xs font-bold underline pt-2"
                 >
                   Look up another booking

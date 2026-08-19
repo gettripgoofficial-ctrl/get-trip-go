@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AdminAuthProvider } from "@/components/AdminAuthContext";
 import AdminLoginGate from "@/components/AdminLoginGate";
 
@@ -14,6 +14,14 @@ interface Booking {
   status: string;
   itinerary_summary: string | null;
   created_at: string;
+}
+
+interface BookingDocument {
+  id: string;
+  booking_id: string;
+  file_name: string;
+  file_url: string;
+  uploaded_at: string;
 }
 
 function BookingsAdmin() {
@@ -30,6 +38,9 @@ function BookingsAdmin() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState("");
+  const [expandedBooking, setExpandedBooking] = useState<string | null>(null);
+  const [docsByBooking, setDocsByBooking] = useState<Record<string, BookingDocument[]>>({});
+  const [uploadingFor, setUploadingFor] = useState<string | null>(null);
 
   const loadBookings = async () => {
     setLoading(true);
@@ -41,6 +52,38 @@ function BookingsAdmin() {
   useEffect(() => {
     loadBookings();
   }, []);
+
+  const loadDocuments = async (bookingId: string) => {
+    const res = await fetch(`/api/bookings/documents?bookingId=${encodeURIComponent(bookingId)}`);
+    if (res.ok) {
+      const docs = await res.json();
+      setDocsByBooking((prev) => ({ ...prev, [bookingId]: docs }));
+    }
+  };
+
+  const toggleExpand = (bookingId: string) => {
+    if (expandedBooking === bookingId) {
+      setExpandedBooking(null);
+    } else {
+      setExpandedBooking(bookingId);
+      if (!docsByBooking[bookingId]) loadDocuments(bookingId);
+    }
+  };
+
+  const handleFileUpload = async (bookingId: string, file: File) => {
+    setUploadingFor(bookingId);
+    const fd = new FormData();
+    fd.append("file", file);
+    fd.append("bookingId", bookingId);
+    const res = await fetch("/api/bookings/documents", { method: "POST", body: fd });
+    setUploadingFor(null);
+    if (res.ok) {
+      loadDocuments(bookingId);
+    } else {
+      const data = await res.json();
+      alert(data.error || "Upload failed");
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -182,12 +225,66 @@ function BookingsAdmin() {
               </thead>
               <tbody>
                 {bookings.map((b) => (
-                  <tr key={b.id} className="border-t border-gray-100">
-                    <td className="px-4 py-2 font-mono text-xs">{b.booking_id.toUpperCase()}</td>
-                    <td className="px-4 py-2">{b.traveller_name}</td>
-                    <td className="px-4 py-2">{b.package_name || "—"}</td>
-                    <td className="px-4 py-2 capitalize">{b.status}</td>
-                  </tr>
+                  <React.Fragment key={b.id}>
+                    <tr
+                      key={b.id}
+                      className="border-t border-gray-100 cursor-pointer hover:bg-gray-50"
+                      onClick={() => toggleExpand(b.booking_id)}
+                    >
+                      <td className="px-4 py-2 font-mono text-xs">{b.booking_id.toUpperCase()}</td>
+                      <td className="px-4 py-2">{b.traveller_name}</td>
+                      <td className="px-4 py-2">{b.package_name || "—"}</td>
+                      <td className="px-4 py-2 capitalize">{b.status}</td>
+                    </tr>
+                    {expandedBooking === b.booking_id && (
+                      <tr key={`${b.id}-docs`} className="border-t border-gray-100 bg-gray-50">
+                        <td colSpan={4} className="px-4 py-4">
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-3">
+                              <label className="text-xs font-bold uppercase tracking-wide text-gray-500">
+                                Upload Document
+                              </label>
+                              <input
+                                type="file"
+                                accept="application/pdf,image/jpeg,image/png,image/webp"
+                                disabled={uploadingFor === b.booking_id}
+                                onChange={(e) => {
+                                  const file = e.target.files?.[0];
+                                  if (file) handleFileUpload(b.booking_id, file);
+                                  e.target.value = "";
+                                }}
+                                className="text-xs"
+                              />
+                              {uploadingFor === b.booking_id && (
+                                <span className="text-xs text-gray-400">Uploading…</span>
+                              )}
+                            </div>
+                            {docsByBooking[b.booking_id]?.length ? (
+                              <ul className="space-y-1">
+                                {docsByBooking[b.booking_id].map((doc) => (
+                                  <li key={doc.id} className="flex items-center gap-2 text-sm">
+                                    <a
+                                      href={doc.file_url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-blue-600 underline"
+                                    >
+                                      {doc.file_name}
+                                    </a>
+                                    <span className="text-xs text-gray-400">
+                                      {new Date(doc.uploaded_at).toLocaleDateString("en-IN")}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="text-xs text-gray-400">No documents uploaded yet.</p>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
                 ))}
               </tbody>
             </table>
