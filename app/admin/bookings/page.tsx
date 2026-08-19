@@ -85,6 +85,27 @@ function BookingsAdmin() {
     }
   };
 
+  const handleDeleteDocument = async (bookingId: string, docId: string) => {
+    if (!confirm("Delete this document?")) return;
+    const res = await fetch(`/api/bookings/documents/${docId}`, { method: "DELETE" });
+    if (res.ok) {
+      loadDocuments(bookingId);
+    } else {
+      alert("Failed to delete document.");
+    }
+  };
+
+  const handleDeleteBooking = async (bookingId: string) => {
+    if (!confirm(`Delete booking ${bookingId.toUpperCase()} and all its documents? This cannot be undone.`)) return;
+    const res = await fetch(`/api/bookings/${bookingId}`, { method: "DELETE" });
+    if (res.ok) {
+      setExpandedBooking(null);
+      loadBookings();
+    } else {
+      alert("Failed to delete booking.");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.bookingId.trim() || !form.surname.trim() || !form.travellerName.trim()) {
@@ -241,6 +262,14 @@ function BookingsAdmin() {
                         <td colSpan={4} className="px-4 py-4">
                           <div className="space-y-3">
                             <div className="flex items-center gap-3">
+                                      <button
+                                onClick={() => handleDeleteBooking(b.booking_id)}
+                                className="text-xs font-bold text-red-600 hover:text-red-700 underline"
+                              >
+                                Delete Booking
+                              </button>
+                            </div>
+                            <div className="flex items-center gap-3">
                               <label className="text-xs font-bold uppercase tracking-wide text-gray-500">
                                 Upload Document
                               </label>
@@ -274,6 +303,12 @@ function BookingsAdmin() {
                                     <span className="text-xs text-gray-400">
                                       {new Date(doc.uploaded_at).toLocaleDateString("en-IN")}
                                     </span>
+                                    <button
+                                      onClick={() => handleDeleteDocument(b.booking_id, doc.id)}
+                                      className="text-xs font-bold text-red-500 hover:text-red-700"
+                                    >
+                                      Remove
+                                    </button>
                                   </li>
                                 ))}
                               </ul>
