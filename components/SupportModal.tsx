@@ -23,14 +23,30 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!name.trim() || !email.trim() || !message.trim()) {
       setError(true);
       setTimeout(() => setError(false), 1500);
       return;
     }
-    // TODO: wire to Resend API route
-    setSent(true);
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: "",
+          message,
+          packageName: "Support Modal Message",
+        }),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSent(true);
+    } catch {
+      setError(true);
+      setTimeout(() => setError(false), 1500);
+    }
   };
 
   const quickActions = [
