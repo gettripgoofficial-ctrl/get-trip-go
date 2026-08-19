@@ -8,22 +8,50 @@ import { Loader2 } from "lucide-react"
 const fraunces = Fraunces({ subsets: ["latin"], weight: ["500", "600"], style: ["normal", "italic"] })
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["500", "600"] })
 
-type Status = "idle" | "loading" | "notConnected" | "error"
+type Status = "idle" | "loading" | "notConnected" | "error" | "found"
+
+interface Booking {
+  booking_id: string
+  traveller_name: string
+  package_name: string | null
+  travel_date: string | null
+  status: string
+  itinerary_summary: string | null
+}
 
 export default function MyTripLoginPage() {
   const [bookingId, setBookingId] = useState("")
   const [surname, setSurname] = useState("")
   const [status, setStatus] = useState<Status>("idle")
+  const [booking, setBooking] = useState<Booking | null>(null)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!bookingId.trim() || !surname.trim()) {
       setStatus("error")
       return
     }
     setStatus("loading")
-    // TODO: wire to real booking-lookup API once available.
-    window.setTimeout(() => setStatus("notConnected"), 900)
+    try {
+      const res = await fetch("/api/bookings/lookup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ bookingId, surname }),
+      })
+      if (res.status === 404) {
+        setStatus("notConnected")
+        return
+      }
+      if (!res.ok) {
+        setStatus("notConnected")
+        return
+      }
+      const data = await res.json()
+      setBooking(data.booking)
+      setStatus("found")
+    } catch {
+      setStatus("notConnected")
+    }
   }
 
   return (
@@ -94,6 +122,34 @@ export default function MyTripLoginPage() {
 
           {/* Right form panel */}
           <div className="lg:w-[62%] bg-[#FAF8F3] px-8 py-9">
+            {status === "found" && booking ? (
+              <div className="space-y-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2 inline-block">
+                  ✓ Booking Found
+                </p>
+                <h2 className={`${fraunces.className} text-2xl text-gray-900 font-semibold`}>
+                  {booking.traveller_name}
+                </h2>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p><span className="font-bold">Booking ID:</span> <span className={mono.className}>{booking.booking_id.toUpperCase()}</span></p>
+                  {booking.package_name && <p><span className="font-bold">Package:</span> {booking.package_name}</p>}
+                  {booking.travel_date && <p><span className="font-bold">Travel Date:</span> {new Date(booking.travel_date).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</p>}
+                  <p><span className="font-bold">Status:</span> <span className="capitalize">{booking.status}</span></p>
+                  {booking.itinerary_summary && (
+                    <div className="pt-2">
+                      <p className="font-bold mb-1">Itinerary</p>
+                      <p className="text-gray-600 whitespace-pre-line">{booking.itinerary_summary}</p>
+                    </div>
+                  )}
+                </div>
+                <button
+                  onClick={() => { setStatus("idle"); setBooking(null); setBookingId(""); setSurname("") }}
+                  className="text-[#2451D6] text-xs font-bold underline pt-2"
+                >
+                  Look up another booking
+                </button>
+              </div>
+            ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="booking-id" className="block text-gray-700 text-xs font-bold uppercase tracking-wide mb-1.5">
@@ -155,6 +211,7 @@ export default function MyTripLoginPage() {
                 Can't find your Booking ID? It's in your confirmation email.
               </p>
             </form>
+            )}
           </div>
         </div>
       </div>
