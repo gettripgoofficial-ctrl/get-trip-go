@@ -43,6 +43,13 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
       });
       if (!res.ok) throw new Error("Failed to send");
       setSent(true);
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "form_submit",
+        form_name: "support_modal",
+        page_path: window.location.pathname,
+      });
     } catch {
       setError(true);
       setTimeout(() => setError(false), 1500);

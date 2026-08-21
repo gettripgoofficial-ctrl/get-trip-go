@@ -1,3 +1,7 @@
+interface Window {
+  dataLayer: Record<string, unknown>[];
+}
+
 declare module '*.css';
 declare module '*.module.css';
 declare module '*.png' {

@@ -244,6 +244,13 @@ function LeadForm() {
     const data: Record<string, string> = {}
     form.forEach((v, k) => { data[k] = String(v) })
     window.open(buildWhatsAppUrl(data), "_blank")
+
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "form_submit",
+      form_name: "kenya_highlands_beach",
+      page_path: window.location.pathname,
+    })
   }
 
   return (

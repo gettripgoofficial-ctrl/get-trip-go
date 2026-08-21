@@ -26,6 +26,13 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
     ;(e.target as HTMLFormElement).dataset.submitting = "true"
     await fetch("/api/enquiry", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...formData, packageName }) })
     setSubmitted(true)
+
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "form_submit",
+      form_name: packageName || "general_enquiry",
+      page_path: window.location.pathname,
+    })
   }
 
   const tabs = [

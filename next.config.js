@@ -50,6 +50,7 @@ const ContentSecurityPolicy = `
     https://*.travelpayouts.com
     https://www.google-analytics.com
     https://analytics.google.com
+    https://www.google.com
     https://api.resend.com
     https://*.getyourguide.com
     https://*.viator.com

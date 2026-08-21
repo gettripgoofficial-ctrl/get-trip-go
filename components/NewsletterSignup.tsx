@@ -19,6 +19,12 @@ export default function NewsletterSignup() {
       if (res.ok) {
         setStatus("success")
         setEmail("")
+
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+          event: "newsletter_signup",
+          page_path: window.location.pathname,
+        })
       } else {
         setStatus("error")
       }
