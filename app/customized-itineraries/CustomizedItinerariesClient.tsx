@@ -181,7 +181,13 @@ export default function CustomizedItinerariesClient() {
       />
 
       {/* Hero */}
-      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 pt-4">
+        <nav aria-label="Breadcrumb" className="mb-4 text-sm text-gray-500">
+          <Link href="/" className="hover:text-gray-800">Home</Link>
+          <span className="mx-2 text-gray-300">/</span>
+          <span className="text-gray-800">Customized Itineraries</span>
+        </nav>
+        <div className="relative rounded-2xl overflow-hidden h-[260px] sm:h-[480px]">
         <Image
           src="/images/external/unsplash-148808506138.jpg"
           alt="Customized Itineraries"
@@ -195,8 +201,7 @@ export default function CustomizedItinerariesClient() {
           <h1 className="text-2xl sm:text-4xl font-extrabold text-white">Customized Itineraries</h1>
           <p className="text-white/80 text-sm mt-1">Handcrafted journeys — tailored just for you</p>
         </div>
-        <Link href="/" className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
-        </Link>
+      </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6">

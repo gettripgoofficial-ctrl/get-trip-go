@@ -27,7 +27,13 @@ export default function OffersClient() {
       />
 
       {/* Hero */}
-      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 pt-4">
+        <nav aria-label="Breadcrumb" className="mb-4 text-sm text-gray-500">
+          <Link href="/" className="hover:text-gray-800">Home</Link>
+          <span className="mx-2 text-gray-300">/</span>
+          <span className="text-gray-800">Offers</span>
+        </nav>
+        <div className="relative rounded-2xl overflow-hidden h-[260px] sm:h-[480px]">
         <Image
           src="/images/external/unsplash-143649186533.jpg"
           alt="Special Offers"
@@ -37,15 +43,11 @@ export default function OffersClient() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <Link
-          href="/"
-          className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
-        >
-        </Link>
         <div className="absolute bottom-0 left-0 p-4 sm:p-8">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white">Special Offers & Deals</h1>
           <p className="text-white/80 text-sm mt-1">Exclusive discounts on flights, holidays, cruises & more</p>
         </div>
+      </div>
       </div>
 
       {/* Grid */}

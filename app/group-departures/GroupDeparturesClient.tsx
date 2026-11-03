@@ -224,7 +224,13 @@ export default function GroupDeparturesClient() {
       />
 
       {/* Hero */}
-      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 pt-4">
+        <nav aria-label="Breadcrumb" className="mb-4 text-sm text-gray-500">
+          <Link href="/" className="hover:text-gray-800">Home</Link>
+          <span className="mx-2 text-gray-300">/</span>
+          <span className="text-gray-800">Group Departures</span>
+        </nav>
+        <div className="relative rounded-2xl overflow-hidden h-[260px] sm:h-[480px]">
         <Image src="/images/external/unsplash-147651452553.jpg" alt="Europe Group Departures" fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 p-4 sm:p-8">
@@ -232,6 +238,7 @@ export default function GroupDeparturesClient() {
           <p className="text-white/80 text-sm mt-1">Guaranteed departures — travel with like-minded explorers</p>
         </div>
         
+      </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6">

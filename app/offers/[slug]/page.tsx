@@ -63,7 +63,8 @@ export default function OfferDetailPage({ params }: Props) {
           { label: offer.title },
         ]}
       />
-      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 pt-4">
+        <div className="relative rounded-2xl overflow-hidden h-[260px] sm:h-[480px]">
         <Image
           src={offer.image}
           alt={offer.title}
@@ -73,10 +74,6 @@ export default function OfferDetailPage({ params }: Props) {
           className="object-cover brightness-110 saturate-150"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-        <Link
-          href="/offers"
-          className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full"
-        />
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8">
           <span
             className="text-white text-xs font-bold px-2.5 py-1 rounded-full inline-block mb-2"
@@ -87,6 +84,7 @@ export default function OfferDetailPage({ params }: Props) {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">{offer.title}</h1>
           <p className="text-white/80 text-sm mt-1">Valid till {offer.validTill}</p>
         </div>
+      </div>
       </div>
       <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
         <div className="bg-white rounded-2xl shadow-sm p-5">
