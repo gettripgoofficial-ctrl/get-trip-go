@@ -28,6 +28,13 @@ export default function RootLayout({
               "logo": "https://gettripgo.com/logo.png",
               "image": "https://gettripgo.com/logo.png",
               "foundingDate": "2016",
+              "hasMap": "https://www.google.com/maps/search/?api=1&query=Get+Trip+Go+Laxmi+Nagar+New+Delhi+110092",
+              "areaServed": [
+                { "@type": "AdministrativeArea", "name": "Laxmi Nagar" },
+                { "@type": "AdministrativeArea", "name": "East Delhi" },
+                { "@type": "City", "name": "New Delhi" },
+                { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+              ],
               "description": "Embark on your next adventure with Get Trip Go, a premier travel booking platform founded in 2016 in New Delhi. We specialise in affordable flights, hotel bookings, custom holiday packages and confirmed group tours across India and international destinations.",
               "disambiguatingDescription": "Get Trip Go (gettripgo.com), headquartered in Laxmi Nagar, New Delhi, is not affiliated with any similarly-named travel businesses.",
               "telephone": "+91-96-6789-2504",
