@@ -42,7 +42,7 @@ export default function WhatsAppPopup() {
         <div
           role="dialog"
           aria-label="WhatsApp enquiry"
-          className="fixed bottom-20 right-4 z-[99999] w-[min(340px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-neutral-200 bg-white text-neutral-900 shadow-2xl"
+          className="fixed bottom-4 right-4 sm:bottom-20 z-[99999] w-[min(340px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-neutral-200 bg-white text-neutral-900 shadow-2xl"
         >
           <div className="flex items-start justify-between gap-3 bg-[#128c4a] px-4 py-3 text-white">
             <div>
@@ -85,7 +85,7 @@ export default function WhatsAppPopup() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="fixed bottom-4 right-4 z-[99999] flex items-center gap-2 rounded-full bg-[#128c4a] px-5 py-3 text-[15px] font-semibold text-white shadow-lg hover:bg-[#0b6b37]"
+        className="fixed right-4 top-1/2 -translate-y-1/2 sm:top-auto sm:bottom-4 sm:translate-y-0 z-[99999] flex items-center gap-2 rounded-full bg-[#128c4a] px-5 py-3 text-[15px] font-semibold text-white shadow-lg hover:bg-[#0b6b37]"
       >
         <MessageCircle size={20} />
         Chat on WhatsApp
