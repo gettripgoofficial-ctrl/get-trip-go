@@ -239,6 +239,20 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Local business info */}
+      <div className="border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+          <p className="text-xs text-gray-500 max-w-xl">
+            Get Trip Go is a tour operator and travel company based in Laxmi Nagar, New Delhi, since 2016.
+          </p>
+          <address className="not-italic text-xs text-gray-500 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-x-4 gap-y-1">
+            <span>First Floor, Office No.102, 52A, Vijay Block, Laxmi Nagar, New Delhi 110092</span>
+            <a href="tel:+919667892504" className="hover:text-white transition-colors">+91 96 6789 2504</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=28.6350092,77.2829386" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Get directions</a>
+          </address>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
