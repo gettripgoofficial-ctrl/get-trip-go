@@ -110,6 +110,7 @@ export default function RootLayout({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gettripgo.com"),
+  alternates: { canonical: "./" },
   title: {
     default: "Get Trip Go | India's Trusted Travel Booking Platform",
     template: "%s | Get Trip Go",
