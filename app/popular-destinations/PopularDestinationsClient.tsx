@@ -243,24 +243,36 @@ function PopularDestinationsContent() {
       />
 
       {/* Hero */}
-      <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
-        <Image
-          src={heroDestination?.image ?? "/images/external/unsplash-148808506138.jpg"}
-          alt={activeDestination}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 p-4 sm:p-8">
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-white">
-            {activeDestination === "All" ? "All Popular Destinations" : `${activeDestination} Packages`}
-          </h1>
-          <p className="text-white/80 text-sm mt-1"></p>
+      <div className="max-w-7xl mx-auto px-4 pt-4">
+        <nav aria-label="Breadcrumb" className="mb-4 text-sm text-gray-500">
+          <Link href="/" className="hover:text-gray-800">Home</Link>
+          <span className="mx-2 text-gray-300">/</span>
+          {activeDestination === "All" ? (
+            <span className="text-gray-800">Popular Destinations</span>
+          ) : (
+            <>
+              <Link href="/popular-destinations" className="hover:text-gray-800">Popular Destinations</Link>
+              <span className="mx-2 text-gray-300">/</span>
+              <span className="text-gray-800">{activeDestination}</span>
+            </>
+          )}
+        </nav>
+        <div className="relative rounded-2xl overflow-hidden h-[260px] sm:h-[480px]">
+          <Image
+            src={heroDestination?.image ?? "/images/external/unsplash-148808506138.jpg"}
+            alt={activeDestination}
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 p-4 sm:p-8">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-white">
+              {activeDestination === "All" ? "All Popular Destinations" : `${activeDestination} Packages`}
+            </h1>
+          </div>
         </div>
-        <Link href="/" className="absolute top-16 left-4 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
-        </Link>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6">
