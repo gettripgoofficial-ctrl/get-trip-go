@@ -25,7 +25,7 @@ export async function generateMetadata({
   const priceFormatted = tour.priceINR.toLocaleString("en-IN")
 
   return {
-    title: `${tour.name} — ${tour.days}D/${tour.nights}N Group Tour`,
+    title: `${tour.name}${tour.slug.endsWith("-go-english") ? " (Go English)" : ""} — ${tour.days}D/${tour.nights}N Group Tour`,
     description: `Join the ${tour.name} group departure covering ${countries}. ${tour.days} days, ${tour.nights} nights, starting at ₹${priceFormatted} per person. Fixed departure dates with Get Trip Go.`,
   }
 }
