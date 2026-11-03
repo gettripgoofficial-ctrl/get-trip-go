@@ -1,3 +1,4 @@
+import { upcomingDates } from "@/lib/departureDates"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -152,7 +153,7 @@ export default function TourDetailPage({ params }: { params: { slug: string } })
                 <span className="text-gray-400">({tour.reviewCount} reviews)</span>
               </div>
             )}
-            <TourActions tourName={tour.name} priceINR={tour.priceINR} departureDates={tour.departureDates} />
+            <TourActions tourName={tour.name} priceINR={tour.priceINR} departureDates={upcomingDates(tour.departureDates)} />
           </div>
 
         </div>

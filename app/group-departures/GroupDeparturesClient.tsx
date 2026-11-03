@@ -1,4 +1,5 @@
 "use client"
+import { upcomingDates } from "@/lib/departureDates"
 
 import { useState, useMemo } from "react"
 import Link from "next/link"
@@ -346,7 +347,7 @@ export default function GroupDeparturesClient() {
                         <div className="flex items-center gap-1.5 mb-3">
                           <span className="text-xs">✈</span>
                           <span className="text-xs text-gray-500">Next departure:</span>
-                          <span className="text-xs font-semibold text-blue-600">{pkg.departureDates[0]}</span>
+                          <span className="text-xs font-semibold text-blue-600">{upcomingDates(pkg.departureDates)[0] ?? "Dates on request"}</span>
                         </div>
 
                         {/* Highlights */}
