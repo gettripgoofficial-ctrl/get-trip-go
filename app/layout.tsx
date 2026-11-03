@@ -6,6 +6,7 @@ import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import { cookies } from "next/headers";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
+import WhatsAppPopup from "../components/WhatsAppPopup";
 
 export default function RootLayout({
   children,
@@ -87,7 +88,8 @@ export default function RootLayout({
 
         <CurrencyProvider initialCurrency={cookies().get("currency")?.value || "INR"}>
           <Navbar />
-          <main>{children}</main>
+          <main>{children}
+      <WhatsAppPopup /></main>
           <Footer />
           <BottomNav />
         </CurrencyProvider>
