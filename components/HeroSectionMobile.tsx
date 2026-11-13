@@ -11,13 +11,7 @@ import SupportModal from "@/components/SupportModal"
 import KenyaBanner from "@/components/KenyaBanner"
 import MobileSearchSheet, { MobileSearchTab } from "@/components/search/mobile/MobileSearchSheet"
 import SecondaryServices from "@/components/SecondaryServices"
-import { offers } from "@/data/offers"
-import {
-  MobileOfferCard,
-  OfferModal,
-} from "./HeroComponents"
-
-type Offer = typeof offers[0]
+import HotelCityDestinations from "@/components/HotelCityDestinations"
 
 const SERVICES: { label: string; icon: React.ReactNode; bg: string; color: string; tab: MobileSearchTab }[] = [
   { label: "Flights",      icon: <Plane   size={28} strokeWidth={2} />, bg: "#1A56F0", color: "#fff", tab: "Flights"    },
@@ -33,7 +27,6 @@ export default function HeroSectionMobile() {
   const [showCurrency, setShowCurrency] = useState(false)
   const [dealsOpen, setDealsOpen] = useState(false)
   const [supportOpen, setSupportOpen] = useState(false)
-  const [activeOffer, setActiveOffer] = useState<Offer | null>(null)
   const [visible, setVisible] = useState(true)
   const lastScrollY = useRef(0)
 
@@ -166,26 +159,7 @@ export default function HeroSectionMobile() {
           </div>
         </div>
 
-        {/* ── Special Offers ── */}
-        <div className="pb-5">
-          <div className="flex items-center justify-between px-4 mb-3">
-            <h2 className="text-base font-bold text-[#0A1628]">Explore Coupons</h2>
-          </div>
-          <div className="px-4">
-            <div
-              className="flex gap-3 overflow-x-auto pb-2"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
-            >
-              {offers.map(offer => (
-                <MobileOfferCard
-                  key={offer.code}
-                  offer={offer}
-                  onOpen={() => setActiveOffer(offer)}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        <HotelCityDestinations />
 
         {/* ── Kenya Banner ── */}
         <KenyaBanner />
@@ -203,7 +177,6 @@ export default function HeroSectionMobile() {
       {activeSheet && (
         <MobileSearchSheet initialTab={activeSheet} onClose={() => setActiveSheet(null)} />
       )}
-      {activeOffer && <OfferModal offer={activeOffer} onClose={() => setActiveOffer(null)} />}
       <DealsModal isOpen={dealsOpen} onClose={() => setDealsOpen(false)} />
       <SupportModal isOpen={supportOpen} onClose={() => setSupportOpen(false)} />
     </>

@@ -1,7 +1,7 @@
 import ResponsiveHero from "@/components/ResponsiveHero"
 import KenyaBanner from "@/components/KenyaBanner"
 import SecondaryServices from "@/components/SecondaryServices"
-import SpecialOffers from "@/components/SpecialOffers"
+import HotelCityDestinations from "@/components/HotelCityDestinations"
 import PopularDestinations from "@/components/PopularDestinations"
 import GroupDepartures from "@/components/GroupDepartures"
 import CustomPackages from "@/components/CustomPackages"
@@ -23,12 +23,6 @@ export default function Home() {
           hydrate ResponsiveHero and mount the <img> tag client-side. */}
       <link rel="preload" as="image" href="/hero1.jpg" fetchPriority="high" media="(min-width: 768px)" />
 
-      {/* Preload the first mobile offer card's background image. It's set via
-          CSS background-image (not an <img> tag), so the browser's preload
-          scanner can't discover it until CSS is parsed — this hint starts the
-          fetch immediately from the initial HTML instead. */}
-      <link rel="preload" as="image" href="/images/external/unsplash-143649186533.jpg" fetchPriority="high" media="(max-width: 767px)" />
-
       {/* Hero — picks mobile or desktop version based on real screen size */}
       <ResponsiveHero />
 
@@ -38,8 +32,9 @@ export default function Home() {
       </div>
 
       <div className="hidden md:block">
-        <SpecialOffers />
+        <HotelCityDestinations />
       </div>
+
       <div className="hidden md:block">
         <KenyaBanner />
       </div>

@@ -76,7 +76,7 @@ function CityInput({ value, onChange }: { value: string; onChange: (val: string)
   }
 
   return (
-    <div ref={wrapperRef} className="relative flex flex-1 items-center gap-2.5 px-3.5 py-3 border-r border-slate-100 min-w-0 cursor-pointer hover:bg-blue-50/60 transition-colors">
+    <div ref={wrapperRef} className="relative flex w-full flex-1 items-center gap-2.5 border-b border-slate-100 px-3.5 py-3 min-w-0 cursor-pointer transition-colors hover:bg-blue-50/60 sm:w-auto sm:border-b-0 sm:border-r">
       <MapPin size={16} className="text-[#1A56F0] flex-shrink-0" />
       <div className="min-w-0 flex-1">
         <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.06em] mb-0.5">City or Hotel</p>
@@ -115,7 +115,7 @@ function DateField({ label, value, onChange }: { label: string; value: string; o
     return new Date(raw).toLocaleDateString("en-IN", { day: "2-digit", month: "short", weekday: "short" })
   }
   return (
-    <div className="relative flex flex-1 items-center gap-2.5 px-3.5 py-3 border-r border-slate-100 min-w-0 cursor-pointer hover:bg-blue-50/60 transition-colors"
+    <div className="relative flex w-full flex-1 items-center gap-2.5 border-b border-slate-100 px-3.5 py-3 min-w-0 cursor-pointer transition-colors hover:bg-blue-50/60 sm:w-auto sm:border-b-0 sm:border-r"
       onClick={() => inputRef.current?.showPicker?.()}>
       <Calendar size={16} className="text-[#1A56F0] flex-shrink-0" />
       <div className="min-w-0 flex-1">
@@ -170,7 +170,7 @@ function RoomsGuestsField({ value, onChange }: { value: RoomsGuests; onChange: (
   }
 
   return (
-    <div ref={wrapperRef} className="relative flex flex-1 items-center gap-2.5 px-3.5 py-3 border-r border-slate-100 min-w-0 cursor-pointer hover:bg-blue-50/60 transition-colors"
+    <div ref={wrapperRef} className="relative flex w-full flex-1 items-center gap-2.5 border-b border-slate-100 px-3.5 py-3 min-w-0 cursor-pointer transition-colors hover:bg-blue-50/60 sm:w-auto sm:border-b-0 sm:border-r"
       onClick={() => setOpen(o => !o)}>
       <Users size={16} className="text-[#1A56F0] flex-shrink-0" />
       <div className="min-w-0 flex-1">
@@ -276,6 +276,11 @@ export default function HotelSearch() {
   const [roomsGuests, setRoomsGuests] = useState<RoomsGuests>({ rooms: 1, adults: 2, children: 0 })
   const [showModal,   setShowModal]   = useState(false)
 
+  useEffect(() => {
+    const destination = new URLSearchParams(window.location.search).get("destination")
+    if (destination) setCity(destination)
+  }, [])
+
   return (
     <div>
       {/* Hotel type pills */}
@@ -294,14 +299,14 @@ export default function HotelSearch() {
       </div>
 
       {/* Fields */}
-      <FieldRow>
+      <FieldRow className="flex-col sm:flex-row">
         <CityInput value={city} onChange={setCity} />
         <DateField label="Check-in"  value={checkIn}  onChange={setCheckIn} />
         <DateField label="Check-out" value={checkOut} onChange={setCheckOut} />
         <RoomsGuestsField value={roomsGuests} onChange={setRoomsGuests} />
-        <div className="flex items-center px-3 flex-shrink-0">
+        <div className="flex w-full items-center px-3 py-2 sm:w-auto sm:flex-shrink-0 sm:py-0">
           <button onClick={() => setShowModal(true)}
-            className="flex items-center gap-2 px-5 h-[44px] bg-[#1A56F0] hover:bg-blue-700 active:bg-blue-800 text-white text-[13px] font-bold rounded-none transition-all hover:scale-[1.02] whitespace-nowrap">
+            className="flex h-[44px] w-full items-center justify-center gap-2 rounded-none bg-[#1A56F0] px-5 text-[13px] font-bold text-white transition-all hover:scale-[1.02] hover:bg-blue-700 active:bg-blue-800 sm:w-auto sm:whitespace-nowrap">
             Unlock Best Deals
           </button>
         </div>

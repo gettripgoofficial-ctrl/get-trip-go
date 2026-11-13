@@ -47,7 +47,7 @@ export default function HotelsPage() {
         </p>
       </section>
 
-      <div className="max-w-5xl mx-auto px-4 pb-16">
+      <div id="hotel-search" className="max-w-5xl mx-auto scroll-mt-20 px-4 pb-16 sm:scroll-mt-24">
         <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6">
           <SearchBox activeTab="Hotels" />
         </div>
