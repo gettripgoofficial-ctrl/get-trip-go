@@ -7,11 +7,11 @@ export default function HotelCityDestinations() {
     <section aria-label="Popular hotel destinations" className="max-w-7xl mx-auto px-4 py-8 sm:py-10">
       <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
         <div className="mb-4 sm:mb-6">
-          <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#2B3FDE] mb-2">
-            Find your stay
-          </p>
-          <p className="text-sm text-gray-500 mt-1">
-            Choose a city to start your hotel enquiry.
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+            Know your destination
+          </h2>
+          <p className="mt-1 text-sm text-gray-500">
+            Explore where to stay, what to see, local food, and travel tips for each destination.
           </p>
         </div>
 
