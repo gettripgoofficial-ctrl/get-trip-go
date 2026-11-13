@@ -26,7 +26,7 @@ const budgetRanges = [
   { label: "Above ₹3L", max: Infinity },
 ]
 
-const months = ["Jul 2026", "Aug 2026", "Sep 2026", "Oct 2026"]
+const months = ["Jul 2027", "Aug 2027", "Sep 2027", "Oct 2027", "Nov 2027"]
 
 const INITIAL_VISIBLE = 6
 const LOAD_MORE_COUNT = 6
