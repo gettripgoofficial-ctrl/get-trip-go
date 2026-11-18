@@ -44,8 +44,13 @@ function PopularDestinationsContent() {
   const filtered = useMemo(() => {
     let result = [...packages]
 
-    if (activeDestination !== "All")
-      result = result.filter(p => p.destination === activeDestination)
+    if (activeDestination !== "All") {
+      result = result.filter(p =>
+        activeDestination === "Incredible India"
+          ? p.country === "India"
+          : p.destination === activeDestination
+      )
+    }
 
     if (searchQuery.trim())
       result = result.filter(p =>

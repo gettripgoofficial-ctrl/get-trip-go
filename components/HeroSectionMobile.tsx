@@ -8,10 +8,7 @@ import { Plane, Hotel, Camera, Car, Menu, X, DollarSign } from "lucide-react"
 import { useCurrency } from "@/contexts/CurrencyContext"
 import DealsModal from "@/components/DealsModal"
 import SupportModal from "@/components/SupportModal"
-import KenyaBanner from "@/components/KenyaBanner"
 import MobileSearchSheet, { MobileSearchTab } from "@/components/search/mobile/MobileSearchSheet"
-import SecondaryServices from "@/components/SecondaryServices"
-import HotelCityDestinations from "@/components/HotelCityDestinations"
 
 const SERVICES: { label: string; icon: React.ReactNode; bg: string; color: string; tab: MobileSearchTab }[] = [
   { label: "Flights",      icon: <Plane   size={28} strokeWidth={2} />, bg: "#1A56F0", color: "#fff", tab: "Flights"    },
@@ -157,19 +154,6 @@ export default function HeroSectionMobile() {
               </button>
             ))}
           </div>
-        </div>
-
-        <HotelCityDestinations />
-
-        {/* ── Kenya Banner ── */}
-        <KenyaBanner />
-
-        {/* ── Secondary Services ── */}
-        <div className="pb-4">
-          <div className="px-4 mb-3">
-            <h2 className="text-base font-bold text-[#0A1628]">More Services</h2>
-          </div>
-          <SecondaryServices />
         </div>
 
       </div>

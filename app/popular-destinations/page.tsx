@@ -17,8 +17,10 @@ export async function generateMetadata({
     };
   }
 
-  const matches = packages.filter(
-    (p) => p.destination.toLowerCase() === destination.toLowerCase()
+  const matches = packages.filter((p) =>
+    destination.toLowerCase() === "incredible india"
+      ? p.country === "India"
+      : p.destination.toLowerCase() === destination.toLowerCase()
   );
   const count = matches.length;
   const lowestPrice = count > 0 ? Math.min(...matches.map((p) => p.price)) : null;

@@ -27,17 +27,23 @@ export default function Home() {
       <ResponsiveHero />
 
       {/* Sections below — shared for both */}
-      <div className="hidden md:block">
-        <SecondaryServices />
+      <div className="flex flex-col bg-[#F8F9FF] md:bg-transparent">
+        <div className="order-3 pb-4 md:order-1 md:pb-0">
+          <div className="px-4 mb-3 md:hidden">
+            <h2 className="text-base font-bold text-[#0A1628]">More Services</h2>
+          </div>
+          <SecondaryServices />
+        </div>
+
+        <div className="order-1 md:order-2">
+          <HotelCityDestinations />
+        </div>
+
+        <div className="order-2 md:order-3">
+          <KenyaBanner />
+        </div>
       </div>
 
-      <div className="hidden md:block">
-        <HotelCityDestinations />
-      </div>
-
-      <div className="hidden md:block">
-        <KenyaBanner />
-      </div>
       <PopularDestinations />
       <GroupDepartures />
       <CustomPackages />
