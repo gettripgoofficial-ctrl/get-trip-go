@@ -11,7 +11,11 @@ export function usePrice() {
 
   function convert(amountInINR: number): string {
     if (!amountInINR) return ""
-    const rate = rates[currency] ?? 1
+    const rate = currency === "INR" ? 1 : rates[currency]
+    if (!Number.isFinite(rate) || rate <= 0) {
+      return `₹${amountInINR.toLocaleString("en-IN")}`
+    }
+
     const converted = amountInINR * rate
     const symbol = SYMBOLS[currency] ?? currency + " "
 

@@ -10,7 +10,7 @@ const destinations = [
   { name: "Singapore", country: "Singapore", price: 42999, image: "/images/external/unsplash-152562529338.jpg" },
   { name: "Kashmir", country: "India", price: 22999, image: "/images/external/unsplash-161409408286.jpg" },
   { name: "Maldives", country: "Maldives", price: 65999, image: "/images/external/unsplash-157384398126.jpg" },
-  { name: "Incredible India", country: "India", price: 15999, image: "/images/external/unsplash-152449241293.jpg" },
+  { name: "Incredible India", country: "India", price: 15999, image: "/images/external/unsplash-157016800720.jpg" },
   { name: "Dubai", country: "UAE", price: 38999, image: "/images/external/unsplash-151245397979.jpg" },
   { name: "Georgia", country: "Georgia", price: 45999, image: "/images/external/unsplash-156500857654.jpg" },
   { name: "Bhutan", country: "Bhutan", price: 32999, image: "/images/external/unsplash-1544735716-3.jpg" },
