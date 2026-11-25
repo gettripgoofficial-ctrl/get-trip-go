@@ -10,7 +10,16 @@ const CURRENCY_MAP: Record<string, string> = {
   AT: 'EUR', IE: 'EUR', PT: 'EUR', FI: 'EUR', GR: 'EUR',
 }
 
+const REDIRECT_TO_INDIA = ['/india', '/incredible-india']
+
 export function middleware(req: NextRequest) {
+  const path = req.nextUrl.pathname
+  if (REDIRECT_TO_INDIA.includes(path) || path.startsWith('/incredible-india/')) {
+    const url = req.nextUrl.clone()
+    url.pathname = '/India'
+    return NextResponse.redirect(url, 308)
+  }
+
   const res = NextResponse.next()
 
   if (req.cookies.get('currency_source')?.value === 'user') {
