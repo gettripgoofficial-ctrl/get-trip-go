@@ -116,7 +116,7 @@ export const goaMetroHtml = `<script type="application/ld+json">{"@context":"htt
 <div class="grid">
 <div><h3>Mumbai</h3><p>A common start or end of a west-coast trip. See our <a href="/India/mumbai">Mumbai guide</a>.</p></div>
 <div><h3>Kerala</h3><p>The next stop down the coast. See our <a href="/India/kerala">Kerala guide</a>.</p></div>
-<div><h3>Hampi and Gokarna</h3><p>A heritage and beach add-on in Karnataka. Check transport links.</p></div>
+<div><h3><a href="/India/hampi">Hampi</a> and Gokarna</h3><p>A heritage and beach add-on in Karnataka. Check transport links.</p></div>
 <div><h3>Delhi</h3><p>The usual international gateway. See our <a href="/India/delhi">Delhi guide</a>.</p></div>
 </div>
 <div class="note">Check travel times before fixing the order.</div>

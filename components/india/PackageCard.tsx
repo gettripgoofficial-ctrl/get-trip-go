@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import PriceTag from "@/components/PriceTag"
 import type { Package } from "@/data/india/types"
 
@@ -31,10 +30,7 @@ function duration(days: number, nights: number): string {
 export default function PackageCard({ pkg }: { pkg: Package }) {
   const hasRating = typeof pkg.rating === "number"
   return (
-    <Link
-      href={pkg.link}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
-    >
+    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2">
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         {pkg.image ? (
           <Image
@@ -91,6 +87,6 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           </p>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }

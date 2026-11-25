@@ -119,7 +119,7 @@ export const mumbaiMetroHtml = `<script type="application/ld+json">{"@context":"
 <div class="grid">
 <div><h3>Goa</h3><p>The usual next stop on the west coast. See our <a href="/India/goa">Goa guide</a>.</p></div>
 <div><h3>Kerala</h3><p>A longer west-coast circuit. See our <a href="/India/kerala">Kerala guide</a>.</p></div>
-<div><h3>Ajanta and Ellora</h3><p>Ancient cave temples near Aurangabad, reached from Mumbai by train or road.</p></div>
+<div><h3><a href="/India/ajanta-ellora">Ajanta</a> and Ellora</h3><p>Ancient cave temples near Aurangabad, reached from Mumbai by train or road.</p></div>
 <div><h3>Pune and Lonavala</h3><p>Easy add-ons by road or train.</p></div>
 <div><h3>Udaipur and Rajasthan</h3><p>A heritage extension. See our <a href="/India/udaipur">Udaipur guide</a>.</p></div>
 <div><h3>Delhi</h3><p>The usual gateway. See our <a href="/India/delhi">Delhi guide</a>.</p></div>

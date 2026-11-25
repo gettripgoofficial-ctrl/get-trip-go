@@ -80,8 +80,8 @@ export const agraMetroHtml = `<script type="application/ld+json">
 <div><h3>Bharatpur (Keoladeo)</h3><p>A bird sanctuary, best in winter for birdwatching.</p></div>
 <div><h3>Jaipur</h3><p>The usual next stop on the Golden Triangle. See our <a href="/India/jaipur">Jaipur guide</a>.</p></div>
 <div><h3>Delhi</h3><p>The usual start or end of the trip. See our <a href="/India/delhi">Delhi guide</a>.</p></div>
-<div><h3>Gwalior, Orchha and Khajuraho</h3><p>A heritage route into Madhya Pradesh. Check transport links.</p></div>
-<div><h3>Ranthambore</h3><p>A tiger-safari add-on, reached via Jaipur or by rail. Sightings are never guaranteed.</p></div>
+<div><h3>Gwalior, Orchha and <a href="/India/khajuraho">Khajuraho</a></h3><p>A heritage route into Madhya Pradesh. Check transport links.</p></div>
+<div><h3><a href="/India/ranthambore">Ranthambore</a></h3><p>A tiger-safari add-on, reached via Jaipur or by rail. Sightings are never guaranteed.</p></div>
 <div><h3>Lucknow and Varanasi</h3><p>An Uttar Pradesh route for food, ghats and temples. See our <a href="/India/varanasi">Varanasi guide</a>.</p></div>
 <div><h3>Udaipur and Kerala</h3><p>Longer add-ons for a Rajasthan lakes stop or a south India finish. See <a href="/India/udaipur">Udaipur</a> and <a href="/India/kerala">Kerala</a>.</p></div>
 </div>

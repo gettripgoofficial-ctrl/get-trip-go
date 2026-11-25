@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import type { Attraction } from "@/data/india/types"
 
 // Fallback gradients until an original photo exists. Full class strings so Tailwind can see them.
@@ -23,10 +22,7 @@ function gradientFor(slug: string): string {
 
 export default function AttractionCard({ attraction }: { attraction: Attraction }) {
   return (
-    <Link
-      href={attraction.link}
-      className="group block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
-    >
+    <div className="group block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2">
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl lg:aspect-[5/4]">
         {attraction.image ? (
           <Image
@@ -43,6 +39,6 @@ export default function AttractionCard({ attraction }: { attraction: Attraction 
       </div>
       <h3 className="mt-3 text-lg font-extrabold leading-tight text-[#1a2b49]">{attraction.name}</h3>
       <p className="mt-0.5 text-sm text-gray-600">{attraction.city}</p>
-    </Link>
+    </div>
   )
 }

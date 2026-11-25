@@ -92,7 +92,7 @@ export const varanasiMetroHtml = `<script type="application/ld+json">{"@context"
 <div><h3>From Agra</h3><p>By train, or by flying via Delhi. See our <a href="/India/agra">Agra guide</a>.</p></div>
 <div><h3>From Lucknow and Prayagraj</h3><p>Well connected by road and train, which makes a good Uttar Pradesh route.</p></div>
 <div><h3>From Bodh Gaya and Gaya</h3><p>A Buddhist-circuit link by road or train.</p></div>
-<div><h3>From Kolkata, Mumbai and other metros</h3><p>Check for current direct flights. If there are none, connect via Delhi.</p></div>
+<div><h3>From <a href="/India/kolkata">Kolkata</a>, Mumbai and other metros</h3><p>Check for current direct flights. If there are none, connect via Delhi.</p></div>
 </div>
 <div class="note">Verify flight and train options, timings and fares on the airline and IRCTC websites before booking.</div>
 </section>
@@ -122,7 +122,7 @@ export const varanasiMetroHtml = `<script type="application/ld+json">{"@context"
 <div><h3>Ayodhya</h3><p>A major pilgrimage town, often paired with Varanasi.</p></div>
 <div><h3>Bodh Gaya</h3><p>The Buddhist site, for a spiritual or Buddhist circuit.</p></div>
 <div><h3>Lucknow</h3><p>Nawabi heritage and food.</p></div>
-<div><h3>Khajuraho</h3><p>The temple complex, a popular add-on. Check transport links.</p></div>
+<div><h3><a href="/India/khajuraho">Khajuraho</a></h3><p>The temple complex, a popular add-on. Check transport links.</p></div>
 <div><h3>Agra and Delhi</h3><p>Start the trip here. See <a href="/India/agra">Agra</a> and <a href="/India/delhi">Delhi</a>.</p></div>
 <div><h3>Jaipur</h3><p>Pair it with Rajasthan on a longer India circuit. See <a href="/India/jaipur">Jaipur</a>.</p></div>
 </div>

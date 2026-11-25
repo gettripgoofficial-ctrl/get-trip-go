@@ -123,8 +123,8 @@ export const keralaMetroHtml = `<script type="application/ld+json">{"@context":"
 <div class="grid">
 <div><h3>Delhi, Agra and Jaipur</h3><p>A Golden Triangle trip followed by Kerala. See <a href="/India/delhi">Delhi</a>, <a href="/India/agra">Agra</a> and <a href="/India/jaipur">Jaipur</a>.</p></div>
 <div><h3>Varanasi</h3><p>A north-meets-south circuit. See our <a href="/India/varanasi">Varanasi guide</a>.</p></div>
-<div><h3>Tamil Nadu</h3><p>Madurai and Rameswaram are the usual neighbours.</p></div>
-<div><h3>Karnataka</h3><p>Mysuru and Coorg, for a southern circuit.</p></div>
+<div><h3>Tamil Nadu</h3><p><a href="/India/madurai">Madurai</a> and Rameswaram are the usual neighbours.</p></div>
+<div><h3>Karnataka</h3><p><a href="/India/mysore">Mysuru</a> and Coorg, for a southern circuit.</p></div>
 <div><h3>Lakshadweep and the Andamans</h3><p>Island add-ons that need separate planning and permits.</p></div>
 </div>
 <div class="note">Check travel times before fixing the order of regions.</div>
