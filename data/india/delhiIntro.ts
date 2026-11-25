@@ -1,0 +1,5 @@
+export const delhiIntro: string[] = [
+  "Delhi, the capital of India, is one of the country’s most fascinating travel destinations. Known for its rich history, beautiful monuments, diverse culture, traditional markets and modern lifestyle, Delhi offers international visitors an unforgettable introduction to India. Whether you are travelling from the United States, United Kingdom, Europe, Australia, Singapore or the Middle East, Delhi has something for every type of traveller.",
+  "From exploring the historic streets of Old Delhi to visiting magnificent Mughal monuments, enjoying Indian cuisine and discovering luxury hotels, there are countless experiences to enjoy in the capital. Delhi is also an excellent starting point for exploring other famous Indian destinations, including Agra, Jaipur, Amritsar, Varanasi, Rishikesh and Shimla.",
+  "This Delhi travel guide covers the best places to visit, accommodation, transportation, airport transfers, sightseeing, train and bus journeys, approximate travel costs and essential tips for international tourists visiting India.",
+]

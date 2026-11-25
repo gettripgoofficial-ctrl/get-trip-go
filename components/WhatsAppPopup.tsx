@@ -269,7 +269,7 @@ export default function WhatsAppPopup() {
         className="fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] md:bottom-4 z-[99999] flex items-center gap-2 rounded-full bg-[#128c4a] px-5 py-3 text-[15px] font-semibold text-white shadow-lg hover:bg-[#0b6b37]"
       >
         <MessageCircle size={20} />
-        Chat on WhatsApp
+        Need Help Planning Your Trip?
       </button>
     </>
   );

@@ -14,7 +14,7 @@ export type HotelDestination = {
 
 export const hotelDestinations: HotelDestination[] = [
   {
-    slug: "bangkok", name: "Bangkok", country: "Thailand", image: "/images/external/unsplash-150666553119.jpg",
+    slug: "bangkok", name: "Bangkok", country: "Thailand", image: "/images/destinations/bangkok.jpg",
     guide: {
       intro: "Bangkok combines landmark temples, riverside neighbourhoods, markets and a wide range of Thai food. Choose a base near the sights or transit that best fit your plans.",
       stayAreas: ["Riverside for temples, river views and boat connections", "Sukhumvit for shopping, dining and BTS access", "Siam for malls and central transport links"],
@@ -24,7 +24,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "paris", name: "Paris", country: "France", image: "/images/external/unsplash-paris-eiffel.jpg",
+    slug: "paris", name: "Paris", country: "France", image: "/images/destinations/paris.jpg",
     guide: {
       intro: "Paris is best explored by neighbourhood, with museums, gardens, cafés and historic streets spread across the city. Pick accommodation near a Metro line that serves your main interests.",
       stayAreas: ["Le Marais for historic streets, galleries and cafés", "Saint-Germain-des-Prés for Left Bank walks and dining", "Opéra for department stores and central connections"],
@@ -34,7 +34,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "london", name: "London", country: "United Kingdom", image: "/images/external/unsplash-151363526997.jpg",
+    slug: "london", name: "London", country: "United Kingdom", image: "/images/destinations/london.jpg",
     guide: {
       intro: "London offers royal landmarks, museums, theatre and distinct neighbourhoods connected by public transport. Choose a stay near the Tube or rail route you expect to use most.",
       stayAreas: ["South Bank for river walks and cultural venues", "Bloomsbury for museums and central connections", "Kensington for museums and west London access"],
@@ -44,7 +44,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "dubai", name: "Dubai", country: "United Arab Emirates", image: "/images/external/unsplash-151245397979.jpg",
+    slug: "dubai", name: "Dubai", country: "United Arab Emirates", image: "/images/destinations/dubai.jpg",
     guide: {
       intro: "Dubai pairs modern districts and major attractions with older creekside neighbourhoods. Consider heat, transfer times and which area your planned activities are in when selecting a stay.",
       stayAreas: ["Downtown Dubai for central landmarks and malls", "Dubai Marina and JBR for waterfront promenades", "Deira and Bur Dubai for creekside heritage and souks"],
@@ -54,7 +54,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "singapore", name: "Singapore", country: "Singapore", image: "/images/external/unsplash-152562529338.jpg",
+    slug: "singapore", name: "Singapore", country: "Singapore", image: "/images/destinations/singapore.jpg",
     guide: {
       intro: "Singapore is compact and easy to explore by neighbourhood, with gardens, museums, waterfront areas and hawker centres. Staying close to an MRT station makes day plans simpler.",
       stayAreas: ["Marina Bay for waterfront landmarks", "Bugis and Kampong Glam for heritage and shopping", "Chinatown for food, temples and central MRT access"],
@@ -64,7 +64,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "tokyo", name: "Tokyo", country: "Japan", image: "/images/external/unsplash-153136693633.jpg",
+    slug: "tokyo", name: "Tokyo", country: "Japan", image: "/images/destinations/tokyo.jpg",
     guide: {
       intro: "Tokyo is a collection of distinct districts connected by an extensive rail network. Choose a hotel near a station and group activities by area to reduce cross-city travel.",
       stayAreas: ["Shinjuku for transport, dining and nightlife", "Tokyo Station and Ginza for central access and shopping", "Asakusa for temple visits and a more historic atmosphere"],
@@ -74,7 +74,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "new-york", name: "New York", country: "United States", image: "/images/external/unsplash-152380500934.jpg",
+    slug: "new-york", name: "New York", country: "United States", image: "/images/destinations/new-york.jpg",
     guide: {
       intro: "New York City spans five boroughs, and Manhattan alone has many different bases for visitors. Compare transit access, room size and daily travel time before booking a stay.",
       stayAreas: ["Midtown for first-time access to central Manhattan sights", "Lower Manhattan for historic sites and downtown connections", "Long Island City for subway links across the East River"],
@@ -84,7 +84,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "rome", name: "Rome", country: "Italy", image: "/images/external/unsplash-152390683465.jpg",
+    slug: "rome", name: "Rome", country: "Italy", image: "/images/destinations/rome.jpg",
     guide: {
       intro: "Rome's ancient sites, churches and neighbourhoods reward a walkable itinerary, but sights are spread out. Choose accommodation with convenient Metro or bus links and book timed-entry attractions ahead where required.",
       stayAreas: ["Centro Storico for historic squares and walking", "Monti for neighbourhood dining near ancient sites", "Prati for Vatican access and residential streets"],
@@ -94,7 +94,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "istanbul", name: "Istanbul", country: "Türkiye", image: "/images/external/unsplash-153400875703.jpg",
+    slug: "istanbul", name: "Istanbul", country: "Türkiye", image: "/images/destinations/istanbul.jpg",
     guide: {
       intro: "Istanbul connects historic sites, markets and waterfront neighbourhoods across two continents. Pick accommodation near the sights or transit routes you plan to use and account for hills and bridge traffic.",
       stayAreas: ["Sultanahmet for major historic landmarks", "Karaköy and Galata for waterfront access and cafés", "Kadıköy for neighbourhood markets and the Asian-side experience"],
@@ -104,7 +104,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "barcelona", name: "Barcelona", country: "Spain", image: "/images/external/unsplash-153435159066.jpg",
+    slug: "barcelona", name: "Barcelona", country: "Spain", image: "/images/destinations/barcelona.jpg",
     guide: {
       intro: "Barcelona combines Modernisme architecture, museums, markets and Mediterranean waterfront. Reserve timed-entry attractions in advance and select a stay near Metro or train connections.",
       stayAreas: ["Eixample for architecture and central grid streets", "El Born for historic lanes, museums and dining", "Barceloneta for beach access and waterfront walks"],
@@ -114,7 +114,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "amsterdam", name: "Amsterdam", country: "Netherlands", image: "/images/external/unsplash-europe-street.jpg",
+    slug: "amsterdam", name: "Amsterdam", country: "Netherlands", image: "/images/destinations/amsterdam.jpg",
     guide: {
       intro: "Amsterdam's canal belt, museums and residential districts are easy to combine on foot, by tram or by bicycle. Choose a stay based on transit and walking distance rather than assuming every canal area is alike.",
       stayAreas: ["Canal Belt for historic streets and central walks", "Museum Quarter for major museums and Vondelpark", "Amsterdam-Noord for a different neighbourhood feel with ferry connections"],
@@ -124,7 +124,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "hong-kong", name: "Hong Kong", country: "Hong Kong", image: "/images/external/unsplash-156808468078.jpg",
+    slug: "hong-kong", name: "Hong Kong", country: "Hong Kong", image: "/images/destinations/hong-kong.jpg",
     guide: {
       intro: "Hong Kong is known for its harbour, dense urban districts, hiking routes and varied Cantonese food. The MTR makes many areas accessible, so compare a hotel's station access and room needs.",
       stayAreas: ["Central and Sheung Wan for business, dining and historic trams", "Tsim Sha Tsui for harbour views and museums", "Causeway Bay for shopping and Hong Kong Island transport"],
@@ -134,7 +134,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "kuala-lumpur", name: "Kuala Lumpur", country: "Malaysia", image: "/images/external/unsplash-151693402474.jpg",
+    slug: "kuala-lumpur", name: "Kuala Lumpur", country: "Malaysia", image: "/images/destinations/kuala-lumpur.jpg",
     guide: {
       intro: "Kuala Lumpur brings together major city landmarks, shopping districts and Malay, Chinese and Indian food traditions. Select a hotel near a rail station or the neighbourhoods you plan to explore.",
       stayAreas: ["Bukit Bintang for shopping and dining", "KLCC for the city-centre landmarks", "Chinatown and Pasar Seni for markets and heritage streets"],
@@ -144,7 +144,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "seoul", name: "Seoul", country: "South Korea", image: "/images/external/unsplash-151681523156.jpg",
+    slug: "seoul", name: "Seoul", country: "South Korea", image: "/images/destinations/seoul.jpg",
     guide: {
       intro: "Seoul pairs historic palaces and market streets with contemporary neighbourhoods. The city is large, so choose a base near a subway line and plan visits by district.",
       stayAreas: ["Jongno for palaces and historic neighbourhoods", "Myeongdong for shopping and central subway access", "Hongdae for cafés, music venues and a younger nightlife scene"],
@@ -154,7 +154,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "osaka", name: "Osaka", country: "Japan", image: "/images/external/unsplash-1543783207-e.jpg",
+    slug: "osaka", name: "Osaka", country: "Japan", image: "/images/destinations/osaka.jpg",
     guide: {
       intro: "Osaka is a lively base for food, shopping and day trips in the Kansai region. Stay near a major rail or subway station and check which station serves your planned sights.",
       stayAreas: ["Namba for dining, shopping and southern Osaka connections", "Umeda for major rail links and northern city access", "Osaka Castle area for parks and quieter evenings"],
@@ -164,7 +164,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "prague", name: "Prague", country: "Czechia", image: "/images/external/unsplash-152365261502.jpg",
+    slug: "prague", name: "Prague", country: "Czechia", image: "/images/destinations/prague.jpg",
     guide: {
       intro: "Prague's compact historic centre is known for architecture, river views and walkable districts. Compare a central stay with quieter neighbourhoods that have tram or Metro connections.",
       stayAreas: ["Old Town for central historic sights", "Malá Strana for castle-side streets and river walks", "Vinohrady for cafés and residential character"],
@@ -174,7 +174,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "vienna", name: "Vienna", country: "Austria", image: "/images/external/unsplash-153456711024.jpg",
+    slug: "vienna", name: "Vienna", country: "Austria", image: "/images/destinations/vienna.jpg",
     guide: {
       intro: "Vienna is a city of imperial landmarks, museums, music venues and café culture. Choose a hotel close to a U-Bahn or tram stop and check event schedules for your travel dates.",
       stayAreas: ["Innere Stadt for central landmarks and museums", "Leopoldstadt for the Prater and easy transit", "Neubau for museums, independent shops and cafés"],
@@ -184,7 +184,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "madrid", name: "Madrid", country: "Spain", image: "/images/external/unsplash-153313006179.jpg",
+    slug: "madrid", name: "Madrid", country: "Spain", image: "/images/destinations/madrid.jpg",
     guide: {
       intro: "Madrid combines major art museums, public squares, parks and neighbourhood dining. Stay near a Metro station and group museum visits with nearby areas to keep the itinerary manageable.",
       stayAreas: ["Centro and Sol for central landmarks", "Retiro for park access and museums", "Malasaña for cafés, shops and nightlife"],
@@ -194,7 +194,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "sydney", name: "Sydney", country: "Australia", image: "/images/external/unsplash-150697303587.jpg",
+    slug: "sydney", name: "Sydney", country: "Australia", image: "/images/destinations/sydney.jpg",
     guide: {
       intro: "Sydney's harbour, beaches and neighbourhoods are spread across a large area. Choose accommodation based on ferry, train or bus access to the activities you have planned.",
       stayAreas: ["The Rocks and Circular Quay for harbour and ferry connections", "Darling Harbour for waterfront attractions", "Surry Hills for cafés and inner-city access"],
@@ -204,7 +204,7 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "los-angeles", name: "Los Angeles", country: "United States", image: "/images/external/unsplash-150260289865.jpg",
+    slug: "los-angeles", name: "Los Angeles", country: "United States", image: "/images/destinations/los-angeles.jpg",
     guide: {
       intro: "Los Angeles is geographically spread out, so hotel location and transport planning matter. Select a base near the neighbourhoods you intend to visit and budget time for road traffic.",
       stayAreas: ["Hollywood for entertainment landmarks and Metro access", "Santa Monica for the coast and walkable streets", "Downtown LA for museums, venues and rail connections"],
@@ -214,63 +214,63 @@ export const hotelDestinations: HotelDestination[] = [
     }
   },
   {
-    slug: "delhi", name: "Delhi", country: "India", image: "/images/external/unsplash-152449241293.jpg",
+    slug: "pattaya", name: "Pattaya", country: "Thailand", image: "/images/destinations/pattaya.jpg",
     guide: {
-      intro: "Delhi combines Mughal-era landmarks, museums, markets and modern districts across a broad urban area. Choose a stay near a Metro station and group Old Delhi and New Delhi sights by day.",
-      stayAreas: ["Connaught Place for central Metro connections", "South Delhi for access to several monuments and markets", "Aerocity for airport access and newer hotels"],
-      placesToVisit: ["Humayun's Tomb and nearby heritage sites", "Qutub Minar complex", "Red Fort and Old Delhi—check current visitor access"],
-      localFood: ["Chole bhature and parathas from established eateries", "Mughlai dishes in Old Delhi", "Chaat from hygienic, well-reviewed vendors"],
-      gettingAround: "Delhi Metro is useful for many major areas; use registered taxis or ride services for last-mile journeys. Allow time for traffic and check monument hours."
+      intro: "Pattaya is a beach resort city on Thailand's eastern Gulf coast, roughly two hours by road from Bangkok. It suits beach stays, water activities and day trips to nearby islands. Choose an area based on the atmosphere you want.",
+      stayAreas: ["Central Pattaya for restaurants, shopping and nightlife", "Jomtien for a longer, quieter beach", "Naklua and Wongamat for calmer, more upmarket stays"],
+      placesToVisit: ["The Sanctuary of Truth wooden temple", "A day boat trip to Koh Larn", "The Pattaya viewpoint at Khao Phra Tamnak"],
+      localFood: ["Grilled seafood from a busy, well-reviewed restaurant", "Som tam and other Thai street food", "Mango sticky rice"],
+      gettingAround: "Shared songthaew trucks run along the main roads, and taxis or ride apps help for longer trips; check or agree fares first. Allow for traffic on road transfers from Bangkok."
     }
   },
   {
-    slug: "agra", name: "Agra", country: "India", image: "/images/external/unsplash-152449241293.jpg",
+    slug: "santorini", name: "Santorini", country: "Greece", image: "/images/destinations/santorini.jpg",
     guide: {
-      intro: "Agra is best known for Mughal architecture and can be visited as an overnight stay or part of a longer north India itinerary. Plan monument visits around opening times and seasonal weather.",
-      stayAreas: ["Taj Ganj for proximity to the Taj Mahal area", "Fatehabad Road for a range of visitor accommodation", "Near Agra Cantt for rail access"],
-      placesToVisit: ["Taj Mahal—check official opening, ticket and visitor rules", "Agra Fort", "Mehtab Bagh for a view across the river"],
-      localFood: ["Petha from a reputable local sweet shop", "Mughlai dishes at established restaurants", "Bedai and jalebi for a local breakfast option"],
-      gettingAround: "Use registered taxis, auto-rickshaws or ride services and confirm fares before travel. Check current monument entry rules and allow time for security."
+      intro: "Santorini is a Greek island on the rim of a flooded volcanic caldera, known for white-and-blue villages, sunsets and black-sand beaches. Views and prices vary a lot between villages, so choose your base carefully.",
+      stayAreas: ["Fira for transport links, shops and caldera views", "Oia for sunsets and a village atmosphere", "Imerovigli for quieter stays on the caldera edge"],
+      placesToVisit: ["Oia village and its sunset viewpoints", "The Fira to Oia caldera walk; check weather and path conditions", "The Akrotiri archaeological site"],
+      localFood: ["Tomatokeftedes (tomato fritters)", "Fava and white aubergine dishes", "Local Assyrtiko wine from a island winery"],
+      gettingAround: "Local buses link Fira with the main villages, while taxis and rental vehicles cover other routes. Book ahead in summer, expect steps and steep paths at many hotels, and check ferry and flight schedules."
     }
   },
   {
-    slug: "kerala", name: "Kerala", country: "India", image: "/images/external/unsplash-160221605609.jpg",
+    slug: "copenhagen", name: "Copenhagen", country: "Denmark", image: "/images/destinations/copenhagen.jpg",
     guide: {
-      intro: "Kerala is a state rather than a single city, with backwaters, hill stations, heritage districts and beaches separated by road journeys. Plan a regional route instead of treating every stop as nearby.",
-      stayAreas: ["Fort Kochi for heritage streets and waterfront", "Munnar for tea-growing hill country", "Alappuzha or Kumarakom for backwater stays"],
-      placesToVisit: ["Fort Kochi and its historic waterfront", "Munnar tea-country viewpoints and gardens", "Alappuzha backwaters—confirm houseboat route and inclusions"],
-      localFood: ["Appam with stew", "Kerala sadya served on a banana leaf", "Puttu with kadala curry"],
-      gettingAround: "Travel between regions by road, rail or boat depending on the route. Allow realistic transfer time and check monsoon or hill-road conditions."
+      intro: "Copenhagen is a compact, bike-friendly capital with colourful harbours, parks, design shops and a strong food scene. Most central sights are close together, so staying near a Metro or S-train station works well.",
+      stayAreas: ["Indre By for central sights and shopping", "Vesterbro for dining and nightlife near the central station", "Nørrebro for cafés and neighbourhood streets"],
+      placesToVisit: ["Nyhavn harbour", "Tivoli Gardens", "Rosenborg Castle and the King's Garden"],
+      localFood: ["Smørrebrød (open sandwiches)", "Danish pastries from a local bakery", "Seafood or New Nordic restaurants; book popular places ahead"],
+      gettingAround: "The Metro, S-trains and buses cover most visitor routes, and cycling is common. Check ticket zones and keep to marked bike lanes if you ride."
     }
   },
   {
-    slug: "varanasi", name: "Varanasi", country: "India", image: "/image/pilgrimage.jpg",
+    slug: "stockholm", name: "Stockholm", country: "Sweden", image: "/images/destinations/stockholm.jpg",
     guide: {
-      intro: "Varanasi is a historic pilgrimage city on the Ganges, known for its ghats, temples and narrow lanes. Stay with practical access to your planned areas and follow local guidance around religious sites.",
-      stayAreas: ["Assi Ghat for a southern riverside base", "Dashashwamedh Ghat area for central riverfront access", "Cantonment for wider roads and rail connections"],
-      placesToVisit: ["A permitted boat ride on the Ganges at sunrise", "The ghats and old-city lanes with a local guide", "Sarnath, a short trip from the city centre"],
-      localFood: ["Kachori sabzi for breakfast", "Banarasi tamatar chaat from a clean, established vendor", "Banarasi paan from a reputable shop"],
-      gettingAround: "Walk carefully through the old lanes and use registered auto-rickshaws or taxis for longer trips. Check access restrictions and be respectful at ceremonies."
+      intro: "Stockholm is spread across islands, with a medieval old town, museums and a large archipelago nearby. Plan your days by area and use boats as well as trains.",
+      stayAreas: ["Gamla Stan for medieval streets and central walks", "Norrmalm for the central station and shopping", "Södermalm for cafés, bars and city views"],
+      placesToVisit: ["Gamla Stan, the old town", "The Vasa Museum on Djurgården", "A ferry or boat trip into the archipelago"],
+      localFood: ["Swedish meatballs", "Fika: coffee with a cinnamon bun", "Herring and other seafood dishes"],
+      gettingAround: "The metro, buses, trams and commuter ferries are covered by the local transport system. Check ticket options in the official app and allow for winter weather."
     }
   },
   {
-    slug: "goa", name: "Goa", country: "India", image: "/images/external/unsplash-150752542803.jpg",
+    slug: "oslo", name: "Oslo", country: "Norway", image: "/images/destinations/oslo.jpg",
     guide: {
-      intro: "Goa offers beach areas, Portuguese-era heritage and inland nature, with travel times that vary by coast and season. Choose North or South Goa based on your preferred pace and activities.",
-      stayAreas: ["North Goa around Candolim or Anjuna for busy beach access", "South Goa around Palolem or Benaulim for a quieter coastal base", "Panaji for heritage walks and transport connections"],
-      placesToVisit: ["Fontainhas and Old Goa churches", "A beach suited to your preferred activities and local conditions", "A spice plantation or inland nature area with advance confirmation"],
-      localFood: ["Goan fish curry rice", "Bebinca from a trusted bakery", "Vindaloo or xacuti at a restaurant serving Goan cuisine"],
-      gettingAround: "Taxis and rental vehicles are common options; confirm licensing, insurance and fares. Check monsoon conditions, beach safety flags and local transport availability."
+      intro: "Oslo combines a waterfront setting with museums, parks and quick access to forests and fjord islands. Costs are high, so a hotel near the central station or metro often saves time and money.",
+      stayAreas: ["Sentrum for the central station and main sights", "Grünerløkka for cafés and independent shops", "Aker Brygge and Bjørvika for the waterfront"],
+      placesToVisit: ["The Oslo Opera House and its walkable roof", "Vigeland Sculpture Park", "Akershus Fortress"],
+      localFood: ["Fresh seafood and salmon", "Norwegian waffles", "Cinnamon buns from a local bakery"],
+      gettingAround: "The metro (T-bane), trams, buses and harbour ferries are covered by the local ticket system. Check ticket zones and opening times, as some venues close early or on certain days."
     }
   },
   {
-    slug: "jaipur", name: "Jaipur", country: "India", image: "/images/external/unsplash-152449241293.jpg",
+    slug: "reykjavik", name: "Reykjavik", country: "Iceland", image: "/images/destinations/reykjavik.jpg",
     guide: {
-      intro: "Jaipur's forts, palaces, markets and craft districts make it a central stop on a Rajasthan trip. Choose accommodation with practical access to the old city or your planned monuments.",
-      stayAreas: ["Pink City for markets and historic streets", "Bani Park for a quieter central base", "Tonk Road for access to newer parts of the city"],
-      placesToVisit: ["Amber Fort—check access and visitor rules", "City Palace and Jantar Mantar", "Hawa Mahal and the nearby old-city bazaars"],
-      localFood: ["Dal baati churma", "Pyaaz kachori from a busy local shop", "Ghewar from a reputable sweet maker"],
-      gettingAround: "Use registered auto-rickshaws, taxis or ride services and agree on fares when needed. Start outdoor monument visits early in hot weather."
+      intro: "Reykjavik is Iceland's small, walkable capital and the starting point for most trips to its volcanic and coastal landscapes. Weather changes quickly, so plan flexible days.",
+      stayAreas: ["Downtown (101) for walkable streets and dining", "The harbour area for museums and whale-watching trips", "Laugardalur for geothermal pools and quieter streets"],
+      placesToVisit: ["The tower of Hallgrímskirkja church", "Harpa concert hall and the harbour", "Day trips such as the Golden Circle or a geothermal spa; book ahead"],
+      localFood: ["Icelandic lamb soup", "Fresh fish at a harbour restaurant", "Icelandic hot dogs"],
+      gettingAround: "Downtown is walkable and city buses cover the wider area, while day tours or rental cars reach places beyond it. Check official road and weather updates before driving, especially in winter."
     }
   },
 ]

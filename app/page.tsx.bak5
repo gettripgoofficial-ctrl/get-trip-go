@@ -1,0 +1,63 @@
+import ResponsiveHero from "@/components/ResponsiveHero"
+import KenyaBanner from "@/components/KenyaBanner"
+import IndiaBanner from "@/components/IndiaBanner"
+import SecondaryServices from "@/components/SecondaryServices"
+import HotelCityDestinations from "@/components/HotelCityDestinations"
+import PopularDestinations from "@/components/PopularDestinations"
+import GroupDepartures from "@/components/GroupDepartures"
+import CustomPackages from "@/components/CustomPackages"
+import ThemeHolidays from "@/components/ThemeHolidays"
+import TrustedPartners from "@/components/TrustedPartners"
+import TravelStories from "@/components/TravelStories"
+import NewsletterSignup from "@/components/NewsletterSignup"
+import FAQSection from "@/components/FAQSection";
+import { homeFaqs } from "@/data/faqData";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gray-100">
+
+      <h1 className="sr-only">Get Trip Go — Flights, Hotels, Holiday Packages and Group Tours</h1>
+
+      {/* Preload the desktop hero image so the browser starts fetching it
+          immediately from the initial HTML, instead of waiting for JS to
+          hydrate ResponsiveHero and mount the <img> tag client-side. */}
+      <link rel="preload" as="image" href="/hero1.jpg" fetchPriority="high" media="(min-width: 768px)" />
+
+      {/* Hero — picks mobile or desktop version based on real screen size */}
+      <ResponsiveHero />
+
+      {/* Sections below — shared for both */}
+      <div className="flex flex-col bg-[#F8F9FF] md:bg-transparent">
+        <div className="order-3 pb-4 md:order-1 md:pb-0">
+          <div className="px-4 mb-3 md:hidden">
+            <h2 className="text-base font-bold text-[#0A1628]">More Services</h2>
+          </div>
+          <SecondaryServices />
+        </div>
+
+        <div className="order-1 md:order-2">
+          <HotelCityDestinations />
+        </div>
+
+        <div className="order-2 md:order-3">
+          <IndiaBanner />
+        </div>
+
+        <div className="order-2 md:order-3">
+          <KenyaBanner />
+        </div>
+      </div>
+
+      <PopularDestinations />
+      <GroupDepartures />
+      <CustomPackages />
+      <ThemeHolidays />
+      <TrustedPartners />
+      <TravelStories />
+      <FAQSection faqs={homeFaqs} />
+      <NewsletterSignup />
+
+    </main>
+  )
+}

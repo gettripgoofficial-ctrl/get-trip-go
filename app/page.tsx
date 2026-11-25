@@ -1,5 +1,6 @@
 import ResponsiveHero from "@/components/ResponsiveHero"
 import KenyaBanner from "@/components/KenyaBanner"
+import IndiaBanner from "@/components/IndiaBanner"
 import SecondaryServices from "@/components/SecondaryServices"
 import HotelCityDestinations from "@/components/HotelCityDestinations"
 import PopularDestinations from "@/components/PopularDestinations"
@@ -39,14 +40,17 @@ export default function Home() {
           <HotelCityDestinations />
         </div>
 
-        <div className="order-2 md:order-3">
-          <KenyaBanner />
-        </div>
+          <div className="order-2 md:order-3">
+            <KenyaBanner />
+          </div>
+
+
       </div>
 
       <PopularDestinations />
       <GroupDepartures />
       <CustomPackages />
+      <IndiaBanner />
       <ThemeHolidays />
       <TrustedPartners />
       <TravelStories />

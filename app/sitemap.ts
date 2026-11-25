@@ -4,6 +4,8 @@ import { packages } from "@/data/packages";
 import { themePackages } from "@/data/themePackages";
 import { customPackages } from "@/data/customPackages";
 import { offers } from "@/data/offers";
+import { hotelDestinations } from "@/data/hotelDestinations";
+import { hotelDestinationSeoContent } from "@/data/hotelDestinationSeoContent";
 import { supabaseAdmin } from "@/lib/supabase";
 
 const BASE_URL = "https://gettripgo.com";
@@ -24,6 +26,7 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/terms`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   { url: `${BASE_URL}/cookies`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   { url: `${BASE_URL}/kenya`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+  { url: `${BASE_URL}/India/delhi`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
 ];
 
 // Kenya articles are static per-folder pages, not driven by a data file — keep hardcoded.
@@ -46,15 +49,33 @@ const kenyaDynamicSlugArticles = [
   "cheetahs-of-the-mara", "amboselis-last-super-tuskers", "lake-nakurus-flamingo-spectacle",
 ];
 
+const extraStaticRoutes: MetadataRoute.Sitemap = [
+  { url: `${BASE_URL}/hotels`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+  { url: `${BASE_URL}/flights`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+  { url: `${BASE_URL}/visa`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+  { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+];
+
+// Only cities that have SEO content: the page returns 404 for the rest.
+const hotelRoutes: MetadataRoute.Sitemap = hotelDestinations
+  .filter(({ slug }) => Boolean(hotelDestinationSeoContent[slug]))
+  .map(({ slug }) => ({
+    url: `${BASE_URL}/hotels/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
 const themeSlugToUrl = (theme: string) =>
   theme.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let blogRoutes: MetadataRoute.Sitemap = [];
   try {
-    const { data: blogPosts } = await supabaseAdmin
+    const { data: blogPosts, error: blogError } = await supabaseAdmin
       .from("blog_posts")
       .select("slug, created_at");
+    if (blogError) console.error("sitemap: blog_posts query failed:", blogError.message);
     blogRoutes = (blogPosts || []).map((post) => ({
       url: `${BASE_URL}/blog/${post.slug}`,
       lastModified: post.created_at ? new Date(post.created_at) : new Date(),
@@ -67,6 +88,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticRoutes,
+    ...extraStaticRoutes,
+    ...hotelRoutes,
     ...kenyaArticleSlugs.map((slug) => ({
       url: `${BASE_URL}/kenya/${slug}`,
       lastModified: new Date(),

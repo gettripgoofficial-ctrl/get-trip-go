@@ -1,0 +1,61 @@
+// Incredible India hub: top attractions (single editable data source).
+// Each attraction links to its city page. Add `image` once an original photo exists.
+import type { Attraction } from "./types"
+
+function a(slug: string, name: string, city: string, citySlug: string): Attraction {
+  return { slug, name, city, image: { src: `/images/india/attractions/${slug}.jpg`, alt: `${name}, ${city}, India`, width: 800, height: 1000 }, link: `/India/${citySlug}` }
+}
+
+export const attractions: Attraction[] = [
+  // Mixed order: the first screen shows different cities. Remaining entries keep their original order.
+  a("taj-mahal", "Taj Mahal", "Agra", "agra"),
+  a("red-fort", "Red Fort", "Delhi", "delhi"),
+  a("amber-fort", "Amber Fort", "Jaipur", "jaipur"),
+  a("golden-temple", "Golden Temple", "Amritsar", "amritsar"),
+  a("alleppey-backwaters", "Alleppey Backwaters", "Kerala", "kerala"),
+  a("dashashwamedh-ghat", "Dashashwamedh Ghat Ganga Aarti", "Varanasi", "varanasi"),
+  a("city-palace-udaipur", "City Palace", "Udaipur", "udaipur"),
+  a("gateway-of-india", "Gateway of India", "Mumbai", "mumbai"),
+  a("mehrangarh-fort", "Mehrangarh Fort", "Jodhpur", "jodhpur"),
+  a("baga-beach", "Baga Beach", "Goa", "goa"),
+  a("qutub-minar", "Qutub Minar", "Delhi", "delhi"),
+  a("india-gate", "India Gate", "Delhi", "delhi"),
+  a("humayuns-tomb", "Humayun's Tomb", "Delhi", "delhi"),
+  a("lotus-temple", "Lotus Temple", "Delhi", "delhi"),
+  a("jama-masjid", "Jama Masjid", "Delhi", "delhi"),
+  a("akshardham", "Akshardham", "Delhi", "delhi"),
+  a("agra-fort", "Agra Fort", "Agra", "agra"),
+  a("fatehpur-sikri", "Fatehpur Sikri", "Agra", "agra"),
+  a("hawa-mahal", "Hawa Mahal", "Jaipur", "jaipur"),
+  a("city-palace-jaipur", "City Palace", "Jaipur", "jaipur"),
+  a("jantar-mantar", "Jantar Mantar", "Jaipur", "jaipur"),
+  a("nahargarh-fort", "Nahargarh Fort", "Jaipur", "jaipur"),
+  a("lake-pichola", "Lake Pichola", "Udaipur", "udaipur"),
+  a("jag-mandir", "Jag Mandir", "Udaipur", "udaipur"),
+  a("kashi-vishwanath-temple", "Kashi Vishwanath Temple", "Varanasi", "varanasi"),
+  a("sarnath", "Sarnath", "Varanasi", "varanasi"),
+  a("munnar", "Munnar", "Kerala", "kerala"),
+  a("periyar-wildlife-sanctuary", "Periyar Wildlife Sanctuary", "Kerala", "kerala"),
+  a("fort-kochi", "Fort Kochi", "Kerala", "kerala"),
+  a("basilica-of-bom-jesus", "Basilica of Bom Jesus", "Goa", "goa"),
+  a("fort-aguada", "Fort Aguada", "Goa", "goa"),
+  a("marine-drive", "Marine Drive", "Mumbai", "mumbai"),
+  a("elephanta-caves", "Elephanta Caves", "Mumbai", "mumbai"),
+  a("jaisalmer-fort", "Jaisalmer Fort", "Jaisalmer", "jaisalmer"),
+  a("sam-sand-dunes", "Sam Sand Dunes", "Jaisalmer", "jaisalmer"),
+  a("pushkar-lake", "Pushkar Lake", "Pushkar", "pushkar"),
+  a("wagah-border", "Wagah Border", "Amritsar", "amritsar"),
+  a("laxman-jhula", "Laxman Jhula", "Rishikesh", "rishikesh"),
+  a("tsuglagkhang", "Tsuglagkhang (Dalai Lama Temple)", "Dharamshala and McLeod Ganj", "dharamshala"),
+  a("khajuraho-western-group", "Western Group of Temples", "Khajuraho", "khajuraho"),
+  a("ranthambore-national-park", "Ranthambore National Park", "Ranthambore", "ranthambore"),
+  a("victoria-memorial", "Victoria Memorial", "Kolkata", "kolkata"),
+  a("howrah-bridge", "Howrah Bridge", "Kolkata", "kolkata"),
+  a("tiger-hill", "Tiger Hill", "Darjeeling", "darjeeling"),
+  a("ajanta-caves", "Ajanta Caves", "Ajanta and Ellora", "ajanta-ellora"),
+  a("ellora-caves", "Ellora Caves", "Ajanta and Ellora", "ajanta-ellora"),
+  a("vittala-temple", "Vittala Temple", "Hampi", "hampi"),
+  a("mysore-palace", "Mysore Palace", "Mysore", "mysore"),
+  a("auroville", "Auroville", "Pondicherry", "pondicherry"),
+  a("meenakshi-temple", "Meenakshi Temple", "Madurai", "madurai"),
+]

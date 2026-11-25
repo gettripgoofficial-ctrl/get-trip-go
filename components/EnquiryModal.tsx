@@ -232,7 +232,7 @@ export default function EnquiryModal({ isOpen, onClose, packageName }: Props) {
                   💬
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-800">Chat on WhatsApp</h3>
+                  <h3 className="text-lg font-bold text-gray-800">Need Help Planning Your Trip?</h3>
                   <p className="text-sm text-gray-500 mt-1">Get instant replies from our team</p>
                 </div>
                 <div className="bg-green-50 rounded-2xl p-4 text-left">

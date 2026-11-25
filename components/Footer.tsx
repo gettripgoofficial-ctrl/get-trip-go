@@ -4,35 +4,35 @@ import Link from "next/link"
 import Image from "next/image"
 
 const quickLinks = [
-  { label: "Discover Kenya", href: "/kenya" },
+  { label: "Explore Destinations", href: "/kenya" },
   { label: "Flights", href: "/flights" },
   { label: "Hotels", href: "/hotels" },
   { label: "Group Departures", href: "/group-departures" },
   { label: "Customized Itineraries", href: "/customized-itineraries" },
   { label: "Popular Destinations", href: "/popular-destinations" },
   { label: "Theme Holidays", href: "/theme-holidays" },
-  { label: "Travel Stories", href: "/blog" },
+  { label: "Travel Journal", href: "/blog" },
 ]
 
 const supportLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Visa Assistance", href: "/visa" },
-  { label: "Help Center", href: "/help" },
-  { label: "Why Us", href: "/why-us" },
-  { label: "Careers", href: "/careers" },
-  { label: "Contact Us", href: "/contact" },
-  { label: "Best Deals", href: null },
-  { label: "Explore Coupons", href: null },
+  { label: "Get to Know Us", href: "/about" },
+  { label: "Visa & Travel Assistance", href: "/visa" },
+  { label: "Help & FAQs", href: "/help" },
+  { label: "Why Travel With Us", href: "/why-us" },
+  { label: "Join Our Team", href: "/careers" },
+  { label: "Get in Touch", href: "/contact" },
+  { label: "Exclusive Travel Offers", href: null },
+  { label: "Offers & Promo Codes", href: null },
 ]
 
 const travelTools = [
-  { name: "Luggage Storage", href: "https://radicalstorage.tpx.lu/1Y7nD48i" },
-  { name: "Car Rental", href: "https://localrent.tpx.lu/OJUcblal" },
-  { name: "Event Tickets", href: "https://ticketnetwork.tpx.lu/Rqu1Ykpe" },
-  { name: "Tours & Activities", href: "https://klook.tpx.lu/T6hgKm7u" },
-  { name: "Travel eSIM", href: "https://yesim.tpx.lu/YtLpS5lu" },
-  { name: "Airport Transfer", href: "https://gettransfer.tpx.lu/wuqe2IDc" },
-  { name: "Holiday Rentals", href: "https://vrbo.com/affiliates/vrbo-home.veP5t0U" },
+  { name: "Luggage Solutions", href: "https://radicalstorage.tpx.lu/1Y7nD48i" },
+  { name: "Car Hire", href: "https://localrent.tpx.lu/OJUcblal" },
+  { name: "Events & Attractions", href: "https://ticketnetwork.tpx.lu/Rqu1Ykpe" },
+  { name: "Experiences & Activities", href: "https://klook.tpx.lu/T6hgKm7u" },
+  { name: "International eSIM", href: "https://yesim.tpx.lu/YtLpS5lu" },
+  { name: "Airport Transfers", href: "https://gettransfer.tpx.lu/wuqe2IDc" },
+  { name: "Holiday Stays", href: "https://vrbo.com/affiliates/vrbo-home.veP5t0U" },
 ]
 
 const partners = [
@@ -97,7 +97,7 @@ const socials = [
 ]
 
 function QuickLinkItem({ link }: { link: { label: string; href: string | null } }) {
-  if (link.label === "Best Deals") {
+  if (link.label === "Exclusive Travel Offers") {
     return (
       <button
         onClick={() => window.dispatchEvent(new CustomEvent("open-deals"))}
@@ -107,7 +107,7 @@ function QuickLinkItem({ link }: { link: { label: string; href: string | null } 
       </button>
     )
   }
-  if (link.label === "Explore Coupons") {
+  if (link.label === "Offers & Promo Codes") {
     return (
       <button
         onClick={() => window.dispatchEvent(new CustomEvent("open-special-offers"))}
@@ -173,7 +173,7 @@ export default function Footer() {
               <Image src="/logo-text.png" alt="Get Trip Go" width={400} height={90} className="h-7 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-5 lg:mb-6 max-w-xs">
-              India&apos;s trusted travel booking platform. Flights, hotels, custom holidays &amp; group tours — all at the best prices.
+              Your journey begins with Get Trip Go. Discover flights, hotels, curated holiday packages, group departures and personalised travel experiences, all in one place.
             </p>
             <div className="flex gap-2 flex-wrap">
               {socials.map((s) => (
@@ -187,7 +187,7 @@ export default function Footer() {
 
           {/* Quick Links — rendered once */}
           <div className="lg:ml-auto">
-            <FooterColumn title="Quick Links">
+            <FooterColumn title="Explore Get Trip Go">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <QuickLinkItem link={link} />
@@ -198,7 +198,7 @@ export default function Footer() {
 
           {/* Support — rendered once */}
           <div className="lg:ml-auto">
-            <FooterColumn title="Support">
+            <FooterColumn title="We're Here to Help">
               {supportLinks.map((link) => (
                 <li key={link.label}>
                   <QuickLinkItem link={link} />
@@ -209,7 +209,7 @@ export default function Footer() {
 
           {/* Travel Tools — rendered once */}
           <div className="lg:ml-auto">
-            <FooterColumn title="Travel Tools">
+            <FooterColumn title="Travel Essentials">
               {travelTools.map((tool) => (
                 <li key={tool.name}>
                   <a href={tool.href} target="_blank" rel="noopener noreferrer"
@@ -223,7 +223,7 @@ export default function Footer() {
 
           {/* App + Partners — rendered once */}
           <div className="border-t border-white/10 lg:border-0 lg:ml-auto pt-4 lg:pt-0 pb-4 lg:pb-0">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2.5">Travel Platform Partners</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2.5">Our Travel Partners</p>
             <div className="flex flex-wrap lg:flex-col gap-2 lg:gap-1.5">
               {partners.map((p) => (
                 <a key={p.name} href={p.link} target="_blank" rel="noopener noreferrer"
