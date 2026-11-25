@@ -7,6 +7,7 @@ import { offers } from "@/data/offers";
 import { hotelDestinations } from "@/data/hotelDestinations";
 import { hotelDestinationSeoContent } from "@/data/hotelDestinationSeoContent";
 import { supabaseAdmin } from "@/lib/supabase";
+import { cities } from "@/data/india/cities";
 
 const BASE_URL = "https://gettripgo.com";
 
@@ -66,6 +67,27 @@ const hotelRoutes: MetadataRoute.Sitemap = hotelDestinations
     priority: 0.7,
   }));
 
+const indiaGuideSlugs = ["best-time-to-visit", "festivals-and-events", "getting-around", "safety-and-health"];
+
+// /India/delhi is already in staticRoutes, so it is skipped here.
+const indiaRoutes: MetadataRoute.Sitemap = [
+  { url: `${BASE_URL}/India`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+  ...cities
+    .filter((c) => c.slug !== "delhi")
+    .map((c) => ({
+      url: `${BASE_URL}${c.link ?? `/India/${c.slug}`}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ...indiaGuideSlugs.map((slug) => ({
+    url: `${BASE_URL}/India/guides/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
+];
+
 const themeSlugToUrl = (theme: string) =>
   theme.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-");
 
@@ -89,6 +111,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticRoutes,
     ...extraStaticRoutes,
+    ...indiaRoutes,
     ...hotelRoutes,
     ...kenyaArticleSlugs.map((slug) => ({
       url: `${BASE_URL}/kenya/${slug}`,
