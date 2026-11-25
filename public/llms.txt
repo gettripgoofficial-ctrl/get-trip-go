@@ -1,0 +1,50 @@
+# Get Trip Go
+
+> Get Trip Go is a travel platform offering flights, hotels, curated holiday packages, group departures and personalised travel experiences.
+
+## India
+
+- [India tours and packages](https://gettripgo.com/India): Hub for tours, packages and experiences across India, with local experts.
+- [Delhi](https://gettripgo.com/India/delhi)
+- [Agra](https://gettripgo.com/India/agra)
+- [Jaipur](https://gettripgo.com/India/jaipur)
+- [Udaipur](https://gettripgo.com/India/udaipur)
+- [Varanasi](https://gettripgo.com/India/varanasi)
+- [Kerala](https://gettripgo.com/India/kerala)
+- [Goa](https://gettripgo.com/India/goa)
+- [Mumbai](https://gettripgo.com/India/mumbai)
+- [Jodhpur](https://gettripgo.com/India/jodhpur)
+- [Jaisalmer](https://gettripgo.com/India/jaisalmer)
+- [Pushkar](https://gettripgo.com/India/pushkar)
+- [Amritsar](https://gettripgo.com/India/amritsar)
+- [Rishikesh](https://gettripgo.com/India/rishikesh)
+- [Dharamshala and McLeod Ganj](https://gettripgo.com/India/dharamshala)
+- [Khajuraho](https://gettripgo.com/India/khajuraho)
+- [Ranthambore](https://gettripgo.com/India/ranthambore)
+- [Kolkata](https://gettripgo.com/India/kolkata)
+- [Darjeeling](https://gettripgo.com/India/darjeeling)
+- [Ajanta and Ellora](https://gettripgo.com/India/ajanta-ellora)
+- [Hampi](https://gettripgo.com/India/hampi)
+- [Mysore](https://gettripgo.com/India/mysore)
+- [Pondicherry](https://gettripgo.com/India/pondicherry)
+- [Madurai](https://gettripgo.com/India/madurai)
+
+## India travel guides
+
+- [Best time to visit India](https://gettripgo.com/India/guides/best-time-to-visit)
+- [India festivals and events](https://gettripgo.com/India/guides/festivals-and-events)
+- [Getting around India](https://gettripgo.com/India/guides/getting-around)
+- [Health and safety tips for India](https://gettripgo.com/India/guides/safety-and-health)
+
+## More from Get Trip Go
+
+- [Group departures](https://gettripgo.com/group-departures)
+- [Customized itineraries](https://gettripgo.com/customized-itineraries)
+- [Popular destinations](https://gettripgo.com/popular-destinations)
+- [Theme holidays](https://gettripgo.com/theme-holidays)
+- [Flights](https://gettripgo.com/flights)
+- [Hotels](https://gettripgo.com/hotels)
+- [Visa and travel assistance](https://gettripgo.com/visa)
+- [Travel journal](https://gettripgo.com/blog)
+- [About us](https://gettripgo.com/about)
+- [Contact](https://gettripgo.com/contact)
