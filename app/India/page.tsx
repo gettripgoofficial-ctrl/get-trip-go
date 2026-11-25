@@ -35,9 +35,32 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://gettripgo.com" },
+    { "@type": "ListItem", position: 2, name: "India", item: URL },
+  ],
+}
+
+const destinationsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Popular destinations in India",
+  itemListElement: cities.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: c.name,
+    url: `https://gettripgo.com${c.link ?? `/India/${c.slug}`}`,
+  })),
+}
+
 export default function IndiaHubPage() {
   return (
     <div className="bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(destinationsSchema) }} />
       <section className="mx-4 mt-4 md:mt-20 overflow-hidden rounded-3xl relative bg-slate-900 bg-cover bg-center bg-[url(/india-hero.jpg)] sm:mx-6 md:mx-10">
         <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
         <div className="relative mx-auto max-w-[1200px] px-4 pb-16 pt-14 text-center sm:pb-20 sm:pt-20">
