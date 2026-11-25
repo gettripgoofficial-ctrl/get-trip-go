@@ -25,11 +25,11 @@ export default function GuideLayout({ tag, title, image, children, cta }: Props)
             />
           )}
           <div className="absolute inset-0 -z-10 bg-black/45" />
-          <div className="max-w-5xl px-6 py-8 text-center sm:px-12">
+          <div className="relative mx-auto max-w-[1200px] px-4 pb-16 pt-14 text-center sm:pb-20 sm:pt-20">
             <span className="inline-block rounded-md bg-[#f5c518] px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-black">
               {tag}
             </span>
-            <h1 className="mt-4 text-[22px] font-bold leading-snug tracking-tight text-white sm:text-[28px] lg:text-[34px]">
+            <h1 className="mx-auto mt-4 max-w-3xl text-2xl font-extrabold leading-tight text-white sm:text-3xl md:text-4xl">
               {title}
             </h1>
           </div>
